@@ -6,7 +6,7 @@ publishDir = 'docs'
 canonifyurls = true
 metaDataFormat = "toml"
 #theme = "kiss"
-theme = "docdoc"
+theme = "docdock"
 
 copyright = "&copy; <a href=\"https://faculty.mdanderson.org/profiles/bo_peng.html\">Bo Peng, Ph.D. / MD Anderson Cancer Center</a> All rights reserved"
  
