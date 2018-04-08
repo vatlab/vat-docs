@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Under development on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/under-development/</link>
+    <description>Recent content in Under development on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/under-development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FAQ</title>
+      <link>https://vatlab.github.io/vat-docs/under-development/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/under-development/faq/</guid>
+      <description>Import data Some of my samples occur in multiple vcf files but their genotype calls may be different. How can I identify them after they are imported? Because a file might contain genotype for multiple samples (.vcf), and genotype for a sample can be spread into several files (your case), a sample in variant tools is uniquely identified by filename and sample_name in the output of &amp;ldquo;vtools show sample&amp;rdquo;. However</description>
+    </item>
+    
+  </channel>
+</rss>

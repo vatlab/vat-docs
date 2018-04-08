@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vatlab</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.36.1" />
+<title>Exome Sequencing Project :: vatlab</title>
+<link rel="shortcut icon" href="https://vatlab.github.io/vat-docs/images/favicon.png" type="image/x-icon" />
+<link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://vatlab.github.io/vat-docs/css/nucleus.css" rel="stylesheet">
+<link href="https://vatlab.github.io/vat-docs/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://vatlab.github.io/vat-docs/css/bootstrap.min.css">
+<script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+</script>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/applications/annotation/variants/exomesequencingpro/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://vatlab.github.io/vat-docs/">vatlab</a>
+  
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="https://vatlab.github.io/vat-docs/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/install/" class="dd-item
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/install/">Installation</a>
+      </div>
+    </li>
+    <li data-nav-id="/documentation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/">Documentation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/keyconcepts/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/keyconcepts/">
+            Key concepts
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/tutorials/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/tutorials/">
+            Tutorials
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/help/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/help/">
+            Help
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/vtools-commands/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/">Vtools commands</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/vtools-commands/init/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/init/">
+            Init
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/import/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/">
+            Import
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/update/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/">
+            Update
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/phenotype/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/phenotype/">
+            Phenotype
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/liftover/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/liftover/">
+            lifttover
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/show/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/show/">
+            show
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/use/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/">
+            use
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/select/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/select/">
+            select
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/exclude/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/exclude/">
+            exclude
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/compare/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/compare/">
+            compare
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/associate/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/">
+            associate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/output/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/">
+            output
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/export/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/">
+            export
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/remove/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/remove/">
+            remove
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/execute/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/execute/">
+            execute
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/admin/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/">
+            admin
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/functions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/functions/">Functions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/functions/ref_sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/ref_sequence/">
+            ref_sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/mut_sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/mut_sequence/">
+            mut_sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/track/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/track/">
+            track
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/genotype/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/genotype/">
+            Genotype
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/samples/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/samples/">
+            samples
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/in_table/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/in_table/">
+            in_table
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/otherfunctions/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/">
+            Other functions
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/vtools_report/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/">Vtools_report</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/vtools_report/avg_depth/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/">
+            avg_depth
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/discordance_rate/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/discordance_rate/">
+            discordance_rate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/sam_info/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/">
+            sam_info
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sequence/">
+            sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/trans_ratio/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/">
+            trans_ratio
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/variant_stat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/variant_stat/">
+            variant_stat
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/inbreeding_coefficient/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/inbreeding_coefficient/">
+            inbreeding_coefficient
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/transmission/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/transmission/">
+            transmission
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/meta_analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/meta_analysis/">
+            meta_analysis
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_fields/">
+            plot_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_geno_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/">
+            plot_geno_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_pheno_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_pheno_fields/">
+            plot_pheno_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_association/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_association/">
+            plot_association
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/customization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/">Customization</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/format/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/format/">
+            Format
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/customization/simulation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/">Simulation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/simulation/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/customization/simulation/custimzedsimu/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/custimzedsimu/">
+            Customized simulations
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/customization/simulation/models/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/">Models</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/simulation/models/peng1/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/">
+            Peng2014_ex1
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/customization/simulation/models/pen2/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/">
+            Peng2014_ex2
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/customizedpipeline/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/">
+            Customized pipeline
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/pipelines/variant-calling/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/">Variant calling</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_hg19/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/">
+            bwa_gatk33_hg19
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_b37/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/">
+            bat_gatk33_b37
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_hg19/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/">
+            bwa_gatk28_hg19
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_b37/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/">
+            bwa_gatk28_b37
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/pipelines/other-pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/">Other pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/import_vcf/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/import_vcf/">
+            import_vcf
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/anno_utils/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/anno_utils/">
+            anno_utils
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/transmission/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/transmission/">
+            transmission
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/illumina/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/illumina/">
+            Illumnina
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/annovar/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/annovar/">
+            ANNOVAR
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/snpeff/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/snpeff/">
+            snpEff
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/king/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/king/">
+            KING
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/utilities/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/utilities/">Utilities</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/utilities/report_progress/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/utilities/report_progress/">
+            report_progress
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/utilities/_md5sumd/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/utilities/_md5sumd/">
+            md5sumd
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/">Application</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/applications/annotation/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/">Annotation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/tutorial/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/tutorial/">
+            Tutorial
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/customized/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/customized/">
+            Customized annotation databases
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/annotation/genes/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/">Genes</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/genes/ccdsgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/">
+            ccdsGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/hugogene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/">
+            Hugo gene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/entrezgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/entrezgene/">
+            EntrezGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/knowngene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/knowngene/">
+            knownGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/refgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/refgene/">
+            refGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/cancergenecensus/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/cancergenecensus/">
+            CancerGeneCensus
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/variants/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/">Variants</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/variants/cosmic/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/">
+            COSMIC
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/dbnsfp/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/">
+            sbNSFP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/dbsnp/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/">
+            dbSNP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/linkagephysicalmap/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/">
+            linkage-physical map
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/databaseof/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/">
+            Database of Genomic Variants
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/exomesequencingpro/" class="dd-item active">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/">
+            Exome Sequencing Project
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/gwas/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/">
+            gwasCatalog
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/hapmap/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/hapmap/">
+            HapMap
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/thousand/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/thousand/">
+            Thousand Genomes
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/regions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/">Regions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/regions/low-complexity-regions/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/low-complexity-regions/">
+            Low complexity regions
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/phast-cons/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/phast-cons/">
+            Phast cons
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/genomic-super-dups/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic-super-dups/">
+            Genomic super dups
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/cytoband/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/">
+            cytoBand
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/misc/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/">Misc</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/misc/illumina/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/">
+            Illumina
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/misc/keggpathway/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/keggpathway/">
+            keggPathway
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/misc/encode/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/encode/">
+            ENCODE
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/applications/discovery/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/discovery/">
+            Discovery
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/association/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/">Association</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/data-explorationqc/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/">
+            Data exploration/QC
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/association-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/association-analysis/">
+            Association analysis
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/post-assoc-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/">
+            Post-assoc analysis
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/association/basic-data-statistics/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/">Basic data statistics</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/basic-data-statistics/group-statwrite/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/">
+            Group stat&amp;Write
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/single-variant-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/">Single variant analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/single-variant-analysis/fisher-exact-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/">
+            Fisher exact test
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/single-gene-association-methods/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/">Single gene association methods</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/single-gene-association-methods/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/cmc-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/cmc-test/">
+            CMC test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/c_alpha-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/">
+            C-alpha test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/kbac-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/kbac-test/">
+            KBAC test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/rbt-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rbt-test/">
+            RBT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/rarecover-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rarecover-test/">
+            RareCover test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/vt-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/vt-test/">
+            VT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/wss-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/wss-test/">
+            WSS test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/asum-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/asum-test/">
+            aSum test
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/jointconditional-association-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/">Joint/Conditional association analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/collapsing-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/">
+            Collapsing methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/aggregation-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/">
+            Aggregation methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/weighted-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/">
+            Weighted methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/variable-thresholds/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/">
+            Variable thresholds
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/skat-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/skat-test/">
+            SKAT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/metaskat-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/">
+            MetaSKAT analysis
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/vat-stacking/" class="dd-item
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/vat-stacking/">VAT stacking</a>
+      </div>
+    </li>
+    <li data-nav-id="/applications/association/create-your-test/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/">Create your test!</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/create-your-test/running-r-programs/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/running-r-programs/">
+            Running R programs
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/create-your-test/programming-in-vat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/programming-in-vat/">
+            Programming in VAT
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/view-association-result/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/view-association-result/">View association result</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/view-association-result/qq-plot-and-manhattan-plot/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/">
+            QQ plot and Manhattan plot
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/development/chagelog/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/development/chagelog/">
+            ChangeLog
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/development/getinvolved/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/development/getinvolved/">
+            Get Involved
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/administration/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/administration/">Administration</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/administration/allrecent/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/allrecent/">
+            All recent changes
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/autolink/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/autolink/">
+            Autolink
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/stylesheet/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/stylesheet/">
+            Style sheet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/trafficstat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/trafficstat/">
+            Traffic statistics
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/under-development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/under-development/">Under development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/under-development/faq/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/under-development/faq/">
+            FAQ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/install/" >
+   Installation</option>
+    <option value="/documentation/" >
+   Documentation</option>
+    <option value="/applications/" >
+   Application</option> 
+    <option value="/applications/annotation/" >
+  - 
+   Annotation</option> 
+      <option value="/applications/annotation/introduction/" >-- Introduction</option>
+      <option value="/applications/annotation/tutorial/" >-- Tutorial</option>
+      <option value="/applications/annotation/customized/" >-- Customized annotation databases</option>
+    <option value="/applications/annotation/genes/" >
+  -- 
+   Genes</option>
+    <option value="/applications/annotation/variants/" >
+  -- 
+   Variants</option> 
+      <option value="/applications/annotation/variants/cosmic/" >--- COSMIC</option>
+      <option value="/applications/annotation/variants/dbnsfp/" >--- sbNSFP</option>
+      <option value="/applications/annotation/variants/dbsnp/" >--- dbSNP</option>
+      <option value="/applications/annotation/variants/linkagephysicalmap/" >--- linkage-physical map</option>
+      <option value="/applications/annotation/variants/databaseof/" >--- Database of Genomic Variants</option>
+      <option value="/applications/annotation/variants/exomesequencingpro/"  selected>--- Exome Sequencing Project</option>
+      <option value="/applications/annotation/variants/gwas/" >--- gwasCatalog</option>
+      <option value="/applications/annotation/variants/hapmap/" >--- HapMap</option>
+      <option value="/applications/annotation/variants/thousand/" >--- Thousand Genomes</option>
+  
+    <option value="/applications/annotation/regions/" >
+  -- 
+   Regions</option>
+    <option value="/applications/annotation/misc/" >
+  -- 
+   Misc</option>
+  
+      <option value="/applications/discovery/" >- Discovery</option>
+    <option value="/applications/association/" >
+  - 
+   Association</option>
+  
+    <option value="/development/" >
+   Development</option>
+    <option value="/administration/" >
+   Administration</option>
+    <option value="/under-development/" >
+   Under development</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js"></script>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js"></script>
+        <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+          
+        </script>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js"></script>
+      </div>
+    
+
+    <h1>Exome Sequencing Project</h1>
+    
+    
+    
+    
+
+<h1 id="variants-from-the-exome-sequencing-project-esp">Variants from the Exome Sequencing Project (ESP)</h1>
+
+<p>The EVS annotation source contains exome sequencing variants retrieved from the <strong>Exome Variant Server (EVS)</strong> for the NHLBI Exome Sequencing Project (ESP). The <code>evs</code> annotation data was generated from approximately 2500 exomes and <code>evs_5400</code> from approximately 5400 exomes. (7500 exomes are the next milestone for this project in the next couple of months - see their website for project details: <a href="http://evs.gs.washington.edu/EVS/" target="_blank">http://evs.gs.washington.edu/EVS/</a>). Currently minor allele frequencies are given for European American and African American populations - see below for additional fields that you can use for variant selection and annotation.</p>
+
+<p>The data in <code>evs</code> annotation source was retrieved from the project website on November 7, 2011, and <code>evs_5400</code> was retrieved on December 15, 2011. If you find this data useful please cite their project:</p>
+
+<p>*Exome Variant Server, NHLBI Exome Sequencing Project (ESP), Seattle, WA (URL: <strong><a href="http://evs.gs.washington.edu/EVS/" target="_blank">http://evs.gs.washington.edu/EVS/</a></strong>) [December 15, 2011] (or [November 7, 2011] for the 2500 exome version)*</p>
+
+<h3 id="available-databases">Available databases</h3>
+
+<p>You should run the following command to see the availability of most recent version of the evs database:</p>
+
+<pre><code>% vtools show annotations evs ESP
+
+
+ESP-6500SI-V2-SSA137    NHLBI GO Exome Sequencing Project (Exome Variant
+                        Server, NHLBI Exome Sequencing Project (ESP), Seattle,
+                        WA (URL: http://evs.gs.washington.edu/EVS/) [6500
+                        samples, February, 2013].)
+ESP                     NHLBI GO Exome Sequencing Project (Exome Variant
+                        Server, NHLBI Exome Sequencing Project (ESP), Seattle,
+                        WA (URL: http://evs.gs.washington.edu/EVS/) [6500
+                        samples, February, 2013].)
+evs-6500                NHLBI GO Exome Sequencing Project (Exome Variant
+                        Server, NHLBI Exome Sequencing Project (ESP), Seattle,
+                        WA (URL: http://evs.gs.washington.edu/EVS/) [6500
+                        samples, February, 2013].)
+evs-hg19_20111107       NHLBI GO Exome Sequencing Project (Exome Variant
+                        Server,  NHLBI Exome Sequencing Project (ESP),
+                        Seattle, WA (URL: http://evs.gs.washington.edu/EVS/)
+                        [November, 2011].)
+evs                     NHLBI GO Exome Sequencing Project (Exome Variant
+                        Server, NHLBI Exome Sequencing Project (ESP), Seattle,
+                        WA (URL: http://evs.gs.washington.edu/EVS/) [6500
+                        samples, February, 2013].)
+evs_5400                NHLBI GO Exome Sequencing Project (Exome Variant
+                        Server,  NHLBI Exome Sequencing Project (ESP),
+                        Seattle, WA (URL: http://evs.gs.washington.edu/EVS/)
+                        [5400 samples, December, 2011].)
+
+
+
+
+% vtools show annotation ESP
+
+
+Description:            NHLBI GO Exome Sequencing Project (Exome Variant
+  Server, NHLBI Exome Sequencing Project (ESP), Seattle, WA (URL:
+  http://evs.gs.washington.edu/EVS/) [6500 samples, February, 2013].)
+Database type:          variant
+Number of records:      1,998,204
+Distinct variants:      1,998,173
+Reference genome hg19:  chr, pos, ref, alt
+
+Field:                  chr
+Type:                   string
+Comment:                Chromosome that the variant was found in.
+Missing entries:        0
+Unique Entries:         24
+
+Field:                  pos
+Type:                   integer
+Comment:                Location on the chromosome (NCBI 37 or hg19), 1-based.
+Missing entries:        0
+Unique Entries:         1,979,319
+Range:                  5994 - 249212579
+
+Field:                  rs_id
+Type:                   string
+Comment:                dbSNP reference SNP identifier (if available)
+Missing entries:        1,068,352 (53.5% of 1,998,204 records)
+Unique Entries:         921,262
+
+Field:                  ref
+Type:                   string
+Comment:                Variant alternate allele.
+Missing entries:        0
+Unique Entries:         8,026
+
+Field:                  alt
+Type:                   string
+Comment:                Reference allele.
+Missing entries:        0
+Unique Entries:         2,084
+
+Field:                  dbSNPVersion
+Type:                   string
+Comment:                dbSNP version which established the rs_id
+Missing entries:        0
+Unique Entries:         57
+
+Field:                  EuropeanAmericanAltCount
+Type:                   integer
+Comment:                The observed ref allele counts for the European
+                        American population. Allele counts only include
+                        genotypes with quality &gt;= 30 and read depth &gt;= 10.
+Missing entries:        0
+Unique Entries:         8,517
+Range:                  0 - 8600
+
+Field:                  EuropeanAmericanRefCount
+Type:                   integer
+Comment:                The observed ref allele counts for the European
+                        American population. Allele counts only include
+                        genotypes with quality &gt;= 30 and read depth &gt;= 10.
+Missing entries:        0
+Unique Entries:         8,599
+Range:                  0 - 8600
+
+Field:                  AfricanAmericanAltCount
+Type:                   integer
+Comment:                The observed alt allele counts for the African
+                        American population. Allele counts only include
+                        genotypes with quality &gt;= 30 and read depth &gt;= 10.
+Missing entries:        0
+Unique Entries:         4,406
+Range:                  0 - 4406
+
+Field:                  AfricanAmericanRefCount
+Type:                   integer
+Comment:                The observed ref allele counts for the African
+                        American population. Allele counts only include
+                        genotypes with quality &gt;= 30 and read depth &gt;= 10.
+Missing entries:        0
+Unique Entries:         4,407
+Range:                  0 - 4406
+
+Field:                  AllAltCount
+Type:                   integer
+Comment:                The observed alt allele counts for all populations.
+                        Allele counts only include genotypes with quality &gt;=
+                        30 and read depth &gt;= 10.
+Missing entries:        0
+Unique Entries:         12,543
+Range:                  0 - 13005
+
+Field:                  AllRefCount
+Type:                   integer
+Comment:                The observed ref allele counts for all populations.
+                        Allele counts only include genotypes with quality &gt;=
+                        30 and read depth &gt;= 10.
+Missing entries:        0
+Unique Entries:         12,971
+Range:                  0 - 13005
+
+Field:                  EuropeanAmericanMaf
+Type:                   float
+Comment:                The European American minor-allele frequency in
+                        percent.
+Missing entries:        0
+Unique Entries:         67,810
+Range:                  0 - 0.650641
+
+Field:                  AfricanAmericanMaf
+Type:                   float
+Comment:                The African American minor-allele frequency in
+                        percent.
+Missing entries:        0
+Unique Entries:         75,477
+Range:                  0 - 0.652047
+
+Field:                  AllMaf
+Type:                   float
+Comment:                The minor-allele frequency in percent for all
+                        populations.
+Missing entries:        0
+Unique Entries:         85,231
+Range:                  7.7e-05 - 0.652174
+
+Field:                  AvgSampleReadDepth
+Type:                   integer
+Comment:                The average sample read depth.
+Missing entries:        0
+Unique Entries:         795
+Range:                  1 - 2855
+
+Field:                  Genes
+Type:                   string
+Comment:                One or more genes for which the SNP is in the coding
+                        region (CCDS).
+Missing entries:        0
+Unique Entries:         19,395
+
+Field:                  GeneAccession
+Type:                   string
+Comment:                NCBI mRNA transcripts accession number.
+Missing entries:        1,998,204 (100.0% of 1,998,204 records)
+
+Field:                  FunctionGvs
+Type:                   string
+Comment:                The GVS functions are calculated by the Exome Variant
+                        Server; they are based on the alleles for all
+                        populations and individuals; the bases in the coding
+                        region are divided into codons (if a multiple of 3),
+                        and the resulting amino acids are examined.
+Missing entries:        0
+Unique Entries:         157,919
+
+Field:                  AminoAcidChange
+Type:                   string
+Comment:                The corresponding amino acid change for a SNP.
+Missing entries:        1,998,204 (100.0% of 1,998,204 records)
+
+Field:                  ProteinPos
+Type:                   string
+Comment:                The coresponding amino acid postion in a protein
+                        relative to the whole protein length.
+Missing entries:        1,998,204 (100.0% of 1,998,204 records)
+
+Field:                  cDNAPos
+Type:                   integer
+Comment:                The coresponding cDNA postion for a SNP.
+Missing entries:        1,998,204 (100.0% of 1,998,204 records)
+
+Field:                  ConservationScorePhastCons
+Type:                   float
+Comment:                A number between 0 and 1 that describes the degree of
+                        sequence conservation among 17 vertebrate species;
+                        these numbers are downloaded from the UCSC Genome site
+                        and are defined as the &quot;posterior probability that the
+                        corresponding alignment column was generated by the
+                        conserved state of the phylo-HMM, given the model
+                        parameters and the multiple alignment&quot; (see UCSC
+                        description).
+Missing entries:        0
+Unique Entries:         12
+Range:                  0 - .
+
+Field:                  ConservationScoreGERP
+Type:                   float
+Comment:                The rejected-substitution score from the program GERP,
+                        a number between -11.6 and 5.82 that describes the
+                        degree of sequence conservation among 34 mammalian
+                        species, with 5.82 being the most conserved; these
+                        scores were provided by Gregory M. Cooper of the
+                        University of Washington Department of Genome Sciences
+                        to the EVS project.
+Missing entries:        0
+Unique Entries:         187
+Range:                  -12.3 - .
+
+Field:                  GranthamScore
+Type:                   integer
+Comment:                Grantham Scores categorize codon replacements into
+                        classes of increasing chemical dissimilarity based on
+                        the publication by Granthan R.in 1974, Amino acid
+                        difference formula to help explain protein evolution.
+                        Science 1974 185:862-864.
+Missing entries:        0
+Unique Entries:         9,363
+Range:                  5 - 99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99
+
+Field:                  PolyPhenPrediction
+Type:                   string
+Comment:                Prediction of possible impact of an amino acid
+                        substitution on protein structure and function based
+                        on Polymorphism Phenotyping (PolyPhen) program.
+Missing entries:        0
+Unique Entries:         23,374
+
+Field:                  ChimpAllele
+Type:                   string
+Comment:                Chimp alleles are acquired from UCSC human/chimp
+                        alignment files. If the variation does not fall within
+                        an alignment block, or if it is an indel, the chimp
+                        allele is listed as &quot;unknown&quot;. If the variation falls
+                        within a gap in the alignment, it is listed as &quot;-&quot;.
+Missing entries:        0
+Unique Entries:         6
+
+Field:                  ClinicalLink
+Type:                   string
+Comment:                The potential clinical implications associated with a
+                        SNP (limited).
+Missing entries:        0
+Unique Entries:         5,918
+
+Field:                  ExomeChip
+Type:                   string
+Comment:                Whether a SNP is on the Illumina HumanExome Chip
+Missing entries:        0
+Unique Entries:         2
+
+Field:                  FilterStatus
+Type:                   string
+Comment:                A machine-learning technique called support vector
+                        machine (SVM) classification was applied for variant
+                        filtering. After the initial SNP calls were generated,
+                        we re-examined the BAM files to collect additional
+                        information about each variant site. Based on the
+                        information, variants are initially filtered by
+                        individual thresholds. For example, variants with
+                        posterior probability &lt;99% (glfMultiples SNP quality
+                        &lt;20), were &lt;5bp away from an indel detected in the
+                        1000 Genomes Pilot Project, had total depth across
+                        samples of &lt;5,379 or &gt;5,379,000 reads (~1-1000 reads
+                        per sample), having &gt;65% of reads as heterozygotes
+                        carrying the variant allele or where the absolute
+                        squared correlation between allele (variant or
+                        reference) and strand (forward or reverse) was &gt;0.15
+                        were marked as problematic SNPs. Sites failed 3 or
+                        more criteria are used as negative examples to train
+                        SVM classifier. HapMap3 and OMNI polymorphic sites
+                        were used as positive examples. The SVM classifier
+                        produces scores for each site, and we marked ~8.5% of
+                        sites at threshold 0.3 as SVM filter-failed. The
+                        unfiltered set had Ti/Tv = 2.63, and the filtered set
+                        had Ti/Tv =2.78.
+Missing entries:        0
+Unique Entries:         1
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/" title="Database of Genomic Variants"> <i class="fa fa-chevron-left"></i><label>Database of Genomic Variants</label></a>
+    <a class="nav nav-next" href="https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/" title="gwasCatalog" style="margin-right: 0px;"><label>gwasCatalog</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+  
+
+    <div class="github-link">
+      <a href="Applications/Annotation/Variants/exomesequencingpro.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
+</footer>
+
+<script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js"></script>
+
+<link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css" rel="stylesheet">
+<script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js"></script>
+
+
+
+<script src="https://vatlab.github.io/vat-docs/theme-flex/script.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

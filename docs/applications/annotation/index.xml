@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Annotation on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/applications/annotation/</link>
+    <description>Recent content in Annotation on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/annotation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/introduction/</guid>
+      <description>Variant annotation using variant tools Annotation Functions of Variant tools Variant, info fields, and annotation fields Variants in a variant tools project are stored in a master variant table after they are imported? from external data files. Multiple variant info fields could be added to this table to describe these variant. These fields could be imported from a file? when variants are imported, or updated? from files after variants are imported, calculated from samples as sample statistics, or derived from other variant info or annotation fields.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</guid>
+      <description>Annotating variants using multiple annotation databases, a tutorial Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases. If you do no want to wait for the downloads and if you have enough disk space, you can download all variant tools resources into your local resource directory using the following commands:</description>
+    </item>
+    
+    <item>
+      <title>Customized annotation databases</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/customized/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/customized/</guid>
+      <description>Create annotation database Because you write your own .ann file, please consider using pipelines in anno_utils, which can usually create .ann file from some data sources with pre-defined formats.
+Define a new annotation database If you would like to use an annotation source that is not currently supported by variant tools, you could send us and email if the data source is publicly available, or write an annotation specification file to create your own annotation database.</description>
+    </item>
+    
+  </channel>
+</rss>

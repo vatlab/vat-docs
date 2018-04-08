@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Application on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/applications/</link>
+    <description>Recent content in Application on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Discovery</title>
+      <link>https://vatlab.github.io/vat-docs/applications/discovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/discovery/</guid>
+      <description>Discover informative variants from a large number of variants Introduction Once you have imported? variants and samples of an exome or whole-genome sequencing project, you are typically facing a master variant table with millions of variants. Depending on the phenotypes of interest and particular research topics, you might want to filter variants for subsequent association analysis, or select variants that are more informative than others for further lab-based analysis. For example, you might be interested in</description>
+    </item>
+    
+  </channel>
+</rss>

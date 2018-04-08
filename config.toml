@@ -1,4 +1,4 @@
-baseurl = "https://vatlab.github.io/blog/"
+baseurl = "https://vatlab.github.io/vat-docs/"
 languageCode = "en-us"
 title = "vatlab"
 publishDir = 'docs'

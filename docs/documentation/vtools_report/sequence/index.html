@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vatlab</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.36.1" />
+<title>sequence :: vatlab</title>
+<link rel="shortcut icon" href="https://vatlab.github.io/vat-docs/images/favicon.png" type="image/x-icon" />
+<link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://vatlab.github.io/vat-docs/css/nucleus.css" rel="stylesheet">
+<link href="https://vatlab.github.io/vat-docs/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://vatlab.github.io/vat-docs/css/bootstrap.min.css">
+<script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+</script>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/documentation/vtools_report/sequence/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://vatlab.github.io/vat-docs/">vatlab</a>
+  
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="https://vatlab.github.io/vat-docs/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/install/" class="dd-item
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/install/">Installation</a>
+      </div>
+    </li>
+    <li data-nav-id="/documentation/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/">Documentation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/keyconcepts/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/keyconcepts/">
+            Key concepts
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/tutorials/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/tutorials/">
+            Tutorials
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/help/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/help/">
+            Help
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/vtools-commands/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/">Vtools commands</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/vtools-commands/init/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/init/">
+            Init
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/import/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/">
+            Import
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/update/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/">
+            Update
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/phenotype/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/phenotype/">
+            Phenotype
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/liftover/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/liftover/">
+            lifttover
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/show/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/show/">
+            show
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/use/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/">
+            use
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/select/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/select/">
+            select
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/exclude/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/exclude/">
+            exclude
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/compare/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/compare/">
+            compare
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/associate/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/">
+            associate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/output/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/">
+            output
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/export/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/">
+            export
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/remove/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/remove/">
+            remove
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/execute/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/execute/">
+            execute
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/admin/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/">
+            admin
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/functions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/functions/">Functions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/functions/ref_sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/ref_sequence/">
+            ref_sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/mut_sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/mut_sequence/">
+            mut_sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/track/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/track/">
+            track
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/genotype/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/genotype/">
+            Genotype
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/samples/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/samples/">
+            samples
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/in_table/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/in_table/">
+            in_table
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/otherfunctions/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/">
+            Other functions
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/vtools_report/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/">Vtools_report</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/vtools_report/avg_depth/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/">
+            avg_depth
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/discordance_rate/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/discordance_rate/">
+            discordance_rate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/sam_info/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/">
+            sam_info
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/sequence/" class="dd-item active">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sequence/">
+            sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/trans_ratio/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/">
+            trans_ratio
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/variant_stat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/variant_stat/">
+            variant_stat
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/inbreeding_coefficient/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/inbreeding_coefficient/">
+            inbreeding_coefficient
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/transmission/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/transmission/">
+            transmission
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/meta_analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/meta_analysis/">
+            meta_analysis
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_fields/">
+            plot_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_geno_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/">
+            plot_geno_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_pheno_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_pheno_fields/">
+            plot_pheno_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_association/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_association/">
+            plot_association
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/customization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/">Customization</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/format/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/format/">
+            Format
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/customization/simulation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/">Simulation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/simulation/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/customization/simulation/custimzedsimu/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/custimzedsimu/">
+            Customized simulations
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/customization/simulation/models/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/">Models</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/simulation/models/peng1/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/">
+            Peng2014_ex1
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/customization/simulation/models/pen2/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/">
+            Peng2014_ex2
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/customizedpipeline/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/">
+            Customized pipeline
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/pipelines/variant-calling/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/">Variant calling</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_hg19/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/">
+            bwa_gatk33_hg19
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_b37/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/">
+            bat_gatk33_b37
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_hg19/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/">
+            bwa_gatk28_hg19
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_b37/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/">
+            bwa_gatk28_b37
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/pipelines/other-pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/">Other pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/import_vcf/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/import_vcf/">
+            import_vcf
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/anno_utils/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/anno_utils/">
+            anno_utils
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/transmission/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/transmission/">
+            transmission
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/illumina/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/illumina/">
+            Illumnina
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/annovar/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/annovar/">
+            ANNOVAR
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/snpeff/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/snpeff/">
+            snpEff
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/king/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/king/">
+            KING
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/utilities/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/utilities/">Utilities</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/utilities/report_progress/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/utilities/report_progress/">
+            report_progress
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/utilities/_md5sumd/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/utilities/_md5sumd/">
+            md5sumd
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/">Application</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/applications/annotation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/">Annotation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/tutorial/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/tutorial/">
+            Tutorial
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/customized/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/customized/">
+            Customized annotation databases
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/annotation/genes/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/">Genes</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/genes/ccdsgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/">
+            ccdsGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/hugogene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/">
+            Hugo gene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/entrezgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/entrezgene/">
+            EntrezGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/knowngene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/knowngene/">
+            knownGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/refgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/refgene/">
+            refGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/cancergenecensus/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/cancergenecensus/">
+            CancerGeneCensus
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/variants/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/">Variants</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/variants/cosmic/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/">
+            COSMIC
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/dbnsfp/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/">
+            sbNSFP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/dbsnp/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/">
+            dbSNP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/linkagephysicalmap/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/">
+            linkage-physical map
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/databaseof/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/">
+            Database of Genomic Variants
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/exomesequencingpro/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/">
+            Exome Sequencing Project
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/gwas/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/">
+            gwasCatalog
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/hapmap/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/hapmap/">
+            HapMap
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/thousand/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/thousand/">
+            Thousand Genomes
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/regions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/">Regions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/regions/low-complexity-regions/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/low-complexity-regions/">
+            Low complexity regions
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/phast-cons/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/phast-cons/">
+            Phast cons
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/genomic-super-dups/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic-super-dups/">
+            Genomic super dups
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/cytoband/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/">
+            cytoBand
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/misc/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/">Misc</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/misc/illumina/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/">
+            Illumina
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/misc/keggpathway/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/keggpathway/">
+            keggPathway
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/misc/encode/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/encode/">
+            ENCODE
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/applications/discovery/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/discovery/">
+            Discovery
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/association/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/">Association</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/data-explorationqc/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/">
+            Data exploration/QC
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/association-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/association-analysis/">
+            Association analysis
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/post-assoc-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/">
+            Post-assoc analysis
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/association/basic-data-statistics/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/">Basic data statistics</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/basic-data-statistics/group-statwrite/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/">
+            Group stat&amp;Write
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/single-variant-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/">Single variant analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/single-variant-analysis/fisher-exact-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/">
+            Fisher exact test
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/single-gene-association-methods/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/">Single gene association methods</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/single-gene-association-methods/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/cmc-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/cmc-test/">
+            CMC test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/c_alpha-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/">
+            C-alpha test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/kbac-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/kbac-test/">
+            KBAC test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/rbt-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rbt-test/">
+            RBT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/rarecover-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rarecover-test/">
+            RareCover test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/vt-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/vt-test/">
+            VT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/wss-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/wss-test/">
+            WSS test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/asum-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/asum-test/">
+            aSum test
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/jointconditional-association-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/">Joint/Conditional association analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/collapsing-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/">
+            Collapsing methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/aggregation-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/">
+            Aggregation methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/weighted-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/">
+            Weighted methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/variable-thresholds/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/">
+            Variable thresholds
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/skat-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/skat-test/">
+            SKAT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/metaskat-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/">
+            MetaSKAT analysis
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/vat-stacking/" class="dd-item
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/vat-stacking/">VAT stacking</a>
+      </div>
+    </li>
+    <li data-nav-id="/applications/association/create-your-test/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/">Create your test!</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/create-your-test/running-r-programs/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/running-r-programs/">
+            Running R programs
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/create-your-test/programming-in-vat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/programming-in-vat/">
+            Programming in VAT
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/view-association-result/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/view-association-result/">View association result</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/view-association-result/qq-plot-and-manhattan-plot/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/">
+            QQ plot and Manhattan plot
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/development/chagelog/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/development/chagelog/">
+            ChangeLog
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/development/getinvolved/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/development/getinvolved/">
+            Get Involved
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/administration/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/administration/">Administration</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/administration/allrecent/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/allrecent/">
+            All recent changes
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/autolink/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/autolink/">
+            Autolink
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/stylesheet/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/stylesheet/">
+            Style sheet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/trafficstat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/trafficstat/">
+            Traffic statistics
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/under-development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/under-development/">Under development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/under-development/faq/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/under-development/faq/">
+            FAQ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/install/" >
+   Installation</option>
+    <option value="/documentation/" >
+   Documentation</option> 
+      <option value="/documentation/keyconcepts/" >- Key concepts</option>
+      <option value="/documentation/tutorials/" >- Tutorials</option>
+      <option value="/documentation/help/" >- Help</option>
+    <option value="/documentation/vtools-commands/" >
+  - 
+   Vtools commands</option>
+    <option value="/documentation/functions/" >
+  - 
+   Functions</option>
+    <option value="/documentation/vtools_report/" >
+  - 
+   Vtools_report</option> 
+      <option value="/documentation/vtools_report/avg_depth/" >-- avg_depth</option>
+      <option value="/documentation/vtools_report/discordance_rate/" >-- discordance_rate</option>
+      <option value="/documentation/vtools_report/sam_info/" >-- sam_info</option>
+      <option value="/documentation/vtools_report/sequence/"  selected>-- sequence</option>
+      <option value="/documentation/vtools_report/trans_ratio/" >-- trans_ratio</option>
+      <option value="/documentation/vtools_report/variant_stat/" >-- variant_stat</option>
+      <option value="/documentation/vtools_report/inbreeding_coefficient/" >-- inbreeding_coefficient</option>
+      <option value="/documentation/vtools_report/transmission/" >-- transmission</option>
+      <option value="/documentation/vtools_report/meta_analysis/" >-- meta_analysis</option>
+      <option value="/documentation/vtools_report/plot_fields/" >-- plot_fields</option>
+      <option value="/documentation/vtools_report/plot_geno_fields/" >-- plot_geno_fields</option>
+      <option value="/documentation/vtools_report/plot_pheno_fields/" >-- plot_pheno_fields</option>
+      <option value="/documentation/vtools_report/plot_association/" >-- plot_association</option>
+  
+    <option value="/documentation/customization/" >
+  - 
+   Customization</option>
+    <option value="/documentation/pipelines/" >
+  - 
+   Pipelines</option>
+    <option value="/documentation/utilities/" >
+  - 
+   Utilities</option>
+  
+    <option value="/applications/" >
+   Application</option>
+    <option value="/development/" >
+   Development</option>
+    <option value="/administration/" >
+   Administration</option>
+    <option value="/under-development/" >
+   Under development</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js"></script>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js"></script>
+        <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+          
+        </script>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js"></script>
+      </div>
+    
+
+    <h1>sequence</h1>
+    
+    
+    
+    
+
+<h1 id="output-dna-and-protein-sequence-at-specified-chromosome-regions">Output DNA and protein sequence at specified chromosome regions</h1>
+
+<h2 id="usage">Usage</h2>
+
+<pre><code>% vtools_report sequence -h
+
+
+usage: vtools_report sequence [-h] [--build [BUILD]]
+                              [--numbered [{left,right}]]
+                              [--char_per_line CHAR_PER_LINE]
+                              [--transcribe [GENE [GENE ...]]]
+                              [--translate [GENE [GENE ...]]]
+                              [--mark [MARK [MARK ...]]] [--mark_complement]
+                              [--mark_reverse] [--hide_unmatched]
+                              [-v {0,1,2,3}]
+                              regions [regions ...]
+
+positional arguments:
+  regions               One or more chromosome regions in the format of chr
+                        :start-end (e.g. chr21:33,031,597-33,041,570),
+                        Field:Value from a region-based annotation database
+                        (e.g. refGene.name2:TRIM2 or
+                        refGene_exon.name:NM_000947), or set options of
+                        several regions (&amp;, |, -, and ^ for intersection,
+                        union, difference, and symmetric difference). Several
+                        regions will be printed if the name matches more than
+                        one regions. Chromosome positions are 1-based and are
+                        inclusive at both ends so the chromosome region has a
+                        length of end-start+1 bp. A reversed complementary
+                        sequence will be outputted if starting position is
+                        after the ending position.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --build [BUILD]       Output sequence at specified build of reference
+                        genome. The primary reference genome of the project
+                        will be used if by default.
+  --numbered [{left,right}]
+                        If specified, add position of the first or last
+                        basepair of each line to the left or right of the
+                        line, and insert a space at every 10 basepair
+  --char_per_line CHAR_PER_LINE
+                        Number of characters (excluding space and leading
+                        numbers) per line. Default to 70 in regular and 60 in
+                        numbered format.
+  --transcribe [GENE [GENE ...]]
+                        Transcribe DNA sequence into RNA sequence. variant
+                        tools will look in the refGene database, find all
+                        genes that overlap with the region, locate exons and
+                        coding regions, transcribe the DNA sequence to RNA
+                        sequence (basically discard introns, and complement if
+                        on reverse strand). The complete mRNA sequence will be
+                        printed regardless of the bounaries of specified
+                        regions. If one or more names (refGene.name) are
+                        specified, only specified genes will be translated.
+  --translate [GENE [GENE ...]]
+                        Translate DNA sequence into protein sequence. variant
+                        tools will look in the refGene database, find all
+                        genes that overlap with the region, locate exons and
+                        coding regions, transcribe and translate the DNA
+                        sequence to protein sequence. The complete protein
+                        sequence will be printed regardless of the boundaries
+                        of specified regions. If one or more names
+                        (refGene.name) are specified, only specified genes
+                        will be translated.
+  --mark [MARK [MARK ...]]
+                        Mark a location (--mark chr pos), a variant (--mark
+                        chr pos ref alt), a region (e.g.
+                        refGene_exon.name:NM_000947), or a particular sequence
+                        (e.g. TCGGA) in red in the output. If a variant is
+                        specified, the changed nucleotide or amino acid will
+                        be printed. Currently only single nucleotide
+                        polymorphisms are supported.
+  --mark_complement     If set, also try to mark the complement of the
+                        specified sequence
+  --mark_reverse        If set, also try to mark the reverse sequence of the
+                        specified sequence. If both mark_complemnt and
+                        mark_reverse are set, four different sequences will be
+                        searched.
+  --hide_unmatched      If set, only display regions with marked variants or
+                        sequences
+  -v {0,1,2,3}, --verbosity {0,1,2,3}
+                        Output error and warning (0), info (1), debug (2) and
+                        trace (3) information to standard output (default to
+                        1).
+</code></pre>
+
+<h2 id="details">Details</h2>
+
+<h3 id="output-dna-sequence-at-specified-regions">Output DNA sequence at specified regions</h3>
+
+<pre><code>% vtools init test
+% vtools_report sequence chr6:123456-123743 --build hg19
+
+
+&gt;ref|hg19|chr6:123456-123743
+TTCCTGGAGTATTTTTCCCCTGACAAATTACTTATCATCTATCATAATTCAGGTTAAATGGCACTAACTC
+AGGGAAGGCTTCCCTAACTGCCTCCCTTCTCCAACCAAATTAGGAACAATTATATGGCCACATAGTATCG
+AATCAAGTTTATAATTTTAAAATAATTGGGAGATTTTGTTGTTTAACACTTGTTTTCACTATAAGACTGT
+AATTACATGCAAGTAAGAACCATGCCTGTTTGTTCACTCCTGCCACAGTCAGAATAGTGCCTGGAATATG
+CAGTAAGG
+</code></pre>
+
+<p>Here we need to explicitly specify a reference genome because the project is empty and does not have a primary reference genome.</p>
+
+<p>You can also output multiple sequences, or sequences in reverse order (on the - strand) if you specify a starting position that is larger than the ending position.</p>
+
+<pre><code>% vtools_report sequence chr6:123456-123743 chr6:123743-123456 --build hg19
+
+
+&gt;ref|hg19|chr6:123456-123743
+TTCCTGGAGTATTTTTCCCCTGACAAATTACTTATCATCTATCATAATTCAGGTTAAATGGCACTAACTC
+AGGGAAGGCTTCCCTAACTGCCTCCCTTCTCCAACCAAATTAGGAACAATTATATGGCCACATAGTATCG
+AATCAAGTTTATAATTTTAAAATAATTGGGAGATTTTGTTGTTTAACACTTGTTTTCACTATAAGACTGT
+AATTACATGCAAGTAAGAACCATGCCTGTTTGTTCACTCCTGCCACAGTCAGAATAGTGCCTGGAATATG
+CAGTAAGG
+&gt;ref|hg19|chr6:123456-123743 (reversed)
+GGAATGACGTATAAGGTCCGTGATAAGACTGACACCGTCCTCACTTGTTTGTCCGTACCAAGAATGAACG
+TACATTAATGTCAGAATATCACTTTTGTTCACAATTTGTTGTTTTAGAGGGTTAATAAAATTTTAATATT
+TGAACTAAGCTATGATACACCGGTATATTAACAAGGATTAAACCAACCTCTTCCCTCCGTCAATCCCTTC
+GGAAGGGACTCAATCACGGTAAATTGGACTTAATACTATCTACTATTCATTAAACAGTCCCCTTTTTATG
+AGGTCCTT
+</code></pre>
+
+<p>A non-standard, but easier-to-read numbered format could be outputted using option <code>--numbered</code>:</p>
+
+<pre><code>% vtools_report sequence chr6:123456-123743 chr6:123743-123456 --numbered --build hg19
+
+
+&gt;ref|hg19|chr6:123456-123743
+123456 TTCCTGGAGT ATTTTTCCCC TGACAAATTA CTTATCATCT ATCATAATTC AGGTTAAATG
+123516 GCACTAACTC AGGGAAGGCT TCCCTAACTG CCTCCCTTCT CCAACCAAAT TAGGAACAAT
+123576 TATATGGCCA CATAGTATCG AATCAAGTTT ATAATTTTAA AATAATTGGG AGATTTTGTT
+123636 GTTTAACACT TGTTTTCACT ATAAGACTGT AATTACATGC AAGTAAGAAC CATGCCTGTT
+123696 TGTTCACTCC TGCCACAGTC AGAATAGTGC CTGGAATATG CAGTAAGG
+&gt;ref|hg19|chr6:123456-123743 (reversed)
+123743 GGAATGACGT ATAAGGTCCG TGATAAGACT GACACCGTCC TCACTTGTTT GTCCGTACCA
+123683 AGAATGAACG TACATTAATG TCAGAATATC ACTTTTGTTC ACAATTTGTT GTTTTAGAGG
+123623 GTTAATAAAA TTTTAATATT TGAACTAAGC TATGATACAC CGGTATATTA ACAAGGATTA
+123563 AACCAACCTC TTCCCTCCGT CAATCCCTTC GGAAGGGACT CAATCACGGT AAATTGGACT
+123503 TAATACTATC TACTATTCAT TAAACAGTCC CCTTTTTATG AGGTCCTT
+</code></pre>
+
+<p>The default value for parameter <code>--numbered</code> is <code>left</code>. You can also put the numbers to the right (referring to the 1-based position of the last base pair of each line) using option <code>--numbered right</code>,</p>
+
+<pre><code>% vtools_report sequence chr6:123456-123743 chr6:123743-123456 --numbered right --build hg19
+
+
+&gt;ref|hg19|chr6:123456-123743
+TTCCTGGAGT ATTTTTCCCC TGACAAATTA CTTATCATCT ATCATAATTC AGGTTAAATG 123515
+GCACTAACTC AGGGAAGGCT TCCCTAACTG CCTCCCTTCT CCAACCAAAT TAGGAACAAT 123575
+TATATGGCCA CATAGTATCG AATCAAGTTT ATAATTTTAA AATAATTGGG AGATTTTGTT 123635
+GTTTAACACT TGTTTTCACT ATAAGACTGT AATTACATGC AAGTAAGAAC CATGCCTGTT 123695
+TGTTCACTCC TGCCACAGTC AGAATAGTGC CTGGAATATG CAGTAAGG              123743
+&gt;ref|hg19|chr6:123456-123743 (reversed)
+GGAATGACGT ATAAGGTCCG TGATAAGACT GACACCGTCC TCACTTGTTT GTCCGTACCA 123684
+AGAATGAACG TACATTAATG TCAGAATATC ACTTTTGTTC ACAATTTGTT GTTTTAGAGG 123624
+GTTAATAAAA TTTTAATATT TGAACTAAGC TATGATACAC CGGTATATTA ACAAGGATTA 123564
+AACCAACCTC TTCCCTCCGT CAATCCCTTC GGAAGGGACT CAATCACGGT AAATTGGACT 123504
+TAATACTATC TACTATTCAT TAAACAGTCC CCTTTTTATG AGGTCCTT              123456
+</code></pre>
+
+<h3 id="specify-regions-by-gene-and-other-names">Specify regions by gene and other names</h3>
+
+<p>The regions could also be specified using <code>field_name:value</code> of a linked annotation database. For example, if you have used annotation database <code>refGene_exon</code> in your project, you could list the sequence of all exons in a gene using command</p>
+
+<pre><code>% vtools use refGene_exon
+% vtools_report sequence refGene_exon.name2:ABRA -v0
+
+
+&gt;ref|hg19|chr8:107773742-107771711 (refGene_exon.name2:ABRA 1)
+TACAAGAAAACATCTTTTATTCTTATGCTATTTGTCTTTAACATTTGGCGTAGGTTTCACTTGTAATAGA
+AGTGTGCATCTTACATGAAATCCTACTTAGAAATATTGGTCATTAACTTATAGCTTTATAAATACGGTAT
+GGAAACAAAATACGCATACTTTCTTAAGATACCAGAACCTTCAGTTTGAAAGAGACTCATACATGAAAAC
+AAATATAATTCTTATAGCAGTCTAATACCTATTATTTTGAGGTATCATATTTAGACATTAATTTTTACAT
+TTAACACCAAAGTGCTATACTATCAATGCATTTTAGTAATTTCATTGAATCCAGTAAGAATTGCAATCTC
+ACATTCCATTCCATTTGTTTTTAAGATCACATAGGCACATTAATGTCCAATGATTTTCTCCTTGCCATCA
+TCATTGTATATTTTTTACTTTGGCAGAACTAATATTGCAGTTTTATGACTTAAACATTTCATAAAGTTTT
+CTTTGTTACAGTATGAGGAACATTAAACTGTCTCAAATCTGTTTTTAATTCACCAATGATTCTATGGGAT
+TTTTCTAATACTGAACATTCCACTTCATAGATTTTCTGTATTTCTCCATTGTTGGAGAAATACATATCAT
+TGCATTGATGTTAATGCAAGCAGCTTGACTCGTTATATGCTGACATGTAATGAAACAATAAACTTCTCCA
+AGAAGTCCTACAAAGGCAAGTAAATCTGAATCTCTCACCTCTGCTCTACTTTTAGTGAGGGTGTGCCTTC
+CTTTGTTGGTACTAAGACAGGAAGTGTCTGTTTTTATGTGATTTGCTGAAATCAAACAAGAGGAAGGTGA
+ACTCTTACTGGAAACCTGTTAGAATCCAAGCCCACAGAGGAACTTCAACAATTTCAGCAACATCTTGACA
+ACTTTTTATATATGTGCTTGTTTTGTAAGTGATGCTATGATATAAACAATAATACAAAGTCAAGCTTCTG
+AAAAAATTTTAAGTTTAGTTTTACCAAACTTAATGGTATTTTCTTTTTTCCAAATAAAGACACATTATTA
+TATGTTCTACTGATATTTATCTCAAGTCAGCATTCTTCTTAGATGTAATGTTTAATTAAAAATCTATAGT
+AGTTTCTACAATGACTAGCTAAATATTTTGCCTAAAATATACAAGTGGCTGGGTGCTGTTGCTCATGCCT
+ATAATCCCAGCTACTTGGGAGGCTGAGGTGAGAGGATCACTTGAGGCCAGGAGTTAAAAGACCAGCTTTG
+GTGACATAAAGAGAATCTGTCTCAAAACAAAAACAAAAACACCCTGTGGAATTTCAACTATTAATACTAT
+TATTATACATTAACATTCTATGTGCTTTCTGAAATGCTTTGTGCCTTCTCAAAATCTCCAAAATTCCTCA
+TTCTAGATAGAAATAGAATGCCAGAAAGTCGTTTATGTAAAAATTGTTTAATATTTACTAACTTATTACA
+GAGAGTTTGCATTTTCATTTTACCTACATGAGCATTTAGCATTAAGACCATAGTGGGCCAAATTTGGCTT
+TTGTTTTTGAAGGTTCACTTGAGTAGCGTAATCACAACATGGTCATCTCGGCCTTGCCATAGCATCTCTC
+CTTCAAAGTCTACCAGTCCATGTTTCCTGGCACGCATGAGAATGCCCACTACTTTATCTGAAATACGAAC
+GTATCTGTCAAAGAGATCTCCAAAAGTAACCTGGATCTTGCCATCTCGTCTGTGGCGAGCCATTGTGCAG
+ATAATGAAGCACATGTCCATCATTTCCCTGTAGATGTGCTCCTCAGCACGCTTGGCCCTTTCAGCAGTTT
+TGGTTCCTTCTTTGGGGCGGCCATAGCCCTCATCTCCTTTGTGTAGGCGGGTGGACATGGCCAGCTCGTA
+ATCAAACTCTTCACTGAAAGGATTGAGCTTCTGGGATTGTATGTGTTCATCAGCCCACTGCTGCCATCTC
+CCTTTCAAGTTGCCCACTGGGCTATATTTCTGTTGGGCTTTGCAGTTGAGTTTCTCTGTAAATCTGTTTA
+CC
+&gt;ref|hg19|chr8:107782472-107781751 (refGene_exon.name2:ABRA 2)
+TGGGAGGGCAAGGGGCGCTTGATCCTGACCACAGCCACCTGCACTCCATCCTGCTCGGGCCTCTCCTCAG
+CCTCTCCTCCATAGCCGCTGTCCTCTGTGTCTACGCTGTCACTCCTCCATGTGGGCTCCTCCTGCTCCAT
+CACTCTCCAGCCCTTGGTTAGCTCAGACACCAGGTTGGCACATTTTCTCCTCCGCGTTGGGGAGCCGTGG
+CTGTGGAGGATTCTGTCAATGTCATTCTCTGGCTGCCCAGGTTCAAGCACACCAGCATCCCTCTCGTACC
+TGTGGCTGAGGTGGCTCACGTCCCCTCCTCTCTCATAAGTCTTGCTGACCACCGTTTTGGACACCTCTTT
+CTTTTTGATGTGAGAAACCTCAGGGGCTTTCTCTGAGCTTTGTCCATCTCCATGTCCTTCTGGCAGGCGG
+GGTGGCGACTTTGGGGCACTCTGAGCTTTCTGGTGTGAAGTAGGGGGTGTGATTGGTTTAGGAGCTTGAG
+GTGAGTCCTGGGTCCCTCCCGGCAGCCAGCCTGTAGGCTCCTGGGCCTGCCTGATGCTGTTCTCATTCGC
+CCACTGCTGCCAACCTCGGGCCAAGCTGATGACCAGGGTGGCTGTGCGTATCTTCCGGAGGGCGCTCTTG
+GCTGGGCCCTCCCCGCTTTCCTTTTCGCCCGGAGCCATGCTGCCCACCTGTCTTTCTCTGCTGATAGCCT
+GGACACTGGCTAAAATGAGTGT
+</code></pre>
+
+<p>You can specify more complex regions using set options between regions (e.g. <code>refGene.name2:ABRA &amp; chr8:107782472-1077800</code>). For example, the following command lists sequences of introns of gene <code>BRCA1</code>.</p>
+
+<pre><code>% vtools use refGene
+% vtools use refGene_exon
+% vtools_report sequence 'refGene.name2:BRCA1-refGene_exon.name2:BRCA1'
+
+
+&gt;ref|hg19|chr17:41197820-41199659
+CTGGAGACAGAGAACACAAGCAGAGATTAGTGTCAATTCATTCTCCTGGACTAGGCTCTAATCAATCGAC
+TCCAGGGTCCTGGTTGTATGAGTTCTTAGGATTAATGAGGTAGAAGCTAATTTTTTTTTTTTTTTTTTGA
+GACGGAGTCTTGCTCTGTCGCCGAGGCTAGAGTGTGATGGCGCAATCTCGGCTCATTCAACCTCCGCCTC
+CTGGGTTCAAGCAATTCTCCTGTCTCTGCCTCCTGAGTAGCTGGAATTACAGGCACATGCCATCACACCC
+AGCTAATTTTTGTATTTTTAGTAGAGACGGGGGTTTCACAATGTTGGCCAGGCTGCTCTGGAACTCCTGA
+CCTCAGGTGATCCACCCACCTTGGCCTCCCAAAGTGCTGGGATTACAGGCGTGAGCCACTGCACCTGGCC
+TTTTTTTTTTTTTTTTTTTTTTTTTGAGACGGAGTCTTGCTCTTGTTGCTCAGCCTGGAATGCAATGGCA
+CGATCTCAGCTCACTGCAACCTCCACCTCCCGGGTTCAAGCAATTCTCCTGCCTCAGCCTCCCAAGTAGC
+AGGGATTACAGGTGCCTGCCACCATGCCAGGCTAATTGTTTTTTCTTTTTTTTCAGATGGAGTCTCACTC
+TGTCACTCAGGCTGGATTGTGATGGTGTGATCTCAGCTCACTGCAACCTCAACATCCTGGGTTCAAGCGA
+TTCTCCTGCCTCAGTCTCCCAAGTAGCTGGGACTACAAGTGCGTGCCACCATGCCTGGCTAATTTTTTTT
+AGTATTTTTAGTAGAGATGGGGTTTCGCCATATTGGCCAGGCTGGTCTCAAACTCCTGATGTCAGGTGAT
+CCGCCCTGAGGCTGAGGCAGGAGAATCATTTAAACCCAGGAGGCGGAGGTTGCAGTGAGCCAAGACTGGG
+CCACTGCACTCCAGCCTGCTAAGTGACAGAGTGAGACTCCACCTCAAAAAAAAAAAAAAAAGGCAATGCT
+TCAGGACATAAGGCCTTGCTCTGAAGAGGCCCTAGGAGTGACTCCTGGTGACAGTGAAAGCCCACAGCCT
+CTGGCAACTGTATTAACATGAACTTCAATCTGTTAAAGGAAAGCCACCAGGAAAACAGCACTGTAATTTA
+ACGATGTGGAAAAATGTATGTAATATCTTAAGGAAAAAAGCAAAACAGTGTAATTATGATCACATTTTAT
+AAAATACACGTGTATATATACGCACATATGCCTGGTGGAGTTTTATGGTGATCATCTCCAAGTGGTGGAA
+TTACTGGGATTATTTTATTGTTTTTGTGTAAATTTATACTTTCTTTTTTCTTTTTGAGACACGGTCTCGC
+TCTGTCGCCCAGGCTGGAGTACAGTGGTGTGATCGTGGCTCACTGAAGCATCAACCTCCTGAGCTCAAGT
+GATCCTCCCACCTCAGCTTCCCAAGTAGCTGCGACTACAGGCATCTGCCACCACACCCAGCTACTTTTTA
+AATTTGTTGTACAGATGAAGTCTCCTTATGTTGCCCAGGCTGGTCTCGAACTTCTAGGCTCCCACCTTGA
+CCTCCATCTTGACCTCCCAAAGTGCTGGAATTATAGGCATGAGCCACCATGCCCGGCCTTGATTTATGTT
+TTTGTGATGAACATTCATATCTTACTCCCACCCCATGGAAACAGTTCATGTATTACTTTTACAATATAAA
+ACAAATAACAATAAAAACATCAAAAAGACATTTTAGCCATTCATTCAACAAATATTTAAAATGTGCCAAG
+AACTGTGCTACTCAAGCACCAGGTAATGAGTGATAAACCAAACCCATGCAAAAGGACCCCATATAGCACA
+GGTACATGCAGGCACCTTAC
+&gt;ref|hg19|chr17:41199721-41201137
+CTGGATCCCCAGGAAGGAAAGAGCATTCAAAGTGTCAAAGTAGGACTACTGGAACTGTCACTTCATCATT
+TTTTTTGTTTGTTTTTGAGACAGGGTCTTGCTCTGTCACCCAGGCTGGAGTGCAGTGGTGTGATCTCAGC
+TCACTGCCACCTCTGCCTCCTGGGCTCAAGCAATCCTTCCATCTCAGCCTCCTAAGTAGCTGGAACTACA
+GACACGTACCACCACCCCTGGCTAATTTTTTTGTATTTTTGGTAGAGACAGGGTTTTGCCATGTTGCCCA
+GGCTGGTCTCAAACTCCTGGGCTCAACTTCACCCCCGGGATTATAGGCATGAGCCACCGCACCCAGCCTT
+GGCTAATTTTTAATAATTTTTTTGTAGACATGAGGTCCTACTGTATTGCCCAGGCTGGTCTTCAGCTCCC
+AGGCTCAAGCGATTCTCCCACCTTGGCCTCCCAGTGTTGTGATTACAGGGGTGGGGCACTGGCCCAGCCC
+ATCATTTCTCTCTCTCTCTTTTTTTTTGAGACGGAGTCTCGCTCTGTCGCCCGGGCTGGAGTGCAGTGGC
+GCGATCTTGGCTCACTGCAACCTCCGCCTCCGGGGTTCAAGCGATTCTCCTGCCCCAGCCCCTCAAGTAG
+CTGGGACTACAGGCGTGCGCCCCTACGCCCAGCTAATTTTTGTATTTTTAGTAGAGACGGGGTTTCGCCA
+TGTTGGTTGGCCAGGATGGTCTCGATCTCTTGACCTCGTGATCTGCCCACCTCAGCCTCCCAAAGTGCTG
+GGATTACAGGCGTGAGCCACCGCACCTAGCTTTTCTCTCTCTCTCTTTTTTTTTTTTTTTAGACAAAGTC
+TCACTCTGTCACCCAGTCTGGAGTGCAGTGGTGCAATCTTGGCTCACTGCAACCTCTGCCTCCCACGTTC
+AAGCGATGCTCACACCTCAACTTCCCAAATAGCTGGCATTACAGGCATGCTCCACCAGGCCTGGCTACTT
+TTTGTTTTTTTTTTTTTAGTACAGATGGGGTTTCACCATGTTGGCCAGGCTGGTCTCAAACTCCTGACAA
+GTGATCCACCTGCCTCGGCCTCCCAAAGTGCTGGGATTACAGACATGAGCCACCATGCCCAGCCTCCAGC
+CCATCATTTCTTGATGATTTGTTGAAACACAGTATGCTGGGGCAGTCACAGAGAGGAGGGGGAGGGACAT
+ATGGGAAAAAGAGTTAGAGGGAAAAAGTCTTCCCTCAGTATATTTAATATGTGCAGTTCTCAAATCCTTA
+CCCATCCCTTACAGATGGAGTCTTTTGGCACAGGTATGTGGGCAGAGAAGACTTCTGAGGCTACAGTAGG
+GGCATCCATAGGGACTGACAGGTGCCAGTCTTGCTCACAGGAGAGAATATTGTGTCCTCCCTCTCTGACA
+GGGCACCCAATACTTAC
+&gt;ref|hg19|chr17:41201212-41203079
+CTAAAATGGACATTTAGATGTAAAATCACTGCAGTAATCTGCATACTTAACCCAGGCCCTCTACCCTACA
+CTCTCCGGATGAAGGCTTATAGCAAGACCTCTCAATGGGAGAGTCTGTCTCTCTGCTCCAAAGGACAATG
+GTCTTAAAATAGTAGGGGTATGGATTTTAAGTCAATTTGCCACTGATATGCCATGTACTCTGGTTATCAG
+TCTCCATAAGGCCACTTGGTATAAGGTTTGATAGTCTCTCAAATAAAATGCTTGAAAGAAAAAAAAATCA
+AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
+...
+</code></pre>
+
+<p>Here you can see that from the 5&rsquo; to 3&rsquo;, each intron starts with <code>CT</code> and ends with <code>AC</code>, which corresponds to the <code>GU</code>&ndash;&gt;<code>AG</code> signature of introns of RNA.</p>
+
+<h3 id="output-rna-sequences-of-genes-overlap-with-the-specified-region">Output RNA sequences of genes overlap with the specified region</h3>
+
+<p>The <code>vtools_report sequence</code> command can also be used to output mRNA sequences of genes that overlap with the specified regions. Because mRNA consists pieces of regions (coding sequences in exons) and only complete mRNA sequence could be translated, this option outputs complete RNA sequence of the genes (isoforms, as in field <code>refGene.name</code>). The coding regions will be listed after the sequence name.</p>
+
+<p>For example, you can print output the RNA sequence of gene <code>ABRA</code> using command</p>
+
+<pre><code>% vtools_report sequence refGene.name2:ABRA --transcribe --numbered
+
+
+&gt;mRNA|NM_139166|chr8:107782418-107781751,107773742-107773265 (1146 bp on reverse strand)
+   1 ATGGCTCCGG GCGAAAAGGA AAGCGGGGAG GGCCCAGCCA AGAGCGCCCT CCGGAAGATA
+  61 CGCACAGCCA CCCTGGTCAT CAGCTTGGCC CGAGGTTGGC AGCAGTGGGC GAATGAGAAC
+ 121 AGCATCAGGC AGGCCCAGGA GCCTACAGGC TGGCTGCCGG GAGGGACCCA GGACTCACCT
+ 181 CAAGCTCCTA AACCAATCAC ACCCCCTACT TCACACCAGA AAGCTCAGAG TGCCCCAAAG
+ 241 TCGCCACCCC GCCTGCCAGA AGGACATGGA GATGGACAAA GCTCAGAGAA AGCCCCTGAG
+ 301 GTTTCTCACA TCAAAAAGAA AGAGGTGTCC AAAACGGTGG TCAGCAAGAC TTATGAGAGA
+ 361 GGAGGGGACG TGAGCCACCT CAGCCACAGG TACGAGAGGG ATGCTGGTGT GCTTGAACCT
+ 421 GGGCAGCCAG AGAATGACAT TGACAGAATC CTCCACAGCC ACGGCTCCCC AACGCGGAGG
+ 481 AGAAAATGTG CCAACCTGGT GTCTGAGCTA ACCAAGGGCT GGAGAGTGAT GGAGCAGGAG
+ 541 GAGCCCACAT GGAGGAGTGA CAGCGTAGAC ACAGAGGACA GCGGCTATGG AGGAGAGGCT
+ 601 GAGGAGAGGC CCGAGCAGGA TGGAGTGCAG GTGGCTGTGG TCAGGATCAA GCGCCCCTTG
+ 661 CCCTCCCAGG TAAACAGATT TACAGAGAAA CTCAACTGCA AAGCCCAACA GAAATATAGC
+ 721 CCAGTGGGCA ACTTGAAAGG GAGATGGCAG CAGTGGGCTG ATGAACACAT ACAATCCCAG
+ 781 AAGCTCAATC CTTTCAGTGA AGAGTTTGAT TACGAGCTGG CCATGTCCAC CCGCCTACAC
+ 841 AAAGGAGATG AGGGCTATGG CCGCCCCAAA GAAGGAACCA AAACTGCTGA AAGGGCCAAG
+ 901 CGTGCTGAGG AGCACATCTA CAGGGAAATG ATGGACATGT GCTTCATTAT CTGCACAATG
+ 961 GCTCGCCACA GACGAGATGG CAAGATCCAG GTTACTTTTG GAGATCTCTT TGACAGATAC
+1021 GTTCGTATTT CAGATAAAGT AGTGGGCATT CTCATGCGTG CCAGGAAACA TGGACTGGTA
+1081 GACTTTGAAG GAGAGATGCT ATGGCAAGGC CGAGATGACC ATGTTGTGAT TACGCTACTC
+1141 AAGTGA
+</code></pre>
+
+<h3 id="output-protein-sequences-of-genes-overlap-with-the-specified-region">Output protein sequences of genes overlap with the specified region</h3>
+
+<p>The <code>vtools_report sequence</code> command can also be used to output protein sequences of genes that overlap with the specified regions. Because mRNA consists pieces of regions (coding sequences in exons) and only complete mRNA sequence could be translated, this option outputs complete protein sequence of the genes (isoforms, as in field <code>refGene.name</code>). The coding regions will be listed after the sequence name.</p>
+
+<p>For example, you can print output the protein sequence of gene <code>ABRA</code> using command</p>
+
+<pre><code>% vtools_report sequence refGene.name2:ABRA --translate --numbered
+
+
+&gt;protein|NM_139166|chr8:107773265-107773742,107781751-107782418 (1146 bp)
+  1 MAPGEKESGE GPAKSALRKI RTATLVISLA RGWQQWANEN SIRQAQEPTG WLPGGTQDSP
+ 61 QAPKPITPPT SHQKAQSAPK SPPRLPEGHG DGQSSEKAPE VSHIKKKEVS KTVVSKTYER
+121 GGDVSHLSHR YERDAGVLEP GQPENDIDRI LHSHGSPTRR RKCANLVSEL TKGWRVMEQE
+181 EPTWRSDSVD TEDSGYGGEA EERPEQDGVQ VAVVRIKRPL PSQVNRFTEK LNCKAQQKYS
+241 PVGNLKGRWQ QWADEHIQSQ KLNPFSEEFD YELAMSTRLH KGDEGYGRPK EGTKTAERAK
+301 RAEEHIYREM MDMCFIICTM ARHRRDGKIQ VTFGDLFDRY VRISDKVVGI LMRARKHGLV
+361 DFEGEMLWQG RDDHVVITLL K*
+</code></pre>
+
+<p>A gene can have multiple isoforms. The <code>--translate</code> option will print out protein sequences of all isoforms, unless you list the isoforms of interest after parameter <code>--translate</code>. For example,</p>
+
+<pre><code>% vtools_report sequence refGene.name2:BRCA1 --number --translate NM_007300 NM_007299
+
+
+&gt;protein|NM_007299|chr17:41276113-41276034,41267796-41267743,41258550-41258473,41256973-41256885,41256278-41256139,41251897-41251792,41249306-41249261,41247939-41247863,41246877-41246761,41243049-41242961,41234592-41234421,41228628-41228505,41226538-41226348,41223255-41222945,41219712-41219625,41215968-41215891,41215390-41215350,41209152-41209069,41203134-41203080,41199720-41199660,41197819-41197801 (2100 bp on reverse strand)
+  1 MDLSALRVEE VQNVINAMQK ILECPICLEL IKEPVSTKCD HIFCKFCMLK LLNQKKGPSQ
+ 61 CPLCKNDITK RSLQESTRFS QLVEELLKII CAFQLDTGLE YANSYNFAKK ENNSPEHLKD
+121 EVSIIQSMGY RNRAKRLLQS EPENPSLQET SLSVQLSNLG TVRTLRTKQR IQPQKTSVYI
+181 ELGSDSSEDT VNKATYCSVG DQELLQITPQ GTRDEISLDS AKKAACEFSE TDVTNTEHHQ
+241 PSNNDLNTTE KRAAERHPEK YQGEAASGCE SETSVSEDCS GLSSQSDILT TQQRDTMQHN
+301 LIKLQQEMAE LEAVLEQHGS QPSNSYPSII SDSSALEDLR NPEQSTSEKV LTSQKSSEYP
+361 ISQNPEGLSA DKFEVSADSS TSKNKEPGVE RSSPSKCPSL DDRWYMHSCS GSLQNRNYPS
+421 QEELIKVVDV EEQQLEESGP HDLTETSYLP RQDLEGTPYL ESGISLFSDD PESDPSEDRA
+481 PESARVGNIP SSTSALKVPQ LKVAESAQSP AAAHTTDTAG YNAMEESVSR EKPELTASTE
+541 RVNKRMSMVV SGLTPEEFML VYKFARKHHI TLTNLITEET THVVMKTDAE FVCERTLKYF
+601 LGIAGGKWVV SYFWVTQSIK ERKMLNEHDF EVRGDVVNGR NHQGPKRARE SQDRKIFRGL
+661 EICCYGPFTN MPTGCPPNCG CAARCLDRGQ WLPCNWADV*
+&gt;protein|NM_007300|chr17:41276113-41276034,41267796-41267743,41258550-41258473,41256973-41256885,41256278-41256139,41251897-41251792,41249306-41249261,41247939-41247863,41246877-41243452,41243049-41242961,41234592-41234421,41231416-41231351,41228628-41228505,41226538-41226348,41223255-41222945,41219712-41219625,41215968-41215891,41215390-41215350,41209152-41209069,41203134-41203080,41201211-41201138,41199720-41199660,41197819-41197695 (5655 bp on reverse strand)
+   1 MDLSALRVEE VQNVINAMQK ILECPICLEL IKEPVSTKCD HIFCKFCMLK LLNQKKGPSQ
+  61 CPLCKNDITK RSLQESTRFS QLVEELLKII CAFQLDTGLE YANSYNFAKK ENNSPEHLKD
+ 121 EVSIIQSMGY RNRAKRLLQS EPENPSLQET SLSVQLSNLG TVRTLRTKQR IQPQKTSVYI
+ 181 ELGSDSSEDT VNKATYCSVG DQELLQITPQ GTRDEISLDS AKKAACEFSE TDVTNTEHHQ
+ 241 PSNNDLNTTE KRAAERHPEK YQGSSVSNLH VEPCGTNTHA SSLQHENSSL LLTKDRMNVE
+ 301 KAEFCNKSKQ PGLARSQHNR WAGSKETCND RRTPSTEKKV DLNADPLCER KEWNKQKLPC
+ 361 SENPRDTEDV PWITLNSSIQ KVNEWFSRSD ELLGSDDSHD GESESNAKVA DVLDVLNEVD
+ 421 EYSGSSEKID LLASDPHEAL ICKSERVHSK SVESNIEDKI FGKTYRKKAS LPNLSHVTEN
+ 481 LIIGAFVTEP QIIQERPLTN KLKRKRRPTS GLHPEDFIKK ADLAVQKTPE MINQGTNQTE
+ 541 QNGQVMNITN SGHENKTKGD SIQNEKNPNP IESLEKESAF KTKAEPISSS ISNMELELNI
+ 601 HNSKAPKKNR LRRKSSTRHI HALELVVSRN LSPPNCTELQ IDSCSSSEEI KKKKYNQMPV
+ 661 RHSRNLQLME GKEPATGAKK SNKPNEQTSK RHDSDTFPEL KLTNAPGSFT KCSNTSELKE
+ 721 FVNPSLPREE KEEKLETVKV SNNAEDPKDL MLSGERVLQT ERSVESSSIS LVPGTDYGTQ
+ 781 ESISLLEVST LGKAKTEPNK CVSQCAAFEN PKGLIHGCSK DNRNDTEGFK YPLGHEVNHS
+ 841 RETSIEMEES ELDAQYLQNT FKVSKRQSFA PFSNPGNAEE ECATFSAHSG SLKKQSPKVT
+ 901 FECEQKEENQ GKNESNIKPV QTVNITAGFP VVGQKDKPVD NAKCSIKGGS RFCLSSQFRG
+ 961 NETGLITPNK HGLLQNPYRI PPLFPIKSFV KTKCKKNLLE ENFEEHSMSP EREMGNENIP
+1021 STVSTISRNN IRENVFKEAS SSNINEVGSS TNEVGSSINE IGSSDENIQA ELGRNRGPKL
+1081 NAMLRLGVLQ PEVYKQSLPG SNCKHPEIKK QEYEEVVQTV NTDFSPYLIS DNLEQPMGSS
+1141 HASQVCSETP DDLLDDGEIK EDTSFAENDI KESSAVFSKS VQKGELSRSP SPFTHTHLAQ
+1201 GYRRGAKKLE SSEENLSSED EELPCFQHLL FGKVNNIPSQ STRHSTVATE CLSKNTEENL
+1261 LSLKNSLNDC SNQVILAKAS QEHHLSEETK CSASLFSSQC SELEDLTANT NTQDPFLIGS
+1321 SKQMRHQSES QGVGLSDKEL VSDDEERGTG LEENNQEEQS MDSNLGEAAS GCESETSVSE
+1381 DCSGLSSQSD ILTTQQRDTM QHNLIKLQQE MAELEAVLEQ HGSQPSNSYP SIISDSSALE
+1441 DLRNPEQSTS EKDSHIHGQR NNSMFSKRPR EHISVLTSQK SSEYPISQNP EGLSADKFEV
+1501 SADSSTSKNK EPGVERSSPS KCPSLDDRWY MHSCSGSLQN RNYPSQEELI KVVDVEEQQL
+1561 EESGPHDLTE TSYLPRQDLE GTPYLESGIS LFSDDPESDP SEDRAPESAR VGNIPSSTSA
+1621 LKVPQLKVAE SAQSPAAAHT TDTAGYNAME ESVSREKPEL TASTERVNKR MSMVVSGLTP
+1681 EEFMLVYKFA RKHHITLTNL ITEETTHVVM KTDAEFVCER TLKYFLGIAG GKWVVSYFWV
+1741 TQSIKERKML NEHDFEVRGD VVNGRNHQGP KRARESQDRK IFRGLEICCY GPFTNMPTDQ
+1801 LEWMVQLCGA SVVKELSSFT LGTGVHPIVV VQPDAWTEDN GFHAIGQMCE APVVTREWVL
+1861 DSVALYQCQE LDTYLIPQIP HSHY*
+</code></pre>
+
+<h3 id="mark-a-location-regions-variant-or-a-sequence">Mark a location, regions, variant, or a sequence</h3>
+
+<p>The output of command <code>vtools_report sequence</code> can be long and it could be difficult for you to locate a particular location or region that is of interest. If this is the case, you can use option <code>--mark</code> to mark them in the output.</p>
+
+<p>The <code>mark</code> parameter accept three types of inputs</p>
+
+<ol>
+<li>A position such as <code>chr12 12345</code> or <code>12 12345</code>.</li>
+<li>A variant such as <code>chr 12 12345 C T</code>. In this case the alternative nucleotide or the translated amino acid will be marked and printed. The function does not yet support the translation of DNA sequences affected by indels so only SNVs are allowed in this option.</li>
+<li>One or more regions such as <code>chr12:12345-12355</code> or <code>refGene_exon.name2:WIF1</code>.</li>
+</ol>
+
+<p>For example, if you are interested in the location of a variant in the protein sequence,</p>
+
+<pre><code>vtools_report sequence refGene.name2:WIF1 --build hg19 --translate --numbered --mark 12 65449852
+
+
+&gt;protein|NM_007191|chr12:65514971-65514824,65514336-65514197,65471634-65471526,65462684-65462544,65461570-65461475,65460516-65460421,65456356-65456261,65449906-65449811,65448993-65448898,65445250-65445129 (1140 bp on reverse strand)
+  1 MARRSAFPAA ALWLWSILLC LLALRAEAGP PQEESLYLWI DAHQARVLIG FEEDILIVSE
+ 61 GKMAPFTHDF RKAQQRMPAI PVNIHSMNFT WQAAGQAEYF YEFLSLRSLD KGIMADPTVN
+121 VPLLGTVPHK ASVVQVGFPC LGKQDGVAAF EVDVIVMNSE GNTILQTPQN AIFFKTCQQA
+181 ECPGGCRNGG FCNERRICEC PDGFHGPHCE KALCTPRCMN GGLCVTPGFC ICPPGFYGVN
+</code></pre>
+
+<p><code>241 CDKANCSTTC FNGGTCFYPG KCICPPGLEG EQCEISKCPQ PCRNGGKCIG KSK</code>C<code>KCSKGY</code>
+    301 QGDLCSKPVC EPGCGAHGTC HEPNKCQCQE GWHGRHCNKR YEASLIHALR PAGAQLRQHT</p>
+
+<p>If you are interested in the change of amino acid, you can specify reference and alternative alleles,</p>
+
+<pre><code>vtools_report sequence refGene.name2:WIF1 --build hg19 --translate --numbered --mark 12 65449852 C A
+
+
+&gt;protein|NM_007191|chr12:65514971-65514824,65514336-65514197,65471634-65471526,65462684-65462544,65461570-65461475,65460516-65460421,65456356-65456261,65449906-65449811,65448993-65448898,65445250-65445129 (1140 bp on reverse strand)
+  1 MARRSAFPAA ALWLWSILLC LLALRAEAGP PQEESLYLWI DAHQARVLIG FEEDILIVSE
+ 61 GKMAPFTHDF RKAQQRMPAI PVNIHSMNFT WQAAGQAEYF YEFLSLRSLD KGIMADPTVN
+121 VPLLGTVPHK ASVVQVGFPC LGKQDGVAAF EVDVIVMNSE GNTILQTPQN AIFFKTCQQA
+181 ECPGGCRNGG FCNERRICEC PDGFHGPHCE KALCTPRCMN GGLCVTPGFC ICPPGFYGVN
+</code></pre>
+
+<p><code>241 CDKANCSTTC FNGGTCFYPG KCICPPGLEG EQCEISKCPQ PCRNGGKCIG KSK</code>F<code>KCSKGY</code>
+    301 QGDLCSKPVC EPGCGAHGTC HEPNKCQCQE GWHGRHCNKR YEASLIHALR PAGAQLRQHT</p>
+
+<p>If you would like to mark the exon regions of this gene, you can do</p>
+
+<pre><code>vtools_report sequence refGene.name2:WIF1 --build hg19  --numbered --mark refGene_exon.name2:WIF1
+</code></pre>
+
+<p><code>&gt;ref|hg19|chr12:65444404-65515346 (refGene.name2 1)</code><br />
+<code>65444404 &lt;span  style='color: red;'&gt;GCTCAGAAAA CTAAAGCAGC ACCTTTATTT TATACATACA AACAGTATAA AATGTTTATT&lt;/span&gt;</code><br />
+<code>65444464 &lt;span  style='color: red;'&gt;AGGTAAGAGC TGTGTTTTGT TTACAATATA TTATATTGCT TCAAGCCAAT GCAAAAAGTT&lt;/span&gt;</code><br />
+<code>65444524 &lt;span  style='color: red;'&gt;CATACATTAT ATTCCCTATT TCATTGTGTT TAGAATATAT TATATTGTTT AAATGCCACT&lt;/span&gt;</code><br />
+<code>65444584 &lt;span  style='color: red;'&gt;ACCACAGTGT AATTTTTTTT TTTTTAATAC TGAATCTCTG GAATAATGGT AAGGTCAAAA&lt;/span&gt;</code><br />
+<code>65444644 &lt;span  style='color: red;'&gt;TATATTGTAT TGAGAGTTTA AAAATTAAGA GCAATTTTTA AAAATGTAAC AAACATCTAA&lt;/span&gt;</code><br />
+<code>65444704 &lt;span  style='color: red;'&gt;ATATCTGACA ATAAAATCTG AAATGCTGTA ACTTCAACAT TAACTGCACC ATCCAAATTC&lt;/span&gt;</code><br />
+<code>65444764 &lt;span  style='color: red;'&gt;TTGTGACTTA CGCATTTTTG CCCAATTTAA CCTTTCTGAT GTTCCCCTGC CCCCAGACAC&lt;/span&gt;</code><br />
+<code>65444824 &lt;span  style='color: red;'&gt;CATAAATGCA TTGTAATTTT GAAAATATCT GCCAACTACA CACTGAAAAT TTTAACCTGA&lt;/span&gt;</code><br />
+<code>65444884 &lt;span  style='color: red;'&gt;TCAATTGACA TAATATAAAA TCTGTCCCAA AGCACTGAAA CAAGAAAATC TATACCATCA&lt;/span&gt;</code><br />
+<code>65444944 &lt;span  style='color: red;'&gt;TGCTACAGAC GTACTTAGAA AACTTAAAAG GAAGAGTAAA TATCAGCTCA GTGATTTATA&lt;/span&gt;</code><br />
+<code>65445004 &lt;span  style='color: red;'&gt;ATGAAGCTAA TAAAATTCAG GCCAGTATTC TTAAGTGTAA TGAACATTAT TTGAACATTC&lt;/span&gt;</code><br />
+<code>65445064 &lt;span  style='color: red;'&gt;AACACATGAA AGGTTAACAA AGGCTATGAA CTTGGTGTAA CTTAAAACGT TTCAGATGTC&lt;/span&gt;</code><br />
+<code>65445124 &lt;span  style='color: red;'&gt;GGAGTTCACC AGATGTAATT GGATTCAGGT GGATCCCGCC GCTCCTCGGC CTTTTTAAGT&lt;/span&gt;</code><br />
+<code>65445184 &lt;span  style='color: red;'&gt;GAAGGCGTGT GCTGCCTGAG CTGGGCGCCT GCTGGCCTCA GGGCATGTAT GAGGCTGGCT&lt;/span&gt;</code><br />
+<code>65445244 &lt;span  style='color: red;'&gt;TCG&lt;/span&gt;TACCCTG CAAAATTATT CACAGCTTAA AAGGAAAGAA ACTACAAAAC CAGGCTCTTC</code><br />
+<code>65445304 AGATTCATTA TTAACCATTC AAATGAAATC CATTTTTGCC TTTTCAATCC AGAATGAAAA</code><br />
+<code>....</code><br />
+<code>65514844 &lt;span  style='color: red;'&gt;TGAGCATCGA TCCATAGGTA CAGGCTCTCC TCCTGCGGCG GCCCGGCCTC CGCCCGCAGT&lt;/span&gt;</code><br />
+<code>65514904 &lt;span  style='color: red;'&gt;GCCAGCAGGC ACAGGAGGAT GCTCCAGAGC CAGAGCGCGG CGGCAGGGAA GGCGCTCCTC&lt;/span&gt;</code><br />
+<code>65514964 &lt;span  style='color: red;'&gt;CGGGCCATGC TGCTCAGGAC CTCCTCGCTG CCGGGAAAAC TCCTCGTGCC GCACCTACGC&lt;/span&gt;</code><br />
+<code>65515024 &lt;span  style='color: red;'&gt;AACCTGGCGC CGTCAGATAC TCTGCTGCGC TGCAGCTCCC TCAGCCAGGG CTGTTCCCGT&lt;/span&gt;</code><br />
+<code>65515084 &lt;span  style='color: red;'&gt;TTAGACGGCT GGGCGCGTCG CCTCCCGGCC TGGGTGCCAA GGAGCCTGCG AGAGCAGGAG&lt;/span&gt;</code><br />
+<code>65515144 &lt;span  style='color: red;'&gt;GAGGGGGCAG GCAGGACGCG GGAGGAGGAG GGGGGGACCA GCGGGCGCGA GTCGCGCAAG&lt;/span&gt;</code><br />
+<code>65515204 &lt;span  style='color: red;'&gt;AAGATGGGGC GCGGGCGGGA GTGGGGGCGG CAGAGACGTA AGACTGGCAA AGCTGGCGAG&lt;/span&gt;</code><br />
+<code>65515264 &lt;span  style='color: red;'&gt;GCCAGCAGTC AGCGGGGCAA ATAGAGCGAG AACAGAAGAG CGGGAAGGGC TGGCGCGAGC&lt;/span&gt;</code><br />
+<code>65515324 &lt;span  style='color: red;'&gt;GAGGTGCGAG CGAGGAGTGG GGC&lt;/span&gt;</code></p>
+
+<p>Finally, if you are looking for a particular sub-sequence of the output, you can try to mark the sequence</p>
+
+<pre><code>% vtools_report sequence refGene.name2:ABRA --transcribe --numbered --build hg19 --mark CTGCAC
+
+
+&gt;mRNA|NM_139166|chr8:107782418-107781751,107773742-107773265 (1146 bp on reverse strand)
+   1 ATGGCTCCGG GCGAAAAGGA AAGCGGGGAG GGCCCAGCCA AGAGCGCCCT CCGGAAGATA
+  61 CGCACAGCCA CCCTGGTCAT CAGCTTGGCC CGAGGTTGGC AGCAGTGGGC GAATGAGAAC
+ 121 AGCATCAGGC AGGCCCAGGA GCCTACAGGC TGGCTGCCGG GAGGGACCCA GGACTCACCT
+ 181 CAAGCTCCTA AACCAATCAC ACCCCCTACT TCACACCAGA AAGCTCAGAG TGCCCCAAAG
+ 241 TCGCCACCCC GCCTGCCAGA AGGACATGGA GATGGACAAA GCTCAGAGAA AGCCCCTGAG
+ 301 GTTTCTCACA TCAAAAAGAA AGAGGTGTCC AAAACGGTGG TCAGCAAGAC TTATGAGAGA
+ 361 GGAGGGGACG TGAGCCACCT CAGCCACAGG TACGAGAGGG ATGCTGGTGT GCTTGAACCT
+ 421 GGGCAGCCAG AGAATGACAT TGACAGAATC CTCCACAGCC ACGGCTCCCC AACGCGGAGG
+ 481 AGAAAATGTG CCAACCTGGT GTCTGAGCTA ACCAAGGGCT GGAGAGTGAT GGAGCAGGAG
+ 541 GAGCCCACAT GGAGGAGTGA CAGCGTAGAC ACAGAGGACA GCGGCTATGG AGGAGAGGCT
+ 601 GAGGAGAGGC CCGAGCAGGA TGGAGTGCAG GTGGCTGTGG TCAGGATCAA GCGCCCCTTG
+ 661 CCCTCCCAGG TAAACAGATT TACAGAGAAA CTCAACTGCA AAGCCCAACA GAAATATAGC
+ 721 CCAGTGGGCA ACTTGAAAGG GAGATGGCAG CAGTGGGCTG ATGAACACAT ACAATCCCAG
+ 781 AAGCTCAATC CTTTCAGTGA AGAGTTTGAT TACGAGCTGG CCATGTCCAC CCGCCTACAC
+ 841 AAAGGAGATG AGGGCTATGG CCGCCCCAAA GAAGGAACCA AAACTGCTGA AAGGGCCAAG
+</code></pre>
+
+<p><code>901 CGTGCTGAGG AGCACATCTA CAGGGAAATG ATGGACATGT GCTTCATTAT &lt;span  style='color: red;'&gt;CTGCAC&lt;/span&gt;AATG</code></p>
+
+<pre><code>961 GCTCGCCACA GACGAGATGG CAAGATCCAG GTTACTTTTG GAGATCTCTT TGACAGATAC
+1021 GTTCGTATTT CAGATAAAGT AGTGGGCATT CTCATGCGTG CCAGGAAACA TGGACTGGTA
+1081 GACTTTGAAG GAGAGATGCT ATGGCAAGGC CGAGATGACC ATGTTGTGAT TACGCTACTC
+1141 AAGTGA
+</code></pre>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/" title="sam_info"> <i class="fa fa-chevron-left"></i><label>sam_info</label></a>
+    <a class="nav nav-next" href="https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/" title="trans_ratio" style="margin-right: 0px;"><label>trans_ratio</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+  
+
+    <div class="github-link">
+      <a href="Documentation/vtools_report/sequence.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
+</footer>
+
+<script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js"></script>
+
+<link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css" rel="stylesheet">
+<script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js"></script>
+
+
+
+<script src="https://vatlab.github.io/vat-docs/theme-flex/script.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

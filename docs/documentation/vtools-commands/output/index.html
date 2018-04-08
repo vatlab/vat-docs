@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vatlab</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.36.1" />
+<title>output :: vatlab</title>
+<link rel="shortcut icon" href="https://vatlab.github.io/vat-docs/images/favicon.png" type="image/x-icon" />
+<link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://vatlab.github.io/vat-docs/css/nucleus.css" rel="stylesheet">
+<link href="https://vatlab.github.io/vat-docs/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://vatlab.github.io/vat-docs/css/bootstrap.min.css">
+<script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+</script>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/documentation/vtools-commands/output/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://vatlab.github.io/vat-docs/">vatlab</a>
+  
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="https://vatlab.github.io/vat-docs/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/install/" class="dd-item
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/install/">Installation</a>
+      </div>
+    </li>
+    <li data-nav-id="/documentation/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/">Documentation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/keyconcepts/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/keyconcepts/">
+            Key concepts
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/tutorials/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/tutorials/">
+            Tutorials
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/help/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/help/">
+            Help
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/vtools-commands/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/">Vtools commands</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/vtools-commands/init/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/init/">
+            Init
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/import/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/">
+            Import
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/update/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/">
+            Update
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/phenotype/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/phenotype/">
+            Phenotype
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/liftover/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/liftover/">
+            lifttover
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/show/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/show/">
+            show
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/use/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/">
+            use
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/select/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/select/">
+            select
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/exclude/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/exclude/">
+            exclude
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/compare/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/compare/">
+            compare
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/associate/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/">
+            associate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/output/" class="dd-item active">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/">
+            output
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/export/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/">
+            export
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/remove/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/remove/">
+            remove
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/execute/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/execute/">
+            execute
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/admin/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/">
+            admin
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/functions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/functions/">Functions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/functions/ref_sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/ref_sequence/">
+            ref_sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/mut_sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/mut_sequence/">
+            mut_sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/track/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/track/">
+            track
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/genotype/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/genotype/">
+            Genotype
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/samples/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/samples/">
+            samples
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/in_table/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/in_table/">
+            in_table
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/otherfunctions/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/">
+            Other functions
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/vtools_report/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/">Vtools_report</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/vtools_report/avg_depth/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/">
+            avg_depth
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/discordance_rate/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/discordance_rate/">
+            discordance_rate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/sam_info/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/">
+            sam_info
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sequence/">
+            sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/trans_ratio/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/">
+            trans_ratio
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/variant_stat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/variant_stat/">
+            variant_stat
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/inbreeding_coefficient/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/inbreeding_coefficient/">
+            inbreeding_coefficient
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/transmission/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/transmission/">
+            transmission
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/meta_analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/meta_analysis/">
+            meta_analysis
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_fields/">
+            plot_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_geno_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/">
+            plot_geno_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_pheno_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_pheno_fields/">
+            plot_pheno_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_association/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_association/">
+            plot_association
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/customization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/">Customization</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/format/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/format/">
+            Format
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/customization/simulation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/">Simulation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/simulation/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/customization/simulation/custimzedsimu/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/custimzedsimu/">
+            Customized simulations
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/customization/simulation/models/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/">Models</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/simulation/models/peng1/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/">
+            Peng2014_ex1
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/customization/simulation/models/pen2/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/">
+            Peng2014_ex2
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/customizedpipeline/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/">
+            Customized pipeline
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/pipelines/variant-calling/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/">Variant calling</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_hg19/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/">
+            bwa_gatk33_hg19
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_b37/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/">
+            bat_gatk33_b37
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_hg19/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/">
+            bwa_gatk28_hg19
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_b37/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/">
+            bwa_gatk28_b37
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/pipelines/other-pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/">Other pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/import_vcf/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/import_vcf/">
+            import_vcf
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/anno_utils/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/anno_utils/">
+            anno_utils
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/transmission/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/transmission/">
+            transmission
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/illumina/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/illumina/">
+            Illumnina
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/annovar/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/annovar/">
+            ANNOVAR
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/snpeff/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/snpeff/">
+            snpEff
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/king/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/king/">
+            KING
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/utilities/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/utilities/">Utilities</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/utilities/report_progress/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/utilities/report_progress/">
+            report_progress
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/utilities/_md5sumd/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/utilities/_md5sumd/">
+            md5sumd
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/">Application</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/applications/annotation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/">Annotation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/tutorial/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/tutorial/">
+            Tutorial
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/customized/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/customized/">
+            Customized annotation databases
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/annotation/genes/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/">Genes</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/genes/ccdsgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/">
+            ccdsGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/hugogene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/">
+            Hugo gene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/entrezgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/entrezgene/">
+            EntrezGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/knowngene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/knowngene/">
+            knownGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/refgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/refgene/">
+            refGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/cancergenecensus/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/cancergenecensus/">
+            CancerGeneCensus
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/variants/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/">Variants</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/variants/cosmic/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/">
+            COSMIC
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/dbnsfp/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/">
+            sbNSFP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/dbsnp/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/">
+            dbSNP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/linkagephysicalmap/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/">
+            linkage-physical map
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/databaseof/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/">
+            Database of Genomic Variants
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/exomesequencingpro/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/">
+            Exome Sequencing Project
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/gwas/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/">
+            gwasCatalog
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/hapmap/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/hapmap/">
+            HapMap
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/thousand/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/thousand/">
+            Thousand Genomes
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/regions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/">Regions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/regions/low-complexity-regions/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/low-complexity-regions/">
+            Low complexity regions
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/phast-cons/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/phast-cons/">
+            Phast cons
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/genomic-super-dups/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic-super-dups/">
+            Genomic super dups
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/cytoband/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/">
+            cytoBand
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/misc/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/">Misc</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/misc/illumina/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/">
+            Illumina
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/misc/keggpathway/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/keggpathway/">
+            keggPathway
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/misc/encode/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/encode/">
+            ENCODE
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/applications/discovery/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/discovery/">
+            Discovery
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/association/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/">Association</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/data-explorationqc/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/">
+            Data exploration/QC
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/association-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/association-analysis/">
+            Association analysis
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/post-assoc-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/">
+            Post-assoc analysis
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/association/basic-data-statistics/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/">Basic data statistics</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/basic-data-statistics/group-statwrite/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/">
+            Group stat&amp;Write
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/single-variant-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/">Single variant analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/single-variant-analysis/fisher-exact-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/">
+            Fisher exact test
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/single-gene-association-methods/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/">Single gene association methods</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/single-gene-association-methods/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/cmc-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/cmc-test/">
+            CMC test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/c_alpha-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/">
+            C-alpha test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/kbac-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/kbac-test/">
+            KBAC test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/rbt-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rbt-test/">
+            RBT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/rarecover-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rarecover-test/">
+            RareCover test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/vt-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/vt-test/">
+            VT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/wss-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/wss-test/">
+            WSS test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/asum-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/asum-test/">
+            aSum test
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/jointconditional-association-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/">Joint/Conditional association analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/collapsing-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/">
+            Collapsing methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/aggregation-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/">
+            Aggregation methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/weighted-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/">
+            Weighted methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/variable-thresholds/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/">
+            Variable thresholds
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/skat-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/skat-test/">
+            SKAT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/metaskat-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/">
+            MetaSKAT analysis
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/vat-stacking/" class="dd-item
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/vat-stacking/">VAT stacking</a>
+      </div>
+    </li>
+    <li data-nav-id="/applications/association/create-your-test/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/">Create your test!</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/create-your-test/running-r-programs/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/running-r-programs/">
+            Running R programs
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/create-your-test/programming-in-vat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/programming-in-vat/">
+            Programming in VAT
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/view-association-result/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/view-association-result/">View association result</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/view-association-result/qq-plot-and-manhattan-plot/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/">
+            QQ plot and Manhattan plot
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/development/chagelog/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/development/chagelog/">
+            ChangeLog
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/development/getinvolved/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/development/getinvolved/">
+            Get Involved
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/administration/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/administration/">Administration</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/administration/allrecent/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/allrecent/">
+            All recent changes
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/autolink/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/autolink/">
+            Autolink
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/stylesheet/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/stylesheet/">
+            Style sheet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/trafficstat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/trafficstat/">
+            Traffic statistics
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/under-development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/under-development/">Under development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/under-development/faq/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/under-development/faq/">
+            FAQ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/install/" >
+   Installation</option>
+    <option value="/documentation/" >
+   Documentation</option> 
+      <option value="/documentation/keyconcepts/" >- Key concepts</option>
+      <option value="/documentation/tutorials/" >- Tutorials</option>
+      <option value="/documentation/help/" >- Help</option>
+    <option value="/documentation/vtools-commands/" >
+  - 
+   Vtools commands</option> 
+      <option value="/documentation/vtools-commands/init/" >-- Init</option>
+      <option value="/documentation/vtools-commands/import/" >-- Import</option>
+      <option value="/documentation/vtools-commands/update/" >-- Update</option>
+      <option value="/documentation/vtools-commands/phenotype/" >-- Phenotype</option>
+      <option value="/documentation/vtools-commands/liftover/" >-- lifttover</option>
+      <option value="/documentation/vtools-commands/show/" >-- show</option>
+      <option value="/documentation/vtools-commands/use/" >-- use</option>
+      <option value="/documentation/vtools-commands/select/" >-- select</option>
+      <option value="/documentation/vtools-commands/exclude/" >-- exclude</option>
+      <option value="/documentation/vtools-commands/compare/" >-- compare</option>
+      <option value="/documentation/vtools-commands/associate/" >-- associate</option>
+      <option value="/documentation/vtools-commands/output/"  selected>-- output</option>
+      <option value="/documentation/vtools-commands/export/" >-- export</option>
+      <option value="/documentation/vtools-commands/remove/" >-- remove</option>
+      <option value="/documentation/vtools-commands/execute/" >-- execute</option>
+      <option value="/documentation/vtools-commands/admin/" >-- admin</option>
+  
+    <option value="/documentation/functions/" >
+  - 
+   Functions</option>
+    <option value="/documentation/vtools_report/" >
+  - 
+   Vtools_report</option>
+    <option value="/documentation/customization/" >
+  - 
+   Customization</option>
+    <option value="/documentation/pipelines/" >
+  - 
+   Pipelines</option>
+    <option value="/documentation/utilities/" >
+  - 
+   Utilities</option>
+  
+    <option value="/applications/" >
+   Application</option>
+    <option value="/development/" >
+   Development</option>
+    <option value="/administration/" >
+   Administration</option>
+    <option value="/under-development/" >
+   Under development</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js"></script>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js"></script>
+        <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+          
+        </script>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js"></script>
+      </div>
+    
+
+    <h1>output</h1>
+    
+    
+    
+    
+
+<h1 id="output-variants-in-a-variant-table">Output variants in a variant table</h1>
+
+<h2 id="usage">Usage</h2>
+
+<pre><code>% vtools output -h
+
+
+usage: vtools output [-h] [--header [HEADER [HEADER ...]]] [-d DELIMITER]
+                     [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]]
+                     [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}]
+                     table fields [fields ...]
+
+Output variants, variant info fields, annotation fields and expressions that
+involve these fields in a tab or comma separated format.
+
+positional arguments:
+  table                 variants to output.
+  fields                A list of fields that will be outputted. SQL-
+                        compatible expressions or functions such as &quot;pos-1&quot;,
+                        &quot;count(1)&quot; or &quot;sum(num)&quot; are also allowed.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v {0,1,2}, --verbosity {0,1,2}
+                        Output error and warning (0), info (1) and debug (2)
+                        information to standard output (default to 1).
+
+Output options:
+  --header [HEADER [HEADER ...]]
+                        A complete header or a list of names that will be
+                        joined by a delimiter (parameter --delimiter). If a
+                        special name - is specified, the header will be read
+                        from the standard input, which is the preferred way to
+                        specify large multi-line headers (e.g. cat myheader |
+                        vtools export --header -). If this parameter is given
+                        without parameter, a default header will be derived
+                        from field names.
+  -d DELIMITER, --delimiter DELIMITER
+                        Delimiter use to separate columns of output. The
+                        default output uses multiple spaces to align columns
+                        of output. Use '-d,' for csv output, or -d'\t' for
+                        tab-delimited output.
+  --na NA               Output string for missing value
+  -l N, --limit N       Limit output to the first N records.
+  --build BUILD         Output reference genome. If set to alternative build,
+                        chr and pos in the fields will be replaced by alt_chr
+                        and alt_pos
+  -g [FIELD [FIELD ...]], --group_by [FIELD [FIELD ...]]
+                        Group output by fields. This option is useful for
+                        aggregation output where summary statistics are
+                        grouped by one or more fields.
+  --all                 Variant tools by default output only one of the
+                        records if a variant matches multiple records in an
+                        annotation database. This option tells variant tools
+                        to output all matching records.
+  --order_by FIELD [FIELD ...]
+                        Order output by specified fields in ascending order,
+                        or descending order if field name is followed by DESC
+                        (e.g. --order_by 'num DESC')
+</code></pre>
+
+<h2 id="details">Details</h2>
+
+<p>Command <code>vtools output</code> outputs properties of variant in a specified variant table. The properties include fields from annotation databases and variant tables (e.g. sample frequency), basically fields outputted from command <code>vtools show fields</code>, and SQL-supported functions and expressions.</p>
+
+<h3 id="basic-usage-of-the-command">Basic usage of the command</h3>
+
+<p>The basic usage of <code>vtools output</code> is to output variant info fields of selected variants. You can use option <code>--limit</code> to limit the number of records, <code>--delimiter</code> to specify delimiter between output fields (default to tab).</p>
+
+<p>(:toggleexample Examples: Load data and produce basic output:) Let us load a small project from online</p>
+
+<pre><code>% vtools init output
+% vtools admin --load_snapshot vt_quickStartGuide
+
+
+Downloading snapshot vt_quickStartGuide.tar.gz from online
+INFO: Snapshot vt_quickStartGuide has been loaded
+</code></pre>
+
+<p>This project has a single variant table and 8 variant info fields. To view variants with the fields, we can</p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac an dp -l 10
+
+
+1  1105366  T  C  T  4    114  3251
+1  1105411  G  A  G  1    106  2676
+1  1108138  C  T  c  7    130  2253
+1  1110240  T  A  T  1    178  7275
+1  1110294  G  A  A  29   158  7639
+1  3537996  T  C  C  156  156  1753
+1  3538692  G  C  G  13   178  8362
+1  3541597  C  T  C  1    178  8060
+1  3541652  G  A  G  27   202  5923
+1  3545211  G  A  G  1    178  11142
+</code></pre>
+
+<p>The first parameter is name of a variant table, which does not have to be the master variant table <code>variant</code>. For example, you can create a variant table using variants with <code>T</code> as ancestral allele,</p>
+
+<pre><code>% vtools select variant 'aa=&quot;T&quot;' -t 'aa=T'
+
+
+Running: 2 661.8/s in 00:00:00
+INFO: 653 variants selected.
+</code></pre>
+
+<p>and view the content of this variant table as follows:</p>
+
+<pre><code>% vtools output 'aa=T' chr pos ref alt aa ac an dp -l 10
+
+
+1  1105366   T  C  T  4    114  3251
+1  1110240   T  A  T  1    178  7275
+1  6447088   T  C  T  12   172  4691
+1  6447275   T  C  T  9    176  6871
+1  11633148  T  G  T  34   98   1118
+1  20897488  C  T  T  106  164  3662
+1  20903629  T  C  T  38   164  6919
+1  35998535  T  C  T  145  202  6238
+1  36002845  T  G  T  1    180  6589
+1  40510176  T  C  T  38   202  6067
+</code></pre>
+
+<p>You can use comma to separate values using option <code>-d,</code></p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac an dp -l 10 -d,
+
+
+1,1105366,T,C,T,4,114,3251
+1,1105411,G,A,G,1,106,2676
+1,1108138,C,T,c,7,130,2253
+1,1110240,T,A,T,1,178,7275
+1,1110294,G,A,A,29,158,7639
+1,3537996,T,C,C,156,156,1753
+1,3538692,G,C,G,13,178,8362
+1,3541597,C,T,C,1,178,8060
+1,3541652,G,A,G,27,202,5923
+1,3545211,G,A,G,1,178,11142
+</code></pre>
+
+<p>or option <code>-d'\t'</code> to produce tab-delimited output:</p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac an dp -l 10 -d'\t'
+
+
+1   1105366 T   C   T   4   114 3251
+1   1105411 G   A   G   1   106 2676
+1   1108138 C   T   c   7   130 2253
+1   1110240 T   A   T   1   178 7275
+1   1110294 G   A   A   29  158 7639
+1   3537996 T   C   C   156 156 1753
+1   3538692 G   C   G   13  178 8362
+1   3541597 C   T   C   1   178 8060
+1   3541652 G   A   G   27  202 5923
+1   3545211 G   A   G   1   178 11142
+</code></pre>
+
+<p>(:exampleend:)</p>
+
+<p>You can also specify a header to the output. There are three ways to specify headers:</p>
+
+<ul>
+<li>Use option <code>--header</code> without argument to output a default header</li>
+<li>Use option <code>--header V1 V2 ...</code> to output specified headers</li>
+<li>Use option <code>--header -</code> to read header from standard input.</li>
+</ul>
+
+<p>(:toggleexample Examples: Specify a header to the output:) The easiest way to add a header is to use parameter <code>--header</code> and let <em>variant tools</em> generate a default header from field names:</p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac --header -l 10
+
+
+chr  pos      ref  alt  aa  ac
+1    1105366  T    C    T   4
+1    1105411  G    A    G   1
+1    1108138  C    T    c   7
+1    1110240  T    A    T   1
+1    1110294  G    A    A   29
+1    3537996  T    C    C   156
+1    3538692  G    C    G   13
+1    3541597  C    T    C   1
+1    3541652  G    A    G   27
+1    3545211  G    A    G   1
+</code></pre>
+
+<p>If you are unhappy about the default header, you can specify one manually</p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac --header chr pos ref alt 'ancestral allele' 'ancestral count' -l 10 -d,
+
+
+chr,pos,ref,alt,ancestral allele,ancestral count
+1,1105366,T,C,T,4
+1,1105411,G,A,G,1
+1,1108138,C,T,c,7
+1,1110240,T,A,T,1
+1,1110294,G,A,A,29
+1,3537996,T,C,C,156
+1,3538692,G,C,G,13
+1,3541597,C,T,C,1
+1,3541652,G,A,G,27
+1,3545211,G,A,G,1
+</code></pre>
+
+<p>If you have a longer header, or a header that is saved in a file, you can send the header to <code>vtools output</code> through its standard input</p>
+
+<pre><code>% echo chr pos ref alt 'ancestral allele' 'ancestral count' | \
+   vtools output variant chr pos ref alt aa ac --header - -l 10
+
+
+chr pos ref alt ancestral allele ancestral count
+1  1105366  T  C  T  4
+1  1105411  G  A  G  1
+1  1108138  C  T  c  7
+1  1110240  T  A  T  1
+1  1110294  G  A  A  29
+1  3537996  T  C  C  156
+1  3538692  G  C  G  13
+1  3541597  C  T  C  1
+1  3541652  G  A  G  27
+1  3545211  G  A  G  1
+</code></pre>
+
+<p>(:exampleend:)</p>
+
+<p>You can sort the output by one or more fields using option <code>--order_by</code>. <em>variant tools</em> by default oder fields in ascending order. You can order by descending order by adding <code>DESC</code> to field name.</p>
+
+<p>(:toggleexample Examples: Order output by one or more field names:) You can oder the output using option <code>--order_by</code>, for example</p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac --order_by ac aa -l 10
+
+
+6   30018679   G  T  .  0
+9   204719     C  T  C  0
+1   17822092   C  T  C  0
+5   140870754  G  A  G  0
+6   7176795    G  A  G  0
+7   156448542  G  A  G  0
+19  2199303    G  A  G  0
+2   237954632  G  A  G  0
+6   158452418  G  A  G  0
+8   134198127  A  G  G  0
+</code></pre>
+
+<p>You can order in descending oder by specifying <code>DESC</code> after field name, for example</p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac --order_by 'ac DESC' 'aa' -l 10
+
+
+4   95758290   G  A  A  210
+10  117065165  G  A  A  210
+12  27362133   G  A  A  210
+10  46507614   T  C  C  210
+1   195656991  A  G  G  210
+1   203542044  A  G  G  210
+1   204840282  A  G  G  210
+10  97182314   A  G  G  210
+1   157676358  G  T  T  210
+12  62759070   A  T  T  210
+</code></pre>
+
+<p>(:exampleend:)</p>
+
+<p>If your project has a primary and a secondary reference genomes, you can output variants in both coordinates.</p>
+
+<p>(:toggleexample Examples: Output variants in alternative coordinates:) Our sample project uses the hg18 reference genome. We can add an alternative reference genome by mapping all variants from hg18 to hg19 coordinates:</p>
+
+<pre><code>% vtools liftover hg19
+
+
+INFO: Downloading liftOver tool from UCSC
+INFO: Downloading liftOver chain file from UCSC
+INFO: Exporting variants in BED format
+Exporting variants: 100% [==================================] 4,858 131.7K/s in 00:00:00
+INFO: Running UCSC liftOver tool
+Updating table variant: 100% [===============================] 4,858 33.5K/s in 00:00:00
+</code></pre>
+
+<p>You can output variants in the primary reference genome,</p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac --header  --build hg18 -l 10
+
+
+chr  pos      ref  alt  aa  ac
+1    1105366  T    C    T   4
+1    1105411  G    A    G   1
+1    1108138  C    T    c   7
+1    1110240  T    A    T   1
+1    1110294  G    A    A   29
+1    3537996  T    C    C   156
+1    3538692  G    C    G   13
+1    3541597  C    T    C   1
+1    3541652  G    A    G   27
+1    3545211  G    A    G   1
+</code></pre>
+
+<p>or the alternative reference genome using option <code>--build</code></p>
+
+<pre><code>% vtools output variant chr pos ref alt aa ac --header  --build hg19 -l 10
+
+
+chr  pos      ref  alt  aa  ac
+1    1115503  T    C    T   4
+1    1115548  G    A    G   1
+1    1118275  C    T    c   7
+1    1120377  T    A    T   1
+1    1120431  G    A    A   29
+1    3548136  T    C    C   156
+1    3548832  G    C    G   13
+1    3551737  C    T    C   1
+1    3551792  G    A    G   27
+1    3555351  G    A    G   1
+</code></pre>
+
+<p>(:exampleend:)</p>
+
+<h3 id="output-fields-from-annotation-databases-option-all">Output fields from annotation databases (option <code>--all</code>)</h3>
+
+<p>You can output fields from one or more annotation databases in the same way as variant info fields. To output annotation fields of variants, you simply need to</p>
+
+<ul>
+<li>Link annotation databases to the project using command <code>vtools use</code></li>
+<li>Use command <code>vtools show annotation ANNODB</code> or <code>vtools show fields</code> to check name and meaning of available fields</li>
+<li>Output annotation fields along with variant info fields. Name of annotation database can be ignored if there is no ambiguity.</li>
+</ul>
+
+<p>(:toggleexample Examples: Output fields of annotation fields:) Let us use annotation databases <code>refGene</code> and <code>dbSNP</code>,</p>
+
+<pre><code>% vtools use refGene
+
+
+INFO: Downloading annotation database from annoDB/refGene.ann
+INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/refGene-hg19_20110909.DB.gz
+INFO: Using annotation DB refGene in project output.
+INFO: refseq Genes
+
+
+
+
+% vtools use dbSNP
+
+
+INFO: Downloading annotation database from annoDB/dbSNP.ann
+INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/dbSNP-hg19_137.DB.gz
+INFO: Using annotation DB dbSNP in project output.
+INFO: dbSNP version 137
+</code></pre>
+
+<p>because this project uses both hg18 and hg19, it can make use of the latest version of <code>refGene</code> and <code>dbSNP</code> databases that use hg19.</p>
+
+<p>These two databases bring in a large number of annotation fields, as listed by command</p>
+
+<pre><code>% vtools show fields
+
+
+variant.chr
+variant.pos
+variant.ref
+variant.alt
+variant.AA
+variant.AC
+variant.AN
+variant.DP
+variant.alt_chr
+variant.alt_pos
+refGene.name                 Gene name
+refGene.chr
+refGene.strand               which DNA strand contains the observed alleles
+refGene.txStart              Transcription start position
+refGene.txEnd                Transcription end position
+refGene.cdsStart             Coding region start
+refGene.cdsEnd               Coding region end
+refGene.exonCount            Number of exons
+refGene.score                Score
+refGene.name2                Alternative name
+refGene.cdsStartStat         cds start stat, can be 'non', 'unk', 'incompl', and 'cmp1'
+refGene.cdsEndStat           cds end stat, can be 'non', 'unk', 'incompl', and 'cmp1'
+dbSNP.chr
+dbSNP.start                  start position in chrom (1-based)
+dbSNP.end                    end position in chrom (1-based). start=end means
+                             zero-length feature
+dbSNP.name                   dbSNP reference SNP identifier
+dbSNP.strand                 which DNA strand contains the observed alleles
+dbSNP.refNCBI                Reference genomic sequence from dbSNP
+dbSNP.refUCSC                Reference genomic sequence from UCSC lookup of
+                             chrom,chromStart,chromEnd
+dbSNP.observed               Strand-specific observed alleles
+dbSNP.alt                    alternate allele on the '+' strand
+dbSNP.molType                sample type, can be one of unknown, genomic or cDNA
+dbSNP.class                  Class of variant (single, in-del, het, named, mixed,
+                             insertion, deletion etc
+dbSNP.valid                  validation status, can be unknown, by-cluster, by-
+                             frequency, by-submitter, by-2hit-2allele,
+                             by-hapmap, and by-1000genomes
+dbSNP.avHet                  Average heterozygosity from all observations
+dbSNP.avHetSE                Standard error for the average heterozygosity
+dbSNP.func                   Functional cetegory of the SNP (coding-synon,
+                             coding-nonsynon, intron, etc.)
+dbSNP.locType                Type of mapping inferred from size on reference.
+dbSNP.submitterCount         Number of distinct submitter handles for submitted SNPs for
+                             this ref SNP
+dbSNP.submitters             List of submitter handles
+</code></pre>
+
+<p>You can output annotation fields as follows:</p>
+
+<pre><code>% vtools output 'aa=T' chr pos ref alt dbSNP.name refGene.name refGene.name2 -l 10
+
+
+1  1105366   T  C  rs111751804  NM_001130045  TTLL10
+1  1110240   T  A  rs116321663  NM_001130045  TTLL10
+1  6447088   T  C  rs11800462   NM_003790     TNFRSF25
+1  6447275   T  C  rs3170675    NM_003790     TNFRSF25
+1  11633148  T  G  rs9614       NM_012168     FBXO2
+1  20897488  C  T  rs522496     NM_001122819  KIF17
+1  20903629  T  C  rs2296225    NM_001122819  KIF17
+1  35998535  T  C  rs7537203    NM_022111     CLSPN
+1  36002845  T  G  rs115614983  NM_022111     CLSPN
+1  40510176  T  C  rs2076697    NM_005857     ZMPSTE24
+</code></pre>
+
+<p>(:exampleend:)</p>
+
+<p>This looks simple but the problem is more complicated than what is shown here, because <strong>a variant can match multiple records in annotation databases</strong>. For example, mutation <code>T-&gt;C</code> at position <code>1105366</code> on chr1 belongs to reference sequences <code>NM_153254</code> and <code>NM_001130045</code> of the reference sequence database. Because <strong><code>vtools output</code> by default only displays a random record of multiple records</strong>, its output can miss important information. To address this problem, an option <code>--all</code> is provided to output all annotation records. This option has its own problem though. For example, if you do not output the differentiating field that lead to multiple records, you can see a bunch of duplicated records.</p>
+
+<p>(:toggleexample Examples: Use option &ndash;all to list all annotation records:) Using option <code>--all</code>, command <code>vtools output</code> can display multiple records for a variant:</p>
+
+<pre><code>% vtools output 'aa=T' chr pos ref alt dbSNP.name refGene.name refGene.name2 --all -l 10
+
+
+1  1105366  T  C  rs111751804  NM_153254     TTLL10
+1  1105366  T  C  rs111751804  NM_001130045  TTLL10
+1  1110240  T  A  rs116321663  NM_153254     TTLL10
+1  1110240  T  A  rs116321663  NM_001130045  TTLL10
+1  6447088  T  C  rs11800462   NM_001039664  TNFRSF25
+1  6447088  T  C  rs11800462   NM_148970     TNFRSF25
+1  6447088  T  C  rs11800462   NM_148967     TNFRSF25
+1  6447088  T  C  rs11800462   NM_148966     TNFRSF25
+1  6447088  T  C  rs11800462   NM_148965     TNFRSF25
+1  6447088  T  C  rs11800462   NM_003790     TNFRSF25
+</code></pre>
+
+<p>A consequence of this is that duplicated records can be displayed if the field that lead to multiple records is not outputted:</p>
+
+<pre><code>% vtools output 'aa=T' chr pos ref alt dbSNP.name  refGene.name2 --all -l 10
+
+
+1  1105366  T  C  rs111751804  TTLL10
+1  1105366  T  C  rs111751804  TTLL10
+1  1110240  T  A  rs116321663  TTLL10
+1  1110240  T  A  rs116321663  TTLL10
+1  6447088  T  C  rs11800462   TNFRSF25
+1  6447088  T  C  rs11800462   TNFRSF25
+1  6447088  T  C  rs11800462   TNFRSF25
+1  6447088  T  C  rs11800462   TNFRSF25
+1  6447088  T  C  rs11800462   TNFRSF25
+1  6447088  T  C  rs11800462   TNFRSF25
+</code></pre>
+
+<p>This is why the output of command <code>vtools output --all</code> is usually piped to command <code>uniq</code>,</p>
+
+<pre><code>% vtools output 'aa=T' chr pos ref alt dbSNP.name  refGene.name2 --all -l 10 | uniq
+
+
+1  1105366  T  C  rs111751804  TTLL10
+1  1110240  T  A  rs116321663  TTLL10
+1  6447088  T  C  rs11800462   TNFRSF25
+</code></pre>
+
+<p>although <code>uniq</code> cannot suppress all duplicated records in all cases because it only removes adjacent duplicated records.</p>
+
+<p>(:exampleend:)</p>
+
+<h3 id="output-expressions-of-fields">Output expressions of fields</h3>
+
+<p>In addition to values of variant info and annotation fields, command <code>vtools output</code> can be used to output SQL-acceptable expressions that involves multiple fields. For example,</p>
+
+<ul>
+<li>Because <em>variant tools</em> uses 1-based coordinates, you might want to output <code>pos-1</code> instead of <code>pos</code> to generate output with 0-based indexes,</li>
+<li>You can output allele frequency by dividing number of alternative alleles by total number of alleles,</li>
+</ul>
+
+<p>In addition to basic arithmetic operations, <em>variant tools</em> accept additional mathematical and string extension functions for SQL queries using the loadable extensions mechanism from <a href="http://www.sqlite.org/contrib" target="_blank">HERE</a>, including mathematical functions <code>acos, asin, atan, atn2, atan2, acosh, asinh, atanh, difference, degrees, radians, cos, sin, tan, cot, cosh, sinh, tanh, coth, exp, log, log10, power, sign, sqrt, square, ceil, floor, pi</code>, and string operations <code>replicate, charindex, leftstr, rightstr, ltrim, rtrim, trim, replace, reverse, proper, padl, padr, padc, strfilter</code>.</p>
+
+<p>(:toggleexample Examples: Output expressionf of fields:) This example demonstrates the use of SQL expressions in command <code>vtools output</code>. Note that the sqlite string concatenation operator is <code>||</code>.</p>
+
+<pre><code>% vtools output &quot;aa=T&quot; chr 'pos-1' 'refGene.name2 || &quot;.&quot; || refGene.name' 'log(DP)' --header -l 10
+
+
+chr  pos_1     refGene_name2___________refGene_name  log_DP_
+1    1105365   TTLL10.NM_001130045                   8.0867179203
+1    1110239   TTLL10.NM_001130045                   8.89219909204
+1    6447087   TNFRSF25.NM_001039664                 8.45340105833
+1    6447274   TNFRSF25.NM_001039664                 8.83506493503
+1    11633147  FBXO2.NM_012168                       7.01929665372
+1    20897487  KIF17.NM_001122819                    8.20576472523
+1    20903628  KIF17.NM_001122819                    8.8420265295
+1    35998534  CLSPN.NM_022111                       8.73841489717
+1    36002844  CLSPN.NM_022111                       8.79315687091
+1    40510175  ZMPSTE24.NM_005857                    8.71061952794
+</code></pre>
+
+<p>As you can see, the default header that <em>variant tools</em> generates replaces all non-alphanumeric characters by underscores, and you should most likely specify your own headers in these cases.</p>
+
+<p>(:exampleend:)</p>
+
+<h3 id="output-summary-statistics-of-fields-using-sql-aggregating-functions-option-group-by">Output summary statistics of fields using SQL aggregating functions (option <code>--group_by</code>)</h3>
+
+<p>In addition to functions that operate on values of the same field, you can use SQL aggregating functions to output summary statistics of fields. For example, you can use function <code>count(*)</code> to count the number of records, <code>sum(DP)</code> to get the sum of depth for all variants. More usefully, these operations can be applied to groups of variants defined by option <code>--group_by</code>.</p>
+
+<p>Command <code>vtools output</code> accepts the following aggregating functions:</p>
+
+<ul>
+<li>All sqlite3 functions listed <a href="http://www.sqlite.org/lang_aggfunc.html" target="_blank">HERE</a> are supported. The most useful ones are <code>count</code>, <code>sum</code>, <code>avg</code>, <code>min</code> and <code>max</code>.</li>
+<li>Additional aggregation functions such as <code>stdev, variance, mode, median, lower_quartile, upper_quartile</code> defined <a href="http://www.sqlite.org/contrib" target="_blank">HERE</a>.</li>
+</ul>
+
+<p>(:toggleexample Examples: Output summary statistics of fields:) The following command calculate the average depth for all variants:</p>
+
+<pre><code>% vtools output variant 'avg(DP)'
+
+
+6264.00102923
+</code></pre>
+
+<p>You can also output average of depth, grouped by variants that belong to genes,</p>
+
+<pre><code>% vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 -l 10
+
+
+.         20  5928.05
+AARD      1   3919.0
+AASDHPPT  2   7834.0
+AATF      4   8590.0
+ABCB9     3   3469.66666667
+ABCC6     18  4963.27777778
+ABLIM3    6   8895.5
+ABTB2     3   6922.0
+ACHE      4   5159.25
+ACIN1     15  8962.73333333
+</code></pre>
+
+<p>Here <code>count(*)</code> is used to count the number of variants in each gene, and <code>NA</code> is a special group for variants that do not belong to any gene, which can be confirmed by command</p>
+
+<pre><code>% vtools select variant 'refGene.chr is NULL' --output 'avg(DP)'
+
+
+5928.05
+</code></pre>
+
+<p>Option <code>--all</code> should not be used in these commands because this option will lead to multiple entries for some variants, and biase the results. For example, the output of the following command differs from the previous one:</p>
+
+<pre><code>% vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 --all -l 10
+
+
+.         20  5928.05
+AARD      1   3919.0
+AASDHPPT  2   7834.0
+AATF      4   8590.0
+ABCB9     15  3469.66666667
+ABCC6     18  4963.27777778
+ABLIM3    6   8895.5
+ABTB2     3   6922.0
+ACHE      8   5159.25
+ACIN1     47  8719.21276596
+</code></pre>
+
+<p>(:exampleend:)</p>
+
+<p>Using option <code>--all</code> along with aggregating function will most likely lead to erroneous results because the aggregating function will be applied to a dataset with duplicated entries, unless you intentionally would like to count, for example, number of duplicated entries for each variant.</p>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/" title="associate"> <i class="fa fa-chevron-left"></i><label>associate</label></a>
+    <a class="nav nav-next" href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/" title="export" style="margin-right: 0px;"><label>export</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+  
+
+    <div class="github-link">
+      <a href="Documentation/vtools%20Commands/output.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
+</footer>
+
+<script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js"></script>
+
+<link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css" rel="stylesheet">
+<script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js"></script>
+
+
+
+<script src="https://vatlab.github.io/vat-docs/theme-flex/script.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

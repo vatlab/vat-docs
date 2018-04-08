@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vatlab</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.36.1" />
+<title>Customized pipeline :: vatlab</title>
+<link rel="shortcut icon" href="https://vatlab.github.io/vat-docs/images/favicon.png" type="image/x-icon" />
+<link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://vatlab.github.io/vat-docs/css/nucleus.css" rel="stylesheet">
+<link href="https://vatlab.github.io/vat-docs/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://vatlab.github.io/vat-docs/css/bootstrap.min.css">
+<script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+</script>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/documentation/pipelines/customizedpipeline/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://vatlab.github.io/vat-docs/">vatlab</a>
+  
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="https://vatlab.github.io/vat-docs/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/install/" class="dd-item
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/install/">Installation</a>
+      </div>
+    </li>
+    <li data-nav-id="/documentation/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/">Documentation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/keyconcepts/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/keyconcepts/">
+            Key concepts
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/tutorials/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/tutorials/">
+            Tutorials
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/help/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/help/">
+            Help
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/vtools-commands/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/">Vtools commands</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/vtools-commands/init/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/init/">
+            Init
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/import/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/">
+            Import
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/update/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/">
+            Update
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/phenotype/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/phenotype/">
+            Phenotype
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/liftover/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/liftover/">
+            lifttover
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/show/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/show/">
+            show
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/use/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/">
+            use
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/select/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/select/">
+            select
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/exclude/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/exclude/">
+            exclude
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/compare/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/compare/">
+            compare
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/associate/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/">
+            associate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/output/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/">
+            output
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/export/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/">
+            export
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/remove/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/remove/">
+            remove
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/execute/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/execute/">
+            execute
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools-commands/admin/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/">
+            admin
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/functions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/functions/">Functions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/functions/ref_sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/ref_sequence/">
+            ref_sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/mut_sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/mut_sequence/">
+            mut_sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/track/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/track/">
+            track
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/genotype/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/genotype/">
+            Genotype
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/samples/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/samples/">
+            samples
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/in_table/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/in_table/">
+            in_table
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/functions/otherfunctions/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/">
+            Other functions
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/vtools_report/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/">Vtools_report</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/vtools_report/avg_depth/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/">
+            avg_depth
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/discordance_rate/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/discordance_rate/">
+            discordance_rate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/sam_info/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/">
+            sam_info
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/sequence/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/sequence/">
+            sequence
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/trans_ratio/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/">
+            trans_ratio
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/variant_stat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/variant_stat/">
+            variant_stat
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/inbreeding_coefficient/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/inbreeding_coefficient/">
+            inbreeding_coefficient
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/transmission/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/transmission/">
+            transmission
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/meta_analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/meta_analysis/">
+            meta_analysis
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_fields/">
+            plot_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_geno_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/">
+            plot_geno_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_pheno_fields/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_pheno_fields/">
+            plot_pheno_fields
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/vtools_report/plot_association/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_association/">
+            plot_association
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/customization/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/">Customization</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/format/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/format/">
+            Format
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/customization/simulation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/">Simulation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/simulation/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/customization/simulation/custimzedsimu/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/custimzedsimu/">
+            Customized simulations
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/customization/simulation/models/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/">Models</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/customization/simulation/models/peng1/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/">
+            Peng2014_ex1
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/customization/simulation/models/pen2/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/">
+            Peng2014_ex2
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/pipelines/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/">Pipelines</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/customizedpipeline/" class="dd-item active">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/">
+            Customized pipeline
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/documentation/pipelines/variant-calling/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/">Variant calling</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_hg19/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/">
+            bwa_gatk33_hg19
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_b37/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/">
+            bat_gatk33_b37
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_hg19/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/">
+            bwa_gatk28_hg19
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_b37/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/">
+            bwa_gatk28_b37
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/pipelines/other-pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/">Other pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/import_vcf/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/import_vcf/">
+            import_vcf
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/anno_utils/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/anno_utils/">
+            anno_utils
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/transmission/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/transmission/">
+            transmission
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/illumina/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/illumina/">
+            Illumnina
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/annovar/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/annovar/">
+            ANNOVAR
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/snpeff/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/snpeff/">
+            snpEff
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/pipelines/other-pipelines/king/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/king/">
+            KING
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/documentation/utilities/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/documentation/utilities/">Utilities</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/documentation/utilities/report_progress/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/utilities/report_progress/">
+            report_progress
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/documentation/utilities/_md5sumd/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/documentation/utilities/_md5sumd/">
+            md5sumd
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/">Application</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/applications/annotation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/">Annotation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/tutorial/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/tutorial/">
+            Tutorial
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/customized/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/customized/">
+            Customized annotation databases
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/annotation/genes/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/">Genes</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/genes/ccdsgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/">
+            ccdsGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/hugogene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/">
+            Hugo gene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/entrezgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/entrezgene/">
+            EntrezGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/knowngene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/knowngene/">
+            knownGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/refgene/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/refgene/">
+            refGene
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/genes/cancergenecensus/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/genes/cancergenecensus/">
+            CancerGeneCensus
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/variants/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/">Variants</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/variants/cosmic/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/">
+            COSMIC
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/dbnsfp/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/">
+            sbNSFP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/dbsnp/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/">
+            dbSNP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/linkagephysicalmap/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/">
+            linkage-physical map
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/databaseof/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/">
+            Database of Genomic Variants
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/exomesequencingpro/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/">
+            Exome Sequencing Project
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/gwas/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/">
+            gwasCatalog
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/hapmap/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/hapmap/">
+            HapMap
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/variants/thousand/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/variants/thousand/">
+            Thousand Genomes
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/regions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/">Regions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/regions/low-complexity-regions/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/low-complexity-regions/">
+            Low complexity regions
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/phast-cons/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/phast-cons/">
+            Phast cons
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/genomic-super-dups/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic-super-dups/">
+            Genomic super dups
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/regions/cytoband/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/">
+            cytoBand
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/annotation/misc/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/">Misc</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/annotation/misc/illumina/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/">
+            Illumina
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/misc/keggpathway/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/keggpathway/">
+            keggPathway
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/annotation/misc/encode/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/annotation/misc/encode/">
+            ENCODE
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/applications/discovery/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/discovery/">
+            Discovery
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/association/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/">Association</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/data-explorationqc/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/">
+            Data exploration/QC
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/association-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/association-analysis/">
+            Association analysis
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/post-assoc-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/">
+            Post-assoc analysis
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/applications/association/basic-data-statistics/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/">Basic data statistics</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/basic-data-statistics/group-statwrite/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/">
+            Group stat&amp;Write
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/single-variant-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/">Single variant analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/single-variant-analysis/fisher-exact-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/">
+            Fisher exact test
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/single-gene-association-methods/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/">Single gene association methods</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/single-gene-association-methods/introduction/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/introduction/">
+            Introduction
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/cmc-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/cmc-test/">
+            CMC test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/c_alpha-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/">
+            C-alpha test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/kbac-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/kbac-test/">
+            KBAC test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/rbt-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rbt-test/">
+            RBT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/rarecover-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rarecover-test/">
+            RareCover test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/vt-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/vt-test/">
+            VT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/wss-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/wss-test/">
+            WSS test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/single-gene-association-methods/asum-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/asum-test/">
+            aSum test
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/jointconditional-association-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/">Joint/Conditional association analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/collapsing-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/">
+            Collapsing methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/aggregation-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/">
+            Aggregation methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/weighted-methods/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/">
+            Weighted methods
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/variable-thresholds/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/">
+            Variable thresholds
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/skat-test/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/skat-test/">
+            SKAT test
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/metaskat-analysis/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/">
+            MetaSKAT analysis
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/vat-stacking/" class="dd-item
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/vat-stacking/">VAT stacking</a>
+      </div>
+    </li>
+    <li data-nav-id="/applications/association/create-your-test/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/">Create your test!</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/create-your-test/running-r-programs/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/running-r-programs/">
+            Running R programs
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/applications/association/create-your-test/programming-in-vat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/create-your-test/programming-in-vat/">
+            Programming in VAT
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/applications/association/view-association-result/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/applications/association/view-association-result/">View association result</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/applications/association/view-association-result/qq-plot-and-manhattan-plot/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/">
+            QQ plot and Manhattan plot
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/development/chagelog/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/development/chagelog/">
+            ChangeLog
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/development/getinvolved/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/development/getinvolved/">
+            Get Involved
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/administration/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/administration/">Administration</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/administration/allrecent/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/allrecent/">
+            All recent changes
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/autolink/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/autolink/">
+            Autolink
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/stylesheet/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/stylesheet/">
+            Style sheet
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/administration/trafficstat/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/administration/trafficstat/">
+            Traffic statistics
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/under-development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="https://vatlab.github.io/vat-docs/under-development/">Under development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/under-development/faq/" class="dd-item">
+        <div>
+          <a href="https://vatlab.github.io/vat-docs/under-development/faq/">
+            FAQ
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/install/" >
+   Installation</option>
+    <option value="/documentation/" >
+   Documentation</option> 
+      <option value="/documentation/keyconcepts/" >- Key concepts</option>
+      <option value="/documentation/tutorials/" >- Tutorials</option>
+      <option value="/documentation/help/" >- Help</option>
+    <option value="/documentation/vtools-commands/" >
+  - 
+   Vtools commands</option>
+    <option value="/documentation/functions/" >
+  - 
+   Functions</option>
+    <option value="/documentation/vtools_report/" >
+  - 
+   Vtools_report</option>
+    <option value="/documentation/customization/" >
+  - 
+   Customization</option>
+    <option value="/documentation/pipelines/" >
+  - 
+   Pipelines</option> 
+      <option value="/documentation/pipelines/introduction/" >-- Introduction</option>
+      <option value="/documentation/pipelines/customizedpipeline/"  selected>-- Customized pipeline</option>
+    <option value="/documentation/pipelines/variant-calling/" >
+  -- 
+   Variant calling</option>
+    <option value="/documentation/pipelines/other-pipelines/" >
+  -- 
+   Other pipelines</option>
+  
+    <option value="/documentation/utilities/" >
+  - 
+   Utilities</option>
+  
+    <option value="/applications/" >
+   Application</option>
+    <option value="/development/" >
+   Development</option>
+    <option value="/administration/" >
+   Administration</option>
+    <option value="/under-development/" >
+   Under development</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js"></script>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js"></script>
+        <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+          
+        </script>
+        <script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js"></script>
+      </div>
+    
+
+    <h1>Customized pipeline</h1>
+    
+    
+    
+    
+
+<h1 id="specification-of-a-variant-tools-pipeline">Specification of a variant tools pipeline</h1>
+
+<p>This page describes the new pipeline format (version 1.1 and later). Please refer to <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.Format10?action=edit" target="_blank">Format1_0</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.Format10?action=edit" target="_blank">?</a> if you are editing a pipeline specification file for variant tools 2.7 and earlier..</p>
+
+<h2 id="intxroduction">Intxroduction</h2>
+
+<p><em>Variant Tools</em> uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator). You can use command</p>
+
+<pre><code>% vtools show pipelines
+</code></pre>
+
+<p>to get a list of all publicly available pipelines, and</p>
+
+<pre><code>% vtools show pipeline SPECFILE
+</code></pre>
+
+<p>to get the details of pipelines defined in <code>SPECFILE</code>. The output of this command consists of description of the <code>SPECFILE</code>, all pipelines in it, steps of each pipeline, and options of the pipelines.</p>
+
+<p>A pipeline can be executed by command</p>
+
+<pre><code>% vtools execute SPECFILE PIPELINE [--input XXX] [--output XXX] [OPTIONS]
+</code></pre>
+
+<p>where <code>SPECFILE</code> can be a local <code>.pipeline</code> file, or name of an online pipeline specification file, <code>PIPELINE</code> is the name of the pipeline defined in SPECFILE. The command line can be simplified to</p>
+
+<pre><code>% vtools execute SPECFILE [-i XXX] [-o XXX] [OPTIONS]
+</code></pre>
+
+<p>if the spec file only defines one pipeline.</p>
+
+<p>The format of pipeline spec files is similar to the <code>.ini</code> files of the good old days. It is not as fashionable as <code>XML</code> based configuration files but it is easier to read and write. The most simple pipeline specification file is a collection of commands and scripts as follows</p>
+
+<pre><code>###fileformat=PIPELINE1.1
+# Copyright, change log etc
+
+# This is a description of all pipelines defined in this spec file
+
+[1]
+RunCommand(cmd='a shell command')
+
+[2]
+ExecuteRScript(script='''
+library(mylib)
+a &lt;- read.table(&quot;${var2}.txt&quot;)
+
+''')
+</code></pre>
+
+<p>although a spec file that defines multiple pipelines, accepts multiple command line parameters and makes uses of pipeline variables looks as follows:</p>
+
+<blockquote>
+<blockquote>
+<p>output&lt;</p>
+</blockquote>
+</blockquote>
+
+<pre><code>###fileformat=PIPELINE1.1
+# Copyright, change log etc
+
+# This is a description of all pipelines defined in this spec file
+#
+
+p1_description:
+    The p1 pipeline performs ...
+
+p2_description:
+    The p1 pipeline performs ...
+
+# pipeline variables
+VAR=VALUE
+VAR1=VALUE1
+
+[DEFAULT]
+arg1=
+    This argument does this
+
+arg2=1.0
+    This argument has a default value 1.0
+
+[*_10: passthrough]
+# Check the version of variant tools
+CheckVariantToolVersion('2.7')
+
+[p1_20]
+# Execute a single command
+input:
+    ${cmd_input}
+RunCommand(cmd='''
+   a very long command &gt; ${var1} ''',
+   output='${var1}')
+
+[p1_200]
+# Execute a R script
+ExecuteRScript(script='''
+library(mylib)
+a &lt;- read.table(&quot;${var2}.txt&quot;
+
+''',
+   output='${var2[:-3]}.pdf')
+
+[p2_20]
+# Execute a R script for pipeline p2
+ExecuteRScript(script='''
+library(mylib)
+a &lt;- read.table(&quot;${var2}.txt&quot;
+
+''',
+   output='${var2[:-3]}.pdf')
+</code></pre>
+
+<p>This small example demonstrates almost all the features of pipeline specification files. Before we go to the details of each section, here are some basic rules:</p>
+
+<ul>
+<li><p>A spec file should start with line</p>
+
+<p>##fileformat=PIPELINE1.1</p></li>
+
+<li><p>Lines starts with <code>#</code> are comments. Some comments are significant and will be displayed in the output of <code>vtools show pipeline</code>.</p></li>
+
+<li><p>A pipeline spec file consists of a starting description section with no header, an optional <code>[DEFAULT]</code> section, and multiple pipeline step sections.</p></li>
+
+<li><p>Values of an item can be expanded into multiple lines, e.g.</p>
+
+<p>name=this is a long text
+  that continues to the second line
+  or the third</p></li>
+</ul>
+
+<p>Consequently, <strong>you can expand your comments or commands into several lines as long as you do not start from the first column</strong>. An exception to this rule is when a large piece of text is quoted in triple quotes such as</p>
+
+<pre><code>ExecuteRScript('''
+data &lt;- read.table(&quot;${input}&quot;)
+data &lt;- data[1,]
+''')
+</code></pre>
+
+<p>Note that <code>''' ... '''</code> literals are automatically translated to <code>r''' ... '''</code> so escape characters are not translated. Use <code>&quot;&quot;&quot; ... &quot;&quot;&quot;</code> string literals if you would like to allow escape characters.</p>
+
+<ul>
+<li><p>You can use either <code>KEY = VALUE</code> or <code>KEY : VALUE</code>. The convention is to use <code>KEY = VALUE</code> for variable assignment and <code>KEY : VALUE</code> for all other.</p></li>
+
+<li><p>Pattern <code>${ }</code> are specially handled as pipeline variables. <code>;</code> and <code>%</code> are not special characters as in the original specification format.</p></li>
+</ul>
+
+<h2 id="top-section">Top Section</h2>
+
+<p>A pipeline specification file should start with a description section (no header is needed). This section should have the following keys:</p>
+
+<ul>
+<li><p><code>description</code>: Summary of pipelines defined in this SPECFILE, which should include format and type of input data (raw reads? bam file? paired end?), external commands that are used, a short description of steps involved, and reference to external documentation if available. If no description is provided, the second block of comments will be treated as overall pipeline description in the output of <code>vtools show pipeline</code>. For example,</p>
+
+<p>##fileformat=PIPELINE1.1</p>
+
+<h1 id="copyright-line">Copyright line</h1>
+
+<h1 id="this-is-the-overall-pipeline-description">This is the overall pipeline description</h1>
+
+<p>#</p></li>
+
+<li><p><code>PIPELINE_description</code>: (Optional) Description of pipeline <code>PIPELINE</code>. <code>PIPELINE</code> has to be a valid pipeline defined in this file (with sections <code>PIPELINE_XX</code>).</p></li>
+</ul>
+
+<p>If you have long descriptions (highly recommended!), you can break it into several paragraphs by adding HTML tags <code>&lt;p&gt;</code> or <code>&lt;br&gt;</code>. Tag <code>&lt;p&gt;</code> starts a new paragraph (two newlines) and tag <code>&lt;br&gt;</code> starts a new line (one newline). You can also use tags <ul> and <li> to generate itemized lists. For example,</p>
+
+<pre><code>This pipeline uses &lt;ul&gt;
+  &lt;li&gt;tophat 2.0.13 
+  &lt;li&gt;bowtie 1.1.1
+  &lt;li&gt;samtools 0.1.19
+  &lt;li&gt;picard 1.82
+  &lt;/ul&gt;
+</code></pre>
+
+<p>will produce output</p>
+
+<pre><code>This pipeline uses
+  * tophat 2.0.13
+  * bowtie 1.1.1
+  * samtools 0.1.19
+  * picard 1.82
+</code></pre>
+
+<p>when the description is outputted using command <code>vtools show pipeline</code>.</p>
+
+<ul>
+<li><p><code>NAME=VAL</code> (optional): Pipeline variables. This is usually a good place to define constant values that will be used by pipeline steps. For example:</p>
+
+<pre><code>RESOURCE_DIR=${local_resource}/pipeline_resource/name_of_pipeline
+</code></pre></li>
+</ul>
+
+<p>where ${local_resource} is another pipeline variable that has value of project runtime option <code>$local_resource</code>. We will talk about pipeline variables in details later.</p>
+
+<h2 id="section-default-command-line-options">Section <code>[DEFAULT]</code> (command line options)</h2>
+
+<p>The <code>DEFAULT</code> section defines parameters that can be changed using command line arguments. For example, in the following <code>.pipeline</code> file (partial)</p>
+
+<pre><code>[DEFAULT]
+opt_java=-Xmx4g
+    Parameter passed to the java command, default to -Xmx4g to use a maximum of 4g heap space.
+
+[align_5]
+RunCommand(cmd=&quot;java ${opt_java} SortSam ...&quot;)
+</code></pre>
+
+<p>The value of <code>opt_java</code> will be used to replace all instances of <code>${opt_java}</code> in the pipeline configuration file (or its derivatives, more on this later). The parameter has a default value <code>-Xmx4g</code> and a help message, which will be displayed when you view the details of this parameter.</p>
+
+<pre><code>% vtools show pipeline my_pipeline
+</code></pre>
+
+<p>you will see at the end of the output the following description:</p>
+
+<pre><code>Pipeline parameters:
+  opt_java     Parameter passed to the java command, default to -Xmx4g to use a maximum of 4g heap space.
+               (default: -Xmx4g)
+</code></pre>
+
+<p>That is to say, you can pass an alternative value of <code>opt_java</code> to this format using command-line options such as <code>--opt_java -Xmx32g</code> to change the value of this option.</p>
+
+<p>If you have a large number of parameters, you can save them to an external file, one item per line, and load them by prefixing filename with a <code>&quot;@&quot;</code> symbol. For example, if you have a file <code>param.cfg</code> with content</p>
+
+<pre><code>--bwa
+/path/to/bwa
+--samtools
+/path/to/samtools
+</code></pre>
+
+<p>you can load parameters <code>--bwa /path/to/bwa --samtools /path/to/samtools</code> using <code>&quot;@param.cfg&quot;</code> from command line.</p>
+
+<p>You do not have to define parameter <code>--input</code> and <code>--output</code> but it is a good practice to define them in this section to provide description of the input and output of the pipeline.</p>
+
+<h2 id="pipeline-variables">Pipeline variables</h2>
+
+<h3 id="definition-of-pipeline-variables">Definition of pipeline variables</h3>
+
+<p>Pipeline variables are variables associated with the execution of pipeline. They are added with the progression of the pipeline and provides runtime information for each step. All pipelines starts with the following variables:</p>
+
+<ul>
+<li><strong>Command line options</strong>: All command line options will be passed as pipeline variables as a list of strings, with the exceptions for
+
+<ul>
+<li><code>${cmd_input}</code> for option <code>--input</code></li>
+<li><code>${cmd_output}</code> for option <code>--output</code> Pipeline output , which will be <code>['data.bam']</code> for the above mentioned example. It does not have to a list of files. For example, it can be used to specify output directory or</li>
+</ul></li>
+</ul>
+
+<p>For example, <code>${cmd_input}</code> and ${cmd_output} will be <code>['data.tgz']</code> and <code>['data.bam']</code> respectively for command <code>vtools execute bwa_gatk28_hg19 align --input data.tgz --output data.bam</code>.</p>
+
+<ul>
+<li>A pipeline starts by default with <code>${cmd_input}</code> as input files but it can start without any input, or from another variable.</li>
+<li><code>${cmd_input}</code> and <code>${cmd_output}</code> will always be a list even if only one input or output file is passed.</li>
+
+<li><p><code>${cmd_input}</code> and @@${cmd_output} do not have to be a list of files. For example they can be used to specify input and output directories.</p></li>
+
+<li><p><strong>Execution environment</strong> including</p>
+
+<ul>
+<li><code>${vtools_version}</code>: Version of variant tools (e.g. <code>2.0.2</code>) used to execute the pipeline.</li>
+<li><code>${spec_file}</code>: Full path of the specfile in which the pipeline is defined.</li>
+<li><code>${pipeline_name}</code> and <code>${model_name}</code>: Name of the pipeline. The name <code>MODEL_NAME</code> is preferred when the pipeline is used in variant simulation tools.</li>
+<li><code>${pipeline_step}</code>: Current step in the pipeline (as a string).</li>
+<li><code>${ref_genome_build}</code>: Primary build of the reference genome of the project (e.g. <code>hg19</code>).</li>
+<li><code>${local_resource}</code>: Project resource directory (runtime variable <code>$local_resource</code>).</li>
+<li><code>${cache_dir}</code>: Project cache directory, which is usually used to store all intermediate files of a pipeline.</li>
+<li><code>${temp_dir}</code>: Project temporary directory (<code>$temp_dir</code>), which can be used to store, for example, java temp directories. This directory can be set by runtime option <code>$temp_dir</code>. A system temp directory will be used if the pipeline is executed without a variant tools project.</li>
+<li><code>${model_name}</code> and <code>SEED</code>: Name of the simulation model (pipeline) and seed. Used by <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Simulation.HomePage?action=edit" target="_blank">Variant Simulation Tools</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Simulation.HomePage?action=edit" target="_blank">?</a>.</li>
+<li><code>${home}</code>: user&rsquo;s home directory.</li>
+<li><code>${working_dir}</code> Working directory, which is default to current directory.
+<br /></li>
+</ul></li>
+
+<li><p><strong>User-defined variables</strong> defined in the top section and pipeline sections. The top section usually defines constant that will be used later. The pipeline sections usually define variables as a result of certain action.</p></li>
+</ul>
+
+<p>You can override some execution environment variables by re-defining it in the top section. In particular, if you define <code>${working_dir}</code> in the top section of the spec file, all jobs will be executed under this directory (although some actions can have their own working directories).</p>
+
+<ul>
+<li><p><strong>Runtime variables</strong> including</p>
+
+<ul>
+<li><code>${input}</code> as input to actions because an action might be repeated for each input files.</li>
+</ul></li>
+</ul>
+
+<h3 id="use-of-pipline-variables">Use of Pipline variables</h3>
+
+<p>It is important to remember that</p>
+
+<ul>
+<li>Pipeline variables are case-insensitive, read only, and can be only string or list of strings. List of strings are joined by space when they are outputted.</li>
+<li>All file-list variables such as <code>cmd_input</code>, <code>cmd_output</code>, <code>input</code>, <code>inputXXX</code>, <code>outputXXX</code> (where <code>XXX</code> is step of pipeline) and <a href="#alias">their aliases</a> are list of strings, even if there is only one file in the list.</li>
+<li>All command line arguments are list of strings.</li>
+<li>All other variables such as user-defined variables can hold string only.</li>
+</ul>
+
+<p>For example, if the value of variable <code>cmd_input</code> is <code>['file1.txt', 'file2.txt']</code>, they will appear as <code>file1.txt file2.txt</code> when <code>${cmd_input}</code> is used in a command line (with proper quotation).</p>
+
+<p>If you need to access one or more elements of the list of strings, use variables such as <code>${input[0]}</code>, <code>${cmd_output[-1]}</code>, <code>${input[2:]}</code> and <code>${input[0][:-3]}</code>.</p>
+
+<p>If you need to output pipeline variables in any other format, you can use a function form of the variable <code>${var: lambda_func}</code> using Python lambda function. For example,</p>
+
+<pre><code>${cmd_output: os.path.basename(cmd_output[0])}
+</code></pre>
+
+<p>passes value of <code>cmd_output</code> to a Python lambda function <code>lambda x: os.path.basename(x[0])</code>, which will be <code>&quot;output.bam&quot;</code> if <code>${cmd_output}</code> equals to <code>&quot;/path/to/output.bam&quot;</code>.</p>
+
+<pre><code>${input: ','.join(sorted([x for x in input if '_R1_' in x]))}
+</code></pre>
+
+<p>takes a list of input files, select files with <code>_R1_</code> in filename, sort them, and output them as comma-separated list.</p>
+
+<p>This mechanism is very powerful in that the lambda function can take zero or more than one pipeline variables. For example</p>
+
+<pre><code>hostname=${: subprocess.check_output(&quot;hostname&quot;)}
+</code></pre>
+
+<p>returns the output of the <code>hostname</code> command</p>
+
+<pre><code>${input,cmd_output: OS.PATH.JOIN(cmd_output[0], input[0])}
+</code></pre>
+
+<ul>
+<li>Use of shell variables (e.g. use a for loop in action <code>RunCommand</code>) is possible but can be tricky because pipeline and shell variables can take the same form. Whereas simple form of shell variables (<code>$VAR</code> instead of <code>${var}</code>) can be used without problem, the brace form <code>${var}</code> will trigger a warning message if <code>VAR</code> is a not valid pipeline variable, and return unexpected results otherwise.</li>
+<li>Pipeline variables can use functions from common Python modules such as <code>os</code>, <code>sys</code>, <code>glob</code>, <code>subprocess</code>, and functions defined in modules imported using action <code>ImportModule</code>. If you need more modules, you can import them using inline script of action <code>ImportModule</code>.</li>
+</ul>
+
+<h2 id="step-sections">Step sections</h2>
+
+<h3 id="name-of-step-sections-pipeline-xx-pipeline-xx-or-pipeline-xx-pipeline1-xx-or-xx">Name of step sections <code>[PIPELINE]</code>, <code>[XX]</code>, <code>[PIPELINE_XX]</code>, or <code>[PIPELINE_XX,PIPELINE1_XX]</code>, or <code>[*_XX]</code></h3>
+
+<p>A pipeline is, roughly speaking, a <em>pipe</em> that connects the input (e.g. raw reads in fastq format) to the output (e.g. aligned reads in bam format), going through a few steps (actions) along the way. A pipeline specification file can define multiple pipelines with different <code>PIPELINE</code>. Steps in a pipeline are numbered and will be executed in such order. The indexes of actions do not have to be consecutive so <code>align_10</code>, <code>align_20</code>, and <code>align_30</code> are acceptable. They do not even have to be defined in the order they are be executed.</p>
+
+<p>If your pipeline contains only one step, you can just define a section as follows</p>
+
+<pre><code>[test_env]
+</code></pre>
+
+<p>If your spec file defines only one pipeline or if you would like to define a default pipeline that will be executed without specifying a name, you can specify this pipeline without name, e.g.</p>
+
+<pre><code>[100]
+    [200]
+</code></pre>
+
+<p>Otherwise you can define multiple multi-step pipelines like</p>
+
+<pre><code>[EU_10]
+    [EU_20]
+    [AF_10]
+    [AF_20]
+</code></pre>
+
+<p>A section can define multiple pipeline steps if the same step can be used for multiple steps of a pipeline or for other pipelines in the same file. For example</p>
+
+<pre><code>[EU_100,EU_200,EU_300]
+
+
+[100, EU_100,AF_100,GT_100]
+</code></pre>
+
+<p>can be used to perform the same action for steps 100, 200, and 300 of pipeline <code>EU</code>, or the same step 100 for pipelines <code>default</code>, <code>EU</code>, <code>AF</code> and <code>GT</code>. In the latter case, you can even use wildcard character</p>
+
+<pre><code>[*_100]
+</code></pre>
+
+<p>to define a step that will be executed by all pipelines defined in this file.</p>
+
+<h3 id="content-of-pipeline-step-sections">Content of pipeline step sections</h3>
+
+<p>For each step of a pipeline, we need to know</p>
+
+<ul>
+<li>What are the input files</li>
+<li>How to process input files? One by one or altogether?</li>
+<li>What actions should be applied to the input files?</li>
+<li>What are the outputs?</li>
+</ul>
+
+<p>Answers of these questions should be specified using the following keys:</p>
+
+<ul>
+<li><p><strong><code>input</code></strong> (optional). List of input files for a step. The default value of the <code>input</code> is the output of the previous step (or the command input for the first step). One or more files could be specified explicitly (separated by space). For example,</p>
+
+<h1 id="output-of-step-400-not-from-previous-step">output of step 400, not from previous step</h1>
+
+<p>input: ${output400}</p>
+
+<h1 id="output-from-multiple-steps">output from multiple steps</h1>
+
+<p>input: ${output400} ${output500}</p>
+
+<h1 id="all-files-in-a-directory">all files in a directory</h1>
+
+<p>input: ${:glob.glob(&rsquo;*.gz&rsquo;)}</p></li>
+
+<li><p>A pipeline will be terminated if there is no input file or if any of the specified input files does not exist.</p></li>
+
+<li><p><strong><code>input options</code></strong> (optional). By default, all input files are passed together to the action (so <code>${input}</code> equals to <code>${inputxxx}</code> where <code>XXX</code> is number of pipeline step. You can change this behavior by setting one or more input options, which are specified by one or more comma-separated <code>opt=val</code> options in the format of</p>
+
+<p>input:  input_files : option1, option2, option3</p></li>
+</ul>
+
+<p>For example, the following example select all fastq files from input files and send them to pipeline action in pairs:</p>
+
+<pre><code>input:  ${cmd_input}
+    : select='fastq', group='pair'
+</code></pre>
+
+<p><em>Variant Tools</em> currently provides the following options:</p>
+
+<ul>
+<li><p>&rdquo;&rsquo;<code>group_by='all'</code> Eligible files are by default sent altogether (<code>group_by='all'</code>) to <code>action</code> (<code>group_by='all'</code>, <code>${input}</code> equals to <code>${input#}</code> where <code>#</code> is the index of step), but can also be sent individually (<code>group_by='single'</code>, <code>${input}</code> is a list of a single file), or in pairs (<code>group_by='paired'</code>, e.g. <code>filename_1.txt</code> and <code>filename_2.txt</code>).</p></li>
+
+<li><p><strong><code>select=True/False/'fastq'/...</code></strong> <code>select</code> can be <code>True</code> (all input file), <code>False</code> (no input file, the step will be skipped), <code>'fastq'</code> (ignore file extension and check content of files), or one or more file extensions (e.g. <code>['sam', 'bam']</code>).</p></li>
+
+<li><p><strong><code>pass_unselected=True</code></strong>: If files are not used (pass through), unselected files are by default passed directly as output of a step.</p></li>
+
+<li><p><strong><code>skip=True/False</code></strong>: Skip an step if set to True (which is usually a variable. All input files will be passed directly to output by default.</p></li>
+</ul>
+
+<p>An input option does not substitute <code>${input}</code> because it determines <code>${input}</code>. They can however use other variables such as <code>${cmd_output}</code>. For example,</p>
+
+<pre><code>${bam_files} : ${input200:len(input200)==1})
+</code></pre>
+
+<p>select files only if there are more than one input file. This is useful, for example, to merge bam files only if there are more than one input bam files.</p>
+
+<ul>
+<li><p><strong><code>action</code></strong> (required): An action that will be executed by variant tools, sometimes repeatedly for different input files (e.g. for each or each pair of input files). Each action will return a list of output files, which will form the output files of the step. A list of actions can be specified in the format of <code>Action1, Action2, ...</code>. These actions will be executed sequentially and the output of a previous action will become the input of the following action. Please check the actions section for a list of available actions. <strong>The <code>action=</code> key can be ignored.</strong>.</p></li>
+
+<li><p><strong><code>NAME=VALUE</code></strong> (optional): This allows the pipeline step to define some pipeline variable with results obtained by the step. For example, if this step writes an optional flag in file <code>file1.txt</code>, you can use</p>
+
+<p>flag=${: open(&ldquo;file1.txt&rdquo;).read() }</p></li>
+</ul>
+
+<p>to save its content to a pipeline variable.</p>
+
+<p>If an action differ only slightly across pipelines, you can use variable <code>${pipeline_name}</code> to perform different actions for different pipelines. For example,</p>
+
+<pre><code>[eu_100,af_100]
+    ..... ${pipeline_name: '-g' if PIPELINE_NAME='eu' else ''}
+</code></pre>
+
+<p>uses passes an additional option <code>-g</code> to an action for pipeline <code>eu</code>.</p>
+
+<p>Comments in pipeline steps will be displayed in the output of <code>vtools show pipeline</code>:</p>
+
+<pre><code>[hg19_100]
+# decompress input files only if they are compressed
+DecompressFiles(...)
+</code></pre>
+
+<h3 id="section-options-pipeline-100-output-alias-hits">Section options (<code>[pipeline_100: output_alias=hits]</code>)</h3>
+
+<p>Pipeline steps accept a few options that tells variant tools how to handle input and output files. These options are specified in section head after section names in the format of</p>
+
+<pre><code>[[p1_10, p2_20 : option1, option2]]
+</code></pre>
+
+<p>Variant Tools currently supports the following options</p>
+
+<ul>
+<li><p><code>independent</code>. This option tells variant tools that a step does not belong to a pipeline and there is no need to track input and output of it. The variable <code>${input}</code> will be undefined for this step and its output will not be passed to the next step. This option should be used for steps such as <code>CheckVariantToolsVersion</code>, <code>DownloadResource</code> that are independent of input files.</p></li>
+
+<li><p><code>no_input</code>: The step does not need any input file to generate output. Because variant tools terminates a pipeline if there is no input file, this option allows the starting or continuation of pipeline with no input file.</p></li>
+
+<li><p><code>blocking</code>: The step is shared by multiple instance of the pipelines and can only be executed by one instance. If multiple instances are running, only the first one will execute it and the rest of them will wait for the output to be generated. This option should be used for steps to download data, to generate index et al.</p></li>
+
+<li><p><code>input_alias=another_name</code> and <code>output_alias=another_name: Assign variable</code>another_name<code>to the input and output of the step, respectively. This option is very useful to give output of a step a meaningful name so that the subsequent steps can refer to them by this name. In the following example, pipeline variable</code>${accepted_hits}<code>becomes an alias to</code>${output200}<code>after the execution of</code>hg19_200@@, and can be used in later sections.</p>
+
+<p>[hg19_200: output_alias=accepted_hits]
+RunCommand(&lsquo;tophat &hellip;.&rsquo;)</p>
+
+<p>[hg19_210]
+&hellip;</p>
+
+<p>[hg19_200]
+input:  ${accepted_hits}
+RunCommand(&lsquo;&hellip;&rsquo;)</p></li>
+</ul>
+
+<h2 id="available-actions">Available actions</h2>
+
+<p>Actions are functions that are executed by <em>Variant Tools</em>.</p>
+
+<p>Technically speaking, pipeline actions are evaluated as a Python expression to obtain a <code>PipelineAction</code> object. That is to say, you can use arbitrary python expressions such as list comprehension for this item.</p>
+
+<p>Given an action, variant tools</p>
+
+<ol>
+<li>Replace <code>${name}</code> with corresponding pipeline variable <code>NAME</code>. Lambda functions such as <code>{:EXPR}</code>, <code>{NAME:EXPR}</code>, <code>{NAME1,NAME2:EXPR}</code> etc will be evaluated before they are substituted.</li>
+<li>Evaluate the text as a Python expression to obtain an <code>PipelineAction</code> object that will be called by <em>Variant Tools</em>. Python functions and expressions will be evaluated during this step.</li>
+</ol>
+
+<p>For example, for the following action,</p>
+
+<pre><code>CheckDirs([&quot;${resource_dir}&quot;, os.path.join('${cache_dir}', '${pipeline_name}')])
+</code></pre>
+
+<p>will be processed as to</p>
+
+<pre><code>CheckDirs([&quot;/path/to/resource&quot;, os.path.join('cache', 'EUS')])
+</code></pre>
+
+<p>with command line option <code>--resource_dir /path/to/resource</code> (or use default value defined in section <code>DEFAULT</code>), and values of pipeline variables <code>CACHE_DIR</code> and <code>PIPELINE_NAME</code>, and finally be evaluated to produce an object <code>CheckDirs</code> with parameters:</p>
+
+<pre><code>CheckDirs([&quot;/path/to/resource&quot;, 'cache/EUS'])
+</code></pre>
+
+<p>There are two kinds of pipeline actions</p>
+
+<ol>
+<li><p>Built-in actions: Actions that are defined by variant tools.</p></li>
+
+<li><p>Pipeline-defined actions: Actions that are defined by users of variant tools pipeline. They are defined in <code>.py</code> files and need to be imported to a pipeline using action <code>ImportModules</code>.</p></li>
+</ol>
+
+<p>Because of the increasing number of pipeline actions, variant tools provides a command</p>
+
+<pre><code>% vtools show actions
+</code></pre>
+
+<p>to list all built-in action (for variant tools and variant simulation tools), and actions defined by pipelines in the variant tools repository. You can check the details of each action using command</p>
+
+<pre><code>% vtools show action ACTION
+</code></pre>
+
+<p>For example, you can use command</p>
+
+<pre><code>% vtools show action TerminateIf
+
+
+Help on class TerminateIf in module variant_tools.pipeline:
+
+class TerminateIf(PipelineAction)
+ |  Terminate a pipeline if a condition is not met.
+ |
+ |  Examples:
+ |      TerminateIf(not '${cmd_output}', 'No --output is specified.')
+ |
+ |  Methods defined here:
+ |
+ |  __call__(self, ifiles, pipeline=None)
+ |      Terminate the pipeline if specified condition is met.
+ |
+ |      Parameters:
+ |          ifiles: unused
+ |          pipeline: unused
+ |
+ |      Results:
+ |          Pass input to output. Does not change pipeline.
+ |
+ |      Raises:
+ |          A RuntimeError will be raised to terminate the pipeline if
+ |          the condition is met.
+ |
+ |  __init__(self, cond, message)
+ |      Parameters:
+ |          cond (boolean):
+ |              True or False. In practice, ``cond`` is usually
+ |              a lambda function that checks the existence of a file or value
+ |              of a pipeline variable.
+ |
+ |          message (string):
+ |              A message to be outputted when the condition is met.
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from PipelineAction:
+ |
+ |  execute(self, ifiles, pipeline=None)
+ |      Function called by __call__ for actual action performed on ifiles. A user-defined
+ |      action should re-define __call__ or redefine this function and return ``True`` if the
+ |      action is completed successfully.
+</code></pre>
+
+<p>to check the details of action <code>TerminateIf</code>.</p>
+
+<h3 id="brief-description-of-built-in-actions">Brief description of built-in actions</h3>
+
+<p>The following is a partial list of built-in actions defined by variant tools. The descriptions are brief and might have been outdated so please use command above to check the latest documentation.</p>
+
+<ul>
+<li><p><strong><code>CheckVariantToolsVersion(ver)</code></strong>: Check the version of variant tools. Stop the pipeline if it is not recent enough to execute the pipeline.</p></li>
+
+<li><p><strong><code>CheckCommands(cmds)</code></strong>: Check the existence of command <code>cmds</code> and raise an error if the command does not exist. Input files of the step is passed directly as output files.</p></li>
+
+<li><p><strong><code>CheckFiles(files, msg='')</code></strong>: Check the existence of specified files. This can be used to check, for example, the existence of the <code>.jar</code> file of <code>GATK</code>. An error message can be specified.</p></li>
+
+<li><p><strong><code>CheckDirs(dirs, msg='')</code></strong>: Check the existence of specified directories. An error message can be specified.</p></li>
+
+<li><p><strong><code>CheckOutput(cmd, patterns, failIfMismatch=True)</code></strong>: Check the output of a command and see if it matches one of the specified patterns (see the <code>search</code> function of <a href="http://docs.python.org/2/library/re.html" target="_blank">Python re package</a> for details). The pipeline will be terminated if <code>failIfMismatch</code> is set to <code>True</code> (default). This action is usually used to check the version of commands.</p></li>
+
+<li><p>Check for a specific version of bwa</p>
+
+<p>CheckOutput(&lsquo;bwa&rsquo;, &lsquo;Version: 0.7.4&rsquo;)</p></li>
+
+<li><p>Check for multiple allowed versions of bwa</p>
+
+<p>CheckOutput(&lsquo;bwa&rsquo;, &lsquo;Version: 0.7.*&lsquo;)</p></li>
+
+<li><p>Check version of picard</p>
+
+<p>CheckOutput(&lsquo;ls %(picard_path)s/picard*.jar&rsquo;, &lsquo;picard-1.82&rsquo;)</p></li>
+
+<li><p>Check version of GATK</p>
+
+<p>CheckOutput(&lsquo;java -jar %(gatk_path)/GenomeAnalysisTK.jar -version&rsquo;, &lsquo;^2.4&rsquo;)</p></li>
+
+<li><p>Check version of MosaikAligner</p>
+
+<p>CheckOutput(&lsquo;MosaikAligner -version&rsquo;, &lsquo;2.1&rsquo;)</p></li>
+
+<li><p><strong><code>DownloadResource(resource, dest_dir)</code></strong>: Download a list of resources (URLs) (a single string, URLs can be separated by spaces or newlines) to a pipeline resource directory <code>resource_dir</code>. <strong>The resources will not be downloaded if the files already exist.</strong> <code>.gz</code> files will be decompressed automatically. If both <code>filename</code> and <code>filename.md5</code> exist, the md5 signature of <code>filename</code> will be compared to <code>filename.md5</code>. <code>resource_dir</code> will be locked during downloading so only one process can execute this step at any time.</p></li>
+
+<li><p><strong><code>RunCommand(cmd, working_dir=None, output=[], submitter=None)</code></strong>: Execute <code>cmd</code> (one command or a list of commands) under working directory <code>working_dir</code> (default to current project directory). A list of output files specified by <code>output</code> will be returned. If <code>output</code> is specified, three additional files, <code>filename.out#</code>, <code>filename.err#</code>, <code>filename.exe_info</code> (where <code>filename</code> is the first file in <code>output</code>) will be produced with command output, command error output, and command execution information, respectively. Command execution information contains command executed, start and ending time, file size and md5 signature of input and output files. <strong>If output files already exist, newer than input files, size and md5 checksum of input and output files and command used match what have been recorded in <code>filename.exe_info</code>, the command will not be executed</strong>. Because valid <code>filename.exe_info</code> files are only created after commands are completed successfully (not interrupted), a pipeline can be safely resumed if it is terminated due to user or system errors.</p></li>
+
+<li><p>Multiple commands could be executed in a single <code>RunCommand</code> action. The pipeline will terminate if any of the commands returns non-zero code.</p></li>
+
+<li><p>Using option <code>output</code> to specify output files is highly recommended because otherwise the command will be re-executed if the pipeline is re-executed. If the command does not produce any new output (e.g. many vtools commands), you can generate a status output file and use it as output, as in</p>
+
+<p>RunCommand(cmd=[&lsquo;vtools import ${input: &ldquo; &ldquo;.join(input)} &ndash;build hg19&rsquo;,
+               &lsquo;vtools show genotypes &gt; genotype.lst&rsquo;],
+               output=&lsquo;genotype.lst&rsquo;)</p></li>
+
+<li><p>If a valid <code>working_dir</code> is set, the child process in which the commands are executed will switch to this directory but the current directory of the master process will remain the same. That is to say, all input and output filenames etc are still relative to the project path, but <code>os.path.abspath</code> might be needed if these path are used in the <code>cmd</code>.</p></li>
+
+<li><p>If a <code>submitter</code> is defined, the submission command will be used to run the commands in background (e.g. <code>submitter='sh {} &amp;'</code>) or as a separate job (e.g. @@submitter=&lsquo;qsub {}&rsquo;). This allows parallel execution of pipeline steps.</p></li>
+
+<li><p>If no output is specified, input files are passed through as output files.</p></li>
+</ul>
+
+<p>Arbitrary command could be defined for this action, which in theory could destroy all your data or system. It is your responsibility to verify that a pipeline description file does not contain malicious piece of code and we (developers of variant tools) are not responsible for any damage that might have been caused.</p>
+
+<ul>
+<li><p><strong><code>ExecuteRScript(script, working_dir=None, output=[], submitter=None)</code></strong>: Execute an in-line R script.</p></li>
+
+<li><p><strong><code>ExecuteShellScript(script, working_dir=None, output=[], submitter=None)</code></strong>: Execute an in-line shell script.</p></li>
+
+<li><p><strong><code>ExecutePythonScript(script, working_dir=None, output=[], submitter=None)</code></strong>: Execute an in-line Python script.</p></li>
+
+<li><p><strong><code>ExecutePython3Script(script, working_dir=None, output=[], submitter=None)</code></strong>: Execute an in-line Python3 script.</p></li>
+
+<li><p><strong><code>ExecutePerlScript(script, working_dir=None, output=[], submitter=None)</code></strong>: Execute an in-line Perl script.</p></li>
+
+<li><p><strong><code>ExecuteRubyScript(script, working_dir=None, output=[], submitter=None)</code></strong>: Execute an in-line Ruby script.</p></li>
+</ul>
+
+<h3 id="define-your-own-pipeline-actions">Define your own pipeline actions</h3>
+
+<p>You can define your pipeline actions to perform steps that cannot be performed by an existing command. There are several ways to achieve this.</p>
+
+<ul>
+<li><p>For simple tasks that can be achieved using shell script, Python script, R script etc, use actions such as <code>ExecuteShellScript</code>.</p></li>
+
+<li><p>If the steps requires processing of a single file, you can define an in-line action using action <code>ExecutePythonCode</code>. This action looks like</p>
+
+<p>ExecutePythonCode(=&ldquo;&rsquo;
+with open(&ldquo;${input:input[0]}&ldquo;, &lsquo;r&rsquo;) as input:
+    # process input files
+    # generate output files
+    # set variables to pipeline.VARS (e.g. pipeline.VARS[&lsquo;read_length&rsquo;] = 100)
+&ldquo;&lsquo;)</p></li>
+</ul>
+
+<p>The difference between <code>ExecutePythonCode</code> and <code>ExecutePythonScript</code> is that <code>ExcutePythonCode</code> will be execute in the current process, and the script passed to <code>ExecutePythonScript</code> will be written to a Python script and called using a separate processed with optional command line options.</p>
+
+<ul>
+<li><p>If you have a complex action that involves classes and/or multiple functions, you can define the action in a <code>.py</code> file and import it using action <code>ImportModule</code>. Taking an example from <code>RNASeq_tools.py</code>, the <code>@.py</code> file looks like:</p>
+
+<p>from variant_tools.utils import env, calculateMD5
+from variant_tools.pipeline import PipelineAction</p>
+
+<p>class CreateRefGeneBed(PipelineAction):
+    &ldquo;&lsquo;This pipeline step converts UCSC refGene.txt to BED format,
+    to be used by tools such as RSeQC.&ldquo;&rsquo;
+    def <strong>init</strong>(self, txt_file, output):
+        PipelineAction.<strong>init</strong>(self, &lsquo;CreateRefGeneBed_v1 &ndash;txt_file {} {} &lsquo;
+            .format(txt_file, calculateMD5(txt_file, partial=True)), output)
+        self.txt_file = txt_file</p>
+
+<pre><code>def _execute(self, ifiles, pipeline=None):
+    with open(self.txt_file, 'rU') as ifile, open(self.output[0], 'w') as ofile:
+        for line in ifile:
+            ls = line.strip().split('\t')
+            starts = [int(x) for x in ls[9].strip(',').split(',')]
+            stops = [int(x) for x in ls[10].strip(',').split(',')]
+            lengths = ','.join([str(y-x) for x,y in zip(starts, stops)])
+            relstarts = ','.join([str(x-int(ls[4])) for x in starts])
+            ofile.write(&quot;{0}\t{1}\t{2}\t{3}\t0\t{4}\t{5}\t{6}\t0\t{7}\t{8}\t{9}\n&quot;.format(
+                ls[2], ls[4], ls[5], ls[1], ls[3], ls[6], ls[7], ls[8], lengths, relstarts))
+    return True
+</code></pre></li>
+</ul>
+
+<p>This function converts a UCSC refGene.txt to BED format so that it can be used by tools such as RSeQC. Basically,</p>
+
+<ul>
+<li><p>A class should be derived from <code>PipelineAction</code> defined in <code>variant_tools.pipeline</code></p></li>
+
+<li><p>It should call <code>PipelineAction.__init__(self, cmd, output)</code> with proper command line and expected output files so that the action will be skipped if it is called with identical signature.</p></li>
+
+<li><p>Define function <code>_execute(self, ifiles, pipeline)</code> to perform needed action and return output files and returns <code>True</code> if everything is ok. This function can generate output files, and/or set pipeline variables using <code>pipeline.VARS[key]=value</code>.</p></li>
+
+<li><p>Import the module to your pipeline using <code>ImportModules('my_tools.py')</code>.</p></li>
+</ul>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/" title="Introduction"> <i class="fa fa-chevron-left"></i><label>Introduction</label></a>
+    <a class="nav nav-next" href="https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/" title="Variant calling" style="margin-right: 0px;"><label>Variant calling</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+  
+
+    <div class="github-link">
+      <a href="Documentation/Pipelines/customizedpipeline.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
+</footer>
+
+<script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js"></script>
+
+<link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css" rel="stylesheet">
+<script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js"></script>
+
+
+
+<script src="https://vatlab.github.io/vat-docs/theme-flex/script.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

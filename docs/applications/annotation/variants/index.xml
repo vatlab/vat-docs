@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Variants on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/</link>
+    <description>Recent content in Variants on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/annotation/variants/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>COSMIC</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/</guid>
+      <description>Catalogue of Somatic Mutations in Cancer COSMIC (Catalogue of Somatic Mutations in Cancer) is a data resource that is designed to store and display somatic mutation information and related details and contains information relating to human cancers. Data in COSMIC is curated from known Cancer Genes Literature and Systematic Screens. COSMIC data is freely downloadable in many formats on the project&amp;rsquo;s FTP site: ftp://ftp.sanger.ac.uk/pub/CGP/cosmic.
+If you use COSMIC annotations, please credit the project with the following acknowledgement:</description>
+    </item>
+    
+    <item>
+      <title>sbNSFP</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/</guid>
+      <description>dbNSFP (:skin vtools-annotation:)
+(:toc:)
+dbNSFP is an annotation database for non-synonymous SNPs assembled by Xiaoming Liu from the University of Texas School of Public Health (see citation below). With variant tools you can use the dbNSFP database or dbNSFP-light (a version with fewer features) - see which features are offered for each database version below.
+dbNSFP There can be frequent changes of name and their meanings of the fields across versions.</description>
+    </item>
+    
+    <item>
+      <title>dbSNP</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</guid>
+      <description>dbSNP annotation databases The default version of our dbSNP annotation is currently referring to dbSNP143 (using hg38 coordinates) as shown below. However, users can also retrieve older versions of dbSNP: dbSNP141, dbSNP138, dbSNP137, dbSNP135, dbSNP132, dbSNP131, dbSNP130, dbSNP129. The 129 and 130 versions use hg18 as a reference genome, 131, 132, 135, 137, 138 and 141 use hg19 and 143 uses hg38. The archived versions can be used by a variant tools project by referring to their specific names - for example: dbSNP-hg18_129.</description>
+    </item>
+    
+    <item>
+      <title>linkage-physical map</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</guid>
+      <description>The rutgersMap database was created from Rutgers Combined Linkage-Phsycal Map[^T. C. Matise, F. Chen, W. Chen, F. M. De La Vega, M. Hansen, C. He, F. C.L. Hyland, G. C. Kennedy, X. Kong, S. S. Murray, J. S. Ziegle, W. C.L. Stewart and S. Buyske (2007). A second-generation combined linkage physical map of the human genome. Genome Research^]. The current version contains interpolated genetic positions for variants from dbSNP build 134.</description>
+    </item>
+    
+    <item>
+      <title>Database of Genomic Variants</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/</guid>
+      <description> s
+Database of Genomic Variants Database of genomic variants is a curated catalogue of human genomic structural variation. It is a range-based database that shows the range of such variants.
+% vtools show annotation DGV -v2 Annotation database DGV (version hg19_20130723) Description: Database of Genomic Variants, a curated catalogue of human genomic structural variation. Database type: range Number of records: 202,430 Distinct ranges: 199,827 Reference genome hg19: chr, start, end Field: variantaccession Type: string Missing entries: 0 Unique Entries: 202,430 Field: chr Type: string Missing entries: 0 Unique Entries: 24 Field: start Type: integer Missing entries: 0 Unique Entries: 189,925 Range: 1 - 249205967 Field: end Type: integer Missing entries: 0 Unique Entries: 189,604 Range: 16629 - 249206446 Field: varianttype Type: string Missing entries: 0 Unique Entries: 2 Field: variantsubtype Type: string Missing entries: 0 Unique Entries: 9 Field: reference Type: string Missing entries: 0 Unique Entries: 55 Field: pubmedid Type: integer Missing entries: 0 Unique Entries: 55 Range: 12058347 - 23290073 Field: method Type: string Missing entries: 0 Unique Entries: 31 Field: platform Type: string Missing entries: 0 Unique Entries: 49 Field: mergedvariants Type: string Missing entries: 0 Unique Entries: 1 Field: supportingvariants Type: string Missing entries: 0 Unique Entries: 198,642 Field: mergedorsample Type: string Missing entries: 0 Unique Entries: 2 Field: frequency Type: string Missing entries: 0 Unique Entries: 65 Field: samplesize Type: integer Missing entries: 0 Unique Entries: 37 Range: 0 - 6533 Field: observedgains Type: integer Missing entries: 0 Unique Entries: 188 Range: 0 - Field: observedlosses Type: integer Missing entries: 0 Unique Entries: 825 Range: 0 - Field: cohortdescription Type: string Missing entries: 0 Unique Entries: 6 Field: genes Type: string Missing entries: 0 Unique Entries: 25,687 Field: samples Type: string Missing entries: 0 Unique Entries: 67,200  </description>
+    </item>
+    
+    <item>
+      <title>Exome Sequencing Project</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/</guid>
+      <description>Variants from the Exome Sequencing Project (ESP) The EVS annotation source contains exome sequencing variants retrieved from the Exome Variant Server (EVS) for the NHLBI Exome Sequencing Project (ESP). The evs annotation data was generated from approximately 2500 exomes and evs_5400 from approximately 5400 exomes. (7500 exomes are the next milestone for this project in the next couple of months - see their website for project details: http://evs.gs.washington.edu/EVS/). Currently minor allele frequencies are given for European American and African American populations - see below for additional fields that you can use for variant selection and annotation.</description>
+    </item>
+    
+    <item>
+      <title>gwasCatalog</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/</guid>
+      <description>The gwasCatalog is NHGRI&amp;rsquo;s collection of Genome-Wide Association (GWA) Studies SNPs. We downloaded the data for this annotation source from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables?command=start). You can use this annotation source as a position, range or field-based annotation source. Examples for usage as a range-based and field-based annotation source are given on this page. (By default the usage for this annotation source is a position-based annotation source).
+Usage Here are the available gwasCatalog fields for annotation and filtering.</description>
+    </item>
+    
+    <item>
+      <title>HapMap</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/hapmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/hapmap/</guid>
+      <description>Usage Population-specific databases from the HapMap project. They provide population-specific variant count and frequences.
+% vtools show annotations hapmap -v0 hapmap_ASW_freq-hg18_20100817 hapmap_ASW_freq hapmap_CEU_freq-hg18_20100817 hapmap_CEU_freq hapmap_CHB_freq-hg18_20100817 hapmap_CHB_freq hapmap_CHD_freq-hg18_20100817 hapmap_CHD_freq hapmap_GIH_freq-hg18_20100817 hapmap_GIH_freq hapmap_JPT_freq-hg18_20100817 hapmap_JPT_freq hapmap_LWK_freq-hg18_20100817 hapmap_LWK_freq hapmap_MEX_freq-hg18_20100817 hapmap_MEX_freq hapmap_MKK_freq-hg18_20100817 hapmap_MKK_freq hapmap_TSI_freq-hg18_20100817 hapmap_TSI_freq hapmap_YRI_freq-hg18_20100817 hapmap_YRI_freq  Details % vtools show annotation hapmap_CEU_freq Annotation database hapmap_CEU_freq (version hg18_20100817) Description: Allele frequency information of SNP markers of the CEU population of phase II and III of the HAPMAP project.</description>
+    </item>
+    
+    <item>
+      <title>Thousand Genomes</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/thousand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/thousand/</guid>
+      <description>thousandGenomes The samples for the 1000 Genomes Project mostly are anonymous and have no associated medical or phenotype data. Variants in this annotation database are sometimes considered to be &amp;lsquo;neutral&amp;rsquo; and could be removed if the goal of a study is to look for variants with high penetrance that dispose to rare Mendelian diseases. This database contains all of the variants supplied by the 1000 Genomes Project. The original vcf file can be obtained from here:</description>
+    </item>
+    
+  </channel>
+</rss>

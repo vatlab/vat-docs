@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basic data statistics on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/</link>
+    <description>Recent content in Basic data statistics on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Group stat&amp;Write</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/</guid>
+      <description>Basic Statistics for Association Testing Units Introduction GroupStat and GroupWrite are &amp;ldquo;ancillary&amp;rdquo; features for the collection of VAT association tests. Instead of carrying out association analysis, GroupStat reports summary statistics of an association test unit such as total allele counts, total variant counts, number of samples, etc., while GroupWrite output genotype and phenotype information (into zipped bundles) in the format compatible with the SCORE-Seq software such that the data can be closely examined or manipulated using other software tools.</description>
+    </item>
+    
+  </channel>
+</rss>

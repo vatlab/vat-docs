@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/development/</link>
+    <description>Recent content in Development on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ChangeLog</title>
+      <link>https://vatlab.github.io/vat-docs/development/chagelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/development/chagelog/</guid>
+      <description>Change Log of variant tools Version 2.7.0 (Released on Jan 20, 2016) MAJOR NEW FEATURES:
+ Normalize variants using reference sequence information before importing variants. New file format for spec file of variant pipeline tools. Support arbitrary reference genome.  BUG FIXES:
+ Fix importing wildtype genotypes in some cases.  Version 2.6.1 (Released on Jan 15, 2015)  Fix a few small bugs introduced in 2.6.0. Fix compatibility issues with Python 3.</description>
+    </item>
+    
+    <item>
+      <title>Get Involved</title>
+      <link>https://vatlab.github.io/vat-docs/development/getinvolved/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/development/getinvolved/</guid>
+      <description>Report bugs and share ideas People variant tools is currently maintained by Dr. Bo Peng (references) from the Department of Bioinformatics and Computational Biology, MD Anderson Cancer Center, Anthony San Lucas from Dr. Paul Scheet&amp;rsquo;s lab at the University of Texas, MD Anderson Cancer Center, and Gao Wang from Dr. Suzanne Leal&amp;rsquo;s group at the Baylor College of Medicine. Other contributed developers are Min Qiao (UT School of Public Health), Dr.</description>
+    </item>
+    
+  </channel>
+</rss>

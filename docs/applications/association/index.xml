@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Association on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/applications/association/</link>
+    <description>Recent content in Association on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/association/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/introduction/</guid>
+      <description>Variant Association Tools About Variant Association Tools (VAT), designed and developed by Gao Wang (Baylor College of Medicine), Dr. Bo Peng (the University of Texas, MD Anderson Cancer Center) and Dr. Suzanne Leal (Baylor College of Medicine), is a new developmental branch of variant tools expanding its scope from analyzing individual genomic variants to analyzing large sequence data (whole genome sequencing, whole exome sequencing) or exome genotyping arrays (exome chips) from population based genotype-phenotype association studies.</description>
+    </item>
+    
+    <item>
+      <title>Data exploration/QC</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/</guid>
+      <description>Data Exploration and Quality Control Overview Quality control is a key step in association analysis. We may use a variety of criteria to clean our data (criteria directly from original vcf file or statistic summary we are interested in). Variants can also be subsetted based on these properties such as variant information, annotations, summary statistics, etc, which are displayed by vtools show fields.
+ vtools select and vtools exclude commands implement variant and genotype level data selection and filtering.</description>
+    </item>
+    
+    <item>
+      <title>Association analysis</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/association-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/association-analysis/</guid>
+      <description>Association Analysis Statistical Tests for Genotype/phenotype Associations The VAT association command We will introduce the basic usage of this command without diving into each association test. For a complete demonstration of all the tests please refer to the documentation for VAT (on the sidebar of this webpage).
+Getting started The general interface of vtools associate is as follows
+% vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES .</description>
+    </item>
+    
+    <item>
+      <title>Post-assoc analysis</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/</guid>
+      <description> Representing and Interpreting Association Results </description>
+    </item>
+    
+  </channel>
+</rss>

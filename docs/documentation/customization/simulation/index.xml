@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simulation on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/documentation/customization/simulation/</link>
+    <description>Recent content in Simulation on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/</guid>
+      <description>Variant Simulation Tools A presentation about variant simulation tools (Sep. 2014)
+Variant Simulation Tools is still under development. Development (subversion) versions of Variant Tools and simuPOP are needed to use VST. Also, because of a lack of mature simulation models (only two examples in the submitted paper are available), users are strongly advised to contact me for the creation of any simulation model.
+What is Variant Simulation Tools Variant Simulation Tools (VST) is a simulation tool for post-GWAS genetic epidemiological studies using whole-genome or whole-exome next-gen sequencing data, with an emphasis on user-friendliness and reproducibility.</description>
+    </item>
+    
+    <item>
+      <title>Customized simulations</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/simulation/custimzedsimu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/simulation/custimzedsimu/</guid>
+      <description>Variant Simulation Tools A presentation about variant simulation tools (Sep. 2014)
+Variant Simulation Tools is still under development. Development (subversion) versions of Variant Tools and simuPOP are needed to use VST. Also, because of a lack of mature simulation models (only two examples in the submitted paper are available), users are strongly advised to contact me for the creation of any simulation model.
+What is Variant Simulation Tools Variant Simulation Tools (VST) is a simulation tool for post-GWAS genetic epidemiological studies using whole-genome or whole-exome next-gen sequencing data, with an emphasis on user-friendliness and reproducibility.</description>
+    </item>
+    
+  </channel>
+</rss>

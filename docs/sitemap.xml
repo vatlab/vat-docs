@@ -3,24 +3,591 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vatlab.github.io/blog/post/test/</loc>
-    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
+    <loc>https://vatlab.github.io/vat-docs/administration/allrecent/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/blog/post/</loc>
-    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/blog/tags/</loc>
-    <priority>0</priority>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/blog/</loc>
-    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
+    <loc>https://vatlab.github.io/vat-docs/development/chagelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/init/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/keyconcepts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/low-complexity-regions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/create-your-test/running-r-programs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/import_vcf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/functions/ref_sequence/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/utilities/report_progress/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/administration/autolink/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/cmc-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/custimzedsimu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/discovery/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/development/getinvolved/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast-cons/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/create-your-test/programming-in-vat/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/tutorials/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/anno_utils/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/discordance_rate/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/misc/keggpathway/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/utilities/_md5sumd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/functions/mut_sequence/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/association-analysis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/customized/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/misc/encode/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/entrezgene/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic-super-dups/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/help/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/administration/stylesheet/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/functions/track/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/transmission/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/functions/genotype/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/illumina/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/kbac-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/phenotype/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/administration/trafficstat/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/knowngene/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/sequence/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/annovar/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/administration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/functions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rbt-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/skat-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/liftover/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/refgene/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/functions/samples/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/cancergenecensus/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rarecover-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/under-development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/functions/in_table/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/show/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/snpeff/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/variant_stat/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/king/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/misc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/vt-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/inbreeding_coefficient/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/hapmap/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/jointconditional-association-analysis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/wss-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/select/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/transmission/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/thousand/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/utilities/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/vat-stacking/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/asum-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/exclude/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/meta_analysis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/create-your-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/compare/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_fields/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/view-association-result/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_pheno_fields/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_association/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/remove/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/execute/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/under-development/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/tags/</loc>
     <priority>0</priority>
   </url>
   

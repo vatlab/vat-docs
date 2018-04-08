@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Single variant analysis on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/</link>
+    <description>Recent content in Single variant analysis on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fisher exact test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/</guid>
+      <description>Fisher&amp;rsquo;s Exact Test for Single Variant Analysis Introduction Genetic association studies of common variants in case control samples usually compare directly the differences in frequencies of an allele or genotype between case and control populations, with the assumption that a significant difference in frequencies is indication to association between the locus and increase risk of disease. Many statistical tests for binomial or multinomial proportions can be used for such analysis, including Fisher&amp;rsquo;s exact test, {$\chi^2$} test and Cochran-Armitage Trend Test.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Genes on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/</link>
+    <description>Recent content in Genes on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/annotation/genes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ccdsGene</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/</guid>
+      <description>This database contains high-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project. It was constructed from the UCSC Genome Browser ccdsGene track. If you would like to annotate your variants to these genes, you can use the simpler ccdsGene database. If you would like to determine the exons that your variants are in, use the ccdsGene_exon database. See the available annotation fields for each database below.
+ccdsGene % vtools show annotation ccdsGene -v2 Annotation database ccdsGene (version hg19_20130904) Description: High-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project.</description>
+    </item>
+    
+    <item>
+      <title>Hugo gene</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/</guid>
+      <description>HUGO Gene Nomenclature Committee (HGNC) approved gene names The HUGO Gene Nomenclature Committee (HGNC) has assigned unique gene symbols and names to almost 38,000 human loci, of which around 19,000 are protein coding. genenames.org is a curated online repository of HGNC-approved gene nomenclature and associated resources including links to genomic, proteomic and phenotypic information, as well as dedicated gene family pages.
+HGNC The HGNC annotation database is a field database that, by default, annotates another gene name field such as refGene.</description>
+    </item>
+    
+    <item>
+      <title>EntrezGene</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/entrezgene/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/entrezgene/</guid>
+      <description>EntrezGene % vtools show annotation EntrezGene.DB Annotation database EntrezGene (version 20131028) Description: Entrez Gene (www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene) is NCBI&#39;s database for gene-specific information. It does not include all known or predicted genes; instead Entrez Gene focuses on the genomes that have been completely sequenced, that have an active research community to contribute gene- specific information, or that are scheduled for intense sequence analysis. This database contains Entrez gene info database for Homo Sapiens, downloaded from ftp://ftp.</description>
+    </item>
+    
+    <item>
+      <title>knownGene</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/knowngene/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/knowngene/</guid>
+      <description>The knownGene database is based on the UCSC Genome Browser knownGene track. knownGene shows gene predictions based on data from RefSeq, Genbank, CCDS and UniProt. If you would like to annotate your variants to these genes, you can use the simpler knownGene database. If you would like to determine the exons that your variants are in, use the knownGene_exon database. See the available annotation fields for each database below.</description>
+    </item>
+    
+    <item>
+      <title>refGene</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/refgene/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/refgene/</guid>
+      <description>The RefGene database was created from the UCSC database. RefGene specifies known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq). If you would like to annotate your variants to genes, you can use the simpler refGene database. If you would like to determine the exons that your variants are in, use the refGene_exon database. See the available annotation fields for each database below.</description>
+    </item>
+    
+    <item>
+      <title>CancerGeneCensus</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/cancergenecensus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/cancergenecensus/</guid>
+      <description>Data source This database contains variants from the Cancer Genome Project. It is &amp;ldquo;an ongoing effort to catalogue those genes for which mutations have been causally implicated in cancer. The original census and analysis was published in Nature Reviews Cancer and supplemental analysis information related to the paper is also available. Currently, more than 1% of all human genes are implicated via mutation in cancer. Of these, approximately 90% have somatic mutations in cancer, 20% bear germline mutations that predispose to cancer and 10% show both somatic and germline mutations.</description>
+    </item>
+    
+  </channel>
+</rss>

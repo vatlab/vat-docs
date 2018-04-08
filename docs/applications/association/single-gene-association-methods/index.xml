@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Single gene association methods on vatlab</title>
+    <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/</link>
+    <description>Recent content in Single gene association methods on vatlab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/introduction/</guid>
+      <description>Single gene Association Tests for Single Gene and Case Control Phenotypes The application of next-generation sequencing methods to the discovery of disease causal genes has been successful in finding rare genetic mutations responsible for a number of Mendalian disorders. There is growing evidence that rare variants contribute to the etiology of complex traits and whole genome (or exome) squencing in large populations provides valuable resource for identifying such variants. Although it is believed that effect size of rare variants to complex diseases is usually higher compare to common variants, due to the low frequency of rare variants large sample size is required to detect the effect.</description>
+    </item>
+    
+    <item>
+      <title>CMC test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/cmc-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/cmc-test/</guid>
+      <description>Combined and Multivariate Collapsing Method for Rare Variants Introduction This is the Combined and Multivariate Collapsing (CMC, Li and Leal, 2008[^Bingshan Li and Suzanne M. Leal (2008) Methods for Detecting Associations with Rare Variants for Common Diseases: Application to Analysis of Sequence Data. The American Journal of Human Genetics doi:10.1016/j.ajhg.2008.06.024. http://linkinghub.elsevier.com/retrieve/pii/S0002929708004084^]) test for rare variants. CMC method considers all variants in a test unit (e.g., a gene). It &amp;ldquo;collapses&amp;rdquo; all rare variants in the gene region such that the region is coded &amp;ldquo;0&amp;rdquo; if all loci are wildtype, and &amp;ldquo;1&amp;rdquo; if any one locus has a minor allele.</description>
+    </item>
+    
+    <item>
+      <title>C-alpha test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/</guid>
+      <description>C-alpha Test for Protective Variants Introduction This implements the {$C(\alpha)$} test (Neale et al 2011[^Benjamin M. Neale, Manuel A. Rivas, Benjamin F. Voight, David Altshuler, Bernie Devlin, Marju Orho-Melander, Sekar Kathiresan, Shaun M. Purcell, Kathryn Roeder and Mark J. Daly (2011) Testing for an Unusual Distribution of Rare Variants. PLoS Genetics doi:10.1371/journal.pgen.1001322. http://dx.plos.org/10.1371/journal.pgen.1001322^]) for disease traits, to test for the hypothesis of rare variants disease association under the particular assumption that rare variants observed in cases and controls is a mixture of phenotypically deleterious, protective and neutral variants.</description>
+    </item>
+    
+    <item>
+      <title>KBAC test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/kbac-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/kbac-test/</guid>
+      <description>Kernel Based Adaptive Clustering Method Introduction This is implementation for the KBAC statistic in Liu and Leal 2010[^Dajiang J. Liu and Suzanne M. Leal (2010) A Novel Adaptive Method for the Analysis of Next-Generation Sequencing Data to Detect Complex Trait Associations with Rare Variants Due to Gene Main Effects and Interactions. PLoS Genetics doi:10.1371/journal.pgen.1001156. http://dx.plos.org/10.1371/journal.pgen.1001156^]. It carries out case-control association testing for rare variants for whole exome association studies. Briefly, consider a gene of length n which harbors m rare variants.</description>
+    </item>
+    
+    <item>
+      <title>RBT test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rbt-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rbt-test/</guid>
+      <description>Replication Based Test for Protective Variants Introduction This is implementation for the replication base test in Ionita-Laza et al 2011[^Iuliana Ionita-Laza, Joseph D. Buxbaum, Nan M. Laird and Christoph Lange (2011) A New Testing Strategy to Identify Rare Variants with Either Risk or Protective Effect on Disease. PLoS Genetics doi:10.1371/journal.pgen.1001289. http://dx.plos.org/10.1371/journal.pgen.1001289^]. The key of this method is replication, i.e., in the two-sided test of RBT it computes evidences to reject each of the two hypothesis</description>
+    </item>
+    
+    <item>
+      <title>RareCover test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rarecover-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/rarecover-test/</guid>
+      <description>A &amp;ldquo;Covering Algorithm&amp;rdquo; for Rare and Low Frequency Variants Introduction The RareCover test in Bhatia et al 2010[^Gaurav Bhatia, Vikas Bansal, Olivier Harismendy, Nicholas J. Schork, Eric J. Topol, Kelly Frazer and Vineet Bafna (2010) A Covering Method for Detecting Genetic Associations between Rare Variants and Common Phenotypes. PLoS Computational Biology doi:10.1371/journal.pcbi.1000954. http://dx.plos.org/10.1371/journal.pcbi.1000954^] is an efficient heuristic greedy algorithm to find an optimized combination of variants in a loci with the strongest association signal.</description>
+    </item>
+    
+    <item>
+      <title>VT test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/vt-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/vt-test/</guid>
+      <description>Variable Thresholds Test for Case Control Data Analysis Introduction The variable thresholds method (VT, Price et al 2010[^Alkes L. Price, Gregory V. Kryukov, Paul I.W. de Bakker, Shaun M. Purcell, Jeff Staples, Lee-Jen Wei and Shamil R. Sunyaev (2010) Pooled Association Tests for Rare Variants in Exon-Resequencing Studies. The American Journal of Human Genetics doi:10.1016/j.ajhg.2010.04.005. http://linkinghub.elsevier.com/retrieve/pii/S0002929710002077^]) tests for association between phenotypic values (case control or quantitative traits) with individuals&amp;rsquo; genotype &amp;ldquo;score&amp;rdquo; subject to a variable MAF threshold.</description>
+    </item>
+    
+    <item>
+      <title>WSS test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/wss-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/wss-test/</guid>
+      <description>Weighted Sum Statistic via Rank Test Introduction The method proposed by Madsen and Browning 2009[^Bo Eskerod Madsen and Sharon R. Browning (2009) A Groupwise Association Test for Rare Mutations Using a Weighted Sum Statistic. PLoS Genetics doi:10.1371/journal.pgen.1000384. http://dx.plos.org/10.1371/journal.pgen.1000384^] first introduced the idea of assigning &amp;ldquo;weights&amp;rdquo; to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score.</description>
+    </item>
+    
+    <item>
+      <title>aSum test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/asum-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single-gene-association-methods/asum-test/</guid>
+      <description>Data-adaptive Sum Test for Protective and Deleterious Variants Introduction The data-adaptive sum test (aSum) by Han and Pan 2010[^Fang Han and Wei Pan (2010) A Data-Adaptive Sum Test for Disease Association with Multiple Common or Rare Variants. Human Heredity doi:10.1159/000288704. http://www.karger.com/doi/10.1159/000288704^] is the first method that took into consideration the difference in direction of effects (protective or deleterious) of rare variants in the same genetic region analyzed by a rare variant association test.</description>
+    </item>
+    
+  </channel>
+</rss>
