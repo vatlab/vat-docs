@@ -7,9 +7,9 @@ description = ""
 # Home of Variant Tools
 
  
-A presentation about variant tools (Oct, 3rd, 2013)  
+![1](1.jpg "A presentation about variant tools (Oct, 3rd, 2013)")
 
-*variant tools* is a software tool for the manipulation, annotation, selection, simulation, and analysis of *variants* in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to [what you can do with variant tools][3] for a list of features provided by variant tools.  
+*variant tools* is a software tool for the manipulation, annotation, selection, simulation, and analysis of *variants* in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to [what you can do with variant tools](#anchor) for a list of features provided by variant tools.  
 
 
 
@@ -123,7 +123,7 @@ myvariants                                       # 2
 
 In summary,** *variant tools* is NOT designed to be a black-box tool that analyzes your data and generates a nice-looking report with a list of candidate variants or genes. It is a platform under which you can analyze your data using several methods, compare and analyze results, re-compare and re-analyze, and again using different methods or annotation sources, based on the information abtained from your previous analyses.** The unique advantage of *variant tools* is that you generally do not need to write a bunch of scripts to *connect* input output of different tools and *parse* and *compare* results in different formats, and you have easy access to a huge amount of information that help you select, prioritize and analyze your variants, all from your command line. However, because of the uniqueness of this design, **please read through the [Concepts][8][?][8] section of this website before using *variant tools*.** 
 
-
+<span id = "anchor"></span>
 
 ## Things you can do with variant tools
 
