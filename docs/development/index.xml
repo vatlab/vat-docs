@@ -13,10 +13,10 @@
     
     <item>
       <title>ChangeLog</title>
-      <link>https://vatlab.github.io/vat-docs/development/chagelog/</link>
+      <link>https://vatlab.github.io/vat-docs/development/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/development/chagelog/</guid>
+      <guid>https://vatlab.github.io/vat-docs/development/changelog/</guid>
       <description>Change Log of variant tools Version 2.7.0 (Released on Jan 20, 2016) MAJOR NEW FEATURES:
  Normalize variants using reference sequence information before importing variants. New file format for spec file of variant pipeline tools. Support arbitrary reference genome.  BUG FIXES:
  Fix importing wildtype genotypes in some cases.  Version 2.6.1 (Released on Jan 15, 2015)  Fix a few small bugs introduced in 2.6.0. Fix compatibility issues with Python 3.</description>

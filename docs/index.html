@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.36.1" />
-<title>Home of Variant Tools :: vatlab</title>
+<title> :: vatlab</title>
 <link rel="shortcut icon" href="https://vatlab.github.io/vat-docs/images/favicon.png" type="image/x-icon" />
 <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://vatlab.github.io/vat-docs/css/nucleus.css" rel="stylesheet">
@@ -384,28 +384,6 @@
             Customized simulations
           </a>
         </div>
-    </li>
-    <li data-nav-id="/documentation/customization/simulation/models/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/">Models</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/documentation/customization/simulation/models/peng1/" class="dd-item">
-        <div>
-          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/">
-            Peng2014_ex1
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/documentation/customization/simulation/models/pen2/" class="dd-item">
-        <div>
-          <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/">
-            Peng2014_ex2
-          </a>
-        </div>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -1016,9 +994,9 @@
       <a href="https://vatlab.github.io/vat-docs/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/development/chagelog/" class="dd-item">
+      <li data-nav-id="/development/changelog/" class="dd-item">
         <div>
-          <a href="https://vatlab.github.io/vat-docs/development/chagelog/">
+          <a href="https://vatlab.github.io/vat-docs/development/changelog/">
             ChangeLog
           </a>
         </div>
@@ -1143,33 +1121,43 @@
 
 <h1 id="home-of-variant-tools">Home of Variant Tools</h1>
 
-<p>A presentation about variant tools (Oct, 3rd, 2013)</p>
+<p><a href="vtools.pdf" target="_blank"><img src="1.jpg   &quot;A presentation about variant tools (Oct, 3rd, 2013" alt="1" />&rdquo;)</a></p>
 
-<p><em>variant tools</em> is a software tool for the manipulation, annotation, selection, simulation, and analysis of <em>variants</em> in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to <a href="#features">what you can do with variant tools</a> for a list of features provided by variant tools.</p>
+<p><em>variant tools</em> is a software tool for the manipulation, annotation, selection, simulation, and analysis of <em>variants</em> in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to <a href="#anchor">what you can do with variant tools</a> for a list of features provided by variant tools.</p>
 
 <h2 id="news">News</h2>
 
 <ul>
-<li>May 10, 2016: We have released a docker container for variant tools called `mdabioinfo/varianttools`, which allows users to test variant tools without installing it.</li>
-<li>Jan 20th, 2016: Release of variant tools 2.7.0, with significantly improved variant pipeline tools and support for arbitrary reference genome.</li>
-<li>Jan 15th, 2015: Release of variant tools 2.6.1, which fixes some issues with Python 3.</li>
-<li>Dec 20th, 2014: Release of variant tools 2.6.0. This version cleans up the pipeline code to assist users to write customized pipelines and actions.</li>
-<li>Nov 10th, 2014: Release of variant tools 2.5.1, which is a maintenance release that address a bug with 2.5.0 on the use of user-specified <code>temp_dir</code>. Manhattan and QQ plot engine is also updated to work with ggplot2 version 1.0.0 (backward compatibility is dropped).</li>
-<li>Oct 15th, 2014: Release of variant tools 2.5.0 with new variant tools repository. The variant tools repository used by variant tools 2.4.0 and earlier has been discontinued.  <strong>Please upgrade to variant tools 2.5.0 to access the new repository</strong>.</li>
-<li>Aug 15th, 2014: Release of variant tools 2.4.0.</li>
-<li>Feb 27th, 2014: Release of variant tools 2.3.0.</li>
-<li>Jan 16th, 2014: Release of variant tools 2.2.0.</li>
-<li>Nov 6th, 2013: Release of variant tools 2.1.0, which adds a few useful features such as functions <code>&lt;a class='createlinktext' rel='nofollow'
-href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Genotype?action=edit'&gt;genotype()&lt;/a&gt;&lt;a rel='nofollow' 
-class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Genotype?action=edit'&gt;?&lt;/a&gt;</code> and <code>&lt;a class='createlinktext' rel='nofollow'
-href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Samples?action=edit'&gt;samples()&lt;/a&gt;&lt;a rel='nofollow' 
-class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Samples?action=edit'&gt;?&lt;/a&gt;</code> SQL function, and the <code>--as</code> option to command <code>vtools use</code>.</li>
-<li>Oct 9, 2013: Release of variant tools 2.0.1, which is a maintenance release of version 2.0.0.</li>
+<li><p>May 10, 2016: We have released a docker container for variant tools called `mdabioinfo/varianttools`, which allows users to test variant tools without installing it.</p></li>
 
-<li><p>Aug 27, 2013: Release of variant tools 2.0. This is a major release of variant tools with many new features. Please check <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Main.ChangeLog?action=edit" target="_blank">ChangeLog</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Main.ChangeLog?action=edit" target="_blank">?</a> for details.</p></li>
+<li><p>Jan 20th, 2016: Release of variant tools 2.7.0, with significantly improved variant pipeline tools and support for arbitrary reference genome.</p></li>
 
-<li><p>more &hellip;</p></li>
+<li><p>Jan 15th, 2015: Release of variant tools 2.6.1, which fixes some issues with Python 3.</p></li>
 
+<li><p>Dec 20th, 2014: Release of variant tools 2.6.0. This version cleans up the pipeline code to assist users to write customized pipelines and actions.</p></li>
+
+<li><p>Nov 10th, 2014: Release of variant tools 2.5.1, which is a maintenance release that address a bug with 2.5.0 on the use of user-specified <code>temp_dir</code>. Manhattan and QQ plot engine is also updated to work with ggplot2 version 1.0.0 (backward compatibility is dropped).</p></li>
+
+<li><p>Oct 15th, 2014: Release of variant tools 2.5.0 with new variant tools repository. The variant tools repository used by variant tools 2.4.0 and earlier has been discontinued.  <font color=#FF0000>Please upgrade to variant tools 2.5.0 to access the new repository.</font></p></li>
+
+<li><p>Aug 15th, 2014: Release of variant tools 2.4.0.</p></li>
+
+<li><p>Feb 27th, 2014: Release of variant tools 2.3.0.</p></li>
+
+<li><p>Jan 16th, 2014: Release of variant tools 2.2.0.</p></li>
+
+<li><p>Nov 6th, 2013: Release of variant tools 2.1.0, which adds a few useful features such as functions <a href="https://vatlab.github.io/vat-docs/documentation/functions/genotype/" target="_blank"><code>genotype()</code></a> and <a href="https://vatlab.github.io/vat-docs/documentation/functions/samples/" target="_blank"><code>sample()</code></a> SQL function, and the <code>--as</code> option to command <code>vtools use</code>.</p></li>
+
+<li><p>Oct 9, 2013: Release of variant tools 2.0.1, which is a maintenance release of version 2.0.0.</p></li>
+
+<li><p>Aug 27, 2013: Release of variant tools 2.0. This is a major release of variant tools with many new features. Please check <a href="https://vatlab.github.io/vat-docs/development/changelog/" target="_blank">ChangeLog</a> for details.</p></li>
+</ul>
+
+<p><details><summary>More&hellip;</summary></p>
+
+<p><br></p>
+
+<ul>
 <li><p>May 16, 2013: Release of variant tools 1.0.6, which contains a lot of small features and bug fixes.</p></li>
 
 <li><p>Mar 20, 2013: Release of variant tools 1.0.5. This release adds commands <code>vtools admin --update_resource</code> and <code>vtools_report sequences</code>, and allows the use of arbitrary characters for names of variant tables.</p></li>
@@ -1220,6 +1208,8 @@ class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Sample
 
 <li><p>July 15, 2011: Initial public release.</p></li>
 </ul>
+
+<p></details></p>
 
 <h2 id="the-integrative-design-of-variant-tools">The integrative design of <em>variant tools</em></h2>
 
@@ -1274,6 +1264,8 @@ myvariants                                       # 2
 </ol>
 
 <p>In summary,** <em>variant tools</em> is NOT designed to be a black-box tool that analyzes your data and generates a nice-looking report with a list of candidate variants or genes. It is a platform under which you can analyze your data using several methods, compare and analyze results, re-compare and re-analyze, and again using different methods or annotation sources, based on the information abtained from your previous analyses.** The unique advantage of <em>variant tools</em> is that you generally do not need to write a bunch of scripts to <em>connect</em> input output of different tools and <em>parse</em> and <em>compare</em> results in different formats, and you have easy access to a huge amount of information that help you select, prioritize and analyze your variants, all from your command line. However, because of the uniqueness of this design, <strong>please read through the <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Main.Concepts?action=edit" target="_blank">Concepts</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Main.Concepts?action=edit" target="_blank">?</a> section of this website before using <em>variant tools</em>.</strong></p>
+
+<p><span id = "anchor"></span></p>
 
 <h2 id="things-you-can-do-with-variant-tools">Things you can do with variant tools</h2>
 

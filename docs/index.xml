@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home of Variant Tools on vatlab</title>
+    <title>vatlab</title>
     <link>https://vatlab.github.io/vat-docs/</link>
-    <description>Recent content in Home of Variant Tools on vatlab</description>
+    <description>Recent content on vatlab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
@@ -32,10 +32,10 @@ If you use COSMIC annotations, please credit the project with the following ackn
     
     <item>
       <title>ChangeLog</title>
-      <link>https://vatlab.github.io/vat-docs/development/chagelog/</link>
+      <link>https://vatlab.github.io/vat-docs/development/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/development/chagelog/</guid>
+      <guid>https://vatlab.github.io/vat-docs/development/changelog/</guid>
       <description>Change Log of variant tools Version 2.7.0 (Released on Jan 20, 2016) MAJOR NEW FEATURES:
  Normalize variants using reference sequence information before importing variants. New file format for spec file of variant pipeline tools. Support arbitrary reference genome.  BUG FIXES:
  Fix importing wildtype genotypes in some cases.  Version 2.6.1 (Released on Jan 15, 2015)  Fix a few small bugs introduced in 2.6.0. Fix compatibility issues with Python 3.</description>

@@ -2,7 +2,7 @@
 # Home of Variant Tools
 
  
-[![1](1.jpg   "A presentation about variant tools (Oct, 3rd, 2013)")](http://varianttools.sourceforge.net/Main/HomePage?action=download&upname=vtools.pdf)
+[![1](1.jpg   "A presentation about variant tools (Oct, 3rd, 2013)")](vtools.pdf)
 
 *variant tools* is a software tool for the manipulation, annotation, selection, simulation, and analysis of *variants* in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to [what you can do with variant tools](#anchor) for a list of features provided by variant tools.  
 
