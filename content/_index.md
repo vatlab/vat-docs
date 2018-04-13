@@ -1,13 +1,8 @@
-+++
-title = "Home of Variant Tools"
-description = ""
-+++
-
 
 # Home of Variant Tools
 
  
-![1](1.jpg "A presentation about variant tools (Oct, 3rd, 2013)")
+[![1](1.jpg   "A presentation about variant tools (Oct, 3rd, 2013)")](http://varianttools.sourceforge.net/Main/HomePage?action=download&upname=vtools.pdf)
 
 *variant tools* is a software tool for the manipulation, annotation, selection, simulation, and analysis of *variants* in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to [what you can do with variant tools](#anchor) for a list of features provided by variant tools.  
 
@@ -16,51 +11,84 @@ description = ""
 ## News
 
 *   May 10, 2016: We have released a docker container for variant tools called \`mdabioinfo/varianttools\`, which allows users to test variant tools without installing it. 
-*   Jan 20th, 2016: Release of variant tools 2.7.0, with significantly improved variant pipeline tools and support for arbitrary reference genome. 
-*   Jan 15th, 2015: Release of variant tools 2.6.1, which fixes some issues with Python 3. 
-*   Dec 20th, 2014: Release of variant tools 2.6.0. This version cleans up the pipeline code to assist users to write customized pipelines and actions. 
-*   Nov 10th, 2014: Release of variant tools 2.5.1, which is a maintenance release that address a bug with 2.5.0 on the use of user-specified `temp_dir`. Manhattan and QQ plot engine is also updated to work with ggplot2 version 1.0.0 (backward compatibility is dropped). 
-*   Oct 15th, 2014: Release of variant tools 2.5.0 with new variant tools repository. The variant tools repository used by variant tools 2.4.0 and earlier has been discontinued.  **Please upgrade to variant tools 2.5.0 to access the new repository**. 
-*   Aug 15th, 2014: Release of variant tools 2.4.0. 
-*   Feb 27th, 2014: Release of variant tools 2.3.0. 
-*   Jan 16th, 2014: Release of variant tools 2.2.0. 
-*   Nov 6th, 2013: Release of variant tools 2.1.0, which adds a few useful features such as functions `<a class='createlinktext' rel='nofollow'
-href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Genotype?action=edit'>genotype()</a><a rel='nofollow' 
-class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Genotype?action=edit'>?</a>` and `<a class='createlinktext' rel='nofollow'
-href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Samples?action=edit'>samples()</a><a rel='nofollow' 
-class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Samples?action=edit'>?</a>` SQL function, and the `--as` option to command `vtools use`. 
-*   Oct 9, 2013: Release of variant tools 2.0.1, which is a maintenance release of version 2.0.0. 
-*   Aug 27, 2013: Release of variant tools 2.0. This is a major release of variant tools with many new features. Please check [ChangeLog][4][?][4] for details. 
 
-*   more ... 
+*   Jan 20th, 2016: Release of variant tools 2.7.0, with significantly improved variant pipeline tools and support for arbitrary reference genome. 
+
+*   Jan 15th, 2015: Release of variant tools 2.6.1, which fixes some issues with Python 3. 
+
+*   Dec 20th, 2014: Release of variant tools 2.6.0. This version cleans up the pipeline code to assist users to write customized pipelines and actions. 
+
+*   Nov 10th, 2014: Release of variant tools 2.5.1, which is a maintenance release that address a bug with 2.5.0 on the use of user-specified `temp_dir`. Manhattan and QQ plot engine is also updated to work with ggplot2 version 1.0.0 (backward compatibility is dropped). 
+
+*   Oct 15th, 2014: Release of variant tools 2.5.0 with new variant tools repository. The variant tools repository used by variant tools 2.4.0 and earlier has been discontinued.  <font color=#FF0000>Please upgrade to variant tools 2.5.0 to access the new repository.</font> 
+
+*   Aug 15th, 2014: Release of variant tools 2.4.0. 
+
+*   Feb 27th, 2014: Release of variant tools 2.3.0. 
+
+*   Jan 16th, 2014: Release of variant tools 2.2.0. 
+
+*   Nov 6th, 2013: Release of variant tools 2.1.0, which adds a few useful features such as functions [`genotype()`](https://vatlab.github.io/vat-docs/documentation/functions/genotype/) and [`sample()`](https://vatlab.github.io/vat-docs/documentation/functions/samples/) SQL function, and the `--as` option to command `vtools use`. 
+
+*   Oct 9, 2013: Release of variant tools 2.0.1, which is a maintenance release of version 2.0.0. 
+
+*   Aug 27, 2013: Release of variant tools 2.0. This is a major release of variant tools with many new features. Please check [ChangeLog](https://vatlab.github.io/vat-docs/development/changelog/) for details. 
+
+<details><summary>More...</summary>
+
+<br>
 
 *   May 16, 2013: Release of variant tools 1.0.6, which contains a lot of small features and bug fixes. 
+
 *   Mar 20, 2013: Release of variant tools 1.0.5. This release adds commands `vtools admin --update_resource` and `vtools_report sequences`, and allows the use of arbitrary characters for names of variant tables. 
+
 *   Feb 20, 2013: Release of variant tools 1.0.4. This release comes with numerous bug fixed and new minor features. Please check the ChangeLog for details. 
+
 *   Oct 21, Nov 10, Nov 26, and Nov 29. 2012: Release of variant tools 1.0.3a, b, c and d to address various small issues. 
+
 *   Sep 25, 2012: Release of variant tools version 1.0.3, with new features and improvements in `vtools associate`, `vtools update`, `vtools phenotype` and `vtools_report` commands. 
+
 *   Jul 9th, 2012: Release of variant tools version 1.0.3rc1. Other than a few bug fixes and major performance improvements, this release introduces new commands `vtools associate` and `vtools admin`, with more than 20 association tests implemented under a unified association test framework. 
+
 *   Jan 24th, 2012: Release of variant tools version 1.0.2. This release fixes a major bug that causes duplicate output in commands `vtools output` and `vtools export` when range-based annotation databases are used. All users are recommended to upgrade. 
+
 *   Jan 2nd, 2012: Release of variant tools version 1.0.1. This version contains a few new features and bug fixes, and more importantly, dramatic performance improvement for many commands. Please refer to [ChangeLog][4][?][4] for details about this release. 
+
 *   Dec 30th, 2011: the gwasCatalog annotation source is available for download. See [examples][5][?][5] of how to use [gwasCatalog][5][?][5] to find published GWA hits that are near your variants. 
+
 *   Dec 15th, 2011: Two new annotation sources are available: Cancer Gene Census from the Cancer Genome Project, and the 5400 exomes EVS annotation database from the NHLBI Exome Sequencing Project. 
+
 *   Dec 4th, 2011: An [application note][6] that describes variant tools has been published online in *Bioinformatics*. 
+
 *   Nov 13, 2011: Release of variant tools version 1.0. 
+
 *   Jan 24th, 2012: Release of variant tools version 1.0.2. This release fixes a major bug that causes duplicate output in commands `vtools output` and `vtools export` when range-based annotation databases are used. All users are recommended to upgrade. 
+
 *   Jan 2nd, 2012: Release of variant tools version 1.0.1. This version contains a few new features and bug fixes, and more importantly, dramatic performance improvement for many commands. Please refer to [ChangeLog][4][?][4] for details about this release. 
+
 *   Dec 30th, 2011: the gwasCatalog annotation source is available for download. See [examples][5][?][5] of how to use [gwasCatalog][5][?][5] to find published GWA hits that are near your variants. 
+
 *   Dec 15th, 2011: Two new annotation sources are available: Cancer Gene Census from the Cancer Genome Project, and the 5400 exomes EVS annotation database from the NHLBI Exome Sequencing Project. 
+
 *   Dec 4th, 2011: An [application note][6] that describes variant tools has been published online in *Bioinformatics*. 
+
 *   Nov 13, 2011: Release of variant tools version 1.0. 
+
 *   Nov 7, 2011: A new annotation source called **[EVS (Exome Variant Server)][7][?][7]** is available consisting of exome sequencing variants from the NHLBI Exome Sequencing Project (ESP). This data was retrieved from the project's EVS server and contains population-specific allele frequencies (currently for European Americans and African Americans) and various functional annotations for predicted variants in approximately 2500 exomes. 
+
 *   Nov 2, 2011: Release of release candidate version 1.0rc3. This version adds option `--jobs` to a number of vtools commands and allow them to execute in multiple threads or processes. User interface is further cleaned for the final 1.0 release. As a result, support for the MySQL backend is temporarily disabled. 
+
 *   Oct 16, 2011: Release of release candidate version 1.0rc2. This version has a new option `--children` for command `vtools init`, which allows the creation of a project by merging multiple subprojects. 
+
 *   Oct 7, 2011: Release of release candidate version 1.0rc1. This version has a new `vtools export` command that can export in ANNOVAR and VCF formats. 
+
 *   Sep 27, 2011: Release of the second beta. This version contains full Python 3 support and a much more powerful `vtools import` command. 
+
 *   Sep 10, 2011: Release of 1.0 beta. 
+
 *   July 15, 2011: Initial public release. 
 
-
+</details>
 
 ## The integrative design of *variant tools*
 
