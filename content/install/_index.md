@@ -4,13 +4,13 @@ weight = 1
 +++
 
 
-# Installing variant tools
+### 1.Installing variant tools
 
-variant tools / variant association tools is available on Mac OSX, and posix systems such as Linux, Unix and Solaris. It is distributed under a [GNU Public License (V3)][2], which means that you are free to use, change, and share this software. Due to the nature of next-gen sequencing data, a reasonably powerful machine is needed to use this tool for real-world applications. 
+Variant Tools / Variant Association Tools is available on Mac OSX, and posix systems such as Linux, Unix and Solaris. It is distributed under a [GNU Public License (V3)][2], which means that you are free to use, change, and share this software. Due to the nature of next-gen sequencing data, a reasonably powerful machine is needed to use this tool for real-world applications. 
 
 
 
-### Compile from source if you have a standard Python installation
+#### 1.1 Compile from source if you have a standard Python installation
 
 If you have a standard Python installation (Python 2.7.1 or Python 3.3 or higher), you can install variant tools using command `pip` 
 
@@ -30,9 +30,9 @@ to download and compile variant tools from source.
 
 
 
-### Direct installation for Anaconda Python 
+#### 1.2 Direct installation for Anaconda Python 
 
-If you are using anaconda python, you can install variant tools using command 
+If you are using anaconda python, you can install Variant Tools using command 
 
 
 
@@ -50,75 +50,54 @@ would update variant tools to the newest version.
 
 
 
-### Download and compile from source code (for advanced users)
+#### 1.3 Download and compile from source code (for advanced users)
 
 If no binary distribution is available for your platform or if you would like to perform a site-wide installation (see next section), you can build *variant tools* from source. 
 
 
 
-#### Prerequisites:
+##### Prerequisites:
 
 *   Python 
 
+Variant Tools requires Python 2.7.1 or higher, or Python 3.2 or higher. Please make sure you have the right version of python before you install Variant Tools.  <img src="osmac.gif" width = "25" height = "25" align = "left" />  
 
+*   **Mac OSX** 
 
-*variant tools* requires Python 2.7.1 or higher, or Python 3.2 or higher. Please make sure you have the right version of python before you install variant tools. 
+  Mac OSX Lion (10.7) comes with Python 2.7.1, which is compatible with Variant Tools. You can also download and install Python 3 from the Python website.  <img src="oslinux.png" width = "25" height = "25" align = "left" />   
 
+*   **Linux** 
 
-
- ![][3]
-
-**Mac OSX** 
-
-
-
-Mac OSX Lion (10.7) comes with Python 2.7.1, which is compatible with variant tools. You can also download and install Python 3 from the Python website. 
-
-
-
- ![][4]
-
-**Linux** 
-
-
-
-The latest version of Ubuntu has recent versions of Python 2 and Python 3. Redhat Linux comes with Python 2.6. You will have to upgrade it to Python 2.7, or install Python 3. Because header files are sometimes provided as separate packages, you will need to install packages such as `python-dev` or `python3-dev` (Ubuntu) if you see error messages related to missing header files. For example, Ubuntu and other debian-derived systems need to install packages `python-dev`, `swig` (if using development version), `build-essential`, and `libbz2-dev`. 
-
+  The latest version of Ubuntu has recent versions of Python 2 and Python 3. Redhat Linux comes with Python 2.6. You will have to upgrade it to Python 2.7, or install Python 3. Because header files are sometimes provided as separate packages, you will need to install packages such as `python-dev` or `python3-dev` (Ubuntu) if you see error messages related to missing header files. For example, Ubuntu and other debian-derived systems need to install packages `python-dev`, `swig` (if using development version), `build-essential`, and `libbz2-dev`. 
 
 
 *   simuPOP (version 1.1.4 or higher) for the use of Variant Simulation Tools 
 
 
 
-You will need to install a recent version (1.1.4 or higher) of [simuPOP][5] if you plan to use [*Variant Simulation Tools*][6][?][6] to simulate data (command `vtools simulate`). 
+You will need to install a recent version (1.1.4 or higher) of [simuPOP][3] if you plan to use [*Variant Simulation Tools*][4] to simulate data (command `vtools simulate`). 
 
 
 
-1.  A C/C++ compiler 
+1. A C/C++ compiler 
+#<img src="oslinux.png" width = "25" height = "25" align = "left" />  
 
-
-
- ![][4]
-
-**Linux (gcc)** 
-
-
+*   **Linux (gcc)** 
 
 Gcc is generally available for all Linux systems 
+#<img src="osmac.gif" width = "25" height = "25" align = "left" />  
 
 
-
- ![][3]
 
 **MaxOS X (gcc or clang)** 
 
 
 
-For MacOSX Lion (10.7), please install the latest version of Xcode, and [Command Line Tools for Xcode][7] if you are using Xcode 4.3.2 or later. If you wish to create Installer packages with PackageMaker, you will also need to install PackageMaker, which is in the “Auxiliary Tools for Xcode” package as of Xcode 4.3. The download page for this package can be opened via the Xcode -> Open Developer Tool -> More Developer Tools... menu item. After downloading and mounting the disk image, drag the PackageMaker application to your /Applications directory. 
+For MacOSX Lion (10.7), please install the latest version of Xcode, and [Command Line Tools for Xcode][5] if you are using Xcode 4.3.2 or later. If you wish to create Installer packages with PackageMaker, you will also need to install PackageMaker, which is in the “Auxiliary Tools for Xcode” package as of Xcode 4.3. The download page for this package can be opened via the Xcode -> Open Developer Tool -> More Developer Tools... menu item. After downloading and mounting the disk image, drag the PackageMaker application to your /Applications directory. 
 
 
 
-#### Installing variant tools
+##### Installing variant tools
 
 After downloading the variant tools package, please run 
 
@@ -143,17 +122,15 @@ or
 
 if you would like to use Python 3. 
 
-
-
-If you get error messages for missing header files, please check if you have `zlib` and `bzip2` library and header files installed. You might need to install packages such as `bzip2-devel` and `zlib-devel` under linux. 
-
-
-
+{{% notice tip %}}
+If you get error messages for missing header files, please check if you have `zlib` and `bzip2` library and header files installed. You might need to install packages such as `bzip2-devel` and `zlib-devel` under linux.
+{{% /notice %}}
+{{% notice warning %}}
 Commands `vtools` and `vtools_report` in the source code directory will not work. Please move out of the installation directory and execute globally installed commands. 
+{{% /notice %}}
 
 
-
-### Installing variant tools locally
+#### 1.4 Installing variant tools locally
 
 variant tools consists of commands `vtools` and `vtools_report`, which are usually installed to `/usr/local/bin`. If you would like to install variant tools to a local directory, please use commands such as 
 
@@ -173,7 +150,7 @@ In this way, the variant tools library will be installed to `~/python_lib`, and 
 
 
 
-### Building the development version of variant tools
+#### 1.5 Building the development version of variant tools
 
 If you would like to try the absolute newest version of variant tools, you can check out variant tools from its sourceforge git repository. Under linux, you can simply run 
 
@@ -187,12 +164,13 @@ If you would like to try the absolute newest version of variant tools, you can c
 If you have changed the C/C++ code, you will need to re-generate the Python wrapper using SWIG. If you are using the latest version of Ubuntu, you can get it from package `swig2.0`. The package `SWIG` under Redhat or CentOS at version 1.34 is also usable (but only for python 2). 
 
 
-
+{{% notice warning %}}
 Due to a bug in type handling, some versions of swig (2.0.6 and 2.0.7 are confirmed) can not be used to build variant tools. Please use version 2.0.4 if you experience any swig related problem. 
+{{% /notice %}}
 
 
 
-### Troubleshooting
+#### 1.6 Troubleshooting
 
 **1. Error message `ImportError: No module named variant_tools`.** 
 
@@ -202,7 +180,7 @@ If you used a customized local installation by setting `--install-platlib`, you 
 
 We have noticed this problem under some special circumstances. The problem is caused by lacking read permission of `.so` files under `/path/to/site_package/variant_tools`. Using `chmod o+x /path/to/site_package/variant_tools/*.so` can fix the problem. 
 
-**3. Use of clang compiler under MacOSX ** 
+**3. Use of clang compiler under MacOSX** 
 
 If you are using a version of Python downloaded from the Python official website, you might need to create a symbolic link of `gcc` as `gcc-4.2` using command 
 
@@ -227,9 +205,9 @@ before you call `python3 setup.py install` to compile variant tools. Also, in th
 
 
 
-## Resource management for individual or site-wide installation
+### 2. Resource management for individual or site-wide installation
 
-### Batch download of resources
+#### 2.1 Batch download of resources
 
 The variant tools website hosts a large number of annotation databases and other resources. These files are downloaded automatically to a local resource directory (`~/.variant_tools`) when they are needed, and need not to be downloaded again. However, if you plan to use many of the variant tools resources and have enough disk space, you can download all variant tools resources into your local resource directory using commands 
 
@@ -256,12 +234,12 @@ Multiple users could share the same local resource directory if you put these fi
 Note that the `all` option will download all versions of resources for all reference genomes and can take a lot of disk spaces (about 60G as of March 2013). 
 
 
-
+{{% notice tip %}}
 You can set `shared_resource` during the variant tools installation so that you do not have to set `$local_resource` for each project. 
+{{% /notice %}}
 
 
-
-### Runtime options for site-wide installation from source code
+#### 2.2 Runtime options for site-wide installation from source code
 
 If you are a system administrator, you can change the default values of runtime options such as `shared_resource`, `temp_dir`, and `search_path` before installing variant tools. These options are defined in `source/site_options.py`. You can change them before running `python setup.py install`, or modify them afterwards (under a directory named similar to `/usr/lib/python/lib/python2.7/site-packages/variant_tools`). 
 
@@ -281,7 +259,7 @@ If you are a system administrator, you can change the default values of runtime 
 
 
 
-### Mirroring the variant tools repository 
+#### 2.3 Mirroring the variant tools repository 
 
 You can mirror the variant tools repository and provide it either to local users or all users of variant tools. For example, you can run 
 
@@ -304,8 +282,6 @@ We always look for public mirrors for our repository. Your help would be highly 
 
  []: http://sourceforge.net/projects/varianttools/files/
  [2]: http://www.gnu.org/copyleft/gpl.html
- [3]: http://simupop.sourceforge.net/images/osmac.gif ""
- [4]: http://simupop.sourceforge.net/images/oslinux.png ""
- [5]: http://simupop.sourceforge.net
- [6]: http://localhost/~iceli/wiki/pmwiki.php?n=Simulation.HomePage?action=edit
- [7]: https://developer.apple.com/downloads/index.action?=command%20line%20tools
+ [3]: http://simupop.sourceforge.net
+ [4]: http://varianttools.sourceforge.net/Simulation/HomePage
+ [5]: https://developer.apple.com/downloads/index.action?=command%20line%20tools

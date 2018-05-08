@@ -4,49 +4,45 @@ description = ""
 weight = 1
 +++
 
-# Key concepts
+### Project
 
-## *Project*
+**Variant Tools** is project based. All data need to be imported to the project to be analyzed. A *variant tools* project **`$name`** consists of a project file **`$name.proj`**, a genotype database **$`name_genotype.DB`**, and a log file **`$name.log`**. After a project is created, subsequent **`vtools`** calls will automatically load the project in the current directory. Working from outside of a project directory is not allowed. 
 
-*variant tools* is project based. All data need to be imported to the project to be analyzed. A *variant tools* project `$name` consists of a project file `$name.proj`, a genotype database `$name_genotype.DB`, and a log file `$name.log`. After a project is created, subsequent `vtools` calls will automatically load the project in the current directory. Working from outside of a project directory is not allowed. 
+<details> <summary> Examples </summary>
 
-(:toggleexample:) Let us create a sample project and import two datasets from the pilot phase of the 1000 genomes project: 
+Let us create a sample project and import two datasets from the pilot phase of the 1000 genomes project: 
 
     % vtools init concept
-    % wget ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/release/2010_07/exon/snps/CEU.exon.2010_03.sites.vcf.gz
-    % wget ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/release/2010_07/exon/snps/JPT.exon.2010_03.sites.vcf.gz
+    % wget http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/release/2010_07/exon/snps/CEU.exon.2010_03.sites.vcf.gz
+    % wget http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/release/2010_07/exon/snps/JPT.exon.2010_03.sites.vcf.gz
     % vtools import CEU.exon.2010_03.sites.vcf.gz --build hg18 --sample_name CEU --var_info AA AC AN DP 
     % vtools import JPT.exon.2010_03.sites.vcf.gz --sample_name JPT --var_info AA AC AN DP
-    
+ 
 
 The project properties can be displayed as follows 
 
     % vtools show project
-    
-
     Project name:                concept
     Primary reference genome:    hg18
     Secondary reference genome:  None
     Runtime options:             verbosity=1
     Variant tables:              variant
     Annotation databases:
-    
 
-(:exampleend:) 
-
+</details>
 
 
-*variant tools* can import and manage large projects with thousands of samples and millions of variants. Although it can be slow to import data from large whole genome sequencing projects (e.g. it takes around 3 days to import all genotype data from the 1000 genomes project, with raw data exceeding 1T in size), data analysis is relatively fast because imported data are properly organized (indexed) and readily accessible. 
+{{% alert theme="info" %}} *Variant Tools* can import and manage large projects with thousands of samples and millions of variants. Although it can be slow to import data from large whole genome sequencing projects (e.g. it takes around 3 days to import all genotype data from the 1000 genomes project, with raw data exceeding 1T in size), data analysis is relatively fast because imported data are properly organized (indexed) and readily accessible. {{%/alert%}}
 
+### Variant & variant table
 
-
-## *Variant* and *variant table*
-
-**variants** refer to DNA sequence variations at a particular locus. Each variant consists of a *chromosome name* (1, 2, ..., X etc, without leading `chr`), a *position* (1-based), a *reference allele*, and an *alternative allele*, denoted by fields **`chr`**, **`pos`**, **`ref`**, and **`alt`**. variant tools currently supports [SNV, small indels, and MNP (Multiple-nucleotide polymorphism)][1]. All variants are assumed to be on the forward (`+`) strand. 
+**Variants** refer to DNA sequence variations at a particular locus. Each variant consists of a *chromosome name* (1, 2, ..., X etc, without leading `chr`), a *position* (1-based), a *reference allele*, and an *alternative allele*, denoted by fields **`chr`**, **`pos`**, **`ref`**, and **`alt`**. variant tools currently supports [SNV, small indels, and MNP (Multiple-nucleotide polymorphism)][1]. All variants are assumed to be on the forward (`+`) strand. 
 
 Unlike some other tools that can analyze variants in external files directly, **variants must be imported into a project before they are annotated or analyzed**. All variant tools project has a **master variant table** that consists of all variants in this project. These variants are usually [imported][2][?][2] from external files. A project can have many **variant tables** that consist of subsets of variants from the master variant table. They are usually created using command `vtools select` according to sample properties and annotation of variants. Information about variant tables can be listed by command `vtools show tables`. Names of variant tables can contain special characters such as '@'. 
 
-(:toggleexample:) This project has a single **master variant table** with 4,858 variants: 
+<details> <summary> Examples </summary>
+
+This project has a single **master variant table** with 4,858 variants: 
 
     % vtools show tables
     
@@ -65,7 +61,7 @@ Each variant has chr, position, reference and alternative alleles,
     1	1108138	C	T
     1	1110240	T	A
     1	1110294	G	A
-    
+
 
 We can select all variants with reference allele `T` and save the results to a **variant table** named `refT`, 
 
@@ -98,7 +94,8 @@ As you can see, all variants in table `refT` have reference allele `T`:
     1	6447275	T	C
     
 
-(:exampleend:) 
+</details>
+
 
 
 
@@ -470,7 +467,7 @@ A lot more variants are selected, showing the importance of using the latest ver
 
 *Pipelines* are sequences of commands defined in pipeline configuration files, and are executed by command `vtools execute`. Pipelines are used, among many possibilities, to use external commands such as `bwa` and `gatk` to align raw reads and call genetic variants from aligned reads.
 
- [1]: http://varianttools.sourceforge.net/Details/Variants
+ [1]:https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/
  [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Import?action=edit
  [3]: http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41
  [4]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Use?action=edit

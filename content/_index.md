@@ -1,12 +1,10 @@
 
 # Home of Variant Tools
 
- 
-[![1](1.jpg   "A presentation about variant tools (Oct, 3rd, 2013)")](vtools.pdf)
-
 *variant tools* is a software tool for the manipulation, annotation, selection, simulation, and analysis of *variants* in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to [what you can do with variant tools](#anchor) for a list of features provided by variant tools.  
-
-
+ 
+[![](1.jpg)](vtools.pdf)
+<center>A presentation about variant tools (Oct, 3rd, 2013)</center>
 
 ## News
 
@@ -40,49 +38,50 @@
 
 *   May 16, 2013: Release of variant tools 1.0.6, which contains a lot of small features and bug fixes. 
 
-*   Mar 20, 2013: Release of variant tools 1.0.5. This release adds commands `vtools admin --update_resource` and `vtools_report sequences`, and allows the use of arbitrary characters for names of variant tables. 
+*   Mar 20, 2013: Release of variant tools 1.0.5. This release adds commands 
+[`vtools admin`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/) `--update_resource` and `vtools_report sequences`, and allows the use of arbitrary characters for names of variant tables. 
 
 *   Feb 20, 2013: Release of variant tools 1.0.4. This release comes with numerous bug fixed and new minor features. Please check the ChangeLog for details. 
 
 *   Oct 21, Nov 10, Nov 26, and Nov 29. 2012: Release of variant tools 1.0.3a, b, c and d to address various small issues. 
 
-*   Sep 25, 2012: Release of variant tools version 1.0.3, with new features and improvements in `vtools associate`, `vtools update`, `vtools phenotype` and `vtools_report` commands. 
+*   Sep 25, 2012: Release of variant tools version 1.0.3, with new features and improvements in [`vtools associate`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/), [`vtools update`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/), [`vtools phenotype`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/phenotype/) and `vtools_report` commands. 
 
-*   Jul 9th, 2012: Release of variant tools version 1.0.3rc1. Other than a few bug fixes and major performance improvements, this release introduces new commands `vtools associate` and `vtools admin`, with more than 20 association tests implemented under a unified association test framework. 
+*   Jul 9th, 2012: Release of variant tools version 1.0.3rc1. Other than a few bug fixes and major performance improvements, this release introduces new commands [`vtools associate`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/) and [`vtools admin`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/), with more than 20 association tests implemented under a unified association test framework. 
 
-*   Jan 24th, 2012: Release of variant tools version 1.0.2. This release fixes a major bug that causes duplicate output in commands `vtools output` and `vtools export` when range-based annotation databases are used. All users are recommended to upgrade. 
+*   Jan 24th, 2012: Release of variant tools version 1.0.2. This release fixes a major bug that causes duplicate output in commands [`vtools output`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/) and [`vtools export`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/) when range-based annotation databases are used. All users are recommended to upgrade. 
 
-*   Jan 2nd, 2012: Release of variant tools version 1.0.1. This version contains a few new features and bug fixes, and more importantly, dramatic performance improvement for many commands. Please refer to [ChangeLog][4][?][4] for details about this release. 
+*   Jan 2nd, 2012: Release of variant tools version 1.0.1. This version contains a few new features and bug fixes, and more importantly, dramatic performance improvement for many commands. Please refer to [ChangeLog](https://vatlab.github.io/vat-docs/development/changelog/) for details about this release. 
 
-*   Dec 30th, 2011: the gwasCatalog annotation source is available for download. See [examples][5][?][5] of how to use [gwasCatalog][5][?][5] to find published GWA hits that are near your variants. 
-
-*   Dec 15th, 2011: Two new annotation sources are available: Cancer Gene Census from the Cancer Genome Project, and the 5400 exomes EVS annotation database from the NHLBI Exome Sequencing Project. 
-
-*   Dec 4th, 2011: An [application note][6] that describes variant tools has been published online in *Bioinformatics*. 
-
-*   Nov 13, 2011: Release of variant tools version 1.0. 
-
-*   Jan 24th, 2012: Release of variant tools version 1.0.2. This release fixes a major bug that causes duplicate output in commands `vtools output` and `vtools export` when range-based annotation databases are used. All users are recommended to upgrade. 
-
-*   Jan 2nd, 2012: Release of variant tools version 1.0.1. This version contains a few new features and bug fixes, and more importantly, dramatic performance improvement for many commands. Please refer to [ChangeLog][4][?][4] for details about this release. 
-
-*   Dec 30th, 2011: the gwasCatalog annotation source is available for download. See [examples][5][?][5] of how to use [gwasCatalog][5][?][5] to find published GWA hits that are near your variants. 
+*   Dec 30th, 2011: the gwasCatalog annotation source is available for download. See examples of how to use [gwasCatalog](https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/) to find published GWA hits that are near your variants. 
 
 *   Dec 15th, 2011: Two new annotation sources are available: Cancer Gene Census from the Cancer Genome Project, and the 5400 exomes EVS annotation database from the NHLBI Exome Sequencing Project. 
 
-*   Dec 4th, 2011: An [application note][6] that describes variant tools has been published online in *Bioinformatics*. 
+*   Dec 4th, 2011: An [application note](https://academic.oup.com/bioinformatics/article/28/3/421/189037) that describes variant tools has been published online in *Bioinformatics*. 
 
 *   Nov 13, 2011: Release of variant tools version 1.0. 
 
-*   Nov 7, 2011: A new annotation source called **[EVS (Exome Variant Server)][7][?][7]** is available consisting of exome sequencing variants from the NHLBI Exome Sequencing Project (ESP). This data was retrieved from the project's EVS server and contains population-specific allele frequencies (currently for European Americans and African Americans) and various functional annotations for predicted variants in approximately 2500 exomes. 
+*   Jan 24th, 2012: Release of variant tools version 1.0.2. This release fixes a major bug that causes duplicate output in commands [`vtools output`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/) and [`vtools export`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/) when range-based annotation databases are used. All users are recommended to upgrade. 
+
+*   Jan 2nd, 2012: Release of variant tools version 1.0.1. This version contains a few new features and bug fixes, and more importantly, dramatic performance improvement for many commands. Please refer to [ChangeLog](https://vatlab.github.io/vat-docs/development/changelog/) for details about this release. 
+
+*   Dec 30th, 2011: the gwasCatalog annotation source is available for download. See examples of how to use [gwasCatalog](https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/) to find published GWA hits that are near your variants. 
+
+*   Dec 15th, 2011: Two new annotation sources are available: Cancer Gene Census from the Cancer Genome Project, and the 5400 exomes EVS annotation database from the NHLBI Exome Sequencing Project. 
+
+*   Dec 4th, 2011: An [application note](https://academic.oup.com/bioinformatics/article/28/3/421/189037) that describes variant tools has been published online in *Bioinformatics*. 
+
+*   Nov 13, 2011: Release of variant tools version 1.0. 
+
+*   Nov 7, 2011: A new annotation source called **[EVS (Exome Variant Server)](https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/)** is available consisting of exome sequencing variants from the NHLBI Exome Sequencing Project (ESP). This data was retrieved from the project's EVS server and contains population-specific allele frequencies (currently for European Americans and African Americans) and various functional annotations for predicted variants in approximately 2500 exomes. 
 
 *   Nov 2, 2011: Release of release candidate version 1.0rc3. This version adds option `--jobs` to a number of vtools commands and allow them to execute in multiple threads or processes. User interface is further cleaned for the final 1.0 release. As a result, support for the MySQL backend is temporarily disabled. 
 
-*   Oct 16, 2011: Release of release candidate version 1.0rc2. This version has a new option `--children` for command `vtools init`, which allows the creation of a project by merging multiple subprojects. 
+*   Oct 16, 2011: Release of release candidate version 1.0rc2. This version has a new option `--children` for command [`vtools init`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/init/), which allows the creation of a project by merging multiple subprojects. 
 
-*   Oct 7, 2011: Release of release candidate version 1.0rc1. This version has a new `vtools export` command that can export in ANNOVAR and VCF formats. 
+*   Oct 7, 2011: Release of release candidate version 1.0rc1. This version has a new [`vtools export`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/) command that can export in ANNOVAR and VCF formats. 
 
-*   Sep 27, 2011: Release of the second beta. This version contains full Python 3 support and a much more powerful `vtools import` command. 
+*   Sep 27, 2011: Release of the second beta. This version contains full Python 3 support and a much more powerful [`vtools import`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/) command. 
 
 *   Sep 10, 2011: Release of 1.0 beta. 
 
@@ -95,73 +94,77 @@
 If you have used other sequencing or association analysis tools such as bedtools and pseq, you will be surprised that *variant tools* usually does not give you a nice report with a list of variants or genes with some useful information after performing an analysis. Instead, **all the information, including results of analysis, are saved in the project in a consistent manner**. An extra step is needed to output the information you need. In other words, the management and presentation of information regarding variants are two different processes, and you typically add more and more information to your project during analysis of your data. The end result is that **you have immediate access to a large amount of information for the variants you are interested in, which can in turn help you perform more in-depth analysis**. Using a fabricated and unusually long command, 
 
 
-
-% vtools output                                             # 2
-myvariants                                     # 1
-chr pos ref alt                                # 3
-hom_case hom_ctrl                              # 4
-dbNSFP.SIFT_score dbSNP.name refGene.name2     # 5
-asso1.p_value asso2.p_value                    # 6
-"ref_sequence(chr, pos - 5, pos + 5)"          # 7             
-"track('LP056A.BAM')"                          # 8
-"genotype('WGS1')"                             # 9
-"samples()"
-
-
-
+```
+% vtools output                                            # 2
+            myvariants                                     # 1
+            chr pos ref alt                                # 3
+            hom_case hom_ctrl                              # 4
+            dbNSFP.SIFT_score dbSNP.name refGene.name2     # 5
+            asso1.p_value asso2.p_value                    # 6
+            "ref_sequence(chr, pos - 5, pos + 5)"          # 7             
+            "track('LP056A.BAM')"                          # 8
+            "genotype('WGS1')"                             # 9
+            "samples()"
+```
 
 
-1.  `myvariants` contains a list of variants, which is a subset of the *master variant table* (all the variant of your project) and is typically created using command `vtools select`. 
-2.  Command `vtools output` output information for all variants in `myvariant`, which include 
+1.  `myvariants` contains a list of variants, which is a subset of the *master variant table* (all the variant of your project) and is typically created using command [`vtools select`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/select/). 
+
+2.  Command [`vtools output`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/) output information for all variants in `myvariant`, which include 
+
 3.  `chr`, `pos`, `ref`, `alt` constitute a *variant*, namely location and type of a mutation. 
-4.  `hom_case` and `hom_ctrl` are number of homozygous genotypes of this variant in cases and controls. These are called *variant info fields* and are added to the project using command `vtools update --from_stat` 
-5.  `dbNSFP.SIFT_score`, `dbSNP.name` and `refGene.name2` are annotation information from different annotation databases. Annotation databases are not part of the project. They are connected to the project using command `vtools use`. 
-6.  `asso1.p_value` and `asso2.p_value` are results of two different association analysis. These are annotation databases created by command `vtools associate`. 
-7.  `<a class='createlinktext' rel='nofollow'
-href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Commands?action=edit'>ref_sequence</a><a rel='nofollow' 
-class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Commands?action=edit'>?</a>(chr, pos-5, pos+5)` is a function provided by *variant tools* to retrieve the reference sequence around the variant. Here 5 basepair of the up and downstream of each variant is returned. 
-8.  `<a class='createlinktext' rel='nofollow'
-href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Commands?action=edit'>track</a><a rel='nofollow' 
-class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Commands?action=edit'>?</a>()` is a function to extract information from external files. In this example, the depth of coverage at the location of the variant in the specified bam file is returned. 
-9.  `<a class='createlinktext' rel='nofollow'
-href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Commands?action=edit'>genotype</a><a rel='nofollow' 
-class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Commands?action=edit'>?</a>('WGS1')` is another function to get the genotype of this variant in sample `WGS1`, for example, 1 for heterozygote and 2 for homozygote. Function `samples()` lists the samples that contain the variant. 
 
-As you can see, individual commands such as `vtools use` and `vtools update` do not produce any output, but adds information to the project that can be displayed along with others. Then, it is important to remember that all such information can be used to select, prioritize, and analyze your variants. Another fabricated command would look like 
+4.  `hom_case` and `hom_ctrl` are number of homozygous genotypes of this variant in cases and controls. These are called *variant info fields* and are added to the project using command [`vtools update`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/) `--from_stat` 
+
+5.  `dbNSFP.SIFT_score`, `dbSNP.name` and `refGene.name2` are annotation information from different annotation databases. Annotation databases are not part of the project. They are connected to the project using command [`vtools use`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/). 
+
+6.  `asso1.p_value` and `asso2.p_value` are results of two different association analysis. These are annotation databases created by command [`vtools associate`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/). 
+
+7.  [`ref_sequence`](https://vatlab.github.io/vat-docs/documentation/functions/ref_sequence/)(chr, pos-5, pos+5)` is a function provided by *variant tools* to retrieve the reference sequence around the variant. Here 5 basepair of the up and downstream of each variant is returned. 
+
+8.  [`track`](https://vatlab.github.io/vat-docs/documentation/functions/track/) is a function to extract information from external files. In this example, the depth of coverage at the location of the variant in the specified bam file is returned. 
+
+9.  [`genotype`](https://vatlab.github.io/vat-docs/documentation/functions/genotype/)(`WGS1`) is another function to get the genotype of this variant in sample `WGS1`, for example, 1 for heterozygote and 2 for homozygote. Function `samples()` lists the samples that contain the variant. 
+
+As you can see, individual commands such as [`vtools use`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/) and [`vtools update`](https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/) do not produce any output, but adds information to the project that can be displayed along with others. Then, it is important to remember that all such information can be used to select, prioritize, and analyze your variants. Another fabricated command would look like 
 
 
-
-% vtools select                                             # 1
-myvariants                                       # 2
-"refGene.name2='BRCA1'"                          # 3
-'dbNSFP.SIFT_score > 0.95'                   
-'hom_case > 15' 'hom_ctrl = 0'                   # 4
-'asso1.p_value < 0.05 OR asso2.p_value < 0.05'   # 5
---to_table significant                           # 6
-
+```
+% vtools select                                              # 1
+            myvariants                                       # 2
+            "refGene.name2='BRCA1'"                          # 3
+            'dbNSFP.SIFT_score > 0.95'                   
+            'hom_case > 15' 'hom_ctrl = 0'                   # 4
+            'asso1.p_value < 0.05 OR asso2.p_value < 0.05'   # 5
+            --to_table significant                           # 6
+```
 
 
 
 1.  Command `vtools select` selects variants according to their properties 
+
 2.  It starts from table `myvariants`, which was itself selected using some other crieteria, 
+
 3.  The variants must be in gene `BRCA1` and must have > 0.95 SIFT scores (probably damagin) 
+
 4.  it should appear in at least 15 of the cases as homozygote, and not available (as homozygote) in any of the controls 
+
 5.  and it should be significant in one of the association tests, 
 6.  the selected variant are written to another table names `significant`. 
 
-In summary,** *variant tools* is NOT designed to be a black-box tool that analyzes your data and generates a nice-looking report with a list of candidate variants or genes. It is a platform under which you can analyze your data using several methods, compare and analyze results, re-compare and re-analyze, and again using different methods or annotation sources, based on the information abtained from your previous analyses.** The unique advantage of *variant tools* is that you generally do not need to write a bunch of scripts to *connect* input output of different tools and *parse* and *compare* results in different formats, and you have easy access to a huge amount of information that help you select, prioritize and analyze your variants, all from your command line. However, because of the uniqueness of this design, **please read through the [Concepts][8][?][8] section of this website before using *variant tools*.** 
+In summary,** *variant tools* is NOT designed to be a black-box tool that analyzes your data and generates a nice-looking report with a list of candidate variants or genes. It is a platform under which you can analyze your data using several methods, compare and analyze results, re-compare and re-analyze, and again using different methods or annotation sources, based on the information abtained from your previous analyses.** The unique advantage of *variant tools* is that you generally do not need to write a bunch of scripts to *connect* input output of different tools and *parse* and *compare* results in different formats, and you have easy access to a huge amount of information that help you select, prioritize and analyze your variants, all from your command line. However, because of the uniqueness of this design, **please read through the [Concepts](https://vatlab.github.io/vat-docs/documentation/keyconcepts/) section of this website before using *variant tools*.** 
 
 <span id = "anchor"></span>
 
 ## Things you can do with variant tools
 
-| **Catagory**           | **Tasks**|
-| ------------- | ------------- |
-| Variant calling        | [Call variants from raw reads in FASTQ or BAM (convert to FASTQ first) formats using the GATK best practice pipeline.][9][?][9]                                                                                                                                               |
-| Import variants        | [Import variants and genotypes in VCF format, with options to import specified variant and genotype info fields.][10][?][10]                                                                                                                                                  |
-|                        | [Import all info and genotype fields, including customized fields from VCF files.][11]                                                                                                                                                                                        |
-|                        | Import [SNP][12] and [Indel][13] variants from the Illumina CASAVA pipeline before version 1.8 (text files), and variants called from the [Complete Genomics pipeline][14][?][14].                                                                                            |
-|                        | [Pipeline to import variants from the recent versions of the Illumina CASAVA pipeline (in VCF format) that provides variant calls from two probabilistic models.][15][?][15]                                                                                                  |
+|**Catagory**|         **Tasks**       |
+| ---------- | ----------------------- |
+| Variant calling        | [Call variants from raw reads in FASTQ or BAM (convert to FASTQ first) formats using the GATK best practice pipeline.](https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/)                                                                                                                                         |
+| Import variants        | [Import variants and genotypes in VCF format, with options to import specified variant and genotype info fields.](https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/)                                                                                                                                                  |
+|                        | [Import all info and genotype fields, including customized fields from VCF files.](https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/import_vcf/)                                                                                                                                                                                |
+|                        | Import [SNP] and [Indel] variants from the Illumina CASAVA pipeline before version 1.8 (text files), and variants called from the [Complete Genomics pipeline].                                                                                            |
+|                        | [Pipeline to import variants from the recent versions of the Illumina CASAVA pipeline (in VCF format) that provides variant calls from two probabilistic models.](https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/illumina/)                                                                                              |
 |                        | Import variants in [text][16][?][16] or [CSV][17][?][17] files.                                                                                                                                                                                                               |
 |                        | Import variants from files in [Plink format][18][?][18]                                                                                                                                                                                                                       |
 |                        | Import variants from [a list of rsnames (dbSNP IDs)][19][?][19], or [just chromsome and positions][20][?][20], variant information are retrieved from the dbSNP database.                                                                                                     |
@@ -250,71 +253,3 @@ for Variant Association Tools, and
 Bo Peng (2014) [**Reproducible Simulations of Realistic Samples for Next-Generation Sequencing Studies Using Variant Simulation Tools**][67], Genetic Epidemiology. 
 
 for Variant Simulation Tools if you find variant tools helpful and use it in your publication. Thank you.
-
-[]: http://localhost/~iceli/wiki/pmwiki.php?n=AttachVtools.Pdf?action=edit
-[2]: http://localhost/~iceli/wiki/pmwiki.php?n=AttachVtools.Pdf?action=edit
-[3]: #features
-[4]: http://localhost/~iceli/wiki/pmwiki.php?n=Main.ChangeLog?action=edit
-[5]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.GwasCatalog?action=edit
-[6]: http://bioinformatics.oxfordjournals.org/content/28/3/421
-[7]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.EVS?action=edit
-[8]: http://localhost/~iceli/wiki/pmwiki.php?n=Main.Concepts?action=edit
-[9]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.BwaGatkHg19?action=edit
-[10]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Import?action=edit
-[11]: http://varianttools.sourceforge.net/Pipeline/ImportVcf
-[12]: http://varianttools.sourceforge.net/Format/CASAVA18Snps
-[13]: http://varianttools.sourceforge.net/Format/CASAVA18Indels
-[14]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.CGA?action=edit
-[15]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.Illumina?action=edit
-[16]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit
-[17]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Csv?action=edit
-[18]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Plink?action=edit
-[19]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Rsname?action=edit
-[20]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Map?action=edit
-[21]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.New?action=edit
-[22]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Liftover?action=edit
-[23]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.RefSequence?action=edit
-[24]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Admin?action=edit
-[25]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.CcdsGene?action=edit
-[26]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.EntrezGene?action=edit
-[27]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.KnownGene?action=edit
-[28]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.RefGene?action=edit
-[29]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.HGNC?action=edit
-[30]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.COSMIC?action=edit
-[31]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.DGV?action=edit
-[32]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.DbSNP?action=edit
-[33]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.ThousandGenome?action=edit
-[34]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.HapMap?action=edit
-[35]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.DbNSFP?action=edit
-[36]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.PhastCons?action=edit
-[37]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.GenomicSuperDups?action=edit
-[38]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.Annovar?action=edit
-[39]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.SnpEff?action=edit
-[40]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.AnnoUtils?action=edit
-[41]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Track?action=edit
-[42]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Update?action=edit
-[43]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Select?action=edit
-[44]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Compare?action=edit
-[45]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.Filtering?action=edit
-[46]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Output?action=edit
-[47]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Genotype?action=edit
-[48]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Samples?action=edit
-[49]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Export?action=edit
-[50]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVAR?action=edit
-[51]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.HomePage?action=edit
-[52]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.PlotAssociation?action=edit
-[53]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.MetaAnalysis?action=edit
-[54]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.Sequence?action=edit
-[55]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.DiscordanceRate?action=edit
-[56]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.AvgDepth?action=edit
-[57]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.VariantStat?action=edit
-[58]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.TransRatio?action=edit
-[59]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.PlotFields?action=edit
-[60]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.PlotGenoFields?action=edit
-[61]: http://localhost/~iceli/wiki/pmwiki.php?n=VtoolsReport.PlotPhenoFields?action=edit
-[62]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Remove?action=edit
-[63]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Init?action=edit
-[64]: http://localhost/~iceli/wiki/pmwiki.php?n=Main.Documentation?action=edit
-[65]: http://bioinformatics.oxfordjournals.org/content/28/3/421.abstract?sid=f64403e7-5050-4102-963c-e690efe003f7
-[66]: http://dx.doi.org/10.1016/j.ajhg.2014.04.004
-[67]: http://onlinelibrary.wiley.com/doi/10.1002/gepi.21867/abstract
