@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variant Tools</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.36.1" />
+<title>Input format :: Variant Tools</title>
+<link rel="shortcut icon" href="/vat-docs/images/favicon.png" type="image/x-icon" />
+<link href="/vat-docs/css/font-awesome.min.css" rel="stylesheet">
+<link href="/vat-docs/css/nucleus.css" rel="stylesheet">
+<link href="/vat-docs/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/vat-docs/css/bootstrap.min.css">
+<script src="/vat-docs/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+</script>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/vat-docs/documentation/customization/inputformat/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://vatlab.github.io/vat-docs/">Variant Tools</a>
+  
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/vatlab/vat-docs"  rel="noopener">
+                  <i class='fa fa-github'></i> <label>Github repo</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://twitter.com/ScriptOfScripts"  rel="noopener">
+                  <i class='fa fa-twitter'></i> <label> ScriptOfScripts </label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href=""  rel="noopener">
+                  <i class='fa fa-envelope'></i> <label>bpeng@mdanderson.org </label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/vat-docs/" class="dd-item">
+          <a href="/vat-docs/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/vat-docs/install/" class="dd-item
+        ">
+      <div>
+      <a href="/vat-docs/install/">Installation</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/">Documentation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/vat-docs/documentation/keyconcepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/keyconcepts/">Key concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/keyconcepts/supportedtypes/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/keyconcepts/supportedtypes/">
+            Supported types of variants
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/tutorials/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/tutorials/">
+            Tutorials
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/help/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/help/">
+            Help
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/vtools-commands/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/vtools-commands/">Vtools commands</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/init/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/init/">
+            Init
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/import/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/import/">
+            Import
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/update/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/update/">
+            Update
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/phenotype/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/phenotype/">
+            Phenotype
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/liftover/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/liftover/">
+            lifttover
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/show/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/show/">
+            show
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/use/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/use/">
+            use
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/select/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/select/">
+            select
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/exclude/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/exclude/">
+            exclude
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/compare/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/compare/">
+            compare
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/associate/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/associate/">
+            associate
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/output/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/output/">
+            output
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/export/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/export/">
+            export
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/remove/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/remove/">
+            remove
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/execute/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/execute/">
+            execute
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/admin/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools-commands/admin/">
+            admin
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/functions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/functions/">Functions</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/functions/ref_sequence/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/functions/ref_sequence/">
+            ref_sequence
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/functions/mut_sequence/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/functions/mut_sequence/">
+            mut_sequence
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/functions/track/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/functions/track/">
+            track
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/functions/genotype/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/functions/genotype/">
+            Genotype
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/functions/samples/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/functions/samples/">
+            samples
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/functions/in_table/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/functions/in_table/">
+            in_table
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/functions/otherfunctions/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/functions/otherfunctions/">
+            Other functions
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/vtools_report/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/vtools_report/">Vtools_report</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/avg_depth/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/avg_depth/">
+            avg_depth
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/discordance_rate/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/discordance_rate/">
+            discordance_rate
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/sam_info/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/sam_info/">
+            sam_info
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/sequence/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/sequence/">
+            sequence
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/trans_ratio/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/trans_ratio/">
+            trans_ratio
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/variant_stat/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/variant_stat/">
+            variant_stat
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/inbreeding_coefficient/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/inbreeding_coefficient/">
+            inbreeding_coefficient
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/transmission/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/transmission/">
+            transmission
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/meta_analysis/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/meta_analysis/">
+            meta_analysis
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_fields/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/plot_fields/">
+            plot_fields
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_geno_fields/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/plot_geno_fields/">
+            plot_geno_fields
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_pheno_fields/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/plot_pheno_fields/">
+            plot_pheno_fields
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_association/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/vtools_report/plot_association/">
+            plot_association
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/customization/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/customization/">Customization</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/customization/format/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/customization/format/">
+            Format
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/customization/inputformat/" class="dd-item active">
+        <div>
+          <a href="/vat-docs/documentation/customization/inputformat/">
+            Input format
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/customization/simulation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/customization/simulation/">Simulation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/introduction/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/customization/simulation/introduction/">
+            Introduction
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/custimzedsimu/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/customization/simulation/custimzedsimu/">
+            Customized simulations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/customization/simulation/models/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/customization/simulation/models/">Models</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/models/peng1/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/customization/simulation/models/peng1/">
+            Peng2014_ex1
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/models/pen2/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/customization/simulation/models/pen2/">
+            Peng2014_ex2
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/pipelines/introduction/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/introduction/">
+            Introduction
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/customizedpipeline/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/customizedpipeline/">
+            Customized pipeline
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/pipelines/variant-calling/">Variant calling</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/">
+            bwa_gatk33_hg19
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/">
+            bat_gatk33_b37
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/">
+            bwa_gatk28_hg19
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/">
+            bwa_gatk28_b37
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/pipelines/other-pipelines/">Other pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/import_vcf/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/other-pipelines/import_vcf/">
+            import_vcf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/anno_utils/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/other-pipelines/anno_utils/">
+            anno_utils
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/transmission/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/other-pipelines/transmission/">
+            transmission
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/illumina/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/other-pipelines/illumina/">
+            Illumnina
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/annovar/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/other-pipelines/annovar/">
+            ANNOVAR
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/snpeff/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/other-pipelines/snpeff/">
+            snpEff
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/king/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/pipelines/other-pipelines/king/">
+            KING
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/documentation/utilities/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/documentation/utilities/">Utilities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/documentation/utilities/report_progress/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/utilities/report_progress/">
+            report_progress
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/documentation/utilities/_md5sumd/" class="dd-item">
+        <div>
+          <a href="/vat-docs/documentation/utilities/_md5sumd/">
+            md5sumd
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/">Application</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/vat-docs/applications/annotation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/annotation/">Annotation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/annotation/introduction/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/introduction/">
+            Introduction
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/tutorial/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/tutorial/">
+            Tutorial
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/customized/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/customized/">
+            Customized annotation databases
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/vat-docs/applications/annotation/genes/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/annotation/genes/">Genes</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/annotation/genes/ccdsgene/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/genes/ccdsgene/">
+            ccdsGene
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/genes/hugogene/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/genes/hugogene/">
+            Hugo gene
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/genes/entrezgene/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/genes/entrezgene/">
+            EntrezGene
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/genes/knowngene/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/genes/knowngene/">
+            knownGene
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/genes/refgene/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/genes/refgene/">
+            refGene
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/genes/cancergenecensus/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/genes/cancergenecensus/">
+            CancerGeneCensus
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/annotation/variants/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/annotation/variants/">Variants</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/cosmic/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/cosmic/">
+            COSMIC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/dbnsfp/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/dbnsfp/">
+            sbNSFP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/dbsnp/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/dbsnp/">
+            dbSNP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/linkagephysicalmap/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/linkagephysicalmap/">
+            linkage-physical map
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/databaseof/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/databaseof/">
+            Database of Genomic Variants
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/exomesequencingpro/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/exomesequencingpro/">
+            Exome Sequencing Project
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/gwas/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/gwas/">
+            gwasCatalog
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/hapmap/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/hapmap/">
+            HapMap
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/variants/thousand/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/variants/thousand/">
+            Thousand Genomes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/annotation/regions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/annotation/regions/">Regions</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/annotation/regions/low-complexity-regions/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/regions/low-complexity-regions/">
+            Low complexity regions
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/regions/phast-cons/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/regions/phast-cons/">
+            Phast cons
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/regions/genomic-super-dups/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/regions/genomic-super-dups/">
+            Genomic super dups
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/regions/cytoband/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/regions/cytoband/">
+            cytoBand
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/annotation/misc/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/annotation/misc/">Misc</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/annotation/misc/illumina/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/misc/illumina/">
+            Illumina
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/misc/keggpathway/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/misc/keggpathway/">
+            keggPathway
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/annotation/misc/encode/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/annotation/misc/encode/">
+            ENCODE
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/vat-docs/applications/discovery/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/discovery/">
+            Discovery
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/vat-docs/applications/association/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/association/">Association</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/association/introduction/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/introduction/">
+            Introduction
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/data-explorationqc/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/data-explorationqc/">
+            Data exploration/QC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/association-analysis/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/association-analysis/">
+            Association analysis
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/post-assoc-analysis/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/post-assoc-analysis/">
+            Post-assoc analysis
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/vat-docs/applications/association/basic-data-statistics/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/association/basic-data-statistics/">Basic data statistics</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/association/basic-data-statistics/group-statwrite/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/basic-data-statistics/group-statwrite/">
+            Group stat&amp;Write
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/association/single-variant-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/association/single-variant-analysis/">Single variant analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/">
+            Fisher exact test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/association/single-gene-association-methods/">Single gene association methods</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/introduction/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/introduction/">
+            Introduction
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/cmc-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/cmc-test/">
+            CMC test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/">
+            C-alpha test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/kbac-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/kbac-test/">
+            KBAC test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/rbt-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/rbt-test/">
+            RBT test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/rarecover-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/rarecover-test/">
+            RareCover test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/vt-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/vt-test/">
+            VT test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/wss-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/wss-test/">
+            WSS test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/asum-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/single-gene-association-methods/asum-test/">
+            aSum test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/association/jointconditional-association-analysis/">Joint/Conditional association analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/">
+            Collapsing methods
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/">
+            Aggregation methods
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/">
+            Weighted methods
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/">
+            Variable thresholds
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/skat-test/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/jointconditional-association-analysis/skat-test/">
+            SKAT test
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/">
+            MetaSKAT analysis
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/association/vat-stacking/" class="dd-item
+        ">
+      <div>
+      <a href="/vat-docs/applications/association/vat-stacking/">VAT stacking</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/vat-docs/applications/association/create-your-test/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/association/create-your-test/">Create your test!</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/association/create-your-test/running-r-programs/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/create-your-test/running-r-programs/">
+            Running R programs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/applications/association/create-your-test/programming-in-vat/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/create-your-test/programming-in-vat/">
+            Programming in VAT
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/applications/association/view-association-result/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/applications/association/view-association-result/">View association result</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/" class="dd-item">
+        <div>
+          <a href="/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/">
+            QQ plot and Manhattan plot
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/development/changelog/" class="dd-item">
+        <div>
+          <a href="/vat-docs/development/changelog/">
+            ChangeLog
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/development/getinvolved/" class="dd-item">
+        <div>
+          <a href="/vat-docs/development/getinvolved/">
+            Get Involved
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/administration/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/administration/">Administration</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/administration/allrecent/" class="dd-item">
+        <div>
+          <a href="/vat-docs/administration/allrecent/">
+            All recent changes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/administration/autolink/" class="dd-item">
+        <div>
+          <a href="/vat-docs/administration/autolink/">
+            Autolink
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/administration/stylesheet/" class="dd-item">
+        <div>
+          <a href="/vat-docs/administration/stylesheet/">
+            Style sheet
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/vat-docs/administration/trafficstat/" class="dd-item">
+        <div>
+          <a href="/vat-docs/administration/trafficstat/">
+            Traffic statistics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/vat-docs/under-development/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/vat-docs/under-development/">Under development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/vat-docs/under-development/faq/" class="dd-item">
+        <div>
+          <a href="/vat-docs/under-development/faq/">
+            FAQ
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/vat-docs/install/" >
+   Installation</option>
+    <option value="/vat-docs/documentation/" >
+   Documentation</option> 
+    <option value="/vat-docs/documentation/keyconcepts/" >
+  - 
+   Key concepts</option>
+      <option value="/vat-docs/documentation/tutorials/" >- Tutorials</option>
+      <option value="/vat-docs/documentation/help/" >- Help</option>
+    <option value="/vat-docs/documentation/vtools-commands/" >
+  - 
+   Vtools commands</option>
+    <option value="/vat-docs/documentation/functions/" >
+  - 
+   Functions</option>
+    <option value="/vat-docs/documentation/vtools_report/" >
+  - 
+   Vtools_report</option>
+    <option value="/vat-docs/documentation/customization/" >
+  - 
+   Customization</option> 
+      <option value="/vat-docs/documentation/customization/format/" >-- Format</option>
+      <option value="/vat-docs/documentation/customization/inputformat/"  selected>-- Input format</option>
+    <option value="/vat-docs/documentation/customization/simulation/" >
+  -- 
+   Simulation</option>
+  
+    <option value="/vat-docs/documentation/pipelines/" >
+  - 
+   Pipelines</option>
+    <option value="/vat-docs/documentation/utilities/" >
+  - 
+   Utilities</option>
+  
+    <option value="/vat-docs/applications/" >
+   Application</option>
+    <option value="/vat-docs/development/" >
+   Development</option>
+    <option value="/vat-docs/administration/" >
+   Administration</option>
+    <option value="/vat-docs/under-development/" >
+   Under development</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/vat-docs/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/vat-docs/js/auto-complete.js"></script>
+        <link href="/vat-docs/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
+          
+        </script>
+        <script type="text/javascript" src="/vat-docs/js/search.js"></script>
+      </div>
+    
+
+    <h1>Input format</h1>
+    
+    
+    
+    
+
+<h1 id="supported-import-update-export-file-formats">Supported import/update/export file formats</h1>
+
+<p><em>variant tools</em> uses file format specification files (<code>.fmt</code>) files to describe file formats so that commands such as <code>vtools import</code>, <code>vtools update</code> and <code>vtools export</code> know how to import data from and export data to files in such formats.</p>
+
+<ul>
+<li><em>variant tools</em> can <strong>import</strong> variants, variant info fields, genotypes, and genotype info fields from a file. The file must contain information about <em>variants</em> (chr, pos, ref, alt), although <em>variant tools</em> is able to obtain information from other sources if some of the variant info fields are missing. (For example, variant tools can retrieve reference alleles from a reference genome).</li>
+<li><em>variant tools</em> can <strong>update</strong> variant info fields and genotype info fields for existing variants and genotypes. The file can be variant-based (contains chr, pos, ref and alt), position-based (contains chra and pos), and range-based (contains chr, starting and ending positions). In the latter cases, a record in the input file can update multiple variants at the specified location or range.</li>
+<li><em>variant tools</em> can <strong>export</strong> variants, variant info fields, genotypes, and genotype info fields to a file. The format description file must define <code>columns</code>, which specify what and in which format to export to each column of the output file.</li>
+</ul>
+
+<p><em>variant tools</em> can import and export data in the following formats. We try to update descriptions of these formats as soon as possible but please use commands such as</p>
+
+<p>% vtools show formats
+% vtools show format basic</p>
+
+<p>to get the most updated information about these formats.</p>
+
+<p>| <strong>Name</strong>                                     | <strong>Import</strong> | <strong>Update</strong> | <strong>Export</strong> | <strong>Comment</strong>                                                                                                               |
+||
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit">basic</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit">?</a>                             | Y          |            | Y          | Import variants in tab-delimited format, export variants and optional variant info fields and genotypes                   |
+| VCF                                          | Y          | Y          | Y          | <a href="http://www.1000genomes.org/node/101">Variant Call Format</a> (VCF version 4.0 and 4.1)                                                                        |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Csv?action=edit">CSV</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Csv?action=edit">?</a>                               | Y          |            | Y          | csv format                                                                                                                |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVAR?action=edit">ANNOVAR</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVAR?action=edit">?</a>                           |            |            | Y          | Format of ANNOVAR input file.                                                                                             |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVARVariantFunction?action=edit">ANNOVAR_variant_function</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVARVariantFunction?action=edit">?</a>        | Y          |            |            | used to imported annotations from ANNOVAR *.variant_function files.                                                       |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVARVariantFunction?action=edit">ANNOVAR_exonic_variant_function</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVARVariantFunction?action=edit">?</a> | Y          |            |            | imports annotations from files generated from ANNOVAR of the form *.exonic_variant_function.                            |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CASAVA18Snps?action=edit">CASAVA18_snps</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CASAVA18Snps?action=edit">?</a>                     | Y          |            |            | Illumina snps.txt format                                                                                                  |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CASAVA18Indels?action=edit">CASAVA18_indels</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CASAVA18Indels?action=edit">?</a>                   | Y          |            |            | indels.txt from Illumina                                                                                                  |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CGA?action=edit">CGA</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CGA?action=edit">?</a>                               | Y          |            |            | Complete Genomics CGA <code>masterVarBeta$ID.tsv.bz2</code> file                                                                     |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.PileupIndel?action=edit">Pileup_indel</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.PileupIndel?action=edit">?</a>                      | Y          |            |            | Pileup Indel format                                                                                                       |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Map?action=edit">MAP</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Map?action=edit">?</a>                             | Y          |            |            | Import variants from files with only chr and pos information. reference and alternative alleles are retrieved from dbSNP. |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Plink?action=edit">PLINK</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Plink?action=edit">?</a>                           | Y          | Y          |            | Import variants and sample genotypes from PLINK file format. Currently only <a href="http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml">PLINK binary file input</a> is supported.   |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Polyphen2?action=edit">Polyphen2</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Polyphen2?action=edit">?</a>                       | Y          |            | Y          | Export data in Polyphen2 batch query, import information from results returned by the <a href="http://genetics.bwh.harvard.edu/pph2/bgi.shtml">polyphen2 batch query server</a>. |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.TPED?action=edit">TPED</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.TPED?action=edit">?</a>                            |            |            | Y          |                                                                                                                           |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.TwoAlleles?action=edit">twoalleles</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.TwoAlleles?action=edit">?</a>                      | Y          |            |            | Import alleles as allele 1 and 2, use a reference genome to determine which one is reference                              |
+| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Rsname?action=edit">rsname</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Rsname?action=edit">?</a>                          | Y          |            |            | Import variants from rsnames, using the dbSNP database to query variants                                                  |</p>
+
+<p>Customize import/export format:</p>
+
+<ul>
+<li>Using <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.New?action=edit">customized format specification</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.New?action=edit">?</a> file (<code>.fmt</code>) to import/export arbitrary text format.</li>
+</ul>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/vat-docs/documentation/customization/format/" title="Format"> <i class="fa fa-chevron-left"></i><label>Format</label></a>
+    <a class="nav nav-next" href="/vat-docs/documentation/customization/simulation/" title="Simulation" style="margin-right: 0px;"><label>Simulation</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+  
+
+    <div class="github-link">
+      <a href="https://github.com/vat/vat-docs/content/Documentation/Customization/inputformat.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+  </div>
+
+
+	<div>
+
+
+  
+    <p>copyright = &copy; <a href="https://faculty.mdanderson.org/profiles/bo_peng.html">Bo Peng, Ph.D. / MD AndersonCancer Center</a> All rights reserved</p>
+
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/vat-docs/js/clipboard.min.js"></script>
+
+<link href="/vat-docs/css/featherlight.min.css" rel="stylesheet">
+<script src="/vat-docs/js/featherlight.min.js"></script>
+
+
+
+<script src="/vat-docs/theme-flex/script.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

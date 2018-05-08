@@ -87,6 +87,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/</loc>
   </url>
   
@@ -155,6 +159,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/inputformat/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/</loc>
   </url>
   
@@ -164,10 +172,6 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/create-your-test/programming-in-vat/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/</loc>
   </url>
   
   <url>
@@ -244,6 +248,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/</loc>
   </url>
   
   <url>
@@ -576,6 +584,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/_footer/</loc>
   </url>
   
   <url>

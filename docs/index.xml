@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vatlab</title>
+    <title>Variant Tools</title>
     <link>https://vatlab.github.io/vat-docs/</link>
-    <description>Recent content on vatlab</description>
+    <description>Recent content on Variant Tools</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
     
 	<atom:link href="https://vatlab.github.io/vat-docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -145,16 +144,6 @@ What is Variant Simulation Tools Variant Simulation Tools (VST) is a simulation 
     </item>
     
     <item>
-      <title>Key concepts</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/keyconcepts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/keyconcepts/</guid>
-      <description>Key concepts Project variant tools is project based. All data need to be imported to the project to be analyzed. A variant tools project $name consists of a project file $name.proj, a genotype database $name_genotype.DB, and a log file $name.log. After a project is created, subsequent vtools calls will automatically load the project in the current directory. Working from outside of a project directory is not allowed.
-(:toggleexample:) Let us create a sample project and import two datasets from the pilot phase of the 1000 genomes project:</description>
-    </item>
-    
-    <item>
       <title>Low complexity regions</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/low-complexity-regions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -189,6 +178,16 @@ Input data format vtools associate command typically generates two types of outp
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/create-your-test/running-r-programs/</guid>
       <description>A General Framework for Association Analysis Using R Programs Introduction A number of rare variant association methods as well as the flexible VAT ensemble algorithm makes it possible to conveniently evaluate variant associations via different statistical options. In addition to the existing association testing framework, variant association tools can talk to R via customized R programs prepared by users. Under this mechanism, users write up an R function that analyzes data of an association testing unit (e.</description>
+    </item>
+    
+    <item>
+      <title>Supported types of variants</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</guid>
+      <description>Supported types of variants How variants are imported and stored in variant tools variant tools import different types of variants as follows:
+   Type Reference Alternative Imported Variant(s) Note     SNV A G A,G     TC TG C,G pos + 1   Deletion TC T C,- pos + 1    TCG TG C,- pos + 1    TCGC TC GC,- pos + 2, *    TC - or .</description>
     </item>
     
     <item>
@@ -346,6 +345,16 @@ HGNC The HGNC annotation database is a field database that, by default, annotate
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/</guid>
       <description>Import variants, genotypes and related information fields Usage % vtools import -h usage: vtools import [-h] [--build BUILD] [--format FORMAT] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f] [-j N] [-v {0,1,2}] input_files [input_files ...] x Import variants and related sample genotype from one or more delimiter separated files (e.g. VCF and a number of indel formats). positional arguments: input_files A list of failes that will be imported. The file should be delimiter separated with format described by parameter --format.</description>
+    </item>
+    
+    <item>
+      <title>Input format</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/inputformat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/inputformat/</guid>
+      <description>Supported import/update/export file formats variant tools uses file format specification files (.fmt) files to describe file formats so that commands such as vtools import, vtools update and vtools export know how to import data from and export data to files in such formats.
+ variant tools can import variants, variant info fields, genotypes, and genotype info fields from a file. The file must contain information about variants (chr, pos, ref, alt), although variant tools is able to obtain information from other sources if some of the variant info fields are missing.</description>
     </item>
     
     <item>
@@ -1119,6 +1128,15 @@ Input data format vtools associate command typically generates two types of outp
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/</guid>
       <description>Miscellaneous administrative procedures Usage % vtools admin -h usage: vtools admin [-h] [--update_resource [TYPE]] [--mirror_repository dest] [--merge_samples] [--rename_samples COND [COND ...]] [--rename_table NAME NEW_NAME] [--describe_table TABLE NEW_DESCRIPTION] [--validate_build] [--validate_sex] [--save_snapshot NAME MESSAGE] [--extra_files [FILE [FILE ...]]] [--load_snapshot NAME] [--set_runtime_option OPTION [OPTION ...]] [--reset_runtime_option OPT] [--fasta2crr FASTA [FASTA ...]] [-v {0,1,2,3}] Optimize or modify projects. Currently supports merging and rename of samples optional arguments: -h, --help show this help message and exit -v {0,1,2,3}, --verbosity {0,1,2,3} Output error and warning (0), info (1), debug (2) and trace (3) information to standard output (default to 1).</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://vatlab.github.io/vat-docs/_footer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/_footer/</guid>
+      <description>copyright = &amp;copy; Bo Peng, Ph.D. / MD AndersonCancer Center All rights reserved</description>
     </item>
     
     <item>
