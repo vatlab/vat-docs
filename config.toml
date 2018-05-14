@@ -2,6 +2,7 @@ title = "Variant Tools"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
+baseURL = "https://vatlab.github.io/vat-docs/"
 
 [params]
   editURL = "https://vatlab.github.io/vat-docs/content/"
