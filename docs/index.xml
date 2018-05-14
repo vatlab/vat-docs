@@ -5,7 +5,6 @@
     <link>https://vatlab.github.io/vat-docs/</link>
     <description>Recent content on Variant Tools</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     
 	<atom:link href="https://vatlab.github.io/vat-docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -468,8 +467,8 @@ Simply put, function mut_sequence in
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/</guid>
-      <description>dbNSFP (:skin vtools-annotation:)
-(:toc:)
+      <description>dbNSFP (:skin vtools-annotation
+(:toc
 dbNSFP is an annotation database for non-synonymous SNPs assembled by Xiaoming Liu from the University of Texas School of Public Health (see citation below). With variant tools you can use the dbNSFP database or dbNSFP-light (a version with fewer features) - see which features are offered for each database version below.
 dbNSFP There can be frequent changes of name and their meanings of the fields across versions.</description>
     </item>

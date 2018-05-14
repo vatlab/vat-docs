@@ -595,6 +595,11 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/under-development/faq/</loc>
   </url>
   

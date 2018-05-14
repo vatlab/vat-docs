@@ -1,1213 +1,3738 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="js csstransforms3d">
   <head>
-    <title>Variant Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="description" content="Documentation for Variant Tools">
+<meta name="author" content="Bo Peng">
+
+    <link rel="shortcut icon" href="/vat-docs/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/vat-docs/images/favicon.png" type="image/x-icon" />
+    <title>sequence :: Variant Tools</title>
     
-      <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.36.1" />
-<title>sequence :: Variant Tools</title>
-<link rel="shortcut icon" href="/vat-docs/images/favicon.png" type="image/x-icon" />
-<link href="/vat-docs/css/font-awesome.min.css" rel="stylesheet">
-<link href="/vat-docs/css/nucleus.css" rel="stylesheet">
-<link href="/vat-docs/theme-flex/style.css" rel="stylesheet">
+    
+    <link href="/vat-docs/css/nucleus.css?1526309117" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1526309117" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1526309117" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1526309117" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1526309117" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1526309117" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1526309117" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1526309117" rel="stylesheet">
+    
+      <link href="/vat-docs/css/theme-mine.css?1526309117" rel="stylesheet">
+    
 
-<link rel="stylesheet" href="/vat-docs/css/bootstrap.min.css">
-<script src="/vat-docs/js/jquery-2.x.min.js"></script>
-<script type="text/javascript">
-      var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
-</script>
-<meta name="description" content="">
-
-
+    <script src="/vat-docs/js/jquery-2.x.min.js?1526309117"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
     
   </head>
-  <body data-url="/vat-docs/documentation/vtools_report/sequence/">
-    
-      <header>
-  <div class="logo">
-    
-	
-  
-    <a class="baselink" href="https://vatlab.github.io/vat-docs/">Variant Tools</a>
-  
-
-  </div>
-  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
-    <nav class="shortcuts">
-            <li class="" role="">
-                <a href="https://github.com/vatlab/vat-docs"  rel="noopener">
-                  <i class='fa fa-github'></i> <label>Github repo</label>
-                </a>
-            </li>
-            <li class="" role="">
-                <a href="https://twitter.com/ScriptOfScripts"  rel="noopener">
-                  <i class='fa fa-twitter'></i> <label> ScriptOfScripts </label>
-                </a>
-            </li>
-            <li class="" role="">
-                <a href=""  rel="noopener">
-                  <i class='fa fa-envelope'></i> <label>bpeng@mdanderson.org </label>
-                </a>
-            </li>
-    </nav>
-</header>
-<article>
-  <aside>
-    <ul class="menu">
-          <li data-nav-id="/vat-docs/" class="dd-item">
-          <a href="/vat-docs/">
-            <i class="fa fa-fw fa-home"></i>
-          </a>
-          </li>
-    <li data-nav-id="/vat-docs/install/" class="dd-item
-        ">
-      <div>
-      <a href="/vat-docs/install/">Installation</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/" class="dd-item parent haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/">Documentation</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/vat-docs/documentation/keyconcepts/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/keyconcepts/">Key concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/keyconcepts/supportedtypes/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/keyconcepts/supportedtypes/">
-            Supported types of variants
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/tutorials/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/tutorials/">
-            Tutorials
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/help/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/help/">
-            Help
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/vtools-commands/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/vtools-commands/">Vtools commands</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/init/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/init/">
-            Init
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/import/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/import/">
-            Import
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/update/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/update/">
-            Update
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/phenotype/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/phenotype/">
-            Phenotype
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/liftover/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/liftover/">
-            lifttover
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/show/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/show/">
-            show
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/use/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/use/">
-            use
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/select/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/select/">
-            select
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/exclude/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/exclude/">
-            exclude
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/compare/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/compare/">
-            compare
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/associate/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/associate/">
-            associate
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/output/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/output/">
-            output
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/export/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/export/">
-            export
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/remove/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/remove/">
-            remove
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/execute/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/execute/">
-            execute
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools-commands/admin/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools-commands/admin/">
-            admin
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/functions/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/functions/">Functions</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/functions/ref_sequence/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/functions/ref_sequence/">
-            ref_sequence
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/functions/mut_sequence/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/functions/mut_sequence/">
-            mut_sequence
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/functions/track/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/functions/track/">
-            track
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/functions/genotype/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/functions/genotype/">
-            Genotype
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/functions/samples/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/functions/samples/">
-            samples
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/functions/in_table/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/functions/in_table/">
-            in_table
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/functions/otherfunctions/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/functions/otherfunctions/">
-            Other functions
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/vtools_report/" class="dd-item parent haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/vtools_report/">Vtools_report</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/avg_depth/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/avg_depth/">
-            avg_depth
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/discordance_rate/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/discordance_rate/">
-            discordance_rate
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/sam_info/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/sam_info/">
-            sam_info
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/sequence/" class="dd-item active">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/sequence/">
-            sequence
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/trans_ratio/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/trans_ratio/">
-            trans_ratio
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/variant_stat/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/variant_stat/">
-            variant_stat
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/inbreeding_coefficient/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/inbreeding_coefficient/">
-            inbreeding_coefficient
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/transmission/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/transmission/">
-            transmission
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/meta_analysis/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/meta_analysis/">
-            meta_analysis
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_fields/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/plot_fields/">
-            plot_fields
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_geno_fields/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/plot_geno_fields/">
-            plot_geno_fields
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_pheno_fields/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/plot_pheno_fields/">
-            plot_pheno_fields
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_association/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/vtools_report/plot_association/">
-            plot_association
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/customization/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/customization/">Customization</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/customization/format/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/customization/format/">
-            Format
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/customization/inputformat/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/customization/inputformat/">
-            Input format
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/customization/simulation/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/customization/simulation/">Simulation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/customization/simulation/introduction/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/customization/simulation/introduction/">
-            Introduction
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/customization/simulation/custimzedsimu/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/customization/simulation/custimzedsimu/">
-            Customized simulations
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/customization/simulation/models/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/customization/simulation/models/">Models</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/customization/simulation/models/peng1/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/customization/simulation/models/peng1/">
-            Peng2014_ex1
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/customization/simulation/models/pen2/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/customization/simulation/models/pen2/">
-            Peng2014_ex2
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/pipelines/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/pipelines/introduction/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/introduction/">
-            Introduction
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/customizedpipeline/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/customizedpipeline/">
-            Customized pipeline
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/pipelines/variant-calling/">Variant calling</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/">
-            bwa_gatk33_hg19
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/">
-            bat_gatk33_b37
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/">
-            bwa_gatk28_hg19
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/">
-            bwa_gatk28_b37
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/pipelines/other-pipelines/">Other pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/import_vcf/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/other-pipelines/import_vcf/">
-            import_vcf
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/anno_utils/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/other-pipelines/anno_utils/">
-            anno_utils
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/transmission/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/other-pipelines/transmission/">
-            transmission
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/illumina/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/other-pipelines/illumina/">
-            Illumnina
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/annovar/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/other-pipelines/annovar/">
-            ANNOVAR
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/snpeff/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/other-pipelines/snpeff/">
-            snpEff
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/king/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/pipelines/other-pipelines/king/">
-            KING
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/documentation/utilities/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/documentation/utilities/">Utilities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/documentation/utilities/report_progress/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/utilities/report_progress/">
-            report_progress
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/documentation/utilities/_md5sumd/" class="dd-item">
-        <div>
-          <a href="/vat-docs/documentation/utilities/_md5sumd/">
-            md5sumd
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/">Application</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-    <li data-nav-id="/vat-docs/applications/annotation/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/annotation/">Annotation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/annotation/introduction/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/introduction/">
-            Introduction
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/tutorial/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/tutorial/">
-            Tutorial
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/customized/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/customized/">
-            Customized annotation databases
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/vat-docs/applications/annotation/genes/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/annotation/genes/">Genes</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/annotation/genes/ccdsgene/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/genes/ccdsgene/">
-            ccdsGene
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/genes/hugogene/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/genes/hugogene/">
-            Hugo gene
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/genes/entrezgene/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/genes/entrezgene/">
-            EntrezGene
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/genes/knowngene/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/genes/knowngene/">
-            knownGene
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/genes/refgene/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/genes/refgene/">
-            refGene
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/genes/cancergenecensus/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/genes/cancergenecensus/">
-            CancerGeneCensus
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/annotation/variants/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/annotation/variants/">Variants</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/cosmic/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/cosmic/">
-            COSMIC
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/dbnsfp/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/dbnsfp/">
-            sbNSFP
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/dbsnp/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/dbsnp/">
-            dbSNP
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/linkagephysicalmap/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/linkagephysicalmap/">
-            linkage-physical map
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/databaseof/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/databaseof/">
-            Database of Genomic Variants
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/exomesequencingpro/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/exomesequencingpro/">
-            Exome Sequencing Project
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/gwas/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/gwas/">
-            gwasCatalog
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/hapmap/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/hapmap/">
-            HapMap
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/variants/thousand/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/variants/thousand/">
-            Thousand Genomes
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/annotation/regions/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/annotation/regions/">Regions</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/annotation/regions/low-complexity-regions/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/regions/low-complexity-regions/">
-            Low complexity regions
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/regions/phast-cons/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/regions/phast-cons/">
-            Phast cons
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/regions/genomic-super-dups/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/regions/genomic-super-dups/">
-            Genomic super dups
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/regions/cytoband/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/regions/cytoband/">
-            cytoBand
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/annotation/misc/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/annotation/misc/">Misc</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/annotation/misc/illumina/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/misc/illumina/">
-            Illumina
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/misc/keggpathway/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/misc/keggpathway/">
-            keggPathway
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/annotation/misc/encode/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/annotation/misc/encode/">
-            ENCODE
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/vat-docs/applications/discovery/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/discovery/">
-            Discovery
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/vat-docs/applications/association/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/association/">Association</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/association/introduction/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/introduction/">
-            Introduction
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/data-explorationqc/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/data-explorationqc/">
-            Data exploration/QC
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/association-analysis/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/association-analysis/">
-            Association analysis
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/post-assoc-analysis/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/post-assoc-analysis/">
-            Post-assoc analysis
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/vat-docs/applications/association/basic-data-statistics/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/association/basic-data-statistics/">Basic data statistics</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/association/basic-data-statistics/group-statwrite/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/basic-data-statistics/group-statwrite/">
-            Group stat&amp;Write
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/association/single-variant-analysis/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/association/single-variant-analysis/">Single variant analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/">
-            Fisher exact test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/association/single-gene-association-methods/">Single gene association methods</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/introduction/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/introduction/">
-            Introduction
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/cmc-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/cmc-test/">
-            CMC test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/">
-            C-alpha test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/kbac-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/kbac-test/">
-            KBAC test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/rbt-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/rbt-test/">
-            RBT test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/rarecover-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/rarecover-test/">
-            RareCover test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/vt-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/vt-test/">
-            VT test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/wss-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/wss-test/">
-            WSS test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/asum-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/single-gene-association-methods/asum-test/">
-            aSum test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/association/jointconditional-association-analysis/">Joint/Conditional association analysis</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/">
-            Collapsing methods
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/">
-            Aggregation methods
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/">
-            Weighted methods
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/">
-            Variable thresholds
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/skat-test/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/jointconditional-association-analysis/skat-test/">
-            SKAT test
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/">
-            MetaSKAT analysis
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/association/vat-stacking/" class="dd-item
-        ">
-      <div>
-      <a href="/vat-docs/applications/association/vat-stacking/">VAT stacking</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/vat-docs/applications/association/create-your-test/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/association/create-your-test/">Create your test!</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/association/create-your-test/running-r-programs/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/create-your-test/running-r-programs/">
-            Running R programs
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/applications/association/create-your-test/programming-in-vat/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/create-your-test/programming-in-vat/">
-            Programming in VAT
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/applications/association/view-association-result/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/applications/association/view-association-result/">View association result</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/" class="dd-item">
-        <div>
-          <a href="/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/">
-            QQ plot and Manhattan plot
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/development/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/development/changelog/" class="dd-item">
-        <div>
-          <a href="/vat-docs/development/changelog/">
-            ChangeLog
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/development/getinvolved/" class="dd-item">
-        <div>
-          <a href="/vat-docs/development/getinvolved/">
-            Get Involved
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/administration/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/administration/">Administration</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/administration/allrecent/" class="dd-item">
-        <div>
-          <a href="/vat-docs/administration/allrecent/">
-            All recent changes
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/administration/autolink/" class="dd-item">
-        <div>
-          <a href="/vat-docs/administration/autolink/">
-            Autolink
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/administration/stylesheet/" class="dd-item">
-        <div>
-          <a href="/vat-docs/administration/stylesheet/">
-            Style sheet
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/vat-docs/administration/trafficstat/" class="dd-item">
-        <div>
-          <a href="/vat-docs/administration/trafficstat/">
-            Traffic statistics
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/vat-docs/under-development/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/vat-docs/under-development/">Under development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/vat-docs/under-development/faq/" class="dd-item">
-        <div>
-          <a href="/vat-docs/under-development/faq/">
-            FAQ
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
+  <body class="" data-url="/vat-docs/documentation/vtools_report/sequence/">
+    <nav id="sidebar" class="">
 
 
 
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo"  href="https://vatlab.github.io/vat-docs/">
+  <svg id="vtools-logo" width="150%" height="200%" viewBox="0 0 504 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+<image id="image0" width="320" height="200" x="0" y="0"
+xlink:href="data:image/png;base64,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
+T/ae4p963DKt5e7plNPXzkw803Y28uyFc6HnTp8POH/igs+Foxe9Lh65xLrUeNn9ckOrW+vh391+
+P9zm3tZwxeNKU7tne3PHuI7jnX6dp64GXz13LeLa5evR1ztuJN64dXPyza5b3FvPb+fcfnWn4M7A
+3QX3CPdK72vcL39g8KDyXzb/qu9y7zr2MPhh66P4R3cfcx6/eCJ98rm7+Cntafkz42c1z52fH+0J
+7Wn/Y9If3S/ELwZ6S/7U/HPzS+uXh/7y/6u1L6Wv+5Xk1eDrZW/03lS9dX3b0h/b/+Bd7ruB96Uf
+9D5Uf2R9PP8p+dOzgRmfSZ83fLH50vw18uu9wdzBQTFbwlYcBTBY0cxMAF5XAUBLhWcHeI+jqCnv
+X4qCKO+MCgL/xMo7mqK4A1DlD0DiAgCi4BllK6wWkKnwW378TvAHqIvLSB0q0kwXZ2UuKrzFED4M
+Dr4xBIDUDMAXyeDgwJbBwS+7oNjbAJzMU9775IUIz/jbbeV0ZZzeAvBD+TeQf2s6Nu1ZkgAAACBj
+SFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB71BMVEVVU1JcXFxdXV1e
+Xl5hYWFra2tjY2NfX19gYGBiYmJsbGyJiYmLi4tzc3NlZWVwcHCAgICGhoaCgoJ3d3d0dHR9fX2Q
+kJCvr6+pqalnZ2d4eHiVlZW8vLzIyMi6urqdnZ1xcXGKioqlpaW7u7vOzs7d3d3GxsZmZmZkZGRu
+bm6BgYG9vb3j4+Pv7+/g4OB+fn52dnbNzc3t7e3r6+vJycmHh4d1dXWTk5OysrLS0tLp6en19fX5
++fnz8/PPz8/u7u7X19ewsLB6enqIiIi0tLTx8fH////+/v79/f2enp6NjY3Z2dnDw8Oampqbm5v6
++vrm5ua1tbWMjIxvb2+YmJjc3Nzk5ORqamrY2Nj4+Pj8/Pzo6OiSkpKmpqbh4eHFxcWxsbFtbW25
+ubnn5+f39/etra3W1tarq6uFhYVpaWnBwcGPj4+3t7fs7Ox8fHzl5eX29vbR0dH09PTf39/MzMyf
+n595eXmRkZHw8PDLy8vKysqUlJRycnLy8vKioqLU1NTExMTV1dWEhIS2traqqqri4uJ/f3+jo6O4
+uLinp6ehoaH7+/vQ0NCOjo6kpKTAwMDb29ugoKCXl5d7e3va2tqurq7T09PCwsKoqKicnJy+vr6/
+v7/q6uqZmZloaGisrKze3t6zs7PHx8eDg4OWlpavXb/fAAAAAWJLR0RGF7r57QAAAAlwSFlzAAAW
+JQAAFiUBSVIk8AAAAAd0SU1FB+IFDBATK8QbO0MAAA4KelRYdFJhdyBwcm9maWxlIHR5cGUgaWNj
+AABYha2Za5Lkqq6F/3sUZwgGhATD4Rlx5z+B88l2ZldWVe+4+8Z1Ne00NiD0WFqyj/8Z4/gPRyo1
+HqcfO4kGO+3UccZwdenUZWIxRzGJ8cwl19ziedrivzM8bZxn4hzyoUGTJTsl5DOfMs7/w7FZ9Xhm
+vo6Z4nxL9i+P4989HoKKZkua7sv89Gs8VLxb532jy3WW0NjwadHu6zyfATGZobnz1b/lWUAO1Hmp
+8Z74LK8bal/7w3j3fzyfzq8TCZa5e1TuFco5MEKwqHZdr9cW4mmK/PZItOzpT+ehi11XXfeN9rqx
+eLww2TNgvSYaGGjqfvr3+Ugay6F/k8j+Lqn+Iulx3bCfNz6s8+cogvzud8qUVv/c+Jfm//vx/z8R
+KhyWv28lxufH0GJRSn6uw62z0Ip23dJzfE10az/0gRWjLNnPgHtgGAXLyp8FXv2zsUBmgXx8rrCG
+h7Ckx+HOoLdgbjgNItKf/nvhiJ2y9pwlHJ83UnQ3/LLyvQAyYiuRmuWzXyNOu3GT/ZroHhzxW4wu
+Oacf/UWz1BfMvCQtBVUMVDGOzxt1qWoVlcdDHoSJXQxt4KKvmHh2MIQlalZZL2XfMRDniRP2nN66
+eBaYyyeSJOvHRNFyjm9lx2fPW1Qxs77NfE+UQtFpX1zj2XKKHpPBVfHa2g0fSUAa34KUj5VTLq67
+XN46+qM7VsWab/Pfp+TduvJ3ZacbzCS+JX0WLupR51j/abWEsjNWsNeAx7NTR3em6C5/LjzjlWnk
+7dmPX6QVtbHn9kKBxwhpq0tEnnn50a074e/KPOI6cqzxhS3fZ3U/JkQU79Y61hrd1rjv3YPuMaKO
+wYzz542JNF92/3zoy2+fwP3nPWjdv12PxmJret8zkZv2x4rxy2B/Ru9J9vzlWVf2e2Wf+Yu418Bn
+EcVBlz6TTk9XDFu0ztDhv497wqsz0gqtfl8xOsx/366ie8dyxefwmgPd1p86cYC7FD7u8yXJPz53
+vB78ddXMdvIMnKEjE+svz7o+YX8Wybe1LT7KdiV+t1xGJ0v+SPN5P2+tJfq9Ww3H+VeTy7z90Vf8
+8Jn8+Bo3V/05kUR9FJ4v/UqajxHuhwVvdmu5ZODJbRgJnLdb77gHpn9QpEv0qY/fHPT4zbm+TfjS
+4V+s+T3WVmznSt/1EX8Jn18mi54g/0ma3wa5BT3H+fXlBp9+9GOLqRRwKJ1pGC3QKteDZtezqW8a
+zwzvm8f7xg+IePuQ/eJj8Y/utL8k+hFb6WyIsmo692849N0Y4aWj9GX/T7SfngSyFXvne0m6QclK
+Zq3wKe7gag+V9qRzCLRPSStxRLILKgnpAvY30/9y7HRB7IuXw5VHez33wY/soQCplvZAs/02oYZ4
+Sd3rurA7gOnHbw/GtO+OcWfuPieuaJmsqh8P/iE6V17z1fedSUJ1buNTOUO4rZXc1nrlpGukpyRh
+jHMozyq5Ot4cj9uXC0JviMXcxh4LuihMUJjAJatMUJmgMkFjTGNMY0xnTPcsgpOdOBzsjsYgLxcA
+sXP2G0ac6q5+CU0dROuo2/+MNlF5otWD/zaJNtN4gG241QLwATWgDQoX+hDfDYbyadwDBQJSh8Ik
+SBy88AuIGxorNB7unDtnJAxoOgCzAWgNizMgFjBC2A3/SzQvEoU2yeyAf4wb3RaYTaD1k0xO4yar
+R6OPJBgLfWVBxHgOE8fGJF3hR9xHHXFitehGQgdx59O9I539dMdL1KQUgmdiEegpjSCFpCZyX8Io
+yRaBzXXlurG11Ojo7Y7yyYDlZIKI3hVrO7ymK+nKBbGeEIHYDKpibUFiYUIpBK2gI8GUgqgywGIm
+E3TibiJ7UejOM+PyGWPk1HCdeuZcSDIG4tJwkVzRUW786OQs+NKdu2iY+fpjizBgd+s7o2I9haWo
+dVxvABy4fNuOe2RaLKMrAQD59GA2vNuiMyuYKWIZMOGFnrGyVe6haAPUbFIFsqjtQvlFFin4UcF/
+CmBWUCbM+SyFa5RYGtedawYVysWCM1Z8t+J3lW1WFvLSohoOWQsXjQsUXge/WaUyoIVwNrbVkKzh
+Eo0tNcKm4QINAzVU0eY423Y7I1En7XfyWs/h7KAlMAw+IGz36OGM4jsWHPDMQaYZuMLI46SWOge+
+NZqdw3U08NzBrNP/yLZTPNTaOdHL5MGJx8/B/clv9LFwh4XzLaxHPUyBvEFlJFqYfaGDRQXMxs7N
+/jdevqEeG6/e6Gp3h+997uXRjZaofXAqrMT+DZGZCLm5Mc1HBiL5+hdkg6MzhDJCaGhr1BBWYXMW
+iKsQJYeoEgidEFsKcaQjxAVMO1RHGqtQEAMAtIZPjwwQZEITzkzgUWgF0RakdDj0BBwWawIOIR4B
+Fh5y1kDOAC16yH0GduXR5nU5pX8NqiNo2UE7pd6kb7dgQINJCPD4YKUewdoKOFewbaGAIwQ6JUwO
+pbRQ2g5l8puBFQSpbKlqD5Wd1o7rzum0NLTYjtBQTTMDjlbAN0JDoQgeeuqhs83OhB1J+mzBEQgX
+CCNzth4G+hljhLHzgYArTMJ4mmNYDZg6TCZbQQNZOyx0sqqEhUOtVcPGGjutAPULm/7dd9irHfHC
+UpRP5EXcHK8DNMA6TAUAFvbM8i0gwoqMihHiSKEXY+Fn2zHOSc5hIoArAlYxVYlpRHKag+WOIjOK
+jSitR5nNoytmns1KI3PnQdt218fZjuhvBrTTFiQ10KRGM6KMCWwOstuMhYxZcKHSEGQKzBx2zqQo
+PtY6I2hyED1ImHKkZo2tduB4AyIx9qTAco2dB/GI6NA2Uo1D4QlMOKaBmSNO1DJNjzhZeS78Eq+h
+7I4IBoRbJGQiGwTKW9w1xM1W9ga4EmWREnyN6J2dOMCTpR3Uvfzo2HHH5LJFTSnWDu5L4smUAOdk
+O8HOUsJkgqzixWRdSWZJ+H7KMg8qXqreEVPeM/n7DKrspG0lhWhRcFOBkjDqSEaZXQLsOjsrHKmM
+Avjky0bV9pFqZ+cbvGOaZpLYKYllJzacuuKWraW+Cga1BKVKgy2NlShnYyJaEn6aQJiDMtbfqNHI
+SCAJ9nG6Q2t4wopkxiRXPdUu8EG1eKES0W3gpQt5yFQUNWw5o1FEIdyRn+UuTkstT31eGnXdctAg
+lVFMg8l5LtEY/U0DQNAF1igo5xCzjt+R48hYRboUkKIAjwQLtBCdtiowGWkU/42FEITEPuR68cHE
+HamJv0OwqozeqIVwYOFcMcYcsiABS5fgCneuFHIG9/Yk+UUA20IG2EF6oCKfB7jAxYKYJoLOiGtQ
+HVjLmJHE2jIKy/4OQsrGyp0oKzkbGx1EC7CqZFZt9ciw3ow2shFKpPFccMFiM5fRcwVkqlbwzjOe
+5caw1mg7547WeqUt5kRHeYBiY2qeiDut5DlqBpmoQkdefWYgnwweMglAr7Iy41nMRjYAf7nTgFHw
+SCMqjXUoNAnV4kzVNJFargLa30mtivewUiXIl7+qnUoIKkGupHW1ig+veiiRraRnLWtoZaJam9bt
+nlLY+oYjmHZW7o3z3shp8PQNdS3AN9ShQ/kBf3h/1zVwBzS+YQobTIeOkejhLQvb4O+hZoMiYF+i
+uSEIDDKhCOIPDxV/KXSYDMwE2sDcDeX4vkxBdt3FDBJkPZFfSBS6rPBsjc1qgTYsUEvUMCwkRw4D
+4K0TSACrjULzpEK5QgyZ89cFBC7uAw4wGLG9YFliMInilKKQo0oY8wBETqAOBN4CJlghSsmfs+Dq
+RRbBzqDcOuzItRv9ZVu59lQ3paGUQv1fxjpKBbRrRdi9CnFZ2miFVF/QYel7lKEgBn0T5JqMmXuX
+ddlmlZ1Im9WLfz2AX35McgvsM7RSSR+Adqukcg+WCpYAOXCqQtARJznvmke9whDzVhhURZlHRRG1
+yKilIxhOBburdQ+coNQ2cWqwvrddSYN18MjYViceRhaq5L262sJb5sFOe90bjqfQ20laFSO1KvBO
+q0r5QjMamVKIKqKcACwtN9aCqqCAhs8cuNlqSNUKiaQMaQAsj1TIzGiNpE9GaZ0w66uS0UcbMMEp
+cBFy+SJ1rBZgCHo0JPL3qdDY3M/VOjSkh0nCEjL+AOkTum+LHRKnlUgOqefSoGfIbbUDbDhdOTrS
+ENvE96ScIa1WBoPSvfXMTIsf7mahj9qd8PQJtWUDwDiYtsn8ZNJN0EKaKXMWlEIN5gDG503WIyMA
+JGlSC0D7gduRpbMzvEEoqwcFhzghwT/SHKWPY5A/WKzCUMpAGQO0GL3rYKbBRsbkDJ6ROHQACvBW
+Gxv5qWbm2aFtabCXdUAl9qRcmsD9JN+gx4ocAJGsmSfaynnqBMWZDzXMoqTFhW8qfBi7Y63Zdj9Q
+PuyXKmSUBv+CBVclg4+5WpwberAblQ3pklobwki5M+A3mSw2O0KmBXYt0sixZA/CEJw/5/KPSODF
+wgFIidCAPuBYuP7EnoBqW4Am4NLRN8i64L1r+lvYWI6FYdcm9e0Bkc7UEyvvAF8Ie8NlUEmoG0ja
+QgIh74DWYO9cW3VudaNBNAvF8S54HVyHGLANtOwGle9mG3MSKAUF1j2JkSV9rznASMJ2b+ou/2z2
+/ux4XMXn8wJCVa83DRvsunpmrvcri+eLXzvXx/e1P0f4+Jj56vx2/l/1f36oex/pkqy9PjXm+808
+qHyd63o+Qjz9d3XkDz7D8/09Dn6a0i/njwMiBQFL77cz99bG85kn7+KKxFK3Uqxfr3/2dNbHAZ+8
+zrM9r/bnpUPsEo6Pb4qv4zEGPPX1UdJLuhFqOf92vF9EHf8FGWg5TAwZlgMAACYUSURBVHja7V35
+I2LtF/9OoUJptWQnS1kiWVJkrSyjbFEMItkrIqFQlCVjGdmbLM0f+r13vF5LRTcpM2+fH2d6ju6n
+555znrM9//vflxA+Hv8L0RwIhGgOCEI0BwQhmgOCEM0BQYjmgMADzTA4HO6TvLDw8AgELNhP9eng
+nmYYEhWB8oVnWGRUNBqDCPZTfTq4oxmBicHi8AQMVFlh4URSbFw8NiFE80u4oxlDTkxKTklNgyor
+PD0jk5KVHZUTovklXGiG51JpqXn5BYUpdKg6tii+OJ9RwiyN8E2t/814STM8t6y8glXJ5lRVR0Pc
+lXB8MpfNramtC7Hsgpc0h0XWN9Q08nh8QVZTWS4USQhMcwuPV9L6NSbYz/QJ8ZJmDKGN1SgEaOaL
+2jsioUhCdXZ183jiOFxPsJ/pE+IlzbnEtl6JFKS5L7OfCkVSAunbAF/anQrtHfiPwFU34wZLJCDN
+4qF6SPtSFjs8IpWzokNesxu4OnSEUQWgm6WSrLHxCSiSiBkUrrxykh46ArqBK82yqekRHk8ywxqD
+tpuVSSp1wWx8UbCf6FPClWYMIbVGLp3TzGcuaKF4wFhmo7AvZVEW7Cf6lHClGYHBtVbKdaylrOUV
+fYT3krBMg7BwVQv5iP6fgLvDdtHYmq5kfb1EXFvqtdqAhZVWz6mNsRPIj/qmyAl9XVHOH3r0cUez
+bHF4RNTeLmIsraK9lRMWXt6r5iabkB9mASfGFzY2lX/oQd4dzTl1q1ma+E0z25xi8Za2nLqtwrnC
+7bqP+p6IBMvOYM3keO7fQzMioXlW0bSrsc7tTfV4qQQiv0+PcOf3iR/1PRMsq3vi7kyaT1Hw4MNt
+WB9GSmrtb8vi8zVbdTneySFuzXNHtqdkH/Mtw8JpqweH3a27hI9TSh8K99kT9NG38R/dwIE7xdsD
+tzJTrC7cP/byR4GK8OjRWVvySQca82ey7IHmifHouhWbgF9Q/c0rNQDPjSrWGU4Xw8M+4jvCUdr9
+M9byeX14MJl6F9zTHBaepl+pEQrmNBteGbVc4oXNIL6khX3IZkNR09svM77X9XzIjxgQeMpsoyaa
+ixuF8r4rkjdSwqOGVLq1sQ86aKOo4xn7+I95U9wBkRtZRKD6NdXmqU4DHobNNLPlfQde0YzeZTLs
+Zz8/KKAPR00QiY6PeVPcAVPWsXm96K3x9wqey2HqNm7mONz5RSrqbSnk2hYDlDPj5wUMkVBWetF+
+Wn3u1/SEZ5pJeSq1gGPe9iYYVDddOKdZKPoLAvoIDOk8u1eku6lN96fB9Uyz9ra7isdrrIkjv/22
+1k1rdIoPjGcEDqiY8uUZCY+nqggQzTE/z+w8Hod753y7kIA8ZFQtf2A8I3Bw0M67wSSdn3Oanml2
+YL+1sK0Ca++K7A0bj3SUJhlPG7TBpsgfcGDPB/h8Hi9/DO/wo1jPNCMd9Zf5bL7APPpWsgr4QXpv
+tsshJWg/K8JkicCxjMcb2KEn+FHsa4W3RfEsHY83k3z0Rji088dVZaHX0Y/PDVhY/alQwOP5OUHx
+Gs332lmtyrO8HhYrGlsraOn/GwwgAJhzfs7K42V9TYOQOXoTr9HcgzsxS/lSNSv29XAoKcnMrcb9
+LVXNljudEHjmKb9um9doRlFXFBKAZ8059jVzAHcul4jOLH8Jy1/o6wyOWnRF86vf9BrNMCR+HSyN
+sR/86PT8KaRjysi1VZCDTY+/QD+zSwwttf59nld7T2Dk6zXACL7+RzHko5uZ5V2vs4ZeAhast4M0
+WSkvmD0v86vQ11t8qP3bGraVnZ9J8mwEw6MqVO/Om8BzqfqYewuAwITHlJFJTpPluEgfcx+Xg4X1
+EMgyX/OA8NxIAiEcTNYiciZyetBaJYlExwLiYybcxKPoAM2G3jjt4/8gcxyYdybHXqc5t+hXq5k9
+dzON9fxnYr62lrw3bwKPKFs5+npf5YQhp3/dqbii7A0Obx59jfp95A2LxI3WTvkaM8klNp+MpoOe
+Q4LSqcSttl9OXp0t32WO/TRFuhhuOBZQGpyCO+e/uhnuqMOSvQmg+UwzGEgp5qrF2W2eaSRcn5Yo
+yiM9nhRhSExkGpGgxDpNJrzlmIDufLmH4BGdztSku7xdNAIjKypdqJik2EbUEu7A6d0VmMSF56I7
+Ro2zu64Hhrdlg/Udxz82aqoXSD0JxPqt64y4pZuRPrO4oCB/bfK6nNTzaOoi9IAg3NFsAUdgvflW
+iq0rKiMf0/G42NWjdOidOBBohiE6v2+IpOoRSrwnXQUjXQ6I7kyeo8FIB+F76n7cJXN2zbiXnXmy
++mNc9nwPRaRNJdlGRmztdTnkqbHWXrHIrlNbpRy2rlKTRIcDu7H8QFNwuOr6U78t+8uXCWfGvKgx
+a7MUTdpvbckfEDPm5AaRSsee09kH1trHHf86bvqjpOS9tRuAZb5gbmB2cHssvnZ4vfi0tzv5Qvm+
+w9db7Zc5yv1CPp/DTa53X1ALC8PNq2av3edNYMgcWRHt+9H05MHg3mFfQWNBn0axdHCOlzmelrUA
+f6NbKOAwin/Wfz1ZN2oKa9YUtkJVSYGhci2uDv7Fgd+8EQpunncPeCkbsC8reX1gtXZT+UJrb5a5
+j6HTMQqXmDY74ENJ5S1bpH/ekTBZx+WhaqZRDVZ3SyWNIsXg7dDkqUjXWJJ1sPLOqu23aAZr8Pl8
+Aaelyf1rA7hzisJrk9uoBwzZc7x4fXaqEd3cDQ9tJK/ZNCo7g2HfW8XRn1bnTYyPmgV8qbxv9m6J
+2ZrUsJPY0VG+ddu618JMBUmQTW2LBPzD8qdpKm9lf/mS1rZewucX7LUmF7PuRuNTmKenzIrY76PF
+XJDOyuwm/f3nZFNx8y2K3qw+OVh2PNM72L7aMTV2J2YMMPdL9e8sw3mLZkRO9B74+3ryJTDaI5ux
+312eDiCCFLuVYhzhzhQWD6XG9u9eDw2fVRdyOSWD11vfOx9fbgd+LB98ZPZIL3M4/muzhYrJDa8D
+DOHQLhk0vWCBOo/X2/G4S72XDezm8qQ+Hk8tPmzZuwQUbv/R5uZRtCyyftQGHqrnbh6SyrKpnfbh
+iqGNZQaPZ63K2l7od6aVTZ1P3qXsKt+dF3yLZhjCkqdS83iNilGCu/+nrkzXZLvVzEiHqYGV1dfI
+HWDufFemyajoIsCgTJ1QuJKSwppt56MSikBf3ID9AYbDpER6UUxkAgoBD8sB3To0BmR2wnkN/Aw1
+pY/keS/7vlkD2J9q8V18FLHHQdUXFenDw8LCo5IK58A67nX6/efCZGXaY7L2OBX4LpyC+UU9dSIi
+V1ZGshyjc94dSHi7Nb5sp7oA+DolgyY3Th1cezLPmnZbZIB01B8MMHQltqsjy2NMpAd3ThHbGQWz
+T2o6kI7YGimfL+07+Ep090A5x/uFUsme0xfZYD6k6xCwadbCk+e5Sn1T9gxIfzHt2bZCRtWANGdb
+3kksVJojO9pFoLZS/Op08R3hqPE7TfGmWwMIQxYt5M2etm5G6RMenSbgbf8Zd7A20/LzMQIGR9UD
+ikkqV3Tpc91tm9yiBY1kppXui2zQ5y5XAB5aVfWLekAH9tzM4wmsLOfTf71vu7NWLdG++BNv04wh
+XChA7Zw/6mroUNTE3r7WCw9txxO0H/GbX18mBXLLojMG7YUZpEcvGG4qZluFumSa+3cT1bnIVInP
+LD7JBshfNHIAP2ad/vyzYbJf3QIhmzH4TC4ip2NWLZXYz158+sNpRiTgLsWAdmYsu1Y7O2jxAyqP
+/YNIR2cZcKB9EVCE55LbJu2i6e9PVjmr5VLPpTcIzPHC5ECxCe6TbOTEYouAL698WXGCyJlqERry
+53fKnv+t8SuVWrd27d/SHi/GlsCL9ucB54dtzrS81JygT1q4D9V1R68uMRjPgk3OWaGAnZ9y7P7z
+MASxbXLk1KuItqtsREKsDfA0RHnKF1LD6k/ZBYcpv54V8cBR2GHN3Mzdgj7QNH8Jr68VA/qKvdfx
+coQDYB4Zvf3e1kA/4DhTrJ4rfGo4TWsCPtvsiWbgpJmnYhtx3riurrLhER29wCbJz3wpHYZncnVZ
+0y9qXuH0S5G6ZL0N8vyFV+ENzRHotm7QE6hZfPGSwpTDN/bicQgBcBg8LNcRXVxlfa4rTQoez2Ab
+8hhupS3NWRU4mE+yQZoFnL4l1xJ3yx2jSpR99GLfWga5nIK9gAZC74FI+H4qATwBVvPz3QxDOJcr
+B/JIEFhG5EaWYXdbJFJr1TL2Oc0MpueYtSWbyzGO+yYbVBocBuXCNSVMm5/jsCsnXxg7fLVEyuEO
+BtqhAx+A1mqXSNWsxedxOMC4KBheGAuAgPA0YhFZW0cydaw0xU+OWAXCRuYTKsBHm0n2rA+BHSZZ
+M/kmGzjHUhgjzP4YF3cUT1FLhYblF66b8xR8c0+dX/wJryZ3wQibLJ1U0pv6PK6Ro9zX2L3QYoic
+sui2jOuh9o3LYoXtxmyXv7T89NYSiadzJgjsskHi/sHflg1DKNtbKm2jroWUtKUqq6vhBc3xS286
+MDR/kS2m9AmE4pTEsqcnQTBv8lYDPQITWaS0lCYufPtNxfzpmlFhy2dw5COXT6jQ3h5WqVVJSk9S
+sMk6teuDeycblG7jVrrRzceZZoPBnPLir4Jvllrs+bt8IM0Y8q6GL2CPDC4+ffVksdui7jb0a/UM
+sBxC81jD5kU9iUwAXmwlzWkyjfdfLzGAAwD28RfTHyXPvDz2PgXpSmSYdfom+3ebM0fOcNW2+qZW
+cyOXiX9uW2jAUWlkOFYWBJpBIyi3SgXmMee/5y4Yomj1TjX7ymAH5IReiYttqmjfKdc6nvgo1P6U
+PuDM96QEEpxewOd7NnLkipaZarxvsu/dRR5PMf7SVE84v7EY7NPS5/44NrmRM5Ky6N9SNe9oBo1g
+ZRVH+tSfROTgrrLMrTTPh4YJZ1PKwdBCNKmIikE+C01mAiqI9eS4QV+fkfD5Co+eMXqVKaLgfZMN
+0iwFaca5pq/SW0fYNdHP0wD0sxKJvO/A4tcGRG+HV6K3Bm0lkqrDW+XDA2C0C4rKlluPdaCoTtzO
+wezy9VTaS7+a2p/ZB5Ba+vggoNnh8WrqPf1kxP1l1VOVAkX2/W4GqHfZzajOxWS75DDxuf8E1mmA
+Ydeg0ByBbq6dLRDqltIfQtwxXQcj9uUtT74uLObX9lrNWYZTFvHy8cAwPUDFk8fGU+RSHq833VNG
+sW47q2Se5pvsL7BxBZ8POm4vP0stTzFLpC+KLGHY7AJO0GgGDcbdDF+adfRQKQn2m3iuz0D21A/b
+7Da3E2Z66odUfH5N1ONOBGdxADRHeypTwN4xDNUmmE+yv8BMp1YB4OS5xNyKxk51fH7+tfOJHBgS
+VwxmVR5/csCfSXtn+QAUmon784CZqjzo+ifUAuowz+WpE6b4Xq6d2eGu4A9so+fzbbGPpot0UCnn
+8VqaPWTc4OMsjtAY9fDg0GT/Pu1Z3XU4ahuyqvj8561JgLFXWAEFZlt8kIDRdlxAG671LprTUsFs
+Q9VhAwncKbCw0j22es1jv4n+iMngcLNp7nhLoO8M8KU1U49UKIfNbHAclXua4aj0XuDBYx+O+tBk
+30dE2PmZLp4w8dtyoY6jun3aZRIWvnLIA6A5uj+KISdIF7Up3vX6+oXm8OgGEY8nNFC+g9SGyRJb
+1CXreE9hI2WeSC2V79W7UwPUlbxKqZqCe6zrOW44NKgrW03ulQYYGebxun88vLqQZIPvwixHYGVT
+TC8/7sC2TZ/qRBvNT6LTKOqvbpDmkX9i1hPjOxTb8rsDSd7TjCEvtEikfIFmFTQZOcqMAcDv8Ohn
+gFXCAqui2dWrRlGjbo2NVnb1vzTBUbRMDaPE1k53/6Mhe8qBHfZYpwFFNuiM1htBv9lV8ydYfk6v
+6Z4nAVDUH79p5hbH02SyGEL62LIo/+zivWFR72lGYEqzSwDvti8J7DKRTW2PvBbsAXecQKh4piPv
+Qe3fsDUCNPUmPrQOIRKa97iqFma81j3NYDqJx3tMH0CRDaq39Bqwacfm0k+A3h3U6ITPd3NYZOJv
+pcE2Z6/GTv0cbe0WmZd2se9t94Ey9J0Q12vg8XRro8dIGHr3TpUVF+Wxd474jTIjlHRnOAmynH/I
+gyETImPKlFMnxTNSPp9//1b8fjRAH8orD6tr6e6VRoS+LUsgPDwiY6DLfkii8nhZP1+2OShTzGy+
+QPysA/D3eRdwLoWNhdnb21fFim7j5Ddn5Hv7xaHQ3Jl4WQlWNiRHO5Da27Xu5xGO53Bgvx2y2X3z
+G1tTdffZFRiih9788zxz/YwyopY+ndoI6kOp3MCd73C4NagY7WqhsJES+/CwUGSDRqzfBtJcuPoi
+4gzHM8Gd/7xmCjjvnoFej0A4NzMiKjS2jv1yEife3S8OhebfVpwv4NxsmiJpreasPNprBYq4bUVh
+vkaRvLH7nU6oq9OSCfSOrtW4y6uhzBtdI0NVvP/QeZdbdtFSZc/Puip1P8fcgY/vtp+e0B8OxVBk
+g2pgpVc9oyoc/PW8Dg6GMM1z7fktB7/Iz5xSYsayii2UNDIYfTfVmavjMe/1maHSjOzpbxEAPOtq
+KmjRs42VrVjPPzIMKTOlbhcfikX5tqX2k43p29GMi8WO5mgctu4XqzJr6bbr+GHvOrD7p92T103p
+VPeH7cjmuFPKAmkC7oNsULOXn4rvhlabic/dRXDftmTXdjnTnpvSnOO2bLNuxri8nLTbbEFP+GW6
+EqQLOeC0VrAXRajb60rNktsnXx0CgUgg95+n3FWfGpc24gAqrvd/jB9r03IQcG1ca/tq+uPeyjlO
+vG3ochZ5St1OjKdW7Bw/fVzvZYNKY/w2s6le66Jf4YSMitTSmJc0wnPrjobvWkd3d1e0frslANq9
+J+iFZOCIYp3rrmgXvTU5BobAUMuOsc76qQ6LFnixi4idEzkY8LYODIGuRYc/7i1ETqdWGzOR68kH
+R/agtWXPBv15Lxvc+xPaY30PxlXBYYjktB7XzQrP0R9b6AQ0morxWxMeNJodtPhCKV8qqayeLfCy
+DQYW5nj3e+ep3ccfsgMDaDQjJ6YAd4cvlRcUcOyTXV5Ng4EhkR/GxEfK9isgXpYEs/zWziBEDdF/
+7iStQAPqnVTk30cUEOZNmj9HIfzdgEoz2J52T7NmlxwaIuwtoNJ8XzkPorur0x+O+38DUGlGxfyo
+4QjATpGaqdDdU14DKs1wFC6ZywGr92f/mtEOAQD0axnrNjRzPJ638xZD+A3oNKO3wKJy7vyWv2cO
+/M2ATrMsdto8V3IK8bqO/zig05xA2mXdDJ7j3p1U/y8BOs0oan3cRqpJ9jcM9wsYoNMMR/UQ6tLe
+n1D4TyF0AXRAEKI5IAjRHBCEaA4IQjQHBCGaA4IQzQFBiOaAIERzQBCiOSAI0RwQhGgOCEI0BwQh
+mgOCEM0BQYjmgCBEc0AQojkgCNEcEIRoDghCNAcEIZoDghDNAUGI5oAgRHNAEKI5IAjRHBCEaA4I
+QjS7Bzwiwp+NnSGa3SNCrw/UXa7/VcBRPURnV3+MH1uYQjS7AhWD2780nuEw/mvI+1ia4WEoxJ/R
+u/4IpENbHlesUnf/kr13wtEjPpRmeK6MmvBnTGJ4hIO2uiTmqqWaBV9v23SDj6MZOYG2RCf+iMUd
+ozvDHTm5qDA3G/u1i3FhcHABDInBIJA9nZ1Qr/3wFfc3svF4hVvvuzj1GT6MZliP8+iKZevuXWpY
+TUzHHxM7w3MeNva/5MKQns0MDIHC5MJhYT1kAqan/sePQDXI3V8JBtJc9+lphju0U2PJI+AURkP3
+0uXt2FZqV/lUOs5Jo+GdJhzOhKdhLRaaqbQUryQUaUlYrPL4uI5MAEEmE8rSiPTx0vp6k1I5vnjU
+RsPF3+57upLJ3+hMzBsBpzBqdrX+m7DwMTTDI+hx1ZoZOTh6T1jFqFSZNTfdhy29a9XF8xSWUWE8
+3ZtnDg4uV6+xli9HN9sPlpmXw8MbtaMA4oaGTnbaMlrXjLPJV+3by8bu2Ybb4vWuQI2VyKnbPQSb
+/zUL77wm9+NpRvZE5XWrSrgFBdyZmZkSu6q75cYsqiyxj6jE4hH7DIMB/BeDWyW3SgoGipdrzPbK
+rJbDtdYDZvXsqaLGSDlbGmHP6foGDjVcubBAsUSZxk0ESDcjHfVX+Ww+/8XdsZ+R5og03GpD0vr8
+XvV8cnb24FnD1/7U+PbL9Tsm827wrPVuafbQXqXmWKUCYaOoV3FjHrixHQ6cDp0sdQ+ogJ+hZERU
+2ScW981wdcBPoe6rHuuICVS7JwypX8kE1MbNBfGz04zqPMZNrbRt7XzbP2pquvgandZDxDb/alvY
+2tpt+vq1aSt+ej6rZI4jlRqyig+SJieThoeTztoTy2sns5eXimdZLMrdZFLe4NIeq3pWsTZ/mx7I
+ESkYQmoNW9L7y4/t0h+km1E5PTJqGrqMSNTr9Wkx4RHIXEdkZ5oejUbrY2L06DJa4ihTw1XLB25X
+nEoSCTCASrq2k0omWbA0mtPpxFtISqUFsJd4U1SUUxseSO8bORGdLZqhpP8xp0DPiNCnXy+LZ/Jf
+G+d6D1hYYPuWYchwetO8qpKJ8+NPGyya4RFl5e22m4Mm8psPAwtsdzh467GipIqxnP7ua58fESya
+EZjjprwayq4l4f2y/Iuw8FgWePPa/XB7PyFYNGO0F/MDtiTc5xtLdX8dtVRi7H/3cOxHBItm8KZ4
+L6eMBhj30/Wtc3vfHX/+bnZg482VeSv+vWDLLwCHgYNX7F5h/eipB4vmCedYfsng1niMP1NB/vlm
+46P5v28yhnB56psIFs3h6bcqid043KX/bOFocAOA98bPm/6CJNWE6dosEOiMJ3WfjWaMdvdGwBdY
+10r/AqWBiumySQWGw9u698vyLxAJ39c4AM+K+r9gN8Mj0lkS6Wt3awcNv2dU8/l+vcouaJltuHPZ
+ICzY2/mELl1RPEsH3jnoR5HBKyDA3hVwDL212s83aA29usTgC9zf6+0jgkYzjJbN5QgNS7jPN9CO
+cFLTKBD69abt4NFcN9TLEAo8XywaPJDyVGoBZw//fkn/InhKI7x0TKHjKPx7Z6o/ADdR1NK/huac
+46bZAo7r7dfBBgxRX8Pj/TU0R3ZUZLGtrrdfBxt/Fc0wBPnbvF0oeHaH8KfAPc1W9tN7vd+NoIX1
+c9KZXImA39Lsx4ybX3BPM6cg2+JHocGi+f5+VndXfwYb9zS/dbEZRASb5m5/pun9gnuaZ7JT33tN
+7lMEi+aw8Huas776tfnAD4AhStek/MrLX51+FBpsmv1aQuUf/PabGcu7/rwJI9g0+7Xu0j+A0Scr
+5TN3ni+39gHBprlw34/F2n4C4drYOLI9JfOjyCCaQBufLzSwvr5DacDCHFQiue6YZKHRLORIhywS
+84YX7tWKsniW7v7SdrcSJmIISizNclyGRhPL0ry7fjN4NIO3HBts7U7fKzVgyEhs+behjczJ7KWl
+u4oO2uJ38uvuoXcr6rYH2I3G6yL3EmSmn6N5yUvZKfG7Wxk7F06vLogO3vGkgyWX6libZB9DR7CI
+TjJpPDb1umEaJI1COTvP2J7ebVbKUO9dYRnkcuSVB27u3AqbINJWrs8Uosa5gnzW8jylOumXV7Yl
+eIdt8DJpg61C6+N6JPrXdcNJVzQOTwJVQP2v+DNjvuhmvjaW+s4VMNMsRyCVU1xjGrBw09GBccDe
+qBZaOWwdg8uYYe2SvClPC17oSJknUs/dtB/7EtJAJKTR+6+Hp887tNT7w3qEvqOCUsiV6Gpuce56
+riCsgI0bwd4TxYvsCRwVqZ0aG+yuLJkpqVT1VQmlUklB4VmiV21tQaT5ckRe1d1O9yWsn0D6sXFV
+sYAri8Sg7vPP8IhI8vcTClfYWLOJ63nfCifLKnClGRWTPlR8M2AsZmYPXg5lZjVK1CWssQ507mc2
+gV++aNu7Z8StCwToNEegS3c3sq92TRPP/72n9No2Z+UWj06RE+DvWIHf47jQjHRo+4fWxJq9jZ3d
+povE+vIGZnXx2aYp3LtyxuDRjN5ar8ku12Ogb2b90QFr/qS/7qWPgOypz7yZ43AL92otz/cYtBV4
+ilz6kmYHfpWpEa/FlVvK0Pq0zh6qFoun0Yu8vZoreDQTM1qL232IgqFkzWc2Y9KiuwacmK48TZXV
+Orf28+n/QlsBQ+BmJS9oRiTQM5glut6NdB8DXUHUzUk11XHQi2Fg1NjbFuM5Ls2dTozQx2Z2Vwms
++RvfI31dgcj5XiN9YQIT6Lt7DIm4NirGx0aJINZpMEcOL6fScqEpjbDw0tvZwuR0D4caeNkqk8Hj
+MZZW0b6ueAgDPKU5pmvSzuNpjnxuyAwezbRiQ2PhwUURNBMIGK0aleJW6am+rbM/s4/HM7TUkn1d
+ERaZ6EJz3XThHI9nPsc6fHzYINK8NGdlmzNpkF5DeFHGPKPyoCvG0wcctE0zn68WZx77ugI5McVS
+S/l84xOascmNQh7PPrlbX4ZBJvSEy6gxaTHUyJ4cbzM/waOZvs7gWNkUHJSUKzxivLVv7nDBc/82
+qvPHoYDPYazTfV0BQ9IuVWq+4CnNtPk5K48nsdvudsg9pProqZWutp/9Hbg6h5d7JHg0k6765Dwe
+tKqjCP3PXnbBUpTnNC08IgrwEyQlZ3RfVwDGOcXMtrLnn2S2jzPzq0CzyGFULyxmDDVs5022nmW2
+n+w2K2O8amsLHs3HmWI1j9fyHUpmOzxqKN9wM016pfIYThtkcB4TptBXgKEjBketSlI+fqQzMXNA
+LQWrNxg2hUYlGqm0l9j7ROJuysYvpTfx8uDGNHi8wxUvz1G/oV9InmEwj17Na9DPSiS6tbEiX1fA
+kOMUtbTqsOKJs4nRJg7PdotHZhobZ/ryVTMFukZDlYFtFRpurhboXuTmg6uboeYCtbfdVeI43Ktz
+YrDLVVYG8yGTB30F4DcrpPzGmhPC4ycQmE5S89HJcLbiUJFcMZQ9yzLaum1mtkA4V1n97eUR3g2C
+6TeD1ltzBGUcCbjvzOevd8Y69yRSxtIW2tcViJxmo1BgaHnRRwBPIONiU0dv43bTo5rO46+HbocO
+CkHDWDJ48XapQXAdOmA3p0KZWgGuEbW/Oo4HjluzCh6bLaCvgCGcwAZgm4ePn38MgemRpRG0BHR4
+uL6srIisJU8l3QDetFeNHUGkeZ4N0gxpOAgY1Hl998AQOBZH8HjYgL7iCxwP0CyZWae91eIT8/XM
+Drp5jz6KRwSbZmgHWFCLurzOzwHHLxuEj0YP+go4KupUKJBKWOlvRZIx5F0NjydVU0xves/Bphla
+AQGYCpDY18c9T6NFUcv3DBxVw4OagL4CjjINlgDHwGfVfXCEmyF6iIRYG4/HlxpL32xtCzbN0OIE
+RZunOqlE8SPNY0GYbHE7nyM8/IqO8HXFFzixaV0kkXZ3Peas4ShMjusP9Q/NAiPu0+9m8cn42+7Q
+v0BvzXN5PNVttAeTBkMqa2saOQXM0gdSoK8A24l3jDrh4/BKOEqGLcW75vzAWQV8AadqCf/mQTaY
+ETqQZlFDdLj3a8rOZwsA2+6xzQ3Z831eJzT0Dv3bogx9BZjSKl9XqQe+PeSsUdTo6cFb19JFcFaB
+QKi7mT7+8haCRzN4pOXzxXGlEIZSpqUOVkr5wN4bR7k5ooOlKmMDVo44KbHT9xXAv+G+zY/I86+d
+/7xnPfUn3SPV8S6Nop0reZXyyrWUnx6jf5+AZm17VhVfcAOpVNFB2zmUSAUc42K4G5uGdOBPWAWc
+xtmfjydL6CuQjtKkG4Zc+rgByLW9BQU1cYQXi2F1FTYDg7lT6kXdURBpbsiqEuoo/VCya2Gy5kmx
+GngHavujLGXPiIPnUpUd8bN93BFWHP3xP6CvQMX8aAELCFQVUf+oM7DYSy0+W9RjnqyG5aaVz5fo
+bPFOb2xLEGMarTMSQ+8tpBo6WFhR25kdDML3zh7sRz+pkYBHlK0MFQ8UcG9aL+gT8HeswBAWbsBy
+mEergd5dZkjV+etHT6aMwcKIP5LydeaDdK8GHgePZjxFLTX0tkdBm/mdQEpNFuskUql8pLjhomOc
+RrOQjrV1JHx6atKayD6wN9xGfq4doK5IsJybATeNb37UzaXxrBL5nCp5wUSgTuRgcoBTt9b0NYVl
+zjpbQHsVLg/eBALcmpQvNBi36JBGpCESCIu1LLuEL5VzRTc1s8Xzd1fD7dMHzNOsEVXv+k6sJQ0D
+f9eK8KgKFXjoOGx78KSRPditwRH5XElLa/yK6ZisxC2mxt0ZW4zMoaky7yxL8EoVwUYawG9+I0jp
+ClRn6WbraWEft0ouFKqrDDPmltm9mhuVOKu4vY3uLnoNbUVkx22+vLEy6+nwNgc2ddI2wuXmF6ds
+Nv34uX+y0WqsYW7vd3R6OdokaDQjo+5phnQ8AQFH9RThp1YzKd19jWr2nIEr6qYMth5c3TZ1kNIS
+3KW8oK3oqR89rKy52sXJHilEOoi4piSWRmzWtFSfXQ2uZ96OLkQdEyNRXmbYgjYdBhXd69tuvn9s
+bX/G7RWTUk0pXh7Mq93ZveiKLnptbpz3K3KUXSlncb+0z00zAkNY2dw+Y84vDQ43TFdk/IjSQmnm
+CBrNuc0tIM2PbhMUwJAYKlFLwuLx4PB4JbkMnRYTnvtajtz7FcgJogVL7sQ8VwcwBIZaVEfHAgYU
+sJ9kYmc4pO7c4M06ijaC3qmoIVAz870FDIH0/10twTOBpmIweyLaaP5kNH+BfcCI3eD1nkRXgzSr
+btN9UBp/HII28ZZ81A0qjfxrL/LCfz6CNlVx/EQMmsDHcONfjWDRHNnRLvrdTOzPm58+L4JF88PN
+TyGaPxQxP8Hke0hpfDD0R2CNPGACx/C+lmb/SQgWzWD7+W+aR0OexgeCXNtikMoLxMkXn2/Qwwcg
+WDTXbWiq1CPVJ4sEP94u8nkRtN1cwWo5Pfg2Hsi7poKIYNFM3G/YX8ETvRv68ecjeMeTcvpnG432
+gQjarKPIP+/O4ncgdJ15QBCiOSAI0RwQhGgOCEI0BwQhmgOCEM0BQYjmgCBEc0DwfxzTzllVslpK
+AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTA1LTEzVDAwOjA0OjE2LTA1OjAwFMgNNQAAACV0RVh0
+ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
+</svg>
 
-    </ul>
-    <section>
-    </section>
-  </aside>
-  <section class="page">
-    
-    <div class="nav-select">
-      <center>Navigation : 
-        <select onchange="javascript:location.href = this.value;">
-          
-    <option value="/vat-docs/install/" >
-   Installation</option>
-    <option value="/vat-docs/documentation/" >
-   Documentation</option> 
-    <option value="/vat-docs/documentation/keyconcepts/" >
-  - 
-   Key concepts</option>
-      <option value="/vat-docs/documentation/tutorials/" >- Tutorials</option>
-      <option value="/vat-docs/documentation/help/" >- Help</option>
-    <option value="/vat-docs/documentation/vtools-commands/" >
-  - 
-   Vtools commands</option>
-    <option value="/vat-docs/documentation/functions/" >
-  - 
-   Functions</option>
-    <option value="/vat-docs/documentation/vtools_report/" >
-  - 
-   Vtools_report</option> 
-      <option value="/vat-docs/documentation/vtools_report/avg_depth/" >-- avg_depth</option>
-      <option value="/vat-docs/documentation/vtools_report/discordance_rate/" >-- discordance_rate</option>
-      <option value="/vat-docs/documentation/vtools_report/sam_info/" >-- sam_info</option>
-      <option value="/vat-docs/documentation/vtools_report/sequence/"  selected>-- sequence</option>
-      <option value="/vat-docs/documentation/vtools_report/trans_ratio/" >-- trans_ratio</option>
-      <option value="/vat-docs/documentation/vtools_report/variant_stat/" >-- variant_stat</option>
-      <option value="/vat-docs/documentation/vtools_report/inbreeding_coefficient/" >-- inbreeding_coefficient</option>
-      <option value="/vat-docs/documentation/vtools_report/transmission/" >-- transmission</option>
-      <option value="/vat-docs/documentation/vtools_report/meta_analysis/" >-- meta_analysis</option>
-      <option value="/vat-docs/documentation/vtools_report/plot_fields/" >-- plot_fields</option>
-      <option value="/vat-docs/documentation/vtools_report/plot_geno_fields/" >-- plot_geno_fields</option>
-      <option value="/vat-docs/documentation/vtools_report/plot_pheno_fields/" >-- plot_pheno_fields</option>
-      <option value="/vat-docs/documentation/vtools_report/plot_association/" >-- plot_association</option>
-  
-    <option value="/vat-docs/documentation/customization/" >
-  - 
-   Customization</option>
-    <option value="/vat-docs/documentation/pipelines/" >
-  - 
-   Pipelines</option>
-    <option value="/vat-docs/documentation/utilities/" >
-  - 
-   Utilities</option>
-  
-    <option value="/vat-docs/applications/" >
-   Application</option>
-    <option value="/vat-docs/development/" >
-   Development</option>
-    <option value="/vat-docs/administration/" >
-   Administration</option>
-    <option value="/vat-docs/under-development/" >
-   Under development</option>
-
-
-
-        </select>
-      </center>
+</svg>
+</a>
     </div>
-      <div>
+    
         <div class="searchbox">
-          <input data-search-input id="search-by" type="text" placeholder="Search...">
-        </div>
-        <script type="text/javascript" src="/vat-docs/js/lunr.min.js"></script>
-        <script type="text/javascript" src="/vat-docs/js/auto-complete.js"></script>
-        <link href="/vat-docs/css/auto-complete.css" rel="stylesheet">
-        <script type="text/javascript">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1526309117"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1526309117"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/vat-docs\/';
+    
+</script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1526309117"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
           
-              var baseurl = "https:\/\/vatlab.github.io\/vat-docs\/";
           
-        </script>
-        <script type="text/javascript" src="/vat-docs/js/search.js"></script>
-      </div>
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/install/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/install/">
+          Installation
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/" title="Documentation" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/vat-docs/documentation/">
+          Documentation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/keyconcepts/" title="Key concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/keyconcepts/">
+          Key concepts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/keyconcepts/supportedtypes/" title="Supported types of variants" class="dd-item ">
+        <a href="/vat-docs/documentation/keyconcepts/supportedtypes/">
+        Supported types of variants
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/tutorials/" title="Tutorials" class="dd-item ">
+        <a href="/vat-docs/documentation/tutorials/">
+        Tutorials
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/help/" title="Help" class="dd-item ">
+        <a href="/vat-docs/documentation/help/">
+        Help
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/vtools-commands/" title="Vtools commands" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/vtools-commands/">
+          Vtools commands
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/init/" title="Init" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/init/">
+        Init
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/import/" title="Import" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/import/">
+        Import
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/update/" title="Update" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/update/">
+        Update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/phenotype/" title="Phenotype" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/phenotype/">
+        Phenotype
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/liftover/" title="lifttover" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/liftover/">
+        lifttover
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/show/" title="show" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/show/">
+        show
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/use/" title="use" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/use/">
+        use
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/select/" title="select" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/select/">
+        select
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/exclude/" title="exclude" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/exclude/">
+        exclude
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/compare/" title="compare" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/compare/">
+        compare
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/associate/" title="associate" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/associate/">
+        associate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/output/" title="output" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/output/">
+        output
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/export/" title="export" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/export/">
+        export
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/remove/" title="remove" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/remove/">
+        remove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/execute/" title="execute" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/execute/">
+        execute
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools-commands/admin/" title="admin" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools-commands/admin/">
+        admin
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/functions/" title="Functions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/functions/">
+          Functions
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/functions/ref_sequence/" title="ref_sequence" class="dd-item ">
+        <a href="/vat-docs/documentation/functions/ref_sequence/">
+        ref_sequence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/functions/mut_sequence/" title="mut_sequence" class="dd-item ">
+        <a href="/vat-docs/documentation/functions/mut_sequence/">
+        mut_sequence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/functions/track/" title="track" class="dd-item ">
+        <a href="/vat-docs/documentation/functions/track/">
+        track
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/functions/genotype/" title="Genotype" class="dd-item ">
+        <a href="/vat-docs/documentation/functions/genotype/">
+        Genotype
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/functions/samples/" title="samples" class="dd-item ">
+        <a href="/vat-docs/documentation/functions/samples/">
+        samples
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/functions/in_table/" title="in_table" class="dd-item ">
+        <a href="/vat-docs/documentation/functions/in_table/">
+        in_table
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/functions/otherfunctions/" title="Other functions" class="dd-item ">
+        <a href="/vat-docs/documentation/functions/otherfunctions/">
+        Other functions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/vtools_report/" title="Vtools_report" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/vat-docs/documentation/vtools_report/">
+          Vtools_report
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/avg_depth/" title="avg_depth" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/avg_depth/">
+        avg_depth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/discordance_rate/" title="discordance_rate" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/discordance_rate/">
+        discordance_rate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/sam_info/" title="sam_info" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/sam_info/">
+        sam_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/sequence/" title="sequence" class="dd-item active">
+        <a href="/vat-docs/documentation/vtools_report/sequence/">
+        sequence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/trans_ratio/" title="trans_ratio" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/trans_ratio/">
+        trans_ratio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/variant_stat/" title="variant_stat" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/variant_stat/">
+        variant_stat
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/inbreeding_coefficient/" title="inbreeding_coefficient" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/inbreeding_coefficient/">
+        inbreeding_coefficient
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/transmission/" title="transmission" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/transmission/">
+        transmission
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/meta_analysis/" title="meta_analysis" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/meta_analysis/">
+        meta_analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_fields/" title="plot_fields" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/plot_fields/">
+        plot_fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_geno_fields/" title="plot_geno_fields" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/plot_geno_fields/">
+        plot_geno_fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_pheno_fields/" title="plot_pheno_fields" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/plot_pheno_fields/">
+        plot_pheno_fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/vtools_report/plot_association/" title="plot_association" class="dd-item ">
+        <a href="/vat-docs/documentation/vtools_report/plot_association/">
+        plot_association
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/customization/" title="Customization" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/customization/">
+          Customization
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/customization/format/" title="Format" class="dd-item ">
+        <a href="/vat-docs/documentation/customization/format/">
+        Format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/customization/inputformat/" title="Input format" class="dd-item ">
+        <a href="/vat-docs/documentation/customization/inputformat/">
+        Input format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/customization/simulation/" title="Simulation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/customization/simulation/">
+          Simulation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/introduction/" title="Introduction" class="dd-item ">
+        <a href="/vat-docs/documentation/customization/simulation/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/custimzedsimu/" title="Customized simulations" class="dd-item ">
+        <a href="/vat-docs/documentation/customization/simulation/custimzedsimu/">
+        Customized simulations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/customization/simulation/models/" title="Models" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/customization/simulation/models/">
+          Models
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/models/peng1/" title="Peng2014_ex1" class="dd-item ">
+        <a href="/vat-docs/documentation/customization/simulation/models/peng1/">
+        Peng2014_ex1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/models/pen2/" title="Peng2014_ex2" class="dd-item ">
+        <a href="/vat-docs/documentation/customization/simulation/models/pen2/">
+        Peng2014_ex2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/pipelines/" title="Pipelines" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/pipelines/">
+          Pipelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/introduction/" title="Introduction" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/customizedpipeline/" title="Customized pipeline" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/customizedpipeline/">
+        Customized pipeline
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/" title="Variant calling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/pipelines/variant-calling/">
+          Variant calling
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/" title="bwa_gatk33_hg19" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_hg19/">
+        bwa_gatk33_hg19
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/" title="bat_gatk33_b37" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/">
+        bat_gatk33_b37
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/" title="bwa_gatk28_hg19" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_hg19/">
+        bwa_gatk28_hg19
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/" title="bwa_gatk28_b37" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/variant-calling/bwa_gatk28_b37/">
+        bwa_gatk28_b37
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/" title="Other pipelines" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/pipelines/other-pipelines/">
+          Other pipelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/import_vcf/" title="import_vcf" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/other-pipelines/import_vcf/">
+        import_vcf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/anno_utils/" title="anno_utils" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/other-pipelines/anno_utils/">
+        anno_utils
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/transmission/" title="transmission" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/other-pipelines/transmission/">
+        transmission
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/illumina/" title="Illumnina" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/other-pipelines/illumina/">
+        Illumnina
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/annovar/" title="ANNOVAR" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/other-pipelines/annovar/">
+        ANNOVAR
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/snpeff/" title="snpEff" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/other-pipelines/snpeff/">
+        snpEff
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/pipelines/other-pipelines/king/" title="KING" class="dd-item ">
+        <a href="/vat-docs/documentation/pipelines/other-pipelines/king/">
+        KING
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/documentation/utilities/" title="Utilities" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/documentation/utilities/">
+          Utilities
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/utilities/report_progress/" title="report_progress" class="dd-item ">
+        <a href="/vat-docs/documentation/utilities/report_progress/">
+        report_progress
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/documentation/utilities/_md5sumd/" title="md5sumd" class="dd-item ">
+        <a href="/vat-docs/documentation/utilities/_md5sumd/">
+        md5sumd
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/" title="Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/">
+          Application
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/annotation/" title="Annotation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/annotation/">
+          Annotation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/introduction/" title="Introduction" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/tutorial/" title="Tutorial" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/tutorial/">
+        Tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/customized/" title="Customized annotation databases" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/customized/">
+        Customized annotation databases
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/annotation/genes/" title="Genes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/annotation/genes/">
+          Genes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/genes/ccdsgene/" title="ccdsGene" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/genes/ccdsgene/">
+        ccdsGene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/genes/hugogene/" title="Hugo gene" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/genes/hugogene/">
+        Hugo gene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/genes/entrezgene/" title="EntrezGene" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/genes/entrezgene/">
+        EntrezGene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/genes/knowngene/" title="knownGene" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/genes/knowngene/">
+        knownGene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/genes/refgene/" title="refGene" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/genes/refgene/">
+        refGene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/genes/cancergenecensus/" title="CancerGeneCensus" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/genes/cancergenecensus/">
+        CancerGeneCensus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/annotation/variants/" title="Variants" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/annotation/variants/">
+          Variants
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/cosmic/" title="COSMIC" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/cosmic/">
+        COSMIC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/dbnsfp/" title="sbNSFP" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/dbnsfp/">
+        sbNSFP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/dbsnp/" title="dbSNP" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/dbsnp/">
+        dbSNP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/linkagephysicalmap/" title="linkage-physical map" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/linkagephysicalmap/">
+        linkage-physical map
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/databaseof/" title="Database of Genomic Variants" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/databaseof/">
+        Database of Genomic Variants
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/exomesequencingpro/" title="Exome Sequencing Project" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/exomesequencingpro/">
+        Exome Sequencing Project
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/gwas/" title="gwasCatalog" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/gwas/">
+        gwasCatalog
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/hapmap/" title="HapMap" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/hapmap/">
+        HapMap
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/variants/thousand/" title="Thousand Genomes" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/variants/thousand/">
+        Thousand Genomes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/annotation/regions/" title="Regions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/annotation/regions/">
+          Regions
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/regions/low-complexity-regions/" title="Low complexity regions" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/regions/low-complexity-regions/">
+        Low complexity regions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/regions/phast-cons/" title="Phast cons" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/regions/phast-cons/">
+        Phast cons
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/regions/genomic-super-dups/" title="Genomic super dups" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/regions/genomic-super-dups/">
+        Genomic super dups
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/regions/cytoband/" title="cytoBand" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/regions/cytoband/">
+        cytoBand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/annotation/misc/" title="Misc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/annotation/misc/">
+          Misc
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/misc/illumina/" title="Illumina" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/misc/illumina/">
+        Illumina
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/misc/keggpathway/" title="keggPathway" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/misc/keggpathway/">
+        keggPathway
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/annotation/misc/encode/" title="ENCODE" class="dd-item ">
+        <a href="/vat-docs/applications/annotation/misc/encode/">
+        ENCODE
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/discovery/" title="Discovery" class="dd-item ">
+        <a href="/vat-docs/applications/discovery/">
+        Discovery
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/association/" title="Association" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/association/">
+          Association
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/introduction/" title="Introduction" class="dd-item ">
+        <a href="/vat-docs/applications/association/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/data-explorationqc/" title="Data exploration/QC" class="dd-item ">
+        <a href="/vat-docs/applications/association/data-explorationqc/">
+        Data exploration/QC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/association-analysis/" title="Association analysis" class="dd-item ">
+        <a href="/vat-docs/applications/association/association-analysis/">
+        Association analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/post-assoc-analysis/" title="Post-assoc analysis" class="dd-item ">
+        <a href="/vat-docs/applications/association/post-assoc-analysis/">
+        Post-assoc analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/association/basic-data-statistics/" title="Basic data statistics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/association/basic-data-statistics/">
+          Basic data statistics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/basic-data-statistics/group-statwrite/" title="Group stat&amp;Write" class="dd-item ">
+        <a href="/vat-docs/applications/association/basic-data-statistics/group-statwrite/">
+        Group stat&amp;Write
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/association/single-variant-analysis/" title="Single variant analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/association/single-variant-analysis/">
+          Single variant analysis
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/" title="Fisher exact test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-variant-analysis/fisher-exact-test/">
+        Fisher exact test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/" title="Single gene association methods" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/association/single-gene-association-methods/">
+          Single gene association methods
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/introduction/" title="Introduction" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/cmc-test/" title="CMC test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/cmc-test/">
+        CMC test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/" title="C-alpha test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/c_alpha-test/">
+        C-alpha test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/kbac-test/" title="KBAC test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/kbac-test/">
+        KBAC test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/rbt-test/" title="RBT test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/rbt-test/">
+        RBT test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/rarecover-test/" title="RareCover test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/rarecover-test/">
+        RareCover test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/vt-test/" title="VT test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/vt-test/">
+        VT test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/wss-test/" title="WSS test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/wss-test/">
+        WSS test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/single-gene-association-methods/asum-test/" title="aSum test" class="dd-item ">
+        <a href="/vat-docs/applications/association/single-gene-association-methods/asum-test/">
+        aSum test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/" title="Joint/Conditional association analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/association/jointconditional-association-analysis/">
+          Joint/Conditional association analysis
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/" title="Collapsing methods" class="dd-item ">
+        <a href="/vat-docs/applications/association/jointconditional-association-analysis/collapsing-methods/">
+        Collapsing methods
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/" title="Aggregation methods" class="dd-item ">
+        <a href="/vat-docs/applications/association/jointconditional-association-analysis/aggregation-methods/">
+        Aggregation methods
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/" title="Weighted methods" class="dd-item ">
+        <a href="/vat-docs/applications/association/jointconditional-association-analysis/weighted-methods/">
+        Weighted methods
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/" title="Variable thresholds" class="dd-item ">
+        <a href="/vat-docs/applications/association/jointconditional-association-analysis/variable-thresholds/">
+        Variable thresholds
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/skat-test/" title="SKAT test" class="dd-item ">
+        <a href="/vat-docs/applications/association/jointconditional-association-analysis/skat-test/">
+        SKAT test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/" title="MetaSKAT analysis" class="dd-item ">
+        <a href="/vat-docs/applications/association/jointconditional-association-analysis/metaskat-analysis/">
+        MetaSKAT analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/association/vat-stacking/" title="VAT stacking" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/association/vat-stacking/">
+          VAT stacking
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/association/create-your-test/" title="Create your test!" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/association/create-your-test/">
+          Create your test!
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/create-your-test/running-r-programs/" title="Running R programs" class="dd-item ">
+        <a href="/vat-docs/applications/association/create-your-test/running-r-programs/">
+        Running R programs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/create-your-test/programming-in-vat/" title="Programming in VAT" class="dd-item ">
+        <a href="/vat-docs/applications/association/create-your-test/programming-in-vat/">
+        Programming in VAT
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/applications/association/view-association-result/" title="View association result" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/applications/association/view-association-result/">
+          View association result
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/" title="QQ plot and Manhattan plot" class="dd-item ">
+        <a href="/vat-docs/applications/association/view-association-result/qq-plot-and-manhattan-plot/">
+        QQ plot and Manhattan plot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/development/" title="Development" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/development/">
+          Development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/development/changelog/" title="ChangeLog" class="dd-item ">
+        <a href="/vat-docs/development/changelog/">
+        ChangeLog
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/development/getinvolved/" title="Get Involved" class="dd-item ">
+        <a href="/vat-docs/development/getinvolved/">
+        Get Involved
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/administration/" title="Administration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/administration/">
+          Administration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/administration/allrecent/" title="All recent changes" class="dd-item ">
+        <a href="/vat-docs/administration/allrecent/">
+        All recent changes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/administration/autolink/" title="Autolink" class="dd-item ">
+        <a href="/vat-docs/administration/autolink/">
+        Autolink
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/administration/stylesheet/" title="Style sheet" class="dd-item ">
+        <a href="/vat-docs/administration/stylesheet/">
+        Style sheet
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/administration/trafficstat/" title="Traffic statistics" class="dd-item ">
+        <a href="/vat-docs/administration/trafficstat/">
+        Traffic statistics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/vat-docs/under-development/" title="Under development" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vat-docs/under-development/">
+          Under development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/vat-docs/under-development/faq/" title="FAQ" class="dd-item ">
+        <a href="/vat-docs/under-development/faq/">
+        FAQ
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://vatlab.github.io/vat-docs/"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://twitter.com/ScriptOfScripts"><i class='fa fa-twitter'></i> ScriptOfScripts</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://vatlab.github.io/vat-docs/"><i class='fa fa-envelope'></i> bpeng@mdanderson.org</a>
+              </li>
+          
+        </ul>
+      </section>
     
 
-    <h1>sequence</h1>
     
-    
-    
-    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://vatlab.github.io/vat-docs/content/Documentation/vtools_report/sequence.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/vat-docs/'></a> > <a href='/vat-docs/documentation/'>Documentation</a> > <a href='/vat-docs/documentation/vtools_report/'>Vtools_report</a> > sequence
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#output-dna-and-protein-sequence-at-specified-chromosome-regions">Output DNA and protein sequence at specified chromosome regions</a>
+<ul>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#details">Details</a>
+<ul>
+<li><a href="#output-dna-sequence-at-specified-regions">Output DNA sequence at specified regions</a></li>
+<li><a href="#specify-regions-by-gene-and-other-names">Specify regions by gene and other names</a></li>
+<li><a href="#output-rna-sequences-of-genes-overlap-with-the-specified-region">Output RNA sequences of genes overlap with the specified region</a></li>
+<li><a href="#output-protein-sequences-of-genes-overlap-with-the-specified-region">Output protein sequences of genes overlap with the specified region</a></li>
+<li><a href="#mark-a-location-regions-variant-or-a-sequence">Mark a location, regions, variant, or a sequence</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>sequence</h1>
+          
+
+        
+
+
+
 
 <h1 id="output-dna-and-protein-sequence-at-specified-chromosome-regions">Output DNA and protein sequence at specified chromosome regions</h1>
 
@@ -1703,60 +4228,2456 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
 </code></pre>
 
 
-    
-    
-        <div class="chevrons">
-    <div id="navigation">
-<a class="nav nav-prev" href="/vat-docs/documentation/vtools_report/sam_info/" title="sam_info"> <i class="fa fa-chevron-left"></i><label>sam_info</label></a>
-    <a class="nav nav-next" href="/vat-docs/documentation/vtools_report/trans_ratio/" title="trans_ratio" style="margin-right: 0px;"><label>trans_ratio</label><i class="fa fa-chevron-right"></i></a></div>
-  </div>
-
-  </section>
-</article>
-
-<footer>
-
-<div class="footline">
-    
-
-    
-
-  
-
-    <div class="github-link">
-      <a href="https://github.com/vat/vat-docs/content/Documentation/vtools_report/sequence.md" target="blank"><i class="fa fa-code-fork"></i>
-        Improve this page</a>
-    </div>
-  </div>
-
-
-	<div>
-
-
-  
-    <p>copyright = &copy; <a href="https://faculty.mdanderson.org/profiles/bo_peng.html">Bo Peng, Ph.D. / MD AndersonCancer Center</a> All rights reserved</p>
-
-  
-
-
-
-	</div>
+<footer class=" footline" >
+	
 </footer>
 
-<script src="/vat-docs/js/clipboard.min.js"></script>
 
-<link href="/vat-docs/css/featherlight.min.css" rel="stylesheet">
-<script src="/vat-docs/js/featherlight.min.js"></script>
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
 
 
+        
+            <a class="nav nav-prev" href="/vat-docs/documentation/vtools_report/sam_info/" title="sam_info"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/vat-docs/documentation/vtools_report/trans_ratio/" title="trans_ratio" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
 
-<script src="/vat-docs/theme-flex/script.js"></script>
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/vat-docs/js/clipboard.min.js?1526309117"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1526309117"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1526309117"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1526309117"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1526309117"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1526309117"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1526309117"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1526309117"></script>
+    <script src="/vat-docs/js/learn.js?1526309117"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1526309117"></script>
 
+    <link href="/vat-docs/mermaid/mermaid.css?1526309117" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1526309117"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
     
 
-    
-    
-
-    
   </body>
 </html>
+
