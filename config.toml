@@ -3,6 +3,7 @@ theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 baseURL = "https://vatlab.github.io/vat-docs/"
+publishDir = "docs"
 
 [params]
   editURL = "https://vatlab.github.io/vat-docs/content/"
