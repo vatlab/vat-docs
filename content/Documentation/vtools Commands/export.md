@@ -82,7 +82,7 @@ weight = 13
 
 Command `vtools show formats` lists all formats that are supported by *variant tools* but some file formats can only be used to import or update variants. To check whether or not you can export data in a particular format, you can run command `vtools show format FMT` and check if it defines one or more `Columns`. 
 
-(:toggleexample Check details of file formats:) 
+<details><summary> Check details of file formats</summary> 
 
     % vtools show format ANNOVAR
     
@@ -140,7 +140,7 @@ Note the `Columns` section in the above configuration file. Columns in this sect
       geno          (default: GT)
     
 
-You see that the `Columns` section is not defined. (:exampleend:) 
+You see that the `Columns` section is not defined. </details>
 
 
 
@@ -148,7 +148,7 @@ You see that the `Columns` section is not defined. (:exampleend:)
 
 The motivation of this export format is to prepare input files for annotating variants using `ANNOVAR` 
 
-(:toggleexample Examples: Export in ANNOVAR format:) 
+<details><summary> Examples: Export in ANNOVAR format</summary> 
 
     % vtools init test 
     % vtools admin --load_snapshot vt_testData
@@ -186,7 +186,7 @@ This optional comment field comes from the available fields in the variant table
     ...
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -213,7 +213,7 @@ Section `Other fields` lists the fields that can be imported (if they exist in t
 
 The basic command to export variants in vcf format is `vtools export TABLE --format vcf`. In this case, the variants are exported in vcf format, without header and with default (missing) name, `INFO`, and `FILTER` fields. `--format vcf` can be ignored if a `.vcf` file is specified in option `--output`. 
 
-(:toggleexample Examples: export variants in vcf format:) Let us first get some data, 
+<details><summary> Examples: export variants in vcf format</summary> Let us first get some data, 
 
 
 
@@ -257,11 +257,11 @@ The outputted file looks like
     1	75891	.	T	C	.	PASS	.	
     
 
-(:exampleend:) 
+</details>
 
 Indel variants are outputted in VCF format. That is to say, instead of using `-` to represent missing alleles, indels such as `- => A` are outputted with padding alleles (e.g. `G => GA` if the reference allele before the variant is `G`). The positions of the variants are automatically adjusted. 
 
-(:toggleexample Examples: export indel variants in vcf format:) 
+<details><summary> Examples: export indel variants in vcf format</summary> 
 
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
@@ -320,7 +320,7 @@ The difference is clear if you compare the output with what outputted from comma
     1	83120	A	-
     
 
-(:exampleend:) 
+</details>
 
 You can export one or more variant info fields using parameter `--var_info`, depending on how the field is defined in `vcf.fmt`, the field will be outputted as a flag (show field name if its value if True), a name value pair (show `name=val`), or a value. Outputting values of a field is usually not recommended unless the values already conform to vcf standard. 
 
@@ -328,7 +328,7 @@ You can export one or more variant info fields using parameter `--var_info`, dep
 
 You can specify fields that are not defined in `vcf.fmt`. However, because *variant tools* does not know how to output it (as value or flag etc), it will output its value directly without a field name. Such fields do not conform to the vcf format standard. To output fields that are not defined in `vcf.fmt`, it is recommended that you add the field to a local copy of `vcf.fmt` and use the modified format file to export data. 
 
-(:toggleexample Examples: export variant info fields:) 
+<details><summary> Examples: export variant info fields</summary> 
 
 
 
@@ -382,7 +382,7 @@ Anyway, if you have imported the whole `INFO` column of the input file, you can 
     1	75891	.	T	C	.	PASS	AA=.;AC=11;AN=120;DP=182	
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -398,7 +398,7 @@ If you compare the outputted vcf file with the original vcf file, you can notice
 
 The `--header` option can be used to add a header to outputs. Although it is possible to specify a minimal header using option ` --header CHROM POS ID REF ALT QUAL FILTER INFO FORMAT`, it is useful to create a header file and send it to `vtools export` command through standard input (option `--header -`). The latter is preferred because vcf files usually has long headers. 
 
-(:toggleexample Examples: export in vcf format with header:) 
+<details><summary> Examples: export in vcf format with header</summary> 
 
     % vtools export variant --header CHROM POS ID REF ALT QUAL FILTER INFO FORMAT -o my_indel.vcf
     
@@ -431,7 +431,7 @@ Alternatively you can create a text file with a tab delimited and use `--header 
     INFO: 129 lines are exported from variant table variant
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -439,7 +439,7 @@ Alternatively you can create a text file with a tab delimited and use `--header 
 
 Genotypes of selected samples can be outputted if you use use parameter `--samples` to specify samples to output. `--samples 1` will output genotypes of all samples. 
 
-(:toggleexample Examples: export genotypes of selected samples:) 
+<details><summary> Examples: export genotypes of selected samples</summary> 
 
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
@@ -469,11 +469,11 @@ Genotypes of selected samples can be outputted if you use use parameter `--sampl
     1	75891	.	T	C	.	PASS	.	GT	0/0	0/0	1/1	0/0	0/1	0/0	0/0	0/0
     
 
-(:exampleend:) 
+</details>
 
 You could export one or more genotype info fields using option `--geno_info` (Hint: use command `vtools show genotypes` to show available genotype fields). However, because the format string cannot be automatically determined, you will have to specify the `FORMAT` string manually using option `--format_string`, 
 
-(:toggleexample Examples: export genotype info fields:) 
+<details><summary> Examples: export genotype info fields</summary> 
 
     % vtools export variant --samples 'sample_name like "NA128%"'\
        --geno_info DP_geno --format_string 'GT:DP' -o my.vcf
@@ -501,7 +501,7 @@ You could export one or more genotype info fields using option `--geno_info` (Hi
     1	75891	.	T	C	.	PASS	.	GT:DP	0/0:7	0/0:0	1/1:6	0/0:2	0/1:2	0/0:6	0/0:5	0/0:0
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -509,7 +509,7 @@ You could export one or more genotype info fields using option `--geno_info` (Hi
 
 You can specify arbitrary fields (or constant values) to the `ID` (name), `QUAL`, and `FILTER` columns of the vcf output, using parameters `--id`, `--qual` and `--filter`. The `ID` column is supposed to list `rsnames` of variants, you can specify a field in your project (e.g. if you import the `id` field from the original vcf file), or `dbSNP.name`. 
 
-(:toggleexample Examples: export id, qual and filter columns:) Suppose we have imported everything from the original vcf file, 
+<details><summary> Examples: export id, qual and filter columns</summary> Suppose we have imported everything from the original vcf file, 
 
 
 
@@ -588,6 +588,6 @@ Optionally, you can use rsnames in the `dbSNP` database
     22	49533094	rs3865766	C	T	.	PASS	AA=T;AC=51;AN=120;DP=253;HM3	
     
 
-(:exampleend:)
+(:exampleend</summary>
 
  [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Tped?action=edit

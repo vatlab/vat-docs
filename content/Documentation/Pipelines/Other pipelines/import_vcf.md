@@ -60,7 +60,7 @@ This pipeline assists this process by automating the creation of the `.fmt` file
 *   This pipeline outputs a `.fmt` file if you specify a output file using command line option `--output`. You can modify this file and use command `vtools import` to import data if the pipeline fails to execute (e.g. when an invalid field name is used). 
 *   Although you can specify multiple vcf files in the command line (parameter --input), the format will be generated from the first vcf file. These vcf files therefore must have the same variant and genotype fields. 
 
-(:toggleexample Import all fields from vcf files:) 
+<details><summary> Import all fields from vcf files</summary> 
 
     % vtools init test -f
     % vtools execute import_vcf --input V*.vcf
@@ -85,4 +85,4 @@ This pipeline assists this process by automating the creation of the `.fmt` file
     INFO: Command "vtools import V1.vcf V2.vcf V3.vcf --build hg19 --format cache/V1.vcf.fmt" completed successfully in 00:00:12
     
 
-(:exampleend:)
+(:exampleend</summary>

@@ -85,7 +85,7 @@ A variant tools project `$name` consists of a project file `$name.proj`, a genot
 
 Command `` `vtools init NAME `` creates a new project `NAME` under the current directory. It will fail if there is already a project in the current directory, unless option `--force` is used to remove any existing project. 
 
-(:toggleexample Examples: create a new project:) The following commands create a directory `myproj` and create a variant tools project in this directory: 
+<details><summary> Examples: create a new project</summary> The following commands create a directory `myproj` and create a variant tools project in this directory: 
 
 
 
@@ -123,7 +123,7 @@ Using the `--force` option will remove the existing project and create a new one
     INFO: Creating a new project test
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -141,7 +141,7 @@ The following filters could be applied to the parent project
 *   `--samples` Only samples matching specified conditions (e.g. sample names) will be copied. 
 *   `--genotypes` Only genotypes matching specified conditions (e.g. with quality score above certain threshold) will be copied. 
 
-(:toggleexample Examples: create a parent project:) Let us start from a snapshot project `quickStartGuide`: 
+<details><summary> Examples: create a parent project</summary> Let us start from a snapshot project `quickStartGuide`: 
 
 
 
@@ -219,9 +219,9 @@ The project now has three variant tables
     JPT                       2,900    Nov13  Variants from JPT population
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: create subprojects from the parent project:) You can create a subproject with variants from the CEU: 
+<details><summary> Examples: create subprojects from the parent project</summary> You can create a subproject with variants from the CEU: 
 
 
 
@@ -310,7 +310,7 @@ and a single sample JPT:
 
 if you use `–-samples` (or `–-genotypes`) options without `–-variants` option to create a subproject, all of the variant tables in the parent project will be copied into your subproject, and the specified samples or genotypes will be copied to your subproject. 
 
-(:exampleend:) 
+</details>
 
 The parent project does not have to be a directory. It can also be a local or online snapshot. For example, command 
 
@@ -360,7 +360,7 @@ Because subprojects might have overlapping variants, variant tables, and samples
 
 Variant tables from children projects will be copied to `$name (from $proj)` before they are merged. This allows you to keep track of information from the original projects, or compare tables from children projects. 
 
-(:toggleexample Examples: merge subprojects:) Continue from the previous example, if we just merge the CEU and JPT projects we created, 
+<details><summary> Examples: merge subprojects</summary> Continue from the previous example, if we just merge the CEU and JPT projects we created, 
 
 
 
@@ -409,7 +409,7 @@ Because the latter two samples have the same name, it is even difficult to remov
 
 If you have a large number of samples from different sources, it is a good idea to create subprojects for groups of samples. Merging subprojects will be faster than reading from source files again. However, due to the overhead of re-mapping all variants, pre-processing each sample by creating its own project usually does not help much. 
 
-(:exampleend:) 
+</details>
 
 The children projects can also be snapshots, so if you have snapshots of a number of children projects, you can create a merged project using command 
 

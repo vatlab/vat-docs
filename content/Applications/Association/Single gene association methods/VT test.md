@@ -96,7 +96,7 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -180,6 +180,6 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
 
     
 
-(:exampleend:) 
+</details>
 
 [^#^]

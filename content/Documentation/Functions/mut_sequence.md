@@ -39,7 +39,7 @@ Function `mut_sequence` will be identical to `ref_sequence` if the variant is ou
 
 ## Details
 
-(:toggleexample Examples: output mutated sequence around variants:) Let us get a test project 
+<details><summary> Examples: output mutated sequence around variants</summary> Let us get a test project 
 
     % vtools admin --load_snapshot vt_simple
     
@@ -118,4 +118,4 @@ and check how the sequences are affected
     1	83119	A  	-             	CAA	C-A
     
 
-(:exampleend:)
+(:exampleend</summary>

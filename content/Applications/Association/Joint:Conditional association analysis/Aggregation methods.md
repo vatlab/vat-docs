@@ -118,7 +118,7 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1][?][1]
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -253,7 +253,7 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1][?][1]
 
 **QQ-plot**  Attach:burdenQt.jpg 
 
-(:exampleend:) 
+</details>
 
 [^#^]
 

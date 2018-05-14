@@ -201,7 +201,7 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -335,7 +335,7 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
 
 **QQ-plot**  Attach:weightedburdenQt.jpg 
 
-(:exampleend:) 
+</details>
 
 [^#^]
 

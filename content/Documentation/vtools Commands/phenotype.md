@@ -136,7 +136,7 @@ The difference between `--set` and `--from_stat` is that `--set` uses expression
 
 The `vtools phenotype --from_file` command identifies a sample by its name but it can also identify a sample by a combination of sample name and file name because not all samples have names. The basic form of this command imports phenotype by sample names from a tab or comma delimited file. 
 
-(:toggleexample Examples: Create a new project:) To illustrate the use of this command, let's start a new project and import some variants/genotypes 
+<details><summary> Examples: Create a new project</summary> To illustrate the use of this command, let's start a new project and import some variants/genotypes 
 
 
 
@@ -173,9 +173,9 @@ There are 60 samples without genotype
     (50 records omitted)
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: Import phenotype from a file:) 
+<details><summary> Examples: Import phenotype from a file</summary> 
 
     % head -10 phenotype.txt
     
@@ -228,7 +228,7 @@ This phenotype file now has 3 additional columns: affection status (1 or 2), gen
     (50 records omitted)
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -236,7 +236,7 @@ This phenotype file now has 3 additional columns: affection status (1 or 2), gen
 
 If you have a large number of phenotypes and you only need to import some of them, you can specify a list of phenotypes after the filename. 
 
-(:toggleexample Examples: Import selected phenotypes from a file:) 
+<details><summary> Examples: Import selected phenotypes from a file</summary> 
 
 Let us first remove the phenotypes we just loaded: 
 
@@ -286,7 +286,7 @@ and only import the sex phenotype from the file:
     (50 records omitted, use parameter --limit to display more or all records)
     
 
-(:exampleend:) 
+</details>
 
 Other features of this command include 
 
@@ -306,7 +306,7 @@ If your input file does not have any header, you can use option `--header` to sp
 
 `vtools phenotype --set` command allows users to create new columns in the phenotype table based on other phenotypes. 
 
-(:toggleexample Examples: Create a column race from CEU samples having race=1:) 
+<details><summary> Examples: Create a column race from CEU samples having race=1</summary> 
 
 
 
@@ -335,7 +335,7 @@ If your input file does not have any header, you can use option `--header` to sp
     
     
 
-(:exampleend:) 
+</details>
 
 the `--samples` option specify the subset of samples to which the new column value will be appended. Note above that `None` is assigned to samples that does not match the specified `--samples` condition. More examples on the `--samples` option are documented in `vtools update`, `vtools select`, etc. 
 
@@ -345,7 +345,7 @@ the `--samples` option specify the subset of samples to which the new column val
 
 With `vtools show genotypes` we know the total number of genotypes and available genotype information in the sample. `vtools phenotype --from_stat` further allows calculation of specific sample genotype properties. 
 
-(:toggleexample Examples: Phenotype from genotype statistics:) 
+<details><summary> Examples: Phenotype from genotype statistics</summary> 
 
 
 
@@ -369,11 +369,11 @@ gives statistic of different genotypes.
 
 *   Wild-type genotype can be directly calculated using `vtools phenotype --set "sample_wt=sample_total-sample_homo-sample_het-sample_double_het"` 
 
-(:exampleend:) 
+</details>
 
 Another useful type of summary is the genotype information that usually summarizes genotype data quality. Notice that at the beginning of this example session we included genotype depth of coverage using option `--geno_info`. With this (and as many others as your `vcf` file provides) genotype information you can calculate summary statistics and append them to sample table. For example, `DP_geno` is the *read depth* for sample genotypes, a useful indicator of sample genotype quality. You may summarize `DP_geno` for each individual using the commands below: 
 
-(:toggleexample Examples: Phenotype calculated from statistics of genotype info fields:) 
+<details><summary> Examples: Phenotype calculated from statistics of genotype info fields</summary> 
 
     % vtools phenotype --from_stat "meanDP=avg(DP_geno)" "minDP=min(DP_geno)" "maxDP=max(DP_geno)"
     
@@ -401,7 +401,7 @@ Another useful type of summary is the genotype information that usually summariz
     ... ...
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -409,7 +409,7 @@ Another useful type of summary is the genotype information that usually summariz
 
 The basic form of `vtools phenotype --output` is very similar to command `vtools show phenotypes`. They can both display all or a specified subset of phenotypes. 
 
-(:toggleexample Examples: Output specified phenotypes:) 
+<details><summary> Examples: Output specified phenotypes</summary> 
 
     % vtools phenotype --output sample_name sample_wildtype BMI 
     
@@ -422,11 +422,11 @@ The basic form of `vtools phenotype --output` is very similar to command `vtools
     ...
     
 
-(:exampleend:) 
+</details>
 
 The power of command `vtools phenotype --output`, similar to `vtools output`, is its ability to output summary statistics of phenotypes. For example, you can use item `avg(meanDP)` to display the average of the `meanDP` field. Because pehnotype `meanDP` records average depth of all genotypes each sample, `avg(meanDP)` displays average depth of all genotypes of all samples. 
 
-(:toggleexample Examples: Output summary statistics of phenotypes:) 
+<details><summary> Examples: Output summary statistics of phenotypes</summary> 
 
 For example, the following command outputs the wildtype genotype counts and BMI for each sample. 
 
@@ -444,4 +444,4 @@ For example, the following command outputs the wildtype genotype counts and BMI 
     4.52506351626
     
 
-(:exampleend:)
+(:exampleend</summary>

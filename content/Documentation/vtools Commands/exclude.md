@@ -98,7 +98,7 @@ However, command `` `vtools exclude `` is not simply a `` `vtools select `` comm
 
 *   **If there are multiple entries for a variant in the annotation database**, these variants might match both conditions. This is, for example, the case for some variants in dbNSFP when these variants are included in different genes and have different damaging scores. These variants will only be selected by `` `vtools select ``. 
 
-(:toggleexample:) 
+<details><summary>Examples:</summary> 
 
 For example, 
 
@@ -154,4 +154,4 @@ if we use the complete `dbNSFP` annotation database we can show more fields
 
 It turns out that this variant has two entries in dbNSFP for different genes. In this case the variant matches both conditions "sift\_score>0.95" and "sift\_score<=0.95". As a result this variant will be selected by `vtools select "sift_score>0.95"` but not `vtools exclude "sift_score<=0.95"` 
 
-(:exampleend:)
+(:exampleend</summary>

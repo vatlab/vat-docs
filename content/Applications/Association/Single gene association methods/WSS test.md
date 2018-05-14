@@ -85,7 +85,7 @@ As with the [Varible Thresholds strategy][2][?][2], the idea of weighting can be
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -139,7 +139,7 @@ As with the [Varible Thresholds strategy][2][?][2], the idea of weighting can be
     ACADM	3180	4	103	19070	0.967033	9782.51	1000
     
 
-(:exampleend:) 
+</details>
 
 [^#^]
 

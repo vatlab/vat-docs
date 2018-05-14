@@ -71,7 +71,7 @@ The implementation of stage 1 in this program differs from the original paper. I
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -129,6 +129,6 @@ The implementation of stage 1 in this program differs from the original paper. I
 
 **QQ-plot**  Attach:asum.jpg 
 
-(:exampleend:) 
+</details>
 
 [^#^]

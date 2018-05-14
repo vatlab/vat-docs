@@ -98,7 +98,7 @@ The verbosity level of command line output can be controlled by option `--verbos
 *   `1`: display/log progress information, including progress bars on screen output (no DEBUG) 
 *   `2`: display/log progress and debug information. 
 
-(:toggleexample:) 
+<details><summary>Examples:</summary> 
 
 
 
@@ -145,7 +145,7 @@ If, for example for a production pipeline you do not want any debug information 
     % vtools admin --set_runtime_option logfile_verbosity=0
     
 
-will suppress any logfile output (except for warnings). (:exampleend:) 
+will suppress any logfile output (except for warnings). </details>
 
 
 
@@ -157,7 +157,7 @@ The verbosity level when the project is created is the default verbosity level o
 
 Output from `vtools` can be saved to files via *standard output redirection*. The progress/warning/errors information will be displayed on screen while only the standard output will be written to files. 
 
-(:toggleexample Examples: direct output to files:) If you load a project from online and output its variants as follows: 
+<details><summary> Examples: direct output to files</summary> If you load a project from online and output its variants as follows: 
 
 
 
@@ -187,7 +187,7 @@ the output is written to file `output.txt` while debug information continues to 
     1	9992	C	T
     
 
-(:exampleend:) 
+</details>
 
 
 

@@ -86,7 +86,7 @@ Command `` `vtools show `` displays various project and system information. It a
 
 Command `` `vtools show `` without parameter and `` `vtools show project `` displays general information about a project, including project name, reference genome, existing variant tables, and used annotation databases. 
 
-(:toggleexample Examples: Show summary of a downloaded project:) 
+<details><summary> Examples: Show summary of a downloaded project</summary> 
 
 Let us load a fairly large project from an online snapshot `vt_ExomeAssociation`, 
 
@@ -117,7 +117,7 @@ Let us load a fairly large project from an online snapshot `vt_ExomeAssociation`
 
 The project has 2 variant tables, the master variant table and another variant tables `rare`. It uses the hg19 reference genome, and has not been connected to any annotation database. 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -125,7 +125,7 @@ The project has 2 variant tables, the master variant table and another variant t
 
 Command `vtools show tables` lists all variant tables, their creation dates and comments (if available). This command does not accept any additional parameter. 
 
-(:toggleexample Examples: Show all variant tables :) 
+<details><summary> Examples: Show all variant tables </summary> 
 
     % vtools show tables
     
@@ -135,11 +135,11 @@ Command `vtools show tables` lists all variant tables, their creation dates and 
     variant       26,797
     
 
-(:exampleend:) 
+</details>
 
 `vtools show tables` lists all variant tables of a project, with creation date and comment. If you only need to know information about a particular variant table, it is easier and faster to use command `vtools show table TABLE`. This command lists date of creation, a short description, number of variants and fields (only the master variant table has multiple fields). Perhaps more interestingly, it shows the command that has been used to create this variant table, which usually contain import information regarding from which table this table is drawn, and what criteria has been used. 
 
-(:toggleexample Examples: Show details of a variant table:) Show details of a table `rare`, note that you can specify multiple tables after command `vtools show table`. 
+<details><summary> Examples: Show details of a variant table</summary> Show details of a table `rare`, note that you can specify multiple tables after command `vtools show table`. 
 
     % vtools show table rare
     
@@ -154,7 +154,7 @@ Command `vtools show tables` lists all variant tables, their creation dates and 
     Number of variants:     19785
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -169,7 +169,7 @@ Command `vtools show samples` lists samples, files from which samples are import
 *   Option `-v 0` (`--verbosity 0`) supress phenotypes. This is useful when there are a large number of phenotypes 
 *   Option `-v 2` lists full filenames. The default output lists part of the filenames if they are too long. Increasing verbosity level will show complete information. 
 
-(:toggleexample Examples: Show all or selected samples, with or without phenotype:) Show all samples: 
+<details><summary> Examples: Show all or selected samples, with or without phenotype</summary> Show all samples: 
 
     % vtools show samples -l 10
     
@@ -226,7 +226,7 @@ Suppressing phenotypes and only show basic sample information
     (3170 records omitted)
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -234,7 +234,7 @@ Suppressing phenotypes and only show basic sample information
 
 Command `vtools show phenotypes` is similar to `vtools show samples` but it does not show filename information and can display only specified phenotypes. 
 
-(:toggleexample Examples: Show all or selected phenotypes:) Show all phenotypes 
+<details><summary> Examples: Show all or selected phenotypes</summary> Show all phenotypes 
 
     % vtools show phenotypes -l 10
     
@@ -272,7 +272,7 @@ Show values of specified phenotypes
     (3170 records omitted)
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -284,7 +284,7 @@ Another command `vtools phenotype --output` can also output selected phenotypes.
 
 Command `vtools show genotypes shows the number of genotypes and names of genotype info fields of each sample. Such information are useful for the calculation of summary statistics of genotypes (e.g. depth of coverage) using commands `vtools phenotype --from_stat` (statistics for each sample) and `vtools update --from_stat@@ (statistics for each variant). 
 
-(:toggleexample Examples: Show details of genotypes:) 
+<details><summary> Examples: Show details of genotypes</summary> 
 
     % vtools show genotypes -l 10	
     
@@ -303,7 +303,7 @@ Command `vtools show genotypes shows the number of genotypes and names of genoty
     (3170 records omitted)
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -311,7 +311,7 @@ Command `vtools show genotypes shows the number of genotypes and names of genoty
 
 Command `vtools show fields`) lists all variant info fields (fields in the master variant table) and annotation fields (fields provided by annotation databases). Although these fields are from different sources, they can be used in the same manner to identify and filter variants (c.f. `vtools select`). If you only need to see a list of available fields, you can use option `-v0` to suppress comments. 
 
-(:toggleexample Examples: Show all variant info and annotation fields:) This project uses annotation database `knownGene` so all fields from that database are available in the project: 
+<details><summary> Examples: Show all variant info and annotation fields</summary> This project uses annotation database `knownGene` so all fields from that database are available in the project: 
 
     % vtools show fields
     
@@ -367,7 +367,7 @@ You can use option `-v0` to suppress comments (which can be long):
     knownGene.exonCount
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -379,7 +379,7 @@ Command `vtools show annotations` displays all available annotation databases wi
 *   Use option `--limit` to limit the number of annotation database displayed, or 
 *   Use option `-v 0` to suppress descriptions of databases. 
 
-(:toggleexample Examples: Show all annotation databases:) Show all annotation databases. With this command, `variant tools` connects to its ftp server and list all available annotation databases. 
+<details><summary> Examples: Show all annotation databases</summary> Show all annotation databases. With this command, `variant tools` connects to its ftp server and list all available annotation databases. 
 
 
 
@@ -506,11 +506,11 @@ If you only need to see a list annotation databases without description, you can
     refGene_exon
     
 
-(:exampleend:) 
+</details>
 
 After using an annotation database with command `vtools use`, you can view the details of the annotation database using command `vtools show annotation ANNODB`. By default, this command displays basic information of the annotation database (type, number of records etc), and name and comment of each annotation field. If an `-v 2` option is specified, it will also list the details of each fields, including range, unique values, and number of missing values. 
 
-(:toggleexample Examples: Show details of an annotation database:) 
+<details><summary> Examples: Show details of an annotation database</summary> 
 
     % vtools show annotation knownGene
     
@@ -599,7 +599,7 @@ After using an annotation database with command `vtools use`, you can view the d
     Range:                  1 - 4461
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -607,7 +607,7 @@ After using an annotation database with command `vtools use`, you can view the d
 
 *variant tools* supports the use of annotation tracks to annotate and select variants. These tracks can be in tabix-indexed vcf files, indexed BAM file, bigBed and bigWig format and provides differnt fields through the second parameter of function `track(filename, field)`. Command `vtools show track` is provided to display the details of each track file. 
 
-(:toggleexample Examples: show details of a local vcf track :) Show details of a local vcf track file: 
+<details><summary> Examples: show details of a local vcf track </summary> Show details of a local vcf track file: 
 
 
 
@@ -646,13 +646,13 @@ After using an annotation database with command `vtools use`, you can view the d
     NA06986.GT              Genotype for sample NA06986
     
 
-(:exampleend:) 
+</details>
 
 
 
 Although cannot be used as track files, `vtools show track` can display information of plain vcf file (not compressed, with extension `.vcf`), which can be used to show useful information of the header of such files. 
 
-(:toggleexample Examples: show details of an online vcf track :) 
+<details><summary> Examples: show details of an online vcf track </summary> 
 
 
 
@@ -691,9 +691,9 @@ Although cannot be used as track files, `vtools show track` can display informat
     info.SVTYPE             Type of structural variant
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: show details of a bigBed track :) 
+<details><summary> Examples: show details of a bigBed track </summary> 
 
 
 
@@ -765,9 +765,9 @@ Although cannot be used as track files, `vtools show track` can display informat
                             (-1 if no point-source called)
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: show details of a bigWig track :) 
+<details><summary> Examples: show details of a bigWig track </summary> 
 
 
 
@@ -819,9 +819,9 @@ Although cannot be used as track files, `vtools show track` can display informat
     value (4 as FLOAT)      value
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: show details of an online BAM track :) For indexed BAM file, this command lists the header of the BAM file, size of chromosomes, and available fields: 
+<details><summary> Examples: show details of an online BAM track </summary> For indexed BAM file, this command lists the header of the BAM file, size of chromosomes, and available fields: 
 
 
 
@@ -1041,7 +1041,7 @@ Although cannot be used as track files, `vtools show track` can display informat
     ones with mapq and qual scores that exceed the specified value, and with specified TAG.
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -1063,7 +1063,7 @@ The tags are also important if you need to filter reads by tag values. For examp
 
 *variant tools* repository has a number of file format description files `.fmt` that defines a formats of files that can be used for commands `vtools import`, `vtools update --from_file`, and `vtools export`. To get a complete list of supported file formats, you can use command `vtools show formats`. Options `-v0` and `--limit` are supported to suppress comment and limit number of formats to display, respectively. 
 
-(:toggleexample Examples: Show a list of supported input/output file formats:) Command `vtools show formats` display a long list of file formats that are supported by variant tools: 
+<details><summary> Examples: Show a list of supported input/output file formats</summary> Command `vtools show formats` display a long list of file formats that are supported by variant tools: 
 
     % vtools show formats | head -50
     
@@ -1141,7 +1141,7 @@ Comments can be suppressed using option `-v0`,
     tped
     
 
-(:exampleend:) 
+</details>
 
 You can use command `vtools show format FMT` to list the details of a format. Note that 
 
@@ -1149,7 +1149,7 @@ You can use command `vtools show format FMT` to list the details of a format. No
 *   A input file format can have type `variant`, `position`, and `range`. Command `vtools import` can only import data from variant-based files (because it imports variants). In comparison, command `vtools update` can update existing variant using all three types of input files. 
 *   Format options can be used to customized how to import/export data using the format. 
 
-(:toggleexample Examples: Show details of a format:) If you would like to know the details of one specific format, you can use command `vtools show format FORMAT`, 
+<details><summary> Examples: Show details of a format</summary> If you would like to know the details of one specific format, you can use command `vtools show format FORMAT`, 
 
 
 
@@ -1195,7 +1195,7 @@ You can use command `vtools show format FMT` to list the details of a format. No
                             (default: None)
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -1203,7 +1203,7 @@ You can use command `vtools show format FMT` to list the details of a format. No
 
 Command `vtools show tests` shows a list of association tests that can be used in command `vtools associate`. Similar to other commands, option `-v0` and `--limit` can be used to suppress description of tests and limit the number of tests to display. 
 
-(:toggleexample Examples: Show a list of supported association tests:) List all available association tests. 
+<details><summary> Examples: Show a list of supported association tests</summary> List all available association tests. 
 
 
 
@@ -1269,11 +1269,11 @@ Display only the first 5 tests without description:
     (19 records omitted)
     
 
-(:exampleend:) 
+</details>
 
 If you are interested in more details of a particular test, you can use command `vtools show test TEST`. This should give you a detailed description of the test, and all the options the test accept. 
 
-(:toggleexample Examples: Show details of an association test:) 
+<details><summary> Examples: Show details of an association test</summary> 
 
     % vtools show test LogitRegBurden
     
@@ -1359,7 +1359,7 @@ If you are interested in more details of a particular test, you can use command 
                             for additive mode, 0/1/NA for dominant or recessive
                             mode. Default set to additive
 
-(:exampleend:) 
+</details>
 
 
 
@@ -1372,7 +1372,7 @@ Note that:
 *   Project-specific snapshots are stored under the project cache directory and are listed by command `vtools show snapshots`. 
 *   Snapshots saved locally (use a filename with `vtools admin --save_snapshot`) can be saved in any directory and will not be listed by command `vtools show snapshots`. Command `vtools show snapshot FILENAME` can be used to show details of such snapshots. 
 
-(:toggleexample Examples: Show a list of local and online snapshots:) 
+<details><summary> Examples: Show a list of local and online snapshots</summary> 
 
     % vtools show snapshots
     
@@ -1459,7 +1459,7 @@ You can show the details of such snapshots using command `vtools show snapshot N
     Description:            a local snapshot
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -1467,7 +1467,7 @@ You can show the details of such snapshots using command `vtools show snapshot N
 
 *variant tools* provides a number of runtime options that can be used to fine-tune the behavior of commands. You can use command `vtools show runtime_options` to get the name and description of these options. If you simply need to see a list of options, you can pass option `-v0` to suppress descriptions. Please see command `vtools admin --set_runtime_option` for details. 
 
-(:toggleexample Examples: Show a list of runtime options:) 
+<details><summary> Examples: Show a list of runtime options</summary> 
 
     % vtools show runtime_options | head -50
     
@@ -1549,4 +1549,4 @@ Furthermore, if you only need to check the exiting value of a runtime option, yo
     ~/.variant_tools
     
 
-(:exampleend:)
+(:exampleend</summary>

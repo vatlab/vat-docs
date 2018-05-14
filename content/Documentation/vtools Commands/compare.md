@@ -105,7 +105,7 @@ The items being compare in this case are variants (namely `chr`, `pos`, `ref`, a
 
 ### Compare variants in variant tables
 
-(:toggleexample Examples: Load a sample project and create a few variant tables:) 
+<details><summary> Examples: Load a sample project and create a few variant tables</summary> 
 
     % vtools init compare
     % vtools admin --load_snapshot vt_simple
@@ -117,7 +117,7 @@ The items being compare in this case are variants (namely `chr`, `pos`, `ref`, a
     % vtools select variant 'refGene_exon.name2 == "FAM41C"' -t G_FAM41C 'In gene FAM41C'
     
 
-(:exampleend:) 
+</details>
 
 In the default 'variant' comparison type, command `vtools compare` compares variants in two or more tables and look for variants that in one, all, or none of the tables. It either counts and prints the number of matching variants or write the variants to a variant table. For example, if the master variant table has 4 variants, and when we compare variant tables `T1` and `T2`, 
 
@@ -146,7 +146,7 @@ The number of variants for each type of comparison would be
 
 for variants `B`, `C` and `D`, `A`, and all four variants for the counts, if we name the four variants as variants `A`, `B`, `C`, and `D`. 
 
-(:toggleexample Examples: Compare two variant tables :) The project has a few variant tables that can be listed by command `vtools show tables` 
+<details><summary> Examples: Compare two variant tables </summary> The project has a few variant tables that can be listed by command `vtools show tables` 
 
     % vtools show tables
     
@@ -204,11 +204,11 @@ You can also get the number of variants that are not exonic, and in both tables 
     0	127	24	151
     
 
-(:exampleend:) 
+</details>
 
 More than two variant tables can be specified. Option `--intersection` and `--union` will select variants that belong to all or any of all tables, respectively. Option `--difference` will select variants that are in the first, but not in any of the rest of the tables (` A - B - C - D ...`). 
 
-(:toggleexample Examples: Comparing more than two tables:) 
+<details><summary> Examples: Comparing more than two tables</summary> 
 
     % vtools compare exonic 'G_*' --difference other 'Exonic variants not in AGRN and FAM41C'
     
@@ -219,7 +219,7 @@ More than two variant tables can be specified. Option `--intersection` and `--un
     Writing to other: 100% [========================================] 76 5.2K/s in 00:00:00
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -271,7 +271,7 @@ and if you do list the tables before the option, you could use `_1`, `_2` etc in
 
 This syntax is recommended if you would like to perform multiple operations for the same set of tables (e.g. `--expression` and `--union` in the above example), or if you would like to compare variants by genotypes, in which case a sample should be specified for each table. 
 
-(:toggleexample Examples: Use set expression to compare multiple tables:) 
+<details><summary> Examples: Use set expression to compare multiple tables</summary> 
 
 If we would like to exclude variants that are not in DBSNP, but keep those in exonic regions, we can run 
 
@@ -316,7 +316,7 @@ Let us conclude this example with an expression that does not make much sense
     1550
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -407,7 +407,7 @@ Although it is a bit confusing to return variants for a comparison of genotypes,
 
 #### Count or output of genotypes shared by two or more samples
 
-(:toggleexample Examples: identify genotypes that are identical across samples:) To make use of the sample project, we need to first assign different names to different samples because all our samples share the same name: 
+<details><summary> Examples: identify genotypes that are identical across samples</summary> To make use of the sample project, we need to first assign different names to different samples because all our samples share the same name: 
 
 
 
@@ -451,7 +451,7 @@ The following command shows number of genotypes that are shared by all three sam
 
 Because each variant corresponds to one genotype in this case, the number of genotypes and variants are the same. As we can see, about half of genotypes of each sample are shared with other samples. 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -459,7 +459,7 @@ Because each variant corresponds to one genotype in this case, the number of gen
 
 There are two cases to consider here. The first one is that the mutation might exist in another sample, but with different genotype. This can be achieved using a straigforward genotype comparison: 
 
-(:toggleexample Examples: Identify genotypes are unique in one sample:) 
+<details><summary> Examples: Identify genotypes are unique in one sample</summary> 
 
 
 
@@ -498,11 +498,11 @@ Let us have a look at the genotypes of the variants in table `S1` in the samples
 
 As you can see, table `S1` contains variants with genotypes in sample `SAMP1` and are missing or with a different genotype in other samples. 
 
-(:exampleend:) 
+</details>
 
 However, if you are interested in further divide the genotypes, namely to identify genotypes that only available in one sample (missing in others), or available in all samples (not missing in others), you will have to limit the search first. 
 
-(:toggleexample Examples: Identify genotypes only exist in one sample (missing in others):) To obtain genotypes are are unique in one sample (and missing in others), you need to first identify genotypes that are not missing in other samples, 
+<details><summary> Examples: Identify genotypes only exist in one sample (missing in others)</summary> To obtain genotypes are are unique in one sample (and missing in others), you need to first identify genotypes that are not missing in other samples, 
 
 
 
@@ -571,9 +571,9 @@ Note that the following commands cannot be used in this case
 
 because genotype difference cannot remove variants with different genotypes in different samples. 
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: Identify mutations that exist in all sample:) 
+<details><summary> Examples: Identify mutations that exist in all sample</summary> 
 
 To get a list of variants that are not-missing in all samples, we need to get the intersection of all variants 
 
@@ -617,7 +617,7 @@ Only 7 variants that are not missing and have unique genotype in `SAMP1` exist:
 
 Here we redirect all progress bar etc from stderr to /dev/null to check only the output sent to standard output. 
 
-(:exampleend:) 
+</details>
 
 
 

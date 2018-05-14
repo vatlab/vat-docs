@@ -80,7 +80,7 @@ The original paper evaluates p-value of the test under large sample normal assum
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -133,6 +133,6 @@ The original paper evaluates p-value of the test under large sample normal assum
     ACADL	3180	5	65	-0.50523	0.642358	0.943209	1000
     
 
-(:exampleend:) 
+</details>
 
 [^#^]

@@ -112,7 +112,7 @@ The *condition* should be a SQL expression using one or more fields in the proje
 
 ### Basic usages of the command
 
-(:toggleexample Examples: Load a sample project:) Let us load a sample project simple from online: 
+<details><summary> Examples: Load a sample project</summary> Let us load a sample project simple from online: 
 
     % vtools init select --parent vt_simple
     
@@ -137,11 +137,11 @@ from two samples,
     SAMP1        V3.vcf
     
 
-(:exampleend:) 
+</details>
 
 Variant info fields provide annotation information for all variants in a project. They are usually imported from source data using command `vtools import`, and are listed as `variant.NAME` in the output of `vtools show fields`. You can use these fields to select variants from the master variant table, or another variant table. 
 
-(:toggleexample Examples: Select variants by variant info fields:) This project has the following fields 
+<details><summary> Examples: Select variants by variant info fields</summary> This project has the following fields 
 
     % vtools show fields
     
@@ -199,7 +199,7 @@ The resulting table has a name with space and special characters `<` and `=`. Su
     INFO: 428 variants selected.
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -208,7 +208,7 @@ The resulting table has a name with space and special characters `<` and `=`. Su
 
 Variant info fields can also be added by command `vtools update`. The `--from_stat` option of this command is most useful because it can calculate genotype statistics (e.g. number of genotypes, number of homozygotes etc) for each variant across all or selected samples. Such information can then be used to select variants that are, for example, singletons in the database. 
 
-(:toggleexample Examples: Select variant by genotype statistics:) We can add a field `num` to present the number of genotypes in three samples 
+<details><summary> Examples: Select variant by genotype statistics</summary> We can add a field `num` to present the number of genotypes in three samples 
 
     % vtools update variant --from_stat 'num=#(GT)'
     
@@ -240,11 +240,11 @@ and can be used to select variants. For example, the following command select va
     INFO: 511 variants selected.
     
 
-(:exampleend:) 
+</details>
 
 You do not have to select from the master variant table, and in case that you only need to saved the selected variants, you can use option `--count` to output the number of selected variants, or use option `--output` to output variants. The latter option is equivalent to saving selected variants to a table and outputting variants in that table using command `vtools output`. Please refer to command `vtools output` for details. 
 
-(:toggleexample Examples: Count or output selected variants:) For example, the following command count the number of variants that appear in all samples from variants in table `pos < 20k or ref=T`. 
+<details><summary> Examples: Count or output selected variants</summary> For example, the following command count the number of variants that appear in all samples from variants in table `pos < 20k or ref=T`. 
 
 
 
@@ -274,7 +274,7 @@ You can also have a look at these variants without saving them to a table
     1  52066  T  C  3
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -284,7 +284,7 @@ You can select variants from a variant table based on fields from external annot
 
 In contrast to variant info fields that annotate all variants, **annotation databases usually do not cover all variants in the project and variants that are not annotated have value `NULL` for these annotation fields**. Because almost all annotation databases has a field `chr`, the most frequently used queries for these databases are probably the membership queies such as **`XXX.chr IS NOT NULL`@**, and **`@XXX.chr is NULL`**. The former identifies all variants that are in the database, and the latter identifies all variants that are not in the database. 
 
-(:toggleexample Examples: Select variants based on database membership:) Let us first link the project to the dbSNP database 
+<details><summary> Examples: Select variants based on database membership</summary> Let us first link the project to the dbSNP database 
 
 
 
@@ -354,11 +354,11 @@ we can find out all the variants that are not in dbSNP but in one of the ref seq
     INFO: 727 variants selected.
     
 
-(:exampleend:) 
+</details>
 
 You of course do not have to limit yourself to the membership conditions because annotation databases provides many fields that can be used to select variants. For example, the dbNSFP database provides SIFT and PolyPhen2 scores for non-synonymous variants in CCDS genes, you can select variants that are probably damaging based on such information. 
 
-(:toggleexample Examples: Select variants by values of annotation fields:) Let us first link the dbNSFP database, 
+<details><summary> Examples: Select variants by values of annotation fields</summary> Let us first link the dbNSFP database, 
 
     % vtools use dbNSFP
     
@@ -429,11 +429,11 @@ Because a table `damage` has been created before, the existing table is renamed 
 
 here a wildcard pattern is used to remove all backup tables created in July. 
 
-(:exampleend:) 
+</details>
 
 One of the common use of annotation databases is to identify variants that belong to certain genes, exonic regions of genes, or pathways. Databases that are useful for these operations are `refGene`, `refGene_exon`, `knownGene`, `knownGene_exon`, and `keggPathway`. 
 
-(:toggleexample Examples: Select variants by gene, exon regions and pathway membership:) Let us first load the keggPathway database. Because this database is a field database that annotates ccdsGene ID, it should be linked to a database that contains CCDS ID: 
+<details><summary> Examples: Select variants by gene, exon regions and pathway membership</summary> Let us first load the keggPathway database. Because this database is a field database that annotates ccdsGene ID, it should be linked to a database that contains CCDS ID: 
 
 
 
@@ -531,7 +531,7 @@ You can also output the pathway that this gene belong as follows:
     1  961997  C  T  AGRN  hsa04512  ECM-receptor interaction
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -547,7 +547,7 @@ If you select variants based on some condition, and then its NOT condition, you 
 
 It is sometimes useful to select variants based on sample genotypes, to answer questions such as what variants are available in the affected individuals. Command `vtools select` accepts a parameter `--samples` and will select variants that belong to selected samples. This parameter accepts one or more conditions by which samples are selected. For example `--samples 1` selects all samples (condition `True`), `--samples 'sample_name = "CEU"'` selects a sample with name `CEU`, and `--samples 'filename like "<span class='CEU'>"'` selects all samples that are imported from files with filename containing `CEU`. </span> 
 
-(:toggleexample Examples: Select variants that belong to some or all samples:) Our project contains three samples with the same name `SAMP1`, which is not unusual for pipelines that produce `.vcf` files with a default name. 
+<details><summary> Examples: Select variants that belong to some or all samples</summary> Our project contains three samples with the same name `SAMP1`, which is not unusual for pipelines that produce `.vcf` files with a default name. 
 
 
 
@@ -572,7 +572,7 @@ We can rename samples using command `vtools admin --rename_samples` but we can a
     INFO: 989 variants selected.
     
 
-(:exampleend:) 
+</details>
 
 
 

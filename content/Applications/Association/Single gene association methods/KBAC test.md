@@ -87,7 +87,7 @@ Note a couple of differences between this implementation and the original versio
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -143,7 +143,7 @@ Note a couple of differences between this implementation and the original versio
     ACADL   3180    5       65      0.00239811      0.501499        0.00545028      1000
     
 
-(:exampleend:) 
+</details>
 
 [^#^]
 

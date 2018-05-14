@@ -59,7 +59,7 @@ It is recommended to run `GroupStat` and `GroupWrite` simultaneously with other 
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -67,7 +67,7 @@ It is recommended to run `GroupStat` and `GroupWrite` simultaneously with other 
      name2 --to_db gstat -j8 > gstat.txt
     
 
-(:exampleend:)
+(:exampleend</summary>
 
  [1]: http://www.bios.unc.edu/~dlin/software/SCORE-Seq/
  [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.AssociationTesting?action=edit

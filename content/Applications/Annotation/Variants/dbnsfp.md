@@ -8,9 +8,9 @@ weight = 2
 
 # dbNSFP
 
-(:skin vtools-annotation:) 
+(:skin vtools-annotation</summary> 
 
-(:toc:) 
+(:toc</summary> 
 
 dbNSFP is an annotation database for non-synonymous SNPs assembled by Xiaoming Liu from the University of Texas School of Public Health (see citation below). With variant tools you can use the **dbNSFP** database or **dbNSFP-light** (a version with fewer features) - see which features are offered for each database version below. 
 

@@ -50,7 +50,7 @@ The mechanism is implemented as `RTest` method which is available from `vtools a
 
 A trivial example of the R script looks like the following 
 
-(:codestart r:) 
+(:codestart r</summary> 
 
 1.  BEGINCONF 
 2.  [sample.size] 
@@ -69,7 +69,7 @@ regression = function (dat, phenotype.name, family = "gaussian") {
       return (list(sample.size=length(y), result=summary(m)$coef[,c(1,4)]))
     
 
-} (:codeend:) 
+} (:codeend</summary> 
 
 To use this program for data analysis, 
 
@@ -93,7 +93,7 @@ You should have one main function in the R program named the same as the R scrip
 
 The main function should be defined in the following format 
 
-(:codestart r:) ScriptName <- function(dataname, args, **kwargs) { ... } (:codeend:) 
+(:codestart r</summary> ScriptName <- function(dataname, args, **kwargs) { ... } (:codeend</summary> 
 
 where the first argument has to be the data object variable name (e.g. `dat` in the `regression.R` example, or any other valid names you specify), followed by a few required positional arguments (e.g. `phenotype.name` in `regression.R` example which has to be passed from commandline every time the program is executed), and other keyword arguments that have default values (e.g. `family` in the `regression.R` example. If not specified from the command line it will use default value "gaussian"). The required and optional arguments can be assigned from the commandline (e.g., the `--phenotype.name 'stroke'` argument of `vtools associate`). 
 

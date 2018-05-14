@@ -159,7 +159,7 @@ Results from variable thresholds methods have one additional column, i.e., an MA
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -249,7 +249,7 @@ Results from variable thresholds methods have one additional column, i.e., an MA
     ACAP3	3180	3	17	2.70541	0.281718	2.01218	1000	0.000314465
     
 
-(:exampleend:)
+(:exampleend</summary>
 
  [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.Aggregation?action=edit
  [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.VariableThresholds?action=edit

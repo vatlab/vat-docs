@@ -1,59 +1,36 @@
-baseURL = "https://vatlab.github.io/vat-docs/"
-languageCode = "en-us"
-DefaultContentLanguage = "en"
 title = "Variant Tools"
-theme = "docdock"
-pygmentsCodeFences = true
-pygmentsStyle = "monokailight"
-publishDir = 'docs'
-defaultContentLanguageInSubdir= false
-enableMissingTranslationPlaceholders = false
-
-
-
-[params.assets]
-customCSS = ["css/custom.css"]
-
-[params.info]
-enableSocial = true
-[taxonomies]
-tag ="tags"
+theme = "hugo-theme-learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
 
 [params]
-editURL = "https://github.com/vat/vat-docs/content/"
-showVisitedLinks = true # default is false
-themeStyle = "flex" # "original" or "flex" # default "flex"
-themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
-ordersectionsby = "weight" # ordersectionsby = "title"
-disableHomeIcon = false # default is false
-disableSearch = false # default is false
-disableNavChevron = false # set true to hide next/prev chevron, default is false
-highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
-menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
-enableGitInfo = true
-comments = "http://https://github.com/vatlab/blog/issues"
+  editURL = "https://vatlab.github.io/vat-docs/content/"
+  description = "Documentation for Variant Tools"
+  author = "Bo Peng"
+  showVisitedLinks = false
+  disableInlineCopyToClipBoard = true
+  themeVariant = "mine"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
+[Languages]
+[Languages.en]
+title = "Variant Tools"
+weight = 1
+languageName = "English"
 
-[[menu.shortcuts]]
-pre = "<h3>More</h3>"
-name = "<i class='fa fa-github'></i> <label>Github repo</label>"
+[[Languages.en.menu.shortcuts]] 
+name = "<i class='fa fa-fw fa-github'></i> Github repo"
 identifier = "ds"
-url = "https://github.com/vatlab/vat-docs"
+url = "https://vatlab.github.io/vat-docs/"
 weight = 10
 
-
-[[menu.shortcuts]]
-name = "<i class='fa fa-twitter'></i> <label> ScriptOfScripts </label>"
-identifier = "hugodoc"
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-twitter'></i> ScriptOfScripts"
 url = "https://twitter.com/ScriptOfScripts"
-weight = 20
+weight = 12
 
-[[menu.shortcuts]]
-name = "<i class='fa fa-envelope'></i> <label>bpeng@mdanderson.org </label>"
-weight = 30
-
-
-
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-envelope'></i> bpeng@mdanderson.org"
+weight = 13

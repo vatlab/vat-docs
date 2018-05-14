@@ -87,7 +87,7 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -142,6 +142,6 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
     ABCD3   3180    3       42      1.10394 0.797203        2.16152 1000
     
 
-(:exampleend:) 
+</details>
 
 [^#^]

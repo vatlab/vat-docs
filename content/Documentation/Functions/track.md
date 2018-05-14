@@ -64,7 +64,7 @@ Please refer to [here][3] for more details of command vtools show, especially a 
 
 VCF files that can be used as tracks must be bgzipped and tabix-indexed. Regular vcf files can be converted to this format using commands `bgzip my.vcf` and `tabix -p vcf my.vcf.gz`. Parameter `col` for this format can be `1` (chrom), `2` (start, 1-based), `3` (name), `4` (ref), `5` (alt alleles), `6` (qual), `7` (filter), `8` (info), `9` (format string), `10` and more (for genotype columns for sample `col-9`); names of the columns `"chrom"`, `"pos"`, `"name"`, `"ref"`, `"alt"`, `"qual"`, `"filter"`, `"info"`, `"format"`; name of information fields available in the vcf file in the format of `info.FIELD`; name of samples for genotype columns, and name of genotype info fields in the format of `SAMPLE.FIELD`. If no `col` is specified, a default value `8` is passed to display the full `INFO` column of the vcf file. 
 
-(:toggleexample Examples: Annotate variants using vcf tracks:) Let us get some test data, and index the vcf file using the `tabix` program 
+<details><summary> Examples: Annotate variants using vcf tracks</summary> Let us get some test data, and index the vcf file using the `tabix` program 
 
     % vtools init track
     % vtools admin --load_snapshot vt_testData
@@ -213,11 +213,11 @@ we can list fields of the genotype columns,
     1	44539	0|0
     
 
-(:exampleend:) 
+</details>
 
 A very useful feature of the vcf track is that **you can use vcf files from online** by specifying a URL instead of a local filename. 
 
-(:toggleexample Examples: Annotate variants using online vcf files:) We would like to annotate our variants using VCF files from the 1000 genomes project. However, our project uses build `hg18` of the reference genome and the 1000 genomes project uses `hg19`. To make use of data from the 1000 genomes project, we need to first lift over our project: 
+<details><summary> Examples: Annotate variants using online vcf files</summary> We would like to annotate our variants using VCF files from the 1000 genomes project. However, our project uses build `hg18` of the reference genome and the 1000 genomes project uses `hg19`. To make use of data from the 1000 genomes project, we need to first lift over our project: 
 
 
 
@@ -245,7 +245,7 @@ To pass the correct coordinates, option `--build hg19` is needed:
     1	54676	LDAF=0.1528;RSQ=0.6989;AA=T;AN=2184;AC=267;VT=SNP;AVGPOST=0.8998;SNPSOURCE=LOWCOV;THETA=0.0110;ERATE=0.0037;AF=0.12;ASN_AF=0.02;AMR_AF=0.20;AFR_AF=0.09;EUR_AF=0.18
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -257,7 +257,7 @@ Available variant and genotype info fields are determined from the header of inp
 
 The bigWig tracks contains numeric values for locations (ranges). The default `col` value for this format is `4` (the value column), but you can specify `1` (chrom), `2` (start, 0-based), `3` (end, 1-based), `4` (value), and `"chrom"`, `"chromStart"`, `"chromEnd"`, and `"value"`. 
 
-(:toggleexample Examples: Use bigWig tracks to annotate and select variants:) Let us create a project in hg19, import some data, and download a bigWig track from the UCSC ENCODE website: 
+<details><summary> Examples: Use bigWig tracks to annotate and select variants</summary> Let us create a project in hg19, import some data, and download a bigWig track from the UCSC ENCODE website: 
 
 
 
@@ -351,7 +351,7 @@ In addition to output, the track can also be used to select variants,
     1	81963	-	AA	0.0120000001043
     
 
-(:exampleend:) 
+</details>
 
  
 
@@ -359,7 +359,7 @@ In addition to output, the track can also be used to select variants,
 
 BigBed is a compressed indexed BED format that contains three mandatory columns and nine optional columns. The default `col` value for this format is `` (return 1 for matched records), but you can be specify items such as `1` (chrom) and `chromStart` (start, 0-based) according to output of command `vtools show track BIGBEDFILE`. 
 
-(:toggleexample Examples: Use bigBed tracks to annotate variants:) Let us create a project in hg19, import some data, and download a bigWig track from the UCSC ENCODE website: 
+<details><summary> Examples: Use bigBed tracks to annotate variants</summary> Let us create a project in hg19, import some data, and download a bigWig track from the UCSC ENCODE website: 
 
     % wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeDukeAffyExon/wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed
     % vtools init track
@@ -482,7 +482,7 @@ and
     1	768625	-    	A    	659
     
 
-(:exampleend:) 
+</details>
 
  
 
@@ -519,7 +519,7 @@ Parameters can be used to limit the reads to count or display, and change the wa
 
 You can count the number of reads that match (or unmatch) the reference genome using parameter `coverage`type=0@@. 
 
-(:toggleexample Examples: Use BAM files to check the details of variant calls. :) Now suppose that we have a project with a list of variants (due to the size of BAM files, original data is not provided), we select the variants based on the sample from which they are called: 
+<details><summary> Examples: Use BAM files to check the details of variant calls. </summary> Now suppose that we have a project with a list of variants (due to the size of BAM files, original data is not provided), we select the variants based on the sample from which they are called: 
 
 
 
@@ -695,9 +695,9 @@ or its values to filter reads:
     1	9990112	A	G	ATCATTA	18
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Count and display calls and reads for reads of different types:) 
+<details><summary> Count and display calls and reads for reads of different types</summary> 
 
 The `track` function can also be used to display calls (nucleotide at the variant site) and reads (nucleotide sequences around the variant site). To demonstrate the features more clearly, we will use a project with more types of variants. 
 
@@ -862,7 +862,7 @@ For example, we can output the number of reads that match (type 0), mismatch (ty
 
 The last two functions are interesting as it shows the number of reads on forward and reverse strands that shows the deletion. This information can be usful because the variant might not be real if it exists mostly on one of the strands. 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -870,7 +870,7 @@ An option `color=1` can be used with the `read` field to display insertions and 
 
 Online BAM tracks can also be used so you do not have to download large BAM files in order to use them. 
 
-(:toggleexample Examples: obtain depth of coverage of variants using online BAM files:) 
+<details><summary> Examples: obtain depth of coverage of variants using online BAM files</summary> 
 
     % vtools output variant chr pos "track('ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/alignment/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam')" -l5
     
@@ -883,7 +883,7 @@ Online BAM tracks can also be used so you do not have to download large BAM file
     1	44539	12
     
 
-(:exampleend:)
+(:exampleend</summary>
 
  [1]: http://genome.ucsc.edu/goldenPath/help/bigWig.html
  [2]: http://genome.ucsc.edu/goldenPath/help/bigBed.html

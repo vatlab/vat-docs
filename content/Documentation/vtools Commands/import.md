@@ -1,7 +1,7 @@
 +++
 title = "Import"
-description = ""
 weight = 2
+pre = ""
 +++
 
 ### Import variants, genotypes and related information fields 
@@ -253,7 +253,7 @@ If you are interested in a particular format, you can
                           (default: )
     
 
-From the description, we can that format `basic` import variants from a text file, with fields `chr`, `pos`, `ref`, and `alt` import from columns 1, 2, 3 and 4. The input columns could be adjust by format parameters `chr_col`, `pos_col`, `ref_col`, and `alt_col`. This format assumes a 1-based position. If the input data uses 0-based position, parameter `pos_adj` can be used to adjust input. (:exampleend:) 
+From the description, we can that format `basic` import variants from a text file, with fields `chr`, `pos`, `ref`, and `alt` import from columns 1, 2, 3 and 4. The input columns could be adjust by format parameters `chr_col`, `pos_col`, `ref_col`, and `alt_col`. This format assumes a 1-based position. If the input data uses 0-based position, parameter `pos_adj` can be used to adjust input. </details>
 
 </details>
 

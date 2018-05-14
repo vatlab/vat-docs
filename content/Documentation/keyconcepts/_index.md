@@ -103,7 +103,7 @@ As you can see, all variants in table `refT` have reference allele `T`:
 
 **variant info** refers to information that describes a variant, such as the INFO fields of a [vcf file][3]. It usually consists of annotation information such as membership in dbSNP, or sample statistics such as sample frequency of each variant. The names of these info are called **variant info fields** and can be displayed using command `vtools show fields`. 
 
-(:toggleexample:) The project has 4 variant info fields `AA`, `AC`, `AN`, and `DP`, as shown by the following command 
+<details><summary>Examples:</summary> The project has 4 variant info fields `AA`, `AC`, `AN`, and `DP`, as shown by the following command 
 
     % vtools show fields
     
@@ -159,7 +159,7 @@ More variant info fields could be added to the project using command `vtools upd
     1	6447275	T	C	rs3170675	T	9	176	6871
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -167,7 +167,7 @@ More variant info fields could be added to the project using command `vtools upd
 
 **Annotation databases** are databases that provide annotation information for variants. They are not part of a project but they provide additional **annotation fields** to a project when they are [linked][4][?][4] to a project. Conceptually speaking, attaching annotation databases to a project adds info fields to variants of the project, although annotation databases usually annotate only part of the variants, leaving a lot of `NULL` values for these fields. 
 
-(:toggleexample:) Let us download and use an annotation database `dbSNP` version 130 for reference genome hg18 
+<details><summary>Examples:</summary> Let us download and use an annotation database `dbSNP` version 130 for reference genome hg18 
 
     % vtools use dbSNP-hg18_130
     
@@ -280,7 +280,7 @@ We can check the details of variants in dbSNP using
     1	3541652	G	A	rs2296034	-	coding-synon
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -288,7 +288,7 @@ We can check the details of variants in dbSNP using
 
 A *track* file is a file that contains annotation information for variants and regions that can be displayed on the UCSC genome browser. It provides another source of annotation to *variant tools* through function `track(filename, field)`. *variant tools* currently support track files in tabix-indexed [vcf][3], indexed BAM, [bigBed][5], and [bigWig][6] formats. 
 
-(:toggleexample:) If we download a bigWig annotation file from the [UCSC ENCODE website][7], you can use it to annotate and select variants, 
+<details><summary>Examples:</summary> If we download a bigWig annotation file from the [UCSC ENCODE website][7], you can use it to annotate and select variants, 
 
 
 
@@ -307,7 +307,7 @@ A *track* file is a file that contains annotation information for variants and r
     1	3545211	G	A	.
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -323,7 +323,7 @@ Each genotype can have any number of **genotype info fields**, which are informa
 
 Not all samples have genotypes because variant tools can treat a list of variants as a sample. 
 
-(:toggleexample:) This project has two samples with names `CEU` and `JPT`: 
+<details><summary>Examples:</summary> This project has two samples with names `CEU` and `JPT`: 
 
     % vtools show samples
     
@@ -343,7 +343,7 @@ However, for this particular project, the samples are just lists of variants so 
     JPT	JPT.exon.2010_03.sites.vcf.gz	2900
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -351,7 +351,7 @@ However, for this particular project, the samples are just lists of variants so 
 
 **phenotypes** in variant tools are generally any properties of samples, such as blood pressure, weight, height, ethnicity, affection status, ID, and ID of parents. It could be [imported][8][?][8] from a text file, calculated from samples (e.g. average quality score of all variants of a sample could be a phenotype of the sample), or from other phenotypes. Phenotypes are frequently used to identify groups of samples (e.g. by affection status using parameter `--samples 'aff=1'`), and in genotype-phenotype association analysis. 
 
-(:toggleexample:) This project does not have any genotype and existing phenotype, we can add a phenotype `num` as the number of variants in each sample: 
+<details><summary>Examples:</summary> This project does not have any genotype and existing phenotype, we can add a phenotype `num` as the number of variants in each sample: 
 
     % vtools phenotype --from_stat 'num=#(GT)'
     
@@ -370,7 +370,7 @@ The samples are now have a phenotype called `num`,
     JPT	JPT.exon...3.sites.vcf.gz	2900
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -388,7 +388,7 @@ A sequencing analysis project might sometimes need to handle data using differen
 
 *   Whereas projects with a single reference genome will have unique coordinates for variants (chr, pos), projects with two reference genomes might have missing or duplicate coordinates for each reference genome. This is because not all genomic locations could be mapped from one reference genome to another and two locations might be mapped to the same location on another reference genome. 
 
-(:toggleexample:) Our project uses reference genome hg18 so we used dbSNP version 130 because the latter versions of dbSNP make use of reference genome hg19. If you would like to use a newer version of dbSNP for this project, you can first add an alternative reference genome to the project by lifting over existing variants: 
+<details><summary>Examples:</summary> Our project uses reference genome hg18 so we used dbSNP version 130 because the latter versions of dbSNP make use of reference genome hg19. If you would like to use a newer version of dbSNP for this project, you can first add an alternative reference genome to the project by lifting over existing variants: 
 
 
 
@@ -459,7 +459,7 @@ A lot more variants are selected, showing the importance of using the latest ver
     inDBSNP135                4,747    Nov29  variants in dbSNP version 135
     
 
-(:exampleend:) 
+</details>
 
 
 

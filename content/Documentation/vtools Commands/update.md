@@ -148,7 +148,7 @@ Option `--from_file` allows command `vtools update` to update variant and/or gen
 
 The variant or genotype fields that will be added or updated depends on the file format (cf. `vtools show formats`). File formats accept parameters to specify what fields to import. For example, parameters `--var_info` and `--geno_info` can be used with [format vcf][1] to specify which variant and genotype info fields to be updated from a `vcf` file. 
 
-(:toggleexample Examples: create a project:) 
+<details><summary> Examples: create a project</summary> 
 
 Let us create a directory update and import an empty project with a few test vcf files `V1.vcf`, `V2.vcf` and `V3.vcf`, 
 
@@ -179,9 +179,9 @@ The project does not have any variant so we import some from these VCF files:
     INFO: 1,611 new variants (1,611 SNVs) from 2,995 lines (3 samples) are imported.
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: import additional fields from source files:) As we can see from the output of `vtools show fields`, this project does not have any variant info field, 
+<details><summary> Examples: import additional fields from source files</summary> As we can see from the output of `vtools show fields`, this project does not have any variant info field, 
 
 
 
@@ -240,9 +240,9 @@ and we can output them with variants
     1	9992	C	T	13	1
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: add genotype info field:) We have just added two variant info fields `DP` and `NS` from input vcf files, but what we did probably does not make any sense. This is because `DP` and `NS` describes variants in each sample so the same variants from different samples will have different depth, and sample count should probaby be added together to reflect the total sample count. That is to say, `DP` here should better be considered as genotype field instead of variant field. 
+<details><summary> Examples: add genotype info field</summary> We have just added two variant info fields `DP` and `NS` from input vcf files, but what we did probably does not make any sense. This is because `DP` and `NS` describes variants in each sample so the same variants from different samples will have different depth, and sample count should probaby be added together to reflect the total sample count. That is to say, `DP` here should better be considered as genotype field instead of variant field. 
 
 Variant tools is flexible enough to handle such a situation (check `vtools show format vcf` for details). By specifying field `DP` in parameter `--geno_info`, this field will be added as genotype info field and be processed for each sample: 
 
@@ -280,9 +280,9 @@ The project now has a genotype info field `DP`, with coverage depth for each gen
 
 Variant tools depends on filename to determine which sample to update from each input file so **the original input files must be used to update genotype info fields**. 
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: adding annotation info from ANNOVAR output:) 
+<details><summary> Examples: adding annotation info from ANNOVAR output</summary> 
 
 Suppose that we would like to use ANNOVAR to annotate our variants. The basic step is to export the variants in ANNOVAR input format and call ANNOVAR. 
 
@@ -409,7 +409,7 @@ Fields specified by option `--var_info` are added. Now we have one more field `f
     variant.function
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -417,7 +417,7 @@ Fields specified by option `--var_info` are added. Now we have one more field `f
 
 During the analysis of variants, it is common to have annotations in different formats from various sources (e.g. from annotation servers such as [regulome DB][2]). Although variant tools has a growing number of [formats][3][?][3], it is sometimes needed to create your own format files to import annotations. 
 
-(:toggleexample Examples: Update annotation for variants presented by rsnames:) Let us first create some data with rsname. Because this sample project uses hg18, we cannot use the default `dbSNP` database and has to use 
+<details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname. Because this sample project uses hg18, we cannot use the default `dbSNP` database and has to use 
 
 
 
@@ -537,9 +537,9 @@ The project now has another field `variant.func` (to differentiate from `dbSNP.f
     1	747503	G	A	rs3115853	intron
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: Update annotation from position-based data:) 
+<details><summary> Examples: Update annotation from position-based data</summary> 
 
 Now, suppose we have another file with only `chr` and `pos` information: 
 
@@ -622,7 +622,7 @@ With `position.fmt` saved in the project directory, the following command can be
     1	16862	A	G	genomic	single
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -630,7 +630,7 @@ With `position.fmt` saved in the project directory, the following command can be
 
 Option `--from_stat` adds fields to variant tables with summary statistics from sample genotypes. This parameter accepts expressions in the format of `VAR_INFO=FUNC(GENO_INFO)` where `VAR_INFO` is the variant information field to be added or updated, `FUNC` is a function or expression, and `GENO_INFO` is genotype or genotype info. If you are only interested in genotype statistics, some specially defined `FUNC(GENO_INFO)` can be used. A list of acceptable aggregating functions is available [here][5]. 
 
-(:toggleexample Examples: statistics of genotype info fields:) Each genotype in our samples has a field `DP`, which is the coverage depth. To assess the quality of a variant, it is useful to calculate average depth across all samples as a variant info field. The aggregating function to use is `avg`: 
+<details><summary> Examples: statistics of genotype info fields</summary> Each genotype in our samples has a field `DP`, which is the coverage depth. To assess the quality of a variant, it is useful to calculate average depth across all samples as a variant info field. The aggregating function to use is `avg`: 
 
 
 
@@ -657,7 +657,7 @@ Depth of genotypes across three samples are averaged and save to a new variant i
     1	9992	C	T	13	12.0
     
 
-(:exampleend:) 
+</details>
 
 A locus has a wildtype allele and can have one or more alternative alleles. Assuming a wildtype allele 0, an alternative allele 1, and an additional alternative allele 2 if exists, a sample can have genotype 0/0, 0/1, 0/2, 1/1, 2/2, and 1/2 at a locus on an autosome. `vtools update --from_stat` counts such genotype for all (or selected) variants using the following special functions: 
 
@@ -685,7 +685,7 @@ If `treat_missing_as_wildtype` is set to true, all missing values are counted as
 
 Note that genotype 1/1 an 2/2 are counted for different variants (0,1) and (0,2), and `#(other)` is counted for both variants. Therefore, `#(alt)` equals `#(hom)` X 2 + `#(het)` + `#(other)`*2. 
 
-(:toggleexample Examples: sample statistics:) Using these special functions, we can calculate many sample statistics as various variant info fields: 
+<details><summary> Examples: sample statistics</summary> Using these special functions, we can calculate many sample statistics as various variant info fields: 
 
 
 
@@ -773,7 +773,7 @@ and the results (in field `maf1`) are number of aleternative alleles devided by 
     1	9992	C	T	2	4	0.5	0.333333333333
     
 
-(:exampleend:) 
+</details>
 
 All statistics are by default calculated for all samples in the project. But we can limit calculations on subset of samples by `--samples` and/or `--genotypes`. 
 
@@ -792,7 +792,7 @@ All statistics are by default calculated for all samples in the project. But we 
     *   `GT=0` select only the wildtype genotypes 
     *   `GQ>20` select variants having genotype quality greater than 20 
 
-(:toggleexample Examples: statistics for subsets of samples and genotypes:) This project has three samples: 
+<details><summary> Examples: statistics for subsets of samples and genotypes</summary> This project has three samples: 
 
 
 
@@ -845,9 +845,9 @@ We can also limit the statistics to genotypes that satisfy certain conditions (e
     1	9992	C	T	1	0
     
 
-(:exampleend:) 
+</details>
 
-(:toggleexample Examples: update variant info of subsets of variants:) If you are interested only in variants in a variant table, you could also only update statistics for variants in specified variant tables. For example, we can select all variants that belong to all three samples and creates a table `in_all`: 
+<details><summary> Examples: update variant info of subsets of variants</summary> If you are interested only in variants in a variant table, you could also only update statistics for variants in specified variant tables. For example, we can select all variants that belong to all three samples and creates a table `in_all`: 
 
     % vtools select variant 'total=3' -t in_all
     
@@ -880,7 +880,7 @@ Then we can add a field `case_hom` to count the number of homozygotes for only t
     1	31705	A	G	2
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -888,7 +888,7 @@ Then we can add a field `case_hom` to count the number of homozygotes for only t
 
 Option `--set` evaluates expressions from existing variant info fields and assign results to a new or existing variant info field. For example, once you have calculated allele count, you could calculate allele frequency based on sample size using expression `--set 'maf=m/(n*2.0)'` where *m* is field name calculated as "m=#(alt)" and *n* is sample size, which might not be `"n=#(GT)"` if there are missing data. Note that the denominator should be `n*2.0`, not `n*2`, because SQL requires the denominator be a FLOAT type, not INTEGER. 
 
-(:toggleexample Examples: set fields from variant info fields:) We can try to calculate the allele frequency using number of aleternative alleles and number of genotypes as follows: 
+<details><summary> Examples: set fields from variant info fields</summary> We can try to calculate the allele frequency using number of aleternative alleles and number of genotypes as follows: 
 
 
 
@@ -935,11 +935,11 @@ Two allele frequencies are different
     1	9992	C	T	2	2	1	0.5	0.333333333333
     
 
-(:exampleend:) 
+</details>
 
 In addition to variant info fields, annotation fields could also be used in these expressions and set variant info fields. There is usually no such need to copy annotation fields to variant info fields though. Moreoever, because one variant might have more than one annotation value for an annotation field (e.g. a variant might belong to two isoforms of a gene), copying annotation fields to variant info fields might loss information. 
 
-(:toggleexample Examples: set variant info field from annotation fields:) 
+<details><summary> Examples: set variant info field from annotation fields</summary> 
 
 
 
@@ -974,7 +974,7 @@ We can select variants that belong to a gene and output it
     1	890593	G	A	NM_198317
     
 
-(:exampleend:)
+(:exampleend</summary>
 
  [1]: http://www.1000genomes.org/node/101
  [2]: http://regulome.stanford.edu/

@@ -33,7 +33,7 @@ returns the 5-base sequence at and after the variant sites, for all variants in 
 
 ## Details
 
-(:toggleexample Examples: output reference sequence around variants:) Let us get a test project 
+<details><summary> Examples: output reference sequence around variants</summary> Let us get a test project 
 
     % vtools admin --load_snapshot vt_simple
     
@@ -109,4 +109,4 @@ The resulting new column `nRef` records the number of reference alleles in the 1
     1	16862	A	CCAGGAAGGTG	3
     
 
-(:exampleend:)
+(:exampleend</summary>

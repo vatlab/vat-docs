@@ -52,7 +52,7 @@ returns the
 2.  name of samples with phenotype `aff=1` (cases) that contains the variant 
 3.  name of samples that contains heterzygote genotype of the variant. You can use condition `GT!=0` to output samples with only non-wildtype genotypes. 
 
-(:toggleexample Examples: Use `samples` function to get samples that contain the variant:) Continue to use the project from the previous example, let us see which samples that contain the variants 
+<details><summary> Examples: Use `samples` function to get samples that contain the variant</summary> Continue to use the project from the previous example, let us see which samples that contain the variants 
 
 
 
@@ -114,7 +114,7 @@ You can limit the samples to those with a particular type of genotype
     1	16862	A	G	2	.	2	SAMP1,SAMP3
     
 
-(:exampleend:) 
+</details>
 
 
 

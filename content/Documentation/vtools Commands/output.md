@@ -82,7 +82,7 @@ Command `vtools output` outputs properties of variant in a specified variant tab
 
 The basic usage of `vtools output` is to output variant info fields of selected variants. You can use option `--limit` to limit the number of records, `--delimiter` to specify delimiter between output fields (default to tab). 
 
-(:toggleexample Examples: Load data and produce basic output:) Let us load a small project from online 
+<details><summary> Examples: Load data and produce basic output</summary> Let us load a small project from online 
 
     % vtools init output
     % vtools admin --load_snapshot vt_quickStartGuide
@@ -173,7 +173,7 @@ or option `-d'\t'` to produce tab-delimited output:
     1	3545211	G	A	G	1	178	11142
     
 
-(:exampleend:) 
+</details>
 
 You can also specify a header to the output. There are three ways to specify headers: 
 
@@ -183,7 +183,7 @@ You can also specify a header to the output. There are three ways to specify hea
 *   Use option `--header V1 V2 ...` to output specified headers 
 *   Use option `--header -` to read header from standard input. 
 
-(:toggleexample Examples: Specify a header to the output:) The easiest way to add a header is to use parameter `--header` and let *variant tools* generate a default header from field names: 
+<details><summary> Examples: Specify a header to the output</summary> The easiest way to add a header is to use parameter `--header` and let *variant tools* generate a default header from field names: 
 
     % vtools output variant chr pos ref alt aa ac --header -l 10
     
@@ -241,11 +241,11 @@ If you have a longer header, or a header that is saved in a file, you can send t
     1  3545211  G  A  G  1
     
 
-(:exampleend:) 
+</details>
 
 You can sort the output by one or more fields using option `--order_by`. *variant tools* by default oder fields in ascending order. You can order by descending order by adding `DESC` to field name. 
 
-(:toggleexample Examples: Order output by one or more field names:) You can oder the output using option `--order_by`, for example 
+<details><summary> Examples: Order output by one or more field names</summary> You can oder the output using option `--order_by`, for example 
 
     % vtools output variant chr pos ref alt aa ac --order_by ac aa -l 10
     
@@ -279,11 +279,11 @@ You can order in descending oder by specifying `DESC` after field name, for exam
     12  62759070   A  T  T  210
     
 
-(:exampleend:) 
+</details>
 
 If your project has a primary and a secondary reference genomes, you can output variants in both coordinates. 
 
-(:toggleexample Examples: Output variants in alternative coordinates:) Our sample project uses the hg18 reference genome. We can add an alternative reference genome by mapping all variants from hg18 to hg19 coordinates: 
+<details><summary> Examples: Output variants in alternative coordinates</summary> Our sample project uses the hg18 reference genome. We can add an alternative reference genome by mapping all variants from hg18 to hg19 coordinates: 
 
     % vtools liftover hg19
     
@@ -332,7 +332,7 @@ or the alternative reference genome using option `--build`
     1    3555351  G    A    G   1
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -344,7 +344,7 @@ You can output fields from one or more annotation databases in the same way as v
 *   Use command `vtools show annotation ANNODB` or `vtools show fields` to check name and meaning of available fields 
 *   Output annotation fields along with variant info fields. Name of annotation database can be ignored if there is no ambiguity. 
 
-(:toggleexample Examples: Output fields of annotation fields:) Let us use annotation databases `refGene` and `dbSNP`, 
+<details><summary> Examples: Output fields of annotation fields</summary> Let us use annotation databases `refGene` and `dbSNP`, 
 
     % vtools use refGene
     
@@ -441,11 +441,11 @@ You can output annotation fields as follows:
     1  40510176  T  C  rs2076697    NM_005857     ZMPSTE24
     
 
-(:exampleend:) 
+</details>
 
 This looks simple but the problem is more complicated than what is shown here, because **a variant can match multiple records in annotation databases**. For example, mutation `T->C` at position `1105366` on chr1 belongs to reference sequences `NM_153254` and `NM_001130045` of the reference sequence database. Because **`vtools output` by default only displays a random record of multiple records**, its output can miss important information. To address this problem, an option `--all` is provided to output all annotation records. This option has its own problem though. For example, if you do not output the differentiating field that lead to multiple records, you can see a bunch of duplicated records. 
 
-(:toggleexample Examples: Use option --all to list all annotation records:) Using option `--all`, command `vtools output` can display multiple records for a variant: 
+<details><summary> Examples: Use option --all to list all annotation records</summary> Using option `--all`, command `vtools output` can display multiple records for a variant: 
 
     % vtools output 'aa=T' chr pos ref alt dbSNP.name refGene.name refGene.name2 --all -l 10
     
@@ -491,7 +491,7 @@ This is why the output of command `vtools output --all` is usually piped to comm
 
 although `uniq` cannot suppress all duplicated records in all cases because it only removes adjacent duplicated records. 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -504,7 +504,7 @@ In addition to values of variant info and annotation fields, command `vtools out
 
 In addition to basic arithmetic operations, *variant tools* accept additional mathematical and string extension functions for SQL queries using the loadable extensions mechanism from [HERE][1], including mathematical functions `acos, asin, atan, atn2, atan2, acosh, asinh, atanh, difference, degrees, radians, cos, sin, tan, cot, cosh, sinh, tanh, coth, exp, log, log10, power, sign, sqrt, square, ceil, floor, pi`, and string operations `replicate, charindex, leftstr, rightstr, ltrim, rtrim, trim, replace, reverse, proper, padl, padr, padc, strfilter`. 
 
-(:toggleexample Examples: Output expressionf of fields:) This example demonstrates the use of SQL expressions in command `vtools output`. Note that the sqlite string concatenation operator is `||`. 
+<details><summary> Examples: Output expressionf of fields</summary> This example demonstrates the use of SQL expressions in command `vtools output`. Note that the sqlite string concatenation operator is `||`. 
 
     % vtools output "aa=T" chr 'pos-1' 'refGene.name2 || "." || refGene.name' 'log(DP)' --header -l 10
     
@@ -524,7 +524,7 @@ In addition to basic arithmetic operations, *variant tools* accept additional ma
 
 As you can see, the default header that *variant tools* generates replaces all non-alphanumeric characters by underscores, and you should most likely specify your own headers in these cases. 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -537,7 +537,7 @@ Command `vtools output` accepts the following aggregating functions:
 *   All sqlite3 functions listed [HERE][2] are supported. The most useful ones are `count`, `sum`, `avg`, `min` and `max`. 
 *   Additional aggregation functions such as `stdev, variance, mode, median, lower_quartile, upper_quartile` defined [HERE][1]. 
 
-(:toggleexample Examples: Output summary statistics of fields:) The following command calculate the average depth for all variants: 
+<details><summary> Examples: Output summary statistics of fields</summary> The following command calculate the average depth for all variants: 
 
 
 
@@ -593,7 +593,7 @@ Option `--all` should not be used in these commands because this option will lea
     ACIN1     47  8719.21276596
     
 
-(:exampleend:) 
+</details>
 
 
 

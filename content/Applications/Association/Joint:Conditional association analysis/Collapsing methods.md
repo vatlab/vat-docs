@@ -122,7 +122,7 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -257,7 +257,7 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
 
 **QQ-plot**  Attach:collapseQt.jpg 
 
-(:exampleend:) 
+</details>
 
 [^#^]
 

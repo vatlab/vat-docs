@@ -1,0 +1,6996 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="description" content="Documentation for Variant Tools">
+<meta name="author" content="Bo Peng">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>track :: Variant Tools</title>
+    
+    
+    <link href="/css/nucleus.css?1526307082" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1526307082" rel="stylesheet">
+    <link href="/css/hybrid.css?1526307082" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1526307082" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1526307082" rel="stylesheet">
+    <link href="/css/auto-complete.css?1526307082" rel="stylesheet">
+    <link href="/css/theme.css?1526307082" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1526307082" rel="stylesheet">
+    
+      <link href="/css/theme-mine.css?1526307082" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1526307082"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/documentation/functions/track/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo"  href="https://vatlab.github.io/vat-docs/">
+  <svg id="vtools-logo" width="150%" height="200%" viewBox="0 0 504 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+<image id="image0" width="320" height="200" x="0" y="0"
+xlink:href="data:image/png;base64,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
+T/ae4p963DKt5e7plNPXzkw803Y28uyFc6HnTp8POH/igs+Foxe9Lh65xLrUeNn9ckOrW+vh391+
+P9zm3tZwxeNKU7tne3PHuI7jnX6dp64GXz13LeLa5evR1ztuJN64dXPyza5b3FvPb+fcfnWn4M7A
+3QX3CPdK72vcL39g8KDyXzb/qu9y7zr2MPhh66P4R3cfcx6/eCJ98rm7+Cntafkz42c1z52fH+0J
+7Wn/Y9If3S/ELwZ6S/7U/HPzS+uXh/7y/6u1L6Wv+5Xk1eDrZW/03lS9dX3b0h/b/+Bd7ruB96Uf
+9D5Uf2R9PP8p+dOzgRmfSZ83fLH50vw18uu9wdzBQTFbwlYcBTBY0cxMAF5XAUBLhWcHeI+jqCnv
+X4qCKO+MCgL/xMo7mqK4A1DlD0DiAgCi4BllK6wWkKnwW378TvAHqIvLSB0q0kwXZ2UuKrzFED4M
+Dr4xBIDUDMAXyeDgwJbBwS+7oNjbAJzMU9775IUIz/jbbeV0ZZzeAvBD+TeQf2s6Nu1ZkgAAACBj
+SFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB71BMVEVVU1JcXFxdXV1e
+Xl5hYWFra2tjY2NfX19gYGBiYmJsbGyJiYmLi4tzc3NlZWVwcHCAgICGhoaCgoJ3d3d0dHR9fX2Q
+kJCvr6+pqalnZ2d4eHiVlZW8vLzIyMi6urqdnZ1xcXGKioqlpaW7u7vOzs7d3d3GxsZmZmZkZGRu
+bm6BgYG9vb3j4+Pv7+/g4OB+fn52dnbNzc3t7e3r6+vJycmHh4d1dXWTk5OysrLS0tLp6en19fX5
++fnz8/PPz8/u7u7X19ewsLB6enqIiIi0tLTx8fH////+/v79/f2enp6NjY3Z2dnDw8Oampqbm5v6
++vrm5ua1tbWMjIxvb2+YmJjc3Nzk5ORqamrY2Nj4+Pj8/Pzo6OiSkpKmpqbh4eHFxcWxsbFtbW25
+ubnn5+f39/etra3W1tarq6uFhYVpaWnBwcGPj4+3t7fs7Ox8fHzl5eX29vbR0dH09PTf39/MzMyf
+n595eXmRkZHw8PDLy8vKysqUlJRycnLy8vKioqLU1NTExMTV1dWEhIS2traqqqri4uJ/f3+jo6O4
+uLinp6ehoaH7+/vQ0NCOjo6kpKTAwMDb29ugoKCXl5d7e3va2tqurq7T09PCwsKoqKicnJy+vr6/
+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" />
+</svg>
+
+</svg>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1526307082"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1526307082"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1526307082"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/install/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/install/">
+          Installation
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/" title="Documentation" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/documentation/">
+          Documentation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/keyconcepts/" title="Key concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/keyconcepts/">
+          Key concepts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/keyconcepts/supportedtypes/" title="Supported types of variants" class="dd-item ">
+        <a href="/documentation/keyconcepts/supportedtypes/">
+        Supported types of variants
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/tutorials/" title="Tutorials" class="dd-item ">
+        <a href="/documentation/tutorials/">
+        Tutorials
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/help/" title="Help" class="dd-item ">
+        <a href="/documentation/help/">
+        Help
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/vtools-commands/" title="Vtools commands" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/vtools-commands/">
+          Vtools commands
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/init/" title="Init" class="dd-item ">
+        <a href="/documentation/vtools-commands/init/">
+        Init
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/import/" title="Import" class="dd-item ">
+        <a href="/documentation/vtools-commands/import/">
+        Import
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/update/" title="Update" class="dd-item ">
+        <a href="/documentation/vtools-commands/update/">
+        Update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/phenotype/" title="Phenotype" class="dd-item ">
+        <a href="/documentation/vtools-commands/phenotype/">
+        Phenotype
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/liftover/" title="lifttover" class="dd-item ">
+        <a href="/documentation/vtools-commands/liftover/">
+        lifttover
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/show/" title="show" class="dd-item ">
+        <a href="/documentation/vtools-commands/show/">
+        show
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/use/" title="use" class="dd-item ">
+        <a href="/documentation/vtools-commands/use/">
+        use
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/select/" title="select" class="dd-item ">
+        <a href="/documentation/vtools-commands/select/">
+        select
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/exclude/" title="exclude" class="dd-item ">
+        <a href="/documentation/vtools-commands/exclude/">
+        exclude
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/compare/" title="compare" class="dd-item ">
+        <a href="/documentation/vtools-commands/compare/">
+        compare
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/associate/" title="associate" class="dd-item ">
+        <a href="/documentation/vtools-commands/associate/">
+        associate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/output/" title="output" class="dd-item ">
+        <a href="/documentation/vtools-commands/output/">
+        output
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/export/" title="export" class="dd-item ">
+        <a href="/documentation/vtools-commands/export/">
+        export
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/remove/" title="remove" class="dd-item ">
+        <a href="/documentation/vtools-commands/remove/">
+        remove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/execute/" title="execute" class="dd-item ">
+        <a href="/documentation/vtools-commands/execute/">
+        execute
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools-commands/admin/" title="admin" class="dd-item ">
+        <a href="/documentation/vtools-commands/admin/">
+        admin
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/functions/" title="Functions" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/documentation/functions/">
+          Functions
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/functions/ref_sequence/" title="ref_sequence" class="dd-item ">
+        <a href="/documentation/functions/ref_sequence/">
+        ref_sequence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/functions/mut_sequence/" title="mut_sequence" class="dd-item ">
+        <a href="/documentation/functions/mut_sequence/">
+        mut_sequence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/functions/track/" title="track" class="dd-item active">
+        <a href="/documentation/functions/track/">
+        track
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/functions/genotype/" title="Genotype" class="dd-item ">
+        <a href="/documentation/functions/genotype/">
+        Genotype
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/functions/samples/" title="samples" class="dd-item ">
+        <a href="/documentation/functions/samples/">
+        samples
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/functions/in_table/" title="in_table" class="dd-item ">
+        <a href="/documentation/functions/in_table/">
+        in_table
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/functions/otherfunctions/" title="Other functions" class="dd-item ">
+        <a href="/documentation/functions/otherfunctions/">
+        Other functions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/vtools_report/" title="Vtools_report" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/vtools_report/">
+          Vtools_report
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/avg_depth/" title="avg_depth" class="dd-item ">
+        <a href="/documentation/vtools_report/avg_depth/">
+        avg_depth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/discordance_rate/" title="discordance_rate" class="dd-item ">
+        <a href="/documentation/vtools_report/discordance_rate/">
+        discordance_rate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/sam_info/" title="sam_info" class="dd-item ">
+        <a href="/documentation/vtools_report/sam_info/">
+        sam_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/sequence/" title="sequence" class="dd-item ">
+        <a href="/documentation/vtools_report/sequence/">
+        sequence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/trans_ratio/" title="trans_ratio" class="dd-item ">
+        <a href="/documentation/vtools_report/trans_ratio/">
+        trans_ratio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/variant_stat/" title="variant_stat" class="dd-item ">
+        <a href="/documentation/vtools_report/variant_stat/">
+        variant_stat
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/inbreeding_coefficient/" title="inbreeding_coefficient" class="dd-item ">
+        <a href="/documentation/vtools_report/inbreeding_coefficient/">
+        inbreeding_coefficient
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/transmission/" title="transmission" class="dd-item ">
+        <a href="/documentation/vtools_report/transmission/">
+        transmission
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/meta_analysis/" title="meta_analysis" class="dd-item ">
+        <a href="/documentation/vtools_report/meta_analysis/">
+        meta_analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/plot_fields/" title="plot_fields" class="dd-item ">
+        <a href="/documentation/vtools_report/plot_fields/">
+        plot_fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/plot_geno_fields/" title="plot_geno_fields" class="dd-item ">
+        <a href="/documentation/vtools_report/plot_geno_fields/">
+        plot_geno_fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/plot_pheno_fields/" title="plot_pheno_fields" class="dd-item ">
+        <a href="/documentation/vtools_report/plot_pheno_fields/">
+        plot_pheno_fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/vtools_report/plot_association/" title="plot_association" class="dd-item ">
+        <a href="/documentation/vtools_report/plot_association/">
+        plot_association
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/customization/" title="Customization" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/customization/">
+          Customization
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/customization/format/" title="Format" class="dd-item ">
+        <a href="/documentation/customization/format/">
+        Format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/customization/inputformat/" title="Input format" class="dd-item ">
+        <a href="/documentation/customization/inputformat/">
+        Input format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/customization/simulation/" title="Simulation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/customization/simulation/">
+          Simulation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/customization/simulation/introduction/" title="Introduction" class="dd-item ">
+        <a href="/documentation/customization/simulation/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/customization/simulation/custimzedsimu/" title="Customized simulations" class="dd-item ">
+        <a href="/documentation/customization/simulation/custimzedsimu/">
+        Customized simulations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/customization/simulation/models/" title="Models" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/customization/simulation/models/">
+          Models
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/customization/simulation/models/peng1/" title="Peng2014_ex1" class="dd-item ">
+        <a href="/documentation/customization/simulation/models/peng1/">
+        Peng2014_ex1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/customization/simulation/models/pen2/" title="Peng2014_ex2" class="dd-item ">
+        <a href="/documentation/customization/simulation/models/pen2/">
+        Peng2014_ex2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/pipelines/" title="Pipelines" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/pipelines/">
+          Pipelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/introduction/" title="Introduction" class="dd-item ">
+        <a href="/documentation/pipelines/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/customizedpipeline/" title="Customized pipeline" class="dd-item ">
+        <a href="/documentation/pipelines/customizedpipeline/">
+        Customized pipeline
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/pipelines/variant-calling/" title="Variant calling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/pipelines/variant-calling/">
+          Variant calling
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_hg19/" title="bwa_gatk33_hg19" class="dd-item ">
+        <a href="/documentation/pipelines/variant-calling/bwa_gatk33_hg19/">
+        bwa_gatk33_hg19
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk33_b37/" title="bat_gatk33_b37" class="dd-item ">
+        <a href="/documentation/pipelines/variant-calling/bwa_gatk33_b37/">
+        bat_gatk33_b37
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_hg19/" title="bwa_gatk28_hg19" class="dd-item ">
+        <a href="/documentation/pipelines/variant-calling/bwa_gatk28_hg19/">
+        bwa_gatk28_hg19
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/variant-calling/bwa_gatk28_b37/" title="bwa_gatk28_b37" class="dd-item ">
+        <a href="/documentation/pipelines/variant-calling/bwa_gatk28_b37/">
+        bwa_gatk28_b37
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/pipelines/other-pipelines/" title="Other pipelines" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/pipelines/other-pipelines/">
+          Other pipelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/other-pipelines/import_vcf/" title="import_vcf" class="dd-item ">
+        <a href="/documentation/pipelines/other-pipelines/import_vcf/">
+        import_vcf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/other-pipelines/anno_utils/" title="anno_utils" class="dd-item ">
+        <a href="/documentation/pipelines/other-pipelines/anno_utils/">
+        anno_utils
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/other-pipelines/transmission/" title="transmission" class="dd-item ">
+        <a href="/documentation/pipelines/other-pipelines/transmission/">
+        transmission
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/other-pipelines/illumina/" title="Illumnina" class="dd-item ">
+        <a href="/documentation/pipelines/other-pipelines/illumina/">
+        Illumnina
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/other-pipelines/annovar/" title="ANNOVAR" class="dd-item ">
+        <a href="/documentation/pipelines/other-pipelines/annovar/">
+        ANNOVAR
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/other-pipelines/snpeff/" title="snpEff" class="dd-item ">
+        <a href="/documentation/pipelines/other-pipelines/snpeff/">
+        snpEff
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/pipelines/other-pipelines/king/" title="KING" class="dd-item ">
+        <a href="/documentation/pipelines/other-pipelines/king/">
+        KING
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/documentation/utilities/" title="Utilities" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/documentation/utilities/">
+          Utilities
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/utilities/report_progress/" title="report_progress" class="dd-item ">
+        <a href="/documentation/utilities/report_progress/">
+        report_progress
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/documentation/utilities/_md5sumd/" title="md5sumd" class="dd-item ">
+        <a href="/documentation/utilities/_md5sumd/">
+        md5sumd
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/" title="Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/">
+          Application
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/annotation/" title="Annotation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/annotation/">
+          Annotation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/introduction/" title="Introduction" class="dd-item ">
+        <a href="/applications/annotation/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/tutorial/" title="Tutorial" class="dd-item ">
+        <a href="/applications/annotation/tutorial/">
+        Tutorial
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/customized/" title="Customized annotation databases" class="dd-item ">
+        <a href="/applications/annotation/customized/">
+        Customized annotation databases
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/annotation/genes/" title="Genes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/annotation/genes/">
+          Genes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/genes/ccdsgene/" title="ccdsGene" class="dd-item ">
+        <a href="/applications/annotation/genes/ccdsgene/">
+        ccdsGene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/genes/hugogene/" title="Hugo gene" class="dd-item ">
+        <a href="/applications/annotation/genes/hugogene/">
+        Hugo gene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/genes/entrezgene/" title="EntrezGene" class="dd-item ">
+        <a href="/applications/annotation/genes/entrezgene/">
+        EntrezGene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/genes/knowngene/" title="knownGene" class="dd-item ">
+        <a href="/applications/annotation/genes/knowngene/">
+        knownGene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/genes/refgene/" title="refGene" class="dd-item ">
+        <a href="/applications/annotation/genes/refgene/">
+        refGene
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/genes/cancergenecensus/" title="CancerGeneCensus" class="dd-item ">
+        <a href="/applications/annotation/genes/cancergenecensus/">
+        CancerGeneCensus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/annotation/variants/" title="Variants" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/annotation/variants/">
+          Variants
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/cosmic/" title="COSMIC" class="dd-item ">
+        <a href="/applications/annotation/variants/cosmic/">
+        COSMIC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/dbnsfp/" title="sbNSFP" class="dd-item ">
+        <a href="/applications/annotation/variants/dbnsfp/">
+        sbNSFP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/dbsnp/" title="dbSNP" class="dd-item ">
+        <a href="/applications/annotation/variants/dbsnp/">
+        dbSNP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/linkagephysicalmap/" title="linkage-physical map" class="dd-item ">
+        <a href="/applications/annotation/variants/linkagephysicalmap/">
+        linkage-physical map
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/databaseof/" title="Database of Genomic Variants" class="dd-item ">
+        <a href="/applications/annotation/variants/databaseof/">
+        Database of Genomic Variants
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/exomesequencingpro/" title="Exome Sequencing Project" class="dd-item ">
+        <a href="/applications/annotation/variants/exomesequencingpro/">
+        Exome Sequencing Project
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/gwas/" title="gwasCatalog" class="dd-item ">
+        <a href="/applications/annotation/variants/gwas/">
+        gwasCatalog
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/hapmap/" title="HapMap" class="dd-item ">
+        <a href="/applications/annotation/variants/hapmap/">
+        HapMap
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/variants/thousand/" title="Thousand Genomes" class="dd-item ">
+        <a href="/applications/annotation/variants/thousand/">
+        Thousand Genomes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/annotation/regions/" title="Regions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/annotation/regions/">
+          Regions
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/regions/low-complexity-regions/" title="Low complexity regions" class="dd-item ">
+        <a href="/applications/annotation/regions/low-complexity-regions/">
+        Low complexity regions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/regions/phast-cons/" title="Phast cons" class="dd-item ">
+        <a href="/applications/annotation/regions/phast-cons/">
+        Phast cons
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/regions/genomic-super-dups/" title="Genomic super dups" class="dd-item ">
+        <a href="/applications/annotation/regions/genomic-super-dups/">
+        Genomic super dups
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/regions/cytoband/" title="cytoBand" class="dd-item ">
+        <a href="/applications/annotation/regions/cytoband/">
+        cytoBand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/annotation/misc/" title="Misc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/annotation/misc/">
+          Misc
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/misc/illumina/" title="Illumina" class="dd-item ">
+        <a href="/applications/annotation/misc/illumina/">
+        Illumina
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/misc/keggpathway/" title="keggPathway" class="dd-item ">
+        <a href="/applications/annotation/misc/keggpathway/">
+        keggPathway
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/annotation/misc/encode/" title="ENCODE" class="dd-item ">
+        <a href="/applications/annotation/misc/encode/">
+        ENCODE
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/discovery/" title="Discovery" class="dd-item ">
+        <a href="/applications/discovery/">
+        Discovery
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/association/" title="Association" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/association/">
+          Association
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/introduction/" title="Introduction" class="dd-item ">
+        <a href="/applications/association/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/data-explorationqc/" title="Data exploration/QC" class="dd-item ">
+        <a href="/applications/association/data-explorationqc/">
+        Data exploration/QC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/association-analysis/" title="Association analysis" class="dd-item ">
+        <a href="/applications/association/association-analysis/">
+        Association analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/post-assoc-analysis/" title="Post-assoc analysis" class="dd-item ">
+        <a href="/applications/association/post-assoc-analysis/">
+        Post-assoc analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/association/basic-data-statistics/" title="Basic data statistics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/association/basic-data-statistics/">
+          Basic data statistics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/basic-data-statistics/group-statwrite/" title="Group stat&amp;Write" class="dd-item ">
+        <a href="/applications/association/basic-data-statistics/group-statwrite/">
+        Group stat&amp;Write
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/association/single-variant-analysis/" title="Single variant analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/association/single-variant-analysis/">
+          Single variant analysis
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-variant-analysis/fisher-exact-test/" title="Fisher exact test" class="dd-item ">
+        <a href="/applications/association/single-variant-analysis/fisher-exact-test/">
+        Fisher exact test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/association/single-gene-association-methods/" title="Single gene association methods" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/association/single-gene-association-methods/">
+          Single gene association methods
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/introduction/" title="Introduction" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/cmc-test/" title="CMC test" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/cmc-test/">
+        CMC test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/c_alpha-test/" title="C-alpha test" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/c_alpha-test/">
+        C-alpha test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/kbac-test/" title="KBAC test" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/kbac-test/">
+        KBAC test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/rbt-test/" title="RBT test" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/rbt-test/">
+        RBT test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/rarecover-test/" title="RareCover test" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/rarecover-test/">
+        RareCover test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/vt-test/" title="VT test" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/vt-test/">
+        VT test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/wss-test/" title="WSS test" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/wss-test/">
+        WSS test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/single-gene-association-methods/asum-test/" title="aSum test" class="dd-item ">
+        <a href="/applications/association/single-gene-association-methods/asum-test/">
+        aSum test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/association/jointconditional-association-analysis/" title="Joint/Conditional association analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/association/jointconditional-association-analysis/">
+          Joint/Conditional association analysis
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/collapsing-methods/" title="Collapsing methods" class="dd-item ">
+        <a href="/applications/association/jointconditional-association-analysis/collapsing-methods/">
+        Collapsing methods
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/aggregation-methods/" title="Aggregation methods" class="dd-item ">
+        <a href="/applications/association/jointconditional-association-analysis/aggregation-methods/">
+        Aggregation methods
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/weighted-methods/" title="Weighted methods" class="dd-item ">
+        <a href="/applications/association/jointconditional-association-analysis/weighted-methods/">
+        Weighted methods
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/variable-thresholds/" title="Variable thresholds" class="dd-item ">
+        <a href="/applications/association/jointconditional-association-analysis/variable-thresholds/">
+        Variable thresholds
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/skat-test/" title="SKAT test" class="dd-item ">
+        <a href="/applications/association/jointconditional-association-analysis/skat-test/">
+        SKAT test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/jointconditional-association-analysis/metaskat-analysis/" title="MetaSKAT analysis" class="dd-item ">
+        <a href="/applications/association/jointconditional-association-analysis/metaskat-analysis/">
+        MetaSKAT analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/association/vat-stacking/" title="VAT stacking" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/association/vat-stacking/">
+          VAT stacking
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/association/create-your-test/" title="Create your test!" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/association/create-your-test/">
+          Create your test!
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/create-your-test/running-r-programs/" title="Running R programs" class="dd-item ">
+        <a href="/applications/association/create-your-test/running-r-programs/">
+        Running R programs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/create-your-test/programming-in-vat/" title="Programming in VAT" class="dd-item ">
+        <a href="/applications/association/create-your-test/programming-in-vat/">
+        Programming in VAT
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/applications/association/view-association-result/" title="View association result" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/applications/association/view-association-result/">
+          View association result
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/applications/association/view-association-result/qq-plot-and-manhattan-plot/" title="QQ plot and Manhattan plot" class="dd-item ">
+        <a href="/applications/association/view-association-result/qq-plot-and-manhattan-plot/">
+        QQ plot and Manhattan plot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/development/" title="Development" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/development/">
+          Development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/development/changelog/" title="ChangeLog" class="dd-item ">
+        <a href="/development/changelog/">
+        ChangeLog
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/development/getinvolved/" title="Get Involved" class="dd-item ">
+        <a href="/development/getinvolved/">
+        Get Involved
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/administration/" title="Administration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/administration/">
+          Administration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/administration/allrecent/" title="All recent changes" class="dd-item ">
+        <a href="/administration/allrecent/">
+        All recent changes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/administration/autolink/" title="Autolink" class="dd-item ">
+        <a href="/administration/autolink/">
+        Autolink
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/administration/stylesheet/" title="Style sheet" class="dd-item ">
+        <a href="/administration/stylesheet/">
+        Style sheet
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/administration/trafficstat/" title="Traffic statistics" class="dd-item ">
+        <a href="/administration/trafficstat/">
+        Traffic statistics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/under-development/" title="Under development" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/under-development/">
+          Under development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/under-development/faq/" title="FAQ" class="dd-item ">
+        <a href="/under-development/faq/">
+        FAQ
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://vatlab.github.io/vat-docs/"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://twitter.com/ScriptOfScripts"><i class='fa fa-twitter'></i> ScriptOfScripts</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href=""><i class='fa fa-envelope'></i> bpeng@mdanderson.org</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://vatlab.github.io/vat-docs/content/Documentation/Functions/track.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/documentation/'>Documentation</a> > <a href='/documentation/functions/'>Functions</a> > track
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#extract-annotation-from-external-files">Extract annotation from external files</a>
+<ul>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#details">Details</a>
+<ul>
+<li><a href="#display-information-about-tracks">Display information about tracks</a></li>
+<li><a href="#tabixed-vcf-tracks">Tabixed vcf tracks</a></li>
+<li><a href="#bigwig-tracks">bigWig tracks</a></li>
+<li><a href="#bigbed-tracks">bigBed tracks</a></li>
+<li><a href="#indexed-bam-tracks">Indexed BAM tracks</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>track</h1>
+          
+
+        
+
+
+
+
+<h1 id="extract-annotation-from-external-files">Extract annotation from external files</h1>
+
+<h2 id="usage">Usage</h2>
+
+<p>Function <code>track(filename, field)</code> returns annotation information at column <code>col</code> (optional) in file <code>filename</code>, at position (<code>chr</code>, <code>pos</code> at primary or alternative reference genome) of each variant. For example, function</p>
+
+<pre><code>% vtools output variant chr pos ref alt &quot;track('1000g.vcf.gz', 'info')&quot;
+</code></pre>
+
+<p>single quote (<code>'</code>) should be used for string literals in SQL functions. Double quote (<code>&quot;</code>) should be avoided although it sometimes works.</p>
+
+<p>output the &ldquo;info&rdquo; column of file <code>1000g.vcf.gz</code>, for variants at location <code>chr</code> and <code>pos</code>.</p>
+
+<p>This function currently accepts four types of track files:</p>
+
+<ol>
+<li>Local or online <code>bgzipped</code> and <code>tabix</code>-indexed vcf files with extension <code>.vcf.gz</code>.</li>
+<li><a href="http://genome.ucsc.edu/goldenPath/help/bigWig.html"><code>bigWig</code></a> files that provides dense and continuous data for a region.</li>
+<li><a href="http://genome.ucsc.edu/goldenPath/help/bigBed.html"><code>bigBed</code></a> files with 3 required columns and 9 optional columns. Annotation tracks in BED format can be converted to this format using program <code>bedToBigBed</code>.</li>
+<li>Local or online indexed BAM files with extension <code>.bam</code>. This format does not contain &lsquo;columns&rsquo; as other formats do but it provides alignment information for the variants.</li>
+</ol>
+
+<p>The allowed and default values of the second option <code>field</code> vary for different file formats. Generally speaking, numeric values such as <code>1</code>, <code>2</code>, &hellip; returns the <code>col</code>-th column of the input data file, with the exception that `<code>returns</code>1<code>(match or not) for all matched records. String values such as</code>&ldquo;chrom&rdquo;<code>,</code>&ldquo;chromStart&rdquo;<code>,</code>&ldquo;info&rdquo;` return values at specified column as strings.</p>
+
+<h2 id="details">Details</h2>
+
+<h3 id="display-information-about-tracks">Display information about tracks</h3>
+
+<p>Before you use each track, it is important to run command</p>
+
+<pre><code>% vtools show track FilenameOrURL
+</code></pre>
+
+<p>to get the detailed information about the track file, and the available fields and their types.</p>
+
+<ol>
+<li>As a shortcut to enter <code>track</code> function for multiple files, you can use wildcast characters in the first parameter (<code>filename</code>) of the <code>track</code> function. This will result in multiple <code>track()</code> function calls for each matching filename. For example, if you have <code>A01.BAM</code> and <code>A02.BAM</code> in the current directory, function <code>track('A*.BAM', 'calls')</code> is equivalent to <code>track('A01.BAM', 'calls') track('A02.BAM', 'calls')</code>.</li>
+<li>The return values of the returned field will be numeric if the column contains numeric data (e.g. flag, score, position). <strong>Only the first record will be returned if a variant matches multiple records in the track file</strong>. If an option <code>all=1</code> is passed to field (e.g. <code>track('my.bam', 'info?all=1')</code>), the <code>track</code> function will output all matching records as string, separated by a delimiter <code>|</code>.</li>
+<li>This function automatically chooses correct chromosome name (adding <code>chr</code> to chromosome name if needed), and position (adjust to 0-based position if needed) to match records in the track file.</li>
+<li>The return values are not adjusted. That is to say, columns such as <code>pos</code> will be 0-based for 0-based track files (e.g. bigBed files), and 1-based for 1-based track files (e.g. vcf).</li>
+</ol>
+
+<p>Please refer to <a href="http://varianttools.sourceforge.net/Vtools/Show#toc10">here</a> for more details of command vtools show, especially a brief description of the BAM header.</p>
+
+<h3 id="tabixed-vcf-tracks">Tabixed vcf tracks</h3>
+
+<p>VCF files that can be used as tracks must be bgzipped and tabix-indexed. Regular vcf files can be converted to this format using commands <code>bgzip my.vcf</code> and <code>tabix -p vcf my.vcf.gz</code>. Parameter <code>col</code> for this format can be <code>1</code> (chrom), <code>2</code> (start, 1-based), <code>3</code> (name), <code>4</code> (ref), <code>5</code> (alt alleles), <code>6</code> (qual), <code>7</code> (filter), <code>8</code> (info), <code>9</code> (format string), <code>10</code> and more (for genotype columns for sample <code>col-9</code>); names of the columns <code>&quot;chrom&quot;</code>, <code>&quot;pos&quot;</code>, <code>&quot;name&quot;</code>, <code>&quot;ref&quot;</code>, <code>&quot;alt&quot;</code>, <code>&quot;qual&quot;</code>, <code>&quot;filter&quot;</code>, <code>&quot;info&quot;</code>, <code>&quot;format&quot;</code>; name of information fields available in the vcf file in the format of <code>info.FIELD</code>; name of samples for genotype columns, and name of genotype info fields in the format of <code>SAMPLE.FIELD</code>. If no <code>col</code> is specified, a default value <code>8</code> is passed to display the full <code>INFO</code> column of the vcf file.</p>
+
+<p><details><summary> Examples: Annotate variants using vcf tracks</summary> Let us get some test data, and index the vcf file using the <code>tabix</code> program</p>
+
+<pre><code>% vtools init track
+% vtools admin --load_snapshot vt_testData
+% tabix -p vcf CEU.vcf.gz
+% vtools import CEU.vcf.gz --build hg18
+
+
+INFO: Importing variants from CEU.vcf.gz (1/1)
+CEU.vcf.gz: 100% [============================================] 300 13.9K/s in 00:00:00
+INFO: 288 new variants (288 SNVs) from 300 lines are imported.
+Importing genotypes: 100% [=================================] 18,000 9.0K/s in 00:00:02
+Copying samples: 100% [=========================================] 75 74.9/s in 00:00:01
+</code></pre>
+
+<p>The track information can be displayed using command</p>
+
+<pre><code>% vtools show track CEU.vcf.gz | head -30
+
+
+Version                 VCF v4.0
+Number of fields:       69
+
+Header: (exclude INFO and FORMAT lines)
+                        ##reference=human_b36_both.fasta
+                        ##rsIDs=dbSNP b129 mapped to NCBI 36.3, August 10, 2009
+
+Available columns (with type VARCHAR if unspecified or all=1):
+0 (INTEGER)             1 if matched
+chr (1, chrom)          chromosome
+pos (2, INTEGER)        position (1-based)
+name (3)                name of variant
+ref (4)                 reference allele
+alt (5)                 alternative alleles
+qual (6)                qual
+filter (7)              filter
+info (8, default)       variant info fields
+info.DP (INTEGER)       Total Depth
+info.HM2 (INTEGER, flag) HapMap2 membership
+info.HM3 (INTEGER, flag) HapMap3 membership
+info.AA                 Ancestral Allele, ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/pilot_data/technical/reference/ancestral_alignments/README
+info.AC (INTEGER)       Allele count in genotypes
+info.AN (INTEGER)       Total number of alleles in called genotypes
+format (9)              genotype format
+NA06985 (10)            genotype for sample NA06985
+NA06985.GT              Genotype for sample NA06985
+NA06985.DP (INTEGER)    Read Depth for sample NA06985
+NA06985.CB              Called by S(Sanger), M(UMich), B(BI) for sample NA06985
+NA06986 (11)            genotype for sample NA06986
+NA06986.GT              Genotype for sample NA06986
+</code></pre>
+
+<p>We can use the <code>track</code> function to display the info column in the original vcf file,</p>
+
+<pre><code>% vtools output variant chr pos &quot;track('CEU.vcf.gz')&quot; -l 5
+
+
+1   533 AA=.;AC=6;AN=120;DP=423
+1   41342   AA=.;AC=29;AN=120;DP=188
+1   41791   AA=.;AC=5;AN=120;DP=192
+1   44449   AA=C;AC=2;AN=120;DP=166
+1   44539   AA=T;AC=2;AN=120;DP=131
+</code></pre>
+
+<p>The default parameter <code>col=8</code> is used to extract the info column of the info file. You can display other tracks such as name</p>
+
+<pre><code>% vtools output variant chr pos &quot;track('CEU.vcf.gz', 'name')&quot; -l 5
+
+
+1   533 .
+1   41342   .
+1   41791   .
+1   44449   .
+1   44539   rs2462492
+</code></pre>
+
+<p>Values of individual info fields could be specified by <code>info.FIELD</code> where <code>FIELD</code> is the name of info field.</p>
+
+<pre><code>% vtools output variant chr pos &quot;track('CEU.vcf.gz', 'info.DP')&quot; -l 5
+
+
+1   533 423
+1   41342   188
+1   41791   192
+1   44449   166
+1   44539   131
+</code></pre>
+
+<p>If you know the name of the sample (in the vcf file, this example happens to has samples from this file),</p>
+
+<pre><code>% vtools show samples -l 5
+
+
+sample_name filename
+NA06985 CEU.vcf.gz
+NA06986 CEU.vcf.gz
+NA06994 CEU.vcf.gz
+NA07000 CEU.vcf.gz
+NA07037 CEU.vcf.gz
+(55 records omitted)
+</code></pre>
+
+<p>you can get the genotype columns using sample name</p>
+
+<pre><code>% vtools output variant chr pos &quot;track('CEU.vcf.gz', 'NA06986')&quot; -l 5
+
+
+1   533 0|0:14:SMB
+1   41342   0|1:16:SMB
+1   41791   0|0:7:SM
+1   44449   0|0:6:SM
+1   44539   0|0:12:SM
+</code></pre>
+
+<p>With the format information abtained from</p>
+
+<pre><code>% vtools output variant chr pos &quot;track('CEU.vcf.gz', 'format')&quot; -l 5
+
+
+1   533 GT:DP:CB
+1   41342   GT:DP:CB
+1   41791   GT:DP:CB
+1   44449   GT:DP:CB
+1   44539   GT:DP:CB
+</code></pre>
+
+<p>we can list fields of the genotype columns,</p>
+
+<pre><code>% vtools output variant chr pos &quot;track('CEU.vcf.gz', 'NA06986.GT')&quot; -l 5
+
+
+1   533 0|0
+1   41342   0|1
+1   41791   0|0
+1   44449   0|0
+1   44539   0|0
+</code></pre>
+
+<p></details></p>
+
+<p>A very useful feature of the vcf track is that <strong>you can use vcf files from online</strong> by specifying a URL instead of a local filename.</p>
+
+<p><details><summary> Examples: Annotate variants using online vcf files</summary> We would like to annotate our variants using VCF files from the 1000 genomes project. However, our project uses build <code>hg18</code> of the reference genome and the 1000 genomes project uses <code>hg19</code>. To make use of data from the 1000 genomes project, we need to first lift over our project:</p>
+
+<pre><code>% vtools liftover hg19
+
+
+INFO: Exporting variants in BED format
+Exporting variants: 100% [==========================] 288 67.3K/s in 00:00:00
+INFO: Running UCSC liftOver tool
+Updating table variant: 100% [======================] 288 21.8K/s in 00:00:00
+</code></pre>
+
+<p>To pass the correct coordinates, option <code>--build hg19</code> is needed:</p>
+
+<pre><code>% vtools output variant chr pos &quot;track('http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.chr1.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz', 'info')&quot; \
+%     -l 5 --build hg19
+
+
+1   10533   .
+1   51479   RSQ=0.7414;AVGPOST=0.9085;AA=T;AN=2184;THETA=0.0131;AC=235;VT=SNP;LDAF=0.1404;SNPSOURCE=LOWCOV;ERATE=0.0012;AF=0.11;ASN_AF=0.0035;AMR_AF=0.16;AFR_AF=0.03;EUR_AF=0.22
+1   51928   .
+1   54586   .
+1   54676   LDAF=0.1528;RSQ=0.6989;AA=T;AN=2184;AC=267;VT=SNP;AVGPOST=0.8998;SNPSOURCE=LOWCOV;THETA=0.0110;ERATE=0.0037;AF=0.12;ASN_AF=0.02;AMR_AF=0.20;AFR_AF=0.09;EUR_AF=0.18
+</code></pre>
+
+<p></details></p>
+
+<p>Available variant and genotype info fields are determined from the header of input vcf file. Columns such as <code>info.AA</code> is unacceptable if <code>AA</code> is not defined in the header.</p>
+
+<h3 id="bigwig-tracks">bigWig tracks</h3>
+
+<p>The bigWig tracks contains numeric values for locations (ranges). The default <code>col</code> value for this format is <code>4</code> (the value column), but you can specify <code>1</code> (chrom), <code>2</code> (start, 0-based), <code>3</code> (end, 1-based), <code>4</code> (value), and <code>&quot;chrom&quot;</code>, <code>&quot;chromStart&quot;</code>, <code>&quot;chromEnd&quot;</code>, and <code>&quot;value&quot;</code>.</p>
+
+<p><details><summary> Examples: Use bigWig tracks to annotate and select variants</summary> Let us create a project in hg19, import some data, and download a bigWig track from the UCSC ENCODE website:</p>
+
+<pre><code>% wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromFaire/wgEncodeOpenChromFaireFrontalcortexocSig.bigWig
+% vtools init track -f
+% vtools import indels.vcf  --build hg19
+
+
+INFO: Importing variants from indels.vcf (1/1)
+indels.vcf: 100% [============================================] 184 12.3K/s in 00:00:00
+INFO: 137 new variants (1 SNVs, 77 insertions, 58 deletions, 7 complex variants) from 184 lines are imported.
+Importing genotypes: 0 0.0/s in 00:00:00
+Copying samples: 0 0.0/s in 00:00:00
+</code></pre>
+
+<p>The detailed information about this track can be obtained by</p>
+
+<pre><code>% vtools show track wgEncodeOpenChromFaireFrontalcortexocSig.bigWig
+
+
+Version:                4
+Primary data size       1320909131
+Zoom levels:            10
+Chrom count:            23
+Chrom size:
+    chr1                249250621
+    chr10               135534747
+    chr11               135006516
+    chr12               133851895
+    chr13               115169878
+    chr14               107349540
+    chr15               102531392
+    chr16               90354753
+    chr17               81195210
+    chr18               78077248
+    chr19               59128983
+    chr2                243199373
+    chr20               63025520
+    chr21               48129895
+    chr22               51304566
+    chr3                198022430
+    chr4                191154276
+    chr5                180915260
+    chr6                171115067
+    chr7                159138663
+    chr8                146364022
+    chr9                141213431
+    chrX                155270560
+Bases covered:          2951253637
+Mean:                   0.004807
+Min:                    0.000000
+Max:                    0.592400
+std:                    0.004469
+Number of fields:       4
+
+Available columns (with type VARCHAR if unspecified or all=1):
+0 (INTEGER)             1 if matched
+chrom (1)               chromosome
+chromStart (2, INTEGER) start position (0-based)
+chromEnd (3, INTEGER)   end position (1-based)
+value (4, FLOAT)        value
+</code></pre>
+
+<p>and we can show the track values for each variant using command</p>
+
+<pre><code>% vtools output variant chr pos ref alt &quot;track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig')&quot; -l 5
+
+
+1   10434   -   C   0.00089999998454
+1   10440   C   -   0.00089999998454
+1   54789   C   -   0.00719999987632
+1   54790   -   T   0.00719999987632
+1   63738   ACT -   0.00710000004619
+</code></pre>
+
+<p>In addition to output, the track can also be used to select variants,</p>
+
+<pre><code>% vtools select variant &quot;track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig') &gt; 0.001&quot; \
+     --output chr pos ref alt &quot;track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig')&quot; -l 5
+
+
+1   54789   C   -   0.00719999987632
+1   54790   -   T   0.00719999987632
+1   63738   ACT -   0.00710000004619
+1   63738   ACT CTA 0.00710000004619
+1   81963   -   AA  0.0120000001043
+</code></pre>
+
+<p></details></p>
+
+<h3 id="bigbed-tracks">bigBed tracks</h3>
+
+<p>BigBed is a compressed indexed BED format that contains three mandatory columns and nine optional columns. The default <code>col</code> value for this format is `<code>(return 1 for matched records), but you can be specify items such as</code>1<code>(chrom) and</code>chromStart<code>(start, 0-based) according to output of command</code>vtools show track BIGBEDFILE`.</p>
+
+<p><details><summary> Examples: Use bigBed tracks to annotate variants</summary> Let us create a project in hg19, import some data, and download a bigWig track from the UCSC ENCODE website:</p>
+
+<pre><code>% wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeDukeAffyExon/wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed
+% vtools init track
+% vtools import indels.vcf  --build hg19
+
+
+INFO: Importing variants from indels.vcf (1/1)
+indels.vcf: 100% [============================================] 184 12.3K/s in 00:00:00
+INFO: 137 new variants (1 SNVs, 77 insertions, 58 deletions, 7 complex variants) from 184 lines are imported.
+Importing genotypes: 0 0.0/s in 00:00:00
+Copying samples: 0 0.0/s in 00:00:00
+</code></pre>
+
+<p>This tracks provides the following information:</p>
+
+<pre><code>% vtools show track wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed
+
+
+Version:                4
+Item count:             38378
+Primary data size:      798350
+Zoom levels:            7
+Chrom count:            24
+Chrom size:
+    chr1                249250621
+    chr10               135534747
+    chr11               135006516
+    chr12               133851895
+    chr13               115169878
+    chr14               107349540
+    chr15               102531392
+    chr16               90354753
+    chr17               81195210
+    chr18               78077248
+    chr19               59128983
+    chr2                243199373
+    chr20               63025520
+    chr21               48129895
+    chr22               51304566
+    chr3                198022430
+    chr4                191154276
+    chr5                180915260
+    chr6                171115067
+    chr7                159138663
+    chr8                146364022
+    chr9                141213431
+    chrX                155270560
+    chrY                59373566
+Bases covered           1143378960
+Mean depth:             1.055693
+Min depth:              1.000000
+Max depth:              18.000000
+Std of depth:           0.310857
+Number of fields:       9
+
+Available columns (with type VARCHAR if unspecified or all=1):
+chrom (1)               Chromosome (or contig, scaffold, etc.)
+chromStart (2, INTEGER) Start position in chromosome
+chromEnd (3, INTEGER)   End position in chromosome
+name (4)                Name of item
+score (5, INTEGER)      Score from 0-1000. Capped number of reads
+strand (6)              + or -
+signalValue (7, FLOAT)  Measurement of expression value of the gene
+exonCount (8, INTEGER)  Number of exons used to estimate expression value
+constituitiveExons (9, INTEGER) Number of constituitive exons used to estimate the
+                        expression value
+</code></pre>
+
+<p>The track provides provides numeric annotation for each variant,</p>
+
+<pre><code>% vtools output variant chr pos ref alt &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed')&quot; -l5
+
+
+1   10434   -   C   .
+1   10440   C   -   .
+1   54789   C   -   .
+1   54790   -   T   .
+1   63738   ACT -   .
+</code></pre>
+
+<p>The first five variant does not overlap with any regions in the bigBed file, but we can select variants using track membership:</p>
+
+<pre><code>% vtools select variant &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed') = 1&quot; -t encode
+
+
+Running: 0 0.0/s in 00:00:00
+INFO: 28 variants selected.
+</code></pre>
+
+<p>and lists fields from the bigBed file for these variants</p>
+
+<pre><code>% vtools output encode chr pos ref alt &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed', 4)&quot; -l5
+
+
+1   761958  -       T       LINC00115
+1   768117  GTTTT   -       RP11-206L10.11
+1   768117  -       GTTTT   RP11-206L10.11
+1   768118  -       TT      RP11-206L10.11
+1   768625  -       A       RP11-206L10.11
+</code></pre>
+
+<p>and</p>
+
+<pre><code>% vtools output encode chr pos ref alt &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed', 'score')&quot; -l5
+
+
+1   761958  -       T       692
+1   768117  GTTTT   -       659
+1   768117  -       GTTTT   659
+1   768118  -       TT      659
+1   768625  -       A       659
+</code></pre>
+
+<p></details></p>
+
+<h3 id="indexed-bam-tracks">Indexed BAM tracks</h3>
+
+<p>Tracks in BAM format provides information regarding aligments, namely the reads that cover the starting position of each variant. If the variant is called from the provided BAM file, the BAM track provides information regarding the reads from which variants are called.</p>
+
+<p><em>variant tools</em> currently only use the starting location of variants so it ignores reads that overlap but do not cover the starting position of a variant (e.g. an insertion).</p>
+
+<p>A BAM track accepts the following fields,</p>
+
+<ol>
+<li><code>coverage</code>: number of reads that cover the starting position of each variant. This is the default field.</li>
+<li><code>calls</code>: nucleotide of the reads at the variant location. This allows you to show the number of reference and alternative alleles for SNV variants, but not so informative for indels.</li>
+<li><code>reads</code>: display a small piece of nucleotide sequence around the variant location (default to 5, namely the variant location and 4 base after it), separated by <code>|</code>. <code>_</code> will be displayed if the position goes beyond the end of a read. A parameter can be specified in the form of <code>reads?start=-5&amp;width=10</code> to change the starting point and width of displayed sequence.</li>
+<li><code>qual</code>: A list of phred base quality of reads at the location.</li>
+<li><code>avg_qual</code>: Average qual scores of all reads.</li>
+<li><code>mapq</code>: A list of phred-scaled quality of alignment at the location.</li>
+<li><code>avg_mapq</code>: Average map qual scores of all reads.</li>
+<li>Any tag values listed at the end of command <code>vtools show track</code>.</li>
+</ol>
+
+<p>Parameters can be used to limit the reads to count or display, and change the way reads are displayed. The <code>bam</code> track currently supports the following options:</p>
+
+<ol>
+<li><code>type</code>: If set to `<code>(matched to reference sequence),</code>1<code>(unmatched single nucleotide),</code>2<code>(insertion) and</code>3` (deletion), only reads that are matched, unmatched (single nucleotide), insertion or deletion at the variant location is counted or outputted. Note that nucleotide before the insertion will be matched to reference genome, but they are not counted as matched.</li>
+<li><code>min_mapq</code>: limits the reads to those with <code>mapq</code> scores that exceed the specified value.</li>
+<li><code>min_qual</code>: limits the reads to those with <code>qual</code> scores that execeed the specified value.</li>
+<li><code>color=[1|0]</code>: display variant location in blue, and insertions in green for <code>reads</code> field.</li>
+<li><code>limit</code>: limit the number of reads or calls to display if the depth of coverage is high.</li>
+<li><code>delimiter</code>: character (e.g. <code>\t</code> to separate reads in the <code>reads</code> output (<code>|</code> is used by default).</li>
+<li><code>show_seq=[1|0]</code>: A <code>.</code> is used by default when the nucleotide matches the reference genome at the location. The actual nucleotide sequence will be displayed if this option is set to <code>1</code>.</li>
+</ol>
+
+<p>You can count the number of reads that match (or unmatch) the reference genome using parameter <code>coverage</code>type=0@@.</p>
+
+<p><details><summary> Examples: Use BAM files to check the details of variant calls. </summary> Now suppose that we have a project with a list of variants (due to the size of BAM files, original data is not provided), we select the variants based on the sample from which they are called:</p>
+
+<pre><code>% vtools select variant --samples &quot;sample_name = 'WGS4_9'&quot; -t ex49
+
+
+INFO: 1 samples are selected by condition: sample_name = 'WGS4_9'
+Running: 3,959 164.5/s in 00:00:24
+INFO: 1191 variants selected.
+</code></pre>
+
+<p>We first need to check the available information that can be retrived</p>
+
+<pre><code>$ vtools show track LP6005253-DNA_A02.bam
+
+
+Header:
+@HD VN:1.0  SO:coordinate
+@PG ID:CASAVA   VN:CASAVA-1.9.0a1_110909    CL:/illumina/development/casava/CASAVA-VariantCalling-2.12a_gVCF/bin/configureBuild.pl --targets all bam --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L5/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L6/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L7/Sample_LP6005253-DNA_A02 --outDir=/scratch/LP6005253-DNA_A02 --samtoolsRefFile=/illumina/scratch/services/Genomes/FASTA_UCSC/HumanNCBI37_UCSC/HumanNCBI37_UCSC_XX.fa --indelsSaveTempFiles --variantsConsensusVCF --jobsLimit=12 --variantsPrintUsedAlleleCounts --variantsWriteRealigned --sortKeepAllReads --bamChangeChromLabels=OFF --sgeQueue=prod-s.q
+@SQ SN:chr1 LN:249250621
+@SQ SN:chr2 LN:243199373
+@SQ SN:chr3 LN:198022430
+@SQ SN:chr4 LN:191154276
+@SQ SN:chr5 LN:180915260
+@SQ SN:chr6 LN:171115067
+@SQ SN:chr7 LN:159138663
+@SQ SN:chrX LN:155270560
+@SQ SN:chr8 LN:146364022
+@SQ SN:chr9 LN:141213431
+@SQ SN:chr10    LN:135534747
+@SQ SN:chr11    LN:135006516
+@SQ SN:chr12    LN:133851895
+@SQ SN:chr13    LN:115169878
+@SQ SN:chr14    LN:107349540
+@SQ SN:chr15    LN:102531392
+@SQ SN:chr16    LN:90354753
+@SQ SN:chr17    LN:81195210
+@SQ SN:chr18    LN:78077248
+@SQ SN:chr20    LN:63025520
+@SQ SN:chr19    LN:59128983
+@SQ SN:chr22    LN:51304566
+@SQ SN:chr21    LN:48129895
+@SQ SN:chrM LN:16571
+
+Chrom size:             24
+    chr1                249250621
+    chr2                243199373
+    chr3                198022430
+    chr4                191154276
+    chr5                180915260
+    chr6                171115067
+    chr7                159138663
+    chrX                155270560
+    chr8                146364022
+    chr9                141213431
+    chr10               135534747
+    chr11               135006516
+    chr12               133851895
+    chr13               115169878
+    chr14               107349540
+    chr15               102531392
+    chr16               90354753
+    chr17               81195210
+    chr18               78077248
+    chr20               63025520
+    chr19               59128983
+    chr22               51304566
+    chr21               48129895
+    chrM                16571
+
+Available fields (with type VARCHAR if unspecified or all=1):
+0 (INTEGER)             1 if depth is over 0, NULL otherwise
+coverage (INTEGER)      Number of reads that cover the starting position of the variant
+calls                   nucleotide of the reads at the variant location
+reads                   nucleotide sequence around the variant location
+qual                    A list of phred base quality of reads at the location
+avg_qual (FLOAT)        Average qual score of all reads
+mapq                    A list of phred base quality of alignment at the location
+avg_mapq (FLOAT)        Average mapq score of all reads
+
+Tags and flag that can be outputed or used in filters, with values from the 1st record:
+AM                      C (int)    : 0
+BC                      Z (string) : 0
+XD                      Z (string) : 49A12AC19C11C4
+SM                      i (int32)  : 0
+AS                      i (int32)  : 511
+flag                    int flag   : 0x63 (paired, unmapped according to bits 1 &amp; 3)
+
+Parameters start (default to 0), width (default to 5) and color (default to 0) can be used with reads to adjust the window around variant, and use colors for insertions and variant allele, with syntax reads?start=-5&amp;width=10&amp;color=1. min_qual, min_mapq and TAG=VAL (or &gt;, &gt;=, &lt;, &lt;=, !=) can be used for all fields to limit the reads to the ones with mapq and qual scores that exceed the specified value, and tag satisfying specified conditions. Parameter limit limits the number of reads or calls to display if the depth of coverage is high.
+</code></pre>
+
+<p>The depth of coverage of these variants could be obtained using the BAM track,</p>
+
+<pre><code>% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam')&quot; -l5
+
+
+1   1138963 C   T   26
+1   1470808 G   A   37
+1   6161109 C   T   27
+1   6314785 T   C   32
+1   9990112 A   G   43
+</code></pre>
+
+<p>The quality of reads and alignment can be displayed using fields <code>qual</code> and <code>mapq</code>,</p>
+
+<pre><code>% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam', 'qual')&quot; -l5
+
+
+1   1138963 C   T   34,34,32,30,33,39,40,41,31,34,23,25,37,33,34,40,40,2,11,31,33,24,2,40,39,35
+1   1470808 G   A   31,2,37,35,35,33,33,35,33,29,41,35,35,33,33,2,35,5,35,35,36,40,31,40,31,26,23,38,33,39,31,41,40,30,35,34,34
+1   6161109 C   T   10,31,32,39,31,39,41,41,35,2,22,40,38,28,39,40,39,35,41,20,40,35,39,38,35,30,34
+1   6314785 T   C   2,34,37,2,33,2,31,27,37,10,24,39,33,36,31,35,35,36,33,33,38,41,41,29,38,38,39,23,35,35,31,35
+1   9990112 A   G   34,34,37,37,35,36,36,33,36,36,41,31,37,39,36,40,38,36,41,38,37,41,35,25,38,40,40,40,36,41,41,39,37,34,30,36,36,41,41,36,39,37,37
+
+
+
+
+% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam', 'mapq')&quot; -l5
+
+
+1   1138963 C   T   254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,241,254,254,254,254,254,254,254,254
+1   1470808 G   A   254,194,254,254,254,254,254,254,254,254,254,254,254,254,254,149,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254
+1   6161109 C   T   254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254
+1   6314785 T   C   254,254,254,254,254,254,254,254,254,231,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254
+1   9990112 A   G   254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254
+</code></pre>
+
+<p>We can exclude some reads depending on quality scores, using parameters <code>min_qual</code> or <code>min_mapq</code>,</p>
+
+<pre><code>% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam', 'coverage?min_qual=30')&quot; -l5
+
+
+1   1138963 C   T   20
+1   1470808 G   A   31
+1   6161109 C   T   22
+1   6314785 T   C   24
+1   9990112 A   G   42
+</code></pre>
+
+<p>Read TAGs can also be outputed or used in filter conditions. For example, this bam file has tags <code>AM</code>, <code>BC</code>, <code>XD</code>, <code>SM</code> and <code>AS</code>, you can list the <code>AS</code> values of all reads using command</p>
+
+<pre><code>% vtools output ex49 chr pos ref alt 'ref_sequence(chr, pos-3, pos+3)' &quot;track('LP6005253-DNA_A02.bam', 'AS?min_qual=35')&quot; -l5
+
+
+1   1138963 C   T   AGCCTCC 1007|1001|1001|966|941|1006|816|946|1002
+1   1470808 G   A   GGCGGCC 1007|475|783|951|998|878|967|968|1004|967|967|962|962|935|1004|1008|963|998
+1   6161109 C   T   TACCGTG 897|922|927|830|967|965|936|997|997|832|774|961|966|922|937|949|964
+1   6314785 T   C   CGATGGG 939|517|0|925|968|965|962|912|968|967|855|0|924|962|923|919
+1   9990112 A   G   ATCATTA 964|966|968|1007|965|1003|1008|1008|991|963|989|963|906|872|1008|1007|965|962|968|1002|963|1007|963|966|1006|937|912|1008|966|1008|962|1008|1008|1005|1008|1008
+</code></pre>
+
+<p>or its values to filter reads:</p>
+
+<pre><code>% vtools output ex49 chr pos ref alt 'ref_sequence(chr, pos-3, pos+3)' &quot;track('LP6005253-DNA_A02.bam', 'coverage?AS&gt;1000')&quot; -l5
+
+
+1   1138963 C   T   AGCCTCC 5
+1   1470808 G   A   GGCGGCC 7
+1   6161109 C   T   TACCGTG 0
+1   6314785 T   C   CGATGGG 1
+1   9990112 A   G   ATCATTA 18
+</code></pre>
+
+<p></details></p>
+
+<p><details><summary> Count and display calls and reads for reads of different types</summary></p>
+
+<p>The <code>track</code> function can also be used to display calls (nucleotide at the variant site) and reads (nucleotide sequences around the variant site). To demonstrate the features more clearly, we will use a project with more types of variants.</p>
+
+<p>First, we can display the nucleotide at the variant site using the <code>calls</code> parameter,</p>
+
+<pre><code>% bam=/path/to/a/bam/file
+% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'calls?limit=20')&quot;
+
+
+1   118420020   -               T   IIIII.I.I.I..III.I.I
+1   159023386   G               A   .AAAAA..A.AA..A..A.A
+1   160398161   G               A   A.A.AA....A..AAA..A.
+1   180772617   C               T   .T..TTT..TT.T.TTTT.T
+3   12581722    T               C   C.C.......C.C....CC.
+4   1945715     A               T   .N..T..TTTTT.T..T.TT
+5   137089865   C               G   .G..G.G..GGGG...G...
+8   42878531    TCCT            -   ....................
+12  65449852    C               A   AA.A.A..AA.AAA..AAAA
+16  11929051    T               C   CC..CCC.........C...
+16  17197814    G               A   AA..A.AAAAA..AA.AAAA
+17  78938525    G               A   A......AAA....AAAAAA
+17  79525590    C               G   .GG.GGG..GG...G.G...
+17  79687655    C               T   ....T.TTT.TTT..TTN.T
+19  34843754    CCCCACCCCAGC    -   ..........**.*......
+</code></pre>
+
+<p>The output shows</p>
+
+<ol>
+<li>Nucleotides that match the reference sequence are displayed as <code>.</code>.</li>
+<li>Deletions are displayed as <code>*</code>.</li>
+<li>Insertions are displayed as <code>I</code>.</li>
+</ol>
+
+<p>You can display the reads around the variant site, using the <code>reads</code> parameter:</p>
+
+<pre><code>% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'reads?limit=5')&quot;
+
+
+1   118420020   -               T   T.....|T.....|T.....|T.....|T.....
+1   159023386   G               A   ..   |A... |A....|A....|A....
+1   160398161   G               A   A    |..   |A..  |...  |A....
+1   180772617   C               T   .    |T..  |.... |.....|T....
+3   12581722    T               C   C    |..   |C..  |.... |.....
+4   1945715     A               T   .... |N....|.....|.....|T....
+5   137089865   C               G   .....|G....|.....|.....|G....
+8   42878531    TCCT            -   .    |.... |.... |.....|.....
+12  65449852    C               A   A    |A..  |.... |A....|.....
+16  11929051    T               C   C.   |C....|.....|.....|C....
+16  17197814    G               A   A.   |A..  |.... |.....|A....
+17  78938525    G               A   A..  |.... |.... |.....|.....
+17  79525590    C               G   ..   |G... |G... |.....|G....
+17  79687655    C               T   .    |.....|.....|.....|T....
+19  34843754    CCCCACCCCAGC    -   ..   |..   |...  |.....|.....
+</code></pre>
+
+<p>Parameter <code>limit-5</code> is used to avoid lengthy output.</p>
+
+<p>Parameters <code>start</code> and <code>width</code> can be used to specify the window of sequences to display:</p>
+
+<pre><code>% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'reads?limit=5&amp;start=-5&amp;width=8&amp;color=1&amp;show_seq=1')&quot;
+
+
+1   118420020   -               T   GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT
+1   159023386   G               A   AAGTGGT |AAGTGATG|AAGTGATG|AAGTGATG|AAGTGATG
+1   160398161   G               A   CTTCCA  |CTTCCGT |CTTCCATG|CTTCCGTG|CTTCCATG
+1   180772617   C               T   TACTAC  |TACTATGC|TACTACGC|TACTACGC|TACTATGC
+3   12581722    T               C   GGTTGC  |GGTTGTG |GGTTGCGC|GGTTGTGC|GGTTGTGC
+4   1945715     A               T   AAATGACC|AAANNNCC|AAATGACC|AAATGACC|AAATGTCC
+5   137089865   C               G   TGGAGCCA|TGGAGGCA|TGGAGCCA|TGGAGCCA|TGGAGGCA
+8   42878531    TCCT            -   CTTCCT  |CTTCCTCC|CTTCCTCC|CTTCCTCC|CTTCCTCC
+12  65449852    C               A   ACTTAA  |ACTTAAAT|ACTTACAT|ACTTAAAT|ACTTACAT
+16  11929051    T               C   TTTTTCT |TTTTTCTC|TTTTTTTC|TTTTTTTC|TTTTTCTC
+16  17197814    G               A   GAGAGAA |GAGAGAAA|GAGAGGAA|GAGAGGAA|GAGAGAAA
+17  78938525    G               A   CAGGCACT|CAGGCGCT|CAGGCGCT|CAGGCGCT|CAGGCGCT
+17  79525590    C               G   CTCCCCT |CTCCCGTT|CTCCCGTT|CTCCCCTT|CTCCCGTT
+17  79687655    C               T   CAGACC  |CAGACCAC|CAGACCAC|CAGACCAC|CAGACTAC
+19  34843754    CCCCACCCCAGC    -   GCAGACC |GCAGACC |GCAGACCC|GCAGACCC|GCAGACCC
+</code></pre>
+
+<p>Parameter <code>color=1</code> will make the insertion displayed in green, and nucleotide at variant site displayed in blue on terminal. Parameter <code>show_seq</code> displays real sequence instead of <code>.</code> for matched nucleotides.</p>
+
+<p>You can also specify the types of reads so that you can count or display just a subsets of reads. For example, you can display all reads on the forward strand</p>
+
+<pre><code>% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'reads?limit=5&amp;start=-5&amp;width=8&amp;color=1&amp;show_seq=1&amp;strand=+')&quot;
+
+
+1   118420020   -               T   GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT
+1   159023386   G               A   AAGTGATG|AAGTGATG|AAGTGATG|AAGTGATG|AAGTGGTG
+1   160398161   G               A   CTTCCATG|CTTCCATG|CTTCCATG|CTTCCATG|CTTCCATG
+1   180772617   C               T   TACTACGC|TACTACGC|TACTATGC|TACTATGC|TACTACGC
+3   12581722    T               C   GGTTGTG |GGTTGCGC|GGTTGTGC|GGTTGTGC|GGTTGTGC
+4   1945715     A               T   AAANNNCC|AAATGACC|AAATGACC|AAATGTCC|AAATGACC
+5   137089865   C               G   TGGAGCCA|TGGAGGCA|TGGAGCCA|TGGAGCCA|TGGAGGCA
+8   42878531    TCCT            -   CTTCCTCC|CTTCCTCC|CTTCCTCC|CTTCCTCC|CTTCCTCC
+12  65449852    C               A   ACTTACAT|ACTTAAAT|ACTTAAAT|ACTTAAAT|ACTTAAAT
+16  11929051    T               C   TTTTTCTC|TTTTTTTC|TTTTTTTC|TTTTTTTC|TTTTTTTC
+16  17197814    G               A   GAGAGAA |GAGAGAAA|GAGAGGAA|GAGAGAAA|GAGAGAAA
+17  78938525    G               A   CAGGCACT|CAGGCGCT|CAGGCGCT|CAGGCGCT|CAGGCGCT
+17  79525590    C               G   CTCCCGTT|CTCCCGTT|CTCCCGTT|CTCCCCTT|CTCCCCTT
+17  79687655    C               T   CAGACCAC|CAGACCAC|CAGACCAC|CAGACCAC|CAGACTAC
+19  34843754    CCCCACCCCAGC    -   GCAGACCC|GCAGACCC|GCAGACCC|GCAGACCC|GCAGACCC
+</code></pre>
+
+<p>Or display just the mismatch single-nucleotides</p>
+
+<pre><code>% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'reads?limit=5&amp;start=-5&amp;width=8&amp;type=1')&quot;
+
+
+1   118420020   -               T
+1   159023386   G               A   .....A..|.....A..|.....A..|.....A..|.....A..
+1   160398161   G               A   .....A  |.....A..|.....A..|.....A..|.....A..
+1   180772617   C               T   .....T..|.....T..|.....T..|.....T..|.....T..
+3   12581722    T               C   .....C  |.....C..|.....C..|.....C..|.....C..
+4   1945715     A               T   ...NNN..|.....T..|.....T..|.....T..|.....T..
+5   137089865   C               G   .....G..|.....G..|.....G..|.....G..|.....G..
+8   42878531    TCCT            -
+12  65449852    C               A   .....A  |.....A..|.....A..|G....A..|.....A..
+16  11929051    T               C   .....C. |.....C..|.....C..|.....C..|.....C..
+16  17197814    G               A   .....A. |.....A..|.....A..|.....A..|.....A..
+17  78938525    G               A   .....A..|.....A..|.....A..|.....A..|.....A..
+17  79525590    C               G   .....G..|.....G..|.....G..|.....G..|.....G..
+17  79687655    C               T   .....T..|.....T..|.....T..|.....T..|.....T..
+19  34843754    CCCCACCCCAGC    -
+</code></pre>
+
+<p>For example, we can output the number of reads that match (type 0), mismatch (type 1), insert before (type 2), or delete (type 3) the nucleotide sequence at the variant site:</p>
+
+<pre><code>vtools output exon1 chr pos ref alt &quot;track('${bam}')&quot; \
+    &quot;track('${bam}', 'coverage?type=0')&quot; \
+    &quot;track('${bam}', 'coverage?type=1')&quot; \
+    &quot;track('${bam}', 'coverage?type=2')&quot; \
+    &quot;track('${bam}', 'coverage?type=3')&quot; \
+    &quot;track('${bam}', 'coverage?type=3&amp;strand=+')&quot; \
+    &quot;track('${bam}', 'coverage?type=3&amp;strand=-')&quot;
+
+
+1   118420020   -               T   25  9   0   16  0   0   0
+1   159023386   G               A   43  18  25  0   0   0   0
+1   160398161   G               A   50  23  27  0   0   0   0
+1   180772617   C               T   40  17  23  0   0   0   0
+3   12581722    T               C   107 63  44  0   0   0   0
+4   1945715     A               T   64  29  35  0   0   0   0
+5   137089865   C               G   81  41  40  0   0   0   0
+8   42878531    TCCT            -   50  27  0   14  9   3   6
+12  65449852    C               A   65  30  35  0   0   0   0
+16  11929051    T               C   69  37  32  0   0   0   0
+16  17197814    G               A   57  19  38  0   0   0   0
+17  78938525    G               A   88  47  41  0   0   0   0
+17  79525590    C               G   58  31  27  0   0   0   0
+17  79687655    C               T   95  54  41  0   0   0   0
+19  34843754    CCCCACCCCAGC    -   64  30  0   0   34  16  18
+</code></pre>
+
+<p>The last two functions are interesting as it shows the number of reads on forward and reverse strands that shows the deletion. This information can be usful because the variant might not be real if it exists mostly on one of the strands.</p>
+
+<p></details></p>
+
+<p>An option <code>color=1</code> can be used with the <code>read</code> field to display insertions and variant allele in color (green and blue respectively). This is very helpful if you have long reads and reads that contain indels.</p>
+
+<p>Online BAM tracks can also be used so you do not have to download large BAM files in order to use them.</p>
+
+<p><details><summary> Examples: obtain depth of coverage of variants using online BAM files</summary></p>
+
+<pre><code>% vtools output variant chr pos &quot;track('ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/alignment/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam')&quot; -l5
+
+
+[bam_index_load] attempting to download the remote index file.
+1   533 0
+1   41342   1
+1   41791   4
+1   44449   7
+1   44539   12
+</code></pre>
+
+<p>(:exampleend</summary></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/documentation/functions/mut_sequence/" title="mut_sequence"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/documentation/functions/genotype/" title="Genotype" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1526307082"></script>
+    <script src="/js/perfect-scrollbar.min.js?1526307082"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1526307082"></script>
+    <script src="/js/jquery.sticky.js?1526307082"></script>
+    <script src="/js/featherlight.min.js?1526307082"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1526307082"></script>
+    <script src="/js/highlight.pack.js?1526307082"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1526307082"></script>
+    <script src="/js/learn.js?1526307082"></script>
+    <script src="/js/hugo-learn.js?1526307082"></script>
+
+    <link href="/mermaid/mermaid.css?1526307082" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1526307082"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

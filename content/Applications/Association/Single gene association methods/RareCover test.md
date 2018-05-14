@@ -80,7 +80,7 @@ RareCover method is implemented in this program as a two-sided test with the tun
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -137,7 +137,7 @@ RareCover method is implemented in this program as a two-sided test with the tun
 
 **QQ-plot**  Attach:rarecover.jpg 
 
-(:exampleend:) 
+</details>
 
 [^#^]
 

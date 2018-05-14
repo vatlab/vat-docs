@@ -32,7 +32,7 @@ returns the genotype (0 for homozygous wild type, 1 for heterzygous alternative,
 
 ## Details
 
-(:toggleexample Examples: Use `genotype` function to get genotypes of samples:) 
+<details><summary> Examples: Use `genotype` function to get genotypes of samples</summary> 
 
 Let us get a simple project and name the samples properly 
 
@@ -121,7 +121,7 @@ In addition to genotype, you can use the `genotype()` funciton to display other 
     1	75891	T	C	0	0
     
 
-(:exampleend:) 
+</details>
 
 The first parameter can also be a condition based on which several samples are selected (default to all samples). In this case, this function will return a list of genotypes (for default `field='GT'`) or other fields. Two additional parameters are acceptable (joined by `&`): 
 
@@ -141,7 +141,7 @@ For example, functions
 
 returns genotypes of all samples, samples with `aff=1`, and depth of coverage of of all samples with `BMI > 20`, respectively. 
 
-(:toggleexample Examples: Display genotypes of multiple samples:) It is straightforward to list genotypes of all samples that contain the variant: 
+<details><summary> Examples: Display genotypes of multiple samples</summary> It is straightforward to list genotypes of all samples that contain the variant: 
 
 
 
@@ -239,7 +239,7 @@ Finally, if you would like to view values of other genotype info fields (c.f. `v
     1	75891	T	C	.	.	.	.	.	.	.	.	.	6
     
 
-(:exampleend:) 
+</details>
 
 
 

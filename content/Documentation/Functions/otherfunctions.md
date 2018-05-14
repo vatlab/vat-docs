@@ -29,7 +29,7 @@ Function `vcf_variant(chr, pos, ref, alt, dbSNP.name)` will produce
 
 for these variants. Here `dbSNP.name` is used to add rsname to the output. You can use a contant `"."` if dbSNP is not available. If no name is specified, the output will have only four columns. 
 
-(:toggleexample Examples: output indels with padding alleles:) Because the SNV case is simple, let us import some indels from an online snapshot 
+<details><summary> Examples: output indels with padding alleles</summary> Because the SNV case is simple, let us import some indels from an online snapshot 
 
 
 
@@ -139,7 +139,7 @@ For variants with multiple entries in the `dbSNP` database, we can use option `-
     1	819712	rs77305433	CT	C
     
 
-(:exampleend:) 
+</details>
 
  
 
@@ -167,7 +167,7 @@ and an optional field:
 
 If the optional field `other` is specified, then genotype 1/2 will be collapsed with genotype 1/1 or 2/2 to maintain a bi-allelic system. Otherwise it will be ignored (treated as homozygote wildtype). The resulting field is p-value of the test. 
 
-(:toggleexample Examples: test of Hardy-Weinberg Equilibrium:) We can calculate HWE p-value based on existing fields `total`, `het`, and `hom`, 
+<details><summary> Examples: test of Hardy-Weinberg Equilibrium</summary> We can calculate HWE p-value based on existing fields `total`, `het`, and `hom`, 
 
     % vtools update variant --set "hwe=HWE_exact(total, het, hom)"
     
@@ -187,7 +187,7 @@ Because of the small sample size, there are not many choices for p-values:
     1	9992	C	T	1.0
     
 
-(:exampleend:) 
+</details>
 
  
 
@@ -202,7 +202,7 @@ The function `Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_
 *   `num_gt_case`: total number of genotypes for the case samples, so twice of the number is total number of alleles for case samples 
 *   `num_gt_ctrl`: total number of genotypes for the control samples, so twice of the number is total number of alleles for ctrl samples 
 
-(:toggleexample Examples: Fisher's exact test for case/ctrl association:) To perform Fisher's exact test for case/ctrl association we can try to separate them into cases and controls and calculate statistics separately: 
+<details><summary> Examples: Fisher's exact test for case/ctrl association</summary> To perform Fisher's exact test for case/ctrl association we can try to separate them into cases and controls and calculate statistics separately: 
 
 
 
@@ -254,6 +254,6 @@ Again, there are not many possible p-values due to small sample size ...
     22	49534781	C	T	0.337597625574
     
 
-(:exampleend:)
+(:exampleend</summary>
 
  [1]: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1199378/

@@ -101,7 +101,7 @@ weight = 5
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -153,4 +153,4 @@ weight = 5
     ABL2	3180	794.385	0.963097
     
 
-(:exampleend:)
+(:exampleend</summary>

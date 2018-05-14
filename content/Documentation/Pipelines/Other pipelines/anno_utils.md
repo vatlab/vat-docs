@@ -91,7 +91,7 @@ You might have several projects and would like to use them to analyze a new proj
 
 The `proj2annoDB` pipeline defined in `anno_utils.pipeline` can be used for this purpose. It exports all variants and variant info fields of the master variant table, or a specified variant table (parameter `--export` to a file and create an annotation database using a generated `.ann` file. 
 
-(:toggleexample Create an annotation database from a project:) 
+<details><summary> Create an annotation database from a project</summary> 
 
     % vtools init test
     % vtools admin --load_snapshot vt_quickStartGuide
@@ -150,7 +150,7 @@ You can then use this annotation database to annotation other projects
     1	3545211	G	A	G	178
     
 
-(:exampleend:) 
+</details>
 
  
 
@@ -162,7 +162,7 @@ If you would like to study a variant-based annotation database in details, for e
 
 Annotation databases sometimes have multiple annotations for a variant (e.g. more than one dbSNP names for a variant). These variants will be imported only once in the resulting variant tools project. 
 
-(:toggleexample Convert database dbSNP to a project:) The input of this pipeline is the database DB file, which is usually under `~/.variant_tools/annoDB`. The output should be name of a directory that holds the created project. 
+<details><summary> Convert database dbSNP to a project</summary> The input of this pipeline is the database DB file, which is usually under `~/.variant_tools/annoDB`. The output should be name of a directory that holds the created project. 
 
 
 
@@ -204,7 +204,7 @@ Annotation databases sometimes have multiple annotations for a variant (e.g. mor
     INFO: Running "vtools import /Users/bpeng/Temp/cache/dbSNP.dump --format /Users/bpeng/Temp/cache/dbSNP.fmt --build hg19"
     
 
-(:exampleend:) 
+</details>
 
  
 
@@ -219,7 +219,7 @@ The default `vtools import` command by default imports variants but not related 
 
 The pipeline `annFileFromVcf` is designed to help you generate an annotation database from an input VCF file (but it also accepts a URL for an online vcf file) by extracting field information from the vcf file and creates an `.ann` file. 
 
-(:toggleexample Create an .ann file from the vcf file from the dbSNP vcf file :) The input of this pipeline is the database DB file, which is usually under `~/.variant_tools/annoDB`. The output should be name of a directory that holds the created project. 
+<details><summary> Create an .ann file from the vcf file from the dbSNP vcf file </summary> The input of this pipeline is the database DB file, which is usually under `~/.variant_tools/annoDB`. The output should be name of a directory that holds the created project. 
 
 
 
@@ -234,7 +234,7 @@ The pipeline `annFileFromVcf` is designed to help you generate an annotation dat
     INFO: Command "echo '# Please refer to http://varianttools.sourceforge.net/Annotation/New' > dbSNP.ann; echo '# for a description of the format of this file.' >> dbSNP.ann; echo '' >> dbSNP.ann; echo '[linked fields]' >> dbSNP.ann; echo 'hg19=chr,pos,ref,alt' >> dbSNP.ann; echo '' >> dbSNP.ann; echo '[data sources]' >> dbSNP.ann; echo 'description=An annotation database created from' ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/00-All.vcf.gz >> dbSNP.ann; echo 'version=' >> dbSNP.ann; echo 'anno_type=variant' >> dbSNP.ann; echo 'direct_url=' >> dbSNP.ann; echo 'source_url='ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/00-All.vcf.gz >> dbSNP.ann; echo 'source_type=txt' >> dbSNP.ann; echo 'source_pattern=' >> dbSNP.ann; echo '' >> dbSNP.ann; cat cache/00-All.vcf.gz.fields >> dbSNP.ann" completed successfully in 00:00:01
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -246,7 +246,7 @@ The created .ann file might not have the correct build information and might not
 
 During the analysis of dataset, you might have some summary report that can be used to direct further analysis, or you might have a text file that annotate some or all fields of your project. This pipeline help you convert these files to an annotation database so that you can use it in the project. 
 
-(:toggleexample Create an annotation database from summary statistics outputted from command `vtools output`:) For example, the following command counts the number of variants (in a variant table called `kg`, across all samples) and output know gene ID and the counts to a text file. 
+<details><summary> Create an annotation database from summary statistics outputted from command `vtools output`</summary> For example, the following command counts the number of variants (in a variant table called `kg`, across all samples) and output know gene ID and the counts to a text file. 
 
 
 
@@ -354,4 +354,4 @@ Compared to the number of singletons in the project, the above command identifie
 
 Using `vtools select` with condition `kg_sum_geno.sum_variant_num = 1` will include variants that appear in more than one gene but has count 1 in one of them. It is better to use `vtools exclude` and condition `kg_sum_geno.sum_variant_num > 1` to find out variants that appear in only one gene once. 
 
-(:exampleend:)
+(:exampleend</summary>

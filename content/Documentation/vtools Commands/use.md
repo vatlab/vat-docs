@@ -115,7 +115,7 @@ It is easy to use system-provided annotation databases. Generally speaking, you 
 *   Position-aware annotation databases (variant, position, and range) are ref-genome dependent. Most such annotation databases are built for a particular build of reference genome, but some of them support multiple reference genomes. 
 *   Newer databases usually contain more updated annotation information and usually use more recent build of reference genome. If you are using *hg18* and would like to use annotation databases that use build *hg19* of the reference genome, you can liftover your project to add *hg19* as an alternative reference genome. 
 
-(:toggleexample Examples: Use system-provided annotation databases:) Let us get a project 
+<details><summary> Examples: Use system-provided annotation databases</summary> Let us get a project 
 
 
 
@@ -315,7 +315,7 @@ After you use these databases, you could get the details of them using command `
 *   More detailed information such as statistics for each field are available if you specify option `-v2` to the `vtools show annotation` command 
 *   If you need to see a list of available fields, use command `vtools show fields`. 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -331,7 +331,7 @@ About multiple versions of the same database:
 
 Each database provide a number of fields and one or more default methods to link them to a project database. For example, if you look at the output of `vtools show annotation refGene`, you can see that this is a range-based database that is linked to a project using fields `chr`, `txStart`, and `txEnd`, which are chromosome name and start and ending of transcription region. The database, however, has other fields such as `cdsStart` and `cdsEnd` so you can link the database to a project using these two fields to identify variants in the coding regions of ref seq genes. You can even use regions such as `txStart-5000, txEnd+5000` to extend each region by 5k to include variants that are in vicinity of ref seq genes. 
 
-(:toggleexample Examples: alternative ways to link range-based annotation databases:) There are 730 variants in the regular ref seq gene regions, 
+<details><summary> Examples: alternative ways to link range-based annotation databases</summary> There are 730 variants in the regular ref seq gene regions, 
 
     % vtools select variant 'refGene.chr is not NULL' -c
     
@@ -386,11 +386,11 @@ This time more variants are selected by the refGene database,
     1170
     
 
-(:exampleend:) 
+</details>
 
 In addition to the fields used to link to the project, you can even change the type of annotation database by specifying the appropriate values to options `--anno_type` and `--linked_fieleds`. For example, the gawsCatalog database records is a position-based annotation database that records GWAS hits. Because of the uncertainty of the exact locations of these findings, you can link it to the project as a range-based database that find variants that are close to these GWAS hits. 
 
-(:toggleexample Examples: Link a position based database as a range-based database:) We would like to see if any of our variants has been identified by one of the Genome-wide association studies. `gwasCatalog` is a position-based database that records all identified variants by their positions. 
+<details><summary> Examples: Link a position based database as a range-based database</summary> We would like to see if any of our variants has been identified by one of the Genome-wide association studies. `gwasCatalog` is a position-based database that records all identified variants by their positions. 
 
 
 
@@ -426,11 +426,11 @@ However, we can link the database as a range-based database to check if there is
 
 This time, 24 variants are identified as within 10k distance of one of the GWA hits. 
 
-(:exampleend:) 
+</details>
 
 Because field-based databases can link to arbitrary fields, you do not have to use the default linking fields. For example, the `CancerGeneCensus` database by default links to the `refGene.name2` field by 'gene name'. It can also be linked to a knownGene ID because the CancerGeneCensus database has this field. 
 
-(:toggleexample Examples: Linking a field database using an alternative field:) The `CancerGeneCensus` database by default links to the `refGene.name2` field by 'gene name'. 
+<details><summary> Examples: Linking a field database using an alternative field</summary> The `CancerGeneCensus` database by default links to the `refGene.name2` field by 'gene name'. 
 
 
 
@@ -497,11 +497,11 @@ Note that you can link `GeneSymbol` (the default link-out field in the database)
     WARNING: 487 out of 487 values in annotation database CancerGeneCensus are not linked to the project.
     
 
-(:exampleend:) 
+</details>
 
 There is also nothing prevents you from using other annotation database as a field-based database. For example, the `gwasCatalog` database has a field `region` that records the cytoband of each GWAS signal belongs. If you link this field to database `cytoBand`, you can provide a list of GWAS hits within each cytoband. 
 
-(:toggleexample Examples: Use a position-based database as a field database to annotate cytoBand:) The gwasCatalog database has a field `region` that records the cytoband of each GWAS hit. If we first use `cytoBand`, 
+<details><summary> Examples: Use a position-based database as a field database to annotate cytoBand</summary> The gwasCatalog database has a field `region` that records the cytoband of each GWAS hit. If we first use `cytoBand`, 
 
     % vtools use cytoBand
     
@@ -563,7 +563,7 @@ Although in this case we should use option `--all` to list all GAWS hits
     1	6241	1p36.33	NR	Body mass index
     
 
-Obviously, all variants belonging to the same cytoband will have the same gwas hits as annotations. (:exampleend:) 
+Obviously, all variants belonging to the same cytoband will have the same gwas hits as annotations. </details>
 
 
 

@@ -58,11 +58,11 @@ weight = 4
 
 ## Details
 
-(:toggleexample Examples: Import illumina data:) 
+<details><summary> Examples: Import illumina data</summary> 
 
     $ vtools init test --force
     $ vtools execute illumina load_data --input /path/to/data/LP* \
        --output raw_data.tar maxgt_data.tar poly_data.tar
     
 
-(:exampleend:)
+(:exampleend</summary>

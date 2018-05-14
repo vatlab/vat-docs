@@ -1,0 +1,79 @@
++++
+title = "Discovery"
+description = ""
+weight = 2
++++
+
+
+
+# Discover informative variants from a large number of variants
+
+
+
+### Introduction
+
+Once you have [imported][1][?][1] variants and samples of an exome or whole-genome sequencing project, you are typically facing a master variant table with millions of variants. Depending on the phenotypes of interest and particular research topics, you might want to filter variants for subsequent association analysis, or select variants that are more informative than others for further lab-based analysis. For example, you might be interested in 
+
+
+
+*   Variants in a specific list of genes (cancer genes?) 
+*   Variants are that novel (not in dbSNP and 1000 genomes project) 
+*   Variants that exist only in cases but not in control, 
+*   Variants that are non-synonymous, frame-shifting, predicted to be damaging, or highly conserved during evolution, 
+*   Variants that are in exon regions of genes, 
+*   Variants that are in particular pathways 
+
+
+
+### Variant info and annotation fields
+
+Variants that satisfies these conditions can be selected from either project-specific properties (sample statistics, quality score etc) or annotation databases (dbSNP or 1000 genome project membership, gene regions etc). Required variant info and annotation fields could be prepared by 
+
+
+
+*   [Import][1][?][1] or [update][2][?][2] variant info fields from source files, 
+*   [Calculate sample statistics][2][?][2] as variant info fields, and 
+*   [Download and link][3][?][3] project to various annotation databases. 
+
+Please refer to relevant documentation pages for details. 
+
+
+
+### Selection and management of variants
+
+After you have required variant info and annotation fields in place, you have conceptually a huge table with variant as rows and variant info and annotation fields as columns. It is then relatively easy to use command `vtools select` or `vtools exclude` to select variants of interest. For example, if you have a field `num_case` as number of alternative alleles in the cases (affected individuals), `num_control` as number of alternative alleles in controls (unaffected individuals), `SIFT_score` from database [dbNSFP][4][?][4], you could use condition 
+
+
+
+    'num_case>0' 'num_control=0' 'SIFT_score>0.95' 'dbSNP.chr is NULL'
+    
+
+to select variants that are available in cases (`num_case>0`), not in control (`num_control=0`), predicted to be damaging (`SIFT_score>0.95`), and is not in dbSNP (`dbSNP.chr is NULL`). The last condition looks a bit strange but it merely means that there is no value (`NULL`) for field `dbSNP.chr` in the large virtual table we have imagined, meaning variants that are not in the `dbSNP` database. 
+
+Selected variants could be outputted directly but they are more frequently saved to a separate **variant table** for future reference. Many variant tables could be created based on different selection criteria, and you could use any of these tables whenever a variant table is needed (e.g. after commands `vtools select`, `vtools exclude`, `vtools output`, and `vtools export`). 
+
+
+
+### Tutorials
+
+For more information on the use of these commands, please refer to the following tutorials: 
+
+
+
+*   Analyzing 44 whole genome cases and 200 exome controls, with detailed **performance measures** [![][6]][6][?][6] 
+*   Analyzing 5 whole-genome samples from **Illumina** [![][8]][8][?][8] 
+*   **Compare** variants from the same samples called by **Complete Genomics** and **Illumina** [![][10]][10][?][10] 
+*   **Select variants** belonging to specified genes [![][12]][12][?][12]
+
+ [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Import?action=edit
+ [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Update?action=edit
+ [3]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.HomePage?action=edit
+ [4]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.DbNSFP?action=edit
+ []: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.Case44Ctrl200?action=edit
+ [6]: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.Case44Ctrl200?action=edit
+ []: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.IlluminaFive?action=edit
+ [8]: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.IlluminaFive?action=edit
+ []: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.CompareVariants?action=edit
+ [10]: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.CompareVariants?action=edit
+ []: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.SelectingVariants?action=edit
+ [12]: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.SelectingVariants?action=edit

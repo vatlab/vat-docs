@@ -71,7 +71,7 @@ This test only works for case control data without covariates. Please refer to `
 
 ### Application
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -127,7 +127,7 @@ This test only works for case control data without covariates. Please refer to `
 
 **QQ-plot**  Attach:cfisher.jpg 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -135,7 +135,7 @@ This test only works for case control data without covariates. Please refer to `
 
 This collapsing test for rare variant is based on an exact test which guarantees to control for type I error yet may be overly conservative. Mid-P values are a reasonable compromise between the conservativeness of the ordinary exact test and the uncertain adequacy of large-sample methods. `--midp` switch gives Mid-P values for one-sided exact test 
 
-(:toggleexample Example using **snapshot** `vt_ExomeAssociation`:) 
+<details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
 
@@ -188,6 +188,6 @@ This collapsing test for rare variant is based on an exact test which guarantees
     ABCA12	3180	28	312	0.979172	0.535912
     
 
-**QQ-plot**  Attach:cfisher-midp.jpg (:exampleend:) 
+**QQ-plot**  Attach:cfisher-midp.jpg </details>
 
 [^#^]

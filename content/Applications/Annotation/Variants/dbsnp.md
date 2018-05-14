@@ -39,7 +39,7 @@ The default version of our **dbSNP** annotation is currently referring to dbSNP1
       VP (char)             Variation Property. Documentation 
                             is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
       GENEINFO (char)       Pairs each of gene symbol:gene id.  
-                            The gene symbol and id are delimited by a colon (:)
+                            The gene symbol and id are delimited by a colon (</summary>
                             and each pair is delimited by a vertical bar (|)
       dbSNPBuildID (int)    First dbSNP Build for RS
       SAO (int)             Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic,

@@ -155,7 +155,7 @@ Resources, such as annotation databases, format specification, and reference gen
 
 This command by default download all current resources (e.g. most recent versions of annotation databases for latest version of reference genome). You can however using option `hg18` to download resources for another reference genome, or option `existing` to update only resources that exists locally. 
 
-(:toggleexample Examples: Download resources:) The following command checks files under the local resource directory, ignored 112 existing files and downloaded a new version of EVS annotation database. 
+<details><summary> Examples: Download resources</summary> The following command checks files under the local resource directory, ignored 112 existing files and downloaded a new version of EVS annotation database. 
 
 
 
@@ -169,7 +169,7 @@ This command by default download all current resources (e.g. most recent version
     2/2 annoDB/evs-6500.ann: 100% [=================================] 7,984.0 40.2K/s in 00:00:00
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -193,7 +193,7 @@ and
 
 In the first option, all selected samples are renamed to `name`. In the second option, the first instance of `name1` in sample names will be replaced by `name2`. The former is similar to linux command `move src dest` and the latter is similar to command `rename pat1 pat2 files`. 
 
-(:toggleexample Examples: Rename samples:) Let us first get some data and a few samples 
+<details><summary> Examples: Rename samples</summary> Let us first get some data and a few samples 
 
 
 
@@ -265,7 +265,7 @@ If you would like to change names of multiple samples according to a pattern, yo
 
 The command might look strange to you, but the first `1` is a condition to select all samples (`true`), the second and third parameter changes the first incidence of `V` to `SAMP` for all matched sample names. 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -277,7 +277,7 @@ If you would like to prefix sample names by a string (e.g. `V1` -> `SAMP_V1`), y
 
 Command `vtools admin --merge_samples` merges samples with the same names to a single sample. This command is used when genotypes of a sample are stored in several files (e.g. chromosome by chromosome, or seprate files for SNPs and Indels resulting from the Illumina pipeline) and are imported as separate samples. These samples should be merged together because otherwise number of samples in the variant tools project will not match number of physical samples, and lead to erronous results during analysis. Because this command merge samples by names, samples to be merged should be renamed to have the same names if needed. 
 
-(:toggleexample Examples: Merge samples with same names:) All our samples have different names now so we have to rename one of them in order to merge it with another sample, 
+<details><summary> Examples: Merge samples with same names</summary> All our samples have different names now so we have to rename one of them in order to merge it with another sample, 
 
     % vtools admin --rename_samples 'sample_name = "max_gt"' SAMP3
     
@@ -319,11 +319,11 @@ The genotypes are
     SAMP3	CASAVA18_SNP.txt,V3.vcf	1009	GT,Q_max_gt
     
 
-Note the change of filename field of the last sample. In addition, the orignal SAMP3 sample does not have genotype info field `Q_max_gt`. The new `SAMP3` has this field but the 988 genotypes from the orignal sample have `NULL` values for this field. (:exampleend:) 
+Note the change of filename field of the last sample. In addition, the orignal SAMP3 sample does not have genotype info field `Q_max_gt`. The new `SAMP3` has this field but the 988 genotypes from the orignal sample have `NULL` values for this field. </details>
 
 Samples to be merged should not share any genotype (variant) because it is otherwise difficult to determine what genotypes to use for the merged sample. 
 
-(:toggleexample Examples: Fail to merge samples with shared genotypes:) If we rename sample `SAMP2` to `SAMP1`, 
+<details><summary> Examples: Fail to merge samples with shared genotypes</summary> If we rename sample `SAMP2` to `SAMP1`, 
 
     % vtools admin --rename_samples 1 SAMP2 SAMP1
     
@@ -341,7 +341,7 @@ and try to merge `SAMP2` to `SAMP1`, we will get an error message because `SAMP1
     ERROR: Failed to merge samples with name SAMP1 because there are 1979 genotypes for 1341 unique variants.
     
 
-Note that we use `vtools admin --rename_samples 1 SAMP2 SAMP1` to rename sample using the second option of the `vtools admin --rename_samples` command. It is easier to use than `vtools admin --rename_samples 'sample_name = "SAMP2"' SAMP1`, but has the risk of renaming other tables containing `SAMP2` (e.g. `SAMP21`) and should be used with caution. (:exampleend:) 
+Note that we use `vtools admin --rename_samples 1 SAMP2 SAMP1` to rename sample using the second option of the `vtools admin --rename_samples` command. It is easier to use than `vtools admin --rename_samples 'sample_name = "SAMP2"' SAMP1`, but has the risk of renaming other tables containing `SAMP2` (e.g. `SAMP21`) and should be used with caution. </details>
 
 
 
@@ -349,7 +349,7 @@ Note that we use `vtools admin --rename_samples 1 SAMP2 SAMP1` to rename sample 
 
 A lot of variant tables can be generated during the analysis and it can be difficult to remember what types of variants are stored in each table. *variant tools* allows you to use arbitrary characters in table names and describe tables with messages when they are created, rename tables and modify their descriptions after they are created. The latter two operations are performed using commands `vtools admin --rename-table OLDNAME NEWNAME` and `vtools admin --describe_table NAME NEW_DESCRIPTION`. The usages of these two commands are straightforward. 
 
-(:toggleexample Examples: Change name and comment of variant tables:) Let us get a sample project and create a few variant tables 
+<details><summary> Examples: Change name and comment of variant tables</summary> Let us get a sample project and create a few variant tables 
 
     vtools init testProj
     vtools admin --load_snapshot vt_simple
@@ -399,7 +399,7 @@ The table now has a new name and a description, but its creation date and comman
     Number of variants:     1611
     
 
-(:exampleend:) 
+</details>
 
  
 
@@ -407,7 +407,7 @@ The table now has a new name and a description, but its creation date and comman
 
 Sometimes when you get a bunch of data, look everywhere in the folder and emails, and cannot find any information regarding the reference genome used to call the variants. In this case, you can import your data using the most likely build of reference genome (`hg19`), and use command `vtools admin --validate_build` to check if you have made the correct assumption. 
 
-(:toggleexample Examples: Validate the reference genome used in a project:) Let us create a project and get some test data 
+<details><summary> Examples: Validate the reference genome used in a project</summary> Let us create a project and get some test data 
 
     % vtools init test
     % vtools admin --load_snapshot vt_testData
@@ -462,7 +462,7 @@ As you can see, most of the variants do not have correct reference genomes. Now 
     INFO: 1611 non-insertion variants are checked. 0 mismatch variants found.
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -499,7 +499,7 @@ You should in general use project-specific snapshots, unless you plan to carry t
 
 All changes to the current project will be lost if you revert to a previous snapshot. 
 
-(:toggleexample Examples: Save snapshots of a project :) By default, a snapshot can be created with a name, and saved without compression in the cache directory of the current project: 
+<details><summary> Examples: Save snapshots of a project </summary> By default, a snapshot can be created with a name, and saved without compression in the cache directory of the current project: 
 
 
 
@@ -604,7 +604,7 @@ A snapshot only contains the project, and the genotype database. It does not sav
 
 Directories cannot be directly added to snapshots, since recursively adding files under a directory may lead to unwanted behaviors (e.g., when symbolic links are involved). However you may use wildcard names (`cache/*`) to include files in a directory. 
 
-(:exampleend:) 
+</details>
 
 
 
@@ -743,7 +743,7 @@ to reset an option to its default values.
 
 Variant tools supports human reference genomes natively. It can also work with other reference genomes in `.crr` format, which is a binary format that allows efficient random access to the reference genome. If you have a reference genome in fasta format, you will need to convert it to `.crr` format using command `vtools admin --fasta2crr`. 
 
-(:toggleexample Examples: Create a .crr file for a mouse genome:) 
+<details><summary> Examples: Create a .crr file for a mouse genome</summary> 
 
 
 
@@ -773,7 +773,7 @@ Variant tools supports human reference genomes natively. It can also work with o
     	 mm10.crr
     
 
-(:exampleend:)
+(:exampleend</summary>
 
  [1]: http://www.sqlite.org/pragma.html#pragma_journal_mode
  [2]: http://www.sqlite.org/pragma.html

@@ -29,7 +29,7 @@ The function `Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_
 *   `num_gt_case`: total number of genotypes for the case samples 
 *   `num_gt_ctrl`: total number of genotypes for the control samples 
 
-(:toggleexample Examples: Fisher's exact test for case/ctrl association:) First, we compute statistics separately in cases and ctrls: 
+<details><summary> Examples: Fisher's exact test for case/ctrl association</summary> First, we compute statistics separately in cases and ctrls: 
 
 
 
@@ -65,6 +65,6 @@ And calcualte p-value for the Fisher's exact test:
     INFO: Adding field prop_pva
     
 
-(:exampleend:) [^#^]
+</details>[^#^]
 
  [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.Multivariate?action=edit
