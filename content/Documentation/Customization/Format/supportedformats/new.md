@@ -1,12 +1,9 @@
 +++
-title = "Format"
-description = ""
-weight = 1
+title = "Cumtomized"
+weight = 5
 +++
 
-# Specification of external file formats 
-
-
+## Specification of external file formats 
 
 ## Roles of format specification in variant tools:
 

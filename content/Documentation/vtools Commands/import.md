@@ -1,13 +1,12 @@
 +++
 title = "Import"
 weight = 2
-pre = ""
 +++
 
-### Import variants, genotypes and related information fields 
+## Import variants, genotypes and related information fields 
 
 
-#### Usage
+### 1. Usage
 
     % vtools import -h
     
@@ -83,16 +82,18 @@ pre = ""
 
 
 
-## General usages and options
+### 2. General usages and options
 
 Command `` vtools import `` imports variants, sample genotypes and related information fields. The imported variants are saved to the master variant table `variant` of the project, along with their information fields. Samples are saved to a genotype database `$proj_genotype` as separate sample tables. 
 
 {{% notice tip %}}
-1.  Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here][1]
 
-2.  Although vcf files produced by different variant calling software have different fields, *variant tools* provides a growing number of pipelines to import data in particular formats. You can have a look at available pipelines (`vtools show pipelines`) and details of a particular pipeline (`vtools show pipeline PIPELINE`) to see if you can find a pipeline to import your data. 
+ 1. Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here]([1]).
 
-3.  It is sometimes useful to import only variants to a project. The variant info could be added later using command `vtools update`, or built into an annotation database to reduce the size of the project. 
+ 2. Although vcf files produced by different variant calling software have different fields, *variant tools* provides a growing number of pipelines to import data in particular formats. You can have a look at available pipelines ([`vtools show`](Documentation/vtools Commands/show.md) `pipelines`) and details of a particular pipeline ([`vtools show`](Documentation/vtools Commands/show.md) `pipeline PIPELINE`) to see if you can find a pipeline to import your data. 
+
+ 3. It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](Documentation/vtools Commands/update.md), or built into an annotation database to reduce the size of the project. 
+
 {{% /notice %}}
 
 <details><summary>Examples:create a project and load some sample data</summary>
@@ -102,11 +103,13 @@ Let us first create a project and download a sample project with a bunch of test
     % vtools init import --parent vt_testData
     
 
-    INFO: variant tools 2.7.0 : Copyright (c) 2011 - 2016 Bo Peng
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project import
     INFO: Extracting snapshot vt_testData to .
     Downloading snapshot vt_testData.tar.gz from online repository
+    Extracting vt_testData: 100% [==================================================] 68,721 7.6M/s in 00:00:00
+
 
     
 {{% notice tip %}}
@@ -116,9 +119,9 @@ You can use command `vtools show snapshots` to get a list of available snapshots
 
 </details>
 
-##### File formats and format specification files (.fmt) (option `--format`)
+#### 2.1 File formats and format specification files (.fmt) (option `--format`)
 
-`` vtools import `` can handle input file in many different formats (e.g. `.vcf`) and their gzipped or bzipped versions (e.g. `.vcf.gz`). variant tools relies on [format specification files][2]to describe a file format. These files (with extension `.fmt`) tell variant tools how to read from an input file. They are available online and will be downloaded automatically to the local resource directory of variant tools. Please refer to the variant tools [input file format][3] for a list of supported formats, or use command `vtools show formats` to get a list of formats, and `vtools show format FMT` for details of a format. 
+`` vtools import `` can handle input file in many different formats (e.g. `.vcf`) and their gzipped or bzipped versions (e.g. `.vcf.gz`). variant tools relies on [format specification files](Documentation/Customization/Format/_index.md)  to describe a file format. These files (with extension `.fmt`) tell variant tools how to read from an input file. They are available online and will be downloaded automatically to the local resource directory of variant tools. Please refer to the variant tools [input file format](Documentation/Customization/Format/supportedformats/_index.md) for a list of supported formats, or use command `vtools show formats` to get a list of formats, and `vtools show format FMT` for details of a format. 
 
 A format specification file defines how to import variants (fields `chr`, `pos`, `ref`, and `alt`), variant info fields, genotypes, and genotype infor fields from input files. It basically tells command `vtools import` what fields are available from input file, from which column each field should be read, how to post-process input (e.g convert 0-based positions to 1-based), and how to store the data (data type). 
 
@@ -135,80 +138,59 @@ Command `vtools show formats` lists all supported file formats with a short desc
     
     INFO: Upgrading variant tools project to version 2.7.20
     ANNOVAR                 Input format of ANNOVAR. No genotype is defined.
-    ANNOVAR_exonic_variant_function Output from ANNOVAR for files of type
-                            *exonic_variant_function, generated from command
-                            "path/to/annovar/annotate_variation.pl annovar.txt
-                            path/to/annovar/humandb/". This format imports chr, pos,
-                            ref, alt and ANNOVAR annotations. For details please
-                            refer to http://www.openbioinformatics.org/annovar/annov
-                            ar_gene.html
-    ANNOVAR_output          Output from ANNOVAR, generated from command
-                            "path/to/annovar/annotate_variation.pl annovar.txt
-                            path/to/annovar/humandb/". This format imports chr, pos,
-                            ref, alt and ANNOVAR annotations. For details please
-                            refer to http://www.openbioinformatics.org/annovar/annov
-                            ar_gene.html
-    ANNOVAR_variant_function Output from ANNOVAR for files of type
-                            "*.variant_function", generated from command
-                            "path/to/annovar/annotate_variation.pl annovar.txt
-                            path/to/annovar/humandb/". This format imports chr, pos,
-                            ref, alt and ANNOVAR annotations. For details please
-                            refer to http://www.openbioinformatics.org/annovar/annov
-                            ar_gene.html
-    CASAVA18_indels         Input format illumina indels.txt file, created by CASAVA
-                            version 1.8
-                            (http://www.illumina.com/support/documentation.ilmn).
-                            This format imports chr, pos, ref, alt of most likely
-                            genotype, and a Q score for the most likely genotype.
-    CASAVA18_snps           Input format illumina snps.txt file, created by CASAVA
-                            version 1.8
-                            (http://www.illumina.com/support/documentation.ilmn).
-                            This format imports chr, pos, ref, alt of most likely
-                            genotype, and a Q score for the most likely genotype.
-    CGA                     Input format from Complete Genomics Variant file
-                            masterVarBeta-[ASM-ID].tsv.bz2, created by Complete
-                            Genomcis Analysis Tools (GSA Tools 1.5 or eariler,
-                            http://www.completegenomics.com/sequence-data/cgatools/,
-                            http://media.completegenomics.com/documents/DataFileForm
-                            ats+Standard+Pipeline+2.0.pdf). This format imports chr,
-                            pos, ref, alt of only variants that have been fully
-                            called and are not equals to ref. (E.g. records with
-                            zygosity equal to no-call and half, and varType equal to
+    ANNOVAR_exonic_variant_function Output from ANNOVAR for files of type *exonic_variant_function, generated
+                            from command "path/to/annovar/annotate_variation.pl annovar.txt
+                            path/to/annovar/humandb/". This format imports chr, pos, ref, alt and ANNOVAR
+                            annotations. For details please refer to
+                            http://www.openbioinformatics.org/annovar/annovar_gene.html
+    ANNOVAR_output          Output from ANNOVAR, generated from command "path/to/annovar/annotate_variation.pl
+                            annovar.txt path/to/annovar/humandb/". This format imports chr, pos, ref, alt and
+                            ANNOVAR annotations. For details please refer to
+                            http://www.openbioinformatics.org/annovar/annovar_gene.html
+    ANNOVAR_variant_function Output from ANNOVAR for files of type "*.variant_function", generated from command
+                            "path/to/annovar/annotate_variation.pl annovar.txt path/to/annovar/humandb/". This
+                            format imports chr, pos, ref, alt and ANNOVAR annotations. For details please refer
+                            to http://www.openbioinformatics.org/annovar/annovar_gene.html
+    CASAVA18_indels         Input format illumina indels.txt file, created by CASAVA version 1.8
+                            (http://www.illumina.com/support/documentation.ilmn). This format imports chr, pos,
+                            ref, alt of most likely genotype, and a Q score for the most likely genotype.
+    CASAVA18_snps           Input format illumina snps.txt file, created by CASAVA version 1.8
+                            (http://www.illumina.com/support/documentation.ilmn). This format imports chr, pos,
+                            ref, alt of most likely genotype, and a Q score for the most likely genotype.
+    CGA                     Input format from Complete Genomics Variant file masterVarBeta-[ASM-ID].tsv.bz2,
+                            created by Complete Genomcis Analysis Tools (GSA Tools 1.5 or eariler,
+                            http://www.completegenomics.com/sequence-data/cgatools/, http://media.completegenom
+                            ics.com/documents/DataFileFormats+Standard+Pipeline+2.0.pdf). This format imports
+                            chr, pos, ref, alt of only variants that have been fully called and are not equals
+                            to ref. (E.g. records with zygosity equal to no-call and half, and varType equal to
                             ref are discarded.)
-    basic                   A basic variant import/export format that import
-                            variants with four tab-delimited columns (chr, pos, ref,
-                            alt), and export variants, optional variant info fields
-                            and genotypes.
-    csv                     Import variants (chr, pos, ref, alt) in csv format, or
-                            output arbitrary specified fields in csv format
-    map                     This input format imports variants from files in MAP
-                            format (with columns chr, name gen_dist, pos), or any
-                            delimiter-separated format with columns chr and pos.
-                            Because these input files do not contain reference and
-                            alternative alleles of variants, this format queries
-                            such information from the dbSNP database using chr and
-                            pos. Records that does not exist in dbSNP will be
-                            discarded. Records with multiple alternative alleles
-                            will lead to multiple records.
-    pileup_indel            Input format for samtools pileup indel caller. This
-                            format imports chr, pos, ref, alt and genotype.
-    plink                   Input format for PLINK dataset. Currently only PLINK
-                            binary PED file format is supported (*.bed, *.bim &
-                            *.fam)
-    polyphen2               To be used to export variants in a format that is
-                            acceptable by the polyphen2 server
-                            http://genetics.bwh.harvard.edu/pph2/bgi.shtml, and to
-                            import the FULL report returned by this server.
-    rsname                  Import variants (chr, pos, ref, alt) that are queried
-                            from dbSNP database using provided rsnames
-    tped                    Output to TPED format with the first four columns chr
-                            name gen_pos pos, and the rest for genotypes. Variant
-                            tools cannot import from this format because it does not
-                            contain information about reference genome.
-    twoalleles              Import variants (chr, pos, ref, alt) from chr, pos,
-                            allele1, and allele2, using a reference genome to
-                            determine which one is reference
+    basic                   A basic variant import/export format that import variants with four tab-delimited
+                            columns (chr, pos, ref, alt), and export variants, optional variant info fields and
+                            genotypes.
+    csv                     Import variants (chr, pos, ref, alt) in csv format, or output arbitrary specified
+                            fields in csv format
+    map                     This input format imports variants from files in MAP format (with columns chr, name
+                            gen_dist, pos), or any delimiter-separated format with columns chr and pos. Because
+                            these input files do not contain reference and alternative alleles of variants,
+                            this format queries such information from the dbSNP database using chr and pos.
+                            Records that does not exist in dbSNP will be discarded. Records with multiple
+                            alternative alleles will lead to multiple records.
+    pileup_indel            Input format for samtools pileup indel caller. This format imports chr, pos, ref,
+                            alt and genotype.
+    plink                   Input format for PLINK dataset. Currently only PLINK binary PED file format is
+                            supported (*.bed, *.bim & *.fam)
+    polyphen2               To be used to export variants in a format that is acceptable by the polyphen2
+                            server http://genetics.bwh.harvard.edu/pph2/bgi.shtml, and to import the FULL
+                            report returned by this server.
+    rsname                  Import variants (chr, pos, ref, alt) that are queried from dbSNP database using
+                            provided rsnames
+    tped                    Output to TPED format with the first four columns chr name gen_pos pos, and the
+                            rest for genotypes. Variant tools cannot import from this format because it does
+                            not contain information about reference genome.
+    twoalleles              Import variants (chr, pos, ref, alt) from chr, pos, allele1, and allele2, using a
+                            reference genome to determine which one is reference
     vcf                     Import vcf
+
 
 {{% notice tip %}}
 You can suppress descriptions to formats using option `-v0` to command @@vtools show formats 
@@ -220,38 +202,34 @@ If you are interested in a particular format, you can
 
     % vtools show format basic
 
-    A basic variant import/export format that import variants with four tab-
-    delimited columns (chr, pos, ref, alt), and export variants, optional variant
-    info fields and genotypes.
+    A basic variant import/export format that import variants with four tab-delimited columns (chr, pos, ref,
+    alt), and export variants, optional variant info fields and genotypes.
 
     Columns:
-    1                     chromosome
-    2                     variant position, set --pos_adj to -1 to export variants
-                          in 0-based positions.
-    3                     reference allele
-    4                     alternative allele
-    5                     Output variant info fields as one column
-    6                     genotype in numeric style
+      1                     chromosome
+      2                     variant position, set --pos_adj to -1 to export variants in 0-based positions.
+      3                     reference allele
+      4                     alternative allele
+      5                     Output variant info fields as one column
+      6                     genotype in numeric style
     Formatters are provided for fields: gt
 
     variant:
-    chr                   Chromosome
-    pos                   1-based position, set --pos_adj to 1 if input position
-                          is 0 based.
-    ref                   Reference allele, '-' for insertion.
-    alt                   Alternative allele, '-' for deletion.
+      chr                   Chromosome
+      pos                   1-based position, set --pos_adj to 1 if input position is 0 based.
+      ref                   Reference allele, '-' for insertion.
+      alt                   Alternative allele, '-' for deletion.
 
     Format parameters:
-    chr_col               Column index for the chromosome field (default: 1)
-    pos_col               Column index for the position field (default: 2)
-    ref_col               Column index for the reference field (default: 3)
-    alt_col               Column index for the alternative field (default: 4)
-    pos_adj               Set to 1 to import variants with 0-based positions, or
-                          to -1 to export variants in 0-based positions. (default:0)
-    fields                Fields to output, simple arithmetics are allowed (e.g.
-                          pos+1) but aggregation functions are not supported.
-                          (default: )
-    
+      chr_col               Column index for the chromosome field (default: 1)
+      pos_col               Column index for the position field (default: 2)
+      ref_col               Column index for the reference field (default: 3)
+      alt_col               Column index for the alternative field (default: 4)
+      pos_adj               Set to 1 to import variants with 0-based positions, or to -1 to export variants in
+                            0-based positions. (default: 0)
+      fields                Fields to output, simple arithmetics are allowed (e.g. pos+1) but aggregation
+                            functions are not supported. (default: )
+
 
 From the description, we can that format `basic` import variants from a text file, with fields `chr`, `pos`, `ref`, and `alt` import from columns 1, 2, 3 and 4. The input columns could be adjust by format parameters `chr_col`, `pos_col`, `ref_col`, and `alt_col`. This format assumes a 1-based position. If the input data uses 0-based position, parameter `pos_adj` can be used to adjust input. </details>
 
@@ -315,11 +293,10 @@ If the position used in `variants.txt` is zero-based (like all data downloaded f
     % vtools import variants.txt --format basic --pos_adj 1 --build hg38
 
     INFO: Importing variants from variants.txt (1/1)
-    variants.txt: 100% [========================================================] 20 3.3K/s in 00:00:00
+    variants.txt: 100% [================================================================] 20 2.0K/s in 00:00:00
     INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
-    WARNING: Sample information is not recorded for a file without genotype and sample name.
-    Importing genotypes: 0 0.0/s in 00:00:00                                                           
-    Copying samples: 0 0.0/s in 00:00:00 
+    Importing genotypes: 0 0.0/s in 00:00:00                                                                   
+    Copying samples: 0 0.0/s in 00:00:00    
 
     % vtools output variant chr pos ref alt -l 10
 
@@ -338,7 +315,7 @@ If the position used in `variants.txt` is zero-based (like all data downloaded f
 </details>
 
 
-##### Sample genotypes, sample names, and samples without genotype (option `--sample_name`)
+#### 2.2 Sample genotypes, sample names, and samples without genotype (option `--sample_name`)
 
 An input file can have genotype data for zero (e.g. a list of variants), one, or more than one samples (many `.vcf` files), and genotypes for a sample might be stored in more than one files, it can be confusing how samples are handled in *variant tools*. 
 
@@ -369,11 +346,12 @@ However, if you would like to trace what variants have been imported from each i
     % vtools init import -f
     % vtools import variants.txt --format basic --build hg38 --sample_name noGT
     
-INFO: Importing variants from variants.txt (1/1)
-variants.txt: 100% [========================================================] 20 3.2K/s in 00:00:00
-INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
-Importing genotypes: 100% [=================================================] 20 10.0/s in 00:00:02
-Copying samples: 100% [======================================================] 2 8.4K/s in 00:00:00
+    INFO: Importing variants from variants.txt (1/1)
+    variants.txt: 100% [================================================================] 20 2.2K/s in 00:00:00
+    INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
+    Importing genotypes: 100% [=========================================================] 20 10.0/s in 00:00:02
+    Copying samples: 100% [==============================================================] 2 8.5K/s in 00:00:00
+
 
     
 
@@ -475,32 +453,31 @@ This can be fixed using command `vtools admin --rename_samples`, but can also be
 The samples now have correct names 
 
     % vtools show genotypes
-    
 
     sample_name	filename	num_genotypes	sample_genotype_fields
-    V1	V1.vcf	989	GT
-    V2	V2.vcf	990	GT
-    V3	V3.vcf	988	GT
+    SAMP1      	V1.vcf  	989          	GT
+    SAMP1      	V2.vcf  	990          	GT
+    SAMP1      	V3.vcf  	988          	GT
     
 
 </details>
 
-##### Primary and alternative reference genomes (option `--build`)
+#### 2.3 Primary and alternative reference genomes (option `--build`)
 
 Sometimes you can different batches of data that use different reference genomes. For example, your project might involve multiple batches of data over the years and variants from the old and new batches are processed using different versions of pipelines with different reference genome. In addition, you might want to a previous collection of samples or some public dataset as controls to your project, but they might use a different reference genome than your project. *variant tools* allows you to import data in two reference genomes. All you need to do is to specify the correct build of reference genome for each batch of data using option `--build`. 
 
-<details><summary>Import datasets in hg18 and hg19</summary>
+<details><summary>Import datasets in hg19 and hg38</summary>
 Variants from `CEU.vcf.gz` uses build `hg18` of the reference genome, 
 
     % vtools init import -f
-    % vtools import vcf/CEU.vcf.gz --build hg18
+    % vtools import CEU.vcf.gz --build hg18
     
-
     INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [==========================================] 300 6.7K/s in 00:00:00
+    CEU.vcf.gz: 100% [================================================================] 300 13.0K/s in 00:00:00
     INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [==============================] 18,000 8.9K/s in 00:00:02
-    Copying genotype: 100% [=====================================] 60 30.0/s in 00:00:02
+    Importing genotypes: 100% [=====================================================] 18,000 9.0K/s in 00:00:02
+    Copying samples: 100% [=============================================================] 90 89.7/s in 00:00:01
+
     
 
 Data from `variants.txt` are in `hg19`, so we use option `--build hg19` to import them, 
@@ -543,7 +520,7 @@ variants inputted in this way can be accessed using both reference genomes.
     % vtools output variant chr pos ref alt --build hg18 -l 10
     
 
-    1	533	G	C
+    1	533	    G	C
     1	41342	T	A
     1	41791	G	A
     1	44449	T	C
@@ -570,13 +547,12 @@ variants inputted in this way can be accessed using both reference genomes.
 </details>
 
 {{% notice warning %}}
-*   Because the UCSC liftover tool does not guarantee all coordinates can be mapped between reference genomes, variants that cannot be mapped back to the primary reference genome will have missing primary coordinates. **These variants (with missing primary coordinates) can only be retrieved and annotated through the alternative reference genome**. 
-
-*   Different variants in one reference genome might be mapped to the same variant in another (e.g. variant 90460203 and 91680930 in hg19 are both mapped to 91044656 in hg18). If two (or more) variants imported from the alternative reference genome are mapped to the same coordinates in the primary reference genome, **duplicate entries will appear in the primary reference genome**. If you have data in both reference genome (e.g. hg18, hg19), it is suggested that you **use the more recent reference genome (e.g. hg19) as the primary reference genome**, because latter reference genomes have more variants and less probability of coordinate collision. 
+Because the UCSC liftover tool does not guarantee all coordinates can be mapped between reference genomes, variants that cannot be mapped back to the primary reference genome will have missing primary coordinates. **These variants (with missing primary coordinates) can only be retrieved and annotated through the alternative reference genome**. 
+Different variants in one reference genome might be mapped to the same variant in another (e.g. variant 90460203 and 91680930 in hg19 are both mapped to 91044656 in hg18). If two (or more) variants imported from the alternative reference genome are mapped to the same coordinates in the primary reference genome, **duplicate entries will appear in the primary reference genome**. If you have data in both reference genome (e.g. hg18, hg19), it is suggested that you **use the more recent reference genome (e.g. hg19) as the primary reference genome**, because latter reference genomes have more variants and less probability of coordinate collision. 
 {{% /notice %}}
 
 
-##### Validate build of reference genome and variant positions 
+#### 2.4 Validate build of reference genome and variant positions 
 
 If you are uncertain about the reference genome of your input data, or if the variant positions are 0- or 1-based, you can use command `vtools admin --validate_build` to compare reference alleles with the alleles at the corresponding locations on the reference genome. You will notice a large number of mismatch variants if you have used incorrect reference genome or failed to adjust positions of variants from 0-based positions to 1-based. 
 
@@ -604,7 +580,7 @@ Let us import variants from `variants.txt` using hg18,
 We still have 1 mismatch variant but the variants are more likely created using `hg19`. The mismatch variants can be found in the project log file, or be listed with option `-v2`. It should be verified or removed from the project. 
 </details>
 
-##### Performance optimization (option `--jobs` and other techniques)
+#### 2.5 Performance optimization (option `--jobs` and other techniques)
 
 *variant tools* by default uses multiple processes to load data (`--jobs 4`), which works well for most datasets under most computing environments. Compared to importing data using a single process (`--jobs 1`), it performs slightly worse for small datasets, but is significantly faster for large files, especially when multiple files are imported. If you have high speed harddrive (e.g. disk array, SSD), you can use more processes to import data although more processes do not automatically translate to better performance due to the overhead of multi-processing and disk I/O scheduling. 
 
@@ -640,9 +616,9 @@ Finally, if you need to import a large amount of data from multiple files, it ca
 {{% /notice %}}
 
 
-#### Importing data in particular formats
+### 3. Importing data in particular formats
 
-##### Importing VCF files (format `vcf`)
+#### 3.1 Importing VCF files (format `vcf`)
 
 VCF is the most commonly used format to store genetic variants and sample genotypes from next-gen sequencing studies. *variant tools* can import data from plain (`.vcf`) or compressed (`.vcf.gz`) vcf format (version 4.0 or higher). Depending on the number of samples a vcf file stores, *variant tools* can import only variants (even if the vcf file contains sample genotypes, see an example below), import variants with a sample without genotype, and import all samples in a vcf file using specified sample names or sample names obtained from the meta information (see examples above). A limitation is that *variant tools* ignores phase information of genotypes. 
 
@@ -656,8 +632,11 @@ The vcf format can store arbitary variant and genotype information fields. *vari
 
 
 {{% notice tip %}}
-1.  If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
-2.  If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized `.fmt` file to import these. This process can be simplied using pipeline [import_vcf][6][?][6]. The command to use is similar to `vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19`. 
+
+1. If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
+
+2. If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized `.fmt` file to import these. This process can be simplied using pipeline [import_vcf][6][?][6]. The command to use is similar to `vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19`.
+
 {{% /notice %}}
 
 <details><summary>Examples: importing variant and genotype info fields</summary>
@@ -680,6 +659,7 @@ If we have a look at the header of `CEU.vcf.gz`, we can see
     ##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
     #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA06985	NA06986	NA06994	NA07000	NA07037	NA07051	NA07346	NA07347	NA07357	NA10847	NA10851	NA11829	NA11830	NA11831	NA11832	NA11840	NA11881	NA11894	NA11918	NA11919	NA11920	NA11931	NA11992	NA11993	NA11994	NA11995	NA12003	NA12004	NA12005	NA12006	NA12043	NA12044	NA12045	NA12144	NA12154	NA12155	NA12156	NA12234	NA12249	NA12287	NA12414	NA12489	NA12716	NA12717	NA12749	NA12750	NA12751	NA12760	NA12761	NA12762	NA12763	NA12776	NA12812	NA12813	NA12814	NA12815	NA12828	NA12872	NA12873	NA12874
     1	533	.	G	C	.	PASS	AA=.;AC=6;AN=120;DP=423	GT:DP:CB	0|0:6:SMB	0|0:14:SMB	0|0:4:SMB	0|0:3:SMB	0|0:7:SMB	0|0:4:SMB	1|0:6:MB	0|0:3:SMB	0|0:13:SMB	0|0:1:SMB	0|0:14:SMB	0|0:10:SMB	0|0:6:SB	0|0:2:SMB	0|0:6:SMB	0|0:4:SMB	0|0:2:SMB	0|0:15:SMB	0|0:2:SMB	0|0:1:SMB	0|0:26:SMB	0|0:6:SMB	0|1:14:MB	0|0:5:SMB	0|0:3:SMB	0|0:20:SMB	0|0:3:SMB	0|0:2:SMB	0|0:4:SMB	0|0:12:SMB	0|0:1:SMB	0|0:7:SMB	0|0:2:SMB	0|0:25:SMB	0|0:9:SMB	0|1:1:MB	0|0:9:SMB	0|0:1:SMB	0|0:6:SMB	0|0:12:SMB	0|0:7:SMB	0|0:18:SMB	0|0:2:SMB	0|0:2:SM	0|0:38:SMB	0|0:3:SM	0|0:3:SMB	0|0:5:SMB	0|0:5:SMB	0|0:3:SMB	0|0:0:MB	0|0:5:SMB	0|0:7:SMB	0|0:0:SMB	0|0:6:SMB	1|0:5:SMB	0|0:4:MB	0|0:5:SMB	1|0:5:MB	0|1:9:SMB
+
 
 
 we can see that this file contains genotype info `AA`, `AC`, `AN`, and `DP`, and genotype info `DP` and `CB`. If you check the output of command `vtools show format vcf`, you could find fields `AA`, `AC`, `AN`, and `DP` that parse the INFO column of the input file, and field `DP_geno` that parses the genotype columns. 
@@ -802,25 +782,24 @@ but `DP` and `NS` are imported for each **variant**, not *'genotype*, so only th
     % vtools show genotypes
     
     sample_name	filename	num_genotypes	sample_genotype_fields
-    SAMP1	V1.vcf	989	GT,DP,NS
-    SAMP1	V2.vcf	990	GT,DP,NS
-    SAMP1	V3.vcf	988	GT,DP,NS
+    SAMP1      	V1.vcf  	989          	GT,DP,NS
+    SAMP1      	V2.vcf  	990          	GT,DP,NS
+    SAMP1      	V3.vcf  	988          	GT,DP,NS
     
 If you need total depth, you can obtained from the corresponding genotype field 
 
     % vtools update variant --from_stat 'DP=sum(DP)' 'NS=sum(NS)'
     
-    Counting variants: 100% [===============================================] 3 145.1/s in 00:00:00
-    INFO: Adding variant info field DP
-    INFO: Adding variant info field NS
-    Updating variant: 100% [============================================] 1,611 47.8K/s in 00:00:00
+    Counting variants: 100% [===========================================================] 3 160.6/s in 00:00:00
+    INFO: Adding variant info field DP with type INT
+    INFO: Adding variant info field NS with type INT
+    Updating variant: 100% [========================================================] 1,611 96.0K/s in 00:00:00
     INFO: 1611 records are updated
 
 Here `DP=sum(DP)` looks strange but the first `DP` is a new variant info and the second `DP` is the existing genotype info. Now, variant info field `DP` stands for total depth and `NS` stands for number of times a variant shows up in the samples. 
 
     %vtools output variant chr pos ref alt DP NS -l 5
     
-
     1	4540	G	A	15	2
     1	5683	G	T	7	1
     1	5966	T	G	76	3
@@ -830,13 +809,9 @@ Here `DP=sum(DP)` looks strange but the first `DP` is a new variant info and the
 
 </details>
 
-
-
-#### Using customized or alternative fields to import genotypes
+##### Using customized or alternative fields to import genotypes
 
 The vcf format accepts a number of parameters to customize the way how genotypes are imported. For example, the `--geno` option accepts a genotype field. The default `GT` field import all genotypes assuming that `GT` is the first field in the genotype columns. However, 
-
-
 
 *   You can use option `--geno` without value to specify an empty genotype field so that variant tools will not process any genotype. 
 *   In `vcf.fmt` we import wild-type genotypes as numeric value 0. This is important for the purpose of association studies. If you are only interested in exploring variants of your sample, and you do not care to discriminate wild-type genotypes from missing genotype calls, you may set `--wildtype_value None`, which will leave out all wild-type genotypes, resulting in much quicker import and smaller database size. 
@@ -863,7 +838,7 @@ With this command, no genotype is imported
 </details>
 
 
-#### Using a customized format file to import additional fields
+##### Using a customized format file to import additional fields
 
 If you have a field that you would like to import, but does not exist in `vcf.fmt`, you can add it to a customized format file and use this format file to import the data. 
 
@@ -879,7 +854,7 @@ For example, the `CB` genotype field is commonly used and is not defined in `vcf
 at the end of this file, and import this field using 
 
     % vtools init import -f
-    % vtools import CEU.vcf.gz --format vcf.fmt --build hg38 --var_info AA AC AN DP --geno_info DP_geno CB_geno
+    % vtools import CEU.vcf.gz --format my_vcf.fmt --build hg38 --var_info AA AC AN DP --geno_info DP_geno CB_geno
 
     INFO: Importing variants from CEU.vcf.gz (1/1)
     CEU.vcf.gz: 100% [====================================================] 300 12.4K/s in 00:00:00
@@ -900,13 +875,13 @@ at the end of this file, and import this field using
 </details>
 
 
-### Import data in other formats 
+##### Import data in other formats 
 
 *variant tools* can import variant and genotypes data in a variety of input formats. Due to the flexibility of the format specification system, it can import variants and genotypes from data that have non-standard (e.g. 0-based index), unclear or even missing information on fields `chr`, `pos`, `ref`, and `alt`. For example, variant tools can import variants with just rsname by querying the dbSNP database for variant information, and variants with only observed slleles by querying the reference genome for reference and alternative alleles. Please check [here][3] for a list of supported file formats. If you cannot find a format that fits your need, you can write a [format description file][2] by yourself. We can assist you in this process if you could send us a sample data file.
-
- [1]: http://localhost:1313/vat-docs/documentation/keyconcepts/supportedtypes/
- [2]: https://vatlab.github.io/vat-docs/documentation/customization/format/
- [3]: https://vatlab.github.io/vat-docs/documentation/customization/inputformat/
- [4]: http://localhost/~iceli/wiki/pmwiki.php?n=Tutorial.1000Genomes?action=edit
- [5]: http://varianttools.sourceforge.net/Vtools/Commands#toc10
- [6]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.ImportVcf?action=edit
+ 
+ [1]: http://docs.python.org/library/configparser.html
+ [2]: http://docs.python.org/2/library/re.html#re.match
+ [3]: mailto:varianttools-devel@lists.sourceforge.net
+ [4]: http://vtools.houstonbioinformatics.org/format/ANNOVAR.fmt
+ [5]: http://vtools.houstonbioinformatics.org/format/CASAVA18_snps.fmt
+ 

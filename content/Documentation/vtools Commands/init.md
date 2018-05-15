@@ -1,14 +1,11 @@
-
 +++
 title = "Init"
-description = ""
 weight = 1
 +++
 
-# Create a new project 
+## Create a new project 
 
-
-## Usage
+### 1. Usage
 
     % vtools init -h
     
@@ -62,15 +59,11 @@ weight = 1
                             Samples from the children projects will be copied even
                             if they were identical samples imported from the same
                             source files.
-    
-    
-    
 
 
+### 2. Details
 
-## Details
-
-Command `` `vtools init `` creates a new project in the current directory. The project will be empty unless it is a child project from a parent project (with a subset of samples, variants etc), or a parent project of several children projects (with merged variants and samples). 
+Command `vtools init` creates a new project in the current directory. The project will be empty unless it is a child project from a parent project (with a subset of samples, variants etc), or a parent project of several children projects (with merged variants and samples). 
 
 **A directory can only have one project**. After a project is created, subsequent `vtools` calls will automatically load the project in the current directory. Working from outside of a project directory is not allowed. 
 
@@ -81,57 +74,45 @@ A variant tools project `$name` consists of a project file `$name.proj`, a genot
 
 
 
-### Create a new project
+#### 2.1 Create a new project
 
 Command `` `vtools init NAME `` creates a new project `NAME` under the current directory. It will fail if there is already a project in the current directory, unless option `--force` is used to remove any existing project. 
 
 <details><summary> Examples: create a new project</summary> The following commands create a directory `myproj` and create a variant tools project in this directory: 
 
-
-
     % mkdir myproj
     % cd myproj
     % vtools init myproj
     
-
-    INFO: variant tools 1.0.4svn : Copyright (c) 2011 - 2012 Bo Peng
-    INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project myproj
     
 
 If you attempt to create another project in the same directory, command `` `vtools init `` will fail with an error message: 
 
-
-
     % vtools init myproj
     
-
-    Project myproj already exists. Please use option --force to remove it if you would like to start a new project.
-    
+    ERROR: A project can only be created in a directory without another project.
 
 Using the `--force` option will remove the existing project and create a new one: 
 
-
-
     % vtools init test --force
     
-
-    INFO: variant tools 1.0.4svn : Copyright (c) 2011 - 2012 Bo Peng
-    INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project test
     
-
 </details>
 
 
+{{% notice tip %}}
+If you are worried about losing your work by accidentally calling `vtools init` with option `--force`, you could save copies of your project using command `` `vtools admin --save_snapshot `` from time to time, and load a saved snapshot using command `` `vtools admin --load_snapshot `` when needed.
+{{% /notice %}}
 
-If you are worried about losing your work by accidentally calling `vtools init` with option `--force`, you could save copies of your project using command `` `vtools admin --save_snapshot `` from time to time, and load a saved snapshot using command `` `vtools admin --load_snapshot `` when needed. 
 
 
-
-### Create a project from a parent project
+#### 2.2 Create a project from a parent project
 
 A project could be created from a **parent project** with a subset of its variants and samples. For example, a child project with variants from a small chromosomal region could be created from a parent project to test a pipeline before it is applied to the whole project. This also allows differential analysis of subsets of variants (e.g. SNVs and indels) and samples. 
 
@@ -143,80 +124,48 @@ The following filters could be applied to the parent project
 
 <details><summary> Examples: create a parent project</summary> Let us start from a snapshot project `quickStartGuide`: 
 
-
-
     % vtools admin --load_snapshot vt_quickStartGuide
     
-
-    Downloading snapshot vt_quickStartGuide.tar.gz from online
-    --2012-11-13 10:19:30--  http://vtools.houstonbioinformatics.org//snapshot/vt_quickStartGuide.tar.gz
-    Resolving vtools.houstonbioinformatics.org... 70.39.145.13
-    Connecting to vtools.houstonbioinformatics.org|70.39.145.13|:80... connected.
-    HTTP request sent, awaiting response... 200 OK
-    Length: 112905 (110K) [application/x-gzip]
-    Saving to: ‘/Volumes/Home/.variant_tools/snapshot/vt_quickStartGuide.tar.gz’
-    
-    100%[===================================================================================>] 112,905     --.-K/s   in 0.1s    
-    
-    2012-11-13 10:19:31 (859 KB/s) - ‘/Volumes/Home/.variant_tools/snapshot/vt_quickStartGuide.tar.gz’ saved [112905/112905]
-    
+    Downloading snapshot vt_quickStartGuide.tar.gz from online repository
+    Extracting vt_quickStartGuide: 100% [===================================] 148,585 20.1M/s in 00:00:00
     INFO: Snapshot vt_quickStartGuide has been loaded
-    
 
+    
 This project has variants from two samples and a single master variant table with 4,858 variants: 
 
-
-
     % vtools show samples
-    
 
     sample_name	filename
-    CEU	CEU.exon...3.sites.vcf.gz
-    JPT	JPT.exon...3.sites.vcf.gz
+    CEU        	CEU.exon...3.sites.vcf.gz
+    JPT        	JPT.exon...3.sites.vcf.gz
     
-
-
-
     % vtools show tables
     
-
     table                 #variants     date  message
     variant                   4,858 
     
-
 Variants from the CEU and JPT samples could be selected to separate variant tables using commands 
 
-
-
     % vtools select variant --samples 'sample_name == "CEU"' -t CEU 'Variants from CEU population'
-    
 
     INFO: 1 samples are selected by condition: sample_name == "CEU"
-    Running: 8 923.8/s in 00:00:00                                                                                                                           
+    Running: 8 881.5/s in 00:00:00                                                                       
     INFO: 3489 variants selected.
     
-
-
-
     % vtools select variant --samples 'sample_name == "JPT"' -t JPT 'Variants from JPT population'
     
-
     INFO: 1 samples are selected by condition: sample_name == "JPT"
-    Running: 6 729.5/s in 00:00:00                                                                                                                           
+    Running: 6 1.1K/s in 00:00:00                                                                        
     INFO: 2900 variants selected.
-    
 
 The project now has three variant tables 
 
-
-
     % vtools show tables
     
-
-    table                 #variants     date  message
-    variant                   4,858           
-    CEU                       3,489    Nov13  Variants from CEU population
-    JPT                       2,900    Nov13  Variants from JPT population
+    table      #variants     date message
+    CEU            3,489    May14 Variants from CEU population
+    JPT            2,900    May14 Variants from JPT population
+    variant        4,858
     
 
 </details>
@@ -229,14 +178,11 @@ The project now has three variant tables
     % cd ../CEU
     % vtools init CEU --parent ../myproj --variants CEU
     
-
-    Creating cache directory cache
-    INFO: variant tools 1.0.4svn : Copyright (c) 2011 - 2012 Bo Peng
-    INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project CEU
-    Copying variant tables ../myproj/test.proj: 100% [========================] 6 78.6/s in 00:00:00
-    Copying samples: 100% [==================================================] 2 137.0/s in 00:00:00
+    Copying variant tables ../myproj/test.proj: 100% [============================] 6 251.6/s in 00:00:00
+    Copying samples: 100% [=======================================================] 2 211.4/s in 00:00:00
     INFO: 3489 variants and 2 samples are copied
     
 
@@ -246,11 +192,10 @@ The new project has a master variant table with 3,489 variants:
 
     % vtools show tables
     
-
-    table                 #variants     date  message
-    variant                   3,489           
-    CEU                       3,489    Nov13  Variants from CEU population
-    JPT                       1,531    Nov13  Variants from JPT population
+    table      #variants     date message
+    CEU            3,489    May14 Variants from CEU population
+    JPT            1,531    May14 Variants from JPT population
+    variant        3,489
     
 
 and two samples (with subsets of variants): 
@@ -259,7 +204,6 @@ and two samples (with subsets of variants):
 
     % vtools show genotypes
     
-
     sample_name	filename	num_genotypes	sample_genotype_fields
     CEU	CEU.exon.2010_03.sites.vcf.gz	3489	
     JPT	JPT.exon.2010_03.sites.vcf.gz	1531
@@ -273,14 +217,11 @@ You can create another project with variants in the JPT population, and only the
     % cd ../JPT
     % vtools init JPT  --parent ../myproj --variants JPT --samples 'sample_name == "JPT"'
     
-
-    Creating cache directory cache
-    INFO: variant tools 1.0.4svn : Copyright (c) 2011 - 2012 Bo Peng
-    INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project JPT
-    Copying variant tables ../p1/test.proj: 100% [======================================] 6 33.6/s in 00:00:00
-    Copying samples: 100% [============================================================] 1 161.0/s in 00:00:00
+    Copying variant tables ../myproj/test.proj: 100% [==================================] 6 214.4/s in 00:00:00
+    Copying samples: 100% [=============================================================] 1 111.3/s in 00:00:00
     INFO: 4858 variants and 1 samples are copied
     
 
@@ -288,11 +229,10 @@ The new JPT project has a master variant table with 2,900 variants,
 
     % vtools show tables
     
-
-    table                 #variants     date  message
-    variant                   2,900           
-    CEU                       1,531    Nov13  Variants from CEU population
-    JPT                       2,900    Nov13  Variants from JPT population
+    table      #variants     date message
+    CEU            1,531    May14 Variants from CEU population
+    JPT            2,900    May14 Variants from JPT population
+    variant        2,900    
     
 
 and a single sample JPT: 
@@ -301,10 +241,9 @@ and a single sample JPT:
 
     % vtools show samples
     
-
     sample_name	filename
-    JPT	JPT.exon...3.sites.vcf.gz
-    
+    JPT        	JPT.exon...3.sites.vcf.gz
+
 
 
 
@@ -315,16 +254,16 @@ if you use `–-samples` (or `–-genotypes`) options without `–-variants` opt
 The parent project does not have to be a directory. It can also be a local or online snapshot. For example, command 
 
 
-
+    % mkdir ../test
+    % cd ..test
     % vtools init test --parent vt_simple
     
-
-    INFO: variant tools 2.3.0svn : Copyright (c) 2011 - 2012 Bo Peng
-    INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project test
     INFO: Extracting snapshot vt_simple to .
     Downloading snapshot vt_simple.tar.gz from online repository
+    Extracting vt_simple: 100% [====================================================] 41,325 5.4M/s in 00:00:00
     
 
 will download snapshot `vt_simple` from online and become the present project. In addition, if you have a snapshot file, you can use command 
@@ -344,7 +283,7 @@ which is a shortcut to commands
 
 
 
-### Create a project from several subprojects
+#### 2.3 Create a project from several subprojects
 
 A project could also be created from one or more **children projects**. This allows flexible handling of batches of data (e.g. analyze data separately or jointly), and parallel processing of large datasets (e.g. split a project by chromosomes, analyze them separately, and combine the results). 
 
@@ -358,25 +297,23 @@ Because subprojects might have overlapping variants, variant tables, and samples
 
 
 
-Variant tables from children projects will be copied to `$name (from $proj)` before they are merged. This allows you to keep track of information from the original projects, or compare tables from children projects. 
+{{% notice tip %}}
+Variant tables from children projects will be copied to `$name (from $proj)` before they are merged. This allows you to keep track of information from the original projects, or compare tables from children projects.
+{{% /notice %}}
 
 <details><summary> Examples: merge subprojects</summary> Continue from the previous example, if we just merge the CEU and JPT projects we created, 
-
-
 
     % mkdir ../merged
     % cd ../merged
     % vtools init merged --children ../CEU ../JPT 
     
-
-    INFO: variant tools 1.0.4svn : Copyright (c) 2011 - 2012 Bo Peng
-    INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project merged
-    WARNING: 1 samples from the same source files have been copied, leading to potentially duplicated samples.
-    Loading ../CEU/CEU (1/2): 0 0.0/s in 00:00:00                                                     
-    Loading ../JPT/JPT (2/2): 0 0.0/s in 00:00:00                                                     
-    Merging all projects: 100% [==============================================] 21 21.0/s in 00:00:01
+    Loading ../CEU/CEU (1/2): 0 0.0/s in 00:00:00                                                              
+    Loading ../JPT/JPT (2/2): 0 0.0/s in 00:00:00                                                              
+    Merging all projects: 100% [========================================================] 22 21.9/s in 00:00:01
+
     
 
 we will see that variants from these two projects are corrected merged 
@@ -385,22 +322,26 @@ we will see that variants from these two projects are corrected merged
 
     % vtools show tables
     
-
-    table                 #variants     date  message
-    variant                   4,858           
-    CEU                       3,489    Nov13  Variants from CEU population
-    JPT                       2,900    Nov13  Variants from JPT population         
+    table                 #variants     date message
+    CEU                       3,489    May14 Variants from CEU population (merged)
+    CEU (from CEU)            3,489    May14 Variants from CEU population (from CEU)
+    CEU (from JPT)            1,531    May14 Variants from CEU population (from JPT)
+    JPT                       2,900    May14 Variants from JPT population (merged)
+    JPT (from CEU)            1,531    May14 Variants from JPT population (from CEU)
+    JPT (from JPT)            2,900    May14 Variants from JPT population (from JPT)
+    variant                   4,858    May14  (merged)
+    variant (from CEU)        3,489           (from CEU)
+    variant (from JPT)        1,369           (from JPT)        
     
 
 but we have three samples with different number of variants 
 
     % vtools show genotypes
     
-
-    sample_name	filename	num_genotypes	sample_genotype_fields
-    CEU	CEU.exon.2010_03.sites.vcf.gz	3489	
-    JPT	JPT.exon.2010_03.sites.vcf.gz	1531	
-    JPT	JPT.exon.2010_03.sites.vcf.gz	2900
+    sample_name	filename                 	num_genotypes	sample_genotype_fields
+    CEU        	CEU.exon...3.sites.vcf.gz	3489         	
+    JPT        	JPT.exon...3.sites.vcf.gz	1531         	
+    JPT        	JPT.exon...3.sites.vcf.gz	2900   
     
 
 Because the latter two samples have the same name, it is even difficult to remove one of them using command `vtools remove samples`. If you have to merge samples with the same names from different projects, it is recommended that you use command `vtools admin --rename_samples` to change names of samples before merging, and remove duplicated samples afterwards. 

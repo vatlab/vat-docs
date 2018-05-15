@@ -58,15 +58,6 @@ If you use COSMIC annotations, please credit the project with the following ackn
     </item>
     
     <item>
-      <title>Format</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/</guid>
-      <description>Specification of external file formats Roles of format specification in variant tools: Variant tools can import and export text files (or gzipped text files) in delimiter-separated format, namely records that are separated into columns by delimiters such as tab, space or comma. The file format must be variant-oriented (storing one or more variants by line), with the exception of sample-based PLINK format which is preprocessed internally into variant-oriented form for import.</description>
-    </item>
-    
-    <item>
       <title>Group stat&amp;Write</title>
       <link>https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -91,7 +82,7 @@ Usage % vtools show annotation Illumina_NRCE Annotation database Illumina_NRCE (
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/init/</guid>
-      <description>Create a new project Usage % vtools init -h usage: vtools init [-h] [-f] [--parent DIR_or_SNAPSHOT] [--variants [TABLE]] [--samples [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--children DIR_OR_SNAPSHOT [DIR_OR_SNAPSHOT ...]] [-v {0,1,2}] project Create a new project in the current directory. This command will fail if another project already exists in this directory, unless option &#39;--force&#39; is used to remove the existing project. positional arguments: project Name of a new project.</description>
+      <description>Create a new project 1. Usage % vtools init -h usage: vtools init [-h] [-f] [--parent DIR_or_SNAPSHOT] [--variants [TABLE]] [--samples [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--children DIR_OR_SNAPSHOT [DIR_OR_SNAPSHOT ...]] [-v {0,1,2}] project Create a new project in the current directory. This command will fail if another project already exists in this directory, unless option &#39;--force&#39; is used to remove the existing project. positional arguments: project Name of a new project.</description>
     </item>
     
     <item>
@@ -197,6 +188,15 @@ Input data format vtools associate command typically generates two types of outp
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/</guid>
       <description>Average depth of coverage Ratio About vtools_report avg_depth This command report average depth of all variants, or variants divided by sample allele count.
 Usage % vtools_report avg_depth -h usage: vtools_report avg_depth [-h] -n NUM_FIELD -d DEPTH_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table Command &#39;vtools update table --from_stat &amp;quot;meanDP=avg(DP_geno)&amp;quot;&#39; calculates the average depth of variants across sample (e.g. average depth of three variants if the variant appears three times in the sample).</description>
+    </item>
+    
+    <item>
+      <title>basic</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</guid>
+      <description>Importing variants from tab-delimited files Format description % vtools show format basic A basic variant import/export format that import variants with four tab- delimited columns (chr, pos, ref, alt), and export variants, optional variant info fields and genotypes. Columns: 1 Output variant info fields as one column 2 variant position, set --pos_adj to -1 to export variants in 0-based positions. 3 reference allele 4 alternative allele 5 genotype in numeric style Formatters are provided for fields: gt variant: chr Chromosome pos 1-based position, set --pos_adj to 1 if input position is 0 based.</description>
     </item>
     
     <item>
@@ -343,17 +343,7 @@ HGNC The HGNC annotation database is a field database that, by default, annotate
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/</guid>
-      <description>Import variants, genotypes and related information fields Usage % vtools import -h usage: vtools import [-h] [--build BUILD] [--format FORMAT] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f] [-j N] [-v {0,1,2}] input_files [input_files ...] x Import variants and related sample genotype from one or more delimiter separated files (e.g. VCF and a number of indel formats). positional arguments: input_files A list of failes that will be imported. The file should be delimiter separated with format described by parameter --format.</description>
-    </item>
-    
-    <item>
-      <title>Input format</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/inputformat/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/inputformat/</guid>
-      <description>Supported import/update/export file formats variant tools uses file format specification files (.fmt) files to describe file formats so that commands such as vtools import, vtools update and vtools export know how to import data from and export data to files in such formats.
- variant tools can import variants, variant info fields, genotypes, and genotype info fields from a file. The file must contain information about variants (chr, pos, ref, alt), although variant tools is able to obtain information from other sources if some of the variant info fields are missing.</description>
+      <description>Import variants, genotypes and related information fields 1. Usage % vtools import -h usage: vtools import [-h] [--build BUILD] [--format FORMAT] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f] [-j N] [-v {0,1,2}] input_files [input_files ...] x Import variants and related sample genotype from one or more delimiter separated files (e.g. VCF and a number of indel formats). positional arguments: input_files A list of failes that will be imported. The file should be delimiter separated with format described by parameter --format.</description>
     </item>
     
     <item>
@@ -420,6 +410,16 @@ Quick Start Guide This is a 10-minute quick start guide using data from the 1000
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/</guid>
       <description>Variant calling using BWA and GATK best practice pipeline (b37) This is the same pipeline as bwa_gatk33_hg19? but uses build b37 of the human reference genome.</description>
+    </item>
+    
+    <item>
+      <title>csv</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</guid>
+      <description>Importing and exporting variants in .csv (comma-separated value) format Format description When this format is used to import data, it is similar to the basic? format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
+When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command vtools output --delimiter , (output fields with a delimiter of comma), except that the vtools export --format csv command will properly quote field values when it contains comma, quotation mark etc.</description>
     </item>
     
     <item>
@@ -597,6 +597,15 @@ padding: 8px;  /* text-align:left; */
     </item>
     
     <item>
+      <title>plink</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</guid>
+      <description>Import variants and sample genotypes from PLINK format Introduction PLINK is a widely used program for analyzing genotypic data for Genome-wide Association Studies (GWAS). It can be considered as standard input format for genotyping array data. An intermediate type of genetic data between genotyping arrays and exome sequencing is the exome genotyping array, or exome chip. Unlike its GWAS counterpart which focuses on relatively common variants, exome chips contain primarily non-singleton coding variants seen in existing whole genome and exome sequencing data, plus a small proportion of non-protein-altering variants such as GWAS tag SNPs, ancestry informative markers, etc.</description>
+    </item>
+    
+    <item>
       <title>sam_info</title>
       <link>https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -738,6 +747,24 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
     </item>
     
     <item>
+      <title>map</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</guid>
+      <description>Import variants from file without ref and alt alleles Introduction From time to time, you might get a list of variants in map format, or as a list with only chromosome and position information. Reference and alternative alleles are not specified because the variants are from GWA studies with well-defined reference and alternative alleles. In this case, you can use format map, which automatically retrieve reference and alternative alleles from a specified dbSNP database.</description>
+    </item>
+    
+    <item>
+      <title>rsname</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</guid>
+      <description>Importing variants from a list of dbSNP iDs (rsnames) Format description % vtools show format rsname Import variants (chr, pos, ref, alt) that are queried from dbSNP database using provided rsnames Columns: None defined, cannot export to this format variant: chr Obtain chromosome from dbSNP by rsname pos Obtain position from dbSNP by rsname ref Obtain reference allele from dbSNP by rsname alt Obtain alternative allele from dbSNP by rsname Format parameters: sep delimiter used to separate input fields (default: &#39;,&#39;) rsname_col Index for the column with rsname (default: 1) dbfile Name of an attached dbSNP database or path to the dbSNP database in sqlite format (default: dbSNP- hg19_138.</description>
+    </item>
+    
+    <item>
       <title>sequence</title>
       <link>https://vatlab.github.io/vat-docs/documentation/vtools_report/sequence/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -753,6 +780,15 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/annovar/</guid>
       <description>Gene-based annotation through ANNOVAR Usage % vtools show pipeline ANNOVAR Pipeline to call ANNOVAR and import results as variant info fields. Available pipelines: geneanno Pipeline &amp;quot;geneanno&amp;quot;: This pipeline exports variants in specified variant table (parameter --var_table, default to variant), executes ANNOVAR&#39;s gene- based annotation (annotate_variantion.pl --geneanno), and imports specified fields from output of the command. Four fields (two for all variants and two for exonic variants) will be imported unless you disable some of them using parameters --variant_info and --exonic_info.</description>
+    </item>
+    
+    <item>
+      <title>Cumtomized</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</guid>
+      <description>Specification of external file formats Roles of format specification in variant tools: Variant tools can import and export text files (or gzipped text files) in delimiter-separated format, namely records that are separated into columns by delimiters such as tab, space or comma. The file format must be variant-oriented (storing one or more variants by line), with the exception of sample-based PLINK format which is preprocessed internally into variant-oriented form for import.</description>
     </item>
     
     <item>

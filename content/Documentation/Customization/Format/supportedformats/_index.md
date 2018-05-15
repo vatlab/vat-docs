@@ -1,6 +1,5 @@
 +++
-title = "Input format"
-description = ""
+title = "Supported formats"
 weight = 2
 +++
 

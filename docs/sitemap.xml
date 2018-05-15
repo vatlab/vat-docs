@@ -27,10 +27,6 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/group-statwrite/</loc>
   </url>
   
@@ -92,6 +88,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</loc>
   </url>
   
   <url>
@@ -159,10 +159,6 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/inputformat/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/</loc>
   </url>
   
@@ -172,6 +168,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/create-your-test/programming-in-vat/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/</loc>
   </url>
   
   <url>
@@ -188,6 +188,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/variant-calling/bwa_gatk33_b37/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</loc>
   </url>
   
   <url>
@@ -279,6 +283,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/</loc>
   </url>
   
@@ -351,6 +359,14 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/sequence/</loc>
   </url>
   
@@ -364,6 +380,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/basic-data-statistics/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</loc>
   </url>
   
   <url>
@@ -452,6 +472,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/customization/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/</loc>
   </url>
   
   <url>

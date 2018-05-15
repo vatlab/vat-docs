@@ -98,8 +98,8 @@ a:hover {
 }
 
 #sidebar ul li.active > a {
-    background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
-    color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
+    background: #5c5c5c;
+    color: orange !important;
 }
 
 #sidebar ul.topics > li > a {
@@ -162,4 +162,66 @@ h1 {
 
 summary {
     color: #167ad0;
+}
+
+#body .padding {
+    padding: 0rem 3rem !important;
+}
+
+#body img, #body .video-container {
+    margin: 0rem auto;
+}
+
+figure {
+    float: right;
+    width: 15%;
+    text-align: center;
+    font-size: 8pt;
+    border: none;
+    margin: 0em;
+    padding: 0em;
+}
+
+#footer {
+    padding: 3rem 1rem;
+}
+
+#sidebar #header-wrapper {
+    height: 180px;
+}
+
+div.notices p:first-child:before {
+    display: none;
+}
+
+div.notices.tip p:first-child:after {
+    content: '';
+}
+
+div.notices.tip p {
+    border-top: none;
+}
+
+div.notices.warning p:first-child:after {
+    content: '';
+}
+
+div.notices.warning p {
+    border-top: none;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.3rem
+}
+
+h5 {
+    font-size: 1.1rem
 }
