@@ -190,26 +190,6 @@ figure {
     height: 180px;
 }
 
-div.notices p:first-child:before {
-    display: none;
-}
-
-div.notices.tip p:first-child:after {
-    content: '';
-}
-
-div.notices.tip p {
-    border-top: none;
-}
-
-div.notices.warning p:first-child:after {
-    content: '';
-}
-
-div.notices.warning p {
-    border-top: none;
-}
-
 h2 {
     font-size: 2rem;
 }
@@ -224,4 +204,8 @@ h4 {
 
 h5 {
     font-size: 1.1rem
+}
+
+.hljs {
+    padding: 0em;
 }

@@ -12,19 +12,19 @@
     <title>Update :: Variant Tools</title>
     
     
-    <link href="/vat-docs/css/nucleus.css?1526403362" rel="stylesheet">
-    <link href="/vat-docs/css/font-awesome.min.css?1526403362" rel="stylesheet">
-    <link href="/vat-docs/css/hybrid.css?1526403362" rel="stylesheet">
-    <link href="/vat-docs/css/featherlight.min.css?1526403362" rel="stylesheet">
-    <link href="/vat-docs/css/perfect-scrollbar.min.css?1526403362" rel="stylesheet">
-    <link href="/vat-docs/css/auto-complete.css?1526403362" rel="stylesheet">
-    <link href="/vat-docs/css/theme.css?1526403362" rel="stylesheet">
-    <link href="/vat-docs/css/hugo-theme.css?1526403362" rel="stylesheet">
+    <link href="/vat-docs/css/nucleus.css?1526863305" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1526863305" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1526863305" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1526863305" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1526863305" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1526863305" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1526863305" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1526863305" rel="stylesheet">
     
-      <link href="/vat-docs/css/theme-mine.css?1526403362" rel="stylesheet">
+      <link href="/vat-docs/css/theme-mine.css?1526863305" rel="stylesheet">
     
 
-    <script src="/vat-docs/js/jquery-2.x.min.js?1526403362"></script>
+    <script src="/vat-docs/js/jquery-2.x.min.js?1526863305"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1526403362"></script>
-<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1526403362"></script>
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1526863305"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1526863305"></script>
 <script type="text/javascript">
     
         var baseurl = '\/vat-docs\/';
     
 </script>
-<script type="text/javascript" src="/vat-docs/js/search.js?1526403362"></script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1526863305"></script>
 
     
   </div>
@@ -3798,7 +3798,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://vatlab.github.io/vat-docs/content/Documentation/vtools%20Commands/update.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/vatlab/vat-docs/content/Documentation/vtools%20Commands/update.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -3847,15 +3847,18 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
+<li>
+<ul>
 <li><a href="#add-new-or-update-existing-variant-and-genotype-info-fields">Add new or update existing variant and genotype info fields</a>
 <ul>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#details">Details</a>
+<li><a href="#1-usage">1. Usage</a></li>
+<li><a href="#2-details">2. Details</a>
 <ul>
-<li><a href="#import-variant-info-from-external-files-in-standard-formats-from-file">Import variant info from external files in standard formats (<code>--from_file</code>)</a></li>
-<li><a href="#import-variant-info-from-external-files-in-customized-formats-from-file">Import variant info from external files in customized formats (<code>--from_file</code>)</a></li>
-<li><a href="#calculate-genotype-statistics-for-each-variant-from-stat">Calculate genotype statistics for each variant (<code>--from_stat</code>)</a></li>
-<li><a href="#add-fields-based-on-other-variant-or-annotation-fields-set">Add fields based on other variant or annotation fields (<code>--set</code>)</a></li>
+<li><a href="#2-1-import-variant-info-from-external-files-in-standard-formats-from-file">2.1 Import variant info from external files in standard formats (<code>--from_file</code>)</a></li>
+<li><a href="#2-2-import-variant-info-from-external-files-in-customized-formats-from-file">2.2 Import variant info from external files in customized formats (<code>--from_file</code>)</a></li>
+<li><a href="#2-3-calculate-genotype-statistics-for-each-variant-from-stat">2.3 Calculate genotype statistics for each variant (<code>--from_stat</code>)</a></li>
+<li><a href="#2-4-add-fields-based-on-other-variant-or-annotation-fields-set">2.4 Add fields based on other variant or annotation fields (<code>--set</code>)</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -3879,9 +3882,9 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 
 
-<h1 id="add-new-or-update-existing-variant-and-genotype-info-fields">Add new or update existing variant and genotype info fields</h1>
+<h2 id="add-new-or-update-existing-variant-and-genotype-info-fields">Add new or update existing variant and genotype info fields</h2>
 
-<h2 id="usage">Usage</h2>
+<h3 id="1-usage">1. Usage</h3>
 
 <pre><code>% vtools update -h
 
@@ -3998,15 +4001,16 @@ Set fields from sample statistics:
                         genotypes' (e.g. 'GQ&gt;15').
 </code></pre>
 
-<h2 id="details">Details</h2>
+<h3 id="2-details">2. Details</h3>
 
 <p>Command <code>`vtools update</code> updates <strong>variant info fields</strong> (and to a lesser extend <strong>genotype info fields</strong>) by adding more fields or updating values at existing fields. It does not add any new variant or genotype, and does not change existing variant, sample, or genotype. Using three parameters <code>--from_file</code>, <code>--from_stat</code>, and <code>--set</code>, variant information fields could be updated from external file, sample genotypes, and existing fields.</p>
 
-<p>An illustration about <code>`vtools update</code> ▸</p>
+<p><details>
+<summary> An illustration about <code>vtools update</code> </summary>
+<img src= "update.png" />
+</details></p>
 
-<p>Attach:update.png</p>
-
-<h3 id="import-variant-info-from-external-files-in-standard-formats-from-file">Import variant info from external files in standard formats (<code>--from_file</code>)</h3>
+<h4 id="2-1-import-variant-info-from-external-files-in-standard-formats-from-file">2.1 Import variant info from external files in standard formats (<code>--from_file</code>)</h4>
 
 <p>Option <code>--from_file</code> allows command <code>vtools update</code> to update variant and/or genotype info fields by reading info from an external file. This process is similar to <code>vtools import</code> but has two major differences:</p>
 
@@ -4029,8 +4033,7 @@ Set fields from sample statistics:
 
 <p>The project does not have any variant so we import some from these VCF files:</p>
 
-<pre><code>% vtools import V*.vcf --build hg18
-
+<pre><code>% vtools import V*.vcf --build hg38 
 
 INFO: Importing variants from V1.vcf (1/3)
 V1.vcf: 100% [========================================================] 1,000 10.9K/s in 00:00:00
@@ -4052,17 +4055,15 @@ INFO: 1,611 new variants (1,611 SNVs) from 2,995 lines (3 samples) are imported.
 
 <pre><code>% vtools show fields
 
-
-variant.chr
-variant.pos
-variant.ref
-variant.alt
+variant.chr (char)      Chromosome name (VARCHAR)
+variant.pos (int)       Position (INT, 1-based)
+variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
 </code></pre>
 
 <p>Because the input file has two variant info fields <code>DP</code> (depth of coverage) and <code>NS</code> (number in sample), we can add these two fields to our project using commands</p>
 
-<pre><code>% vtools update variant --from_file V*.vcf --var_info DP NS
-
+<pre><code>% vtools update variant --from_file V*.vcf --var_info DP NS   
 
 INFO: Using primary reference genome hg18 of the project.
 Getting existing variants: 100% [====================================] 1,611 170.4K/s in 00:00:00
@@ -4080,21 +4081,19 @@ INFO: Fields DP, NS of 2,967 variants are updated
 
 <p>The project now has two variant info fields <code>DP</code> and <code>NS</code>,</p>
 
-<pre><code>% vtools show fields 
+<pre><code>% vtools show fields    
 
-
-variant.chr
-variant.pos
-variant.ref
-variant.alt
-variant.DP
-variant.NS
+variant.chr (char)      Chromosome name (VARCHAR)
+variant.pos (int)       Position (INT, 1-based)
+variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+variant.DP (int)
+variant.NS (int)
 </code></pre>
 
 <p>and we can output them with variants</p>
 
 <pre><code>% vtools output variant chr pos ref alt DP NS -l 5
-
 
 1   4540    G   A   9   1
 1   5683    G   T   7   1
@@ -4109,8 +4108,7 @@ variant.NS
 
 <p>Variant tools is flexible enough to handle such a situation (check <code>vtools show format vcf</code> for details). By specifying field <code>DP</code> in parameter <code>--geno_info</code>, this field will be added as genotype info field and be processed for each sample:</p>
 
-<pre><code>% vtools update variant --from_file V*.vcf --geno_info DP
-
+<pre><code>% vtools update variant --from_file V*.vcf --geno_info DP   
 
 INFO: Using primary reference genome hg18 of the project.
 Getting existing variants: 100% [====================================] 1,611 176.1K/s in 00:00:00
@@ -4128,13 +4126,12 @@ INFO: Fields  of 0 variants and geno fields of 2,967 genotypes are updated
 
 <p>The project now has a genotype info field <code>DP</code>, with coverage depth for each genotype.</p>
 
-<pre><code>% vtools show genotypes
-
+<pre><code>% vtools show genotypes 
 
 sample_name filename    num_genotypes   sample_genotype_fields
-SAMP1   V1.vcf  989 GT,DP
-SAMP1   V2.vcf  990 GT,DP
-SAMP1   V3.vcf  988 GT,DP
+SAMP1       V1.vcf      989             GT,DP
+SAMP1       V2.vcf      990             GT,DP
+SAMP1       V3.vcf      988             GT,DP
 </code></pre>
 
 <p>Variant tools depends on filename to determine which sample to update from each input file so <strong>the original input files must be used to update genotype info fields</strong>.</p>
@@ -4147,86 +4144,75 @@ SAMP1   V3.vcf  988 GT,DP
 
 <pre><code>% vtools export variant --format ANNOVAR &gt; ann.in
 
-
-vtools export variant --format ANNOVAR &gt; ann.in
-Writing: 100% [=======================================================] 1,611 45.1K/s in 00:00:00
-INFO: 1611 lines are exported from variant table variant 
+Writing: 100% [=================================================================] 1,611 74.0K/s in 00:00:00
+INFO: 1611 lines are exported from variant table variant
 
 
 
 
-% annotate_variation.pl ann.in humandb/
-
+% perl annotate_variation.pl ann.in humandb/
 
 NOTICE: The --geneanno operation is set to ON by default
 NOTICE: The --buildver is set as 'hg18' by default
-NOTICE: Reading gene annotation from humandb/hg18_refGene.txt ... Done with 41481 transcripts (including 7217 without coding sequence annotation) for 23669 unique genes
-NOTICE: Reading FASTA sequences from humandb/hg18_refGeneMrna.fa ... Done with 14 sequences
-WARNING: A total of 318 sequences will be ignored due to lack of correct ORF annotation
-NOTICE: Finished gene-based annotation on 1611 genetic variants in ann.in
 NOTICE: Output files were written to ann.in.variant_function, ann.in.exonic_variant_function
+NOTICE: Reading gene annotation from humandb/hg18_refGene.txt ... Done with 67352 transcripts (including         16172 without coding sequence annotation) for 27951 unique genes
+NOTICE: Processing next batch with 1611 unique variants in 1611 input lines
+Error: FASTA sequence file humandb/hg18_refGeneMrna.fa does not exist. Please use 'annotate_variation.pl --     downdb refGene humandb' download the database.
 </code></pre>
 
 <p>We then want to update our project with ANNOVAR annotations. Because gene annotation of ANNOVAR generates two output files, two output file formats are available. One of the formats is <code>ANNOVAR_exonic_variant_function</code>,</p>
 
-<pre><code>% vtools show format ANNOVAR_exonic_variant_function
+<pre><code>% vtools show format ANNOVAR_exonic_variant_function  
 
-
-Format:      ANNOVAR_exonic_variant_function
-Description: Output from ANNOVAR, generated from command
-  &quot;path/to/annovar/annotate_variation.pl annovar.txt
-  path/to/annovar/humandb/&quot;. This format imports chr, pos, ref, alt
-  and ANNOVAR annotations. For details please refer to
-  http://www.openbioinformatics.org/annovar/annovar_gene.html
+Output from ANNOVAR for files of type *exonic_variant_function, generated from command
+&quot;path/to/annovar/annotate_variation.pl annovar.txt path/to/annovar/humandb/&quot;. This format imports chr, pos,
+ref, alt and ANNOVAR annotations. For details please refer to
+http://www.openbioinformatics.org/annovar/annovar_gene.html
 
 Columns:
   None defined, cannot export to this format
 
 variant:
-  chr          Chromosome
-  pos          1-based position, hg18
-  ref          Reference allele, '-' for insertion.
-  alt          Alternative allele, '-' for deletion.
+  chr                   Chromosome
+  pos                   1-based position, hg18
+  ref                   Reference allele, '-' for insertion.
+  alt                   Alternative allele, '-' for deletion.
 
 Variant info:
-  mut_type     the functional consequences of the variant.
+  mut_type              the functional consequences of the variant.
 
 Other fields (usable through parameters):
-  genename     Gene name (for the first exon if the variant is in more than one
-               exons, but usually the names for all exons are the
-               same).
-  function     the gene name, the transcript identifier and the sequence change in
-               the corresponding transcript
+  genename              Gene name (for the first exon if the variant is in more than one exons, but usually
+                        the names for all exons are the same).
+  function              the gene name, the transcript identifier and the sequence change in the
+                        corresponding transcript
 
 Format parameters:
-  var_info     Fields to be outputted, can be one or both of mut_type and function.
-               (default: mut_type)
+  var_info              Fields to be outputted, can be one or both of mut_type and function. (default:
+                        mut_type)
 </code></pre>
 
 <p>As you can see, this is a variant based format. It has a default variant info field <code>mut_type</code>, but you can add more fields using parameter <code>var_info</code>. To update variants,</p>
 
-<pre><code>% vtools update variant --format ANNOVAR_exonic_variant_function --from_file ann.in.exonic_variant_function
+<pre><code>% vtools update variant --format ANNOVAR_exonic_variant_function --from_file ann.in.exonic_variant_functio  
 
-
-INFO: Using primary reference genome hg18 of the project.
-Getting existing variants: 100% [===============================================================] 1,611 154.0K/s in 00:00:00
+INFO: Using primary reference genome hg38 of the project.
+Getting existing variants: 100% [========================================================] 1,611 234.5K/s in 00:00:00
 INFO: Updating variants from ann.in.exonic_variant_function (1/1)
-ann.in.exonic_variant_function: 100% [===============================================================] 23 2.5K/s in 00:00:00
-INFO: Field mut_type of 23 variants are updated
+ann.in.exonic_variant_function: 0 0.0/s in 00:00:00                                                                  
+INFO: Field mut_type of 0 variants are updated
 </code></pre>
 
 <p>By default, field <code>mut_type</code> is added.</p>
 
 <pre><code>% vtools show fields
 
-
-variant.chr
-variant.pos
-variant.ref
-variant.alt
-variant.DP
-variant.NS
-variant.mut_type
+variant.chr (char)      Chromosome name (VARCHAR)
+variant.pos (int)       Position (INT, 1-based)
+variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+variant.DP (int)
+variant.NS (int)
 </code></pre>
 
 <p>To update additional variant/genotype fields, use <code>--var_info</code> of the <code>ANNOVAR_exonic_variant_function</code> format:</p>
@@ -4235,39 +4221,34 @@ variant.mut_type
                        --from_file ann.in.exonic_variant_function \
                        --var_info mut_type function 
 
-
-INFO: Using primary reference genome hg18 of the project.
-Getting existing variants: 100% [===============================================================] 1,611 180.6K/s in 00:00:00
+Getting existing variants: 100% [========================================================] 1,611 291.1K/s in 00:00:00
 INFO: Updating variants from ann.in.exonic_variant_function (1/1)
-ann.in.exonic_variant_function: 100% [===============================================================] 23 1.8K/s in 00:00:00
-INFO: Fields mut_type, function of 23 variants are updated
+ann.in.exonic_variant_function: 0 0.0/s in 00:00:00                                                             INFO: Fields mut_type, function of 0 variants are updated
 </code></pre>
 
 <p>Fields specified by option <code>--var_info</code> are added. Now we have one more field <code>function</code></p>
 
 <pre><code>% vtools show fields
 
-
-variant.chr
-variant.pos
-variant.ref
-variant.alt
-variant.DP
-variant.NS
-variant.mut_type
-variant.function
+variant.chr (char)      Chromosome name (VARCHAR)
+variant.pos (int)       Position (INT, 1-based)
+variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+variant.DP (int)
+variant.NS (int)
+variant.mut_type (char)
+variant.function (char)
 </code></pre>
 
 <p></details></p>
 
-<h3 id="import-variant-info-from-external-files-in-customized-formats-from-file">Import variant info from external files in customized formats (<code>--from_file</code>)</h3>
+<h4 id="2-2-import-variant-info-from-external-files-in-customized-formats-from-file">2.2 Import variant info from external files in customized formats (<code>--from_file</code>)</h4>
 
-<p>During the analysis of variants, it is common to have annotations in different formats from various sources (e.g. from annotation servers such as <a href="http://regulome.stanford.edu/">regulome DB</a>). Although variant tools has a growing number of <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.HomePage?action=edit">formats</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.HomePage?action=edit">?</a>, it is sometimes needed to create your own format files to import annotations.</p>
+<p>During the analysis of variants, it is common to have annotations in different formats from various sources (e.g. from annotation servers such as <a href="http://regulome.stanford.edu/">regulome DB</a>). Although variant tools has a growing number of <a href="/documentation/customization/format/supportedformats/">formats</a>, it is sometimes needed to create your own format files to import annotations.</p>
 
-<p><details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname. Because this sample project uses hg18, we cannot use the default <code>dbSNP</code> database and has to use</p>
+<p><details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname.</p>
 
-<pre><code>% vtools use dbSNP-hg18_130
-
+<pre><code>% vtools use dbSNP 
 
 INFO: Downloading annotation database from annoDB/dbSNP-hg18_130.ann
 INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/dbSNP-hg18_130.DB.gz
@@ -4453,7 +4434,7 @@ INFO: Fields molType, molClass of 1,689 variants are updated
 
 <p></details></p>
 
-<h3 id="calculate-genotype-statistics-for-each-variant-from-stat">Calculate genotype statistics for each variant (<code>--from_stat</code>)</h3>
+<h4 id="2-3-calculate-genotype-statistics-for-each-variant-from-stat">2.3 Calculate genotype statistics for each variant (<code>--from_stat</code>)</h4>
 
 <p>Option <code>--from_stat</code> adds fields to variant tables with summary statistics from sample genotypes. This parameter accepts expressions in the format of <code>VAR_INFO=FUNC(GENO_INFO)</code> where <code>VAR_INFO</code> is the variant information field to be added or updated, <code>FUNC</code> is a function or expression, and <code>GENO_INFO</code> is genotype or genotype info. If you are only interested in genotype statistics, some specially defined <code>FUNC(GENO_INFO)</code> can be used. A list of acceptable aggregating functions is available <a href="http://www.sqlite.org/lang_aggfunc.html">here</a>.</p>
 
@@ -4698,7 +4679,7 @@ INFO: 510 records are updated
 
 <p></details></p>
 
-<h3 id="add-fields-based-on-other-variant-or-annotation-fields-set">Add fields based on other variant or annotation fields (<code>--set</code>)</h3>
+<h4 id="2-4-add-fields-based-on-other-variant-or-annotation-fields-set">2.4 Add fields based on other variant or annotation fields (<code>--set</code>)</h4>
 
 <p>Option <code>--set</code> evaluates expressions from existing variant info fields and assign results to a new or existing variant info field. For example, once you have calculated allele count, you could calculate allele frequency based on sample size using expression <code>--set 'maf=m/(n*2.0)'</code> where <em>m</em> is field name calculated as &ldquo;m=#(alt)&rdquo; and <em>n</em> is sample size, which might not be <code>&quot;n=#(GT)&quot;</code> if there are missing data. Note that the denominator should be <code>n*2.0</code>, not <code>n*2</code>, because SQL requires the denominator be a FLOAT type, not INTEGER.</p>
 
@@ -4776,7 +4757,7 @@ INFO: 144 variants selected.
 1   890593  G   A   NM_198317
 </code></pre>
 
-<p>(:exampleend</summary></p>
+<p></details></p>
 
 
 <footer class=" footline" >
@@ -7308,20 +7289,20 @@ INFO: 144 variants selected.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vat-docs/js/clipboard.min.js?1526403362"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.min.js?1526403362"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1526403362"></script>
-    <script src="/vat-docs/js/jquery.sticky.js?1526403362"></script>
-    <script src="/vat-docs/js/featherlight.min.js?1526403362"></script>
-    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1526403362"></script>
-    <script src="/vat-docs/js/highlight.pack.js?1526403362"></script>
+    <script src="/vat-docs/js/clipboard.min.js?1526863305"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1526863305"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1526863305"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1526863305"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1526863305"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1526863305"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1526863305"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vat-docs/js/modernizr.custom.71422.js?1526403362"></script>
-    <script src="/vat-docs/js/learn.js?1526403362"></script>
-    <script src="/vat-docs/js/hugo-learn.js?1526403362"></script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1526863305"></script>
+    <script src="/vat-docs/js/learn.js?1526863305"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1526863305"></script>
 
-    <link href="/vat-docs/mermaid/mermaid.css?1526403362" type="text/css" rel="stylesheet" />
-    <script src="/vat-docs/mermaid/mermaid.js?1526403362"></script>
+    <link href="/vat-docs/mermaid/mermaid.css?1526863305" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1526863305"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

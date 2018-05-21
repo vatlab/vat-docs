@@ -566,7 +566,7 @@ padding: 8px;  /* text-align:left; */
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/</guid>
-      <description>Add new or update existing variant and genotype info fields Usage % vtools update -h usage: vtools update [-h] [--from_file FROM_FILE [FROM_FILE ...]] [--build BUILD] [--format FORMAT] [-j N] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [--set [EXPR [EXPR ...]]] [--from_stat [EXPR [EXPR ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [-v {0,1,2}] table Add or update fields of existing variants and genotype from other fields, statistics of genotypes and genotype info, or files that annotate variants or their locations (e.</description>
+      <description>Add new or update existing variant and genotype info fields 1. Usage % vtools update -h usage: vtools update [-h] [--from_file FROM_FILE [FROM_FILE ...]] [--build BUILD] [--format FORMAT] [-j N] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [--set [EXPR [EXPR ...]]] [--from_stat [EXPR [EXPR ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [-v {0,1,2}] table Add or update fields of existing variants and genotype from other fields, statistics of genotypes and genotype info, or files that annotate variants or their locations (e.</description>
     </item>
     
     <item>
