@@ -6,7 +6,7 @@ baseURL = "https://vatlab.github.io/vat-docs/"
 publishDir = "docs"
 
 [params]
-  editURL = "https://vatlab.github.io/vat-docs/content/"
+  editURL = "https://github.com/vatlab/vat-docs/content/"
   description = "Documentation for Variant Tools"
   author = "Bo Peng"
   showVisitedLinks = false

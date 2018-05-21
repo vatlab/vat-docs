@@ -885,3 +885,4 @@ at the end of this file, and import this field using
  [4]: http://vtools.houstonbioinformatics.org/format/ANNOVAR.fmt
  [5]: http://vtools.houstonbioinformatics.org/format/CASAVA18_snps.fmt
  
+ 

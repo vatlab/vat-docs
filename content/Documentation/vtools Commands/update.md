@@ -1,14 +1,13 @@
 
 +++
 title = "Update"
-description = ""
 weight = 3
 +++
 
-# Add new or update existing variant and genotype info fields
+## Add new or update existing variant and genotype info fields
 
 
-## Usage
+### 1. Usage
 
     % vtools update -h
     
@@ -127,19 +126,17 @@ weight = 3
 
 
 
-## Details
+### 2. Details
 
 Command `` `vtools update `` updates **variant info fields** (and to a lesser extend **genotype info fields**) by adding more fields or updating values at existing fields. It does not add any new variant or genotype, and does not change existing variant, sample, or genotype. Using three parameters `--from_file`, `--from_stat`, and `--set`, variant information fields could be updated from external file, sample genotypes, and existing fields. 
 
+<details>
+<summary> An illustration about `vtools update` </summary>
+<img src= "update.png" />
+</details> 
 
 
-An illustration about `` `vtools update `` ▸ 
-
-Attach:update.png 
-
-
-
-### Import variant info from external files in standard formats (`--from_file`)
+#### 2.1 Import variant info from external files in standard formats (`--from_file`)
 
 Option `--from_file` allows command `vtools update` to update variant and/or genotype info fields by reading info from an external file. This process is similar to `vtools import` but has two major differences: 
 
@@ -162,8 +159,7 @@ The project does not have any variant so we import some from these VCF files:
 
 
 
-    % vtools import V*.vcf --build hg18
-    
+    % vtools import V*.vcf --build hg38 
 
     INFO: Importing variants from V1.vcf (1/3)
     V1.vcf: 100% [========================================================] 1,000 10.9K/s in 00:00:00
@@ -187,19 +183,18 @@ The project does not have any variant so we import some from these VCF files:
 
     % vtools show fields
     
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
 
-    variant.chr
-    variant.pos
-    variant.ref
-    variant.alt
     
 
 Because the input file has two variant info fields `DP` (depth of coverage) and `NS` (number in sample), we can add these two fields to our project using commands 
 
 
 
-    % vtools update variant --from_file V*.vcf --var_info DP NS
-    
+    % vtools update variant --from_file V*.vcf --var_info DP NS   
 
     INFO: Using primary reference genome hg18 of the project.
     Getting existing variants: 100% [====================================] 1,611 170.4K/s in 00:00:00
@@ -217,24 +212,22 @@ Because the input file has two variant info fields `DP` (depth of coverage) and 
 
 The project now has two variant info fields `DP` and `NS`, 
 
-    % vtools show fields 
-    
+    % vtools show fields    
 
-    variant.chr
-    variant.pos
-    variant.ref
-    variant.alt
-    variant.DP
-    variant.NS
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+    variant.DP (int)
+    variant.NS (int)
     
 
 and we can output them with variants 
 
     % vtools output variant chr pos ref alt DP NS -l 5
     
-
-    1	4540	G	A	9	1
-    1	5683	G	T	7	1
+    1	4540	G	A	9 	1
+    1	5683	G	T	7 	1
     1	5966	T	G	24	1
     1	6241	T	C	23	1
     1	9992	C	T	13	1
@@ -246,8 +239,7 @@ and we can output them with variants
 
 Variant tools is flexible enough to handle such a situation (check `vtools show format vcf` for details). By specifying field `DP` in parameter `--geno_info`, this field will be added as genotype info field and be processed for each sample: 
 
-    % vtools update variant --from_file V*.vcf --geno_info DP
-    
+    % vtools update variant --from_file V*.vcf --geno_info DP   
 
     INFO: Using primary reference genome hg18 of the project.
     Getting existing variants: 100% [====================================] 1,611 176.1K/s in 00:00:00
@@ -267,13 +259,12 @@ The project now has a genotype info field `DP`, with coverage depth for each gen
 
 
 
-    % vtools show genotypes
-    
+    % vtools show genotypes 
 
     sample_name	filename	num_genotypes	sample_genotype_fields
-    SAMP1	V1.vcf	989	GT,DP
-    SAMP1	V2.vcf	990	GT,DP
-    SAMP1	V3.vcf	988	GT,DP
+    SAMP1      	V1.vcf  	989          	GT,DP
+    SAMP1      	V2.vcf  	990          	GT,DP
+    SAMP1      	V3.vcf  	988          	GT,DP
     
 
 
@@ -290,76 +281,67 @@ Suppose that we would like to use ANNOVAR to annotate our variants. The basic st
 
     % vtools export variant --format ANNOVAR > ann.in
     
-
-    vtools export variant --format ANNOVAR > ann.in
-    Writing: 100% [=======================================================] 1,611 45.1K/s in 00:00:00
-    INFO: 1611 lines are exported from variant table variant 
+    Writing: 100% [=================================================================] 1,611 74.0K/s in 00:00:00
+    INFO: 1611 lines are exported from variant table variant
     
 
 
 
-    % annotate_variation.pl ann.in humandb/
+    % perl annotate_variation.pl ann.in humandb/
     
-
     NOTICE: The --geneanno operation is set to ON by default
     NOTICE: The --buildver is set as 'hg18' by default
-    NOTICE: Reading gene annotation from humandb/hg18_refGene.txt ... Done with 41481 transcripts (including 7217 without coding sequence annotation) for 23669 unique genes
-    NOTICE: Reading FASTA sequences from humandb/hg18_refGeneMrna.fa ... Done with 14 sequences
-    WARNING: A total of 318 sequences will be ignored due to lack of correct ORF annotation
-    NOTICE: Finished gene-based annotation on 1611 genetic variants in ann.in
     NOTICE: Output files were written to ann.in.variant_function, ann.in.exonic_variant_function
+    NOTICE: Reading gene annotation from humandb/hg18_refGene.txt ... Done with 67352 transcripts (including         16172 without coding sequence annotation) for 27951 unique genes
+    NOTICE: Processing next batch with 1611 unique variants in 1611 input lines
+    Error: FASTA sequence file humandb/hg18_refGeneMrna.fa does not exist. Please use 'annotate_variation.pl --     downdb refGene humandb' download the database.
     
 
 We then want to update our project with ANNOVAR annotations. Because gene annotation of ANNOVAR generates two output files, two output file formats are available. One of the formats is `ANNOVAR_exonic_variant_function`, 
 
 
 
-    % vtools show format ANNOVAR_exonic_variant_function
-    
+    % vtools show format ANNOVAR_exonic_variant_function  
 
-    Format:      ANNOVAR_exonic_variant_function
-    Description: Output from ANNOVAR, generated from command
-      "path/to/annovar/annotate_variation.pl annovar.txt
-      path/to/annovar/humandb/". This format imports chr, pos, ref, alt
-      and ANNOVAR annotations. For details please refer to
-      http://www.openbioinformatics.org/annovar/annovar_gene.html
-    
+    Output from ANNOVAR for files of type *exonic_variant_function, generated from command
+    "path/to/annovar/annotate_variation.pl annovar.txt path/to/annovar/humandb/". This format imports chr, pos,
+    ref, alt and ANNOVAR annotations. For details please refer to
+    http://www.openbioinformatics.org/annovar/annovar_gene.html
+
     Columns:
       None defined, cannot export to this format
-    
+
     variant:
-      chr          Chromosome
-      pos          1-based position, hg18
-      ref          Reference allele, '-' for insertion.
-      alt          Alternative allele, '-' for deletion.
-    
+      chr                   Chromosome
+      pos                   1-based position, hg18
+      ref                   Reference allele, '-' for insertion.
+      alt                   Alternative allele, '-' for deletion.
+
     Variant info:
-      mut_type     the functional consequences of the variant.
-    
+      mut_type              the functional consequences of the variant.
+
     Other fields (usable through parameters):
-      genename     Gene name (for the first exon if the variant is in more than one
-                   exons, but usually the names for all exons are the
-                   same).
-      function     the gene name, the transcript identifier and the sequence change in
-                   the corresponding transcript
-    
+      genename              Gene name (for the first exon if the variant is in more than one exons, but usually
+                            the names for all exons are the same).
+      function              the gene name, the transcript identifier and the sequence change in the
+                            corresponding transcript
+
     Format parameters:
-      var_info     Fields to be outputted, can be one or both of mut_type and function.
-                   (default: mut_type)
-    
+      var_info              Fields to be outputted, can be one or both of mut_type and function. (default:
+                            mut_type)
+
 
 As you can see, this is a variant based format. It has a default variant info field `mut_type`, but you can add more fields using parameter `var_info`. To update variants, 
 
 
 
-    % vtools update variant --format ANNOVAR_exonic_variant_function --from_file ann.in.exonic_variant_function
-    
+    % vtools update variant --format ANNOVAR_exonic_variant_function --from_file ann.in.exonic_variant_functio  
 
-    INFO: Using primary reference genome hg18 of the project.
-    Getting existing variants: 100% [===============================================================] 1,611 154.0K/s in 00:00:00
+    INFO: Using primary reference genome hg38 of the project.
+    Getting existing variants: 100% [========================================================] 1,611 234.5K/s in 00:00:00
     INFO: Updating variants from ann.in.exonic_variant_function (1/1)
-    ann.in.exonic_variant_function: 100% [===============================================================] 23 2.5K/s in 00:00:00
-    INFO: Field mut_type of 23 variants are updated
+    ann.in.exonic_variant_function: 0 0.0/s in 00:00:00                                                                  
+    INFO: Field mut_type of 0 variants are updated
     
 
 By default, field `mut_type` is added. 
@@ -367,15 +349,13 @@ By default, field `mut_type` is added.
 
 
     % vtools show fields
-    
 
-    variant.chr
-    variant.pos
-    variant.ref
-    variant.alt
-    variant.DP
-    variant.NS
-    variant.mut_type
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+    variant.DP (int)
+    variant.NS (int)
     
 
 To update additional variant/genotype fields, use `--var_info` of the `ANNOVAR_exonic_variant_function` format: 
@@ -384,12 +364,9 @@ To update additional variant/genotype fields, use `--var_info` of the `ANNOVAR_e
                            --from_file ann.in.exonic_variant_function \
                            --var_info mut_type function 
     
-
-    INFO: Using primary reference genome hg18 of the project.
-    Getting existing variants: 100% [===============================================================] 1,611 180.6K/s in 00:00:00
+    Getting existing variants: 100% [========================================================] 1,611 291.1K/s in 00:00:00
     INFO: Updating variants from ann.in.exonic_variant_function (1/1)
-    ann.in.exonic_variant_function: 100% [===============================================================] 23 1.8K/s in 00:00:00
-    INFO: Fields mut_type, function of 23 variants are updated
+    ann.in.exonic_variant_function: 0 0.0/s in 00:00:00                                                             INFO: Fields mut_type, function of 0 variants are updated
     
 
 Fields specified by option `--var_info` are added. Now we have one more field `function` 
@@ -398,31 +375,27 @@ Fields specified by option `--var_info` are added. Now we have one more field `f
 
     % vtools show fields
     
-
-    variant.chr
-    variant.pos
-    variant.ref
-    variant.alt
-    variant.DP
-    variant.NS
-    variant.mut_type
-    variant.function
-    
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+    variant.DP (int)
+    variant.NS (int)
+    variant.mut_type (char)
+    variant.function (char)
 
 </details>
 
 
 
-### Import variant info from external files in customized formats (`--from_file`)
+#### 2.2 Import variant info from external files in customized formats (`--from_file`)
 
-During the analysis of variants, it is common to have annotations in different formats from various sources (e.g. from annotation servers such as [regulome DB][2]). Although variant tools has a growing number of [formats][3][?][3], it is sometimes needed to create your own format files to import annotations. 
+During the analysis of variants, it is common to have annotations in different formats from various sources (e.g. from annotation servers such as [regulome DB][2]). Although variant tools has a growing number of [formats][3], it is sometimes needed to create your own format files to import annotations. 
 
-<details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname. Because this sample project uses hg18, we cannot use the default `dbSNP` database and has to use 
+<details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname. 
 
 
-
-    % vtools use dbSNP-hg18_130
-    
+    % vtools use dbSNP 
 
     INFO: Downloading annotation database from annoDB/dbSNP-hg18_130.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/dbSNP-hg18_130.DB.gz
@@ -626,7 +599,7 @@ With `position.fmt` saved in the project directory, the following command can be
 
 
 
-### Calculate genotype statistics for each variant (`--from_stat`)
+#### 2.3 Calculate genotype statistics for each variant (`--from_stat`)
 
 Option `--from_stat` adds fields to variant tables with summary statistics from sample genotypes. This parameter accepts expressions in the format of `VAR_INFO=FUNC(GENO_INFO)` where `VAR_INFO` is the variant information field to be added or updated, `FUNC` is a function or expression, and `GENO_INFO` is genotype or genotype info. If you are only interested in genotype statistics, some specially defined `FUNC(GENO_INFO)` can be used. A list of acceptable aggregating functions is available [here][5]. 
 
@@ -884,7 +857,7 @@ Then we can add a field `case_hom` to count the number of homozygotes for only t
 
 
 
-### Add fields based on other variant or annotation fields (`--set`)
+#### 2.4 Add fields based on other variant or annotation fields (`--set`)
 
 Option `--set` evaluates expressions from existing variant info fields and assign results to a new or existing variant info field. For example, once you have calculated allele count, you could calculate allele frequency based on sample size using expression `--set 'maf=m/(n*2.0)'` where *m* is field name calculated as "m=#(alt)" and *n* is sample size, which might not be `"n=#(GT)"` if there are missing data. Note that the denominator should be `n*2.0`, not `n*2`, because SQL requires the denominator be a FLOAT type, not INTEGER. 
 
@@ -974,10 +947,10 @@ We can select variants that belong to a gene and output it
     1	890593	G	A	NM_198317
     
 
-(:exampleend</summary>
+</details>
 
  [1]: http://www.1000genomes.org/node/101
  [2]: http://regulome.stanford.edu/
- [3]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.HomePage?action=edit
+ [3]: /documentation/customization/format/supportedformats/
  [4]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Map?action=edit
  [5]: http://www.sqlite.org/lang_aggfunc.html
