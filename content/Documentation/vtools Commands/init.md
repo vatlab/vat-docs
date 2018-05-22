@@ -166,12 +166,13 @@ The project now has three variant tables
 
 </details>
 
-<details><summary> Examples: create subprojects from the parent project (The "--variants" option is only supported when SQLite is used as storage mode. )</summary> You can create a subproject with variants from the CEU: 
+<details><summary> Examples: create subprojects from the parent project (The "--variants" option is only supported when STOREMODE is set to sqlite )</summary> You can create a subproject with variants from the CEU: 
 
 
     % mkdir myproj
     % cd myproj
     % vtools admin --load_snapshot vt_quickStartGuide
+    % export STOREMODE="sqlite"
     % vtools select variant --samples 'sample_name == "CEU"' -t CEU 'Variants from CEU population'
     % vtools select variant --samples 'sample_name == "JPT"' -t JPT 'Variants from JPT population'
     % mkdir ../CEU
@@ -283,7 +284,10 @@ which is a shortcut to commands
 
 
 
-#### 2.3 Create a project from several subprojects( This function is only supported when SQLite is used as storage mode. )
+#### 2.3 Create a project from several subprojects
+
+
+##### This function is only supported when STOREMODE is set to sqlite. 
 
 A project could also be created from one or more **children projects**. This allows flexible handling of batches of data (e.g. analyze data separately or jointly), and parallel processing of large datasets (e.g. split a project by chromosomes, analyze them separately, and combine the results). 
 

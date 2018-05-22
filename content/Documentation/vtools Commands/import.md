@@ -78,39 +78,36 @@ weight = 2
       -v {0,1,2}, --verbosity {0,1,2}
                             Output error and warning (0), info (1) and debug (2)
                             information to standard output (default to 1).
+
     
+### 2. Importing VCF files
 
+VCF is the most commonly used format to store genetic variants and sample genotypes from next-gen sequencing studies. *variant tools* can import data from plain (`.vcf`) or compressed (`.vcf.gz`) vcf format (version 4.0 or higher). Depending on the number of samples a vcf file stores, *variant tools* can import only variants (even if the vcf file contains sample genotypes, see an example below), import variants with a sample without genotype, and import all samples in a vcf file using specified sample names or sample names obtained from the meta information (see examples above). A limitation is that *variant tools* ignores phase information of genotypes. 
 
+##### Import variant and genotype info fields
 
-### 2. General usages and options
+The vcf format can store arbitary variant and genotype information fields. *variant tools* by default does not import any variant and info fields. However, you may specified the fields you'd like to import using option `--var_info` for variant fields and `--geno_info` for genotype fields. To import variant or genotype fields from a vcf file, you need to 
 
-Command `` vtools import `` imports variants, sample genotypes and related information fields. The imported variants are saved to the master variant table `variant` of the project, along with their information fields. Samples are saved to a genotype database `$proj_genotype` as separate sample tables. 
+1.  know what fields are available from the input vcf file. That is to say, you need to open a file, read its header, and determine what fields are provided. 
+2.  In the current version, genotype fields `DP`,`GQ`,`GD`,`HQ`,`AD`,`PL`,`MQ`,`NS` are supported. 
+3.  use command `vtools import input_file.vcf --var_info var_fields --geno_info geno_fields` to import variants, genotypes and related fields. 
+
 
 {{% notice tip %}}
 
- 1. Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here]([1]).
+1. If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
 
- 2. Although vcf files produced by different variant calling software have different fields, *variant tools* provides a growing number of pipelines to import data in particular formats. You can have a look at available pipelines ([`vtools show`](Documentation/vtools Commands/show.md) `pipelines`) and details of a particular pipeline ([`vtools show`](Documentation/vtools Commands/show.md) `pipeline PIPELINE`) to see if you can find a pipeline to import your data. 
-
- 3. It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](Documentation/vtools Commands/update.md), or built into an annotation database to reduce the size of the project. 
+2. If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized `.fmt` file to import these. This process can be simplified using pipeline [import_vcf][6][?][6]. The command to use is similar to `vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19`.
 
 {{% /notice %}}
+
 
 <details><summary>Examples:create a project and load some sample data</summary>
  
 Let us first create a project and download a sample project with a bunch of test datasets: 
 
-    % vtools init import --parent vt_testData
+    % vtools init import --parent vt_testData_v3
     
-
-    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
-    INFO: Please visit http://varianttools.sourceforge.net for more information.
-    INFO: Creating a new project import
-    INFO: Extracting snapshot vt_testData to .
-    Downloading snapshot vt_testData.tar.gz from online repository
-    Extracting vt_testData: 100% [==================================================] 68,721 7.6M/s in 00:00:00
-
-
     
 {{% notice tip %}}
 You can use command `vtools show snapshots` to get a list of available snapshots 
@@ -119,7 +116,238 @@ You can use command `vtools show snapshots` to get a list of available snapshots
 
 </details>
 
-#### 2.1 File formats and format specification files (.fmt) (option `--format`)
+<details><summary>Examples: importing variant and genotype info fields</summary>
+If we have a look at the header of `CEU.vcf.gz`, we can see 
+
+    % gzcat CEU_hg38.vcf | head -15
+    
+
+    ##fileformat=VCFv4.0
+    ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
+    ##INFO=<ID=HM2,Number=0,Type=Flag,Description="HapMap2 membership">
+    ##INFO=<ID=HM3,Number=0,Type=Flag,Description="HapMap3 membership">
+    ##INFO=<ID=AA,Number=1,Type=String,Description="Ancestral Allele, ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/pilot_data/technical/reference/ancestral_alignments/README">
+    ##reference=human_b36_both.fasta
+    ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+    ##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+    ##FORMAT=<ID=CB,Number=1,Type=String,Description="Called by S(Sanger), M(UMich), B(BI)">
+    ##rsIDs=dbSNP b129 mapped to NCBI 36.3, August 10, 2009
+    ##INFO=<ID=AC,Number=.,Type=Integer,Description="Allele count in genotypes">
+    ##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+    ##INFO=<ID=REMAP_ALIGN,Number=1,Type=String,Description="Alignment type used for remapping (FP=first pass, SP=second pass)">
+    #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  NA06985 NA06986 NA06994 NA07000 NA07037 NA07051 NA07346 NA07347 NA07357 NA10847 NA10851 NA11829 NA11830 NA11831 NA11832 NA11840 NA11881 NA11894 NA11918 NA11919 NA11920 NA11931 NA11992 NA11993 NA11994 NA11995 NA12003 NA12004 NA12005 NA12006 NA12043 NA12044 NA12045 NA12144 NA12154 NA12155 NA12156 NA12234 NA12249 NA12287 NA12414 NA12489 NA12716 NA12717 NA12749 NA12750 NA12751 NA12760 NA12761 NA12762 NA12763 NA12776 NA12812 NA12813 NA12814 NA12815 NA12828 NA12872 NA12873 NA12874
+    1       10533   .       G       C       .       PASS    AA=.;AC=6;AN=120;DP=423;REMAP_ALIGN=FP  GT:DP:CB        0|0:6:SMB       0|0:14:SMB      0|0:4:SMB       0|0:3:SMB       0|0:7:SMB       0|0:4:SMB       1|0:6:MB        0|0:3:SMB       0|0:13:SMB      0|0:1:SMB       0|0:14:SMB      0|0:10:SMB      0|0:6:SB        0|0:2:SMB       0|0:6:SMB       0|0:4:SMB       0|0:2:SMB       0|0:15:SMB      0|0:2:SMB       0|0:1:SMB       0|0:26:SMB      0|0:6:SMB       0|1:14:MB       0|0:5:SMB       0|0:3:SMB       0|0:20:SMB      0|0:3:SMB       0|0:2:SMB       0|0:4:SMB       0|0:12:SMB      0|0:1:SMB       0|0:7:SMB       0|0:2:SMB       0|0:25:SMB      0|0:9:SMB       0|1:1:MB        0|0:9:SMB       0|0:1:SMB       0|0:6:SMB       0|0:12:SMB      0|0:7:SMB       0|0:18:SMB      0|0:2:SMB       0|0:2:SM        0|0:38:SMB      0|0:3:SM        0|0:3:SMB       0|0:5:SMB       0|0:5:SMB       0|0:3:SMB       0|0:0:MB        0|0:5:SMB       0|0:7:SMB       0|0:0:SMB       0|0:6:SMB       1|0:5:SMB       0|0:4:MB        0|0:5:SMB       1|0:5:MB        0|1:9:SMB
+
+
+we can see that this file contains genotype info `AA`, `AC`, `AN`, and `DP`, and genotype info `DP` and `CB`. 
+
+    % vtools init import -f
+    % vtools import CEU_hg38.vcf --build hg38 --var_info AA AC AN DP --geno_info DP
+    
+    INFO: Importing variants from CEU_hg38.vcf (1/1)
+    CEU_hg38.vcf: 100% [======================================] 306 10.6K/s in 00:00:00
+    INFO: 292 new variants (292 SNVs) from 306 lines are imported.
+    Importing genotypes: 100% [===============================] 292 2.7K/s in 00:00:00
+
+    
+
+The imported data now has variant info field `AA`, `AC`, `AN`, and `DP`, 
+
+    % vtools show fields
+    
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+    variant.AA (char)
+    variant.AC (int)
+    variant.AN (int)
+    variant.DP (int)
+    
+and genotype info field DP 
+
+    % vtools show genotypes -l 5
+
+    sample_name filename        num_genotypes   sample_genotype_fields
+    NA06985     CEU_hg38.vcf    292             DP,GT
+    NA06986     CEU_hg38.vcf    292             DP,GT
+    NA06994     CEU_hg38.vcf    292             DP,GT
+    NA07000     CEU_hg38.vcf    292             DP,GT
+    NA07037     CEU_hg38.vcf    292             DP,GT
+    (55 records omitted)
+    
+</details>
+
+In above example, `DP` appears in both `INFO` and genotype columns of the input vcf file. Since `DP` could be listed in `INFO` field to record the total depth of the genotype of all samples in the vcf file. 
+
+
+
+Here is another example importing multiple VCF files:
+
+<details><summary>Examples: import multiple VCF files</summary>
+If we have a look at the meta information of `V1.vcf`, 
+
+    % head -14 V1_hg38.vcf
+
+    ##fileformat=VCFv4.0
+    ##INFO=<ID=NS,Number=1,Type=Integer,Description="Number of Samples With Data">
+    ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
+    ##INFO=<ID=AF,Number=.,Type=Float,Description="Allele Frequency">
+    ##INFO=<ID=AA,Number=1,Type=String,Description="Ancestral Allele">
+    ##INFO=<ID=DB,Number=0,Type=Flag,Description="dbSNP membership, build 129">
+    ##INFO=<ID=H2,Number=0,Type=Flag,Description="HapMap2 membership">
+    ##FILTER=<ID=q10,Description="Quality below 10">
+    ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+    ##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
+    ##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+    ##FORMAT=<ID=HQ,Number=2,Type=Integer,Description="Haplotype Quality">
+    ##INFO=<ID=REMAP_ALIGN,Number=1,Type=String,Description="Alignment type used for remapping (FP=first pass, SP=second pass)">
+    #CHROM  POS ID  REF ALT QUAL    FILTER  INFO    FORMAT  SAMP1
+    1   14677   .   G   A   32  PASS    DP=6;NS=1;REMAP_ALIGN=FP    GT  0/1
+    
+
+`DP` is listed as a INFO field, along with `NS`, we can import `V1.vcf`, `V2.vcf` and `V3.vcf` using command 
+
+
+
+    % vtools init import -f
+    % vtools import V*_hg38.vcf --build hg38 --geno_info DP NS
+    
+    INFO: Importing variants from V1_hg38.vcf (1/3)
+    V1_hg38.vcf: 100% [==================================] 1,619 5.0K/s in 00:00:00
+    INFO: 1,273 new variants (1,273 SNVs, 332 unsupported) from 1,619 lines are imported.
+    Importing genotypes: 100% [==========================] 1,273 9.6K/s in 00:00:00
+    INFO: Importing variants from V2_hg38.vcf (2/3)
+    V2_hg38.vcf: 100% [==================================] 1,601 5.2K/s in 00:00:00
+    INFO: 449 new variants (1,258 SNVs, 329 unsupported) from 1,599 lines are imported.
+    Importing genotypes: 100% [==========================] 1,722 14.3K/s in 00:00:00
+    INFO: Importing variants from V3_hg38.vcf (3/3)
+    V3_hg38.vcf: 100% [==================================] 1,589 5.3K/s in 00:00:00
+    INFO: 329 new variants (1,274 SNVs, 301 unsupported) from 1,589 lines are imported.
+    Importing genotypes: 100% [==========================] 2,051 17.1K/s in 00:00:00
+    
+
+
+`DP` and `NS` will be imported as genotype info for each genotype, 
+
+    % vtools show fields
+
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+
+    % vtools show genotypes
+    
+    sample_name filename    num_genotypes   sample_genotype_fields
+    SAMP1       V1_hg38.vcf 1273            DP,GT,NS
+    SAMP2       V2_hg38.vcf 1258            DP,GT,NS
+    SAMP3       V3_hg38.vcf 1274            DP,GT,NS
+    
+If you need total depth, you can obtained from the corresponding genotype field 
+
+    % vtools update variant --from_stat 'DP=sum(DP)' 'NS=sum(NS)'
+    
+    INFO: Adding variant info field DP with type INT
+    INFO: Adding variant info field NS with type INT
+    Updating variant: 100% [================================] 2,051 49.1K/s in 00:00:00
+    INFO: 2051 records are updated
+
+Here `DP=sum(DP)` looks strange but the first `DP` is a new variant info and the second `DP` is the existing genotype info. Now, variant info field `DP` stands for total depth and `NS` stands for number of times a variant shows up in the samples. 
+
+    %vtools output variant chr pos ref alt DP NS -l 5
+    
+    1   14677   G   A   15  2
+    1   15820   G   T   7   1
+    1   16103   T   G   76  3
+    1   16378   T   C   41  2
+    1   20129   C   T   24  2
+    
+
+</details>
+
+##### Using customized or alternative fields to import genotypes
+
+The vcf format accepts a number of parameters to customize the way how genotypes are imported. For example, the `--geno` option accepts a genotype field. The default `GT` field import all genotypes assuming that `GT` is the first field in the genotype columns. However, 
+
+*   You can use option `--geno` without value to specify an empty genotype field so that variant tools will not process any genotype. 
+*   In `vcf.fmt` we import wild-type genotypes as numeric value 0. This is important for the purpose of association studies. If you are only interested in exploring variants of your sample, and you do not care to discriminate wild-type genotypes from missing genotype calls, you may set `--wildtype_value None`, which will leave out all wild-type genotypes, resulting in much quicker import and smaller database size. 
+*   The `GT` field assumes that `GT` is the first field in the `FORMAT` column. However, some variant-calling software produce non-standard vcf files that do not follow this standard. In this case, an alternative field `safe_GT` can be used (e.g. `--geno safe_GT`) to import genotypes according to the location of `GT` in the `FORMAT` string. 
+
+<details><summary>Ignore genotypes of input vcf file</summary>
+
+    % vtools init import -f
+    % vtools import CEU_hg38.vcf --build hg38 --var_info AA AC AN DP --geno
+
+    INFO: Importing variants from CEU_hg38.vcf (1/1)
+    CEU_hg38.vcf: 100% [==========================================================================================================================================================================] 306 13.1K/s in 00:00:00
+    INFO: 292 new variants (292 SNVs) from 306 lines are imported.
+
+With this command, no genotype is imported 
+
+    % vtools show genotypes     
+
+    sample_name filename    num_genotypes   sample_genotype_fields
+    
+</details>
+
+
+##### Using a customized format file to import additional fields (This function is only supoorted when STOREMODE is set to sqlite.)
+
+If you have a field that you would like to import, but does not exist in `vcf.fmt`, you can add it to a customized format file and use this format file to import the data. 
+
+<details><summary>Examples: Using a customized .fmt file to import additional fields</summary>
+For example, the `CB` genotype field is commonly used and is not defined in `vcf.fmt`, according to the meta information, this field is a string. You can then copy `~/.variant_tools/format/vcf.fmt` as `my_vcf.fmt` and add 
+
+    [CB_geno]
+    index=9, 10:
+    adj=FieldFromFormat('CB', ':')
+    type=VARCHAR(3)
+    comment=Called by S(Sanger), M(UMich), B(BI)
+
+at the end of this file, and import this field using 
+
+    % vtools init import -f
+    % export STOREMODE="sqlite"
+    % vtools import CEU.vcf.gz --format my_vcf.fmt --build hg38 --var_info AA AC AN DP --geno_info DP_geno CB_geno
+
+    INFO: Importing variants from CEU.vcf.gz (1/1)
+    CEU.vcf.gz: 100% [====================================================] 300 12.4K/s in 00:00:00
+    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
+    Importing genotypes: 100% [=========================================] 18,000 9.0K/s in 00:00:02
+    Copying genotype: 100% [==============================================] 60 484.0K/s in 00:00:00
+
+    % vtools show genotypes -l5
+    
+    sample_name filename    num_genotypes   sample_genotype_fields
+    NA06985 CEU.vcf.gz  287 GT,DP_geno,CB_geno
+    NA06986 CEU.vcf.gz  287 GT,DP_geno,CB_geno
+    NA06994 CEU.vcf.gz  287 GT,DP_geno,CB_geno
+    NA07000 CEU.vcf.gz  287 GT,DP_geno,CB_geno
+    NA07037 CEU.vcf.gz  287 GT,DP_geno,CB_geno
+    (55 records omitted)
+
+</details>
+
+
+
+
+
+
+### 3. General usages and options
+
+Command `` vtools import `` imports variants, sample genotypes and related information fields from formats other than VCF as well. The imported variants are saved to the master variant table `variant` of the project, along with their information fields. 
+
+{{% notice tip %}}
+
+ 1. Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here]([1]).
+
+ 2. It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](Documentation/vtools Commands/update.md), or built into an annotation database to reduce the size of the project. 
+
+{{% /notice %}}
+
+
+#### 3.1 File formats and format specification files (.fmt) (option `--format`)
 
 `` vtools import `` can handle input file in many different formats (e.g. `.vcf`) and their gzipped or bzipped versions (e.g. `.vcf.gz`). variant tools relies on [format specification files](Documentation/Customization/Format/_index.md)  to describe a file format. These files (with extension `.fmt`) tell variant tools how to read from an input file. They are available online and will be downloaded automatically to the local resource directory of variant tools. Please refer to the variant tools [input file format](Documentation/Customization/Format/supportedformats/_index.md) for a list of supported formats, or use command `vtools show formats` to get a list of formats, and `vtools show format FMT` for details of a format. 
 
@@ -240,45 +468,44 @@ If your input file matches the description of a format, you can use this format 
 <details><summary>Examples: Import variants using format `basic`</summary>
     File `variants.txt` has a list of variants as follows 
 
-    % head variants.txt 
+    % head variants_hg38.txt 
 
-    1	203148112	T	-
-    1	203148168	G	A
-    1	203148202	G	C
-    1	203148224	G	A
-    1	203148265	GG	T
-    1	203148284	T	C
-    1	203148294	G	T
-    1	203148359	C	A
-    1	203148360	G	A
-    1	203148360	G	C
+    1   1014042 G   A
+    1   1014143 C       T
+    1   1014143 C       T
+    1   1042136 T       TC
+    1   1043288 G       A
+    1   6469122 T       TTCC
+    1   6473391 C       T
+    2   272223  G       A
+    2   1436380 A       G
+    2   1542533 C       CT
     
 
 You can import variants using format `basic` as follows: 
 
 
 
-    % vtools import variants.txt --format basic --build hg38
+    % vtools import variants_hg38.txt --format basic --build hg38
 
-    hg38.crr: 100% [==============================] 802,364,740.0 2.8M/s in 00:04:50
-    INFO: Importing variants from variants.txt (1/1)
-    variants.txt: 100% [=====================================] 20 3.1K/s in 00:00:00
-    INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
-    Importing genotypes: 0 0.0/s in 00:00:00                                        
-    Copying samples: 0 0.0/s in 00:00:00 
+    INFO: Importing variants from variants_hg38.txt (1/1)
+    variants_hg38.txt: 100% [=======================================================================================================================================================================] 14 1.4K/s in 00:00:00
+    INFO: 12 new variants (9 SNVs, 4 insertions, 1 unsupported) from 13 lines are imported.
+    Importing genotypes: 0 0.0/s in 00:00:00                                                                                                                                                                               
+Copying samples: 0 0.0/s in 00:00:00
 
     % vtools output variant chr pos ref alt -l 10
 
-    1	203148113	T	-
-    1	203148169	G	A
-    1	203148203	G	C
-    1	203148225	G	A
-    1	203148266	GG	T
-    1	203148285	T	C
-    1	203148295	G	T
-    1	203148360	C	A
-    1	203148361	G	A
-    1	203148361	G	C
+    1   1014042 G   A
+    1   1014143 C   T
+    1   1042137 -   C
+    1   1043288 G   A
+    1   6469123 -   TCC
+    1   6473391 C   T
+    2   272223  G   A
+    2   1436380 A   G
+    2   1542534 -   T
+    10  6018115 G   A
 
 </details>
 
@@ -315,7 +542,7 @@ If the position used in `variants.txt` is zero-based (like all data downloaded f
 </details>
 
 
-#### 2.2 Sample genotypes, sample names, and samples without genotype (option `--sample_name`)
+#### 3.2 Sample genotypes, sample names, and samples without genotype (option `--sample_name`)
 
 An input file can have genotype data for zero (e.g. a list of variants), one, or more than one samples (many `.vcf` files), and genotypes for a sample might be stored in more than one files, it can be confusing how samples are handled in *variant tools*. 
 
@@ -344,13 +571,18 @@ If there is no genotype in the input file, no sample is created by default. This
 However, if you would like to trace what variants have been imported from each input file, you can create a `sample` (without genotype information) by providing parameter `--sample_name`. 
 
     % vtools init import -f
-    % vtools import variants.txt --format basic --build hg38 --sample_name noGT
+    % vtools import variants_hg38.txt --format basic --build hg38 --sample_name noGT
     
-    INFO: Importing variants from variants.txt (1/1)
-    variants.txt: 100% [================================================================] 20 2.2K/s in 00:00:00
-    INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
-    Importing genotypes: 100% [=========================================================] 20 10.0/s in 00:00:02
-    Copying samples: 100% [==============================================================] 2 8.5K/s in 00:00:00
+    INFO: Importing variants from variants_hg38.txt (1/1)
+variants_hg38.txt: 100% [===============================] 14 1.5K/s in 00:00:00
+INFO: 12 new variants (9 SNVs, 4 insertions, 1 unsupported) from 13 lines are imported.
+Importing genotypes: 100% [=============================] 13 6.5/s in 00:00:02
+Copying samples: 100% [=================================] 2 8.6K/s in 00:00:00
+Current storage mode is HDF5, transfrom genotype storage mode.....
+Creating indexes: 100% [================================] 1 638.2/s in 00:00:00
+Selecting genotypes: 100% [=============================] 2 2.0/s in 00:00:01
+Getting existing variants: 100% [=======================] 12 85.2K/s in 00:00:00
+
 
 
     
@@ -372,97 +604,9 @@ although this sample does not have any genotype fields:
 
 </details> 
 
-If your data is provided in VCF format, sample names are retrieved automatically from the header of input file and you usually do not have to specify names to samples. 
-
-<details><summary> Import sample from a vcf files with multiple samples</summary> 
-
-    % vtools import CEU.vcf.gz --build hg38
-    
-
-Getting existing variants: 100% [==========================================] 20 46.7K/s in 00:00:00
-INFO: Importing variants from CEU.vcf.gz (1/1)
-WARNING: Inconsistent base allele C at 45162 on chromosome 1
-CEU.vcf.gz: 100% [=========================================================] 300 4.4K/s in 00:00:00
-INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-Importing genotypes: 100% [=============================================] 18,000 9.0K/s in 00:00:02
-Copying samples: 100% [===================================================] 107 106.8/s in 00:00:01
 
 
-This file contains genotype information for 60 samples, 
-
-
-
-    % vtools show genotypes -l 10
-    
-    sample_name	filename    	num_genotypes	sample_genotype_fields
-    noGT       	variants.txt	20           	
-    NA06985    	CEU.vcf.gz  	287          	GT
-    NA06986    	CEU.vcf.gz  	287          	GT
-    NA06994    	CEU.vcf.gz  	287          	GT
-    NA07000    	CEU.vcf.gz  	287          	GT
-    NA07037    	CEU.vcf.gz  	287          	GT
-    NA07051    	CEU.vcf.gz  	287          	GT
-    NA07346    	CEU.vcf.gz  	287          	GT
-    NA07347    	CEU.vcf.gz  	287          	GT
-    NA07357    	CEU.vcf.gz  	287          	GT
-    (51 records omitted)
-
-</details>
-
-However, when the samples are provided in multiple vcf files, the pipeline that produce these files might assign samples the same names. In this case, you can override the default name with proper sample names. 
-
-<details><summary>Examples: override sample names specified in .vcf file</summary>
-If we import three samples from three files 
-
-    % vtools init import -f
-    % vtools import V*.vcf --build hg38
-
-    INFO: Importing variants from V1.vcf (1/3)
-    V1.vcf: 100% [===========================================================] 1,000 6.5K/s in 00:00:00
-    INFO: 989 new variants (989 SNVs) from 1,000 lines are imported.
-    INFO: Importing variants from V2.vcf (2/3)
-    V2.vcf: 100% [===========================================================] 1,000 6.0K/s in 00:00:00
-    INFO: 352 new variants (352 SNVs) from 995 lines are imported.
-    INFO: Importing variants from V3.vcf (3/3)
-    V3.vcf: 100% [===========================================================] 1,000 5.6K/s in 00:00:00
-    INFO: 270 new variants (270 SNVs) from 1,000 lines are imported.
-    Importing genotypes: 100% [==============================================] 4,207 2.1K/s in 00:00:02
-    Copying samples: 100% [=====================================================] 6 15.6K/s in 00:00:00
-    INFO: 1,611 new variants (1,611 SNVs) from 2,995 lines (3 samples) are imported.
-    
-These samples will have the same sample name 
-
-
-
-    % vtools show samples
-    
-    sample_name	filename
-    SAMP1	V1.vcf
-    SAMP1	V2.vcf
-    SAMP1	V3.vcf
-    
-
-This can be fixed using command `vtools admin --rename_samples`, but can also be corrected during the import process 
-
-    vtools init import -f
-    vtools import V1.vcf --sample_name V1 --build hg38
-    vtools import V2.vcf --sample_name V2 --build hg38
-    vtools import V3.vcf --sample_name V3 --build hg38
-    
-
-The samples now have correct names 
-
-    % vtools show genotypes
-
-    sample_name	filename	num_genotypes	sample_genotype_fields
-    SAMP1      	V1.vcf  	989          	GT
-    SAMP1      	V2.vcf  	990          	GT
-    SAMP1      	V3.vcf  	988          	GT
-    
-
-</details>
-
-#### 2.3 Primary and alternative reference genomes (option `--build`)
+#### 3.3 Primary and alternative reference genomes (option `--build`)
 
 Sometimes you can different batches of data that use different reference genomes. For example, your project might involve multiple batches of data over the years and variants from the old and new batches are processed using different versions of pipelines with different reference genome. In addition, you might want to a previous collection of samples or some public dataset as controls to your project, but they might use a different reference genome than your project. *variant tools* allows you to import data in two reference genomes. All you need to do is to specify the correct build of reference genome for each batch of data using option `--build`. 
 
@@ -470,79 +614,79 @@ Sometimes you can different batches of data that use different reference genomes
 Variants from `CEU.vcf.gz` uses build `hg18` of the reference genome, 
 
     % vtools init import -f
-    % vtools import CEU.vcf.gz --build hg18
+    % vtools import CEU_hg19.vcf --build hg19
     
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [================================================================] 300 13.0K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [=====================================================] 18,000 9.0K/s in 00:00:02
-    Copying samples: 100% [=============================================================] 90 89.7/s in 00:00:01
+    INFO: Importing variants from CEU_hg19.vcf (1/1)
+CEU_hg19.vcf: 100% [==================================] 309 17.8K/s in 00:00:00
+INFO: 288 new variants (288 SNVs) from 309 lines are imported.
+Importing genotypes: 100% [===========================] 288 3.1K/s in 00:00:00
 
     
 
 Data from `variants.txt` are in `hg19`, so we use option `--build hg19` to import them, 
 
-    % vtools import variants.txt --format basic --build hg19
+    % vtools import variants_hg38.txt --format basic --build hg38
     
-    WARNING: The new files uses a different reference genome (hg19) from the primary reference genome (hg18) of the project.
-    INFO: Adding an alternative reference genome (hg19) to the project.
+    WARNING: The new files uses a different reference genome (hg38) from the primary reference genome (hg19) of the project.
+    INFO: Adding an alternative reference genome (hg38) to the project.
     INFO: Downloading liftOver tool from UCSC
     liftOver: 100% [====================================] 3,383,268.0 1.3M/s in 00:00:02
     INFO: Downloading liftOver chain file from UCSC
-    hg18ToHg19.over.chain.gz: 100% [====================] 140,346.0 132.7K/s in 00:00:01
+    hg19ToHg38.over.chain.gz: 100% [====================] 140,346.0 132.7K/s in 00:00:01
     INFO: Exporting variants in BED format
     Exporting variants: 100% [=================================] 288 19.5K/s in 00:00:00
     INFO: Running UCSC liftOver tool
     Updating table variant: 100% [==============================] 288 6.6K/s in 00:00:00
     Getting existing variants: 100% [==========================] 288 97.4K/s in 00:00:00
-    INFO: Importing variants from variants.txt (1/1)
-    variants.txt: 100% [========================================] 20 500.9/s in 00:00:00
-    INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
+    INFO: Importing variants from variants_hg38.txt (1/1)
+    variants_hg38.txt: 100% [===================================] 14 1.9K/s in 00:00:00
+    INFO: 12 new variants (9 SNVs, 4 insertions, 1 unsupported) from 13 lines are imported.
     WARNING: Sample information is not recorded for a file without genotype and sample name.
     Importing genotypes: 0 0.0/s in 00:00:00
     Copying genotype: 0 0.0/s in 00:00:00
-    INFO: Mapping new variants at 20 loci from hg19 to hg18 reference genome
+    INFO: Mapping new variants at 12 loci from hg38 to hg19 reference genome
     INFO: Downloading liftOver chain file from UCSC
-    hg19ToHg18.over.chain.gz: 100% [====================] 231,197.0 503.6K/s in 00:00:00
+    hg38ToHg19.over.chain.gz: 100% [====================] 231,197.0 503.6K/s in 00:00:00
     INFO: Running UCSC liftOver tool
-    Updating coordinates: 100% [================================] 20 563.1/s in 00:00:00
-    INFO: Coordinates of 20 (20 total, 0 failed to map) new variants are updated.
+    Updating coordinates: 100% [================================] 13 4.2K/s in 00:00:00
+INFO: Coordinates of 12 (13 total, 0 failed to map) new variants are updated.
     
 
 When you execute the second command, *variant tools* will 
 
-1.  Liftover the existing project to hg19 using the UCSC liftover tool 
-2.  Get all coordinates from the hg19 input files and map them to hg18. 
-3.  Import the hg19 data files using mapped coordinates, while keeping their hg19 coordinates as alternative coordinates. 
+1.  Liftover the existing project to hg38 using the UCSC liftover tool 
+2.  Get all coordinates from the hg19 input files and map them to hg38. 
+3.  Import the hg38 data files using mapped coordinates, while keeping their hg19 coordinates as alternative coordinates. 
 
 variants inputted in this way can be accessed using both reference genomes. 
 
-    % vtools output variant chr pos ref alt --build hg18 -l 10
+    % vtools output variant chr pos ref alt --build hg19  | tail -10
+    
+    1   977517      -   C
+    1   978668      G   A
+    1   6529183     -   TCC
+    1   6533451     C   T
+    2   272223      G   A
+    2   1440152     A   G
+    2   1546306     -   T
+    10  6060078     G   A
+    10  6066273     G   A
+    10  8116242     -   AA
+
     
 
-    1	533	    G	C
-    1	41342	T	A
-    1	41791	G	A
-    1	44449	T	C
-    1	44539	C	T
-    1	44571	G	C
-    1	45162	C	T
-    1	52066	T	C
-    1	53534	G	A
-    1	75891	T	C    
-
-    % vtools output variant chr pos ref alt --build hg19 -l 10
+    % vtools output variant chr pos ref alt --build hg38 | tail -10
     
-    1	10533	G	C
-    1	51479	T	A
-    1	51928	G	A
-    1	54586	T	C
-    1	54676	C	T
-    1	54708	G	C
-    1	55299	C	T
-    1	62203	T	C
-    1	63671	G	A
-    1	86028	T	C
+    1   1042137     -   C
+    1   1043288     G   A
+    1   6469123     -   TCC
+    1   6473391     C   T
+    2   272223      G   A
+    2   1436380     A   G
+    2   1542534     -   T
+    10  6018115     G   A
+    10  6024310     G   A
+    10  8074279     -   AA    
     
 </details>
 
@@ -552,7 +696,7 @@ Different variants in one reference genome might be mapped to the same variant i
 {{% /notice %}}
 
 
-#### 2.4 Validate build of reference genome and variant positions 
+#### 3.4 Validate build of reference genome and variant positions 
 
 If you are uncertain about the reference genome of your input data, or if the variant positions are 0- or 1-based, you can use command `vtools admin --validate_build` to compare reference alleles with the alleles at the corresponding locations on the reference genome. You will notice a large number of mismatch variants if you have used incorrect reference genome or failed to adjust positions of variants from 0-based positions to 1-based. 
 
@@ -561,28 +705,30 @@ If you are uncertain about the reference genome of your input data, or if the va
 Let us import variants from `variants.txt` using hg18, 
 
     % vtools init import -f
-    % vtools import variants.txt --format basic --build hg18
+    % vtools import variants_hg38.txt --format basic --build hg19
     % vtools admin --validate_build
     
-    Validate reference alleles: 100% [=========================] 20/13 2.3K/s in 00:00:00
-    INFO: 19 non-insertion variants are checked. 13 mismatch variants found.
+    Validate reference alleles: 100% [=======================] 12/3 10.3K/s in 00:00:00
+INFO: 8 non-insertion variants are checked. 3 mismatch variants found.
     
 
-13 out of 19 non-insertion variants mismatch so we let us try using the `hg19` build of reference genome, 
+3 mismatchs are identified, so we let us try using the `hg38` build of reference genome, 
 
     % vtools init import -f
-    % vtools import variants.txt --format basic --build hg19
+    % vtools import variants_hg38.txt --format basic --build hg38
     % vtools admin --validate_build
     
-    Validate reference alleles: 100% [=========================] 20/1 976.6/s in 00:00:00
-    INFO: 19 non-insertion variants are checked. 1 mismatch variants found.
+    Validate reference alleles: 100% [========================] 12 9.4K/s in 00:00:00
+INFO: 8 non-insertion variants are checked. 0 mismatch variants found.
     
-We still have 1 mismatch variant but the variants are more likely created using `hg19`. The mismatch variants can be found in the project log file, or be listed with option `-v2`. It should be verified or removed from the project. 
+The variants are more likely created using `hg38`. The mismatch variants can be found in the project log file, or be listed with option `-v2`. It should be verified or removed from the project. 
 </details>
 
-#### 2.5 Performance optimization (option `--jobs` and other techniques)
+#### 3.5 Performance optimization (option `--jobs` and other techniques)
 
 *variant tools* by default uses multiple processes to load data (`--jobs 4`), which works well for most datasets under most computing environments. Compared to importing data using a single process (`--jobs 1`), it performs slightly worse for small datasets, but is significantly faster for large files, especially when multiple files are imported. If you have high speed harddrive (e.g. disk array, SSD), you can use more processes to import data although more processes do not automatically translate to better performance due to the overhead of multi-processing and disk I/O scheduling. 
+
+##### The following discussion is useful if you set STOREMODE to sqlite.
 
 Depending on your computing environment (amount of RAM, speed of harddrive), *vtools import* could be optimized by setting appropriate runtime options that are compatible with your computer hardware environment. One optimization is to **temporarily** set an *in-ram journal mode*, and in-ram cache if the computer has large RAM: 
 
@@ -616,268 +762,9 @@ Finally, if you need to import a large amount of data from multiple files, it ca
 {{% /notice %}}
 
 
-### 3. Importing data in particular formats
 
-#### 3.1 Importing VCF files (format `vcf`)
 
-VCF is the most commonly used format to store genetic variants and sample genotypes from next-gen sequencing studies. *variant tools* can import data from plain (`.vcf`) or compressed (`.vcf.gz`) vcf format (version 4.0 or higher). Depending on the number of samples a vcf file stores, *variant tools* can import only variants (even if the vcf file contains sample genotypes, see an example below), import variants with a sample without genotype, and import all samples in a vcf file using specified sample names or sample names obtained from the meta information (see examples above). A limitation is that *variant tools* ignores phase information of genotypes. 
 
-##### Import variant and genotype info fields
-
-The vcf format can store arbitary variant and genotype information fields. *variant tools* by default does not import any variant and info fields. However, the default configuration file does provide a variant info field `DP` and a genotype info field `DP_geno`, which you may import using option `--var_info` and `--geno_info`. To import variant or genotype fields from a vcf file, you need to 
-
-1.  know what fields are available from the input vcf file. That is to say, you need to open a file, read its header, and determine what fields are provided. 
-2.  use command `vtools show format vcf` to see what fields are available. If the field you would like to import is listed, you can add it to parameter `--var_info` or `--geno_info` to import it. Otherwise, you can [customize your format file][2][?][2] to add the field. 
-3.  use command `vtools import input_file.vcf --var_info var_fields --geno_info geno_fields` to import variants, genotypes and related fields. 
-
-
-{{% notice tip %}}
-
-1. If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
-
-2. If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized `.fmt` file to import these. This process can be simplied using pipeline [import_vcf][6][?][6]. The command to use is similar to `vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19`.
-
-{{% /notice %}}
-
-<details><summary>Examples: importing variant and genotype info fields</summary>
-If we have a look at the header of `CEU.vcf.gz`, we can see 
-
-    % gzcat CEU.vcf.gz | head -14
-    
-
-    ##fileformat=VCFv4.0
-    ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
-    ##INFO=<ID=HM2,Number=0,Type=Flag,Description="HapMap2 membership">
-    ##INFO=<ID=HM3,Number=0,Type=Flag,Description="HapMap3 membership">
-    ##INFO=<ID=AA,Number=1,Type=String,Description="Ancestral Allele, ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/pilot_data/technical/reference/ancestral_alignments/README">
-    ##reference=human_b36_both.fasta
-    ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
-    ##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
-    ##FORMAT=<ID=CB,Number=1,Type=String,Description="Called by S(Sanger), M(UMich), B(BI)">
-    ##rsIDs=dbSNP b129 mapped to NCBI 36.3, August 10, 2009
-    ##INFO=<ID=AC,Number=.,Type=Integer,Description="Allele count in genotypes">
-    ##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
-    #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA06985	NA06986	NA06994	NA07000	NA07037	NA07051	NA07346	NA07347	NA07357	NA10847	NA10851	NA11829	NA11830	NA11831	NA11832	NA11840	NA11881	NA11894	NA11918	NA11919	NA11920	NA11931	NA11992	NA11993	NA11994	NA11995	NA12003	NA12004	NA12005	NA12006	NA12043	NA12044	NA12045	NA12144	NA12154	NA12155	NA12156	NA12234	NA12249	NA12287	NA12414	NA12489	NA12716	NA12717	NA12749	NA12750	NA12751	NA12760	NA12761	NA12762	NA12763	NA12776	NA12812	NA12813	NA12814	NA12815	NA12828	NA12872	NA12873	NA12874
-    1	533	.	G	C	.	PASS	AA=.;AC=6;AN=120;DP=423	GT:DP:CB	0|0:6:SMB	0|0:14:SMB	0|0:4:SMB	0|0:3:SMB	0|0:7:SMB	0|0:4:SMB	1|0:6:MB	0|0:3:SMB	0|0:13:SMB	0|0:1:SMB	0|0:14:SMB	0|0:10:SMB	0|0:6:SB	0|0:2:SMB	0|0:6:SMB	0|0:4:SMB	0|0:2:SMB	0|0:15:SMB	0|0:2:SMB	0|0:1:SMB	0|0:26:SMB	0|0:6:SMB	0|1:14:MB	0|0:5:SMB	0|0:3:SMB	0|0:20:SMB	0|0:3:SMB	0|0:2:SMB	0|0:4:SMB	0|0:12:SMB	0|0:1:SMB	0|0:7:SMB	0|0:2:SMB	0|0:25:SMB	0|0:9:SMB	0|1:1:MB	0|0:9:SMB	0|0:1:SMB	0|0:6:SMB	0|0:12:SMB	0|0:7:SMB	0|0:18:SMB	0|0:2:SMB	0|0:2:SM	0|0:38:SMB	0|0:3:SM	0|0:3:SMB	0|0:5:SMB	0|0:5:SMB	0|0:3:SMB	0|0:0:MB	0|0:5:SMB	0|0:7:SMB	0|0:0:SMB	0|0:6:SMB	1|0:5:SMB	0|0:4:MB	0|0:5:SMB	1|0:5:MB	0|1:9:SMB
-
-
-
-we can see that this file contains genotype info `AA`, `AC`, `AN`, and `DP`, and genotype info `DP` and `CB`. If you check the output of command `vtools show format vcf`, you could find fields `AA`, `AC`, `AN`, and `DP` that parse the INFO column of the input file, and field `DP_geno` that parses the genotype columns. 
-
-    % vtools init import -f
-    % vtools import CEU.vcf.gz --build hg38 --var_info AA AC AN DP --geno_info DP_geno
-    
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [====================================================] 300 11.4K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [=========================================] 18,000 9.0K/s in 00:00:02
-    Copying genotype: 100% [==============================================] 60 473.0K/s in 00:00:00
-    
-
-The imported data now has variant info field `AA`, `AC`, `AN`, and `DP`, 
-
-    % vtools show fields
-    
-    variant.chr (char)      Chromosome name (VARCHAR)
-    variant.pos (int)       Position (INT, 1-based)
-    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
-    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
-    variant.AA (char)
-    variant.AC (int)
-    variant.AN (int)
-    variant.DP (int)
-    
-and genotype info field DP_genw 
-
-    % vtools show genotypes -l 5
-
-    sample_name	filename	num_genotypes	sample_genotype_fields
-    NA06985	CEU.vcf.gz	287	GT,DP_geno
-    NA06986	CEU.vcf.gz	287	GT,DP_geno
-    NA06994	CEU.vcf.gz	287	GT,DP_geno
-    NA07000	CEU.vcf.gz	287	GT,DP_geno
-    NA07037	CEU.vcf.gz	287	GT,DP_geno
-    (55 records omitted)
-    
-</details>
-
-The above example uses fields `DP` and `DP_geno` to extract information from the `INFO` and genotype columns of the input vcf file. However, it is not always clear whether a field should be imported as variant info or genotype info field. For example, 
-
-*   If genotypes for multiple samples are saved in separate vcf files, each has a `DP` (depth) field as variant info, the variant info (field `DP`) is actually describing depth of sample genotypes and should be imported as `--geno_info DP`. 
-*   If variant info `DP` lists the total depth of the genotype of all samples, it should be imported as `--var_info DP`. 
-*   If `DP` appear in the `FORMAT` column, it should be imported using field `DP_geno` and used as `--geno_info DP_geno`. 
-
-This is demonstrated in the following example: 
-
-<details><summary>Examples: import variant info field `DP` as genotype info</summary>
-If we have a look at the meta information of `V1.vcf`, 
-
-    % head -14 V1.vcf
-
-    ##fileformat=VCFv4.0
-    ##INFO=<ID=NS,Number=1,Type=Integer,Description="Number of Samples With Data">
-    ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
-    ##INFO=<ID=AF,Number=.,Type=Float,Description="Allele Frequency">
-    ##INFO=<ID=AA,Number=1,Type=String,Description="Ancestral Allele">
-    ##INFO=<ID=DB,Number=0,Type=Flag,Description="dbSNP membership, build 129">
-    ##INFO=<ID=H2,Number=0,Type=Flag,Description="HapMap2 membership">
-    ##FILTER=<ID=q10,Description="Quality below 10">
-    ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
-    ##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
-    ##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
-    ##FORMAT=<ID=HQ,Number=2,Type=Integer,Description="Haplotype Quality">
-    #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMP1
-    1	4540	.	G	A	32	PASS	DP=6;NS=1	GT	0/1
-    
-
-`DP` is listed as a INFO field, along with `NS`, we can import `V1.vcf`, `V2.vcf` and `V3.vcf` using command 
-
-
-
-    % vtools init import -f
-    % vtools import V*.vcf --build hg38 --var_info DP NS
-    
-    INFO: Importing variants from V1.vcf (1/3)
-    V1.vcf: 100% [======================================================] 1,000 11.3K/s in 00:00:00
-    INFO: 989 new variants (989 SNVs) from 1,000 lines are imported.
-    INFO: Importing variants from V2.vcf (2/3)
-    V2.vcf: 100% [=======================================================] 1,000 9.5K/s in 00:00:00
-    INFO: 352 new variants (990 SNVs) from 1,000 lines are imported.
-    INFO: Importing variants from V3.vcf (3/3)
-    V3.vcf: 100% [=======================================================] 1,000 9.1K/s in 00:00:00
-    INFO: 270 new variants (988 SNVs) from 1,000 lines are imported.
-    Importing genotypes: 100% [==========================================] 3,000 1.5K/s in 00:00:02
-    Copying genotype: 100% [================================================] 3 20.0K/s in 00:00:00
-    INFO: 1,611 new variants (2,967 SNVs) from 3,000 lines (3 samples) are imported.
-    
-but `DP` and `NS` are imported for each **variant**, not *'genotype*, so only the first occurance of `DP` and `NS` will be imported. The correct way to import these two fields is to treat them as genotype fields, 
-
-
-    % vtools init import -f
-    % vtools import V*.vcf --build hg38 --geno_info DP NS
-    
-
-    INFO: Importing variants from V1.vcf (1/3)
-    V1.vcf: 100% [======================================================] 1,000 11.1K/s in 00:00:00
-    INFO: 989 new variants (989 SNVs) from 1,000 lines are imported.
-    INFO: Importing variants from V2.vcf (2/3)
-    V2.vcf: 100% [======================================================] 1,000 15.8K/s in 00:00:00
-    INFO: 352 new variants (352 SNVs) from 995 lines are imported.
-    INFO: Importing variants from V3.vcf (3/3)
-    V3.vcf: 100% [======================================================] 1,000 17.0K/s in 00:00:00
-    INFO: 270 new variants (270 SNVs) from 1,000 lines are imported.
-    Importing genotypes: 100% [==========================================] 2,995 1.5K/s in 00:00:02
-    Copying genotype: 100% [================================================] 3 21.0K/s in 00:00:00
-    INFO: 1,611 new variants (1,611 SNVs) from 2,995 lines (3 samples) are imported.
-
-`DP` and `NS` will be imported as genotype info for each genotype, 
-
-    % vtools show fields
-
-    variant.chr (char)      Chromosome name (VARCHAR)
-    variant.pos (int)       Position (INT, 1-based)
-    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
-    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
-
-    % vtools show genotypes
-    
-    sample_name	filename	num_genotypes	sample_genotype_fields
-    SAMP1      	V1.vcf  	989          	GT,DP,NS
-    SAMP1      	V2.vcf  	990          	GT,DP,NS
-    SAMP1      	V3.vcf  	988          	GT,DP,NS
-    
-If you need total depth, you can obtained from the corresponding genotype field 
-
-    % vtools update variant --from_stat 'DP=sum(DP)' 'NS=sum(NS)'
-    
-    Counting variants: 100% [===========================================================] 3 160.6/s in 00:00:00
-    INFO: Adding variant info field DP with type INT
-    INFO: Adding variant info field NS with type INT
-    Updating variant: 100% [========================================================] 1,611 96.0K/s in 00:00:00
-    INFO: 1611 records are updated
-
-Here `DP=sum(DP)` looks strange but the first `DP` is a new variant info and the second `DP` is the existing genotype info. Now, variant info field `DP` stands for total depth and `NS` stands for number of times a variant shows up in the samples. 
-
-    %vtools output variant chr pos ref alt DP NS -l 5
-    
-    1	4540	G	A	15	2
-    1	5683	G	T	7	1
-    1	5966	T	G	76	3
-    1	6241	T	C	41	2
-    1	9992	C	T	24	2
-    
-
-</details>
-
-##### Using customized or alternative fields to import genotypes
-
-The vcf format accepts a number of parameters to customize the way how genotypes are imported. For example, the `--geno` option accepts a genotype field. The default `GT` field import all genotypes assuming that `GT` is the first field in the genotype columns. However, 
-
-*   You can use option `--geno` without value to specify an empty genotype field so that variant tools will not process any genotype. 
-*   In `vcf.fmt` we import wild-type genotypes as numeric value 0. This is important for the purpose of association studies. If you are only interested in exploring variants of your sample, and you do not care to discriminate wild-type genotypes from missing genotype calls, you may set `--wildtype_value None`, which will leave out all wild-type genotypes, resulting in much quicker import and smaller database size. 
-*   The `GT` field assumes that `GT` is the first field in the `FORMAT` column. However, some variant-calling software produce non-standard vcf files that do not follow this standard. In this case, an alternative field `safe_GT` can be used (e.g. `--geno safe_GT`) to import genotypes according to the location of `GT` in the `FORMAT` string. 
-
-<details><summary>Ignore genotypes of input vcf file</summary>
-
-    % vtools init import -f
-    % vtools import CEU.vcf.gz --build hg38 --var_info AA AC AN DP --geno
-
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [====================================================] 300 11.2K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    WARNING: Sample information is not recorded for a file without genotype and sample name.
-    Importing genotypes: 0 0.0/s in 00:00:00
-    Copying genotype: 0 0.0/s in 00:00:00
-
-With this command, no genotype is imported 
-
-    % vtools show genotypes     
-
-    sample_name	filename	num_genotypes	sample_genotype_fields
-    
-</details>
-
-
-##### Using a customized format file to import additional fields
-
-If you have a field that you would like to import, but does not exist in `vcf.fmt`, you can add it to a customized format file and use this format file to import the data. 
-
-<details><summary>Examples: Using a customized .fmt file to import additional fields</summary>
-For example, the `CB` genotype field is commonly used and is not defined in `vcf.fmt`, according to the meta information, this field is a string. You can then copy `~/.variant_tools/format/vcf.fmt` as `my_vcf.fmt` and add 
-
-    [CB_geno]
-    index=9, 10:
-    adj=FieldFromFormat('CB', ':')
-    type=VARCHAR(3)
-    comment=Called by S(Sanger), M(UMich), B(BI)
-
-at the end of this file, and import this field using 
-
-    % vtools init import -f
-    % vtools import CEU.vcf.gz --format my_vcf.fmt --build hg38 --var_info AA AC AN DP --geno_info DP_geno CB_geno
-
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [====================================================] 300 12.4K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [=========================================] 18,000 9.0K/s in 00:00:02
-    Copying genotype: 100% [==============================================] 60 484.0K/s in 00:00:00
-
-    % vtools show genotypes -l5
-    
-    sample_name	filename	num_genotypes	sample_genotype_fields
-    NA06985	CEU.vcf.gz	287	GT,DP_geno,CB_geno
-    NA06986	CEU.vcf.gz	287	GT,DP_geno,CB_geno
-    NA06994	CEU.vcf.gz	287	GT,DP_geno,CB_geno
-    NA07000	CEU.vcf.gz	287	GT,DP_geno,CB_geno
-    NA07037	CEU.vcf.gz	287	GT,DP_geno,CB_geno
-    (55 records omitted)
-
-</details>
-
-
-##### Import data in other formats 
-
-*variant tools* can import variant and genotypes data in a variety of input formats. Due to the flexibility of the format specification system, it can import variants and genotypes from data that have non-standard (e.g. 0-based index), unclear or even missing information on fields `chr`, `pos`, `ref`, and `alt`. For example, variant tools can import variants with just rsname by querying the dbSNP database for variant information, and variants with only observed slleles by querying the reference genome for reference and alternative alleles. Please check [here][3] for a list of supported file formats. If you cannot find a format that fits your need, you can write a [format description file][2] by yourself. We can assist you in this process if you could send us a sample data file.
  
  [1]: http://docs.python.org/library/configparser.html
  [2]: http://docs.python.org/2/library/re.html#re.match
