@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Variants on vatlab</title>
+    <title>Variants on Variant Tools</title>
     <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/</link>
-    <description>Recent content in Variants on vatlab</description>
+    <description>Recent content in Variants on Variant Tools</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
     
 	<atom:link href="https://vatlab.github.io/vat-docs/applications/annotation/variants/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,8 +25,8 @@ If you use COSMIC annotations, please credit the project with the following ackn
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/</guid>
-      <description>dbNSFP (:skin vtools-annotation:)
-(:toc:)
+      <description>dbNSFP (:skin vtools-annotation
+(:toc
 dbNSFP is an annotation database for non-synonymous SNPs assembled by Xiaoming Liu from the University of Texas School of Public Health (see citation below). With variant tools you can use the dbNSFP database or dbNSFP-light (a version with fewer features) - see which features are offered for each database version below.
 dbNSFP There can be frequent changes of name and their meanings of the fields across versions.</description>
     </item>

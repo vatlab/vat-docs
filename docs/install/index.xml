@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Installation on vatlab</title>
+    <title>Installation on Variant Tools</title>
     <link>https://vatlab.github.io/vat-docs/install/</link>
-    <description>Recent content in Installation on vatlab</description>
+    <description>Recent content in Installation on Variant Tools</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
     
 	<atom:link href="https://vatlab.github.io/vat-docs/install/index.xml" rel="self" type="application/rss+xml" />
     

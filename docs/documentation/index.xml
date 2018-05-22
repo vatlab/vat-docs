@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Documentation on vatlab</title>
+    <title>Documentation on Variant Tools</title>
     <link>https://vatlab.github.io/vat-docs/documentation/</link>
-    <description>Recent content in Documentation on vatlab</description>
+    <description>Recent content in Documentation on Variant Tools</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
     
 	<atom:link href="https://vatlab.github.io/vat-docs/documentation/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Key concepts</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/keyconcepts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/keyconcepts/</guid>
-      <description>Key concepts Project variant tools is project based. All data need to be imported to the project to be analyzed. A variant tools project $name consists of a project file $name.proj, a genotype database $name_genotype.DB, and a log file $name.log. After a project is created, subsequent vtools calls will automatically load the project in the current directory. Working from outside of a project directory is not allowed.
-(:toggleexample:) Let us create a sample project and import two datasets from the pilot phase of the 1000 genomes project:</description>
-    </item>
     
     <item>
       <title>Tutorials</title>

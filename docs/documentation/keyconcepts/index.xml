@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Key concepts on Variant Tools</title>
+    <link>https://vatlab.github.io/vat-docs/documentation/keyconcepts/</link>
+    <description>Recent content in Key concepts on Variant Tools</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/documentation/keyconcepts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Supported types of variants</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</guid>
+      <description>Supported types of variants How variants are imported and stored in variant tools variant tools import different types of variants as follows:
+   Type Reference Alternative Imported Variant(s) Note     SNV A G A,G     TC TG C,G pos + 1   Deletion TC T C,- pos + 1    TCG TG C,- pos + 1    TCGC TC GC,- pos + 2, *    TC - or .</description>
+    </item>
+    
+  </channel>
+</rss>
