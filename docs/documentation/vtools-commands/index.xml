@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vtools commands on vatlab</title>
+    <title>Vtools commands on Variant Tools</title>
     <link>https://vatlab.github.io/vat-docs/documentation/vtools-commands/</link>
-    <description>Recent content in Vtools commands on vatlab</description>
+    <description>Recent content in Vtools commands on Variant Tools</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://faculty.mdanderson.org/profiles/bo_peng.html&#34;&gt;Bo Peng, Ph.D. / MD Anderson Cancer Center&lt;/a&gt; All rights reserved</copyright>
     
 	<atom:link href="https://vatlab.github.io/vat-docs/documentation/vtools-commands/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/init/</guid>
-      <description>Create a new project Usage % vtools init -h usage: vtools init [-h] [-f] [--parent DIR_or_SNAPSHOT] [--variants [TABLE]] [--samples [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--children DIR_OR_SNAPSHOT [DIR_OR_SNAPSHOT ...]] [-v {0,1,2}] project Create a new project in the current directory. This command will fail if another project already exists in this directory, unless option &#39;--force&#39; is used to remove the existing project. positional arguments: project Name of a new project.</description>
+      <description>Create a new project 1. Usage % vtools init -h usage: vtools init [-h] [-f] [--parent DIR_or_SNAPSHOT] [--variants [TABLE]] [--samples [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--children DIR_OR_SNAPSHOT [DIR_OR_SNAPSHOT ...]] [-v {0,1,2}] project Create a new project in the current directory. This command will fail if another project already exists in this directory, unless option &#39;--force&#39; is used to remove the existing project. positional arguments: project Name of a new project.</description>
     </item>
     
     <item>
@@ -26,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/import/</guid>
-      <description>Import variants, genotypes and related information fields Usage % vtools import -h usage: vtools import [-h] [--build BUILD] [--format FORMAT] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f] [-j N] [-v {0,1,2}] input_files [input_files ...] x Import variants and related sample genotype from one or more delimiter separated files (e.g. VCF and a number of indel formats). positional arguments: input_files A list of failes that will be imported. The file should be delimiter separated with format described by parameter --format.</description>
+      <description>Import variants, genotypes and related information fields 1. Usage % vtools import -h usage: vtools import [-h] [--build BUILD] [--format FORMAT] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f] [-j N] [-v {0,1,2}] input_files [input_files ...] x Import variants and related sample genotype from one or more delimiter separated files (e.g. VCF and a number of indel formats). positional arguments: input_files A list of failes that will be imported. The file should be delimiter separated with format described by parameter --format.</description>
     </item>
     
     <item>
@@ -35,7 +33,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/update/</guid>
-      <description>Add new or update existing variant and genotype info fields Usage % vtools update -h usage: vtools update [-h] [--from_file FROM_FILE [FROM_FILE ...]] [--build BUILD] [--format FORMAT] [-j N] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [--set [EXPR [EXPR ...]]] [--from_stat [EXPR [EXPR ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [-v {0,1,2}] table Add or update fields of existing variants and genotype from other fields, statistics of genotypes and genotype info, or files that annotate variants or their locations (e.</description>
+      <description>Add new or update existing variant and genotype info fields 1. Usage % vtools update -h usage: vtools update [-h] [--from_file FROM_FILE [FROM_FILE ...]] [--build BUILD] [--format FORMAT] [-j N] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [--set [EXPR [EXPR ...]]] [--from_stat [EXPR [EXPR ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [-v {0,1,2}] table Add or update fields of existing variants and genotype from other fields, statistics of genotypes and genotype info, or files that annotate variants or their locations (e.</description>
     </item>
     
     <item>

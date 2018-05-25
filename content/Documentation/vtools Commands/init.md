@@ -124,56 +124,57 @@ The following filters could be applied to the parent project
 
 <details><summary> Examples: create a parent project</summary> Let us start from a snapshot project `quickStartGuide`: 
 
-    % vtools admin --load_snapshot vt_quickStartGuide
+    % vtools admin --load_snapshot vt_quickStartGuide_v3
     
-    Downloading snapshot vt_quickStartGuide.tar.gz from online repository
-    Extracting vt_quickStartGuide: 100% [===================================] 148,585 20.1M/s in 00:00:00
-    INFO: Snapshot vt_quickStartGuide has been loaded
+    Downloading snapshot vt_quickStartGuide_v3.tar.gz from online repository
+    Extracting vt_quickStartGuide_v3: 100% [===================================] 148,585 20.1M/s in 00:00:00
+    INFO: Snapshot vt_quickStartGuide_v3 has been loaded
 
     
 This project has variants from two samples and a single master variant table with 4,858 variants: 
 
     % vtools show samples
 
-    sample_name	filename
-    CEU        	CEU.exon...3.sites.vcf.gz
-    JPT        	JPT.exon...3.sites.vcf.gz
+    sample_name filename    HDF5
+    HG00096     HG00096.vcf tmp_1_1_genotypes.h5
+    HG00479     HG00479.vcf tmp_2_2_genotypes.h5
     
     % vtools show tables
     
-    table                 #variants     date  message
-    variant                   4,858 
+    table      #variants    date message
+    variant       10,036    May21 Master variant table 
     
-Variants from the CEU and JPT samples could be selected to separate variant tables using commands 
+Variants from the HG00096 and HG00479 samples could be selected to separate variant tables using commands 
 
-    % vtools select variant --samples 'sample_name == "CEU"' -t CEU 'Variants from CEU population'
-
-    INFO: 1 samples are selected by condition: sample_name == "CEU"
-    Running: 8 881.5/s in 00:00:00                                                                       
-    INFO: 3489 variants selected.
+    % vtools select variant --samples 'sample_name=="HG00096"' -t HG00096
+                                 
+    INFO: 324 variants selected.
     
-    % vtools select variant --samples 'sample_name == "JPT"' -t JPT 'Variants from JPT population'
+    % vtools select variant --samples 'sample_name=="HG00479"' -t HG00479
     
-    INFO: 1 samples are selected by condition: sample_name == "JPT"
-    Running: 6 1.1K/s in 00:00:00                                                                        
-    INFO: 2900 variants selected.
+    INFO: 317 variants selected.
 
 The project now has three variant tables 
 
     % vtools show tables
     
     table      #variants     date message
-    CEU            3,489    May14 Variants from CEU population
-    JPT            2,900    May14 Variants from JPT population
-    variant        4,858
+    HG00096                       324    May21
+    HG00479                       317    May21
+    variant                    10,036    May21 Master variant table
     
 
 </details>
 
-<details><summary> Examples: create subprojects from the parent project</summary> You can create a subproject with variants from the CEU: 
+<details><summary> Examples: create subprojects from the parent project (The "--variants" option is only supported when STOREMODE is set to sqlite )</summary> You can create a subproject with variants from the CEU: 
 
 
-
+    % mkdir myproj
+    % cd myproj
+    % vtools admin --load_snapshot vt_quickStartGuide
+    % export STOREMODE="sqlite"
+    % vtools select variant --samples 'sample_name == "CEU"' -t CEU 'Variants from CEU population'
+    % vtools select variant --samples 'sample_name == "JPT"' -t JPT 'Variants from JPT population'
     % mkdir ../CEU
     % cd ../CEU
     % vtools init CEU --parent ../myproj --variants CEU
@@ -284,6 +285,9 @@ which is a shortcut to commands
 
 
 #### 2.3 Create a project from several subprojects
+
+
+##### This function is only supported when STOREMODE is set to sqlite. 
 
 A project could also be created from one or more **children projects**. This allows flexible handling of batches of data (e.g. analyze data separately or jointly), and parallel processing of large datasets (e.g. split a project by chromosomes, analyze them separately, and combine the results). 
 

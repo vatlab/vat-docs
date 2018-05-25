@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Supported formats on Variant Tools</title>
+    <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/</link>
+    <description>Recent content in Supported formats on Variant Tools</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>basic</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</guid>
+      <description>Importing variants from tab-delimited files Format description % vtools show format basic A basic variant import/export format that import variants with four tab- delimited columns (chr, pos, ref, alt), and export variants, optional variant info fields and genotypes. Columns: 1 Output variant info fields as one column 2 variant position, set --pos_adj to -1 to export variants in 0-based positions. 3 reference allele 4 alternative allele 5 genotype in numeric style Formatters are provided for fields: gt variant: chr Chromosome pos 1-based position, set --pos_adj to 1 if input position is 0 based.</description>
+    </item>
+    
+    <item>
+      <title>csv</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</guid>
+      <description>Importing and exporting variants in .csv (comma-separated value) format Format description When this format is used to import data, it is similar to the basic? format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
+When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command vtools output --delimiter , (output fields with a delimiter of comma), except that the vtools export --format csv command will properly quote field values when it contains comma, quotation mark etc.</description>
+    </item>
+    
+    <item>
+      <title>plink</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</guid>
+      <description>Import variants and sample genotypes from PLINK format Introduction PLINK is a widely used program for analyzing genotypic data for Genome-wide Association Studies (GWAS). It can be considered as standard input format for genotyping array data. An intermediate type of genetic data between genotyping arrays and exome sequencing is the exome genotyping array, or exome chip. Unlike its GWAS counterpart which focuses on relatively common variants, exome chips contain primarily non-singleton coding variants seen in existing whole genome and exome sequencing data, plus a small proportion of non-protein-altering variants such as GWAS tag SNPs, ancestry informative markers, etc.</description>
+    </item>
+    
+    <item>
+      <title>map</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</guid>
+      <description>Import variants from file without ref and alt alleles Introduction From time to time, you might get a list of variants in map format, or as a list with only chromosome and position information. Reference and alternative alleles are not specified because the variants are from GWA studies with well-defined reference and alternative alleles. In this case, you can use format map, which automatically retrieve reference and alternative alleles from a specified dbSNP database.</description>
+    </item>
+    
+    <item>
+      <title>rsname</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</guid>
+      <description>Importing variants from a list of dbSNP iDs (rsnames) Format description % vtools show format rsname Import variants (chr, pos, ref, alt) that are queried from dbSNP database using provided rsnames Columns: None defined, cannot export to this format variant: chr Obtain chromosome from dbSNP by rsname pos Obtain position from dbSNP by rsname ref Obtain reference allele from dbSNP by rsname alt Obtain alternative allele from dbSNP by rsname Format parameters: sep delimiter used to separate input fields (default: &#39;,&#39;) rsname_col Index for the column with rsname (default: 1) dbfile Name of an attached dbSNP database or path to the dbSNP database in sqlite format (default: dbSNP- hg19_138.</description>
+    </item>
+    
+    <item>
+      <title>Cumtomized</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</guid>
+      <description>Specification of external file formats Roles of format specification in variant tools: Variant tools can import and export text files (or gzipped text files) in delimiter-separated format, namely records that are separated into columns by delimiters such as tab, space or comma. The file format must be variant-oriented (storing one or more variants by line), with the exception of sample-based PLINK format which is preprocessed internally into variant-oriented form for import.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="generator" content="Hugo 0.40.2" />
     <meta name="description" content="Documentation for Variant Tools">
 <meta name="author" content="Bo Peng">
 
@@ -12,19 +12,19 @@
     <title>Init :: Variant Tools</title>
     
     
-    <link href="/vat-docs/css/nucleus.css?1526863304" rel="stylesheet">
-    <link href="/vat-docs/css/font-awesome.min.css?1526863304" rel="stylesheet">
-    <link href="/vat-docs/css/hybrid.css?1526863304" rel="stylesheet">
-    <link href="/vat-docs/css/featherlight.min.css?1526863304" rel="stylesheet">
-    <link href="/vat-docs/css/perfect-scrollbar.min.css?1526863304" rel="stylesheet">
-    <link href="/vat-docs/css/auto-complete.css?1526863304" rel="stylesheet">
-    <link href="/vat-docs/css/theme.css?1526863304" rel="stylesheet">
-    <link href="/vat-docs/css/hugo-theme.css?1526863304" rel="stylesheet">
+    <link href="/vat-docs/css/nucleus.css?1527020504" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1527020504" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1527020504" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1527020504" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527020504" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1527020504" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1527020504" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1527020504" rel="stylesheet">
     
-      <link href="/vat-docs/css/theme-mine.css?1526863304" rel="stylesheet">
+      <link href="/vat-docs/css/theme-mine.css?1527020504" rel="stylesheet">
     
 
-    <script src="/vat-docs/js/jquery-2.x.min.js?1526863304"></script>
+    <script src="/vat-docs/js/jquery-2.x.min.js?1527020504"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1526863304"></script>
-<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1526863304"></script>
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527020504"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527020504"></script>
 <script type="text/javascript">
     
         var baseurl = '\/vat-docs\/';
     
 </script>
-<script type="text/javascript" src="/vat-docs/js/search.js?1526863304"></script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1527020504"></script>
 
     
   </div>
@@ -3856,7 +3856,10 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <ul>
 <li><a href="#2-1-create-a-new-project">2.1 Create a new project</a></li>
 <li><a href="#2-2-create-a-project-from-a-parent-project">2.2 Create a project from a parent project</a></li>
-<li><a href="#2-3-create-a-project-from-several-subprojects">2.3 Create a project from several subprojects</a></li>
+<li><a href="#2-3-create-a-project-from-several-subprojects">2.3 Create a project from several subprojects</a>
+<ul>
+<li><a href="#this-function-is-only-supported-when-storemode-is-set-to-sqlite">This function is only supported when STOREMODE is set to sqlite.</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -4003,40 +4006,36 @@ INFO: Creating a new project test
 
 <p><details><summary> Examples: create a parent project</summary> Let us start from a snapshot project <code>quickStartGuide</code>:</p>
 
-<pre><code>% vtools admin --load_snapshot vt_quickStartGuide
+<pre><code>% vtools admin --load_snapshot vt_quickStartGuide_v3
 
-Downloading snapshot vt_quickStartGuide.tar.gz from online repository
-Extracting vt_quickStartGuide: 100% [===================================] 148,585 20.1M/s in 00:00:00
-INFO: Snapshot vt_quickStartGuide has been loaded
+Downloading snapshot vt_quickStartGuide_v3.tar.gz from online repository
+Extracting vt_quickStartGuide_v3: 100% [===================================] 148,585 20.1M/s in 00:00:00
+INFO: Snapshot vt_quickStartGuide_v3 has been loaded
 </code></pre>
 
 <p>This project has variants from two samples and a single master variant table with 4,858 variants:</p>
 
 <pre><code>% vtools show samples
 
-sample_name filename
-CEU         CEU.exon...3.sites.vcf.gz
-JPT         JPT.exon...3.sites.vcf.gz
+sample_name filename    HDF5
+HG00096     HG00096.vcf tmp_1_1_genotypes.h5
+HG00479     HG00479.vcf tmp_2_2_genotypes.h5
 
 % vtools show tables
 
-table                 #variants     date  message
-variant                   4,858 
+table      #variants    date message
+variant       10,036    May21 Master variant table 
 </code></pre>
 
-<p>Variants from the CEU and JPT samples could be selected to separate variant tables using commands</p>
+<p>Variants from the HG00096 and HG00479 samples could be selected to separate variant tables using commands</p>
 
-<pre><code>% vtools select variant --samples 'sample_name == &quot;CEU&quot;' -t CEU 'Variants from CEU population'
+<pre><code>% vtools select variant --samples 'sample_name==&quot;HG00096&quot;' -t HG00096
 
-INFO: 1 samples are selected by condition: sample_name == &quot;CEU&quot;
-Running: 8 881.5/s in 00:00:00                                                                       
-INFO: 3489 variants selected.
+INFO: 324 variants selected.
 
-% vtools select variant --samples 'sample_name == &quot;JPT&quot;' -t JPT 'Variants from JPT population'
+% vtools select variant --samples 'sample_name==&quot;HG00479&quot;' -t HG00479
 
-INFO: 1 samples are selected by condition: sample_name == &quot;JPT&quot;
-Running: 6 1.1K/s in 00:00:00                                                                        
-INFO: 2900 variants selected.
+INFO: 317 variants selected.
 </code></pre>
 
 <p>The project now has three variant tables</p>
@@ -4044,16 +4043,22 @@ INFO: 2900 variants selected.
 <pre><code>% vtools show tables
 
 table      #variants     date message
-CEU            3,489    May14 Variants from CEU population
-JPT            2,900    May14 Variants from JPT population
-variant        4,858
+HG00096                       324    May21
+HG00479                       317    May21
+variant                    10,036    May21 Master variant table
 </code></pre>
 
 <p></details></p>
 
-<p><details><summary> Examples: create subprojects from the parent project</summary> You can create a subproject with variants from the CEU:</p>
+<p><details><summary> Examples: create subprojects from the parent project (The &ldquo;&ndash;variants&rdquo; option is only supported when STOREMODE is set to sqlite )</summary> You can create a subproject with variants from the CEU:</p>
 
-<pre><code>% mkdir ../CEU
+<pre><code>% mkdir myproj
+% cd myproj
+% vtools admin --load_snapshot vt_quickStartGuide
+% export STOREMODE=&quot;sqlite&quot;
+% vtools select variant --samples 'sample_name == &quot;CEU&quot;' -t CEU 'Variants from CEU population'
+% vtools select variant --samples 'sample_name == &quot;JPT&quot;' -t JPT 'Variants from JPT population'
+% mkdir ../CEU
 % cd ../CEU
 % vtools init CEU --parent ../myproj --variants CEU
 
@@ -4146,6 +4151,8 @@ Extracting vt_simple: 100% [====================================================
 </code></pre>
 
 <h4 id="2-3-create-a-project-from-several-subprojects">2.3 Create a project from several subprojects</h4>
+
+<h5 id="this-function-is-only-supported-when-storemode-is-set-to-sqlite">This function is only supported when STOREMODE is set to sqlite.</h5>
 
 <p>A project could also be created from one or more <strong>children projects</strong>. This allows flexible handling of batches of data (e.g. analyze data separately or jointly), and parallel processing of large datasets (e.g. split a project by chromosomes, analyze them separately, and combine the results).</p>
 
@@ -6746,20 +6753,20 @@ JPT         JPT.exon...3.sites.vcf.gz   2900
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vat-docs/js/clipboard.min.js?1526863304"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.min.js?1526863304"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1526863304"></script>
-    <script src="/vat-docs/js/jquery.sticky.js?1526863304"></script>
-    <script src="/vat-docs/js/featherlight.min.js?1526863304"></script>
-    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1526863304"></script>
-    <script src="/vat-docs/js/highlight.pack.js?1526863304"></script>
+    <script src="/vat-docs/js/clipboard.min.js?1527020504"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527020504"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527020504"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1527020504"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1527020504"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527020504"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1527020504"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vat-docs/js/modernizr.custom.71422.js?1526863304"></script>
-    <script src="/vat-docs/js/learn.js?1526863304"></script>
-    <script src="/vat-docs/js/hugo-learn.js?1526863304"></script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1527020504"></script>
+    <script src="/vat-docs/js/learn.js?1527020504"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1527020504"></script>
 
-    <link href="/vat-docs/mermaid/mermaid.css?1526863304" type="text/css" rel="stylesheet" />
-    <script src="/vat-docs/mermaid/mermaid.js?1526863304"></script>
+    <link href="/vat-docs/mermaid/mermaid.css?1527020504" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1527020504"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
