@@ -192,10 +192,10 @@ Usage % vtools_report avg_depth -h usage: vtools_report avg_depth [-h] -n NUM_FI
     
     <item>
       <title>basic</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</link>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/txt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</guid>
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/txt/</guid>
       <description>Importing variants from tab-delimited files Format description % vtools show format basic A basic variant import/export format that import variants with four tab- delimited columns (chr, pos, ref, alt), and export variants, optional variant info fields and genotypes. Columns: 1 Output variant info fields as one column 2 variant position, set --pos_adj to -1 to export variants in 0-based positions. 3 reference allele 4 alternative allele 5 genotype in numeric style Formatters are provided for fields: gt variant: chr Chromosome pos 1-based position, set --pos_adj to 1 if input position is 0 based.</description>
     </item>
     
@@ -414,10 +414,10 @@ Quick Start Guide This is a 10-minute quick start guide using data from the 1000
     
     <item>
       <title>csv</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</link>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/csv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</guid>
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/csv/</guid>
       <description>Importing and exporting variants in .csv (comma-separated value) format Format description When this format is used to import data, it is similar to the basic? format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
 When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command vtools output --delimiter , (output fields with a delimiter of comma), except that the vtools export --format csv command will properly quote field values when it contains comma, quotation mark etc.</description>
     </item>
@@ -598,10 +598,10 @@ padding: 8px;  /* text-align:left; */
     
     <item>
       <title>plink</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</link>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/plink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</guid>
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/plink/</guid>
       <description>Import variants and sample genotypes from PLINK format Introduction PLINK is a widely used program for analyzing genotypic data for Genome-wide Association Studies (GWAS). It can be considered as standard input format for genotyping array data. An intermediate type of genetic data between genotyping arrays and exome sequencing is the exome genotyping array, or exome chip. Unlike its GWAS counterpart which focuses on relatively common variants, exome chips contain primarily non-singleton coding variants seen in existing whole genome and exome sequencing data, plus a small proportion of non-protein-altering variants such as GWAS tag SNPs, ancestry informative markers, etc.</description>
     </item>
     
@@ -669,7 +669,7 @@ genotype(sample_name, params=&#39;&#39;)  where params can have be multiple para
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/phenotype/</guid>
-      <description>Import and manipulate phenotypes Usage % vtools phenotype -h usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]] [--set [EXPRESSION [EXPRESSION ...]]] [--from_stat [EXPRESSION [EXPRESSION ...]]] [--output [EXPRESSION [EXPRESSION ...]]] [-j N] [-g [COND [COND ...]]] [-s [COND [COND ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l LIMIT] [-v {0,1,2}] Import phenotypes from a file, or set phenotypes to constants, or to summary statistics of sample genotype fields. optional arguments: -h, --help show this help message and exit -f [INPUT_FILE [INPUT_FILE .</description>
+      <description>Import and manipulate phenotypes 1. Usage % vtools phenotype -h usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]] [--set [EXPRESSION [EXPRESSION ...]]] [--from_stat [EXPRESSION [EXPRESSION ...]]] [--output [EXPRESSION [EXPRESSION ...]]] [-j N] [-g [COND [COND ...]]] [-s [COND [COND ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l LIMIT] [-v {0,1,2}] Import phenotypes from a file, or set phenotypes to constants, or to summary statistics of sample genotype fields.</description>
     </item>
     
     <item>
@@ -747,20 +747,11 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
     </item>
     
     <item>
-      <title>map</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</guid>
-      <description>Import variants from file without ref and alt alleles Introduction From time to time, you might get a list of variants in map format, or as a list with only chromosome and position information. Reference and alternative alleles are not specified because the variants are from GWA studies with well-defined reference and alternative alleles. In this case, you can use format map, which automatically retrieve reference and alternative alleles from a specified dbSNP database.</description>
-    </item>
-    
-    <item>
       <title>rsname</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</link>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/rsname/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</guid>
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/rsname/</guid>
       <description>Importing variants from a list of dbSNP iDs (rsnames) Format description % vtools show format rsname Import variants (chr, pos, ref, alt) that are queried from dbSNP database using provided rsnames Columns: None defined, cannot export to this format variant: chr Obtain chromosome from dbSNP by rsname pos Obtain position from dbSNP by rsname ref Obtain reference allele from dbSNP by rsname alt Obtain alternative allele from dbSNP by rsname Format parameters: sep delimiter used to separate input fields (default: &#39;,&#39;) rsname_col Index for the column with rsname (default: 1) dbfile Name of an attached dbSNP database or path to the dbSNP database in sqlite format (default: dbSNP- hg19_138.</description>
     </item>
     
@@ -784,10 +775,10 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
     
     <item>
       <title>Cumtomized</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</link>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/new/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</guid>
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/new/</guid>
       <description>Specification of external file formats Roles of format specification in variant tools: Variant tools can import and export text files (or gzipped text files) in delimiter-separated format, namely records that are separated into columns by delimiters such as tab, space or comma. The file format must be variant-oriented (storing one or more variants by line), with the exception of sample-based PLINK format which is preprocessed internally into variant-oriented form for import.</description>
     </item>
     
@@ -826,7 +817,7 @@ Database of Genomic Variants Database of genomic variants is a curated catalogue
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/liftover/</guid>
-      <description>Adding coordinates from an alternative reference genome Usage % vtools liftover -h usage: vtools liftover [-h] [--flip] [-v STD[LOG]] build Convert coordinates of existing variants to alternative coordinates in an alternative reference genome. The UCSC liftover tool will be automatically downloaded if it is not available. positional arguments: build Name of the alternative reference genome optional arguments: -h, --help show this help message and exit --flip Flip primary and alternative reference genomes so that the specified build will become the primary reference genome of the project.</description>
+      <description>Adding coordinates from an alternative reference genome 1. Usage % vtools liftover -h usage: vtools liftover [-h] [--flip] [-v STD[LOG]] build Convert coordinates of existing variants to alternative coordinates in an alternative reference genome. The UCSC liftover tool will be automatically downloaded if it is not available. positional arguments: build Name of the alternative reference genome optional arguments: -h, --help show this help message and exit --flip Flip primary and alternative reference genomes so that the specified build will become the primary reference genome of the project.</description>
     </item>
     
     <item>
@@ -912,7 +903,7 @@ in_table(&#39;table_name&#39;)  Details For example, command
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/show/</guid>
-      <description>Display project and system information Usage % vtools show -h usage: vtools show [-h] [-l N] [-v {0,1,2,3}] [{project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots}] [items [items ...]] Output information of all system and project related items such as variant tables, samples, phenotypes, annotation databases and fields. positional arguments: {project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots} Type of information to display, which can be &#39;project&#39; for summary of a project, &#39;tables&#39; for all variant tables (or all tables if --verbosity=2), &#39;table TBL&#39; for details of a specific table TBL, &#39;samples [COND]&#39; for sample name, files from which samples are imported, and associated phenotypes (can be supressed by option --verbosity 0) of all or selected samples, &#39;phenotypes [P1 P2.</description>
+      <description>Display project and system information 1. Usage % vtools show -h usage: vtools show [-h] [-l N] [-v {0,1,2,3}] [{project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots}] [items [items ...]] Output information of all system and project related items such as variant tables, samples, phenotypes, annotation databases and fields. positional arguments: {project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots} Type of information to display, which can be &#39;project&#39; for summary of a project, &#39;tables&#39; for all variant tables (or all tables if --verbosity=2), &#39;table TBL&#39; for details of a specific table TBL, &#39;samples [COND]&#39; for sample name, files from which samples are imported, and associated phenotypes (can be supressed by option --verbosity 0) of all or selected samples, &#39;phenotypes [P1 P2.</description>
     </item>
     
     <item>
@@ -923,6 +914,16 @@ in_table(&#39;table_name&#39;)  Details For example, command
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other-pipelines/snpeff/</guid>
       <description>Variant effect provided by snpEFF Usage This pipeline exports variants in VCF format, call snpEff to predict its effect, and import the result as an variant info field EFF.
 % vtools show pipeline snpEff A pipeline to call snpEff to annotate variants. Available pipelines: eff Pipeline &amp;quot;eff&amp;quot;: This pipeline export variants in VCF format, call snpEff to annotate it, and import the EFF info as an information field. This pipeline will automatically download appropriate snpEff database (e.</description>
+    </item>
+    
+    <item>
+      <title>tped</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/tped/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/tped/</guid>
+      <description>PLINK/TPED format About TPED format Many software applications for linkage and association studies (e.g. plink, merlin) accept PED/MAP format. The map file records basic information about markers, the Ped file contains sample genotype. Whereas variant tools can easily export in MAP format, it is difficult to export in PED format because this format is not variant oriented (output by variant).
+Fortunately, PLINK accepts a transposed PED format (TPED) that is variant oriented.</description>
     </item>
     
     <item>
@@ -982,12 +983,21 @@ Variants included for calculation of {$F$} must be under HWE and be bi-allelic. 
     </item>
     
     <item>
+      <title>map</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/map/</guid>
+      <description>Import variants from file without ref and alt alleles Introduction From time to time, you might get a list of variants in map format, or as a list with only chromosome and position information. Reference and alternative alleles are not specified because the variants are from GWA studies with well-defined reference and alternative alleles. In this case, you can use format map, which automatically retrieve reference and alternative alleles from a specified dbSNP database.</description>
+    </item>
+    
+    <item>
       <title>use</title>
       <link>https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/</guid>
-      <description>Use an annotation database Usage % vtools use -h usage: vtools use [-h] [--as NAME] [-l [LINKED_BY [LINKED_BY ...]]] [--anno_type {variant,position,range,field}] [--linked_fields [LINKED_FIELDS [LINKED_FIELDS ...]]] [-f [FILES [FILES ...]]] [--rebuild] [-j N] [-v {0,1,2}] source Link an annotation database to the project, download it from the variant tools website or build it from source if needed. positional arguments: source Use an annotation database ($source.DB or $source.DB.gz) if it is available, download or build the database if a description file ($source.</description>
+      <description>Use an annotation database 1. Usage % vtools use -h usage: vtools use [-h] [--as NAME] [-l [LINKED_BY [LINKED_BY ...]]] [--anno_type {variant,position,range,field}] [--linked_fields [LINKED_FIELDS [LINKED_FIELDS ...]]] [-f [FILES [FILES ...]]] [--rebuild] [-j N] [-v {0,1,2}] source Link an annotation database to the project, download it from the variant tools website or build it from source if needed. positional arguments: source Use an annotation database ($source.DB or $source.DB.gz) if it is available, download or build the database if a description file ($source.</description>
     </item>
     
     <item>
@@ -1015,7 +1025,7 @@ Variants included for calculation of {$F$} must be under HWE and be bi-allelic. 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/select/</guid>
-      <description>Select variants from a variant table Usage % vtools select -h usage: vtools select [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]] [-c | -o [FIELDS [FIELDS ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}] from_table [condition [condition ...]] Select variants according to properties (variant and annotation fields) and membership (samples) of variant.</description>
+      <description>Select variants from a variant table 1. Usage % vtools select -h usage: vtools select [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]] [-c | -o [FIELDS [FIELDS ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}] from_table [condition [condition ...]] Select variants according to properties (variant and annotation fields) and membership (samples) of variant.</description>
     </item>
     
     <item>
@@ -1052,7 +1062,7 @@ Usage % vtools_report transmission -h usage: vtools_report transmission [-h] [--
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/exclude/</guid>
-      <description>Exclude variants that match certain criteria Usage % vtools exclude -h usage: vtools exclude [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]] [-c | -o [FIELDS [FIELDS ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--order_by [FIELD [FIELD ...]]] [-u] [-v {0,1,2}] from_table [condition [condition ...]] Exclude variants according to properties (variant and annotation fields) and membership (samples) of variant.</description>
+      <description>Exclude variants that match certain criteria 1. Usage % vtools exclude -h usage: vtools exclude [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]] [-c | -o [FIELDS [FIELDS ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--order_by [FIELD [FIELD ...]]] [-u] [-v {0,1,2}] from_table [condition [condition ...]] Exclude variants according to properties (variant and annotation fields) and membership (samples) of variant.</description>
     </item>
     
     <item>
@@ -1071,7 +1081,7 @@ Details Command interface % vtools_report meta_analysis -h usage: vtools_report 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/compare/</guid>
-      <description>Compare two or more variant tables Usage % vtools compare -h usage: vtools compare [-h] [--union [TABLE [DESC ...]]] [--intersection [TABLE [DESC ...]]] [--difference [TABLE [DESC ...]]] [--expression EXPR [DESC ...]] [--mode {variant,site,genotype}] [--samples [SAMPLES [SAMPLES ...]]] [-v {0,1,2}] [tables [tables ...]] Get the difference, intersection and union of two or more variant tables, according to sites, variants, or genotypes of associated samples of these variants. Resulting variants can be counted or write to other variant tables.</description>
+      <description>Compare two or more variant tables 1. Usage % vtools compare -h usage: vtools compare [-h] [--union [TABLE [DESC ...]]] [--intersection [TABLE [DESC ...]]] [--difference [TABLE [DESC ...]]] [--expression EXPR [DESC ...]] [--mode {variant,site,genotype}] [--samples [SAMPLES [SAMPLES ...]]] [-v {0,1,2}] [tables [tables ...]] Get the difference, intersection and union of two or more variant tables, according to sites, variants, or genotypes of associated samples of these variants. Resulting variants can be counted or write to other variant tables.</description>
     </item>
     
     <item>
@@ -1089,7 +1099,7 @@ Details Command interface % vtools_report meta_analysis -h usage: vtools_report 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/</guid>
-      <description>Identify genotype - phenotype association Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
+      <description>Identify genotype - phenotype association 1. Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
     </item>
     
     <item>
@@ -1107,7 +1117,7 @@ Details Command interface % vtools_report meta_analysis -h usage: vtools_report 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/</guid>
-      <description>Output variants in a variant table Usage % vtools output -h usage: vtools output [-h] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}] table fields [fields ...] Output variants, variant info fields, annotation fields and expressions that involve these fields in a tab or comma separated format. positional arguments: table variants to output. fields A list of fields that will be outputted.</description>
+      <description>Output variants in a variant table 1. Usage % vtools output -h usage: vtools output [-h] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}] table fields [fields ...] Output variants, variant info fields, annotation fields and expressions that involve these fields in a tab or comma separated format. positional arguments: table variants to output. fields A list of fields that will be outputted.</description>
     </item>
     
     <item>
@@ -1125,7 +1135,7 @@ Details Command interface % vtools_report meta_analysis -h usage: vtools_report 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/</guid>
-      <description>Export variants and samples to external files Usage % vtools export -h usage: vtools export [-h] [-o [OUTPUT]] [-s [COND [COND ...]]] [--format FORMAT] [--build BUILD] [--header [HEADER [HEADER ...]]] [-j JOBS] [-v {0,1,2}] table Export variants and genotypes in text, vcf and other formats. positional arguments: table A variant table whose variants will be exported. If parameter --samples is specified, only variants belong to one or more of the samples will be exported.</description>
+      <description>Export variants and samples to external files 1. Usage % vtools export -h usage: vtools export [-h] [-o [OUTPUT]] [-s [COND [COND ...]]] [--format FORMAT] [--build BUILD] [--header [HEADER [HEADER ...]]] [-j JOBS] [-v {0,1,2}] table Export variants and genotypes in text, vcf and other formats. positional arguments: table A variant table whose variants will be exported. If parameter --samples is specified, only variants belong to one or more of the samples will be exported.</description>
     </item>
     
     <item>
@@ -1144,7 +1154,7 @@ Input data format vtools associate command typically generates two types of outp
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/remove/</guid>
-      <description>Remove project, variant table, fields and others Usage % vtools remove -h usage: vtools remove [-h] [-v STD[LOG]] {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes} [items [items ...]] Remove from the current project various items such as variants genotypes, and annotation fields. positional arguments: {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes} Type of items to be removed. items Items to be removed, which should be, for &#39;project&#39; the name of project to be removed (optional), for &#39;tables&#39; names of one or more variant tables, for &#39;samples&#39; patterns using which matching samples are removed, for &#39;fields&#39; name of fields to be removed, for &#39;geno_fields&#39; name of genotype fields to be removed (cf.</description>
+      <description>Remove project, variant table, fields and others 1. Usage % vtools remove -h usage: vtools remove [-h] [-v STD[LOG]] {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes} [items [items ...]] Remove from the current project various items such as variants genotypes, and annotation fields. positional arguments: {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes} Type of items to be removed. items Items to be removed, which should be, for &#39;project&#39; the name of project to be removed (optional), for &#39;tables&#39; names of one or more variant tables, for &#39;samples&#39; patterns using which matching samples are removed, for &#39;fields&#39; name of fields to be removed, for &#39;geno_fields&#39; name of genotype fields to be removed (cf.</description>
     </item>
     
     <item>
@@ -1153,7 +1163,7 @@ Input data format vtools associate command typically generates two types of outp
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/execute/</guid>
-      <description>Execute variant tools pipelines Usage % vtools execute -h usage: vtools execute [-h] [-i [INPUT_FILE [INPUT_FILE ...]]] [-o [OUTPUT_FILE [OUTPUT_FILE ...]]] [-j JOBS] [-d DELIMITER] [-v {0,1,2}] PIPELINE/QUERY [PIPELINE/QUERY ...] Execute a pipeline that uses external commands to process input files, usually to align raw reads to a reference genome and call variants from aligned reads. The pipelines are controlled by pipeline description files. This command can also be used to execute arbitrary SQL query against the project database.</description>
+      <description>Execute variant tools pipelines 1. Usage % vtools execute -h usage: vtools execute [-h] [-i [INPUT_FILE [INPUT_FILE ...]]] [-o [OUTPUT_FILE [OUTPUT_FILE ...]]] [-j JOBS] [-d DELIMITER] [-v {0,1,2}] PIPELINE/QUERY [PIPELINE/QUERY ...] Execute a pipeline that uses external commands to process input files, usually to align raw reads to a reference genome and call variants from aligned reads. The pipelines are controlled by pipeline description files. This command can also be used to execute arbitrary SQL query against the project database.</description>
     </item>
     
     <item>
@@ -1162,7 +1172,30 @@ Input data format vtools associate command typically generates two types of outp
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/</guid>
-      <description>Miscellaneous administrative procedures Usage % vtools admin -h usage: vtools admin [-h] [--update_resource [TYPE]] [--mirror_repository dest] [--merge_samples] [--rename_samples COND [COND ...]] [--rename_table NAME NEW_NAME] [--describe_table TABLE NEW_DESCRIPTION] [--validate_build] [--validate_sex] [--save_snapshot NAME MESSAGE] [--extra_files [FILE [FILE ...]]] [--load_snapshot NAME] [--set_runtime_option OPTION [OPTION ...]] [--reset_runtime_option OPT] [--fasta2crr FASTA [FASTA ...]] [-v {0,1,2,3}] Optimize or modify projects. Currently supports merging and rename of samples optional arguments: -h, --help show this help message and exit -v {0,1,2,3}, --verbosity {0,1,2,3} Output error and warning (0), info (1), debug (2) and trace (3) information to standard output (default to 1).</description>
+      <description>Miscellaneous administrative procedures 1. Usage % vtools admin -h usage: vtools admin [-h] [--update_resource [TYPE]] [--mirror_repository dest] [--merge_samples] [--rename_samples COND [COND ...]] [--rename_table NAME NEW_NAME] [--describe_table TABLE NEW_DESCRIPTION] [--validate_build] [--validate_sex] [--save_snapshot NAME MESSAGE] [--extra_files [FILE [FILE ...]]] [--load_snapshot NAME] [--set_runtime_option OPTION [OPTION ...]] [--reset_runtime_option OPT] [--fasta2crr FASTA [FASTA ...]] [-v {0,1,2,3}] Optimize or modify projects. Currently supports merging and rename of samples optional arguments: -h, --help show this help message and exit -v {0,1,2,3}, --verbosity {0,1,2,3} Output error and warning (0), info (1), debug (2) and trace (3) information to standard output (default to 1).</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools/</guid>
+      <description>use :: Variant Tools  :root #header + #content  #left  #rlblock_left{ display:none !important; } :not(pre)  code + span.copy-to-clipboard { display: none; }            var baseurl = &#39;\/vat-docs\/&#39;;    Installation   Documentation   Key concepts   Supported types of variants     Tutorials   Help   Vtools commands   Init   Import   Update   Phenotype   lifttover   show   use   use   select   exclude   compare   associate   output   export   remove   execute   admin     Functions   ref_sequence   mut_sequence   track   Genotype   samples   in_table   Other functions     Vtools_report   avg_depth   discordance_rate   sam_info   sequence   trans_ratio   variant_stat   inbreeding_coefficient   transmission   meta_analysis   plot_fields   plot_geno_fields   plot_pheno_fields   plot_association     Customization   Simulation   Introduction   Customized simulations   Models   Peng2014_ex1   Peng2014_ex2       Format   Formats   basic   csv   plink   rsname   Cumtomized   tped   map         Pipelines   Introduction   Customized pipeline   Variant calling   bwa_gatk33_hg19   bat_gatk33_b37   bwa_gatk28_hg19   bwa_gatk28_b37     Other pipelines   import_vcf   anno_utils   transmission   Illumnina   ANNOVAR   snpEff   KING       Utilities   report_progress   md5sumd       Application   Annotation   Introduction   Tutorial   Customized annotation databases   Genes   ccdsGene   Hugo gene   EntrezGene   knownGene   refGene   CancerGeneCensus     Variants   COSMIC   sbNSFP   dbSNP   linkage-physical map   Database of Genomic Variants   Exome Sequencing Project   gwasCatalog   HapMap   Thousand Genomes     Regions   Low complexity regions   Phast cons   Genomic super dups   cytoBand     Misc   Illumina   keggPathway   ENCODE       Discovery   Association   Introduction   Data exploration/QC   Association analysis   Post-assoc analysis   Basic data statistics   Group stat&amp;amp;Write     Single variant analysis   Fisher exact test     Single gene association methods   Introduction   CMC test   C-alpha test   KBAC test   RBT test   RareCover test   VT test   WSS test   aSum test     Joint/Conditional association analysis   Collapsing methods   Aggregation methods   Weighted methods   Variable thresholds   SKAT test   MetaSKAT analysis     VAT stacking   Create your test!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools_files/saved_resource/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools_files/saved_resource/</guid>
+      <description>@import &#34;chrome-extension://hfapbcheiepjppjbnkphkmegjlipojba/css/style.css&#34;  Piggy&#39;s Asleep What happened to the pig who lost its voice? It became disgruntled!
+  This website doesn&#39;t work with us.
+Piggy has temporarily deactivated itself, but we&#39;re ready to save you money the next time you visit a website that works with Piggy.
+localhost
+Request to Add This Site Report a problem  Thanks for your input!
+We&#39;ve added this to the list and will try to get our engineers on it ASAP!</description>
     </item>
     
     <item>

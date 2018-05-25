@@ -195,17 +195,23 @@ h2 {
 }
 
 h3 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
 }
 
 h4 {
-    font-size: 1.3rem
+    font-size: 1.4rem
 }
 
 h5 {
-    font-size: 1.1rem
+    font-size: 1.2rem
 }
 
 .hljs {
     padding: 0em;
+}
+
+div.notices ol {
+    margin-top: 0;
+    background:#FAE2E2;
+    padding-bottom: 25px;
 }
