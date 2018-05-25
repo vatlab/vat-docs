@@ -7,10 +7,10 @@ weight = 4
 
 
 
-# Import and manipulate phenotypes 
+## Import and manipulate phenotypes 
 
 
-## Usage
+### 1. Usage
 
     % vtools phenotype -h
     
@@ -114,7 +114,7 @@ weight = 4
 
 
 
-## Details
+### 2. Details
 
 Unlike `vtools import` and `vtools update`, this command imports/adds properties to *samples* rather than to *variants*. These properties include: 
 
@@ -132,7 +132,7 @@ The difference between `--set` and `--from_stat` is that `--set` uses expression
 
 
 
-### Importing phenotypes from text files
+##### 2.1 Importing phenotypes from text files
 
 The `vtools phenotype --from_file` command identifies a sample by its name but it can also identify a sample by a combination of sample name and file name because not all samples have names. The basic form of this command imports phenotype by sample names from a tab or comma delimited file. 
 
@@ -142,9 +142,8 @@ The `vtools phenotype --from_file` command identifies a sample by its name but i
 
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
-    % vtools import CEU.vcf.gz --build hg18 --var_info DP --geno_info DP_geno
+    % vtools import CEU.vcf.gz --build hg38 --var_info DP --geno_info DP_geno
     
-
     INFO: Importing variants from CEU.vcf.gz (1/1)
     CEU.vcf.gz: 100% [=================================] 300 14.0K/s in 00:00:00
     INFO: 288 new variants (288 SNVs) from 300 lines are imported.
@@ -157,7 +156,6 @@ There are 60 samples without genotype
 
 
     % vtools show samples -l 10
-    
 
     sample_name	filename
     NA06985    	CEU.vcf.gz
@@ -171,6 +169,7 @@ There are 60 samples without genotype
     NA07357    	CEU.vcf.gz
     NA10847    	CEU.vcf.gz
     (50 records omitted)
+
     
 
 </details>
@@ -179,7 +178,6 @@ There are 60 samples without genotype
 
     % head -10 phenotype.txt
     
-
     sample_name	aff	sex	BMI
     NA06985	2	F	19.64
     NA06986	1	M	None
@@ -198,14 +196,12 @@ To import phenotypes from this file,
 
     % vtools phenotype --from_file phenotype.txt
     
-
     INFO: Adding phenotype aff of type INT
     INFO: Adding phenotype sex of type VARCHAR(1)
     INFO: Adding phenotype BMI of type FLOAT
     WARNING: Value "None" is treated as missing in phenotype BMI
     WARNING: 1 missing values are identified for phenotype BMI
     INFO: 3 field (3 new, 0 existing) phenotypes of 60 samples are updated.
-    
 
 This phenotype file now has 3 additional columns: affection status (1 or 2), gender (F or M) and BMI. The type of these columns are automatically determined, and the `None` value in the `BMI` column is treated as missing. 
 
@@ -213,7 +209,6 @@ This phenotype file now has 3 additional columns: affection status (1 or 2), gen
 
     % vtools show phenotypes -l 10
     
-
     sample_name	aff	sex	BMI
     NA06985    	2  	F  	19.64
     NA06986    	1  	M  	.
@@ -226,7 +221,6 @@ This phenotype file now has 3 additional columns: affection status (1 or 2), gen
     NA07357    	2  	M  	20.61
     NA10847    	2  	M  	14.6
     (50 records omitted)
-    
 
 </details>
 
@@ -243,7 +237,6 @@ Let us first remove the phenotypes we just loaded:
     % vtools remove phenotypes aff sex BMI
     % vtools show phenotypes -l 10
     
-
     sample_name
     NA06985
     NA06986
@@ -255,36 +248,32 @@ Let us first remove the phenotypes we just loaded:
     NA07347
     NA07357
     NA10847
-    (50 records omitted, use parameter --limit to display more or all records)
+    (50 records omitted)
     
 
 and only import the sex phenotype from the file: 
 
     % vtools phenotype --from_file phenotype.txt sex
     
-
-    INFO: Adding phenotype sex
+    INFO: Adding phenotype sex of type VARCHAR(1)
     INFO: 1 field (1 new, 0 existing) phenotypes of 60 samples are updated.
-    
 
 
 
     % vtools show phenotypes -l 10
     
-
     sample_name	sex
-    NA06985	F
-    NA06986	M
-    NA06994	F
-    NA07000	F
-    NA07037	F
-    NA07051	F
-    NA07346	F
-    NA07347	M
-    NA07357	M
-    NA10847	M
-    (50 records omitted, use parameter --limit to display more or all records)
-    
+    NA06985    	F
+    NA06986    	M
+    NA06994    	F
+    NA07000    	F
+    NA07037    	F
+    NA07051    	F
+    NA07346    	F
+    NA07347    	M
+    NA07357    	M
+    NA10847    	M
+    (50 records omitted)
 
 </details>
 
@@ -297,12 +286,11 @@ Other features of this command include
 *   *variant tools* automatically translate non-standard header names to a valid variant tools field name, by replacing non-alphanumeric characters with underscores (`'_'`). 
 
 
-
 If your input file does not have any header, you can use option `--header` to specify a list of headers. This is helpful for importing plink `.pfam` file, using a command similar to `vtools phenotype --from_file /tmp/test.tfam --header Family_ID sample_name Paternal_ID Maternal_ID Gender Status` 
 
 
 
-### New columns based on other phenotypes
+#### 2.2 New columns based on other phenotypes
 
 `vtools phenotype --set` command allows users to create new columns in the phenotype table based on other phenotypes. 
 
@@ -312,27 +300,19 @@ If your input file does not have any header, you can use option `--header` to sp
 
     % vtools phenotype --set 'race=1' --samples 'filename like "%CEU%"'
     
-
-    INFO: Adding field race
-    INFO: 1 field (1 new, 0 existing) phenotypes of 60 samples are updated.
-    
+    INFO: Adding phenotype race
+    INFO: 60 values of 1 phenotypes (1 new, 0 existing) of 60 samples are updated.
 
 
+    % vtools show samples -l -1 
 
-    % vtools show samples -l -1
-    
-
-    filename	sample_name	aff	sex	BMI	race
-    vcf/CEU.vcf.gz	NA06985		2	F	19.64	1
-    vcf/CEU.vcf.gz	NA06986		1	M	None	1
-    vcf/CEU.vcf.gz	NA06994		1	F	19.49	1
-    vcf/CEU.vcf.gz	NA07000		2	F	21.52	1
-    vcf/CEU.vcf.gz	NA07037		2	F	23.05	1
-    vcf/CEU.vcf.gz	NA07051		1	F	21.01	1
-    ...
-    vcf/SAMP1.vcf	SAMP1	        1	M	22.78	None
-    vcf/SAMP2.vcf	SAMP2	        2	F	24.43	None
-    
+    sample_name	filename  	sex	race
+    NA06985    	CEU.vcf.gz	F  	1
+    NA06986    	CEU.vcf.gz	M  	1
+    NA06994    	CEU.vcf.gz	F  	1
+    ... ...
+    NA12873    	CEU.vcf.gz	F  	1
+    NA12874    	CEU.vcf.gz	M  	1  
     
 
 </details>
@@ -341,7 +321,7 @@ the `--samples` option specify the subset of samples to which the new column val
 
 
 
-### New columns based on sample genotype and genotype information
+#### 2.3 New columns based on sample genotype and genotype information
 
 With `vtools show genotypes` we know the total number of genotypes and available genotype information in the sample. `vtools phenotype --from_stat` further allows calculation of specific sample genotype properties. 
 
@@ -349,18 +329,21 @@ With `vtools show genotypes` we know the total number of genotypes and available
 
 
 
-    vtools phenotype --from_stat "sample_total=#(GT)"
-    vtools phenotype --from_stat "sample_alt=#(alt)"
-    vtools phenotype --from_stat "sample_homo=#(hom)"
-    vtools phenotype --from_stat "sample_het=#(het)"
-    vtools phenotype --from_stat "sample_double_het=#(other)"
-    vtools show samples
+    % vtools phenotype --from_stat "sample_total=#(GT)"
+    % vtools phenotype --from_stat "sample_alt=#(alt)"
+    % vtools phenotype --from_stat "sample_homo=#(hom)"
+    % vtools phenotype --from_stat "sample_het=#(het)"
+    % vtools phenotype --from_stat "sample_double_het=#(other)"
+    % vtools show samples
     
+    sample_name	filename  	sex	race	sample_total	sample_alt	sample_homo	sample_het	sample_double_het
+    NA06985    	CEU.vcf.gz	F  	1   	287         	110       	40         	30        	0
+    NA06986    	CEU.vcf.gz	M  	1   	287         	126       	31         	64        	0
+    NA06994    	CEU.vcf.gz	F  	1   	287         	130       	37         	56        	0
+    ... ...
+    NA12873    	CEU.vcf.gz	F  	1   	287         	137       	37         	63        	0
+    NA12874    	CEU.vcf.gz	M  	1   	287         	100       	30         	40        	0
 
-    filename	sample_name	aff	sex	BMI	race	sample_total	sample_alt	sample_homo	sample_het	sample_double_het
-    vcf/CEU.vcf.gz	NA06985	        2	F	19.64	1	287	        110	        40	        30	        0
-    vcf/CEU.vcf.gz	NA06986	        1	M	None	1	287	        126	        31	        64	        0
-    vcf/CEU.vcf.gz	NA06994	        1	F	19.49	1	287	        130	        37	        56	        0
     
 
 gives statistic of different genotypes. 
@@ -377,35 +360,24 @@ Another useful type of summary is the genotype information that usually summariz
 
     % vtools phenotype --from_stat "meanDP=avg(DP_geno)" "minDP=min(DP_geno)" "maxDP=max(DP_geno)"
     
-
-    INFO: Adding field meanDP
-    INFO: 60 values of 1 phenotypes (1 new, 0 existing) of 60 samples are updated.
-    INFO: Adding field maxDP
-    INFO: 60 values of 1 phenotypes (1 new, 0 existing) of 60 samples are updated.
-    INFO: Adding field minDP
-    INFO: 60 values of 1 phenotypes (1 new, 0 existing) of 60 samples are updated.
-    
+    Calculating phenotype: 100% [===================================================================================] 60 59.7/s in 00:00:01
+    INFO: 180 values of 3 phenotypes (3 new, 0 existing) of 60 samples are updated.
 
 
 
     % vtools show samples
     
+    sample_name	filename  	sex	race	sample_total	sample_alt	sample_homo	sample_het	sample_double_het	meanDP            	minDP	maxDP
+    NA06985    	CEU.vcf.gz	F  	1   	287         	110       	40         	30        	0                	    2.275261324041812 	0    	12
+    NA06986    	CEU.vcf.gz	M  	1   	287         	126       	31         	64        	0                	    10.759581881533101	0    	29
+    NA06994    	CEU.vcf.gz	F  	1   	287         	130       	37         	56        	0                	    5.89198606271777  	0    	16
 
-    filename	sample_name	aff	sex	BMI	meanDP	        maxDP	minDP
-    vcf/CEU.vcf.gz	NA06985	        2	F	19.64	2.27526132404	12.0	0.0
-    vcf/CEU.vcf.gz	NA06986	        1	M	None	10.7595818815	29.0	0.0
-    vcf/CEU.vcf.gz	NA06994	        1	F	19.49	5.89198606272	16.0	0.0
-    vcf/CEU.vcf.gz	NA07000	        2	F	21.52	6.52961672474	17.0	0.0
-    vcf/CEU.vcf.gz	NA07037	        2	F	23.05	4.56794425087	15.0	0.0
-    vcf/CEU.vcf.gz	NA07051	        1	F	21.01	5.85714285714	22.0	0.0
-    ... ...
-    
 
 </details>
 
 
 
-### Output selected phenotypes using option `--output`
+#### 2.4 Output selected phenotypes using option `--output`
 
 The basic form of `vtools phenotype --output` is very similar to command `vtools show phenotypes`. They can both display all or a specified subset of phenotypes. 
 
@@ -413,7 +385,6 @@ The basic form of `vtools phenotype --output` is very similar to command `vtools
 
     % vtools phenotype --output sample_name sample_wildtype BMI 
     
-
     NA06985	     217	19.64
     NA06986	     192	None
     NA06994	     194	19.49
@@ -433,15 +404,13 @@ For example, the following command outputs the wildtype genotype counts and BMI 
 
 
     % vtools phenotype --output "count(filename)"
-    
 
-    62
+    60
     
 
     % vtools phenotype --output "avg(meanDP)"
     
-
-    4.52506351626
+    4.523693379790941
     
 
-(:exampleend</summary>
+</details>

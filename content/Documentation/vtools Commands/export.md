@@ -6,12 +6,10 @@ weight = 13
 
 
 
-# Export variants and samples to external files
+## Export variants and samples to external files
 
 
-
-
-## Usage
+### 1. Usage
 
     % vtools export -h
     
@@ -72,13 +70,13 @@ weight = 13
 
 
 
-## Details
+### 2. Details
 
 `vtools export` and `vtools output` perform similar functions but with different emphasis. `vtools output` output variants and variant info fields (and their summary statistics) in a tabular format, but it does not output genotype or genotype info fields. In comparison, `vtools export` exports variant, variant info fields, genotype and genotype info in pre-specified formats. 
 
 
 
-### Supported file formats
+#### 2.1 Supported file formats
 
 Command `vtools show formats` lists all formats that are supported by *variant tools* but some file formats can only be used to import or update variants. To check whether or not you can export data in a particular format, you can run command `vtools show format FMT` and check if it defines one or more `Columns`. 
 
@@ -144,7 +142,7 @@ You see that the `Columns` section is not defined. </details>
 
 
 
-### Export variants and variant info fields
+#### 2.2 Export variants and variant info fields
 
 The motivation of this export format is to prepare input files for annotating variants using `ANNOVAR` 
 
@@ -190,13 +188,13 @@ This optional comment field comes from the available fields in the variant table
 
 
 
-### Output in PLINK TPED format
+#### 2.3 Output in PLINK TPED format
 
-Please refer to the [TPED format][1][?][1] page. 
+Please refer to the [TPED format][1] page. 
 
 
 
-### Export in vcf format
+#### 2.4 Export in vcf format
 
 VCF is a flexible format that can store almost arbitrary information for variant, variant info, genotype and genotype info fields. All these information needs to be specified through command line options of the `vcf` format. To learn what options are available, you can use command 
 
@@ -209,7 +207,7 @@ Section `Other fields` lists the fields that can be imported (if they exist in t
 
 
 
-#### Export variants in VCF format
+##### Export variants in VCF format
 
 The basic command to export variants in vcf format is `vtools export TABLE --format vcf`. In this case, the variants are exported in vcf format, without header and with default (missing) name, `INFO`, and `FILTER` fields. `--format vcf` can be ignored if a `.vcf` file is specified in option `--output`. 
 
@@ -324,9 +322,9 @@ The difference is clear if you compare the output with what outputted from comma
 
 You can export one or more variant info fields using parameter `--var_info`, depending on how the field is defined in `vcf.fmt`, the field will be outputted as a flag (show field name if its value if True), a name value pair (show `name=val`), or a value. Outputting values of a field is usually not recommended unless the values already conform to vcf standard. 
 
-
-
+{{% notice tip %}}
 You can specify fields that are not defined in `vcf.fmt`. However, because *variant tools* does not know how to output it (as value or flag etc), it will output its value directly without a field name. Such fields do not conform to the vcf format standard. To output fields that are not defined in `vcf.fmt`, it is recommended that you add the field to a local copy of `vcf.fmt` and use the modified format file to export data. 
+{{% /notice %}}
 
 <details><summary> Examples: export variant info fields</summary> 
 
@@ -385,16 +383,17 @@ Anyway, if you have imported the whole `INFO` column of the input file, you can 
 </details>
 
 
-
+{{% notice warning %}}
 If you compare the outputted vcf file with the original vcf file, you can notice a few differences. More specifically, 
 
-1.  *variant tools* removes duplicate variants from input file when it imports data. If your data has multiple lines for a variant (e.g. the same variant with multiple rsnames), you will only be able to export one of them. 
-2.  *variant tools* split variants from an input file if there are multiple alternative alleles. It exports variants one by one so such variants will not be combined into records that define multiple variants. 
+1. *variant tools* removes duplicate variants from input file when it imports data. If your data has multiple lines for a variant (e.g. the same variant with multiple rsnames), you will only be able to export one of them. 
+2. *variant tools* split variants from an input file if there are multiple alternative alleles. It exports variants one by one so such variants will not be combined into records that define multiple variants. 
 3.  Variant tools does not import phase information of genotypes and it always output variants in the format of `A/B`. 
 
+{{% /notice %}}
 
 
-#### Specify a header
+##### Specify a header
 
 The `--header` option can be used to add a header to outputs. Although it is possible to specify a minimal header using option ` --header CHROM POS ID REF ALT QUAL FILTER INFO FORMAT`, it is useful to create a header file and send it to `vtools export` command through standard input (option `--header -`). The latter is preferred because vcf files usually has long headers. 
 
@@ -435,7 +434,7 @@ Alternatively you can create a text file with a tab delimited and use `--header 
 
 
 
-#### Output genotype
+##### Output genotype
 
 Genotypes of selected samples can be outputted if you use use parameter `--samples` to specify samples to output. `--samples 1` will output genotypes of all samples. 
 
@@ -505,7 +504,7 @@ You could export one or more genotype info fields using option `--geno_info` (Hi
 
 
 
-#### Export `ID`, `QUAL`, and `FILTER` columns
+##### Export `ID`, `QUAL`, and `FILTER` columns
 
 You can specify arbitrary fields (or constant values) to the `ID` (name), `QUAL`, and `FILTER` columns of the vcf output, using parameters `--id`, `--qual` and `--filter`. The `ID` column is supposed to list `rsnames` of variants, you can specify a field in your project (e.g. if you import the `id` field from the original vcf file), or `dbSNP.name`. 
 
@@ -588,6 +587,6 @@ Optionally, you can use rsnames in the `dbSNP` database
     22	49533094	rs3865766	C	T	.	PASS	AA=T;AC=51;AN=120;DP=253;HM3	
     
 
-(:exampleend</summary>
+</details>
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Tped?action=edit
+ [1]: /vat-docs/documentation/customization/format/formats/tped/

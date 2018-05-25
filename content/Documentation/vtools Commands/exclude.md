@@ -5,10 +5,10 @@ weight = 9
 +++
 
 
-# Exclude variants that match certain criteria
+## Exclude variants that match certain criteria
 
 
-## Usage
+### 1. Usage
 
     % vtools exclude -h
     
@@ -86,19 +86,19 @@ weight = 9
 
 
 
-## Details
+### 2. Details
 
 This command differs from `vtools select` only in that it **excludes** (rather than selects) from a variant table a subset of variants satisfying given condition(s), count, output or save the remaining variants. 
 
-However, command `` `vtools exclude `` is not simply a `` `vtools select `` command with a reversed condtion. As we will show in the examples, command "`` `vtools select table cond ``" (e.g. `sift_score > 0.95`) and "`` `vtools exclude table reverse-cond ``" (e.g. `sift_score <= 0.95`) might select different sets of variants. This happens when 
+However, command `vtools exclude` is not simply a `vtools select` command with a reversed condtion. As we will show in the examples, command "`` `vtools select table cond ``" (e.g. `sift_score > 0.95`) and "`vtools exclude table reverse-cond `" (e.g. `sift_score <= 0.95`) might select different sets of variants. This happens when 
 
 
 
-*   **If field values for some variants are missing (`NULL`)**, they will not be selected by commands such as `` `vtools select table "sift_score > 0.95" `` and `` `vtools select table "sift_score <= 0.95" ``. Variants without a score and with score > 0.95 can be selected by command `` `vtools exclude table "sift_score <= 0.95" ``. Alternatively, you can use command `` `vtools select table "sift_score > 0.95 OR sift_score is NULL" `` to explicitly specify the NULL case. 
+*   **If field values for some variants are missing (`NULL`)**, they will not be selected by commands such as  `vtools select table "sift_score > 0.95" ` and `vtools select table "sift_score <= 0.95" `. Variants without a score and with score > 0.95 can be selected by command `vtools exclude table "sift_score <= 0.95"`. Alternatively, you can use command `vtools select table "sift_score > 0.95 OR sift_score is NULL" ` to explicitly specify the NULL case. 
 
-*   **If there are multiple entries for a variant in the annotation database**, these variants might match both conditions. This is, for example, the case for some variants in dbNSFP when these variants are included in different genes and have different damaging scores. These variants will only be selected by `` `vtools select ``. 
+*   **If there are multiple entries for a variant in the annotation database**, these variants might match both conditions. This is, for example, the case for some variants in dbNSFP when these variants are included in different genes and have different damaging scores. These variants will only be selected by  `vtools select`. 
 
-<details><summary>Examples:</summary> 
+<details><summary> Examples: </summary> 
 
 For example, 
 
@@ -106,7 +106,6 @@ For example,
 
     % vtools select ns 'sift_score > 0.95' -t ns_damaging
     
-
     Running: 0 0.0/s in 00:00:00
     INFO: 10 variants selected.
     
@@ -154,4 +153,6 @@ if we use the complete `dbNSFP` annotation database we can show more fields
 
 It turns out that this variant has two entries in dbNSFP for different genes. In this case the variant matches both conditions "sift\_score>0.95" and "sift\_score<=0.95". As a result this variant will be selected by `vtools select "sift_score>0.95"` but not `vtools exclude "sift_score<=0.95"` 
 
-(:exampleend</summary>
+
+
+</details>

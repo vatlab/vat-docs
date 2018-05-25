@@ -6,11 +6,11 @@ weight = 15
 
 
 
-# Execute variant tools pipelines
+## Execute variant tools pipelines
 
 
 
-## Usage
+### 1. Usage
 
     % vtools execute -h
     
@@ -58,9 +58,9 @@ weight = 15
 
 
 
-## Details
+### 2. Details
 
-### Execute variant tools pipelines
+#### 2.1 Execute variant tools pipelines
 
 This command executes a pipeline that calls external commands to perform various operations. The general command line is 
 
@@ -89,13 +89,13 @@ Each pipeline accepts different `--input`, `--output` and optional parameters so
 
 
 
-### Execute SQL query
+#### 2.2 Execute SQL query
 
 This command executes arbitrary SQL query and displays output to standard output or a file. 
 
-
-
+{{% notice warning %}}
 Successful use of this command requires clear understanding of the structure of tables, which can be changed without notice from version to version. 
+{{% /notice%}}
 
 Display name of samples 
 

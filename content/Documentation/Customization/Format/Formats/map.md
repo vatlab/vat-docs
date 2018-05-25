@@ -1,6 +1,6 @@
 +++
 title = "map"
-weight = 4
+weight = 7
 +++
 
 ## Import variants from file without ref and alt alleles 

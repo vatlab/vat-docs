@@ -8,11 +8,11 @@ weight = 14
 
 
 
-# Remove project, variant table, fields and others
+## Remove project, variant table, fields and others
 
 
 
-## Usage
+### 1. Usage
 
     % vtools remove -h
     
@@ -56,17 +56,27 @@ weight = 14
     
 
 
+{{% notice tip %}}
+Fields from annotation databases cannot be removed. 
+{{% /notice %}}
 
-1.  Fields from annotation databases cannot be removed. 
-2.  Removing samples will only remove information for specified samples from existing variants. Variants themselves will not be removed. 
-3.  Removing annotation databases only remove the database from the project (stop using it), not from the disk. 
-4.  Removing an annotation database might make other databases unusable if they are linked through one of the fields in the removed database. 
+{{% notice tip %}}
+Removing samples will only remove information for specified samples from existing variants. Variants themselves will not be removed. 
+{{% /notice %}}
+
+{{% notice tip %}}
+Removing annotation databases only remove the database from the project (stop using it), not from the disk.
+{{% /notice %}}
+
+{{% notice tip %}}
+Removing an annotation database might make other databases unusable if they are linked through one of the fields in the removed database. 
+{{% /notice %}}
 
 
 
-## Details
+### 2. Details
 
-### Remove variant table
+#### 2.1 Remove variant table
 
 To remove a variant table, 
 
@@ -87,11 +97,12 @@ The parameter should be quoted to avoid early interpretation of wildcard charact
 
 
 
+{{% notice warning %}}
 Wildcard characters should be used with caution. 
+{{% /notice %}}
 
 
-
-### Remove variant info fields
+#### 2.2 Remove variant info fields
 
 To remove a field, 
 
@@ -103,7 +114,7 @@ To remove a field,
 
 
 
-### Remove genotype info fields from genotype tables
+#### 2.3 Remove genotype info fields from genotype tables
 
     % vtools remove geno_fields DP_geno
     % vtools show genotypes
@@ -111,7 +122,7 @@ To remove a field,
 
 
 
-### Remove project
+#### 2.4 Remove project
 
 The following command will remove an existing project. 
 
@@ -122,7 +133,7 @@ The following command will remove an existing project.
 
 
 
-### Remove samples
+#### 2.5 Remove samples
 
 Show existing samples 
 
@@ -162,7 +173,7 @@ Show samples again
 
 
 
-### Remove annotation databases
+#### 2.6 Remove annotation databases
 
 A project uses three databases, `dbNSFP`, `keggPathway`, and `dbSNP131`, 
 
@@ -208,7 +219,7 @@ You can remove `dbNSFP` from the project using command
 
 
 
-### Remove variants from specified variant tables
+#### 2.7 Remove variants from specified variant tables
 
 For example, we can remove all variants having low quality by: 
 
@@ -233,12 +244,12 @@ before you remove the table `to_be_removed`
     
 
 
-
+{{% notice tip %}}
 Removing a large number of variants will be slow. In this case, it is usually much more efficient to create a subproject using the variants to be kept. (`vtools init name --parent /path/to/parent --variants to_be_kept`) 
+{{% /notice %}}
 
 
-
-### Remove genotypes
+#### 2.8 Remove genotypes
 
 For example, we can remove all variants having low quality by: 
 
@@ -249,6 +260,6 @@ For example, we can remove all variants having low quality by:
 
 
 
-### Remove phenotype from sample table
+#### 2.9 Remove phenotype from sample table
 
     % vtools remove phenotypes BMI

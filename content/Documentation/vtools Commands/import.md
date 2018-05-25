@@ -87,13 +87,16 @@ weight = 2
 Command `` vtools import `` imports variants, sample genotypes and related information fields. The imported variants are saved to the master variant table `variant` of the project, along with their information fields. Samples are saved to a genotype database `$proj_genotype` as separate sample tables. 
 
 {{% notice tip %}}
+Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here]([1]).
+{{% /notice %}}
 
- 1. Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here]([1]).
 
- 2. Although vcf files produced by different variant calling software have different fields, *variant tools* provides a growing number of pipelines to import data in particular formats. You can have a look at available pipelines ([`vtools show`](Documentation/vtools Commands/show.md) `pipelines`) and details of a particular pipeline ([`vtools show`](Documentation/vtools Commands/show.md) `pipeline PIPELINE`) to see if you can find a pipeline to import your data. 
+{{% notice tip %}}
+Although vcf files produced by different variant calling software have different fields, *variant tools* provides a growing number of pipelines to import data in particular formats. You can have a look at available pipelines ([`vtools show`](Documentation/vtools Commands/show.md) `pipelines`) and details of a particular pipeline ([`vtools show`](Documentation/vtools Commands/show.md) `pipeline PIPELINE`) to see if you can find a pipeline to import your data. 
+{{% /notice %}}
 
- 3. It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](Documentation/vtools Commands/update.md), or built into an annotation database to reduce the size of the project. 
-
+{{% notice tip %}}
+It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](Documentation/vtools Commands/update.md), or built into an annotation database to reduce the size of the project. 
 {{% /notice %}}
 
 <details><summary>Examples:create a project and load some sample data</summary>
@@ -548,6 +551,9 @@ variants inputted in this way can be accessed using both reference genomes.
 
 {{% notice warning %}}
 Because the UCSC liftover tool does not guarantee all coordinates can be mapped between reference genomes, variants that cannot be mapped back to the primary reference genome will have missing primary coordinates. **These variants (with missing primary coordinates) can only be retrieved and annotated through the alternative reference genome**. 
+{{% /notice %}}
+
+{{% notice warning %}}
 Different variants in one reference genome might be mapped to the same variant in another (e.g. variant 90460203 and 91680930 in hg19 are both mapped to 91044656 in hg18). If two (or more) variants imported from the alternative reference genome are mapped to the same coordinates in the primary reference genome, **duplicate entries will appear in the primary reference genome**. If you have data in both reference genome (e.g. hg18, hg19), it is suggested that you **use the more recent reference genome (e.g. hg19) as the primary reference genome**, because latter reference genomes have more variants and less probability of coordinate collision. 
 {{% /notice %}}
 
@@ -627,16 +633,16 @@ VCF is the most commonly used format to store genetic variants and sample genoty
 The vcf format can store arbitary variant and genotype information fields. *variant tools* by default does not import any variant and info fields. However, the default configuration file does provide a variant info field `DP` and a genotype info field `DP_geno`, which you may import using option `--var_info` and `--geno_info`. To import variant or genotype fields from a vcf file, you need to 
 
 1.  know what fields are available from the input vcf file. That is to say, you need to open a file, read its header, and determine what fields are provided. 
-2.  use command `vtools show format vcf` to see what fields are available. If the field you would like to import is listed, you can add it to parameter `--var_info` or `--geno_info` to import it. Otherwise, you can [customize your format file][2][?][2] to add the field. 
+2.  use command `vtools show format vcf` to see what fields are available. If the field you would like to import is listed, you can add it to parameter `--var_info` or `--geno_info` to import it. Otherwise, you can [customize your format file][2] to add the field. 
 3.  use command `vtools import input_file.vcf --var_info var_fields --geno_info geno_fields` to import variants, genotypes and related fields. 
 
 
 {{% notice tip %}}
+If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`]([5]) function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
+{{% /notice %}}
 
-1. If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
-
-2. If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized `.fmt` file to import these. This process can be simplied using pipeline [import_vcf][6][?][6]. The command to use is similar to `vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19`.
-
+{{% notice tip %}}
+If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized `.fmt` file to import these. This process can be simplied using pipeline [import_vcf]([6]). The command to use is similar to `vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19`.
 {{% /notice %}}
 
 <details><summary>Examples: importing variant and genotype info fields</summary>
@@ -884,5 +890,5 @@ at the end of this file, and import this field using
  [3]: mailto:varianttools-devel@lists.sourceforge.net
  [4]: http://vtools.houstonbioinformatics.org/format/ANNOVAR.fmt
  [5]: http://vtools.houstonbioinformatics.org/format/CASAVA18_snps.fmt
- 
+ [6]: /vat-docs/documentation/pipelines/other-pipelines/import_vcf/
  

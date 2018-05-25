@@ -1,5 +1,5 @@
 +++
-title = "Supported formats"
+title = "Formats"
 weight = 2
 +++
 
