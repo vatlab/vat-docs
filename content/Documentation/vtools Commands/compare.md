@@ -5,11 +5,11 @@ weight = 10
 +++
 
 
-# Compare two or more variant tables
+## Compare two or more variant tables
 
 
 
-## Usage
+### 1. Usage
 
     % vtools compare -h
     
@@ -95,7 +95,7 @@ weight = 10
 
 
 
-## Details
+### 2. Details
 
 Command `vtools compare` compares variants in two or more variant tables. In the basic form, this command identifies variants that appear in one table but not others (set difference), in one or the tables (set union), or in all tables (set intersection). The results can be counted or written to a variant table. 
 
@@ -103,7 +103,7 @@ The items being compare in this case are variants (namely `chr`, `pos`, `ref`, a
 
 
 
-### Compare variants in variant tables
+#### 2.1 Compare variants in variant tables
 
 <details><summary> Examples: Load a sample project and create a few variant tables</summary> 
 
@@ -124,7 +124,7 @@ In the default 'variant' comparison type, command `vtools compare` compares vari
 
 
 | **variant** | **tables** |
-||
+|--------|----------|
 | **chr**     | **pos**    | **ref** | **alt** | T1 | T2 |
 | 1           | 31705      | A       | G       | ✓  | ✓  |
 | 1           | 50195      | T       | C       | ✓  |    |
@@ -150,12 +150,11 @@ for variants `B`, `C` and `D`, `A`, and all four variants for the counts, if we 
 
     % vtools show tables
     
-
     table       #variants     date message
-    G_AGRN             24    Jul15 In gene AGRM
-    G_FAM41C           51    Jul15 In gene FAM41C
-    exonic            151    Jul15 In exonic regions of ref seq genes
-    inDbSNP             9    Jul15 In dbSNP database
+    G_AGRN             11    May21 In gene AGRM
+    G_FAM41C            2    May21 In gene FAM41C
+    exonic             76    May21 In exonic regions of ref seq genes
+    inDbSNP           896    May21 In dbSNP database
     variant         1,611
     
 
@@ -222,8 +221,10 @@ More than two variant tables can be specified. Option `--intersection` and `--un
 </details>
 
 
-
+{{% notice tip %}}
 This command allows the use of wildcard characters * and ? in the specification of table names, which can be handy if you have a large number of variant tables for, e.g. variants in a list of genes. 
+{{% /notice %}}
+
 
 Now, if you have more complex expressions that involve more than one types of set operations, you can use option `--expression` for it. For example 
 
@@ -320,7 +321,7 @@ Let us conclude this example with an expression that does not make much sense
 
 
 
-### Compare genotypes of multiple samples
+#### 2.2 Compare genotypes of multiple samples
 
 If parameter `--samples` is specified, command `vtools compare` compares genotypes of specified samples. Although we usually compare all genotypes of samples using a command similar to (e.g. genotypes in `SAMP1` and `SAMP2` with variants in table `variant`) 
 
@@ -405,7 +406,7 @@ Although it is a bit confusing to return variants for a comparison of genotypes,
 
 
 
-#### Count or output of genotypes shared by two or more samples
+#### 2.3 Count or output of genotypes shared by two or more samples
 
 <details><summary> Examples: identify genotypes that are identical across samples</summary> To make use of the sample project, we need to first assign different names to different samples because all our samples share the same name: 
 
@@ -621,7 +622,7 @@ Here we redirect all progress bar etc from stderr to /dev/null to check only the
 
 
 
-### Compare sites of variants (ignore multiple alternative alleles)
+#### 2.4 Compare sites of variants (ignore multiple alternative alleles)
 
 
 

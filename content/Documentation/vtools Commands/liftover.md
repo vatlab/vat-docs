@@ -8,9 +8,9 @@ weight = 5
 
 
 
-# Adding coordinates from an alternative reference genome 
+## Adding coordinates from an alternative reference genome 
 
-## Usage
+### 1. Usage
 
     % vtools liftover -h
     
@@ -37,7 +37,7 @@ weight = 5
 
 
 
-## Details
+### 2. Details
 
 Vtools provides a command which is based on the tool of USCS liftOver to map the variants from existing reference genome to an alternative build. After executing of this command, The fields of chromosome, position reference and alternative of the variant in current and previous reference genomes are all in the master variant table. 
 
@@ -48,11 +48,9 @@ An illustration of the liftover process
 Attach:liftover.png 
 
 
-
 *   This command adds `alt_chr` and `alt_pos` columns to the master variants table. 
 *   Annotation databases that use the alternative reference genome can now be used. 
 *   `vtools output` and `vtools export` can output alternative coordinates using parameter `--build`. 
-
 
 
 1.  This feature is unavailable under windows because UCSC liftOver tool does not support windows. 
@@ -163,4 +161,4 @@ Interruption of the flipping process will leave the project unusable because of 
     (12984 records omitted, use parameter --limit to see more)
     
 
-(:exampleend</summary>
+</details>

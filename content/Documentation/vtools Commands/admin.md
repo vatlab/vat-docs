@@ -6,12 +6,12 @@ weight = 16
 
 
 
-# Miscellaneous administrative procedures 
+## Miscellaneous administrative procedures 
 
 
 
 
-## Usage
+### 1. Usage
 
     % vtools admin -h
     
@@ -143,13 +143,13 @@ weight = 16
 
 
 
-## Details
+### 2. Details
 
 The `vtools admin` command performs various adminstrative functions for a variant tools project. 
 
 
 
-### Download or update local resources (`--update_resource`)
+#### 2.1 Download or update local resources (`--update_resource`)
 
 Resources, such as annotation databases, format specification, and reference genomes are downloaded automatically when they are used. However, if you prefer having all resources downloaded before using variant tools (so that you do not have to wait each time when a source is needed), you can use option `--update_resource` to download them in batch. The resources will be saved to your home directory under `~/.variant_tools` unless you change this location using runtime option `@local_resource`. 
 
@@ -173,7 +173,7 @@ This command by default download all current resources (e.g. most recent version
 
 
 
-### Rename samples (`--rename_samples`)
+#### 2.2 Rename samples (`--rename_samples`)
 
 Although samples in *variant tools* can be identified by items other than sample names (e.g. filename such as `filename = "V1.vcf"`), or any of the phenotypes such as `aff=1`), sample name is the important identifier for samples and are used ubiquitously for reports. Sample names are assigned during `vtools import`, using either names specified in input files, or names specified by parameter `--sample_names`. If a sample name is missing or mis-specified, you can use the `vtools admin --rename_samples` to rename samples. 
 
@@ -240,8 +240,9 @@ The samples now have different names:
     V3	V3.vcf
     max_gt	CASAVA18_SNP.txt
     
-
+{{% notice tip %}}
 If you would like to change names of multiple samples according to a pattern, you can use the second form of the command. For example, the following command changes samples `V1`, `V2`, and `V3` to `SAMP1`, `SAMP2`, and `SAMP3`: 
+{{% /notice %}}
 
     % vtools admin --rename_samples 1 V SAMP
     
@@ -273,7 +274,7 @@ If you would like to prefix sample names by a string (e.g. `V1` -> `SAMP_V1`), y
 
 
 
-### Merge samples by sample's name (`--merge_samples`)
+#### 2.3 Merge samples by sample's name (`--merge_samples`)
 
 Command `vtools admin --merge_samples` merges samples with the same names to a single sample. This command is used when genotypes of a sample are stored in several files (e.g. chromosome by chromosome, or seprate files for SNPs and Indels resulting from the Illumina pipeline) and are imported as separate samples. These samples should be merged together because otherwise number of samples in the variant tools project will not match number of physical samples, and lead to erronous results during analysis. Because this command merge samples by names, samples to be merged should be renamed to have the same names if needed. 
 
@@ -345,7 +346,7 @@ Note that we use `vtools admin --rename_samples 1 SAMP2 SAMP1` to rename sample 
 
 
 
-### Rename and modify descriptions of variant tables (`--rename_table` and `--describe_table`)
+#### 2.4 Rename and modify descriptions of variant tables (`--rename_table` and `--describe_table`)
 
 A lot of variant tables can be generated during the analysis and it can be difficult to remember what types of variants are stored in each table. *variant tools* allows you to use arbitrary characters in table names and describe tables with messages when they are created, rename tables and modify their descriptions after they are created. The latter two operations are performed using commands `vtools admin --rename-table OLDNAME NEWNAME` and `vtools admin --describe_table NAME NEW_DESCRIPTION`. The usages of these two commands are straightforward. 
 
@@ -403,7 +404,7 @@ The table now has a new name and a description, but its creation date and comman
 
  
 
-### Validate build of project's reference genome (`--validate_build`)
+#### 2.5 Validate build of project's reference genome (`--validate_build`)
 
 Sometimes when you get a bunch of data, look everywhere in the folder and emails, and cannot find any information regarding the reference genome used to call the variants. In this case, you can import your data using the most likely build of reference genome (`hg19`), and use command `vtools admin --validate_build` to check if you have made the correct assumption. 
 
@@ -466,7 +467,7 @@ As you can see, most of the variants do not have correct reference genomes. Now 
 
 
 
-### Validate sex of samples (`--validate_sex`)
+#### 2.6 Validate sex of samples (`--validate_sex`)
 
 If your data contain genotypes on sex chromosomes and have sex information, you can use command `vtools admin --validate_sex` to check if the reported sex information match sample genotypes. To use this command, your project should have a phenotype with name `sex` or `gender` that contains sex of samples (coded in `1/2`, `M/F`, or `Male/Female`, missing values are not allowed). This command goes through all samples, and identify inconsistencies by 
 
@@ -476,12 +477,12 @@ If your data contain genotypes on sex chromosomes and have sex information, you 
 *   For females, check if there are any genotype on chromosome Y. 
 
 
-
+{{% notice warning %}}
 Variant calling pipelines are unlikely to call variants on sex chromosomes correctly if the variants are called blindly (without knowing chromosome name and sex of samples), so it is common that your data appear to have genotypes that are inconsistent with the sex of samples. 
-
+{{% /notice %}}
  
 
-### Save and load snapshots of a project (`--save_snapshot` and `--load_snapshot`)
+#### 2.7 Save and load snapshots of a project (`--save_snapshot` and `--load_snapshot`)
 
 You can save snapshots of the current project and revert to them later. This allows you to recover a project when it is damaged by incorrect operations or system failure, and more importantly, allows you to explore different processing pipelines with saved baseline stages. A snapshot is also a good way to carry a project around. 
 
@@ -496,8 +497,9 @@ There are several types of snapshots:
 You should in general use project-specific snapshots, unless you plan to carry the snapshots around. In that case you should use the compressed snapshots although it can take some time to compress a large project. 
 
 
-
+{{% notice warning %}}
 All changes to the current project will be lost if you revert to a previous snapshot. 
+{{% /notice %}}
 
 <details><summary> Examples: Save snapshots of a project </summary> By default, a snapshot can be created with a name, and saved without compression in the cache directory of the current project: 
 
@@ -608,7 +610,7 @@ Directories cannot be directly added to snapshots, since recursively adding file
 
 
 
-### Set and reset runtime options (`--set_runtime_option` and `--reset_runtime_option`)
+#### 2.8 Set and reset runtime options (`--set_runtime_option` and `--reset_runtime_option`)
 
 Setting runtime options, for example, 
 
@@ -713,9 +715,9 @@ you can set a different location for this directory. Note that this directory wi
 to use in-memory journal. 
 
 
-
-*The MEMORY journaling mode saves disk I/O but at the expense of database safety and integrity. If the application using SQLite crashes in the middle of a transaction when the MEMORY journaling mode is set, then the database file will very likely go corrupt [*][1].* You can enable it for data import operations such as `vtools import` and `vtools update --from_file` and set it to default (journal_mode=DELETE) afterwards. 
-
+{{% notice warning %}}
+The MEMORY journaling mode saves disk I/O but at the expense of database safety and integrity. If the application using SQLite crashes in the middle of a transaction when the MEMORY journaling mode is set, then the database file will very likely go corrupt [*][1].* You can enable it for data import operations such as `vtools import` and `vtools update --from_file` and set it to default (journal_mode=DELETE) afterwards. 
+{{% n/otice %}}
 
 
 The pragmas are usually applied to all databases (e.g. project, genotype and annotation databases) but you can limit the pragma to certain databases if you prefix it with database name (e.g. `_geno.snchronous=OFF`). This, however, needs an understanding of the databases involved in a command, and is generally not recommended. Please read about supported pragma statements [here][2]. 
@@ -739,7 +741,7 @@ to reset an option to its default values.
 
 
 
-### Convert fasta files of non-human reference genomes to `.crr` files
+#### 2.9 Convert fasta files of non-human reference genomes to `.crr` files
 
 Variant tools supports human reference genomes natively. It can also work with other reference genomes in `.crr` format, which is a binary format that allows efficient random access to the reference genome. If you have a reference genome in fasta format, you will need to convert it to `.crr` format using command `vtools admin --fasta2crr`. 
 
@@ -773,7 +775,7 @@ Variant tools supports human reference genomes natively. It can also work with o
     	 mm10.crr
     
 
-(:exampleend</summary>
+</details>
 
  [1]: http://www.sqlite.org/pragma.html#pragma_journal_mode
  [2]: http://www.sqlite.org/pragma.html

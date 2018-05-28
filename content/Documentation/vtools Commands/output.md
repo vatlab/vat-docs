@@ -7,11 +7,9 @@ weight = 12
 
 
 
-# Output variants in a variant table 
+##  Output variants in a variant table 
 
-
-
-## Usage
+### 1. Usage
 
     % vtools output -h
     
@@ -72,13 +70,13 @@ weight = 12
 
 
 
-## Details
+### 2. Details
 
 Command `vtools output` outputs properties of variant in a specified variant table. The properties include fields from annotation databases and variant tables (e.g. sample frequency), basically fields outputted from command `vtools show fields`, and SQL-supported functions and expressions. 
 
 
 
-### Basic usage of the command
+#### 2.1 Basic usage of the command
 
 The basic usage of `vtools output` is to output variant info fields of selected variants. You can use option `--limit` to limit the number of records, `--delimiter` to specify delimiter between output fields (default to tab). 
 
@@ -336,7 +334,7 @@ or the alternative reference genome using option `--build`
 
 
 
-### Output fields from annotation databases (option `--all`)
+#### 2.2 Output fields from annotation databases (option `--all`)
 
 You can output fields from one or more annotation databases in the same way as variant info fields. To output annotation fields of variants, you simply need to 
 
@@ -495,7 +493,7 @@ although `uniq` cannot suppress all duplicated records in all cases because it o
 
 
 
-### Output expressions of fields
+#### 2.3 Output expressions of fields
 
 In addition to values of variant info and annotation fields, command `vtools output` can be used to output SQL-acceptable expressions that involves multiple fields. For example, 
 
@@ -528,7 +526,7 @@ As you can see, the default header that *variant tools* generates replaces all n
 
 
 
-### Output summary statistics of fields using SQL aggregating functions (option `--group_by`)
+#### 2.4 Output summary statistics of fields using SQL aggregating functions (option `--group_by`)
 
 In addition to functions that operate on values of the same field, you can use SQL aggregating functions to output summary statistics of fields. For example, you can use function `count(*)` to count the number of records, `sum(DP)` to get the sum of depth for all variants. More usefully, these operations can be applied to groups of variants defined by option `--group_by`. 
 
@@ -595,9 +593,9 @@ Option `--all` should not be used in these commands because this option will lea
 
 </details>
 
-
-
+{{% notice warning %}}
 Using option `--all` along with aggregating function will most likely lead to erroneous results because the aggregating function will be applied to a dataset with duplicated entries, unless you intentionally would like to count, for example, number of duplicated entries for each variant.
+{{% /notice %}}
 
  [1]: http://www.sqlite.org/contrib
  [2]: http://www.sqlite.org/lang_aggfunc.html

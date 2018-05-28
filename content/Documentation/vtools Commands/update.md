@@ -394,10 +394,9 @@ Fields specified by option `--var_info` are added. Now we have one more field `f
 
 During the analysis of variants, it is common to have annotations in different formats from various sources (e.g. from annotation servers such as [regulome DB][2]). Although variant tools has a growing number of [formats][3], it is sometimes needed to create your own format files to import annotations. 
 
-<details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname. 
+<details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname.Because this sample project uses hg18, we cannot use the default dbSNP database and has to use
 
-
-    % vtools use dbSNP 
+    % vtools use dbSNP-hg18_130
 
     INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
     INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
@@ -433,7 +432,7 @@ The file looks like:
     rs3115853	intron
     
 
-To update your variants with this information, you will need a format file that knows how to get `chr`, `pos`, `ref` and `alt` from `rsname`. Fortunately, the [map][4][?][4] format provides such an example so we can adapt it to the following format: 
+To update your variants with this information, you will need a format file that knows how to get `chr`, `pos`, `ref` and `alt` from `rsname`. Fortunately, the [map][4] format provides such an example so we can adapt it to the following format: 
 
 
 
@@ -950,6 +949,6 @@ We can select variants that belong to a gene and output it
 
  [1]: http://www.1000genomes.org/node/101
  [2]: http://regulome.stanford.edu/
- [3]: /documentation/customization/format/supportedformats/
- [4]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Map?action=edit
+ [3]: /vat-docs/documentation/customization/format/formats/
+ [4]: 1313/vat-docs/documentation/customization/format/formats/map/
  [5]: http://www.sqlite.org/lang_aggfunc.html

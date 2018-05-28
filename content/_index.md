@@ -5,7 +5,7 @@
   <figcaption>A presentation about variant tools (Oct, 3rd, 2013)</figcaption>
 </figure>
 
-*variant tools* is a software tool for the manipulation, annotation, selection, simulation, and analysis of *variants* in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to [what you can do with variant tools](#anchor) for a list of features provided by variant tools. 
+*Variant tools* is a software tool for the manipulation, annotation, selection, simulation, and analysis of *variants* in the context of next-gen sequencing analysis. Unlike some other tools used for Next-Gen sequencing analysis, variant tools is project based and provides a whole set of tools to manipulate and analyze genetic variants. Please refer to [what you can do with variant tools](#anchor) for a list of features provided by variant tools. 
 
 ### News
 
@@ -102,7 +102,7 @@ As you can see, individual commands such as [`vtools use`][16] and [`vtools upda
 5.  and it should be significant in one of the association tests, 
 6.  the selected variant are written to another table names `significant`. 
 
-In summary,** *variant tools* is NOT designed to be a black-box tool that analyzes your data and generates a nice-looking report with a list of candidate variants or genes. It is a platform under which you can analyze your data using several methods, compare and analyze results, re-compare and re-analyze, and again using different methods or annotation sources, based on the information abtained from your previous analyses.** The unique advantage of *variant tools* is that you generally do not need to write a bunch of scripts to *connect* input output of different tools and *parse* and *compare* results in different formats, and you have easy access to a huge amount of information that help you select, prioritize and analyze your variants, all from your command line. However, because of the uniqueness of this design, **please read through the [Concepts][19] section of this website before using *variant tools*.** 
+In summary, **variant tools is NOT designed to be a black-box tool that analyzes your data and generates a nice-looking report with a list of candidate variants or genes. It is a platform under which you can analyze your data using several methods, compare and analyze results, re-compare and re-analyze, and again using different methods or annotation sources, based on the information abtained from your previous analyses.** The unique advantage of *variant tools* is that you generally do not need to write a bunch of scripts to *connect* input output of different tools and *parse* and *compare* results in different formats, and you have easy access to a huge amount of information that help you select, prioritize and analyze your variants, all from your command line. However, because of the uniqueness of this design, **please read through the [Concepts][19] section of this website before using *variant tools*.** 
 
 <span id = "anchor"></span>
 
@@ -120,7 +120,7 @@ In summary,** *variant tools* is NOT designed to be a black-box tool that analyz
 |                        | Import variants from [a list of rsnames (dbSNP IDs)][26], or [just chromsome and positions][20][?][20], variant information are retrieved from the dbSNP database.                                                                                                     |
 |                        | Import data in arbitrary format by defining customized [format-description file][27].                                                                                                                                                                                  |
 | Reference genome       | Native support for build `hg18` and `hg19` of the human genome, and other genomes such as the mouse genome. Reference genomes of the human genomes are downloaded automatically when they are used.                                                                           |
-|                        | [Variants in different reference genomes can be imported and analyzed together][10][?][10], through automatic mapping between primary and alternative reference genomes.                                                                                                      |
+|                        | [Variants in different reference genomes can be imported and analyzed together][14], through automatic mapping between primary and alternative reference genomes.                                                                                                      |
 |                        | Supports the use of annotations in a different reference genome by [mapping genomic coordinates across reference genomes][22][?][22]                                                                                                                                          |
 |                        | [Easily retrieve reference sequences around variant sites through function `ref_sequence`][23][?][23]. This allows you to check if variants are in, for example, mononucleotide or short-tandem repeat sequences.                                                             |
 |                        | [Validate the build of reference genome][24][?][24] if you are uncertain about the reference genome used in the data.                                                                                                                                                         |
@@ -226,8 +226,8 @@ for Variant Simulation Tools if you find variant tools helpful and use it in you
 [20]: documentation/pipelines/variant-calling/bwa_gatk33_hg19/
 [21]: documentation/pipelines/other-pipelines/import_vcf/
 [22]: documentation/pipelines/other-pipelines/illumina/
-[23]: documentation/customization/format/supportedformats/txt
-[24]: documentation/customization/format/supportedformats/csv
-[25]: documentation/customization/format/supportedformats/plink
-[26]: documentation/customization/format/supportedformats/rsname
-[27]: documentation/customization/format/supportedformats/new
+[23]: documentation/customization/format/formats/txt
+[24]: documentation/customization/format/formats/csv
+[25]: documentation/customization/format/formats/plink
+[26]: documentation/customization/format/formats/rsname
+[27]: documentation/customization/format/formats/new

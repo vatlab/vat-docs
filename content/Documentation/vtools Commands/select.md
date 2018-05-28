@@ -6,11 +6,11 @@ weight = 8
 
 
 
-# Select variants from a variant table 
+## Select variants from a variant table 
 
 
 
-## Usage
+### 1. Usage
 
     % vtools select -h
     
@@ -89,7 +89,7 @@ weight = 8
 
 
 
-## Details
+### 2. Details
 
 The basic form of command 
 
@@ -106,11 +106,11 @@ selects from a variant table *table* a subset of variants satisfying given *cond
 *   counting the number of variants if `--count` is specified. 
 *   outputting selected variants if `--output` is specified (as if command `vtools output` is used on it). 
 
-The *condition* should be a SQL expression using one or more fields in the project (shown in `vtools show fields`). If the *condition* argument is unspecified, then all variants in *table* will be selected. More details about the use of *conditions* could be found [here][1][?][1]. An optional condition `--samples [condition]` can also be used to limit selected variants to specified samples. 
+The *condition* should be a SQL expression using one or more fields in the project (shown in `vtools show fields`). If the *condition* argument is unspecified, then all variants in *table* will be selected. More details about the use of *conditions* could be found [here][1]. An optional condition `--samples [condition]` can also be used to limit selected variants to specified samples. 
 
 
 
-### Basic usages of the command
+#### 2.1 Basic usages of the command
 
 <details><summary> Examples: Load a sample project</summary> Let us load a sample project simple from online: 
 
@@ -119,8 +119,7 @@ The *condition* should be a SQL expression using one or more fields in the proje
 
 The project has a master variant table with 1,611 variant, 
 
-    % vtools show tables
-    
+    % vtools show tables   
 
     table      #variants     date message
     variant        1,611
@@ -128,8 +127,7 @@ The project has a master variant table with 1,611 variant,
 
 from two samples, 
 
-    % vtools show samples
-    
+    % vtools show samples    
 
     sample_name  filename
     SAMP1        V1.vcf
@@ -145,21 +143,19 @@ Variant info fields provide annotation information for all variants in a project
 
     % vtools show fields
     
-
-    variant.chr
-    variant.pos
-    variant.ref
-    variant.alt
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
     
 
 This project does not have many interesting fields, but we can at least select variants by chromosome, position, reference or alternative allele. 
 
 
 
-    % select variant 'pos < 200000' -t pos_20k 'variants with position < 20000'
+    % vtools select variant 'pos < 200000' -t pos_20k 'variants with position < 20000'
     
-
-    Running: 0 0.0/s in 00:00:00
+    Running: 0 0.0/s in 00:00:00                                                                   
     INFO: 81 variants selected.
     
 
@@ -169,9 +165,8 @@ This command write selected variants to a table `pos_20k. A message is optional 
 
     % vtools show tables
     
-
     table      #variants     date message
-    pos_20k           81    Jul13 variants with position < 20000
+    pos_20k           81    May21 variants with position < 20000
     variant        1,611
     
 
@@ -182,7 +177,6 @@ You can use multiple conditions to select tables, as in
     % vtools select variant 'pos < 200000' 'ref="T"' -t 'pos < 20k ref=T' \
     %     'Variants with position < 20000 and with reference allele T'
     
-
     Running: 0 0.0/s in 00:00:00
     INFO: 20 variants selected.
     
@@ -193,7 +187,6 @@ The resulting table has a name with space and special characters `<` and `=`. Su
 
     % vtools select variant 'pos < 200000 OR ref="T"' -t 'pos < 20k or ref=T' \
     %     'Variants with position < 20000 or with reference allele T'
-    
 
     Running: 1 953.3/s in 00:00:00
     INFO: 428 variants selected.
@@ -202,9 +195,13 @@ The resulting table has a name with space and special characters `<` and `=`. Su
 </details>
 
 
+{{% notice tip %}}
+Name of variant tables can contain arbitrary characters so names such as `'TRA@'` and `'AA=T'` are acceptable. You should however properly quote such names to avoid accidental shell interpretation of these names (e.g. expansion of `*` and `?`). 
+{{% /notice %}}
 
-*   Name of variant tables can contain arbitrary characters so names such as `'TRA@'` and `'AA=T'` are acceptable. You should however properly quote such names to avoid accidental shell interpretation of these names (e.g. expansion of `*` and `?`). 
-*   Multiple conditions are allowed and are joined by `'AND'`. You can use a single condition with `OR` to specify `OR` condition (e.g. `DP > 10 OR pos<20000`). 
+{{% notice tip %}}
+Multiple conditions are allowed and are joined by `'AND'`. You can use a single condition with `OR` to specify `OR` condition (e.g. `DP > 10 OR pos<20000`). 
+{{% /notice %}}
 
 Variant info fields can also be added by command `vtools update`. The `--from_stat` option of this command is most useful because it can calculate genotype statistics (e.g. number of genotypes, number of homozygotes etc) for each variant across all or selected samples. Such information can then be used to select variants that are, for example, singletons in the database. 
 
@@ -212,7 +209,6 @@ Variant info fields can also be added by command `vtools update`. The `--from_st
 
     % vtools update variant --from_stat 'num=#(GT)'
     
-
     Counting variants: 100% [====================================================] 3 300.0/s in 00:00:00
     INFO: Adding variant info field num
     Updating variant: 100% [=================================================] 1,611 55.7K/s in 00:00:00
@@ -222,7 +218,6 @@ Variant info fields can also be added by command `vtools update`. The `--from_st
 The fields are now available to the project 
 
     % vtools show fields
-    
 
     variant.chr
     variant.pos
@@ -234,7 +229,7 @@ The fields are now available to the project
 and can be used to select variants. For example, the following command select variants that appear in all three samples, 
 
     % vtools select variant 'num=3' -t inAllSamples 'variants that are in all three samples'
-    
+
 
     Running: 1 988.1/s in 00:00:00
     INFO: 511 variants selected.
@@ -250,7 +245,6 @@ You do not have to select from the master variant table, and in case that you on
 
     % vtools select 'pos < 20k or ref=T' 'num=3' -c
     
-
     Counting variants: 0 0.0/s in 00:00:00
     125
     
@@ -261,7 +255,6 @@ You can also have a look at these variants without saving them to a table
 
     % vtools select 'pos < 20k or ref=T' 'num=3' --output chr pos ref alt num -l 10
     
-
     1  5966   T  G  3
     1  10007  G  A  3
     1  20723  G  C  3
@@ -278,7 +271,7 @@ You can also have a look at these variants without saving them to a table
 
 
 
-### Select variants using annotation fields
+#### 2.2 Select variants using annotation fields
 
 You can select variants from a variant table based on fields from external annotation databases. Although annotation databases have different types and are linked to the project in different ways (e.g. variant databases link to individual variants, and range databases annotate groups of variants), they appear the same from a user point of view. 
 
@@ -289,24 +282,23 @@ In contrast to variant info fields that annotate all variants, **annotation data
 
 
     % vtools use dbSNP
-    
-
-    INFO: Downloading annotation database from annoDB/dbSNP.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/dbSNP-hg19_137.DB.gz
-    INFO: Using annotation DB dbSNP in project select.
-    INFO: dbSNP version 137
+    INFO: Upgrading variant tools project to version 2.7.20
+    Verifying variants: 100% [===========================] 1,611 91.5K/s in 00:00:00
+    INFO: 0 variants are updated
+    INFO: Choosing version dbSNP-hg18_130 from 10 available databases.
+    INFO: Downloading annotation database annoDB/dbSNP-hg18_130.ann
+    INFO: Using annotation DB dbSNP as dbSNP in project select.
+    INFO: dbSNP version 130
     
 
 then find out all the variants that are in the dbSNP database: 
 
 
 
-    % vtools select variant 'dbSNP.chr IS NOT NULL' -t inDbSNP 'variants in dbSNP version 137'
+    % vtools select variant 'dbSNP.chr IS NOT NULL' -t inDbSNP 'variants in dbSNP version 130'
     
-
-    WARNING: Existing table inDbSNP is renamed to inDbSNP_Jul14_021354.
-    Running: 3 417.4/s in 00:00:00
-    INFO: 9 variants selected.
+    Running: 5 297.6/s in 00:00:00                                                  
+    INFO: 896 variants selected.
     
 
 We can see the rsname of these variants 
@@ -315,17 +307,12 @@ We can see the rsname of these variants
 
     % vtools output inDbSNP chr pos ref alt dbSNP.name --all
     
-
-    1  88909   C  T  rs4951948
-    1  791858  G  A  rs141858431
-    1  809043  C  T  rs201498940
-    1  880922  C  T  rs187444884
-    1  558663  G  A  rs4951900
-    1  746775  A  G  rs2722507
-    1  746775  A  G  rs190225900
-    1  816001  G  A  rs111789261
-    1  990773  C  T  rs2799072
-    1  823504  T  C  rs78498238
+    1	5683  	G	T	rs2691315
+    1	6241  	T	C	rs17041382
+    1	9992  	C	T	rs12354148
+    ... ...
+    1	996853	G	A	rs4326571
+    1	999097	T	C	rs9442366
     
 
 Here we use the `--all` option of command `vtools output` because a variant can have multiple rsnames, and this is indeed the case for mutation `A->G` at `chr1:746775`. 
@@ -336,10 +323,9 @@ The syntax is the same for range-based databases. For example, if we use the ref
 
     % vtools use refGene
     
-
-    INFO: Downloading annotation database from annoDB/refGene.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/refGene-hg19_20110909.DB.gz
-    INFO: Using annotation DB refGene in project select.
+    refGene-hg18_20110909.DB.gz: 100% [=============] 1,803,587.0 2.5M/s in 00:00:00
+    Binning ranges: 100% [=============================] 40,067 110.2K/s in 00:00:00
+    INFO: Using annotation DB refGene as refGene in project select.
     INFO: refseq Genes
     
 
@@ -349,9 +335,8 @@ we can find out all the variants that are not in dbSNP but in one of the ref seq
 
     % vtools select variant 'dbSNP.chr IS NULL' 'refGene.chr IS NOT NULL' -t inRefGene 'variants that are in refGene but not dbSNP'
     
-
-    Running: 17 375.9/s in 00:00:00
-    INFO: 727 variants selected.
+    Running: 9 1.1K/s in 00:00:00                                                   
+    INFO: 98 variants selected.
     
 
 </details>
@@ -360,8 +345,7 @@ You of course do not have to limit yourself to the membership conditions because
 
 <details><summary> Examples: Select variants by values of annotation fields</summary> Let us first link the dbNSFP database, 
 
-    % vtools use dbNSFP
-    
+    % vtools use dbNSFP  
 
     INFO: Downloading annotation database from annoDB/dbNSFP.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/dbNSFP-hg18_hg19_2_0b4.DB.gz
@@ -534,16 +518,16 @@ You can also output the pathway that this gene belong as follows:
 </details>
 
 
-
+{{% notice warning %}}
 Please read the description of fields from the output of `vtools show fields` carefully to avoid wrongful interpretation of annotation values. For example, `SIFT_score` provided by dbNSFP verion 1.0 are normalized (1-original score) so a higher score means higher probability of being damaging. It is no longer normalized in version 2.0 and latter so a smaller score (e.g. < 0.05) means more damaging. 
+{{% /notice %}}
 
-
-
+{{% notice tip %}}
 If you select variants based on some condition, and then its NOT condition, you might be surprised to find that some variants belong to both sets. This is because some variants match multiple records in the annotation database, and are selected by these seemingly contradicting conditions. For example, a variant can belong to multipe isoforms of a gene might be benign in one gene and damaging in another. The variant will be selected by both benigh and damaging conditions. 
+{{% /notice %}}
 
 
-
-### Select variants according to sample genotypes
+#### 2.3 Select variants according to sample genotypes
 
 It is sometimes useful to select variants based on sample genotypes, to answer questions such as what variants are available in the affected individuals. Command `vtools select` accepts a parameter `--samples` and will select variants that belong to selected samples. This parameter accepts one or more conditions by which samples are selected. For example `--samples 1` selects all samples (condition `True`), `--samples 'sample_name = "CEU"'` selects a sample with name `CEU`, and `--samples 'filename like "<span class='CEU'>"'` selects all samples that are imported from files with filename containing `CEU`. </span> 
 
@@ -576,7 +560,13 @@ We can rename samples using command `vtools admin --rename_samples` but we can a
 
 
 
-*   Samples without genotype information can be imported from data without genotype by specifying sample names. Such 'samples' can help you identify the source of variants. 
-*   Variants do not have to belong to any sample so it is not surprising that `vtools select TABLE --sample 1` do not have to select all variants in `TABLE`.
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Commands?action=edit
+{{% notice tip %}}   
+ Samples without genotype information can be imported from data without genotype by specifying sample names. Such 'samples' can help you identify the source of variants. 
+{{% /notice%}}
+
+{{% notice tip %}}  
+Variants do not have to belong to any sample so it is not surprising that `vtools select TABLE --sample 1` do not have to select all variants in `TABLE`.
+{{% /notice%}}
+
+ [1]: /vat-docs/documentation/help/

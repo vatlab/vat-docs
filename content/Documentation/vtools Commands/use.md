@@ -6,10 +6,10 @@ weight = 7
 +++
 
 
-# Use an annotation database 
+## Use an annotation database 
 
 
-## Usage
+### 1. Usage
 
     % vtools use -h
     
@@ -87,7 +87,7 @@ weight = 7
 
 
 
-## Details
+### 2. Details
 
 Command `vtools use` attaches an annotation database to the project, effectively making one or more attributes available to variants in the project. Four types of annotation databases can be used with variant tools: 
 
@@ -100,20 +100,25 @@ Command `vtools use` attaches an annotation database to the project, effectively
 
 
 
-### Basic usages of system-provided annotation databases
+#### 2.1 Basic usages of system-provided annotation databases
 
 It is easy to use system-provided annotation databases. Generally speaking, you should 
 
 
 
-*   Use command `vtools show annotations` to see a list of annotation databases, and identify annotation databases that match the reference genome of your project. 
-*   Use command `vtools show annotation ANNODB` to check the details of an annotation database. 
-*   Use command `vtools use ANNODB` to download (if needed) and link the database to your project. *variant tools* will automatically link the project to the database using appropriate fields. 
+* Use command `vtools show annotations` to see a list of annotation databases, and identify annotation databases that match the reference genome of your project. 
+* Use command `vtools show annotation ANNODB` to check the details of an annotation database. 
+* Use command `vtools use ANNODB` to download (if needed) and link the database to your project. *variant tools* will automatically link the project to the database using appropriate fields. 
 
 
 
-*   Position-aware annotation databases (variant, position, and range) are ref-genome dependent. Most such annotation databases are built for a particular build of reference genome, but some of them support multiple reference genomes. 
-*   Newer databases usually contain more updated annotation information and usually use more recent build of reference genome. If you are using *hg18* and would like to use annotation databases that use build *hg19* of the reference genome, you can liftover your project to add *hg19* as an alternative reference genome. 
+{{% notice tip %}}
+
+* Position-aware annotation databases (variant, position, and range) are ref-genome dependent. Most such annotation databases are built for a particular build of reference genome, but some of them support multiple reference genomes. 
+
+* Newer databases usually contain more updated annotation information and usually use more recent build of reference genome. If you are using *hg18* and would like to use annotation databases that use build *hg19* of the reference genome, you can liftover your project to add *hg19* as an alternative reference genome.  
+ 
+{{% /notice %}}
 
 <details><summary> Examples: Use system-provided annotation databases</summary> Let us get a project 
 
@@ -128,14 +133,17 @@ This project uses build `hg19` of the reference genome, as shown in the output o
 
     % vtools show
     
-
-    Upgrading to 1.0.7: 100% [==============================] 3 202.2/s in 00:00:00
-    Project name:                test
-    Primary reference genome:    hg19
-    Secondary reference genome:  None
-    Runtime options:             verbosity=1
+    INFO: Upgrading variant tools project to version 2.7.20
+    Verifying variants: 100% [=========================================] 1,611 105.8K/s in 00:00:00
+    INFO: 0 variants are updated
+    Project name:                use
+    Primary reference genome:    hg18
+    Secondary reference genome:  
+    Storage method:              sqlite
+    Runtime options:             verbosity=1, shared_resource=/Users/iceli/.variant_tools, local_resource=/Users/iceli/.variant_tools
     Variant tables:              variant
-    Annotation databases:
+    Annotation databases:        
+
     
 
 We then use command `vtools show annotations` to check all available databases, using option `-v0` to suppress descriptions of databases: 
@@ -144,34 +152,66 @@ We then use command `vtools show annotations` to check all available databases, 
 
     % vtools show annotations -v0 
     
-
     CancerGeneCensus-20111215
     CancerGeneCensus-20120315
-    CancerGeneCensus
+    CancerGeneCensus-20130711
+    CancerGeneCensus-20170912
     CosmicCodingMuts-v61_260912
-    CosmicCodingMuts
+    CosmicCodingMuts-v67_20131024
+    CosmicCodingMuts-v82_20170801
     CosmicMutantExport-v61_260912
-    CosmicMutantExport
+    CosmicMutantExport-v67_241013
+    CosmicMutantExport-v82_20170803
     CosmicNonCodingVariants-v61_260912
-    CosmicNonCodingVariants
+    CosmicNonCodingVariants-v67_241013
+    CosmicNonCodingVariants-v82_20170801
+    DGV-hg18_20130723
+    DGV-hg19_20130723
+    DGV-hg38_20160831
+    ESP-6500SI-V2-SSA137
+    EntrezGene-20131028
+    EntrezGene-20170919
+    EntrezGene2RefSeq-20131028
+    EntrezGene2RefSeq-20170919
+    ExAC-hg19_r0.2
+    HGNC-20131029
+    HGNC-20170920
+    Illumina_NRCE-20130307
+    LCR-hg19_20090320
     ccdsGene-hg19_20110909
     ccdsGene-hg19_20111206
-    ccdsGene
+    ccdsGene-hg19_20130904
+    ccdsGene-hg38_20171008
     ccdsGene_exon-hg19_20110909
     ccdsGene_exon-hg19_20111206
-    ccdsGene_exon
+    ccdsGene_exon-hg19_20130904
+    ccdsGene_exon-hg38_20171008
     ccdsGene_exon_hg19-20111206
     ccdsGene_hg19-20111206
+    clinvar-20150804
+    clinvar-20150929
+    clinvar-20171002
     cytoBand-hg18_20111216
     cytoBand-hg19_20111216
-    cytoBand
+    cytoBand-hg38_20140810
     dbNSFP-hg18_hg19_1.1_2
     dbNSFP-hg18_hg19_1_3
+    dbNSFP-hg18_hg19_2_0
     dbNSFP-hg18_hg19_2_0b4
-    dbNSFP
+    dbNSFP-hg18_hg19_2_1
+    dbNSFP-hg18_hg19_2_3
+    dbNSFP-hg18_hg19_2_4
+    dbNSFP-hg18_hg19_2_7
+    dbNSFP-hg18_hg19_2_9
+    dbNSFP-hg38_3_5a
+    dbNSFP_gene-2_0
+    dbNSFP_gene-2_1
+    dbNSFP_gene-2_3
+    dbNSFP_gene-2_4
+    dbNSFP_gene-2_7
+    dbNSFP_gene-3_5a
     dbNSFP_light-hg18_hg19_1.0_0
     dbNSFP_light-hg18_hg19_1_3
-    dbNSFP_light
     dbSNP-hg18_129
     dbSNP-hg18_130
     dbSNP-hg19_131
@@ -179,41 +219,59 @@ We then use command `vtools show annotations` to check all available databases, 
     dbSNP-hg19_135-1
     dbSNP-hg19_135
     dbSNP-hg19_137
-    dbSNP
+    dbSNP-hg19_138
+    dbSNP-hg19_141
+    dbSNP-hg38_143
+    dbscSNV-hg19_20141120
     evs-6500
     evs-hg19_20111107
-    evs
-    evs_5400
     genomicSuperDups-hg19_20130626
-    genomicSuperDups
+    genomicSuperDups-hg38_20141018
     gwasCatalog-hg19_20111220
-    gwasCatalog
+    gwasCatalog-hg19_20140112
+    gwasCatalog-hg38_20171004
+    hapmap_ASW_freq-hg18_20100817
+    hapmap_CEU_freq-hg18_20100817
+    hapmap_CHB_freq-hg18_20100817
+    hapmap_CHD_freq-hg18_20100817
+    hapmap_GIH_freq-hg18_20100817
+    hapmap_JPT_freq-hg18_20100817
+    hapmap_LWK_freq-hg18_20100817
+    hapmap_MEX_freq-hg18_20100817
+    hapmap_MKK_freq-hg18_20100817
+    hapmap_TSI_freq-hg18_20100817
+    hapmap_YRI_freq-hg18_20100817
     keggPathway-20110823
-    keggPathway
     knownGene-hg18_20110909
     knownGene-hg18_20121219
     knownGene-hg19_20110909
     knownGene-hg19_20121219
-    knownGene
+    knownGene-hg19_20130904
+    knownGene-hg38_20160328
     knownGene_exon-hg18_20110909
     knownGene_exon-hg19_20110909
-    knownGene_exon
+    knownGene_exon-hg19_20130904
+    knownGene_exon-hg38_20160328
     phastCons-hg19_20110909
     phastCons-hg19_20130322
-    phastCons
+    phastCons-hg38_20150913
     phastConsElements-hg19_20130622
-    phastConsElements
+    phastConsElements-hg38_20150913
     refGene-hg18_20110909
     refGene-hg19_20110909
-    refGene
+    refGene-hg19_20130904
+    refGene-hg38_20170201
+    refGene-mm10_20141201
+    refGene_coding-hg19_20130904
     refGene_exon-hg18_20110909
     refGene_exon-hg19_20110909
-    refGene_exon
-    thousandGenomes-hg19_20110909
-    thousandGenomes-hg19_201202
-    thousandGenomes
-    thousandGenomesEBI-hg19_phase1_release_v3_20101123
-    thousandGenomesEBI
+    refGene_exon-hg19_20130904
+    refGene_exon-mm10_20141201
+    refGene_exon-mm10_20171008
+    rutgersMap-b134
+    thousandGenomes-hg19_20130502
+    thousandGenomes-hg19_v3_20101123
+    thousandGenomes-hg19_v5b_20130502
     
 
 Some databases uses `hg18`, but most uses `hg19`. The default databases (the ones without version number) generally refer to the latest databases that uses `hg19`, so you can use most databases as simple as 
@@ -222,10 +280,12 @@ Some databases uses `hg18`, but most uses `hg19`. The default databases (the one
 
     % vtools use refGene
     
-
-    INFO: Downloading annotation database from annoDB/refGene.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/refGene-hg19_20110909.DB.gz
-    INFO: Using annotation DB refGene in project test.
+    INFO: Choosing version refGene-hg18_20110909 from 5 available databases.
+    INFO: Downloading annotation database annoDB/refGene-hg18_20110909.ann
+    INFO: Downloading annotation database from annoDB/refGene-hg18_20110909.DB.gz
+    refGene-hg18_20110909.DB.gz: 100% [============================] 1,803,587.0 1.4M/s in 00:00:01
+    Binning ranges: 100% [============================================] 40,067 100.7K/s in 00:00:00
+    INFO: Using annotation DB refGene as refGene in project use.
     INFO: refseq Genes
     
 
@@ -233,17 +293,18 @@ Some databases uses `hg18`, but most uses `hg19`. The default databases (the one
 
     % vtools use refGene_exon
     
+    INFO: Choosing version refGene_exon-hg18_20110909 from 5 available databases.
+    INFO: Downloading annotation database annoDB/refGene_exon-hg18_20110909.ann
+    INFO: Downloading annotation database from annoDB/refGene_exon-hg18_20110909.DB.gz
+    refGene_ex...8_20110909.DB.gz: 100% [==========================] 9,336,417.0 2.4M/s in 00:00:03
+    Binning ranges: 100% [===========================================] 389,772 114.1K/s in 00:00:03
+    INFO: Using annotation DB refGene_exon as refGene_exon in project use.
+    INFO: refseq Genes
 
-    INFO: Downloading annotation database from annoDB/refGene_exon.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/refGene_exon-hg19_20110909.DB.gz
-    INFO: Using annotation DB refGene_exon in project test.
-    INFO: Exon locations of refseq Genes
-    
 
 
 
     % vtools use dbNSFP
-    
 
     INFO: Downloading annotation database from annoDB/dbNSFP.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/dbNSFP-hg18_hg19_2_0b4.DB.gz
@@ -320,14 +381,20 @@ After you use these databases, you could get the details of them using command `
 
 
 About multiple versions of the same database: 
+{{% notice tip %}}
+The default database without version name always refers to the latest version. For example, `dbSNP` could be `dbSNP-hg19_135`, and then `dbSNP-hg19_138` after version 138 becomes available. 
+{{% /notice %}}
 
-*   The default database without version name always refers to the latest version. For example, `dbSNP` could be `dbSNP-hg19_135`, and then `dbSNP-hg19_138` after version 138 becomes available. 
-*   You can use a specific version of a database by specifying its full name. The database will appear without version name in your project (e.g. as `dbSNP`). 
-*   You can use the `--as` option to give databases different names if you would like to use different versions of the same database in the project. 
+{{% notice tip %}}
+You can use a specific version of a database by specifying its full name. The database will appear without version name in your project (e.g. as `dbSNP`). 
+{{% /notice %}}
+
+{{% notice tip %}}
+You can use the `--as` option to give databases different names if you would like to use different versions of the same database in the project. 
+{{% /notice %}}
 
 
-
-### Advanced usages of annotation databases
+#### 2.2 Advanced usages of annotation databases
 
 Each database provide a number of fields and one or more default methods to link them to a project database. For example, if you look at the output of `vtools show annotation refGene`, you can see that this is a range-based database that is linked to a project using fields `chr`, `txStart`, and `txEnd`, which are chromosome name and start and ending of transcription region. The database, however, has other fields such as `cdsStart` and `cdsEnd` so you can link the database to a project using these two fields to identify variants in the coding regions of ref seq genes. You can even use regions such as `txStart-5000, txEnd+5000` to extend each region by 5k to include variants that are in vicinity of ref seq genes. 
 
@@ -567,7 +634,7 @@ Obviously, all variants belonging to the same cytoband will have the same gwas h
 
 
 
-### Create your own annotation databases
+#### 2.3 Create your own annotation databases
 
 You may create your own annotation databases to annotate, prioritize, and filter variants in your project. For example if you have a huge amount of data and you do not want to import all of them into a project (to reduce size and improve performance of the main project database), you can create annotation databases from input data. 
 
@@ -577,7 +644,8 @@ The general process to create an annotation database is
 2.  Use command `vtools use NAME.ann` to create an annotation database and use it in the project. You can specify source files using option `--files`. A option `--rebuild` will force the rebuild of database from source file and generate a versioned and compressed `.DB.gz` file. 
 
 
+{{% notice tip %}}
+The [anno_utils][1] pipelines provide a few pipelines that can help you create annotation databases from various resources. For example, if you have a project with variants from unaffected individuals, you can export the variants as an annotation database. This database can be used by other projects to filter variants.
+{{% /notice %}}
 
-The [anno_utils][1][?][1] pipelines provide a few pipelines that can help you create annotation databases from various resources. For example, if you have a project with variants from unaffected individuals, you can export the variants as an annotation database. This database can be used by other projects to filter variants.
-
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.AnnoUtils?action=edit
+ [1]: /vat-docs/documentation/pipelines/other-pipelines/anno_utils/

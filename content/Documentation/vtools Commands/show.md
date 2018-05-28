@@ -7,10 +7,10 @@ weight = 6
 
 
 
-# Display project and system information
+## Display project and system information
 
 
-## Usage
+### 1. Usage
 
     % vtools show -h
     
@@ -70,7 +70,7 @@ weight = 6
 
 
 
-## Details
+### 2. Details
 
 Command `` `vtools show `` displays various project and system information. It accepts type of item to display as its first parameter, followed by names of items if information about particular items are needed. Generally speaking: 
 
@@ -82,7 +82,7 @@ Command `` `vtools show `` displays various project and system information. It a
 
 
 
-### Show project (`project`)
+#### 2.1 Show project (`project`)
 
 Command `` `vtools show `` without parameter and `` `vtools show project `` displays general information about a project, including project name, reference genome, existing variant tables, and used annotation databases. 
 
@@ -93,8 +93,7 @@ Let us load a fairly large project from an online snapshot `vt_ExomeAssociation`
 
 
     % vtools init show
-    % vtools admin --load_snapshot vt_ExomeAssociation
-    
+    % vtools admin --load_snapshot vt_ExomeAssociation   
 
     Downloading snapshot vt_ExomeAssociation.tar.gz from online
     INFO: Load genotypes
@@ -105,7 +104,6 @@ Let us load a fairly large project from an online snapshot `vt_ExomeAssociation`
 
     % vtools show
     
-
     Project name:                show
     Primary reference genome:    hg19
     Secondary reference genome:  None
@@ -121,14 +119,13 @@ The project has 2 variant tables, the master variant table and another variant t
 
 
 
-### Show variant and other tables (`tables` and `table`)
+#### 2.2 Show variant and other tables (`tables` and `table`)
 
 Command `vtools show tables` lists all variant tables, their creation dates and comments (if available). This command does not accept any additional parameter. 
 
 <details><summary> Examples: Show all variant tables </summary> 
 
-    % vtools show tables
-    
+    % vtools show tables 
 
     table      #variants     date  message
     rare          19,785    Jan24  rare variants
@@ -141,8 +138,7 @@ Command `vtools show tables` lists all variant tables, their creation dates and 
 
 <details><summary> Examples: Show details of a variant table</summary> Show details of a table `rare`, note that you can specify multiple tables after command `vtools show table`. 
 
-    % vtools show table rare
-    
+    % vtools show table rare   
 
     Name:                   rare
     Type:                   variant
@@ -158,7 +154,7 @@ Command `vtools show tables` lists all variant tables, their creation dates and 
 
 
 
-### Show samples (`samples`)
+#### 2.3 Show samples (`samples`)
 
 Command `vtools show samples` lists samples, files from which samples are imported, and phenotypes associated with each samples. The command by default lists all samples and phenotypes, but you can list part of the information by 
 
@@ -172,7 +168,6 @@ Command `vtools show samples` lists samples, files from which samples are import
 <details><summary> Examples: Show all or selected samples, with or without phenotype</summary> Show all samples: 
 
     % vtools show samples -l 10
-    
 
     sample_name  filename       gender  age  bmi          status  exposure
     SAMP10       assoctest.dat  1       44   27.93818994  0       0
@@ -192,7 +187,6 @@ Show only male samples using condition `gender=1` to select samples
 
     % vtools show samples 'gender=1' -l 10
     
-
     sample_name  filename       gender  age  bmi          status  exposure
     SAMP10       assoctest.dat  1       44   27.93818994  0       0
     SAMP100      assoctest.dat  1       47   33.47268746  0       0
@@ -209,8 +203,7 @@ Show only male samples using condition `gender=1` to select samples
 
 Suppressing phenotypes and only show basic sample information 
 
-    % vtools show samples  -l 10 -v0
-    
+    % vtools show samples  -l 10 -v0 
 
     sample_name  filename
     SAMP10       assoctest.dat
@@ -230,14 +223,13 @@ Suppressing phenotypes and only show basic sample information
 
 
 
-### Show all or selected phenotypes (`phenotypes`)
+#### 2.4 Show all or selected phenotypes (`phenotypes`)
 
 Command `vtools show phenotypes` is similar to `vtools show samples` but it does not show filename information and can display only specified phenotypes. 
 
 <details><summary> Examples: Show all or selected phenotypes</summary> Show all phenotypes 
 
     % vtools show phenotypes -l 10
-    
 
     sample_name  gender  age  bmi          status  exposure
     SAMP10       1       44   27.93818994  0       0
@@ -257,7 +249,6 @@ Show values of specified phenotypes
 
     % vtools show phenotypes exposure -l 10
     
-
     sample_name  exposure
     SAMP10       0
     SAMP100      0
@@ -280,7 +271,7 @@ Another command `vtools phenotype --output` can also output selected phenotypes.
 
 
 
-### Show genotype information for each sample (`genotypes`)
+#### 2.5 Show genotype information for each sample (`genotypes`)
 
 Command `vtools show genotypes shows the number of genotypes and names of genotype info fields of each sample. Such information are useful for the calculation of summary statistics of genotypes (e.g. depth of coverage) using commands `vtools phenotype --from_stat` (statistics for each sample) and `vtools update --from_stat@@ (statistics for each variant). 
 
@@ -288,7 +279,6 @@ Command `vtools show genotypes shows the number of genotypes and names of genoty
 
     % vtools show genotypes -l 10	
     
-
     sample_name  filename       num_genotypes  sample_genotype_fields
     SAMP2        assoctest.dat  26612          GT
     SAMP3        assoctest.dat  26613          GT
@@ -307,7 +297,7 @@ Command `vtools show genotypes shows the number of genotypes and names of genoty
 
 
 
-### Show variant info and annotation fields (`fields`)
+#### 2.6 Show variant info and annotation fields (`fields`)
 
 Command `vtools show fields`) lists all variant info fields (fields in the master variant table) and annotation fields (fields provided by annotation databases). Although these fields are from different sources, they can be used in the same manner to identify and filter variants (c.f. `vtools select`). If you only need to see a list of available fields, you can use option `-v0` to suppress comments. 
 
@@ -315,34 +305,26 @@ Command `vtools show fields`) lists all variant info fields (fields in the maste
 
     % vtools show fields
     
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of
+                            an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of
+                            an deletion)
+    variant.cnt (int)
+    variant.hom (int)
+    variant.het (int)
+    variant.other (int)
+    variant.num (int)
+    variant.missing (int)
+    variant.wtGT (int)
+    variant.mutGT (int)
+    variant.af (float)
 
-    variant.chr
-    variant.pos
-    variant.ref
-    variant.alt
-    variant.cnt
-    variant.hom
-    variant.het
-    variant.other
-    variant.num
-    variant.missing
-    variant.wtGT
-    variant.mutGT
-    variant.af
-    knownGene.name               Name of gene such as uc001aaa.3
-    knownGene.chr
-    knownGene.strand             which DNA strand contains the observed alleles
-    knownGene.txStart            Transcription start position
-    knownGene.txEnd              Transcription end position
-    knownGene.cdsStart           Coding region start
-    knownGene.cdsEnd             Coding region end
-    knownGene.exonCount          Number of exons
-    
 
 You can use option `-v0` to suppress comments (which can be long): 
 
-    % vtools show fields -v0
-    
+    % vtools show fields -v0 
 
     variant.chr
     variant.pos
@@ -357,21 +339,12 @@ You can use option `-v0` to suppress comments (which can be long):
     variant.wtGT
     variant.mutGT
     variant.af
-    knownGene.name
-    knownGene.chr
-    knownGene.strand
-    knownGene.txStart
-    knownGene.txEnd
-    knownGene.cdsStart
-    knownGene.cdsEnd
-    knownGene.exonCount
-    
 
 </details>
 
 
 
-### Show annotation databases (`annotations` and `annotation`)
+#### 2.7 Show annotation databases (`annotations` and `annotation`)
 
 Command `vtools show annotations` displays all available annotation databases with their descriptions. Because of the growing number of annotation databases, the output of this command can be very long. You can however 
 
@@ -444,67 +417,82 @@ You can list a subset of annotation databases by specifying one or more patterns
 
     % vtools show annotations thousand ccds
     
-
     ccdsGene-hg19_20110909  CCDS Genes
     ccdsGene-hg19_20111206  CCDS Genes
-    ccdsGene                CCDS Genes
+    ccdsGene-hg19_20130904  High-confidence human gene annotations from the Consensus Coding
+                            Sequence (CCDS) project.
+    ccdsGene-hg38_20171008  High-confidence human gene annotations from the Consensus Coding
+                            Sequence (CCDS) project.
     ccdsGene_exon-hg19_20110909 CCDS exons
     ccdsGene_exon-hg19_20111206 CCDS exons
-    ccdsGene_exon           CCDS exons
+    ccdsGene_exon-hg19_20130904 High-confidence human gene annotations from the Consensus Coding
+                            Sequence (CCDS) project. This database contains all exon regions of the
+                            CCDS genes.
+    ccdsGene_exon-hg38_20171008 CCDS exons
     ccdsGene_exon_hg19-20111206 CCDS exons
     ccdsGene_hg19-20111206  CCDS Genes
-    thousandGenomes-hg19_20110909 1000 Genomes VCF file (available from:
-                            ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/v4
-                            .0/00-All.vcf.gz).
-    thousandGenomes-hg19_201202 1000 Genomes VCF file (available from:
-                            ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/v4
-                            .0/00-All.vcf.gz).
-    thousandGenomes         1000 Genomes VCF file (available from:
-                            ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/v4
-                            .0/00-All.vcf.gz).
-    thousandGenomesEBI-hg19_phase1_release_v3_20101123 1000 Genomes VCF file
-                            analyzed in March 2012 from data generated from phase
-                            1 of the project (available from: ftp://ftp.1000genome
-                            s.ebi.ac.uk/vol1/ftp/release/20110521/ALL.wgs.phase1_r
-                            elease_v3.20101123.snps_indels_sv.sites.vcf.gz).
-    thousandGenomesEBI      1000 Genomes VCF file analyzed in March 2012 from data
-                            generated from phase 1 of the project (available from:
-                            ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110
-                            521/ALL.wgs.phase1_release_v3.20101123.snps_indels_sv.
-                            sites.vcf.gz).
+    thousandGenomes-hg19_20130502 Phase 3 data of the thousand genomes project, created from
+                            ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.wgs.p
+                            hase3_shapeit2_mvncall_integrated_v5a.20130502.sites.vcf.gz
+    thousandGenomes-hg19_v3_20101123 1000 Genomes VCF file analyzed in March 2012 from data
+                            generated from phase 1 of the project (available from: ftp://ftp.1000ge
+                            nomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.wgs.phase1_release_v3.201
+                            01123.snps_indels_sv.sites.vcf.gz).
+    thousandGenomes-hg19_v5b_20130502 1000 Genomes VCF file analyzed in February 2015 from data
+                            generated from phase 1 of the project (available from: ftp://ftp.1000ge
+                            nomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvnca
+                            ll_integrated_v5b.20130502.sites.vcf.gz.)
     
 
 If you only need to see a list annotation databases without description, you can pass the `-v0` option, 
 
     % vtools show annotations gene -v0
     
-
     CancerGeneCensus-20111215
     CancerGeneCensus-20120315
-    CancerGeneCensus
+    CancerGeneCensus-20130711
+    CancerGeneCensus-20170912
+    EntrezGene-20131028
+    EntrezGene-20170919
+    EntrezGene2RefSeq-20131028
+    EntrezGene2RefSeq-20170919
     ccdsGene-hg19_20110909
     ccdsGene-hg19_20111206
-    ccdsGene
+    ccdsGene-hg19_20130904
+    ccdsGene-hg38_20171008
     ccdsGene_exon-hg19_20110909
     ccdsGene_exon-hg19_20111206
-    ccdsGene_exon
+    ccdsGene_exon-hg19_20130904
+    ccdsGene_exon-hg38_20171008
     ccdsGene_exon_hg19-20111206
     ccdsGene_hg19-20111206
+    dbNSFP_gene-2_0
+    dbNSFP_gene-2_1
+    dbNSFP_gene-2_3
+    dbNSFP_gene-2_4
+    dbNSFP_gene-2_7
+    dbNSFP_gene-3_5a
     knownGene-hg18_20110909
     knownGene-hg18_20121219
     knownGene-hg19_20110909
     knownGene-hg19_20121219
-    knownGene
+    knownGene-hg19_20130904
+    knownGene-hg38_20160328
     knownGene_exon-hg18_20110909
     knownGene_exon-hg19_20110909
-    knownGene_exon
+    knownGene_exon-hg19_20130904
+    knownGene_exon-hg38_20160328
     refGene-hg18_20110909
     refGene-hg19_20110909
-    refGene
+    refGene-hg19_20130904
+    refGene-hg38_20170201
+    refGene-mm10_20141201
+    refGene_coding-hg19_20130904
     refGene_exon-hg18_20110909
     refGene_exon-hg19_20110909
-    refGene_exon
-    
+    refGene_exon-hg19_20130904
+    refGene_exon-mm10_20141201
+    refGene_exon-mm10_20171008
 
 </details>
 
@@ -512,8 +500,7 @@ After using an annotation database with command `vtools use`, you can view the d
 
 <details><summary> Examples: Show details of an annotation database</summary> 
 
-    % vtools show annotation knownGene
-    
+    % vtools show annotation knownGene   
 
     Annotation database knownGene (version hg19_20121219)
     Description:            UCSC Known Genes
@@ -533,7 +520,6 @@ After using an annotation database with command `vtools use`, you can view the d
 
     % vtools show annotation knownGene -v2
     
-
     DEBUG:
     DEBUG: vtools show annotation knownGene -v2
     DEBUG: Using temporary directory /var/folders/5b/4qkyrb3519qgn77s62853xrh0000gn/T/tmp3kkA40
@@ -603,7 +589,7 @@ After using an annotation database with command `vtools use`, you can view the d
 
 
 
-### Show details of annotation tracks (`track`)
+#### 2.8 Show details of annotation tracks (`track`)
 
 *variant tools* supports the use of annotation tracks to annotate and select variants. These tracks can be in tabix-indexed vcf files, indexed BAM file, bigBed and bigWig format and provides differnt fields through the second parameter of function `track(filename, field)`. Command `vtools show track` is provided to display the details of each track file. 
 
@@ -613,7 +599,6 @@ After using an annotation database with command `vtools use`, you can view the d
 
     % vtools show track CEU.vcf.gz | head -30
     
-
     Version                 VCF v4.0
     Number of fields:       69
     
@@ -656,7 +641,7 @@ Although cannot be used as track files, `vtools show track` can display informat
 
 
 
-    % vtools show track ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20110521/ALL.chr1.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz | head -30
+    % vtools show track http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20110521/ALL.chr1.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz | head -30
     
 
     Version                 VCF v4.1
@@ -1059,7 +1044,7 @@ The tags are also important if you need to filter reads by tag values. For examp
 
 
 
-### Show supported input and output file formats (`formats` and `format`)
+#### 2.9 Show supported input and output file formats (`formats` and `format`)
 
 *variant tools* repository has a number of file format description files `.fmt` that defines a formats of files that can be used for commands `vtools import`, `vtools update --from_file`, and `vtools export`. To get a complete list of supported file formats, you can use command `vtools show formats`. Options `-v0` and `--limit` are supported to suppress comment and limit number of formats to display, respectively. 
 
@@ -1199,7 +1184,7 @@ You can use command `vtools show format FMT` to list the details of a format. No
 
 
 
-### Show association tests (`tests` and `test`)
+#### 2.10 Show association tests (`tests` and `test`)
 
 Command `vtools show tests` shows a list of association tests that can be used in command `vtools associate`. Similar to other commands, option `-v0` and `--limit` can be used to suppress description of tests and limit the number of tests to display. 
 
@@ -1363,7 +1348,7 @@ If you are interested in more details of a particular test, you can use command 
 
 
 
-### Show currently available snapshots (`snapshots` and `snapshot`)
+#### 2.11 Show currently available snapshots (`snapshots` and `snapshot`)
 
 You can save snapshots of the current project and revert to them later. This allows you to recover a project when it is damaged by wrong operations or system failure, and more importantly, allows you to explore different processing pipelines with a saved baseline stage. The command `vtools show snapshots` lists information about all snapshots. Names starting with `vt_` are online snapshots that will be downloaded automatically using command `vtools admin --load_snapshot NAME`. These snapshots contain sample projects and data and are ideal for learning *variant tools*. 
 
@@ -1463,7 +1448,7 @@ You can show the details of such snapshots using command `vtools show snapshot N
 
 
 
-### Show a list of runtime options (`runtime_options` and `runtime_option`)
+#### 2.12 Show a list of runtime options (`runtime_options` and `runtime_option`)
 
 *variant tools* provides a number of runtime options that can be used to fine-tune the behavior of commands. You can use command `vtools show runtime_options` to get the name and description of these options. If you simply need to see a list of options, you can pass option `-v0` to suppress descriptions. Please see command `vtools admin --set_runtime_option` for details. 
 
@@ -1549,4 +1534,4 @@ Furthermore, if you only need to check the exiting value of a runtime option, yo
     ~/.variant_tools
     
 
-(:exampleend</summary>
+</details>

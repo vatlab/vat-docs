@@ -91,7 +91,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/txt/</loc>
   </url>
   
   <url>
@@ -147,6 +147,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/development/getinvolved/</loc>
   </url>
   
@@ -171,10 +175,6 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</loc>
   </url>
   
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/csv/</loc>
   </url>
   
   <url>
@@ -283,7 +283,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/plink/</loc>
   </url>
   
   <url>
@@ -359,11 +359,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/rsname/</loc>
   </url>
   
   <url>
@@ -383,7 +379,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/new/</loc>
   </url>
   
   <url>
@@ -467,6 +463,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/tped/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/variant_stat/</loc>
   </url>
   
@@ -504,6 +504,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/inbreeding_coefficient/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/map/</loc>
   </url>
   
   <url>
@@ -608,6 +612,14 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools_files/saved_resource/</loc>
   </url>
   
   <url>
