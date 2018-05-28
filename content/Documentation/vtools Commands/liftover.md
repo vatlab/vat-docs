@@ -56,22 +56,19 @@ Attach:liftover.png
 1.  This feature is unavailable under windows because UCSC liftOver tool does not support windows. 
 2.  Because the UCSC liftover tools does not guarantee complete translation, variants that failed to map will have missing alternative coordinates. 
 
-<details><summary> Liftover from hg18 to hg19</summary> The following example demonstrates how to liftOver a project from hg18 to hg19. Note that the UCSC liftOver tool and needed chain files are automatically downloaded if they are not available. 
+<details><summary> Liftover from hg19 to hg38</summary> The following example demonstrates how to liftOver a project from hg18 to hg19. Note that the UCSC liftOver tool and needed chain files are automatically downloaded if they are not available. 
 
 
 
-    % vtools liftover hg19
+    % vtools liftover hg38
     
 
-    INFO: Downloading liftOver tool from UCSC
     INFO: Downloading liftOver chain file from UCSC
     INFO: Exporting variants in BED format
-    Exporting variants: 100% [======================>] 12,994 151.9K/s in 00:00:00
+    Exporting variants: 100% [===============================] 288 110.5K/s in 00:00:00
     INFO: Running UCSC liftOver tool
-    INFO: Reading liftover chains
-    Mapping coordinates
-    INFO: 280 records failed to map.
-    Updating table variant: 100% [======================>] 12,714 31.2K/s in 00:00:00
+    Updating table variant: 100% [============================] 288 780.0/s in 00:00:00
+
     
 
 After the liftOver operation, three more fields are added to the master variant table (alt\_bin, alt\_chr, alt_pos) 
@@ -79,6 +76,13 @@ After the liftOver operation, three more fields are added to the master variant 
 
 
     % vtools show table variant
+
+    Name:                   variant
+    Description:            Master variant table
+    Creation date:          May28
+    Command:
+    Fields:                 variant_id, bin, chr, pos, ref, alt, alt_bin, alt_chr, alt_pos
+    Number of variants:     288
     
 
     variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
@@ -105,26 +109,23 @@ After the liftOver operation, three more fields are added to the master variant 
     
 
     Project name:                test
-    Primary reference genome:    hg18
-    Secondary reference genome:  hg19
-    Database engine:             sqlite3
+    Primary reference genome:    hg19
+    Secondary reference genome:  hg38
+    Storage method:              hdf5
     Variant tables:              variant
     Annotation databases:
     
 
-    % vtools liftover hg19 --flip
+    % vtools liftover hg38 --flip
     
 
-    INFO: Downloading liftOver tool from UCSC
     INFO: Downloading liftOver chain file from UCSC
     INFO: Exporting variants in BED format
-    Exporting variants: 100.0% [=========>] 577 55.9K/s in 00:00:00
+    Exporting variants: 100% [===============================] 288 116.2K/s in 00:00:00
     INFO: Running UCSC liftOver tool
-    INFO: Reading liftover chains
-    Mapping coordinates
-    INFO: 5 records failed to map.
-    INFO: Flipping primary and alterantive reference genome
-    Updating table variant: 100.0% [===========>] 572 12.7K/s in 00:00:00
+    INFO: Flipping primary and alternative reference genome
+    Updating table variant: 100% [============================] 288 612.1/s in 00:00:00
+
     
 
 
@@ -137,9 +138,9 @@ Interruption of the flipping process will leave the project unusable because of 
     
 
     Project name:                test
-    Primary reference genome:    hg19
-    Secondary reference genome:  hg18
-    Database engine:             sqlite3
+    Primary reference genome:    hg38
+    Secondary reference genome:  hg19
+    Storage method:              hdf5
     Variant tables:              variant
     Annotation databases: 
     
