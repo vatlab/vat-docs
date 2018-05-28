@@ -95,9 +95,9 @@ The vcf format can store arbitary variant and genotype information fields. *vari
 
 {{% notice tip %}}
 
-1. If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
+ * If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
 
-2. If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized `.fmt` file to import these. This process can be simplified using pipeline [import_vcf][6][?][6]. The command to use is similar to `vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19`.
+ * If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized `.fmt` file to import these. This process can be simplified using pipeline [import_vcf][6][?][6]. The command to use is similar to `vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19`.
 
 {{% /notice %}}
 
@@ -280,7 +280,7 @@ The vcf format accepts a number of parameters to customize the way how genotypes
     % vtools import CEU_hg38.vcf --build hg38 --var_info AA AC AN DP --geno
 
     INFO: Importing variants from CEU_hg38.vcf (1/1)
-    CEU_hg38.vcf: 100% [==========================================================================================================================================================================] 306 13.1K/s in 00:00:00
+    CEU_hg38.vcf: 100% [======================================] 306 13.1K/s in 00:00:00
     INFO: 292 new variants (292 SNVs) from 306 lines are imported.
 
 With this command, no genotype is imported 
@@ -339,11 +339,9 @@ at the end of this file, and import this field using
 Command `` vtools import `` imports variants, sample genotypes and related information fields from formats other than VCF as well. The imported variants are saved to the master variant table `variant` of the project, along with their information fields. 
 
 {{% notice tip %}}
+1. Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here]([1]).
 
- 1. Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here]([1]).
-
- 2. It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](Documentation/vtools Commands/update.md), or built into an annotation database to reduce the size of the project. 
-
+2. It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](Documentation/vtools Commands/update.md), or built into an annotation database to reduce the size of the project. 
 {{% /notice %}}
 
 
