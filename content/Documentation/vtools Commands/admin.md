@@ -197,10 +197,10 @@ In the first option, all selected samples are renamed to `name`. In the second o
 
 
 
-    vtools init admin -f
-    vtools admin --load_snapshot vt_testData
-    vtools import V*.vcf --build hg19
-    vtools import CASAVA18_SNP.txt --format CASAVA18_snps
+    % vtools init admin -f
+    % vtools admin --load_snapshot vt_testData
+    % vtools import V*_hg38.vcf --build hg38
+   
     
 
 There are four samples 
@@ -211,17 +211,17 @@ There are four samples
     
 
     sample_name	filename
-    SAMP1	V1.vcf
-    SAMP1	V2.vcf
-    SAMP1	V3.vcf
-    max_gt	CASAVA18_SNP.txt
+    SAMP1       V1_hg38.vcf
+    SAMP2       V2_hg38.vcf
+    SAMP3       V3_hg38.vcf
+ 
     
 
 The first three samples share the same name, which can lead to erroneous results during analysis (e.g. `vtools associate` will treat them as genotypes from the same sample). We can rename them using commands 
 
-    % vtools admin --rename_samples 'filename="V1.vcf"' V1
-    % vtools admin --rename_samples 'filename="V2.vcf"' V2
-    % vtools admin --rename_samples 'filename="V3.vcf"' V3
+    % vtools admin --rename_samples 'filename="V1_hg38.vcf"' V1
+    % vtools admin --rename_samples 'filename="V2_hg38.vcf"' V2
+    % vtools admin --rename_samples 'filename="V3_hg38.vcf"' V3
     
 
     INFO: 1 samples with names SAMP1 are renamed to V1
@@ -235,14 +235,14 @@ The samples now have different names:
     
 
     sample_name	filename
-    V1	V1.vcf
-    V2	V2.vcf
-    V3	V3.vcf
-    max_gt	CASAVA18_SNP.txt
+    V1          V1_hg38.vcf
+    V2          V2_hg38.vcf
+    V3          V3_hg38.vcf
     
-{{% notice tip %}}
+    
+
 If you would like to change names of multiple samples according to a pattern, you can use the second form of the command. For example, the following command changes samples `V1`, `V2`, and `V3` to `SAMP1`, `SAMP2`, and `SAMP3`: 
-{{% /notice %}}
+
 
     % vtools admin --rename_samples 1 V SAMP
     
@@ -258,10 +258,9 @@ If you would like to change names of multiple samples according to a pattern, yo
     
 
     sample_name	filename
-    SAMP1	V1.vcf
-    SAMP2	V2.vcf
-    SAMP3	V3.vcf
-    max_gt	CASAVA18_SNP.txt
+    SAMP1       V1_hg38.vcf
+    SAMP2       V2_hg38.vcf
+    SAMP3       V3_hg38.vcf
     
 
 The command might look strange to you, but the first `1` is a condition to select all samples (`true`), the second and third parameter changes the first incidence of `V` to `SAMP` for all matched sample names. 
@@ -276,9 +275,18 @@ If you would like to prefix sample names by a string (e.g. `V1` -> `SAMP_V1`), y
 
 #### 2.3 Merge samples by sample's name (`--merge_samples`)
 
+##### This function is only supported when STOREMODE is set to sqlite. 
+
 Command `vtools admin --merge_samples` merges samples with the same names to a single sample. This command is used when genotypes of a sample are stored in several files (e.g. chromosome by chromosome, or seprate files for SNPs and Indels resulting from the Illumina pipeline) and are imported as separate samples. These samples should be merged together because otherwise number of samples in the variant tools project will not match number of physical samples, and lead to erronous results during analysis. Because this command merge samples by names, samples to be merged should be renamed to have the same names if needed. 
 
 <details><summary> Examples: Merge samples with same names</summary> All our samples have different names now so we have to rename one of them in order to merge it with another sample, 
+
+    % vtools init admin -f
+    % vtools admin --load_snapshot vt_testData
+    % vtools import V1.vcf --build hg18
+    % vtools import V2.vcf 
+    % vtools import V3.vcf 
+    % vtools import CASAVA18_SNP.txt --format CASAVA18_snps 
 
     % vtools admin --rename_samples 'sample_name = "max_gt"' SAMP3
     
@@ -353,9 +361,9 @@ A lot of variant tables can be generated during the analysis and it can be diffi
 <details><summary> Examples: Change name and comment of variant tables</summary> Let us get a sample project and create a few variant tables 
 
     vtools init testProj
-    vtools admin --load_snapshot vt_simple
+    vtools import V*_hg38.vcf --build hg38
     vtools select variant -t 'all variant'
-    vtools select variant --samples 'filename = "V1.vcf"' -t fromV1 'variants from v1'
+    vtools select variant --samples 'filename = "V1_hg38.vcf"' -t fromV1 'variants from v1'
     
 
 The project has three tables, 
@@ -365,10 +373,10 @@ The project has three tables,
     % vtools show tables
     
 
-    table                      #variants     date message
-    all variant                    1,611    Jul15
-    fromV1                           989    Jul15 variants from v1
-    variant                        1,611
+    table          #variants     date message
+    all variant        2,051    May29
+    fromV1             1,269    May29 variants from v1
+    variant            2,051    May29 Master variant table
     
 
 You can rename the `all variant` to `all_variant` 
@@ -394,10 +402,10 @@ The table now has a new name and a description, but its creation date and comman
 
     Name:                   all_variant
     Description:            A replicate of the master variant table
-    Creation date:          Jul15
-    Command:                vtools select variant -t 'all variant'
-    Fields:                 variant_id
-    Number of variants:     1611
+    Creation date:          May29
+    Command:                select variant -t "all variant"
+    Fields:                 variant_id, chr
+    Number of variants:     2051
     
 
 </details>
@@ -419,8 +427,6 @@ Sometimes when you get a bunch of data, look everywhere in the folder and emails
     
 
 We would like to import data from `V1.vcf`, `V2.vcf`, and `V3.vcf` but do not know the correct reference genome to use, so we use `hg19` 
-
-
 
     % vtools import V*.vcf --build hg19
     
