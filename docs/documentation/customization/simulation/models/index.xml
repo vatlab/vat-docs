@@ -20,10 +20,10 @@
     
     <item>
       <title>Peng2014_ex2</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/</link>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/pen2/</guid>
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng2/</guid>
       <description>Second example in Peng (2014) Genetic Epidemiology Usage % vtools show simulation Peng2014_ex2 Simulation of case control samples for 20 genes and analyze samples of different sizes (1000, 2000, 3000, 4000 cases and matching number of controls) draw from European, Mexican American (mixed and matched case and control), and from both Asian (cases) and European (controls) populations for a mismatch design. This simulation model has been used to simulate data for the second example in paper &amp;quot;Reproducible Simulations of realistic samples for next-gen sequencing studies using Variant Simulation Tools&amp;quot;.</description>
     </item>
     

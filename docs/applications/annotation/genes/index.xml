@@ -20,7 +20,7 @@ ccdsGene % vtools show annotation ccdsGene -v2 Annotation database ccdsGene (ver
     </item>
     
     <item>
-      <title>Hugo gene</title>
+      <title>HugoGene</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

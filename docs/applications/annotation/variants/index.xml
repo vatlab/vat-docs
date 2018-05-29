@@ -20,7 +20,7 @@ If you use COSMIC annotations, please credit the project with the following ackn
     </item>
     
     <item>
-      <title>sbNSFP</title>
+      <title>dbNSFP</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -41,7 +41,7 @@ dbNSFP There can be frequent changes of name and their meanings of the fields ac
     </item>
     
     <item>
-      <title>linkage-physical map</title>
+      <title>linkage physical map</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -50,7 +50,7 @@ dbNSFP There can be frequent changes of name and their meanings of the fields ac
     </item>
     
     <item>
-      <title>Database of Genomic Variants</title>
+      <title>database</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -61,11 +61,11 @@ Database of Genomic Variants Database of genomic variants is a curated catalogue
     </item>
     
     <item>
-      <title>Exome Sequencing Project</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/</link>
+      <title>ESP</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/esp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/exomesequencingpro/</guid>
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/esp/</guid>
       <description>Variants from the Exome Sequencing Project (ESP) The EVS annotation source contains exome sequencing variants retrieved from the Exome Variant Server (EVS) for the NHLBI Exome Sequencing Project (ESP). The evs annotation data was generated from approximately 2500 exomes and evs_5400 from approximately 5400 exomes. (7500 exomes are the next milestone for this project in the next couple of months - see their website for project details: http://evs.gs.washington.edu/EVS/). Currently minor allele frequencies are given for European American and African American populations - see below for additional fields that you can use for variant selection and annotation.</description>
     </item>
     
@@ -80,7 +80,7 @@ Usage Here are the available gwasCatalog fields for annotation and filtering.</d
     </item>
     
     <item>
-      <title>HapMap</title>
+      <title>hapmap</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/hapmap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -90,7 +90,7 @@ Usage Here are the available gwasCatalog fields for annotation and filtering.</d
     </item>
     
     <item>
-      <title>Thousand Genomes</title>
+      <title>thousandGenomes</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/thousand/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

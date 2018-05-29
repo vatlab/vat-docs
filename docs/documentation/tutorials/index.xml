@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on Variant Tools</title>
+    <link>https://vatlab.github.io/vat-docs/documentation/tutorials/</link>
+    <description>Recent content in Tutorials on Variant Tools</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/documentation/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quick start</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</guid>
+      <description>Quick Start Guide variant tools is a software toolset that facilitates the import, annotation and analysis of your variants. This 10-minute quick start guide steps you through a minimal real-world data set so that you can get a feel for the software and assess its helpfulness. For demonstrations on more real-world data analysis, please refer to the software tutorials
+1. Installation Required software:
+ Python 2.7.2 or higher or Python 3.</description>
+    </item>
+    
+    <item>
+      <title>ACM-BCB</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/</guid>
+      <description>Tutorial for ACM-BCB 2014 1. Integrated Analysis of Next-Generation-Sequencing Data using Variant Tools This part of the talk gives an overview of variant tools, its concepts, components, and tutorials on how to import, annotate, and select variants.
+ Tutorial Sample data Slides  2. Association Analysis of Whole Exome Sequence Data using Variant Association Tools This part of the talk gives a minimal demonstration on data quality control and association analysis of rare variants.</description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/case44ctrl20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/case44ctrl20/</guid>
+      <description>Processing 44 whole genome cases and 200 exome controls 1. Data source Whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls. This tutorial demonstrates the same set of commands used in the home page presentation but uses the complete dataset. The dataset used in this tutorial is not publicly available.
+2. Import data Create a project
+# Performance data is collected on a Mac Workstation with 2x2.</description>
+    </item>
+    
+    <item>
+      <title>Illumina</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/illumina5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/illumina5/</guid>
+      <description>Analyze five samples from Illumina, a tutorial 1. Data source Whole genome-sequencing data for 4 cases and 1 control. Raw data and called variants are provided by Illumina. The SNV and Indel variants are called using CASAVA v18 and are stored separately for each chromosome.
+2. Import data Create a project
+# Performance data is collected on a Mac Workstation with 2x2.26G Quad-Core Xeon processor with 8G RAM. % vtools init ILLUMINA --force  Import data that are outputted from CASAVA v18.</description>
+    </item>
+    
+    <item>
+      <title>Compare</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/compare/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/compare/</guid>
+      <description>Compare variants for the same samples called by complete genomics and illumina 1. Data Samples from two patients were sent to Complete Genomics and Illumina for whole-genome sequencing analysis. The variants are called by Complete Genomics using Complete Genomics Anslysis (CGA) package, and CASAVA 1.8 by Illumina. Before we do any further analysis, we are interested in knowing whether or not these two platforms yield comparable results.
+As always, we need to find an empty directory and create a new project:</description>
+    </item>
+    
+    <item>
+      <title>Select</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/select/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/select/</guid>
+      <description>Selecting variants belong to specified genes 1. Data We have whole genome sequencing data for more than 18M variants. After some initial analysis, three genes geneA, geneB, and geneC caught our eyes and we would like to further investigate these genes. We assume that we already have a project with all the variants imported
+2. Find variants that belong to the genes We first need to get a list of genes</description>
+    </item>
+    
+    <item>
+      <title>Detailed analysis</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</guid>
+      <description>Analysis of one genetic variant 1. Data After some preliminary analysis, we find one particular variant (179248034 on chromosome 5) in gene SQSTM1 that is likely to be associated with a phenotype. Let us try to find more information about this variant, which is in a variant table named MyVar in our project.
+2. Gene and mRNA We first would like to download and use the ref gene database to our project.</description>
+    </item>
+    
+    <item>
+      <title>1000 genomes</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/1000genome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/1000genome/</guid>
+      <description>Import all genotype data from the 1000 genome project The genotype data for all 60 samples from consists of 23 .vcf.gz files with a total of 142G. Because of the size of data, it can be slow to import all these files into variant tools. Depending on your computing environment, you can
+1. Import all files together The most straightforward method is to import all files together:
+mkdir p1000g_all cd p1000g_all vtools init p1000g_all vtools admin --set_runtime_option &amp;quot;temp_dir=/Volumes/AnotherDisk/tmp/p1000g_all&amp;quot; vtools admin --set_runtime_option &#39;sqlite_pragma=synchronous=OFF,journal_mode=MEMORY&#39; vtools import /path/to/ALL.</description>
+    </item>
+    
+    <item>
+      <title>ANNOVAR</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/annovar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/annovar/</guid>
+      <description>Generating and importing ANNOVAR annotations for variants in vtools vtools supports the generation of an ANNOVAR input file through the ANNOVAR.fmt format. In addition, there are two ANNOVAR format files (ANNOVAR_variant_function.fmt and ANNOVAR_exonic_variant_function.fmt) that support the import of ANNOVAR generated annotations.
+1. Example of running annovar on variants in vtools and importing the resulting annotations # export all variants in the variant table to an annovar file (an input file for annovar) vtools export variant ANNOVAR.</description>
+    </item>
+    
+    <item>
+      <title>Format</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/form/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/form/</guid>
+      <description>Import a list of variants in an unsupported format 1. Data Your collaborator send you a list of variants of interest and you would like to annotate these variants with properties like SIFT and PolyPhen2 scores. However, the list of variants were dumped from an excel file and were saved in a format that cannot be directly imported by variant tools.
+head -20 myVars.csv ADARB2,chr10,1224091,-/C ADARB2,chr10,1224097,-/A ADARB2,chr10,1225078,-/TACTC ADARB2,chr10,1226607,-/CCCTCTG ADARB2,chr10,1227210,-/T ADARB2,chr10,1231436,-/AAAAC ADARB2,chr10,1234557,-/T ADARB2,chr10,1240467,-/ATCT ADARB2,chr10,1245155,-/CC ADARB2,chr10,1245562,CAGGTGGG/- ADARB2,chr10,1248053,-/T ADARB2,chr10,1251205,TTTTAGGGCCACC/- ADARB2,chr10,1255256,CCCACCATGCCATCA/- ADARB2,chr10,1255475,TCGCCCACACCCATGCCA/- ADARB2,chr10,1257255,-/ATCT ADARB2,chr10,1259938,-/CTG ADARB2,chr10,1260318,CCTGGACCT/- ADARB2,chr10,1262873,G/- ADARB2,chr10,1265793,TGATGA/- ADARB2,chr10,1267343,T/-  2.</description>
+    </item>
+    
+    <item>
+      <title>Sample</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/sample/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/sample/</guid>
+      <description>Handling sample genotypes that imported from multiple files When vtools import imports a file, it creates one or more samples associated with this file. This works well if all genotypes belong to a sample are contained in one file, but not so if the genotypes are scattered in multiple files (e.g. chromosome by chromosome). This tutorial demonstrates how to use vtools admin command to handle sample genotypes that are imported from multiple files.</description>
+    </item>
+    
+    <item>
+      <title>Non-human genomes</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/mouthgenome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/mouthgenome/</guid>
+      <description>Working with mouse and other non-human reference genomes Variant Tools supports build hg18 and hg19 of the human reference genome natively. If your data uses a different reference genome, you will need to provide your own fasta files, which can usually be downloaded from resources such as Illumina iGenomes. The reference genome needs to be converted to a binary format (crr) before it can be used, and need to be stored under the project directory, or under $local_resource/reference (usually ~/.</description>
+    </item>
+    
+    <item>
+      <title>Annotation</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/annotation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/annotation/</guid>
+      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases.</description>
+    </item>
+    
+    <item>
+      <title>Quality control</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/association/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/association/</guid>
+      <description>Demonstration of Quality Control and Association Analysis 1. Getting Started This section describes the data-set, required software and computational environment for the exome association analysis to be demonstrated in this tutorial.
+1.1 Data Source We use the exome data from the 1000 genomes project. The entire data-set can be found at the NCBI ftp site. This release (version 3.0, April 30th, 2012) contains phased genotype calls on 1092 samples in VCF format, with 38.</description>
+    </item>
+    
+    <item>
+      <title>Association</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/testing/</guid>
+      <description>Association Analysis 1. Statistical Tests for Genotype/phenotype Associations 1.1 The VAT association command We will introduce the basic usage of this command without diving into each association test. For a complete demonstration of all the tests please refer to the documentation for VAT (on the sidebar of this webpage).
+1.2 Getting started The general interface of vtools associate is as follows
+% vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES .</description>
+    </item>
+    
+    <item>
+      <title>Subprojects</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/subprojects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/subprojects/</guid>
+      <description>Use of subprojects to manage large project &amp;ndash; a tutorial 1. Data This tutorial uses the same data (whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls) as this tutorial, but demonstrates the uses of subproject to import and analyze data. Performance data is collected on a Mac Workstation with 2x2.26G Quad-Core Xeon processor with 8G RAM, using variant tools v1.</description>
+    </item>
+    
+    <item>
+      <title>ACM-BCB tutorial</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/tutorialacm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/tutorialacm/</guid>
+      <description>Tutorial (ACM-BCB2014): Integrated analysis of next-gen sequencing data using variant tools This tutorial explains the concepts of variant tools and demonstrates, through examples, how to use variant tools to import, select, and annotate genetic variants. You will need to have variant tools installed (Linux or Mac OSX) to follow this tutorial. Please also download sample data from here .
+1. Getting help (--help, `vtools show) Getting details of commands</description>
+    </item>
+    
+  </channel>
+</rss>

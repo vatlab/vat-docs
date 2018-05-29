@@ -10,16 +10,6 @@
     
     
     <item>
-      <title>Tutorials</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/</guid>
-      <description>Tutorials These tutorials explain steps that are used to analyze real-world sequencing data. We will try to explain the steps in detail but command output are usually ignored for brevity and confidentiality reasons.
-Quick Start Guide This is a 10-minute quick start guide using data from the 1000 genomes project. We encourage you to walk through this minimal real-world example to get a feel for the software and assess its helpfulness.</description>
-    </item>
-    
-    <item>
       <title>Help</title>
       <link>https://vatlab.github.io/vat-docs/documentation/help/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

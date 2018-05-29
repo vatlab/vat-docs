@@ -20,20 +20,20 @@
     
     <item>
       <title>Data exploration/QC</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/</link>
+      <link>https://vatlab.github.io/vat-docs/applications/association/qc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/applications/association/data-explorationqc/</guid>
+      <guid>https://vatlab.github.io/vat-docs/applications/association/qc/</guid>
       <description>Data Exploration and Quality Control Overview Quality control is a key step in association analysis. We may use a variety of criteria to clean our data (criteria directly from original vcf file or statistic summary we are interested in). Variants can also be subsetted based on these properties such as variant information, annotations, summary statistics, etc, which are displayed by vtools show fields.
  vtools select and vtools exclude commands implement variant and genotype level data selection and filtering.</description>
     </item>
     
     <item>
       <title>Association analysis</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/association-analysis/</link>
+      <link>https://vatlab.github.io/vat-docs/applications/association/association_analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/applications/association/association-analysis/</guid>
+      <guid>https://vatlab.github.io/vat-docs/applications/association/association_analysis/</guid>
       <description>Association Analysis Statistical Tests for Genotype/phenotype Associations The VAT association command We will introduce the basic usage of this command without diving into each association test. For a complete demonstration of all the tests please refer to the documentation for VAT (on the sidebar of this webpage).
 Getting started The general interface of vtools associate is as follows
 % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES .</description>
@@ -41,10 +41,10 @@ Getting started The general interface of vtools associate is as follows
     
     <item>
       <title>Post-assoc analysis</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/</link>
+      <link>https://vatlab.github.io/vat-docs/applications/association/post_assoc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/applications/association/post-assoc-analysis/</guid>
+      <guid>https://vatlab.github.io/vat-docs/applications/association/post_assoc/</guid>
       <description> Representing and Interpreting Association Results </description>
     </item>
     

@@ -47,7 +47,7 @@ When this format is used to export variants, it can be used to export arbitrary 
     </item>
     
     <item>
-      <title>Cumtomized</title>
+      <title>cumtomized</title>
       <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/new/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -75,26 +75,50 @@ Fortunately, PLINK accepts a transposed PED format (TPED) that is variant orient
     </item>
     
     <item>
-      <title></title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools/</link>
+      <title>ANNNOVAR</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/annovar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools/</guid>
-      <description>use :: Variant Tools  :root #header + #content  #left  #rlblock_left{ display:none !important; } :not(pre)  code + span.copy-to-clipboard { display: none; }            var baseurl = &#39;\/vat-docs\/&#39;;    Installation   Documentation   Key concepts   Supported types of variants     Tutorials   Help   Vtools commands   Init   Import   Update   Phenotype   lifttover   show   use   use   select   exclude   compare   associate   output   export   remove   execute   admin     Functions   ref_sequence   mut_sequence   track   Genotype   samples   in_table   Other functions     Vtools_report   avg_depth   discordance_rate   sam_info   sequence   trans_ratio   variant_stat   inbreeding_coefficient   transmission   meta_analysis   plot_fields   plot_geno_fields   plot_pheno_fields   plot_association     Customization   Simulation   Introduction   Customized simulations   Models   Peng2014_ex1   Peng2014_ex2       Format   Formats   basic   csv   plink   rsname   Cumtomized   tped   map         Pipelines   Introduction   Customized pipeline   Variant calling   bwa_gatk33_hg19   bat_gatk33_b37   bwa_gatk28_hg19   bwa_gatk28_b37     Other pipelines   import_vcf   anno_utils   transmission   Illumnina   ANNOVAR   snpEff   KING       Utilities   report_progress   md5sumd       Application   Annotation   Introduction   Tutorial   Customized annotation databases   Genes   ccdsGene   Hugo gene   EntrezGene   knownGene   refGene   CancerGeneCensus     Variants   COSMIC   sbNSFP   dbSNP   linkage-physical map   Database of Genomic Variants   Exome Sequencing Project   gwasCatalog   HapMap   Thousand Genomes     Regions   Low complexity regions   Phast cons   Genomic super dups   cytoBand     Misc   Illumina   keggPathway   ENCODE       Discovery   Association   Introduction   Data exploration/QC   Association analysis   Post-assoc analysis   Basic data statistics   Group stat&amp;amp;Write     Single variant analysis   Fisher exact test     Single gene association methods   Introduction   CMC test   C-alpha test   KBAC test   RBT test   RareCover test   VT test   WSS test   aSum test     Joint/Conditional association analysis   Collapsing methods   Aggregation methods   Weighted methods   Variable thresholds   SKAT test   MetaSKAT analysis     VAT stacking   Create your test!</description>
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/annovar/</guid>
+      <description>Importing ANNOVAR input file Format description http://www.openbioinformatics.org/annovar/annovar_input.html
+&amp;ldquo;ANNOVAR takes text-based input files, where each line corresponds to one variant. On each line, the first five space- or tab- delimited columns represent chromosome, start position, end position, the reference nucleotides and the observed nucleotides. Additional columns can be supplied and will be printed out in identical form. For convenience, users can use “0” to fill in the reference nucleotides, if this information is not readily available.</description>
+    </item>
+    
+    <item>
+      <title>CGA</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/cga/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/cga/</guid>
+      <description>HomePage Sample data ASSEMBLY_ID XXXX #CNV_WINDOW_WIDTH 2000 #COSMIC COSMIC v48 #DBSNP_BUILD dbSNP build 132 #DGV_VERSION 9 #FORMAT_VERSION 1.7 #GENERATED_AT XXX #GENERATED_BY cgatools #GENE_ANNOTATIONS NCBI build 37.2 #GENOME_REFERENCE NCBI build 37 #MIRBASE_VERSION miRBase version 16 #PFAM_DATE XXX #REPMASK_GENERATED_AT XXX #SAMPLE XXX #SEGDUP_GENERATED_AT XXX #SOFTWARE_VERSION 1.12.0.47 #TYPE VAR-OLPL &amp;gt;locus ploidy chromosome begin end zygosity varType reference allele1Seq allele2Seq allele1Score allele2Score allele1HapLink allele2HapLink xRef evidenceIntervalId allele1ReadCount allele2ReadCount referenceAlleleReadCount totalReadCount allele1Gene allele2Gene pfam miRBaseId repeatMasker segDupOverlap relativeCoverage calledPloidy 1 2 chr1 0 10000 no-call no-ref = ?</description>
+    </item>
+    
+    <item>
+      <title>CASAVA18Snps</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18snps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18snps/</guid>
+      <description>HomePage Sample data # ** CASAVA depth-filtered snp calls ** #$ CMDLINE /CASAVA-1.8.0a19/filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 142.345267150165 # #$ COLUMNS seq_name pos bcalls_used bcalls_filt ref Q(snp) max_gt Q(max_gt) max_gt|poly_site Q(max_gt|poly_site) A_used C_used G_used T_used chr1 10231 5 9 C 28 AC 28 AC 59 3 2 0 0 chr1 10255 14 29 A 1 AA 9 AT 25 12 0 0 2 chr1 10264 15 19 C 18 AC 18 AC 51 4 11 0 0 chr1 10291 2 16 C 1 CC 10 CT 21 0 1 0 1 chr1 10330 3 14 C 2 CC 5 AC 28 2 1 0 0 chr1 13273 9 0 G 58 CG 54 CG 57 0 6 3 0 chr1 14464 18 0 A 60 AT 60 AT 93 12 0 0 6 chr1 14673 19 0 G 63 CG 63 CG 96 0 8 11 0 chr1 14699 23 0 C 72 CG 72 CG 105 0 14 9 0 chr1 14907 13 0 A 118 AG 65 AG 65 4 0 9 0 chr1 14930 14 2 A 119 AG 68 AG 68 5 0 9 0 chr1 14933 14 2 G 78 AG 78 AG 110 6 0 8 0 chr1 14976 4 0 G 18 AG 18 AG 47 2 0 2 0 chr1 15211 2 0 T 37 GG 5 GG 5 0 0 2 0 chr1 15817 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 15820 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 16487 12 0 T 62 CT 62 CT 94 0 6 0 6 chr1 17538 64 0 C 88 AC 88 AC 121 18 46 0 0 chr1 17746 53 1 A 22 AG 22 AG 55 39 0 14 0 chr1 17765 47 1 G 26 AG 26 AG 59 13 0 34 0 chr1 20131 1 0 G 8 CG 2 CG 3 0 1 0 0 chr1 20144 1 0 G 9 AG 2 AG 3 1 0 0 0 chr1 20206 2 0 C 4 CT 4 CT 30 0 1 0 1 chr1 20245 3 0 G 4 AG 4 AG 34 1 0 2 0 chr1 20304 2 0 G 2 GG 5 CG 27 0 1 1 0  Example vtools import --format Illumina_SNP Illumina_SNP.</description>
+    </item>
+    
+    <item>
+      <title>CASAVA18Indels</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18indels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18indels/</guid>
+      <description>HomePage Sample data # ** CASAVA depth-filtered indel calls ** #$ CMDLINE /filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 143.988337798483 # #$ COLUMNS seq_name pos type ref_upstream ref/indel ref_downstream Q(indel) max_gtype Q(max_gtype) depth alt_reads indel_reads other_reads repeat_unit ref_repeat_count indel_repeat_count chr1 10147 1D CTAACCCTAA C/- CCCTAACCCT 70 het 70 6 2 3 1 C 4 3 chr1 10231 1D CTAACCCTAA C/- CCCTAACCCT 1203 het 284 53 7 30 17 C 4 3 chr1 10353 1I CCCTAACCCT -/A ACCCTAACCC 434 het 118 17 3 8 9 A 1 2 chr1 10390 1D CTAACCCTAA C/- CCCTAACCCC 765 het 399 39 9 19 12 C 4 3 chr1 10397 1D TAACCCCTAA C/- CCCTAACCCT 730 het 496 38 11 20 9 C 4 3 chr1 10440 1D CTAACCCTAA C/- CCCTAACCCT 774 het 302 31 7 21 3 C 4 3 chr1 28327 1D AAGCCTGTAG T/- TGCTCATCTG 3 het 3 2 1 1 0 T 2 1 chr1 54711 1I AAACCTTGTA -/T TTTTTCTTTC 37 het 37 21 8 2 12 T 5 6 chr1 62240 2D AGACACACAT AC/-- ACACACACAC 100 het 100 22 16 4 2 AC 8 7 chr1 83830 8D AGAAAGAAAG AGAAAGAA/-------- AGAAAGAAAG 273 het 161 13 3 6 4 AGAA 11 9 chr1 108546 BP_RIGHT N/A ------/CTATCA AAAAAAAAAA 28 het 28 13 9 2 2 N/A 0 0 chr1 123089 2D TGTGGACATG TA/-- TATATATATA 142 het 142 13 9 4 0 TA 6 5 chr1 128590 1D CTTCAAGTTC A/- CCCCCTTTTT 220 het 220 13 4 5 8 A 1 0 chr1 129011 3D GGGATGTAGA ATG/--- ATAAGGCTCT 258 het 258 12 5 6 1 ATG 1 0 chr1 136743 1I GGTGAGGCAA -/C GGGCTCACAC 76 het 76 80 66 6 12 C 0 1 chr1 136889 1D TGTGAGGCAA G/- GGGCTCGGGC 205 het 205 41 29 8 8 G 4 3 chr1 237577 1I AAAGGGGGTT -/C ATTATCTAGG 60 het 60 51 45 4 2 C 0 1 chr1 247917 3D ACCCAACCTC AGG/--- AGTTCAGGGC 69 hom 5 2 0 2 0 AGG 1 0 chr1 255910 2I TGTGTGTGTA --/TG TGTGTGTGTG 257 het 28 7 1 5 1 TG 10 11 chr1 531809 2D CACACTTATG CA/-- CACATTCACA 327 het 327 25 17 8 1 CA 3 2 chr1 532239 2D TGTTCACATT CA/-- CACTCATACA 325 het 325 64 53 10 2 CA 2 1 chr1 532259 3D CACAGCCCAA AAT/--- AATATACACA 303 het 303 61 43 9 10 AAT 2 1 chr1 537252 2D AGCCACATGT GG/-- GACAGGGCAG 6 hom 2 1 0 1 0 G 3 1 chr1 537494 5I CAGCGTCCAT -----/GCCCA GCCGGCCTCC 23 het 3 2 0 1 1 GCCCA 0 1 chr1 537641 50D ATCCCCCTCT CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC/-------------------------------------------------- TTTCTCCTCT 66 het 66 22 18 3 10 CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC 1 0  Example vtools import --format Illumina_INDEL Illumina_INDEL.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools_files/saved_resource/</link>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/functor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/use-__-variant-tools_files/saved_resource/</guid>
-      <description>@import &#34;chrome-extension://hfapbcheiepjppjbnkphkmegjlipojba/css/style.css&#34;  Piggy&#39;s Asleep What happened to the pig who lost its voice? It became disgruntled!
-  This website doesn&#39;t work with us.
-Piggy has temporarily deactivated itself, but we&#39;re ready to save you money the next time you visit a website that works with Piggy.
-localhost
-Request to Add This Site Report a problem  Thanks for your input!
-We&#39;ve added this to the list and will try to get our engineers on it ASAP!</description>
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/functor/</guid>
+      <description>HomePage Import/Export adjustment functors The following are all the adjustment functions that are provided by variant tools. The export functors are of course only used for exporting variants using .fmt files, and are not used in .ann files.
+Adjust input  IncreaseBy(inc=1), converting 5 -&amp;gt; 6  Increase input integer value by inc. This is usually used to adjust 0-based position to 1-based position that is used by variant tools.</description>
     </item>
     
   </channel>

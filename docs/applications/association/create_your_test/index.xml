@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Create your test! on Variant Tools</title>
+    <link>https://vatlab.github.io/vat-docs/applications/association/create_your_test/</link>
+    <description>Recent content in Create your test! on Variant Tools</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/association/create_your_test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>running R programs</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/create_your_test/running-r-programs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/create_your_test/running-r-programs/</guid>
+      <description>A General Framework for Association Analysis Using R Programs Introduction A number of rare variant association methods as well as the flexible VAT ensemble algorithm makes it possible to conveniently evaluate variant associations via different statistical options. In addition to the existing association testing framework, variant association tools can talk to R via customized R programs prepared by users. Under this mechanism, users write up an R function that analyzes data of an association testing unit (e.</description>
+    </item>
+    
+    <item>
+      <title>programming in VAT</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/create_your_test/programming-in-vat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/create_your_test/programming-in-vat/</guid>
+      <description>Identify genotype - phenotype association Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
+    </item>
+    
+  </channel>
+</rss>

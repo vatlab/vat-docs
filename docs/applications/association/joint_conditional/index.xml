@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Joint/conditional association analysis on Variant Tools</title>
+    <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/</link>
+    <description>Recent content in Joint/conditional association analysis on Variant Tools</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>collapsing methods</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/collapsing-methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/collapsing-methods/</guid>
+      <description>Collapsing Methods for Disease and Quantitative Traits Introduction This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. Collapsing method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region {$X$}:{$$X = I_(0,N)(\sum_i^N X_i)$$} i.e., the observed genotype will be coded as {$1$} if there exists at least one mutation, and {$0$} otherwise.</description>
+    </item>
+    
+    <item>
+      <title>aggregation methods</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggregation-methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggregation-methods/</guid>
+      <description>Aggregation Methods for Disease and Quantitative Traits Introduction This is implementation of the fixed threshold aggregation methods for disease and quantitative traits. Originally described in Morris and Zeggni 2010[^Andrew P. Morris and Eleftheria Zeggini (2010) An evaluation of statistical approaches to rare variant analysis in genetic association studies. Genetic Epidemiology doi:10.1002/gepi.20450. http://doi.wiley.com/10.1002/gepi.20450^] and known as Gene- or Region-based Analysis of Variants of Intermediate and Low frequency (GRANVIL), the Aggregation method for rare variants codes observed genotype of a genetic region the count of minor alleles: {$$X = \sum_i^N X_i$$}</description>
+    </item>
+    
+    <item>
+      <title>weighted methods</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/</guid>
+      <description>Weighted Burden Test for Disease and Quantitative Traits Introduction This implements a collection of weighted aggregation tests. Different from plain aggregation methods? which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a &amp;ldquo;weight&amp;rdquo; to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated &amp;ldquo;burden&amp;rdquo;, e.g., {$$X=\sum_i^N\omega_iX_i$$} where {$\omega_i$}&amp;rsquo;s are the weights.</description>
+    </item>
+    
+    <item>
+      <title>variable thresholds</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/variable-thresholds/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/variable-thresholds/</guid>
+      <description>Varible Thresholds Methods for Disease and Quantitative Traits Introduction This implements the variable thresholds version of aggregation methods?. Similar to the VT? method, the VariableThresholdsBt and VariableThresholdsQt tests use a variable thresholds definition for the rare variants being considered such that multiple test statistics are calculated for an aggregation unit. The final statistic is taken as the one that gives the best result. Type I error is controlled due to the use of permutation testing.</description>
+    </item>
+    
+    <item>
+      <title>SKAT test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</guid>
+      <description>SNP-set (Sequence) Kernel Association Test Method Introduction Details Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011). This is a wrapper for the R package &amp;quot;SKAT&amp;quot; implemented &amp;amp; maintained by Dr.</description>
+    </item>
+    
+    <item>
+      <title>MetaSKAT analysis</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/metaskat-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/metaskat-analysis/</guid>
+      <description>Association Analysis with the Meta SKAT R Program The R extension for RTest is available HERE. For details on the format of this script please refer to the RTest method documentation.
+Example We analyze association with a binary trait named X6 conditioning on 3 covariates X8, X9, X10. Group information is provided by race. For each testing group, data is first cleaned by removing samples missing greater than 50% calls, then by removing variants missing 50% calls.</description>
+    </item>
+    
+  </channel>
+</rss>

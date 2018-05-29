@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="generator" content="Hugo 0.40.2" />
     <meta name="description" content="Documentation for Variant Tools">
 <meta name="author" content="Bo Peng">
 
@@ -12,19 +12,19 @@
     <title>admin :: Variant Tools</title>
     
     
-    <link href="/vat-docs/css/nucleus.css?1527620637" rel="stylesheet">
-    <link href="/vat-docs/css/font-awesome.min.css?1527620637" rel="stylesheet">
-    <link href="/vat-docs/css/hybrid.css?1527620637" rel="stylesheet">
-    <link href="/vat-docs/css/featherlight.min.css?1527620637" rel="stylesheet">
-    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527620637" rel="stylesheet">
-    <link href="/vat-docs/css/auto-complete.css?1527620637" rel="stylesheet">
-    <link href="/vat-docs/css/theme.css?1527620637" rel="stylesheet">
-    <link href="/vat-docs/css/hugo-theme.css?1527620637" rel="stylesheet">
+    <link href="/vat-docs/css/nucleus.css?1527629796" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1527629796" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1527629796" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1527629796" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527629796" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1527629796" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1527629796" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1527629796" rel="stylesheet">
     
-      <link href="/vat-docs/css/theme-mine.css?1527620637" rel="stylesheet">
+      <link href="/vat-docs/css/theme-mine.css?1527629796" rel="stylesheet">
     
 
-    <script src="/vat-docs/js/jquery-2.x.min.js?1527620637"></script>
+    <script src="/vat-docs/js/jquery-2.x.min.js?1527629796"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527620637"></script>
-<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527620637"></script>
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527629796"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527629796"></script>
 <script type="text/javascript">
     
         var baseurl = '\/vat-docs\/';
     
 </script>
-<script type="text/javascript" src="/vat-docs/js/search.js?1527620637"></script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1527629796"></script>
 
     
   </div>
@@ -4028,7 +4028,10 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <ul>
 <li><a href="#2-1-download-or-update-local-resources-update-resource">2.1 Download or update local resources (<code>--update_resource</code>)</a></li>
 <li><a href="#2-2-rename-samples-rename-samples">2.2 Rename samples (<code>--rename_samples</code>)</a></li>
-<li><a href="#2-3-merge-samples-by-sample-s-name-merge-samples">2.3 Merge samples by sample&rsquo;s name (<code>--merge_samples</code>)</a></li>
+<li><a href="#2-3-merge-samples-by-sample-s-name-merge-samples">2.3 Merge samples by sample&rsquo;s name (<code>--merge_samples</code>)</a>
+<ul>
+<li><a href="#this-function-is-only-supported-when-storemode-is-set-to-sqlite">This function is only supported when STOREMODE is set to sqlite.</a></li>
+</ul></li>
 <li><a href="#2-4-rename-and-modify-descriptions-of-variant-tables-rename-table-and-describe-table">2.4 Rename and modify descriptions of variant tables (<code>--rename_table</code> and <code>--describe_table</code>)</a></li>
 <li><a href="#2-5-validate-build-of-project-s-reference-genome-validate-build">2.5 Validate build of project&rsquo;s reference genome (<code>--validate_build</code>)</a></li>
 <li><a href="#2-6-validate-sex-of-samples-validate-sex">2.6 Validate sex of samples (<code>--validate_sex</code>)</a></li>
@@ -4233,10 +4236,9 @@ INFO: 2 files need to be downloaded or updated
 
 <p><details><summary> Examples: Rename samples</summary> Let us first get some data and a few samples</p>
 
-<pre><code>vtools init admin -f
-vtools admin --load_snapshot vt_testData
-vtools import V*.vcf --build hg19
-vtools import CASAVA18_SNP.txt --format CASAVA18_snps
+<pre><code>% vtools init admin -f
+% vtools admin --load_snapshot vt_testData
+% vtools import V*_hg38.vcf --build hg38
 </code></pre>
 
 <p>There are four samples</p>
@@ -4245,17 +4247,16 @@ vtools import CASAVA18_SNP.txt --format CASAVA18_snps
 
 
 sample_name filename
-SAMP1   V1.vcf
-SAMP1   V2.vcf
-SAMP1   V3.vcf
-max_gt  CASAVA18_SNP.txt
+SAMP1       V1_hg38.vcf
+SAMP2       V2_hg38.vcf
+SAMP3       V3_hg38.vcf
 </code></pre>
 
 <p>The first three samples share the same name, which can lead to erroneous results during analysis (e.g. <code>vtools associate</code> will treat them as genotypes from the same sample). We can rename them using commands</p>
 
-<pre><code>% vtools admin --rename_samples 'filename=&quot;V1.vcf&quot;' V1
-% vtools admin --rename_samples 'filename=&quot;V2.vcf&quot;' V2
-% vtools admin --rename_samples 'filename=&quot;V3.vcf&quot;' V3
+<pre><code>% vtools admin --rename_samples 'filename=&quot;V1_hg38.vcf&quot;' V1
+% vtools admin --rename_samples 'filename=&quot;V2_hg38.vcf&quot;' V2
+% vtools admin --rename_samples 'filename=&quot;V3_hg38.vcf&quot;' V3
 
 
 INFO: 1 samples with names SAMP1 are renamed to V1
@@ -4269,15 +4270,12 @@ INFO: 1 samples with names SAMP1 are renamed to V3
 
 
 sample_name filename
-V1  V1.vcf
-V2  V2.vcf
-V3  V3.vcf
-max_gt  CASAVA18_SNP.txt
+V1          V1_hg38.vcf
+V2          V2_hg38.vcf
+V3          V3_hg38.vcf
 </code></pre>
 
-<p>{{% notice tip %}}
-If you would like to change names of multiple samples according to a pattern, you can use the second form of the command. For example, the following command changes samples <code>V1</code>, <code>V2</code>, and <code>V3</code> to <code>SAMP1</code>, <code>SAMP2</code>, and <code>SAMP3</code>:
-{{% /notice %}}</p>
+<p>If you would like to change names of multiple samples according to a pattern, you can use the second form of the command. For example, the following command changes samples <code>V1</code>, <code>V2</code>, and <code>V3</code> to <code>SAMP1</code>, <code>SAMP2</code>, and <code>SAMP3</code>:</p>
 
 <pre><code>% vtools admin --rename_samples 1 V SAMP
 
@@ -4293,10 +4291,9 @@ INFO: Rename 1 sample with name V3 to SAMP3
 
 
 sample_name filename
-SAMP1   V1.vcf
-SAMP2   V2.vcf
-SAMP3   V3.vcf
-max_gt  CASAVA18_SNP.txt
+SAMP1       V1_hg38.vcf
+SAMP2       V2_hg38.vcf
+SAMP3       V3_hg38.vcf
 </code></pre>
 
 <p>The command might look strange to you, but the first <code>1</code> is a condition to select all samples (<code>true</code>), the second and third parameter changes the first incidence of <code>V</code> to <code>SAMP</code> for all matched sample names.</p>
@@ -4307,11 +4304,20 @@ max_gt  CASAVA18_SNP.txt
 
 <h4 id="2-3-merge-samples-by-sample-s-name-merge-samples">2.3 Merge samples by sample&rsquo;s name (<code>--merge_samples</code>)</h4>
 
+<h5 id="this-function-is-only-supported-when-storemode-is-set-to-sqlite">This function is only supported when STOREMODE is set to sqlite.</h5>
+
 <p>Command <code>vtools admin --merge_samples</code> merges samples with the same names to a single sample. This command is used when genotypes of a sample are stored in several files (e.g. chromosome by chromosome, or seprate files for SNPs and Indels resulting from the Illumina pipeline) and are imported as separate samples. These samples should be merged together because otherwise number of samples in the variant tools project will not match number of physical samples, and lead to erronous results during analysis. Because this command merge samples by names, samples to be merged should be renamed to have the same names if needed.</p>
 
 <p><details><summary> Examples: Merge samples with same names</summary> All our samples have different names now so we have to rename one of them in order to merge it with another sample,</p>
 
-<pre><code>% vtools admin --rename_samples 'sample_name = &quot;max_gt&quot;' SAMP3
+<pre><code>% vtools init admin -f
+% vtools admin --load_snapshot vt_testData
+% vtools import V1.vcf --build hg18
+% vtools import V2.vcf 
+% vtools import V3.vcf 
+% vtools import CASAVA18_SNP.txt --format CASAVA18_snps 
+
+% vtools admin --rename_samples 'sample_name = &quot;max_gt&quot;' SAMP3
 
 
 INFO: 1 samples with names max_gt are renamed to SAMP3
@@ -4380,9 +4386,9 @@ ERROR: Failed to merge samples with name SAMP1 because there are 1979 genotypes 
 <p><details><summary> Examples: Change name and comment of variant tables</summary> Let us get a sample project and create a few variant tables</p>
 
 <pre><code>vtools init testProj
-vtools admin --load_snapshot vt_simple
+vtools import V*_hg38.vcf --build hg38
 vtools select variant -t 'all variant'
-vtools select variant --samples 'filename = &quot;V1.vcf&quot;' -t fromV1 'variants from v1'
+vtools select variant --samples 'filename = &quot;V1_hg38.vcf&quot;' -t fromV1 'variants from v1'
 </code></pre>
 
 <p>The project has three tables,</p>
@@ -4390,10 +4396,10 @@ vtools select variant --samples 'filename = &quot;V1.vcf&quot;' -t fromV1 'varia
 <pre><code>% vtools show tables
 
 
-table                      #variants     date message
-all variant                    1,611    Jul15
-fromV1                           989    Jul15 variants from v1
-variant                        1,611
+table          #variants     date message
+all variant        2,051    May29
+fromV1             1,269    May29 variants from v1
+variant            2,051    May29 Master variant table
 </code></pre>
 
 <p>You can rename the <code>all variant</code> to <code>all_variant</code></p>
@@ -4419,10 +4425,10 @@ INFO: Description of table all_variant is updated
 
 Name:                   all_variant
 Description:            A replicate of the master variant table
-Creation date:          Jul15
-Command:                vtools select variant -t 'all variant'
-Fields:                 variant_id
-Number of variants:     1611
+Creation date:          May29
+Command:                select variant -t &quot;all variant&quot;
+Fields:                 variant_id, chr
+Number of variants:     2051
 </code></pre>
 
 <p></details></p>
@@ -7470,20 +7476,20 @@ The MEMORY journaling mode saves disk I/O but at the expense of database safety 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vat-docs/js/clipboard.min.js?1527620637"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527620637"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527620637"></script>
-    <script src="/vat-docs/js/jquery.sticky.js?1527620637"></script>
-    <script src="/vat-docs/js/featherlight.min.js?1527620637"></script>
-    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527620637"></script>
-    <script src="/vat-docs/js/highlight.pack.js?1527620637"></script>
+    <script src="/vat-docs/js/clipboard.min.js?1527629796"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527629796"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527629796"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1527629796"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1527629796"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527629796"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1527629796"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vat-docs/js/modernizr.custom.71422.js?1527620637"></script>
-    <script src="/vat-docs/js/learn.js?1527620637"></script>
-    <script src="/vat-docs/js/hugo-learn.js?1527620637"></script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1527629796"></script>
+    <script src="/vat-docs/js/learn.js?1527629796"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1527629796"></script>
 
-    <link href="/vat-docs/mermaid/mermaid.css?1527620637" type="text/css" rel="stylesheet" />
-    <script src="/vat-docs/mermaid/mermaid.js?1527620637"></script>
+    <link href="/vat-docs/mermaid/mermaid.css?1527629796" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1527629796"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -41,7 +41,7 @@ output the &amp;ldquo;info&amp;rdquo; column of file 1000g.</description>
     </item>
     
     <item>
-      <title>Genotype</title>
+      <title>genotype</title>
       <link>https://vatlab.github.io/vat-docs/documentation/functions/genotype/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -72,7 +72,7 @@ in_table(&#39;table_name&#39;)  Details For example, command
     </item>
     
     <item>
-      <title>Other functions</title>
+      <title>other functions</title>
       <link>https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
