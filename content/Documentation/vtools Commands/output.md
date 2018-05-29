@@ -83,11 +83,8 @@ The basic usage of `vtools output` is to output variant info fields of selected 
 <details><summary> Examples: Load data and produce basic output</summary> Let us load a small project from online 
 
     % vtools init output
-    % vtools admin --load_snapshot vt_quickStartGuide
+    % vtools import CEU_hg19.vcf --var_info AA AC AN DP --geno_info DP --build hg19
     
-
-    Downloading snapshot vt_quickStartGuide.tar.gz from online
-    INFO: Snapshot vt_quickStartGuide has been loaded
     
 
 This project has a single variant table and 8 variant info fields. To view variants with the fields, we can 
@@ -97,16 +94,16 @@ This project has a single variant table and 8 variant info fields. To view varia
     % vtools output variant chr pos ref alt aa ac an dp -l 10
     
 
-    1  1105366  T  C  T  4    114  3251
-    1  1105411  G  A  G  1    106  2676
-    1  1108138  C  T  c  7    130  2253
-    1  1110240  T  A  T  1    178  7275
-    1  1110294  G  A  A  29   158  7639
-    1  3537996  T  C  C  156  156  1753
-    1  3538692  G  C  G  13   178  8362
-    1  3541597  C  T  C  1    178  8060
-    1  3541652  G  A  G  27   202  5923
-    1  3545211  G  A  G  1    178  11142
+    1   10533   G   C   .   6   120 423
+    1   51479   T   A   .   29  120 188
+    1   51928   G   A   .   5   120 192
+    1   54586   T   C   C   2   120 166
+    1   54676   C   T   T   2   120 131
+    1   54708   G   C   g   7   120 135
+    1   55299   C   T   c   20  120 166
+    1   62203   T   C   C   18  120 159
+    1   63671   G   A   G   18  120 243
+    1   86028   T   C   .   11  120 182
     
 
 The first parameter is name of a variant table, which does not have to be the master variant table `variant`. For example, you can create a variant table using variants with `T` as ancestral allele, 
@@ -114,8 +111,8 @@ The first parameter is name of a variant table, which does not have to be the ma
     % vtools select variant 'aa="T"' -t 'aa=T'
     
 
-    Running: 2 661.8/s in 00:00:00
-    INFO: 653 variants selected.
+    Running: 0 0.0/s in 00:00:00                                                  
+    INFO: 22 variants selected.
     
 
 and view the content of this variant table as follows: 
@@ -123,16 +120,16 @@ and view the content of this variant table as follows:
     % vtools output 'aa=T' chr pos ref alt aa ac an dp -l 10
     
 
-    1  1105366   T  C  T  4    114  3251
-    1  1110240   T  A  T  1    178  7275
-    1  6447088   T  C  T  12   172  4691
-    1  6447275   T  C  T  9    176  6871
-    1  11633148  T  G  T  34   98   1118
-    1  20897488  C  T  T  106  164  3662
-    1  20903629  T  C  T  38   164  6919
-    1  35998535  T  C  T  145  202  6238
-    1  36002845  T  G  T  1    180  6589
-    1  40510176  T  C  T  38   202  6067
+    1   54676       C   T   T   2   120 131
+    22  51158111    T   C   T   1   120 298
+    22  51158301    T   C   T   7   120 169
+    22  51162850    C   T   T   41  120 367
+    22  51164115    C   T   T   52  120 357
+    22  51164287    T   C   T   37  120 331
+    22  51172460    T   C   T   3   120 274
+    22  51174939    C   T   T   4   120 317
+    22  51176164    T   C   T   3   120 380
+    22  51186228    C   T   T   51  120 253
     
 
 You can use comma to separate values using option `-d,` 
@@ -140,16 +137,17 @@ You can use comma to separate values using option `-d,`
     % vtools output variant chr pos ref alt aa ac an dp -l 10 -d,
     
 
-    1,1105366,T,C,T,4,114,3251
-    1,1105411,G,A,G,1,106,2676
-    1,1108138,C,T,c,7,130,2253
-    1,1110240,T,A,T,1,178,7275
-    1,1110294,G,A,A,29,158,7639
-    1,3537996,T,C,C,156,156,1753
-    1,3538692,G,C,G,13,178,8362
-    1,3541597,C,T,C,1,178,8060
-    1,3541652,G,A,G,27,202,5923
-    1,3545211,G,A,G,1,178,11142
+    1,10533,G,C,.,6,120,423
+    1,51479,T,A,.,29,120,188
+    1,51928,G,A,.,5,120,192
+    1,54586,T,C,C,2,120,166
+    1,54676,C,T,T,2,120,131
+    1,54708,G,C,g,7,120,135
+    1,55299,C,T,c,20,120,166
+    1,62203,T,C,C,18,120,159
+    1,63671,G,A,G,18,120,243
+    1,86028,T,C,.,11,120,182
+
     
 
 or option `-d'\t'` to produce tab-delimited output: 
@@ -159,16 +157,17 @@ or option `-d'\t'` to produce tab-delimited output:
     % vtools output variant chr pos ref alt aa ac an dp -l 10 -d'\t'
     
 
-    1	1105366	T	C	T	4	114	3251
-    1	1105411	G	A	G	1	106	2676
-    1	1108138	C	T	c	7	130	2253
-    1	1110240	T	A	T	1	178	7275
-    1	1110294	G	A	A	29	158	7639
-    1	3537996	T	C	C	156	156	1753
-    1	3538692	G	C	G	13	178	8362
-    1	3541597	C	T	C	1	178	8060
-    1	3541652	G	A	G	27	202	5923
-    1	3545211	G	A	G	1	178	11142
+    1   10533   G   C   .   6   120 423
+    1   51479   T   A   .   29  120 188
+    1   51928   G   A   .   5   120 192
+    1   54586   T   C   C   2   120 166
+    1   54676   C   T   T   2   120 131
+    1   54708   G   C   g   7   120 135
+    1   55299   C   T   c   20  120 166
+    1   62203   T   C   C   18  120 159
+    1   63671   G   A   G   18  120 243
+    1   86028   T   C   .   11  120 182
+
     
 
 </details>
@@ -186,17 +185,18 @@ You can also specify a header to the output. There are three ways to specify hea
     % vtools output variant chr pos ref alt aa ac --header -l 10
     
 
-    chr  pos      ref  alt  aa  ac
-    1    1105366  T    C    T   4
-    1    1105411  G    A    G   1
-    1    1108138  C    T    c   7
-    1    1110240  T    A    T   1
-    1    1110294  G    A    A   29
-    1    3537996  T    C    C   156
-    1    3538692  G    C    G   13
-    1    3541597  C    T    C   1
-    1    3541652  G    A    G   27
-    1    3545211  G    A    G   1
+    chr pos     ref alt aa  ac
+    1   10533   G   C   .   6
+    1   51479   T   A   .   29
+    1   51928   G   A   .   5
+    1   54586   T   C   C   2
+    1   54676   C   T   T   2
+    1   54708   G   C   g   7
+    1   55299   C   T   c   20
+    1   62203   T   C   C   18
+    1   63671   G   A   G   18
+    1   86028   T   C   .   11
+
     
 
 If you are unhappy about the default header, you can specify one manually 
@@ -207,16 +207,17 @@ If you are unhappy about the default header, you can specify one manually
     
 
     chr,pos,ref,alt,ancestral allele,ancestral count
-    1,1105366,T,C,T,4
-    1,1105411,G,A,G,1
-    1,1108138,C,T,c,7
-    1,1110240,T,A,T,1
-    1,1110294,G,A,A,29
-    1,3537996,T,C,C,156
-    1,3538692,G,C,G,13
-    1,3541597,C,T,C,1
-    1,3541652,G,A,G,27
-    1,3545211,G,A,G,1
+    1,10533,G,C,.,6
+    1,51479,T,A,.,29
+    1,51928,G,A,.,5
+    1,54586,T,C,C,2
+    1,54676,C,T,T,2
+    1,54708,G,C,g,7
+    1,55299,C,T,c,20
+    1,62203,T,C,C,18
+    1,63671,G,A,G,18
+    1,86028,T,C,.,11
+
 
 If you have a longer header, or a header that is saved in a file, you can send the header to `vtools output` through its standard input 
 
@@ -227,16 +228,16 @@ If you have a longer header, or a header that is saved in a file, you can send t
     
 
     chr pos ref alt ancestral allele ancestral count
-    1  1105366  T  C  T  4
-    1  1105411  G  A  G  1
-    1  1108138  C  T  c  7
-    1  1110240  T  A  T  1
-    1  1110294  G  A  A  29
-    1  3537996  T  C  C  156
-    1  3538692  G  C  G  13
-    1  3541597  C  T  C  1
-    1  3541652  G  A  G  27
-    1  3545211  G  A  G  1
+    1   10533   G   C   .   6
+    1   51479   T   A   .   29
+    1   51928   G   A   .   5
+    1   54586   T   C   C   2
+    1   54676   C   T   T   2
+    1   54708   G   C   g   7
+    1   55299   C   T   c   20
+    1   62203   T   C   C   18
+    1   63671   G   A   G   18
+    1   86028   T   C   .   11
     
 
 </details>
@@ -245,19 +246,19 @@ You can sort the output by one or more fields using option `--order_by`. *varian
 
 <details><summary> Examples: Order output by one or more field names</summary> You can oder the output using option `--order_by`, for example 
 
-    % vtools output variant chr pos ref alt aa ac --order_by ac aa -l 10
+    % vtools output variant chr pos ref alt aa ac --order_by ac alt -l 10
     
 
-    6   30018679   G  T  .  0
-    9   204719     C  T  C  0
-    1   17822092   C  T  C  0
-    5   140870754  G  A  G  0
-    6   7176795    G  A  G  0
-    7   156448542  G  A  G  0
-    19  2199303    G  A  G  0
-    2   237954632  G  A  G  0
-    6   158452418  G  A  G  0
-    8   134198127  A  G  G  0
+    1   526727      G   A   .   1
+    1   726440      G   A   .   1
+    1   773106      G   A   g   1
+    1   809700      G   A   -   1
+    22  51158111    T   C   T   1
+    22  51176004    G   C   G   1
+    1   793947      A   G   N   1
+    1   776876      C   T   c   1
+    22  51197087    C   T   C   1
+    1   88316       G   A   .   2
     
 
 You can order in descending oder by specifying `DESC` after field name, for example 
@@ -265,16 +266,16 @@ You can order in descending oder by specifying `DESC` after field name, for exam
     % vtools output variant chr pos ref alt aa ac --order_by 'ac DESC' 'aa' -l 10
     
 
-    4   95758290   G  A  A  210
-    10  117065165  G  A  A  210
-    12  27362133   G  A  A  210
-    10  46507614   T  C  C  210
-    1   195656991  A  G  G  210
-    1   203542044  A  G  G  210
-    1   204840282  A  G  G  210
-    10  97182314   A  G  G  210
-    1   157676358  G  T  T  210
-    12  62759070   A  T  T  210
+    1   814790      C   T   c   7,2
+    1   814790      C   G   c   7,2
+    1   799463      T   C   N   120
+    1   780027      G   T   t   120
+    1   792480      C   T   t   120
+    1   812751      T   C   N   119
+    1   804540      T   C   t   119
+    1   723891      G   C   .   114
+    22  51173542    T   C   C   113
+    22  51185848    G   A   A   110
     
 
 </details>
@@ -283,51 +284,51 @@ If your project has a primary and a secondary reference genomes, you can output 
 
 <details><summary> Examples: Output variants in alternative coordinates</summary> Our sample project uses the hg18 reference genome. We can add an alternative reference genome by mapping all variants from hg18 to hg19 coordinates: 
 
-    % vtools liftover hg19
+    % vtools liftover hg38
     
 
-    INFO: Downloading liftOver tool from UCSC
     INFO: Downloading liftOver chain file from UCSC
     INFO: Exporting variants in BED format
-    Exporting variants: 100% [==================================] 4,858 131.7K/s in 00:00:00
+    Exporting variants: 100% [================================] 288 69.0K/s in 00:00:00
     INFO: Running UCSC liftOver tool
-    Updating table variant: 100% [===============================] 4,858 33.5K/s in 00:00:00
+    Updating table variant: 100% [============================] 288 537.9/s in 00:00:00
+
     
 
 You can output variants in the primary reference genome, 
 
-    % vtools output variant chr pos ref alt aa ac --header  --build hg18 -l 10
+    % vtools output variant chr pos ref alt aa ac --header  --order_by ac --build hg19 -l 10
     
 
-    chr  pos      ref  alt  aa  ac
-    1    1105366  T    C    T   4
-    1    1105411  G    A    G   1
-    1    1108138  C    T    c   7
-    1    1110240  T    A    T   1
-    1    1110294  G    A    A   29
-    1    3537996  T    C    C   156
-    1    3538692  G    C    G   13
-    1    3541597  C    T    C   1
-    1    3541652  G    A    G   27
-    1    3545211  G    A    G   1
+    chr pos         ref alt aa  ac
+    1   526727      G   A   .   1
+    1   726440      G   A   .   1
+    1   773106      G   A   g   1
+    1   776876      C   T   c   1
+    1   793947      A   G   N   1
+    1   809700      G   A   -   1
+    22  51158111    T   C   T   1
+    22  51176004    G   C   G   1
+    22  51197087    C   T   C   1
+    1   54586       T   C   C   2
     
 
 or the alternative reference genome using option `--build` 
 
-    % vtools output variant chr pos ref alt aa ac --header  --build hg19 -l 10
+    % vtools output variant chr pos ref alt aa ac --header  --order_by ac --build hg38 -l 10
     
 
-    chr  pos      ref  alt  aa  ac
-    1    1115503  T    C    T   4
-    1    1115548  G    A    G   1
-    1    1118275  C    T    c   7
-    1    1120377  T    A    T   1
-    1    1120431  G    A    A   29
-    1    3548136  T    C    C   156
-    1    3548832  G    C    G   13
-    1    3551737  C    T    C   1
-    1    3551792  G    A    G   27
-    1    3555351  G    A    G   1
+    chr pos         ref alt aa  ac
+    1   591347      G   A   .   1
+    1   791060      G   A   .   1
+    1   837726      G   A   g   1
+    1   841496      C   T   c   1
+    1   858567      A   G   N   1
+    1   874320      G   A   -   1
+    22  50719683    T   C   T   1
+    22  50737576    G   C   G   1
+    22  50758659    C   T   C   1
+    1   54586       T   C   C   2
     
 
 </details>
@@ -347,21 +348,19 @@ You can output fields from one or more annotation databases in the same way as v
     % vtools use refGene
     
 
-    INFO: Downloading annotation database from annoDB/refGene.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/refGene-hg19_20110909.DB.gz
-    INFO: Using annotation DB refGene in project output.
-    INFO: refseq Genes
-    
-
-
+    INFO: Choosing version refGene-hg38_20170201 from 5 available databases.
+    INFO: Downloading annotation database annoDB/refGene-hg38_20170201.ann
+    INFO: Using annotation DB refGene as refGene in project output.
+    INFO: Known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq).
+        
 
     % vtools use dbSNP
     
 
-    INFO: Downloading annotation database from annoDB/dbSNP.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/dbSNP-hg19_137.DB.gz
-    INFO: Using annotation DB dbSNP in project output.
-    INFO: dbSNP version 137
+    INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
+    INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
+    INFO: Using annotation DB dbSNP as dbSNP in project output.
+    INFO: dbSNP version 143, created using vcf file downloaded from NCBI
     
 
 because this project uses both hg18 and hg19, it can make use of the latest version of `refGene` and `dbSNP` databases that use hg19. 
@@ -371,53 +370,102 @@ These two databases bring in a large number of annotation fields, as listed by c
     % vtools show fields
     
 
-    variant.chr
-    variant.pos
-    variant.ref
-    variant.alt
-    variant.AA
-    variant.AC
-    variant.AN
-    variant.DP
-    variant.alt_chr
-    variant.alt_pos
-    refGene.name                 Gene name
-    refGene.chr
-    refGene.strand               which DNA strand contains the observed alleles
-    refGene.txStart              Transcription start position
-    refGene.txEnd                Transcription end position
-    refGene.cdsStart             Coding region start
-    refGene.cdsEnd               Coding region end
-    refGene.exonCount            Number of exons
-    refGene.score                Score
-    refGene.name2                Alternative name
-    refGene.cdsStartStat         cds start stat, can be 'non', 'unk', 'incompl', and 'cmp1'
-    refGene.cdsEndStat           cds end stat, can be 'non', 'unk', 'incompl', and 'cmp1'
-    dbSNP.chr
-    dbSNP.start                  start position in chrom (1-based)
-    dbSNP.end                    end position in chrom (1-based). start=end means
-                                 zero-length feature
-    dbSNP.name                   dbSNP reference SNP identifier
-    dbSNP.strand                 which DNA strand contains the observed alleles
-    dbSNP.refNCBI                Reference genomic sequence from dbSNP
-    dbSNP.refUCSC                Reference genomic sequence from UCSC lookup of
-                                 chrom,chromStart,chromEnd
-    dbSNP.observed               Strand-specific observed alleles
-    dbSNP.alt                    alternate allele on the '+' strand
-    dbSNP.molType                sample type, can be one of unknown, genomic or cDNA
-    dbSNP.class                  Class of variant (single, in-del, het, named, mixed,
-                                 insertion, deletion etc
-    dbSNP.valid                  validation status, can be unknown, by-cluster, by-
-                                 frequency, by-submitter, by-2hit-2allele,
-                                 by-hapmap, and by-1000genomes
-    dbSNP.avHet                  Average heterozygosity from all observations
-    dbSNP.avHetSE                Standard error for the average heterozygosity
-    dbSNP.func                   Functional cetegory of the SNP (coding-synon,
-                                 coding-nonsynon, intron, etc.)
-    dbSNP.locType                Type of mapping inferred from size on reference.
-    dbSNP.submitterCount         Number of distinct submitter handles for submitted SNPs for
-                                 this ref SNP
-    dbSNP.submitters             List of submitter handles
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+    variant.AA (char)
+    variant.AC (int)
+    variant.AN (int)
+    variant.DP (int)
+    variant.alt_chr (char)
+    variant.alt_pos (int)
+    aa=T.chr (char)         Chromosome name (VARCHAR)
+    refGene.name (char)     Gene name
+    refGene.chr (char)
+    refGene.strand (char)   which DNA strand contains the observed alleles
+    refGene.txStart (int)   Transcription start position (1-based)
+    refGene.txEnd (int)     Transcription end position
+    refGene.cdsStart (int)  Coding region start (1-based)
+    refGene.cdsEnd (int)    Coding region end
+    refGene.exonCount (int) Number of exons
+    refGene.exonStarts (char)
+                            Starting point of exons (adjusted to 1-based positions)
+    refGene.exonEnds (char) Ending point of exons
+    refGene.score (int)     Score
+    refGene.name2 (char)    Alternative name
+    refGene.cdsStartStat (char)
+                            cds start stat, can be 'non', 'unk', 'incompl', and 'cmp1'
+    refGene.cdsEndStat (char)
+                            cds end stat, can be 'non', 'unk', 'incompl', and 'cmp1'
+    refGene.exonFrames (char)
+                            Exon frame {0,1,2}, or -1 if no frame for exon
+    dbSNP.chr (char)
+    dbSNP.pos (int)
+    dbSNP.name (char)       DB SNP ID (rsname)
+    dbSNP.ref (char)        Reference allele (as on the + strand)
+    dbSNP.alt (char)        Alternative allele (as on the + strand)
+    dbSNP.FILTER (char)     Inconsistent Genotype Submission For At Least One Sample
+    dbSNP.RS (int)          dbSNP ID (i.e. rs number)
+    dbSNP.RSPOS (int)       Chr position reported in dbSNP
+    dbSNP.RV (int)          RS orientation is reversed
+    dbSNP.VP (char)         Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
+    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
+    dbSNP.dbSNPBuildID (int)
+                            First dbSNP Build for RS
+    dbSNP.SAO (int)         Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
+    dbSNP.SSR (int)         Variant Suspect Reason Codes (may be more than one value added together) 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed, 1024 - other
+    dbSNP.WGT (int)         Weight, 00 - unmapped, 1 - weight 1, 2 - weight 2, 3 - weight 3 or more
+    dbSNP.VC (char)         Variation Class
+    dbSNP.PM_flag (int)     Variant is Precious(Clinical,Pubmed Cited)
+    dbSNP.TPA_flag (int)    Provisional Third Party Annotation(TPA) (currently rs from PHARMGKB who will give phenotype data)
+    dbSNP.PMC_flag (int)    Links exist to PubMed Central article
+    dbSNP.S3D_flag (int)    Has 3D structure - SNP3D table
+    dbSNP.SLO_flag (int)    Has SubmitterLinkOut - From SNP->SubSNP->Batch.link_out
+    dbSNP.NSF_flag (int)    Has non-synonymous frameshift A coding region variation where one allele in the set changes all downstream amino acids. FxnClass = 44
+    dbSNP.NSM_flag (int)    Has non-synonymous missense A coding region variation where one allele in the set changes protein peptide. FxnClass = 42
+    dbSNP.NSN_flag (int)    Has non-synonymous nonsense A coding region variation where one allele in the set changes to STOP codon (TER). FxnClass = 41
+    dbSNP.REF_flag_flag (int)
+                            Has reference A coding region variation where one allele in the set is identical to the reference sequence. FxnCode = 8
+    dbSNP.SYN_flag (int)    Has synonymous A coding region variation where one allele in the set does not change the encoded amino acid. FxnCode = 3
+    dbSNP.U3_flag (int)     In 3' UTR Location is in an untranslated region (UTR). FxnCode = 53
+    dbSNP.U5_flag (int)     In 5' UTR Location is in an untranslated region (UTR). FxnCode = 55
+    dbSNP.ASS_flag (int)    In acceptor splice site FxnCode = 73
+    dbSNP.DSS_flag (int)    In donor splice-site FxnCode = 75
+    dbSNP.INT_flag (int)    In Intron FxnCode = 6
+    dbSNP.R3_flag (int)     In 3' gene region FxnCode = 13
+    dbSNP.R5_flag (int)     In 5' gene region FxnCode = 15
+    dbSNP.OTH_flag (int)    Has other variant with exactly the same set of mapped positions on NCBI refernce assembly.
+    dbSNP.CFL_flag (int)    Has Assembly conflict. This is for weight 1 and 2 variant that maps to different chromosomes on different assemblies.
+    dbSNP.ASP_flag (int)    Is Assembly specific. This is set if the variant only maps to one assembly
+    dbSNP.MUT_flag (int)    Is mutation (journal citation, explicit fact): a low frequency variation that is cited in journal and other reputable sources
+    dbSNP.VLD_flag (int)    Is Validated.  This bit is set if the variant has 2+ minor allele count based on frequency or genotype data.
+    dbSNP.G5A_flag (int)    >5% minor allele frequency in each and all populations
+    dbSNP.G5_flag (int)     >5% minor allele frequency in 1+ populations
+    dbSNP.HD_flag (int)     Marker is on high density genotyping kit (50K density or greater).  The variant may have phenotype associations present in dbGaP.
+    dbSNP.GNO_flag (int)    Genotypes available. The variant has individual genotype (in SubInd table).
+    dbSNP.KGValidated_flag (int)
+                            1000 Genome validated
+    dbSNP.KGPhase1_flag (int)
+                            1000 Genome phase 1 (incl. June Interim phase 1)
+    dbSNP.KGPilot123_flag (int)
+                            1000 Genome discovery all pilots 2010(1,2,3)
+    dbSNP.KGPROD_flag (int) Has 1000 Genome submission
+    dbSNP.OTHERKG_flag (int)
+                            non-1000 Genome submission
+    dbSNP.PH3_flag (int)    HAP_MAP Phase 3 genotyped: filtered, non-redundant
+    dbSNP.CDA_flag (int)    Variation is interrogated in a clinical diagnostic assay
+    dbSNP.LSD_flag (int)    Submitted from a locus-specific database
+    dbSNP.MTP_flag (int)    Microattribution/third-party annotation(TPA:GWAS,PAGE)
+    dbSNP.OM_flag (int)     Has OMIM/OMIA
+    dbSNP.NOC_flag (int)    Contig allele not present in variant allele list. The reference sequence allele at the mapped position is not present in the variant allele list, adjusted for orientation.
+    dbSNP.WTD_flag (int)    Is Withdrawn by submitter If one member ss is withdrawn by submitter, then this bit is set.  If all member ss' are withdrawn, then the rs is deleted to SNPHistory
+    dbSNP.NOV_flag (int)    Rs cluster has non-overlapping allele sets. True when rs set has more than 2 alleles from different submissions and these sets share no alleles in common.
+    dbSNP.CAF (char)        An ordered, comma delimited list of allele frequencies based on 1000Genomes, starting with the reference allele followed by alternate alleles as ordered in the ALT column. Where a 1000Genomes
+                            alternate allele is not in the dbSNPs alternate allele set, the allele is added to the ALT column.  The minor allele is the second largest value in the list, and was previuosly reported in
+                            VCF as the GMAF.  This is the GMAF reported on the RefSNP and EntrezSNP pages and VariationReporter
+    dbSNP.COMMON (int)      RS is a common SNP.  A common SNP is one that has at least one 1000Genomes population with a minor allele of frequency >= 1% and for which 2 or more founders contribute to that minor allele
+                            frequency.
     
 
 You can output annotation fields as follows: 
@@ -448,16 +496,17 @@ This looks simple but the problem is more complicated than what is shown here, b
     % vtools output 'aa=T' chr pos ref alt dbSNP.name refGene.name refGene.name2 --all -l 10
     
 
-    1  1105366  T  C  rs111751804  NM_153254     TTLL10
-    1  1105366  T  C  rs111751804  NM_001130045  TTLL10
-    1  1110240  T  A  rs116321663  NM_153254     TTLL10
-    1  1110240  T  A  rs116321663  NM_001130045  TTLL10
-    1  6447088  T  C  rs11800462   NM_001039664  TNFRSF25
-    1  6447088  T  C  rs11800462   NM_148970     TNFRSF25
-    1  6447088  T  C  rs11800462   NM_148967     TNFRSF25
-    1  6447088  T  C  rs11800462   NM_148966     TNFRSF25
-    1  6447088  T  C  rs11800462   NM_148965     TNFRSF25
-    1  6447088  T  C  rs11800462   NM_003790     TNFRSF25
+    1   54676       C   T   rs2462492   .           .
+    22  51158111    T   C   rs73174428  NM_033517   SHANK3
+    22  51158301    T   C   rs117910162 NM_033517   SHANK3
+    22  51162850    C   T   rs5770822   NM_033517   SHANK3
+    22  51164115    C   T   rs5770996   NM_033517   SHANK3
+    22  51164287    T   C   rs6009957   NM_033517   SHANK3
+    22  51172460    T   C   rs5770824   .           .
+    22  51174939    C   T   rs73174435  NR_134637   LOC105373100
+    22  51176164    T   C   rs76593947  NR_134637   LOC105373100
+    22  51186228    C   T   rs3865766   .           .
+
     
 
 A consequence of this is that duplicated records can be displayed if the field that lead to multiple records is not outputted: 
@@ -465,26 +514,21 @@ A consequence of this is that duplicated records can be displayed if the field t
     % vtools output 'aa=T' chr pos ref alt dbSNP.name  refGene.name2 --all -l 10
     
 
-    1  1105366  T  C  rs111751804  TTLL10
-    1  1105366  T  C  rs111751804  TTLL10
-    1  1110240  T  A  rs116321663  TTLL10
-    1  1110240  T  A  rs116321663  TTLL10
-    1  6447088  T  C  rs11800462   TNFRSF25
-    1  6447088  T  C  rs11800462   TNFRSF25
-    1  6447088  T  C  rs11800462   TNFRSF25
-    1  6447088  T  C  rs11800462   TNFRSF25
-    1  6447088  T  C  rs11800462   TNFRSF25
-    1  6447088  T  C  rs11800462   TNFRSF25
+    1   54676       C   T   rs2462492   .
+    22  51158111    T   C   rs73174428  SHANK3
+    22  51158301    T   C   rs117910162 SHANK3
+    22  51162850    C   T   rs5770822   SHANK3
+    22  51164115    C   T   rs5770996   SHANK3
+    22  51164287    T   C   rs6009957   SHANK3
+    22  51172460    T   C   rs5770824   .
+    22  51174939    C   T   rs73174435  LOC105373100
+    22  51176164    T   C   rs76593947  LOC105373100
+    22  51186228    C   T   rs3865766   .
     
 
 This is why the output of command `vtools output --all` is usually piped to command `uniq`, 
 
     % vtools output 'aa=T' chr pos ref alt dbSNP.name  refGene.name2 --all -l 10 | uniq
-    
-
-    1  1105366  T  C  rs111751804  TTLL10
-    1  1110240  T  A  rs116321663  TTLL10
-    1  6447088  T  C  rs11800462   TNFRSF25
     
 
 although `uniq` cannot suppress all duplicated records in all cases because it only removes adjacent duplicated records. 
@@ -507,17 +551,17 @@ In addition to basic arithmetic operations, *variant tools* accept additional ma
     % vtools output "aa=T" chr 'pos-1' 'refGene.name2 || "." || refGene.name' 'log(DP)' --header -l 10
     
 
-    chr  pos_1     refGene_name2___________refGene_name  log_DP_
-    1    1105365   TTLL10.NM_001130045                   8.0867179203
-    1    1110239   TTLL10.NM_001130045                   8.89219909204
-    1    6447087   TNFRSF25.NM_001039664                 8.45340105833
-    1    6447274   TNFRSF25.NM_001039664                 8.83506493503
-    1    11633147  FBXO2.NM_012168                       7.01929665372
-    1    20897487  KIF17.NM_001122819                    8.20576472523
-    1    20903628  KIF17.NM_001122819                    8.8420265295
-    1    35998534  CLSPN.NM_022111                       8.73841489717
-    1    36002844  CLSPN.NM_022111                       8.79315687091
-    1    40510175  ZMPSTE24.NM_005857                    8.71061952794
+    chr pos_1       refGene_name2_refGene_name  log_DP_
+    1   54675       .                           4.875197323201151
+    22  51158110    SHANK3.NM_033517            5.697093486505405
+    22  51158300    SHANK3.NM_033517            5.1298987149230735
+    22  51162849    SHANK3.NM_033517            5.905361848054571
+    22  51164114    SHANK3.NM_033517            5.877735781779639
+    22  51164286    SHANK3.NM_033517            5.802118375377063
+    22  51172459    .                           5.6131281063880705
+    22  51174938    LOC105373100.NR_134637      5.75890177387728
+    22  51176163    LOC105373100.NR_134637      5.940171252720432
+    22  51186227    .                           5.53338948872752
     
 
 As you can see, the default header that *variant tools* generates replaces all non-alphanumeric characters by underscores, and you should most likely specify your own headers in these cases. 
@@ -542,7 +586,7 @@ Command `vtools output` accepts the following aggregating functions:
     % vtools output variant 'avg(DP)'
     
 
-    6264.00102923
+    271.875
     
 
 You can also output average of depth, grouped by variants that belong to genes, 
@@ -552,16 +596,17 @@ You can also output average of depth, grouped by variants that belong to genes,
     % vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 -l 10
     
 
-    .         20  5928.05
-    AARD      1   3919.0
-    AASDHPPT  2   7834.0
-    AATF      4   8590.0
-    ABCB9     3   3469.66666667
-    ABCC6     18  4963.27777778
-    ABLIM3    6   8895.5
-    ABTB2     3   6922.0
-    ACHE      4   5159.25
-    ACIN1     15  8962.73333333
+    .               161 281.1366459627329
+    ACR             5   240.6
+    FAM41C          19  294.7894736842105
+    FAM87B          8   214.875
+    LINC00115       1   122.0
+    LINC01128       24  242.29166666666666
+    LOC100288069    4   236.75
+    LOC105373100    6   332.6666666666667
+    RABL2B          22  219.5
+    RPL23AP82       20  293.1
+
     
 
 Here `count(*)` is used to count the number of variants in each gene, and `NA` is a special group for variants that do not belong to any gene, which can be confirmed by command 
@@ -571,7 +616,7 @@ Here `count(*)` is used to count the number of variants in each gene, and `NA` i
     % vtools select variant 'refGene.chr is NULL' --output 'avg(DP)'
     
 
-    5928.05
+    281.1366459627329
     
 
 Option `--all` should not be used in these commands because this option will lead to multiple entries for some variants, and biase the results. For example, the output of the following command differs from the previous one: 
@@ -579,16 +624,17 @@ Option `--all` should not be used in these commands because this option will lea
     % vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 --all -l 10
     
 
-    .         20  5928.05
-    AARD      1   3919.0
-    AASDHPPT  2   7834.0
-    AATF      4   8590.0
-    ABCB9     15  3469.66666667
-    ABCC6     18  4963.27777778
-    ABLIM3    6   8895.5
-    ABTB2     3   6922.0
-    ACHE      8   5159.25
-    ACIN1     47  8719.21276596
+    .               161 281.1366459627329
+    ACR             5   240.6
+    FAM41C          19  294.7894736842105
+    FAM87B          8   214.875
+    LINC00115       1   122.0
+    LINC01128       128 243.03125
+    LOC100288069    4   236.75
+    LOC105373100    6   332.6666666666667
+    RABL2B          484 219.5
+    RPL23AP82       44  256.22727272727275
+
     
 
 </details>
