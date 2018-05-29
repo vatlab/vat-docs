@@ -59,7 +59,8 @@ Attach:liftover.png
 <details><summary> Liftover from hg19 to hg38</summary> The following example demonstrates how to liftOver a project from hg18 to hg19. Note that the UCSC liftOver tool and needed chain files are automatically downloaded if they are not available. 
 
 
-
+    % vtools init -f liftover
+    % vtools import V1-3_hg19.vcf --build hg19
     % vtools liftover hg38
     
 
@@ -79,24 +80,22 @@ After the liftOver operation, three more fields are added to the master variant 
 
     Name:                   variant
     Description:            Master variant table
-    Creation date:          May28
+    Creation date:          May29
     Command:
     Fields:                 variant_id, bin, chr, pos, ref, alt, alt_bin, alt_chr, alt_pos
-    Number of variants:     288
+    Number of variants:     1611
     
 
     variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
-    1, 585, 1, 533, G, C, 423, 585, 1, 10533
-    2, 585, 1, 41342, T, A, 188, 585, 1, 51479
-    3, 585, 1, 41791, G, A, 192, 585, 1, 51928
-    4, 585, 1, 44449, T, C, 166, 585, 1, 54586
-    5, 585, 1, 44539, C, T, 131, 585, 1, 54676
-    6, 585, 1, 44571, G, C, 135, 585, 1, 54708
-    7, 585, 1, 45162, C, T, 166, 585, 1, 55299
-    8, 585, 1, 52066, T, C, 159, 585, 1, 62203
-    9, 585, 1, 53534, G, A, 243, 585, 1, 63671
-    10, 585, 1, 75891, T, C, 182, 585, 1, 86028
-    (12984 records omitted, use parameter --limit to see more)
+    52,586,1,230047,A,T,586,1,260296
+    53,586,1,230058,T,G,586,1,260307
+    54,586,1,231480,G,C,586,1,261729
+    55,586,1,231504,G,A,586,1,261753
+    56,586,1,231526,C,T,586,1,261775
+    57,586,1,232223,C,T,587,1,262472
+    58,586,1,234301,T,C,587,1,264550
+    59,586,1,234308,A,G,587,1,264557
+    ... ...
     
 
 </details>
@@ -149,17 +148,15 @@ Interruption of the flipping process will leave the project unusable because of 
     
 
     variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
-    1, 585, 1, 10533, G, C, 423, 585, 1, 533
-    2, 585, 1, 51479, T, A, 188, 585, 1, 41342
-    3, 585, 1, 51928, G, A, 192, 585, 1, 41791
-    4, 585, 1, 54586, T, C, 166, 585, 1, 44449
-    5, 585, 1, 54676, C, T, 131, 585, 1, 44539
-    6, 585, 1, 54708, G, C, 135, 585, 1, 44571
-    7, 585, 1, 55299, C, T, 166, 585, 1, 45162
-    8, 585, 1, 62203, T, C, 159, 585, 1, 52066
-    9, 585, 1, 63671, G, A, 243, 585, 1, 53534
-    10, 585, 1, 86028, T, C, 182, 585, 1, 75891
-    (12984 records omitted, use parameter --limit to see more)
+    52,586,1,260296,A,T,586,1,230047
+    53,586,1,260307,T,G,586,1,230058
+    54,586,1,261729,G,C,586,1,231480
+    55,586,1,261753,G,A,586,1,231504
+    56,586,1,261775,C,T,586,1,231526
+    57,587,1,262472,C,T,586,1,232223
+    58,587,1,264550,T,C,586,1,234301
+    59,587,1,264557,A,G,586,1,234308
+    ... ...
     
 
 </details>
