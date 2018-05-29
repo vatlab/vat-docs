@@ -149,39 +149,42 @@ The motivation of this export format is to prepare input files for annotating va
 <details><summary> Examples: Export in ANNOVAR format</summary> 
 
     % vtools init test 
-    % vtools admin --load_snapshot vt_testData
-    % vtools import CEU.vcf.gz --build hg18 --var_info DP
+    % vtools import CEU_hg38.vcf --var_info AA AC AN DP --geno_info DP --build hg38
     % vtools export variant -o ANNOVAR.input --format ANNOVAR 
     % head ANNOVAR.input 
     
 
-    1	533	533	G	C	
-    1	41342	41342	T	A	
-    1	41791	41791	G	A	
-    1	44449	44449	T	C	
-    1	44539	44539	C	T	
-    1	44571	44571	G	C	
-    1	45162	45162	C	T	
-    1	52066	52066	T	C	
-    ...
+    1   10533   10533   G   C   
+    1   51479   51479   T   A   
+    1   51928   51928   G   A   
+    1   54586   54586   T   C   
+    1   54676   54676   C   T   
+    1   54708   54708   G   C   
+    1   55299   55299   C   T   
+    1   62203   62203   T   C   
+    1   63671   63671   G   A   
+    1   86028   86028   T   C   
     
 
 This optional comment field comes from the available fields in the variant table to be outputted. They should have been created using `vtools import` or `vtools update` 
 
 
 
-    % vtools export variant ANNOVAR.input --format ANNOVAR --comment_string DP
+    % vtools export variant -o ANNOVAR.input --format ANNOVAR --comment_string DP
     % head ANNOVAR.input 
     
 
-    1	533	533	G	C	423
-    1	41342	41342	T	A	188
-    1	41791	41791	G	A	192
-    1	44449	44449	T	C	166
-    1	44539	44539	C	T	131
-    1	44571	44571	G	C	135
-    1	45162	45162	C	T	166	
-    ...
+    1   10533   10533   G   C   423
+    1   51479   51479   T   A   188
+    1   51928   51928   G   A   192
+    1   54586   54586   T   C   166
+    1   54676   54676   C   T   131
+    1   54708   54708   G   C   135
+    1   55299   55299   C   T   166
+    1   62203   62203   T   C   159
+    1   63671   63671   G   A   243
+    1   86028   86028   T   C   182
+   
     
 
 </details>
@@ -216,15 +219,8 @@ The basic command to export variants in vcf format is `vtools export TABLE --for
 
 
     % vtools init test 
-    % vtools admin --load_snapshot vt_testData
-    % vtools import CEU.vcf.gz --build hg18
+    % vtools import CEU_hg38.vcf --var_info AA AC AN DP --geno_info DP --build hg38
     
-
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [==============================================] 300 16.5K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [=====================================] 18,000 9.0K/s in 00:00:02
-    Copying samples: 100% [=========================================] 120 461.3K/s in 00:00:00
     
 
 When we export variants in vcf format, 
@@ -232,27 +228,27 @@ When we export variants in vcf format,
     % vtools export variant -o my.vcf
     
 
-    Writing: 100% [=================================================] 288 20.4K/s in 00:00:00
-    INFO: 287 lines are exported from variant table variant
+    INFO: Using 2 processes to handle 0 samples
+    Selecting genotypes: 100% [===================================] 5 4.9/s in 00:00:01
+    my.vcf: 100% [============================================] 292 15.6K/s in 00:00:00
+    INFO: 290 lines are exported from variant table variant 
     
 
 The outputted file looks like 
 
-
-
     % head my.vcf
     
 
-    1	533	.	G	C	.	PASS	.	
-    1	41342	.	T	A	.	PASS	.	
-    1	41791	.	G	A	.	PASS	.	
-    1	44449	.	T	C	.	PASS	.	
-    1	44539	.	C	T	.	PASS	.	
-    1	44571	.	G	C	.	PASS	.	
-    1	45162	.	C	T	.	PASS	.	
-    1	52066	.	T	C	.	PASS	.	
-    1	53534	.	G	A	.	PASS	.	
-    1	75891	.	T	C	.	PASS	.	
+    1   10533   .   G   C   .   PASS    .   
+    1   51479   .   T   A   .   PASS    .   
+    1   51928   .   G   A   .   PASS    .   
+    1   54586   .   T   C   .   PASS    .   
+    1   54676   .   C   T   .   PASS    .   
+    1   54708   .   G   C   .   PASS    .   
+    1   55299   .   C   T   .   PASS    .   
+    1   62203   .   T   C   .   PASS    .   
+    1   63671   .   G   A   .   PASS    .   
+    1   86028   .   T   C   .   PASS    .
     
 
 </details>
@@ -289,16 +285,16 @@ The outputted file looks like
     % head my_indel.vcf
     
 
-    1	10433	.	A	AC	.	PASS	.	
-    1	10439	.	AC	A	.	PASS	.	
-    1	54788	.	CC	C	.	PASS	.	
-    1	54789	.	C	CT	.	PASS	.	
-    1	63737	.	TACT	T	.	PASS	.	
-    1	81962	.	T	TAA	.	PASS	.	
-    1	82133	.	CA	C	.	PASS	.	
-    1	82134	.	A	AAAAAAAAAAAAAAA	.	PASS	.	
-    1	83119	.	AA	A	.	PASS	.	
-    1	83786	.	T	TA	.	PASS	.	
+    1   10433   .   A   AC  .   PASS    .   
+    1   10439   .   AC  A   .   PASS    .   
+    1   54787   .   TC  T   .   PASS    .   
+    1   54789   .   C   CT  .   PASS    .   
+    1   63735   .   CCTA    C   .   PASS    .   
+    1   63738   .   ACT CTA .   PASS    .   
+    1   81962   .   T   TAA .   PASS    .   
+    1   82133   .   CA  C   .   PASS    .   
+    1   82133   .   C   CAAAAAAAAAAAAAA .   PASS    .   
+    1   83118   .   CA  C   .   PASS    .
     
 
 The difference is clear if you compare the output with what outputted from command `vtools output`: 
@@ -306,16 +302,17 @@ The difference is clear if you compare the output with what outputted from comma
     % vtools output variant chr pos ref alt -l 10
     
 
-    1	10434	-	C
-    1	10440	C	-
-    1	54789	C	-
-    1	54790	-	T
-    1	63738	ACT	-
-    1	63738	ACT	CTA
-    1	81963	-	AA
-    1	82134	A	-
-    1	82135	-	AAAAAAAAAAAAAA
-    1	83120	A	-
+    1   10434   -   C
+    1   10440   C   -
+    1   54788   C   -
+    1   54790   -   T
+    1   63736   CTA -
+    1   63738   ACT CTA
+    1   81963   -   AA
+    1   82134   A   -
+    1   82134   -   AAAAAAAAAAAAAA
+    1   83119   A   -
+
     
 
 </details>
@@ -329,21 +326,22 @@ You can specify fields that are not defined in `vcf.fmt`. However, because *vari
 <details><summary> Examples: export variant info fields</summary> 
 
 
-
+    % vtools init test -f
+    % vtools import CEU_hg38.vcf --var_info AA AC AN DP --geno_info DP --build hg38
     % vtools export variant --var_info AA -o my.vcf
     % head my.vcf
     
 
-    1	533	.	G	C	0	PASS	AA=.	
-    1	41342	.	T	A	.	PASS	AA=.	
-    1	41791	.	G	A	.	PASS	AA=.	
-    1	44449	.	T	C	.	PASS	AA=C	
-    1	44539	.	C	T	.	PASS	AA=T	
-    1	44571	.	G	C	.	PASS	AA=g	
-    1	45162	.	C	T	.	PASS	AA=c	
-    1	52066	.	T	C	.	PASS	AA=C	
-    1	53534	.	G	A	.	PASS	AA=G	
-    1	75891	.	T	C	.	PASS	AA=.	
+    1   10533   .   G   C   .   PASS    AA=.    
+    1   51479   .   T   A   .   PASS    AA=.    
+    1   51928   .   G   A   .   PASS    AA=.    
+    1   54586   .   T   C   .   PASS    AA=C    
+    1   54676   .   C   T   .   PASS    AA=T    
+    1   54708   .   G   C   .   PASS    AA=g    
+    1   55299   .   C   T   .   PASS    AA=c    
+    1   62203   .   T   C   .   PASS    AA=C    
+    1   63671   .   G   A   .   PASS    AA=G    
+    1   86028   .   T   C   .   PASS    AA=.	
     
 
 Anyway, if you have imported the whole `INFO` column of the input file, you can export it as it is for each variant 
@@ -351,15 +349,15 @@ Anyway, if you have imported the whole `INFO` column of the input file, you can 
 
 
     % vtools init test -f
-    % vtools import CEU.vcf.gz --geno_info DP_geno --var_info AA info --build hg18
+    % vtools import CEU_hg38.vcf --var_info AA info --geno_info DP --build hg38
     % vtools output variant chr pos ref alt info -l 5
     
 
-    1	533	G	C	AA=.;AC=6;AN=120;DP=423
-    1	41342	T	A	AA=.;AC=29;AN=120;DP=188
-    1	41791	G	A	AA=.;AC=5;AN=120;DP=192
-    1	44449	T	C	AA=C;AC=2;AN=120;DP=166
-    1	44539	C	T	AA=T;AC=2;AN=120;DP=131
+    1   10533   G   C   AA=.;AC=6;AN=120;DP=423;REMAP_ALIGN=FP
+    1   51479   T   A   AA=.;AC=29;AN=120;DP=188;REMAP_ALIGN=FP
+    1   51928   G   A   AA=.;AC=5;AN=120;DP=192;REMAP_ALIGN=FP
+    1   54586   T   C   AA=C;AC=2;AN=120;DP=166;REMAP_ALIGN=FP
+    1   54676   C   T   AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP
     
 
 
@@ -368,16 +366,16 @@ Anyway, if you have imported the whole `INFO` column of the input file, you can 
     % head my.vcf
     
 
-    1	533	.	G	C	0	PASS	AA=.;AC=6;AN=120;DP=423	
-    1	41342	.	T	A	.	PASS	AA=.;AC=29;AN=120;DP=188	
-    1	41791	.	G	A	.	PASS	AA=.;AC=5;AN=120;DP=192	
-    1	44449	.	T	C	.	PASS	AA=C;AC=2;AN=120;DP=166	
-    1	44539	.	C	T	.	PASS	AA=T;AC=2;AN=120;DP=131	
-    1	44571	.	G	C	.	PASS	AA=g;AC=7;AN=120;DP=135	
-    1	45162	.	C	T	.	PASS	AA=c;AC=20;AN=120;DP=166;HM2	
-    1	52066	.	T	C	.	PASS	AA=C;AC=18;AN=120;DP=159	
-    1	53534	.	G	A	.	PASS	AA=G;AC=18;AN=120;DP=243	
-    1	75891	.	T	C	.	PASS	AA=.;AC=11;AN=120;DP=182	
+    1   10533   .   G   C   .   PASS    AA=.;AC=6;AN=120;DP=423;REMAP_ALIGN=FP  
+    1   51479   .   T   A   .   PASS    AA=.;AC=29;AN=120;DP=188;REMAP_ALIGN=FP 
+    1   51928   .   G   A   .   PASS    AA=.;AC=5;AN=120;DP=192;REMAP_ALIGN=FP  
+    1   54586   .   T   C   .   PASS    AA=C;AC=2;AN=120;DP=166;REMAP_ALIGN=FP  
+    1   54676   .   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP  
+    1   54708   .   G   C   .   PASS    AA=g;AC=7;AN=120;DP=135;REMAP_ALIGN=FP  
+    1   55299   .   C   T   .   PASS    AA=c;AC=20;AN=120;DP=166;HM2;REMAP_ALIGN=FP 
+    1   62203   .   T   C   .   PASS    AA=C;AC=18;AN=120;DP=159;REMAP_ALIGN=FP 
+    1   63671   .   G   A   .   PASS    AA=G;AC=18;AN=120;DP=243;REMAP_ALIGN=FP 
+    1   86028   .   T   C   .   PASS    AA=.;AC=11;AN=120;DP=182;REMAP_ALIGN=FP	
     
 
 </details>
@@ -399,11 +397,10 @@ The `--header` option can be used to add a header to outputs. Although it is pos
 
 <details><summary> Examples: export in vcf format with header</summary> 
 
+    % vtools init test -f   
+    % vtools import indels.vcf --build hg19
     % vtools export variant --header CHROM POS ID REF ALT QUAL FILTER INFO FORMAT -o my_indel.vcf
     
-
-
-
     % head -5 my_indel.vcf
     
 
@@ -443,7 +440,7 @@ Genotypes of selected samples can be outputted if you use use parameter `--sampl
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
     % vtools import CEU.vcf.gz --geno_info DP_geno --var_info AA --build hg18
-    % vtools export variant  --samples 'sample_name like "NA128%"' -o my.vcf
+    % vtools export variant  --samples 'sample_name like "NA128%"' --format_string "GT" -o my.vcf
     
 
     INFO: Genotypes of 8 samples are exported.
@@ -451,21 +448,19 @@ Genotypes of selected samples can be outputted if you use use parameter `--sampl
     INFO: 286 lines are exported from variant table variant with 1 failed records
     
 
-
-
     % head -10 my.vcf
     
 
-    1	533	.	G	C	0	PASS	.	GT	0/0	0/0	0/0	0/1	0/0	0/0	0/1	0/1
-    1	41342	.	T	A	.	PASS	.	GT	0/0	0/0	0/1	0/1	0/0	0/0	0/0	0/0
-    1	41791	.	G	A	.	PASS	.	GT	0/0	0/0	0/0	0/0	0/0	0/0	0/0	0/0
-    1	44449	.	T	C	.	PASS	.	GT	0/1	0/0	0/0	0/0	0/0	0/0	0/0	0/0
-    1	44539	.	C	T	.	PASS	.	GT	0/1	0/0	0/0	0/0	0/0	0/0	0/0	0/0
-    1	44571	.	G	C	.	PASS	.	GT	0/1	0/0	0/0	0/0	0/0	0/0	0/0	0/0
-    1	45162	.	C	T	.	PASS	.	GT	0/0	0/0	0/1	0/0	1/1	0/0	0/0	0/0
-    1	52066	.	T	C	.	PASS	.	GT	0/1	0/0	0/0	0/0	0/0	0/0	0/0	0/1
-    1	53534	.	G	A	.	PASS	.	GT	0/1	0/1	0/0	0/0	0/0	0/0	0/0	0/0
-    1	75891	.	T	C	.	PASS	.	GT	0/0	0/0	1/1	0/0	0/1	0/0	0/0	0/0
+    1   10533   .   G   C   .   PASS    .   GT  0/0 0/0 0/0 0/1 0/0 0/0 0/1 0/1
+    1   51479   .   T   A   .   PASS    .   GT  0/0 0/0 0/1 0/1 0/0 0/0 0/0 0/0
+    1   51928   .   G   A   .   PASS    .   GT  0/0 0/0 0/0 0/0 0/0 0/0 0/0 0/0
+    1   54586   .   T   C   .   PASS    .   GT  0/1 0/0 0/0 0/0 0/0 0/0 0/0 0/0
+    1   54676   .   C   T   .   PASS    .   GT  0/1 0/0 0/0 0/0 0/0 0/0 0/0 0/0
+    1   54708   .   G   C   .   PASS    .   GT  0/1 0/0 0/0 0/0 0/0 0/0 0/0 0/0
+    1   55299   .   C   T   .   PASS    .   GT  0/0 0/0 0/1 0/0 1/1 0/0 0/0 0/0
+    1   62203   .   T   C   .   PASS    .   GT  0/1 0/0 0/0 0/0 0/0 0/0 0/0 0/1
+    1   63671   .   G   A   .   PASS    .   GT  0/1 0/1 0/0 0/0 0/0 0/0 0/0 0/0
+    1   86028   .   T   C   .   PASS    .   GT  0/0 0/0 1/1 0/0 0/1 0/0 0/0 0/0
     
 
 </details>
@@ -479,8 +474,10 @@ You could export one or more genotype info fields using option `--geno_info` (Hi
     
 
     INFO: Genotypes of 8 samples are exported.
-    Writing: 100% [==============================================] 288 10.6K/s in 00:00:00
-    INFO: 286 lines are exported from variant table variant with 1 failed records
+    INFO: Using 2 processes to handle 8 samples
+    Selecting genotypes: 100% [===================================] 5 4.9/s in 00:00:01
+    my.vcf: 100% [=============================================] 292 5.1K/s in 00:00:00
+    INFO: 288 lines are exported from variant table variant with 2 failed records
     
 
 
@@ -488,16 +485,16 @@ You could export one or more genotype info fields using option `--geno_info` (Hi
     % head -10 my.vcf
     
 
-    1	533	.	G	C	0	PASS	.	GT:DP	0/0:7	0/0:0	0/0:6	0/1:5	0/0:4	0/0:5	0/1:5	0/1:9
-    1	41342	.	T	A	.	PASS	.	GT:DP	0/0:1	0/0:1	0/1:9	0/1:2	0/0:3	0/0:5	0/0:2	0/0:3
-    1	41791	.	G	A	.	PASS	.	GT:DP	0/0:6	0/0:1	0/0:5	0/0:6	0/0:0	0/0:6	0/0:0	0/0:2
-    1	44449	.	T	C	.	PASS	.	GT:DP	0/1:3	0/0:0	0/0:6	0/0:0	0/0:3	0/0:1	0/0:1	0/0:0
-    1	44539	.	C	T	.	PASS	.	GT:DP	0/1:2	0/0:0	0/0:4	0/0:1	0/0:2	0/0:3	0/0:1	0/0:0
-    1	44571	.	G	C	.	PASS	.	GT:DP	0/1:2	0/0:0	0/0:2	0/0:1	0/0:3	0/0:2	0/0:1	0/0:0
-    1	45162	.	C	T	.	PASS	.	GT:DP	0/0:4	0/0:0	0/1:7	0/0:5	1/1:3	0/0:0	0/0:4	0/0:1
-    1	52066	.	T	C	.	PASS	.	GT:DP	0/1:3	0/0:1	0/0:6	0/0:0	0/0:2	0/0:2	0/0:2	0/1:3
-    1	53534	.	G	A	.	PASS	.	GT:DP	0/1:3	0/1:1	0/0:3	0/0:0	0/0:3	0/0:0	0/0:1	0/0:0
-    1	75891	.	T	C	.	PASS	.	GT:DP	0/0:7	0/0:0	1/1:6	0/0:2	0/1:2	0/0:6	0/0:5	0/0:0
+    1   10533   .   G   C   .   PASS    .   GT:DP   0/0:7.0 0/0:0.0 0/0:6.0 0/1:5.0 0/0:4.0 0/0:5.0 0/1:5.0 0/1:9.0
+    1   51479   .   T   A   .   PASS    .   GT:DP   0/0:1.0 0/0:1.0 0/1:9.0 0/1:2.0 0/0:3.0 0/0:5.0 0/0:2.0 0/0:3.0
+    1   51928   .   G   A   .   PASS    .   GT:DP   0/0:6.0 0/0:1.0 0/0:5.0 0/0:6.0 0/0:0.0 0/0:6.0 0/0:0.0 0/0:2.0
+    1   54586   .   T   C   .   PASS    .   GT:DP   0/1:3.0 0/0:0.0 0/0:6.0 0/0:0.0 0/0:3.0 0/0:1.0 0/0:1.0 0/0:0.0
+    1   54676   .   C   T   .   PASS    .   GT:DP   0/1:2.0 0/0:0.0 0/0:4.0 0/0:1.0 0/0:2.0 0/0:3.0 0/0:1.0 0/0:0.0
+    1   54708   .   G   C   .   PASS    .   GT:DP   0/1:2.0 0/0:0.0 0/0:2.0 0/0:1.0 0/0:3.0 0/0:2.0 0/0:1.0 0/0:0.0
+    1   55299   .   C   T   .   PASS    .   GT:DP   0/0:4.0 0/0:0.0 0/1:7.0 0/0:5.0 1/1:3.0 0/0:0.0 0/0:4.0 0/0:1.0
+    1   62203   .   T   C   .   PASS    .   GT:DP   0/1:3.0 0/0:1.0 0/0:6.0 0/0:0.0 0/0:2.0 0/0:2.0 0/0:2.0 0/1:3.0
+    1   63671   .   G   A   .   PASS    .   GT:DP   0/1:3.0 0/1:1.0 0/0:3.0 0/0:0.0 0/0:3.0 0/0:0.0 0/0:1.0 0/0:0.0
+    1   86028   .   T   C   .   PASS    .   GT:DP   0/0:7.0 0/0:0.0 1/1:6.0 0/0:2.0 0/1:2.0 0/0:6.0 0/0:5.0 0/0:0.0
     
 
 </details>
@@ -514,14 +511,9 @@ You can specify arbitrary fields (or constant values) to the `ID` (name), `QUAL`
 
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
-    % vtools import CEU.vcf.gz --var_info id qual filter info AA --build hg18
+    % vtools import CEU_hg38.vcf --var_info id qual filter info AA  --build hg38
     
 
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [===========================================] 300 11.1K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [================================] 18,000 9.0K/s in 00:00:02
-    Copying samples: 100% [========================================] 66 65.9/s in 00:00:01
     
 
 we can export them for selected variants, 
@@ -533,58 +525,58 @@ we can export them for selected variants,
     % head my.vcf
     
 
-    1	44539	rs2462492	C	T	.	PASS	AA=T;AC=2;AN=120;DP=13	
-    22	49504977	.	T	C	.	PASS	AA=T;AC=1;AN=120;DP=29	
-    22	49505167	.	T	C	.	PASS	AA=T;AC=7;AN=120;DP=16	
-    22	49509716	rs5770822	C	T	.	PASS	AA=T;AC=41;AN=120;DP=367	
-    22	49510981	rs5770996	C	T	.	PASS	AA=T;AC=52;AN=120;DP=357	
-    22	49511153	rs6009957	T	C	.	PASS	AA=T;AC=37;AN=120;DP=331	
-    22	49519326	rs5770824	T	C	.	PASS	AA=T;AC=3;AN=120;DP=274	
-    22	49521805	.	C	T	.	PASS	AA=T;AC=4;AN=120;DP=31	
-    22	49523030	.	T	C	.	PASS	AA=T;AC=3;AN=120;DP=38	
-    22	49533094	rs3865766	C	T	.	PASS	AA=T;AC=51;AN=120;DP=253;HM3	
+    1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP  
+    22  50719683    .   T   C   .   PASS    AA=T;AC=1;AN=120;DP=298;REMAP_ALIGN=FP  
+    22  50719873    .   T   C   .   PASS    AA=T;AC=7;AN=120;DP=169;REMAP_ALIGN=FP  
+    22  50724422    rs5770822   C   T   .   PASS    AA=T;AC=41;AN=120;DP=367;REMAP_ALIGN=FP 
+    22  50725687    rs5770996   C   T   .   PASS    AA=T;AC=52;AN=120;DP=357;REMAP_ALIGN=FP 
+    22  50725859    rs6009957   T   C   .   PASS    AA=T;AC=37;AN=120;DP=331;REMAP_ALIGN=FP 
+    22  50734032    rs5770824   T   C   .   PASS    AA=T;AC=3;AN=120;DP=274;REMAP_ALIGN=FP  
+    22  50736511    .   C   T   .   PASS    AA=T;AC=4;AN=120;DP=317;REMAP_ALIGN=FP  
+    22  50737736    .   T   C   .   PASS    AA=T;AC=3;AN=120;DP=380;REMAP_ALIGN=FP  
+    22  50747800    rs3865766   C   T   .   PASS    AA=T;AC=51;AN=120;DP=253;HM3;REMAP_ALIGN=FP	
     
 
 Actually, because we are using columns such as `qual` from a VCF file, we can export these columns using a vcf `track`. The input `CEU.vcf.gz` file must be indexed though: 
 
 
 
-    % vtools export 'AA=T' --id id --qual 'track("CEU.vcf.gz", "qual")' --var_info 'track("CEU.vcf.gz", "info")' \
-        --filter 'track("CEU.vcf.gz", "filter")' -o my.vcf
+    % vtools export 'AA=T' --id id --qual 'track("CEU_hg38.vcf", "qual")' --var_info 'track("CEU_hg38.vcf", "info")' \
+        --filter 'track("CEU_hg38.vcf", "filter")' -o my.vcf
     % head my.vcf
     
 
-    1	44539	rs2462492	C	T	.	PASS	AA=T;AC=2;AN=120;DP=131
-    22	49504977	.	T	C	.	PASS	AA=T;AC=1;AN=120;DP=298
-    22	49505167	.	T	C	.	PASS	AA=T;AC=7;AN=120;DP=169
-    22	49509716	rs5770822	C	T	.	PASS	AA=T;AC=41;AN=120;DP=367
-    22	49510981	rs5770996	C	T	.	PASS	AA=T;AC=52;AN=120;DP=357
-    22	49511153	rs6009957	T	C	.	PASS	AA=T;AC=37;AN=120;DP=331
-    22	49519326	rs5770824	T	C	.	PASS	AA=T;AC=3;AN=120;DP=274
-    22	49521805	.	C	T	.	PASS	AA=T;AC=4;AN=120;DP=317
-    22	49523030	.	T	C	.	PASS	AA=T;AC=3;AN=120;DP=380
-    22	49533094	rs3865766	C	T	.	PASS	AA=T;AC=51;AN=120;DP=253;HM3
+    1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP  
+    22  50719683    .   T   C   .   PASS    AA=T;AC=1;AN=120;DP=298;REMAP_ALIGN=FP  
+    22  50719873    .   T   C   .   PASS    AA=T;AC=7;AN=120;DP=169;REMAP_ALIGN=FP  
+    22  50724422    rs5770822   C   T   .   PASS    AA=T;AC=41;AN=120;DP=367;REMAP_ALIGN=FP 
+    22  50725687    rs5770996   C   T   .   PASS    AA=T;AC=52;AN=120;DP=357;REMAP_ALIGN=FP 
+    22  50725859    rs6009957   T   C   .   PASS    AA=T;AC=37;AN=120;DP=331;REMAP_ALIGN=FP 
+    22  50734032    rs5770824   T   C   .   PASS    AA=T;AC=3;AN=120;DP=274;REMAP_ALIGN=FP  
+    22  50736511    .   C   T   .   PASS    AA=T;AC=4;AN=120;DP=317;REMAP_ALIGN=FP  
+    22  50737736    .   T   C   .   PASS    AA=T;AC=3;AN=120;DP=380;REMAP_ALIGN=FP  
+    22  50747800    rs3865766   C   T   .   PASS    AA=T;AC=51;AN=120;DP=253;HM3;REMAP_ALIGN=FP 
     
 
 Optionally, you can use rsnames in the `dbSNP` database 
 
 
 
-    % vtools use dbSNP-hg18_130
-    % vtools export 'AA=T' --id dbSNP.name --qual qual --var_info info --filter filter -o my.vcf
+    % vtools use dbSNP
+    % vtools export 'AA=T' --id dbSNP.name --qual qual --var_info info --filter dbSNP.filter -o my.vcf
     % head my.vcf
     
 
-    1	44539	rs2462492	C	T	.	PASS	AA=T;AC=2;AN=120;DP=13	
-    22	49504977	rs73174428	T	C	.	PASS	AA=T;AC=1;AN=120;DP=298	
-    22	49505167	.	T	C	.	PASS	AA=T;AC=7;AN=120;DP=16	
-    22	49509716	.	C	T	.	PASS	AA=T;AC=41;AN=120;DP=367	
-    22	49510981	rs5770996	C	T	.	PASS	AA=T;AC=52;AN=120;DP=357	
-    22	49511153	rs6009957	T	C	.	PASS	AA=T;AC=37;AN=120;DP=331	
-    22	49519326	rs5770824	T	C	.	PASS	AA=T;AC=3;AN=120;DP=274	
-    22	49521805	rs73174435	C	T	.	PASS	AA=T;AC=4;AN=120;DP=317	
-    22	49523030	.	T	C	.	PASS	AA=T;AC=3;AN=120;DP=38	
-    22	49533094	rs3865766	C	T	.	PASS	AA=T;AC=51;AN=120;DP=253;HM3	
+    1   54676   rs2462492   C   T   .   .   AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP  
+    22  50719683    rs73174428  T   C   .   .   AA=T;AC=1;AN=120;DP=298;REMAP_ALIGN=FP  
+    22  50719873    rs117910162 T   C   .   .   AA=T;AC=7;AN=120;DP=169;REMAP_ALIGN=FP  
+    22  50724422    rs5770822   C   T   .   .   AA=T;AC=41;AN=120;DP=367;REMAP_ALIGN=FP 
+    22  50725687    rs5770996   C   T   .   .   AA=T;AC=52;AN=120;DP=357;REMAP_ALIGN=FP 
+    22  50725859    rs6009957   T   C   .   .   AA=T;AC=37;AN=120;DP=331;REMAP_ALIGN=FP 
+    22  50734032    rs5770824   T   C   .   .   AA=T;AC=3;AN=120;DP=274;REMAP_ALIGN=FP  
+    22  50736511    rs73174435  C   T   .   .   AA=T;AC=4;AN=120;DP=317;REMAP_ALIGN=FP  
+    22  50737736    rs76593947  T   C   .   .   AA=T;AC=3;AN=120;DP=380;REMAP_ALIGN=FP  
+    22  50747800    rs3865766   C   T   .   .   AA=T;AC=51;AN=120;DP=253;HM3;REMAP_ALIGN=FP
     
 
 </details>
