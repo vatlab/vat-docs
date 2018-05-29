@@ -108,9 +108,9 @@ The items being compare in this case are variants (namely `chr`, `pos`, `ref`, a
 <details><summary> Examples: Load a sample project and create a few variant tables</summary> 
 
     % vtools init compare
-    % vtools admin --load_snapshot vt_simple
-    % vtools use refGene_exon-hg18_20110909
-    % vtools use dbSNP-hg18_130
+    % vtools import V1-3_hg19.vcf --build hg19
+    % vtools use refGene
+    % vtools use dbSNP
     % vtools select variant 'dbSNP.chr IS NOT NULL' -t inDbSNP 'In dbSNP database'
     % vtools select variant 'refGene_exon.chr IS NOT NULL' -t exonic 'In exonic regions of ref seq genes'
     % vtools select variant 'refGene_exon.name2 == "AGRN"' -t G_AGRN 'In gene AGRM'
@@ -151,11 +151,11 @@ for variants `B`, `C` and `D`, `A`, and all four variants for the counts, if we 
     % vtools show tables
     
     table       #variants     date message
-    G_AGRN             11    May21 In gene AGRM
-    G_FAM41C            2    May21 In gene FAM41C
-    exonic             76    May21 In exonic regions of ref seq genes
-    inDbSNP           896    May21 In dbSNP database
-    variant         1,611
+    G_AGRN             11    May29 In gene AGRM
+    G_FAM41C            2    May29 In gene FAM41C
+    exonic            103    May29 In exonic regions of ref seq genes
+    inDbSNP         1,303    May29 In dbSNP database
+    variant         1,611    May29 Master variant table
     
 
 Variants that are in dbSNP database is in table `inDbSNP`. If you would like to get a list of variants that are not in dbSNP, you can do 
@@ -166,8 +166,9 @@ Variants that are in dbSNP database is in table `inDbSNP`. If you would like to 
     
 
     INFO: Reading 1,611 variants in variant...
-    INFO: Reading 9 variants in inDbSNP...
-    Writing to notInDbSNP: 100% [===============================] 1,602 68.7K/s in 00:00:00
+    INFO: Reading 1,303 variants in inDbSNP...
+    Writing to notInDbSNP: 100% [=========================] 308 37.1K/s in 00:00:00
+    308
     
 
 Or, you can check what variants in the `AGRN` table are exonic 
@@ -175,9 +176,10 @@ Or, you can check what variants in the `AGRN` table are exonic
     % vtools compare G_AGRN exonic --intersection AGRN_exonic 'Exonic variants in gene AGRN'
     
 
-    INFO: Reading 24 variants in G_AGRN...
-    INFO: Reading 151 variants in exonic...
-    Writing to AGRN_exonic: 100% [==================================] 24 1.7K/s in 00:00:00
+    INFO: Reading 11 variants in G_AGRN...
+    INFO: Reading 103 variants in exonic...
+    Writing to AGRN_exonic: 100% [==============================] 11 1.8K/s in 00:00:00
+    11
     
 
 If you only need to check the number of exonic variants in gene AGRN, you can use the `--intersection` option without parameter, 
@@ -187,9 +189,9 @@ If you only need to check the number of exonic variants in gene AGRN, you can us
     % vtools compare G_AGRN exonic --intersection
     
 
-    INFO: Reading 24 variants in G_AGRN...
-    INFO: Reading 151 variants in exonic...
-    24
+    INFO: Reading 11 variants in G_AGRN...
+    INFO: Reading 103 variants in exonic...
+    11
     
 
 You can also get the number of variants that are not exonic, and in both tables etc using similar options, but a shortcut to get all counts is 
@@ -197,10 +199,10 @@ You can also get the number of variants that are not exonic, and in both tables 
     % vtools compare G_AGRN exonic 
     
 
-    INFO: Reading 24 variants in G_AGRN...
-    INFO: Reading 151 variants in exonic...
-    INFO: Output number of variants in A but not B, B but not A, A and B, and A or B
-    0	127	24	151
+    INFO: Reading approximately 11 variants in G_AGRN...
+    INFO: Reading approximately 103 variants in exonic...
+    INFO: Number of variants in A but not B, B but not A, A and B, and A or B
+    0   92  11  103
     
 
 </details>
@@ -212,10 +214,11 @@ More than two variant tables can be specified. Option `--intersection` and `--un
     % vtools compare exonic 'G_*' --difference other 'Exonic variants not in AGRN and FAM41C'
     
 
-    INFO: Reading 151 variants in exonic...
-    INFO: Reading 24 variants in G_AGRN...
-    INFO: Reading 51 variants in G_FAM41C...
-    Writing to other: 100% [========================================] 76 5.2K/s in 00:00:00
+    INFO: Reading 103 variants in exonic...
+    INFO: Reading 11 variants in G_AGRN...
+    INFO: Reading 2 variants in G_FAM41C...
+    Writing to other: 100% [===================================] 90 13.5K/s in 00:00:00
+    90
     
 
 </details>
@@ -283,9 +286,9 @@ If we would like to exclude variants that are not in DBSNP, but keep those in ex
 
     INFO: Comparing tables variant, inDBSNP, exonic
     INFO: Reading 1,611 variants in variant...
-    INFO: Reading 896 variants in inDBSNP...
-    INFO: Reading 76 variants in exonic...
-    785
+    INFO: Reading 1,303 variants in inDBSNP...
+    INFO: Reading 103 variants in exonic...
+    405
     
 
 This command is equivalent to 
@@ -295,10 +298,10 @@ This command is equivalent to
     % vtools compare inDBSNP exonic variant --expression '_3 - _1 | _2'
     
 
-    INFO: Reading 896 variants in inDBSNP...
-    INFO: Reading 76 variants in exonic...
+    INFO: Reading 1,303 variants in inDBSNP...
+    INFO: Reading 103 variants in exonic...
     INFO: Reading 1,611 variants in variant...
-    785
+    405
     
 
 Let us conclude this example with an expression that does not make much sense 
@@ -310,11 +313,11 @@ Let us conclude this example with an expression that does not make much sense
 
     INFO: Comparing tables variant, inDBSNP, exonic, G_AGRN, G_FAM41C
     INFO: Reading 1,611 variants in variant...
-    INFO: Reading 896 variants in inDBSNP...
-    INFO: Reading 76 variants in exonic...
+    INFO: Reading 1,303 variants in inDBSNP...
+    INFO: Reading 103 variants in exonic...
     INFO: Reading 11 variants in G_AGRN...
     INFO: Reading 2 variants in G_FAM41C...
-    1550
+    1525
     
 
 </details>
@@ -365,12 +368,12 @@ The first command would yield results
     % vtools compare variant --samples SAMP1 SAMP2 
     
 
-    INFO: Reading genotype of sample SAMP1 of approximately 4 variants in variant...
-    INFO: Reading genotype of sample SAMP2 of approximately 4 variants in variant...
+    INFO: Reading genotype of sample SAMP1 of approximately 1,611 variants in variant...
+    INFO: Reading genotype of sample SAMP2 of approximately 1,611 variants in variant...
     INFO: Number of genotypes in A only, B only, in A and B, and in A or B
-    INFO: 1	1	1	3
+    INFO: 753   754 856 2363
     INFO: Number of variants with genotypes in A only, B only, in A and B, and in A or B
-    1	1	1	3
+    753 754 856 1611
     
 
 with variants `A` (for genotype `A2`), `D` (for genotype `D1`), `C` (for genotype `C1`), and `A,C,D` (for genotypes `A2`, `C1`, and `D1`) for the four counts, if we name the four variants A, B, C, and D. 
@@ -392,12 +395,12 @@ The output of command changes to
     % vtools compare variant --samples SAMP1 SAMP2 
     
 
-    INFO: Reading genotype of sample SAMP1 of approximately 4 variants in variant...
-    INFO: Reading genotype of sample SAMP2 of approximately 4 variants in variant...
+    INFO: Reading genotype of sample SAMP1 of approximately 1,611 variants in variant...
+    INFO: Reading genotype of sample SAMP2 of approximately 1,611 variants in variant...
     INFO: Number of genotypes in A only, B only, in A and B, and in A or B
-    INFO: 2	2	2	6
+    INFO: 755   755 856 2366
     INFO: Number of variants with genotypes in A only, B only, in A and B, and in A or B
-    2	2	2	4
+    755 755 856 1611
     
 
 with variants `A` and `D` (for genotypes `A2` and `D0`), `A` and `D` (for genotypes `A0` and `D1`), `B` and `C` (for genotypes `B0` and `C1`), and `A`, `B`, `C`, `D` (for genotypes `A0`, `A2`, `B0`, `C1`, `D0`, and `D1`) for the four counts. 
@@ -430,10 +433,10 @@ To do that, we can run
     % vtools show genotypes
     
 
-    sample_name	filename	num_genotypes	sample_genotype_fields
-    SAMP1	V1.vcf	989	GT
-    SAMP2	V2.vcf	990	GT
-    SAMP3	V3.vcf	988	GT
+    sample_name filename    num_genotypes   sample_genotype_fields
+    SAMP1       V1-3_hg19.vcf   1609            GT
+    SAMP2       V1-3_hg19.vcf   1610            GT
+    SAMP3       V1-3_hg19.vcf   1608            GT
     
 
 The following command shows number of genotypes that are shared by all three samples, 
@@ -470,9 +473,9 @@ There are two cases to consider here. The first one is that the mutation might e
     INFO: Reading genotypes of sample SAMP1 of approximately 1,611 geno in variant...
     INFO: Reading genotypes of sample SAMP2 of approximately 1,611 geno in variant...
     INFO: Reading genotypes of sample SAMP3 of approximately 1,611 geno in variant...
-    INFO: Genotypes in sample SAMP1 only: 321
-    WARNING: Existing table S1 is renamed to S1_Sep03_163613.
-    Writing to S1: 100% [====================================] 321 21.8K/s in 00:00:00
+    INFO: Genotypes in sample SAMP1 only: 442 
+    Writing to S1: 100% [=====================================] 442 56.5K/s in 00:00:00
+    442
     
 
 Let us have a look at the genotypes of the variants in table `S1` in the samples 
@@ -483,18 +486,16 @@ Let us have a look at the genotypes of the variants in table `S1` in the samples
     
 
     INFO: Genotypes of 3 samples are exported.
-    Writing: 100% [================================================================================] 321 18.1K/s in 00:00:00
-    INFO: 321 lines are exported from variant table S1
-    1,5683,G,T,1,NA,NA
-    1,10098,G,A,2,NA,NA
-    1,29539,C,T,1,NA,NA
-    1,39161,T,C,1,NA,2
-    1,39378,G,A,1,NA,NA
-    1,44579,C,T,1,NA,NA
-    1,50589,C,A,1,NA,NA
-    1,54504,A,G,1,NA,NA
-    1,73865,G,A,2,1,1
-    1,81004,G,T,1,NA,NA
+    INFO: Using 2 processes to handle 3 samples
+    Selecting genotypes: 100% [===================================] 2 2.0/s in 00:00:01
+    Writing: 100% [============================================] 442 8.8K/s in 00:00:00
+    INFO: 442 lines are exported from variant table S1 
+    1,15820,"G","T",1,0,0
+    1,20235,"G","A",2,0,0
+    1,39676,"C","T",1,0,0
+    1,49298,"T","C",1,0,2
+    1,49515,"G","A",1,0,0
+    1,54716,"C","T",1,0,0
     
 
 As you can see, table `S1` contains variants with genotypes in sample `SAMP1` and are missing or with a different genotype in other samples. 
@@ -513,16 +514,19 @@ However, if you are interested in further divide the genotypes, namely to identi
     % vtools show tables
     
 
-    table              #variants     date message
-    G_AGRN                    11    Sep03 In gene AGRM
-    G_FAM41C                   2    Sep03 In gene FAM41C
-    S1                       321    Sep03
-    exonic                    76    Sep03 In exonic regions of ref seq genes
-    inDbSNP                  896    Sep03 In dbSNP database
-    varSAMP1                 989    Sep03
-    varSAMP2                 990    Sep03
-    varSAMP3                 988    Sep03
-    variant                1,611
+    table          #variants     date message
+    AGRN_exonic           11    May29 Exonic variants in gene AGRN
+    G_AGRN                11    May29 In gene AGRM
+    G_FAM41C               2    May29 In gene FAM41C
+    S1                   442    May29
+    exonic               103    May29 In exonic regions of ref seq genes
+    inDbSNP            1,303    May29 In dbSNP database
+    notInDbSNP           308    May29 variants that are not in dbSNP
+    other                 90    May29 Exonic variants not in AGRN and FAM41C
+    varSAMP1             985    May29
+    varSAMP2             984    May29
+    varSAMP3             986    May29
+    variant            1,611    May29 Master variant table
     
 
 We can then identify genotypes that only appear in `SAMP1` using command 
@@ -532,10 +536,11 @@ We can then identify genotypes that only appear in `SAMP1` using command
     % vtools compare varSAMP1 varSAMP2 varSAMP3 --difference SAMP1_only
     
 
-    INFO: Reading 989 variants in varSAMP1...
-    INFO: Reading 990 variants in varSAMP2...
-    INFO: Reading 988 variants in varSAMP3...
-    Writing to SAMP1_only: 100% [==================================================================] 265 14.1K/s in 00:00:00
+    INFO: Reading 985 variants in varSAMP1...
+    INFO: Reading 984 variants in varSAMP2...
+    INFO: Reading 986 variants in varSAMP3...
+    Writing to SAMP1_only: 100% [=============================] 263 37.5K/s in 00:00:00
+    263
     
 
 The genotypes associated with `SAMP1_only` only appear in `SAMP1`, 
@@ -544,18 +549,17 @@ The genotypes associated with `SAMP1_only` only appear in `SAMP1`,
     
 
     INFO: Genotypes of 3 samples are exported.
-    Writing: 100% [================================================================================] 265 15.9K/s in 00:00:00
-    INFO: 265 lines are exported from variant table SAMP1_only
-    1,5683,G,T,1,NA,NA
-    1,10098,G,A,2,NA,NA
-    1,29539,C,T,1,NA,NA
-    1,39378,G,A,1,NA,NA
-    1,44579,C,T,1,NA,NA
-    1,50589,C,A,1,NA,NA
-    1,54504,A,G,1,NA,NA
-    1,81004,G,T,1,NA,NA
-    1,81119,A,G,1,NA,NA
-    1,81131,G,A,1,NA,NA
+    INFO: Using 2 processes to handle 3 samples
+    Selecting genotypes: 100% [===================================] 2 2.0/s in 00:00:01
+    Writing: 100% [============================================] 263 8.0K/s in 00:00:00
+    INFO: 263 lines are exported from variant table SAMP1_only 
+    1,15820,"G","T",1,0,0
+    1,20235,"G","A",2,0,0
+    1,39676,"C","T",1,0,0
+    1,49515,"G","A",1,0,0
+    1,54716,"C","T",1,0,0
+    1,60726,"C","A",1,0,0
+
     
 
 Note that the following commands cannot be used in this case 
@@ -563,10 +567,10 @@ Note that the following commands cannot be used in this case
     % vtools compare varSAMP1 varSAMP2 varSAMP3 --difference --samples SAMP1 SAMP2 SAMP3
     
 
-    INFO: Reading genotypes of sample SAMP1 of approximately 989 geno in varSAMP1...
-    INFO: Reading genotypes of sample SAMP2 of approximately 990 geno in varSAMP2...
-    INFO: Reading genotypes of sample SAMP3 of approximately 988 geno in varSAMP3...
-    INFO: Genotypes in sample SAMP1 only: 321
+    INFO: Reading genotypes of sample SAMP1 of approximately 985 geno in varSAMP1...
+    INFO: Reading genotypes of sample SAMP2 of approximately 984 geno in varSAMP2...
+    INFO: Reading genotypes of sample SAMP3 of approximately 986 geno in varSAMP3...
+    INFO: Genotypes in sample SAMP1 only: 321 
     321
     
 
@@ -583,10 +587,11 @@ To get a list of variants that are not-missing in all samples, we need to get th
     % vtools compare varSAMP1 varSAMP2 varSAMP3 --intersection varNotMissing
     
 
-    INFO: Reading 989 variants in varSAMP1...
-    INFO: Reading 990 variants in varSAMP2...
-    INFO: Reading 988 variants in varSAMP3...
-    Writing to varNotMissing: 100% [===============================================================] 511 25.6K/s in 00:00:00
+    INFO: Reading 985 variants in varSAMP1...
+    INFO: Reading 984 variants in varSAMP2...
+    INFO: Reading 986 variants in varSAMP3...
+    Writing to varNotMissing: 100% [==========================] 509 50.3K/s in 00:00:00
+    509
 
 We can then find variants that with different genotypes in `SAMP1`: 
 
@@ -595,25 +600,25 @@ We can then find variants that with different genotypes in `SAMP1`:
     % vtools compare varNotMissing --samples SAMP1 SAMP2 SAMP3 --difference SAMP1_not_missing
     
 
-    INFO: Reading genotypes of sample SAMP1 of approximately 511 geno in varNotMissing...
-    INFO: Reading genotypes of sample SAMP2 of approximately 511 geno in varNotMissing...
-    INFO: Reading genotypes of sample SAMP3 of approximately 511 geno in varNotMissing...
-    INFO: Genotypes in sample SAMP1 only: 7
-    Writing to SAMP1_not_missing: 100% [=============================================================] 7 456.4/s in 00:00:00
-    
+    INFO: Reading genotypes of sample SAMP1 of approximately 509 geno in varNotMissing...
+    INFO: Reading genotypes of sample SAMP2 of approximately 509 geno in varNotMissing...
+    INFO: Reading genotypes of sample SAMP3 of approximately 509 geno in varNotMissing...
+    INFO: Genotypes in sample SAMP1 only: 0 
+    Writing to SAMP1_not_missing: 0 0.0/s in 00:00:00                        
+    0
 
 Only 7 variants that are not missing and have unique genotype in `SAMP1` exist: 
 
     % vtools export SAMP1_not_missing --samples 1 --format csv 2> /dev/null
     
 
-    1,73865,G,A,2,1,1
+   <!--  1,73865,G,A,2,1,1
     1,536560,A,G,1,2,2
     1,758116,A,C,2,1,1
     1,791956,G,A,2,1,1
     1,798494,G,A,2,1,1
     1,798791,C,T,2,1,1
-    1,892860,G,A,1,2,2
+    1,892860,G,A,1,2,2 -->
     
 
 Here we redirect all progress bar etc from stderr to /dev/null to check only the output sent to standard output. 

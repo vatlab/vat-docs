@@ -123,8 +123,7 @@ It is easy to use system-provided annotation databases. Generally speaking, you 
 <details><summary> Examples: Use system-provided annotation databases</summary> Let us get a project 
 
 
-
-    % vtools init use --parent vt_simple
+    % vtools import V1-3_hg19.vcf --build hg19
     
 
 This project uses build `hg19` of the reference genome, as shown in the output of command `vtools show` 
@@ -133,14 +132,12 @@ This project uses build `hg19` of the reference genome, as shown in the output o
 
     % vtools show
     
-    INFO: Upgrading variant tools project to version 2.7.20
     Verifying variants: 100% [=========================================] 1,611 105.8K/s in 00:00:00
     INFO: 0 variants are updated
     Project name:                use
-    Primary reference genome:    hg18
+    Primary reference genome:    hg19
     Secondary reference genome:  
-    Storage method:              sqlite
-    Runtime options:             verbosity=1, shared_resource=/Users/iceli/.variant_tools, local_resource=/Users/iceli/.variant_tools
+    Storage method:              hdf5
     Variant tables:              variant
     Annotation databases:        
 
@@ -274,32 +271,26 @@ We then use command `vtools show annotations` to check all available databases, 
     thousandGenomes-hg19_v5b_20130502
     
 
-Some databases uses `hg18`, but most uses `hg19`. The default databases (the ones without version number) generally refer to the latest databases that uses `hg19`, so you can use most databases as simple as 
+Some databases uses `hg19`, but most uses `hg38`. You can use most databases as simple as 
 
 
 
     % vtools use refGene
     
-    INFO: Choosing version refGene-hg18_20110909 from 5 available databases.
-    INFO: Downloading annotation database annoDB/refGene-hg18_20110909.ann
-    INFO: Downloading annotation database from annoDB/refGene-hg18_20110909.DB.gz
-    refGene-hg18_20110909.DB.gz: 100% [============================] 1,803,587.0 1.4M/s in 00:00:01
-    Binning ranges: 100% [============================================] 40,067 100.7K/s in 00:00:00
+    INFO: Choosing version refGene-hg19_20130904 from 5 available databases.
+    INFO: Downloading annotation database annoDB/refGene-hg19_20130904.ann
     INFO: Using annotation DB refGene as refGene in project use.
-    INFO: refseq Genes
-    
+    INFO: Known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq).
+        
 
 
 
     % vtools use refGene_exon
     
-    INFO: Choosing version refGene_exon-hg18_20110909 from 5 available databases.
-    INFO: Downloading annotation database annoDB/refGene_exon-hg18_20110909.ann
-    INFO: Downloading annotation database from annoDB/refGene_exon-hg18_20110909.DB.gz
-    refGene_ex...8_20110909.DB.gz: 100% [==========================] 9,336,417.0 2.4M/s in 00:00:03
-    Binning ranges: 100% [===========================================] 389,772 114.1K/s in 00:00:03
+    INFO: Choosing version refGene_exon-hg19_20130904 from 5 available databases.
+    INFO: Downloading annotation database annoDB/refGene_exon-hg19_20130904.ann
     INFO: Using annotation DB refGene_exon as refGene_exon in project use.
-    INFO: refseq Genes
+    INFO: RefGene specifies known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq). This database contains all exome regions of the refSeq genes.
 
 
 
@@ -317,8 +308,9 @@ Some databases uses `hg18`, but most uses `hg19`. The default databases (the one
     % vtools use thousandGenomes
     
 
-    INFO: Downloading annotation database from annoDB/thousandGenomes.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/thousandGenomes-hg19_201202.DB.gz
+    INFO: Choosing version thousandGenomes-hg19_v5b_20130502 from 3 available databases.
+    INFO: Downloading annotation database annoDB/thousandGenomes-hg19_v5b_20130502.ann
+    INFO: Downloading annotation database from annoDB/thousandGenomes-hg19_v5b_20130502.DB.gz
     INFO: Using annotation DB thousandGenomes in project test.
     INFO: 1000 Genomes VCF file (available from: ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/v4.0/00-All.vcf.gz).
     
@@ -330,9 +322,9 @@ The CancerGeneCensus database is a bit difficult to use because it is a field da
     % vtools use CancerGeneCensus --linked_by refGene.name2
     
 
-    INFO: Downloading annotation database from annoDB/CancerGeneCensus.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/CancerGeneCensus-20130711.DB.gz
-    INFO: Using annotation DB CancerGeneCensus in project test.
+    INFO: Choosing version CancerGeneCensus-20170912 from 4 available databases.
+    INFO: Downloading annotation database annoDB/CancerGeneCensus-20170912.ann
+    INFO: Downloading annotation database from annoDB/CancerGeneCensus-20170912.DB.gz
     INFO: This database contains variants from the Cancer Genome Project. It is
     an ongoing effort to catalogue those genes for which mutations have been causally
     implicated in cancer. The original census and analysis was published in Nature
@@ -341,8 +333,8 @@ The CancerGeneCensus database is a bit difficult to use because it is a field da
     in cancer. Of these, approximately 90% have somatic mutations in cancer, 20% bear
     germline mutations that predispose to cancer and 10% show both somatic and
     germline mutations.
-    INFO: 475 out of 23242 refgene.name2 are annotated through annotation database CancerGeneCensus
-    WARNING: 9 out of 484 values in annotation database CancerGeneCensus are not linked to the project.
+    INFO: 454 out of 25360 refGene.refGene.name2 are annotated through annotation database CancerGeneCensus
+    WARNING: 72 out of 526 values in annotation database CancerGeneCensus are not linked to the project.
     
 
 After you use these databases, you could get the details of them using command `vtools show annotation ANNODB`, 
@@ -350,25 +342,25 @@ After you use these databases, you could get the details of them using command `
     % vtools show annotation refGene
     
 
-    WARNING: Resouce file annoDB/CancerGeneCensus.ann has been updated. Please update it using command "vtools admin --update_resource existing".
-    Annotation database refGene (version hg19_20110909)
-    Description:            refseq Genes
+    Annotation database refGene (version hg19_20130904)
+    Description:            Known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq).
     Database type:          range
     Reference genome hg19:  chr, txStart, txEnd
-      name                  Gene name
-      chr
-      strand                which DNA strand contains the observed alleles
-      txStart               Transcription start position
-      txEnd                 Transcription end position
-      cdsStart              Coding region start
-      cdsEnd                Coding region end
-      exonCount             Number of exons
-      score                 Score
-      name2                 Alternative name
-      cdsStartStat          cds start stat, can be 'non', 'unk', 'incompl', and
-                            'cmp1'
-      cdsEndStat            cds end stat, can be 'non', 'unk', 'incompl', and
-                            'cmp1'
+      name (char)           Gene name
+      chr (char)
+      strand (char)         which DNA strand contains the observed alleles
+      txStart (int)         Transcription start position (1-based)
+      txEnd (int)           Transcription end position
+      cdsStart (int)        Coding region start (1-based)
+      cdsEnd (int)          Coding region end
+      exonCount (int)       Number of exons
+      exonStarts (char)     Starting point of exons (adjusted to 1-based positions)
+      exonEnds (char)       Ending point of exons
+      score (int)           Score
+      name2 (char)          Alternative name
+      cdsStartStat (char)   cds start stat, can be 'non', 'unk', 'incompl', and 'cmp1'
+      cdsEndStat (char)     cds end stat, can be 'non', 'unk', 'incompl', and 'cmp1'
+
     
 
 
@@ -400,11 +392,11 @@ Each database provide a number of fields and one or more default methods to link
 
 <details><summary> Examples: alternative ways to link range-based annotation databases</summary> There are 730 variants in the regular ref seq gene regions, 
 
+    % vtools import V*_hg38.vcf --build hg38
     % vtools select variant 'refGene.chr is not NULL' -c
     
-
-    Counting variants: 13 456.6/s in 00:00:00
-    730
+    Counting variants: 21 1.3K/s in 00:00:00
+    469
     
 
 We can link to the refGene database using coding regions 
@@ -414,20 +406,20 @@ We can link to the refGene database using coding regions
     % vtools use refGene --linked_fields chr cdsStart cdsEnd
     
 
-    INFO: Downloading annotation database from annoDB/refGene.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/refGene-hg19_20110909.DB.gz
-    Binning ranges: 100% [===============================================] 40,843 24.3K/s in 00:00:01
-    INFO: Using annotation DB refGene in project test.
-    INFO: refseq Genes
+    INFO: Choosing version refGene-hg38_20170201 from 5 available databases.
+    INFO: Downloading annotation database annoDB/refGene-hg38_20170201.ann
+    Binning ranges: 100% [=================================] 74,385 70.4K/s in 00:00:01
+    INFO: Using annotation DB refGene as refGene in project use.
+    INFO: Known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq).
     
 
-only 225 variants are selected, that means most variants are not in the coding regions, 
+only 253 variants are selected, that means most variants are not in the coding regions, 
 
     % vtools select variant 'refGene.chr is not NULL' -c
     
 
-    Counting variants: 13 965.9/s in 00:00:00
-    225
+    Counting variants: 19 1.2K/s in 00:00:00
+    253
     
 
 You can also link the database by an expanded region of each transcription region (adding 5k before and after the region), 
@@ -437,11 +429,11 @@ You can also link the database by an expanded region of each transcription regio
     % vtools use refGene --linked_fields chr 'txStart-5000' 'txEnd+5000'
     
 
-    INFO: Downloading annotation database from annoDB/refGene.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/refGene-hg19_20110909.DB.gz
-    Binning ranges: 100% [================================================] 40,843 62.2K/s in 00:00:00
-    INFO: Using annotation DB refGene in project test.
-    INFO: refseq Genes
+    INFO: Choosing version refGene-hg38_20170201 from 5 available databases.
+    INFO: Downloading annotation database annoDB/refGene-hg38_20170201.ann
+    Binning ranges: 100% [=================================] 74,385 66.5K/s in 00:00:01
+    INFO: Using annotation DB refGene as refGene in project use.
+    INFO: Known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq).
     
 
 This time more variants are selected by the refGene database, 
@@ -449,8 +441,8 @@ This time more variants are selected by the refGene database,
     % vtools select variant 'refGene.chr is not NULL' -c
     
 
-    Counting variants: 14 847.2/s in 00:00:00
-    1170
+    Counting variants: 22 1.0K/s in 00:00:00
+    938
     
 
 </details>
@@ -464,19 +456,21 @@ In addition to the fields used to link to the project, you can even change the t
     % vtools use gwasCatalog
     
 
-    INFO: Downloading annotation database from annoDB/gwasCatalog.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/gwasCatalog-hg19_20111220.DB.gz
-    INFO: Using annotation DB gwasCatalog in project test.
-    INFO: GWAS Catalog
+    INFO: Choosing version gwasCatalog-hg38_20171004 from 3 available databases.
+    INFO: Downloading annotation database annoDB/gwasCatalog-hg38_20171004.ann
+    INFO: Using annotation DB gwasCatalog as gwasCatalog in project use.
+    INFO: This database contains single nucleotide polymorphisms (SNPs) identified by published Genome-Wide
+    Association Studies (GWAS), collected in the Catalog of Published Genome-Wide Association Studies at the
+    National Human Genome Research Institute (NHGRI). From http://www.genome.gov/gwastudies/:
     
 
-No matching variant is found in our project 
+One matching variant is found in our project 
 
     % vtools select variant 'gwasCatalog.chr is not null' -c
     
 
     Counting variants: 3 1.2K/s in 00:00:00
-    0
+    1
     
 
 However, we can link the database as a range-based database to check if there is any variant that falls in the vicinity of any GWA hits. 
@@ -484,14 +478,21 @@ However, we can link the database as a range-based database to check if there is
     % vtools use gwasCatalog --anno_type range --linked_fields chr 'position - 10000' 'position + 10000'
     
 
-    INFO: Downloading annotation database from annoDB/gwasCatalog.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/gwasCatalog-hg19_20111220.DB.gz
-    Binning ranges: 100% [================================] 8,608 67.1K/s in 00:00:00
-    INFO: Using annotation DB gwasCatalog in project test.
-    INFO: GWAS Catalog
+    INFO: Choosing version gwasCatalog-hg38_20171004 from 3 available databases.
+    INFO: Downloading annotation database annoDB/gwasCatalog-hg38_20171004.ann
+    Binning ranges: 100% [=================================] 64,965 71.2K/s in 00:00:00
+    INFO: Using annotation DB gwasCatalog as gwasCatalog in project use.
+    INFO: This database contains single nucleotide polymorphisms (SNPs) identified by published Genome-Wide
+    Association Studies (GWAS), collected in the Catalog of Published Genome-Wide Association Studies at the
+    National Human Genome Research Institute (NHGRI). From http://www.genome.gov/gwastudies/:
     
 
-This time, 24 variants are identified as within 10k distance of one of the GWA hits. 
+This time, 110 variants are identified as within 10k distance of one of the GWA hits. 
+
+    % vtools select variant 'gwasCatalog.chr is not null' -c
+    
+    Counting variants: 6 1.1K/s in 00:00:00
+    110
 
 </details>
 
@@ -504,9 +505,9 @@ Because field-based databases can link to arbitrary fields, you do not have to u
     % vtools use CancerGeneCensus --linked_by refGene.name2
     
 
-    INFO: Downloading annotation database from annoDB/CancerGeneCensus.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/CancerGeneCensus-20130711.DB.gz
-    INFO: Using annotation DB CancerGeneCensus in project test.
+    INFO: Choosing version CancerGeneCensus-20170912 from 4 available databases.
+    INFO: Downloading annotation database annoDB/CancerGeneCensus-20170912.ann
+    INFO: Using annotation DB CancerGeneCensus as CancerGeneCensus in project use.
     INFO: This database contains variants from the Cancer Genome Project. It is
     an ongoing effort to catalogue those genes for which mutations have been causally
     implicated in cancer. The original census and analysis was published in Nature
@@ -515,8 +516,8 @@ Because field-based databases can link to arbitrary fields, you do not have to u
     in cancer. Of these, approximately 90% have somatic mutations in cancer, 20% bear
     germline mutations that predispose to cancer and 10% show both somatic and
     germline mutations.
-    INFO: 471 out of 23242 refgene.name2 are annotated through annotation database CancerGeneCensus
-    WARNING: 16 out of 487 values in annotation database CancerGeneCensus are not linked to the project.
+    INFO: 448 out of 28031 refGene.refGene.name2 are annotated through annotation database CancerGeneCensus
+    WARNING: 78 out of 526 values in annotation database CancerGeneCensus are not linked to the project.
     
 
 From the output of `vtools show annotation CancerGeneCensus`, you can see that this database also provides `kgID` for each record. This allows you to link the database to the project using `kgID`, 
@@ -526,10 +527,10 @@ From the output of `vtools show annotation CancerGeneCensus`, you can see that t
     % vtools use knownGene
     
 
-    INFO: Downloading annotation database from annoDB/knownGene.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/knownGene-hg19_20121219.DB.gz
-    INFO: Using annotation DB knownGene in project test.
-    INFO: UCSC Known Genes
+    INFO: Choosing version knownGene-hg38_20160328 from 6 available databases.
+    INFO: Downloading annotation database annoDB/knownGene-hg38_20160328.ann
+    INFO: Using annotation DB knownGene as knownGene in project use.
+    INFO: Gene predictions based on data from RefSeq, Genbank, CCDS and UniProt, from the UCSC KnownGene track.
     
 
     % vtools use CancerGeneCensus --linked_fields kgID --linked_by knownGene.name

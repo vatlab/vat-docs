@@ -142,13 +142,13 @@ The `vtools phenotype --from_file` command identifies a sample by its name but i
 
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
-    % vtools import CEU.vcf.gz --build hg38 --var_info DP --geno_info DP_geno
+    % vtools import CEU_hg38.vcf --build hg38 --var_info DP --geno_info DP
     
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [=================================] 300 14.0K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [======================] 18,000 9.0K/s in 00:00:02
-    Copying genotype: 100% [===========================] 60 565.5K/s in 00:00:00
+    INFO: Importing variants from CEU_hg38.vcf (1/1)
+    CEU_hg38.vcf: 100% [======================================] 306 21.4K/s in 00:00:00
+    INFO: 292 new variants (292 SNVs) from 306 lines are imported.
+    Importing genotypes: 100% [================================] 292 3.5K/s in 00:00:00
+
     
 
 There are 60 samples without genotype 
@@ -157,17 +157,17 @@ There are 60 samples without genotype
 
     % vtools show samples -l 10
 
-    sample_name	filename
-    NA06985    	CEU.vcf.gz
-    NA06986    	CEU.vcf.gz
-    NA06994    	CEU.vcf.gz
-    NA07000    	CEU.vcf.gz
-    NA07037    	CEU.vcf.gz
-    NA07051    	CEU.vcf.gz
-    NA07346    	CEU.vcf.gz
-    NA07347    	CEU.vcf.gz
-    NA07357    	CEU.vcf.gz
-    NA10847    	CEU.vcf.gz
+    sample_name filename
+    NA06985     CEU_hg38.vcf
+    NA06986     CEU_hg38.vcf
+    NA06994     CEU_hg38.vcf
+    NA07000     CEU_hg38.vcf
+    NA07037     CEU_hg38.vcf
+    NA07051     CEU_hg38.vcf
+    NA07346     CEU_hg38.vcf
+    NA07347     CEU_hg38.vcf
+    NA07357     CEU_hg38.vcf
+    NA10847     CEU_hg38.vcf
     (50 records omitted)
 
     
@@ -306,13 +306,15 @@ If your input file does not have any header, you can use option `--header` to sp
 
     % vtools show samples -l -1 
 
-    sample_name	filename  	sex	race
-    NA06985    	CEU.vcf.gz	F  	1
-    NA06986    	CEU.vcf.gz	M  	1
-    NA06994    	CEU.vcf.gz	F  	1
+    sample_name filename        sex race
+    NA06985     CEU_hg38.vcf    F   1
+    NA06986     CEU_hg38.vcf    M   1
+    NA06994     CEU_hg38.vcf    F   1
+    NA07000     CEU_hg38.vcf    F   1
+    NA07037     CEU_hg38.vcf    F   1
+    NA07051     CEU_hg38.vcf    F   1
     ... ...
-    NA12873    	CEU.vcf.gz	F  	1
-    NA12874    	CEU.vcf.gz	M  	1  
+
     
 
 </details>
@@ -337,12 +339,12 @@ With `vtools show genotypes` we know the total number of genotypes and available
     % vtools show samples
     
     sample_name	filename  	sex	race	sample_total	sample_alt	sample_homo	sample_het	sample_double_het
-    NA06985    	CEU.vcf.gz	F  	1   	287         	110       	40         	30        	0
-    NA06986    	CEU.vcf.gz	M  	1   	287         	126       	31         	64        	0
-    NA06994    	CEU.vcf.gz	F  	1   	287         	130       	37         	56        	0
+    NA06985     CEU_hg38.vcf    F   1       292             110         40          30          0
+    NA06986     CEU_hg38.vcf    M   1       292             126         31          64          0
+    NA06994     CEU_hg38.vcf    F   1       292             131         37          57          0
     ... ...
-    NA12873    	CEU.vcf.gz	F  	1   	287         	137       	37         	63        	0
-    NA12874    	CEU.vcf.gz	M  	1   	287         	100       	30         	40        	0
+    NA12873     CEU_hg38.vcf    F   1       288             137         37          63          0
+    NA12874     CEU_hg38.vcf    M   1       292             101         30          41          0
 
     
 
@@ -358,19 +360,22 @@ Another useful type of summary is the genotype information that usually summariz
 
 <details><summary> Examples: Phenotype calculated from statistics of genotype info fields</summary> 
 
-    % vtools phenotype --from_stat "meanDP=avg(DP_geno)" "minDP=min(DP_geno)" "maxDP=max(DP_geno)"
+    % import_update jma7$ vtools phenotype --from_stat "meanDP=avg(DP)" "minDP=min(DP)" "maxDP=max(DP)"
     
-    Calculating phenotype: 100% [===================================================================================] 60 59.7/s in 00:00:01
-    INFO: 180 values of 3 phenotypes (3 new, 0 existing) of 60 samples are updated.
+    Calculating phenotype: 100% [===============================] 60 29.8/s in 00:00:02
+    INFO: 180 values of 3 phenotypes (0 new, 3 existing) of 60 samples are updated.
 
 
 
     % vtools show samples
     
-    sample_name	filename  	sex	race	sample_total	sample_alt	sample_homo	sample_het	sample_double_het	meanDP            	minDP	maxDP
-    NA06985    	CEU.vcf.gz	F  	1   	287         	110       	40         	30        	0                	    2.275261324041812 	0    	12
-    NA06986    	CEU.vcf.gz	M  	1   	287         	126       	31         	64        	0                	    10.759581881533101	0    	29
-    NA06994    	CEU.vcf.gz	F  	1   	287         	130       	37         	56        	0                	    5.89198606271777  	0    	16
+    sample_name filename        sex race    sample_total    sample_alt  sample_homo sample_het  sample_double_het   meanDP              minDP   maxDP
+    NA06985     CEU_hg38.vcf    F   1       292             110         40          30          0                   2.2705479452054793  0.0     12.0
+    NA06986     CEU_hg38.vcf    M   1       292             126         31          64          0                   10.736301369863014  0.0     29.0
+    NA06994     CEU_hg38.vcf    F   1       292             131         37          57          0                   5.815068493150685   0.0     16.0
+    ... ...
+    NA12873     CEU_hg38.vcf    F   1       288             137         37          63          0                   3.952054794520548   0.0     16.0
+    NA12874     CEU_hg38.vcf    M   1       292             101         30          41          0                   3.886986301369863   0.0     14.0
 
 
 </details>
@@ -382,14 +387,14 @@ Another useful type of summary is the genotype information that usually summariz
 The basic form of `vtools phenotype --output` is very similar to command `vtools show phenotypes`. They can both display all or a specified subset of phenotypes. 
 
 <details><summary> Examples: Output specified phenotypes</summary> 
-
-    % vtools phenotype --output sample_name sample_wildtype BMI 
+    % vtools phenotype --from_file phenotype.txt BMI
+    % vtools phenotype --output sample_name BMI 
     
-    NA06985	     217	19.64
-    NA06986	     192	None
-    NA06994	     194	19.49
-    NA07000	     215	21.52
-    NA07037	     206	23.05
+    NA06985 19.64
+    NA06986 NA
+    NA06994 19.49
+    NA07000 21.52
+    NA07037 23.05
     ...
     
 
@@ -410,7 +415,7 @@ For example, the following command outputs the wildtype genotype counts and BMI 
 
     % vtools phenotype --output "avg(meanDP)"
     
-    4.523693379790941
+    4.561244292237443
     
 
 </details>

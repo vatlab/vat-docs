@@ -113,8 +113,8 @@ The *condition* should be a SQL expression using one or more fields in the proje
 #### 2.1 Basic usages of the command
 
 <details><summary> Examples: Load a sample project</summary> Let us load a sample project simple from online: 
-
-    % vtools init select --parent vt_simple
+    % vtools init -f select
+    % vtools import V*_hg38.vcf --build hg38
     
 
 The project has a master variant table with 1,611 variant, 
@@ -122,17 +122,17 @@ The project has a master variant table with 1,611 variant,
     % vtools show tables   
 
     table      #variants     date message
-    variant        1,611
+    variant        2,051    
     
 
 from two samples, 
 
     % vtools show samples    
 
-    sample_name  filename
-    SAMP1        V1.vcf
-    SAMP1        V2.vcf
-    SAMP1        V3.vcf
+    sample_name filename
+    SAMP1       V1_hg38.vcf
+    SAMP2       V2_hg38.vcf
+    SAMP3       V3_hg38.vcf
     
 
 </details>
@@ -156,7 +156,7 @@ This project does not have many interesting fields, but we can at least select v
     % vtools select variant 'pos < 200000' -t pos_20k 'variants with position < 20000'
     
     Running: 0 0.0/s in 00:00:00                                                                   
-    INFO: 81 variants selected.
+    INFO: 91 variants selected.
     
 
 This command write selected variants to a table `pos_20k. A message is optional but is highly recommended because it helps you remember what variants this table contains. The message will be displayed in the output of `vtools show tables` and `vtools show table TBL@@, 
@@ -166,8 +166,8 @@ This command write selected variants to a table `pos_20k. A message is optional 
     % vtools show tables
     
     table      #variants     date message
-    pos_20k           81    May21 variants with position < 20000
-    variant        1,611
+    pos_20k           91    May28 variants with position < 20000
+    variant        2,051    May28 Master variant table
     
 
 You can use multiple conditions to select tables, as in 
@@ -178,7 +178,7 @@ You can use multiple conditions to select tables, as in
     %     'Variants with position < 20000 and with reference allele T'
     
     Running: 0 0.0/s in 00:00:00
-    INFO: 20 variants selected.
+    INFO: 22 variants selected.
     
 
 The resulting table has a name with space and special characters `<` and `=`. Such names are allowed but should be properly quoted. If you need to specify `OR` condition, you can do 
@@ -188,8 +188,8 @@ The resulting table has a name with space and special characters `<` and `=`. Su
     % vtools select variant 'pos < 200000 OR ref="T"' -t 'pos < 20k or ref=T' \
     %     'Variants with position < 20000 or with reference allele T'
 
-    Running: 1 953.3/s in 00:00:00
-    INFO: 428 variants selected.
+    Running: 2 1.3K/s in 00:00:00
+    INFO: 521 variants selected.
     
 
 </details>
@@ -209,21 +209,26 @@ Variant info fields can also be added by command `vtools update`. The `--from_st
 
     % vtools update variant --from_stat 'num=#(GT)'
     
-    Counting variants: 100% [====================================================] 3 300.0/s in 00:00:00
-    INFO: Adding variant info field num
-    Updating variant: 100% [=================================================] 1,611 55.7K/s in 00:00:00
-    INFO: 1611 records are updated
+    Counting variants: 100% [====================================] 3 25.9/s in 00:00:00
+    INFO: Adding variant info field num with type INT
+    Updating variant: 100% [================================] 2,051 58.8K/s in 00:00:00
+    INFO: 2051 records are updated
     
 
 The fields are now available to the project 
 
     % vtools show fields
 
-    variant.chr
-    variant.pos
-    variant.ref
-    variant.alt
-    variant.num
+    variant.chr (char)      Chromosome name (VARCHAR)
+    variant.pos (int)       Position (INT, 1-based)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
+    variant.num (int)       Created from stat "#(GT)"  with type INT on May28
+    pos_20k.chr (char)      Chromosome name (VARCHAR)
+    pos < 20k ref=T.chr (char) 
+                            Chromosome name (VARCHAR)
+    pos < 20k or ref=T.chr (char) 
+                            Chromosome name (VARCHAR)
     
 
 and can be used to select variants. For example, the following command select variants that appear in all three samples, 
@@ -231,8 +236,8 @@ and can be used to select variants. For example, the following command select va
     % vtools select variant 'num=3' -t inAllSamples 'variants that are in all three samples'
 
 
-    Running: 1 988.1/s in 00:00:00
-    INFO: 511 variants selected.
+    Running: 1 592.0/s in 00:00:00                                           
+    INFO: 646 variants selected.
     
 
 </details>
@@ -246,7 +251,7 @@ You do not have to select from the master variant table, and in case that you on
     % vtools select 'pos < 20k or ref=T' 'num=3' -c
     
     Counting variants: 0 0.0/s in 00:00:00
-    125
+    154
     
 
 You can also have a look at these variants without saving them to a table 
@@ -255,16 +260,16 @@ You can also have a look at these variants without saving them to a table
 
     % vtools select 'pos < 20k or ref=T' 'num=3' --output chr pos ref alt num -l 10
     
-    1  5966   T  G  3
-    1  10007  G  A  3
-    1  20723  G  C  3
-    1  20786  G  T  3
-    1  31705  A  G  3
-    1  44243  T  C  3
-    1  44353  G  A  3
-    1  44539  C  T  3
-    1  47862  G  T  3
-    1  52066  T  C  3
+    1   16103   T   G   3
+    1   20144   G   A   3
+    1   30860   G   C   3
+    1   30923   G   T   3
+    1   41842   A   G   3
+    1   54380   T   C   3
+    1   54490   G   A   3
+    1   54676   C   T   3
+    1   57999   G   T   3
+    1   62203   T   C   3
     
 
 </details>
@@ -282,13 +287,10 @@ In contrast to variant info fields that annotate all variants, **annotation data
 
 
     % vtools use dbSNP
-    INFO: Upgrading variant tools project to version 2.7.20
-    Verifying variants: 100% [===========================] 1,611 91.5K/s in 00:00:00
-    INFO: 0 variants are updated
-    INFO: Choosing version dbSNP-hg18_130 from 10 available databases.
-    INFO: Downloading annotation database annoDB/dbSNP-hg18_130.ann
+    INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
+    INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
     INFO: Using annotation DB dbSNP as dbSNP in project select.
-    INFO: dbSNP version 130
+    INFO: dbSNP version 143, created using vcf file downloaded from NCBI
     
 
 then find out all the variants that are in the dbSNP database: 
@@ -297,8 +299,8 @@ then find out all the variants that are in the dbSNP database:
 
     % vtools select variant 'dbSNP.chr IS NOT NULL' -t inDbSNP 'variants in dbSNP version 130'
     
-    Running: 5 297.6/s in 00:00:00                                                  
-    INFO: 896 variants selected.
+    Running: 6 97.9/s in 00:00:00                                                                                   
+    INFO: 1429 variants selected.
     
 
 We can see the rsname of these variants 
@@ -307,12 +309,11 @@ We can see the rsname of these variants
 
     % vtools output inDbSNP chr pos ref alt dbSNP.name --all
     
-    1	5683  	G	T	rs2691315
-    1	6241  	T	C	rs17041382
-    1	9992  	C	T	rs12354148
+    1   14677   G   A   rs201327123
+    1   15820   G   T   rs2691315
+    1   16103   T   G   rs78376469
     ... ...
-    1	996853	G	A	rs4326571
-    1	999097	T	C	rs9442366
+  
     
 
 Here we use the `--all` option of command `vtools output` because a variant can have multiple rsnames, and this is indeed the case for mutation `A->G` at `chr1:746775`. 
@@ -323,10 +324,10 @@ The syntax is the same for range-based databases. For example, if we use the ref
 
     % vtools use refGene
     
-    refGene-hg18_20110909.DB.gz: 100% [=============] 1,803,587.0 2.5M/s in 00:00:00
-    Binning ranges: 100% [=============================] 40,067 110.2K/s in 00:00:00
+    INFO: Choosing version refGene-hg38_20170201 from 5 available databases.
+    INFO: Downloading annotation database annoDB/refGene-hg38_20170201.ann
     INFO: Using annotation DB refGene as refGene in project select.
-    INFO: refseq Genes
+    INFO: Known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq).
     
 
 we can find out all the variants that are not in dbSNP but in one of the ref seq genes, 
@@ -335,8 +336,8 @@ we can find out all the variants that are not in dbSNP but in one of the ref seq
 
     % vtools select variant 'dbSNP.chr IS NULL' 'refGene.chr IS NOT NULL' -t inRefGene 'variants that are in refGene but not dbSNP'
     
-    Running: 9 1.1K/s in 00:00:00                                                   
-    INFO: 98 variants selected.
+    Running: 7 567.6/s in 00:00:00                                            
+    INFO: 32 variants selected.
     
 
 </details>
@@ -424,11 +425,10 @@ One of the common use of annotation databases is to identify variants that belon
     % vtools use ccdsGene
     
 
-    INFO: Downloading annotation database from annoDB/ccdsGene.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/ccdsGene-hg19_20111206.DB.gz
-    Binning ranges: 100% [=====================================] 25,504 65.1K/s in 00:00:00
-    INFO: Using annotation DB ccdsGene in project select.
-    INFO: CCDS Genes
+    INFO: Choosing version ccdsGene-hg38_20171008 from 4 available databases.
+    INFO: Downloading annotation database annoDB/ccdsGene-hg38_20171008.ann
+    INFO: Using annotation DB ccdsGene as ccdsGene in project select.
+    INFO: High-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project.
     
 
 
@@ -436,12 +436,12 @@ One of the common use of annotation databases is to identify variants that belon
     % vtools use keggPathway --linked_by ccdsGene.name
     
 
-    INFO: Downloading annotation database from annoDB/keggPathway.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/keggPathway-20110823.DB.gz
-    INFO: Using annotation DB keggPathway in project select.
+    INFO: Choosing version keggPathway-20110823 from 1 available databases.
+    INFO: Downloading annotation database annoDB/keggPathway-20110823.ann
+    INFO: Using annotation DB keggPathway as keggPathway in project select.
     INFO: kegg pathway for CCDS genes
-    INFO: 6881 out of 25475 ccdsgene.name are annotated through annotation database keggPathway
-    WARNING: 68 out of 6949 values in annotation database keggPathway are not linked to the project.
+    INFO: 6745 out of 32508 ccdsGene.ccdsGene.name are annotated through annotation database keggPathway
+    WARNING: 204 out of 6949 values in annotation database keggPathway are not linked to the project.
     
 
 As you can see from the above output, the KEGG pathway database contains 6881 CCDS genes, but also has 68 IDs that are not recognizable by the current version of the CCDS database. 
@@ -451,41 +451,46 @@ Anyway, the following command lists all CCDS genes and refGenes that contain one
     % vtools output variant ccdsGene.name refGene.name2 | sort | uniq
     
 
-    .            .
-    .            AGRN
-    .            B3GALT6
-    .            C1orf159
-    .            C1orf170
-    .            FAM41C
-    .            FAM87B
-    .            ISG15
-    .            KLHL17
-    .            LINC00115
-    .            LOC100130417
-    .            LOC100288069
-    .            LOC254099
-    .            LOC643837
-    .            PLEKHN1
-    .            RNF223
-    .            SAMD11
-    .            SDF4
-    .            TTLL10
-    .            UBE2J2
-    .            WASH7P
-    CCDS10.1     TNFRSF18
-    CCDS11.1     TNFRSF4
-    CCDS12.1     SDF4
-    CCDS14.1     UBE2J2
-    CCDS2.2      SAMD11
-    CCDS3.1      NOC2L
-    CCDS30547.1  OR4F5
-    CCDS30550.1  KLHL17
-    CCDS30551.1  AGRN
-    CCDS4.1      PLEKHN1
-    CCDS44036.1  TTLL10
-    CCDS6.1      ISG15
-    CCDS7.2      C1orf159
-    CCDS8.1      TTLL10
+    .   .
+.   AGRN
+.   B3GALT6
+.   C1orf159
+.   FAM41C
+.   FAM87B
+.   ISG15
+.   KLHL17
+.   LINC00115
+.   LINC01128
+.   LINC01342
+.   LOC100130417
+.   LOC100288069
+.   LOC100288175
+.   LOC100288778
+.   MIR6723
+.   PERM1
+.   PLEKHN1
+.   RNF223
+.   SAMD11
+.   SDF4
+.   TTLL10
+.   UBE2J2
+.   WASH7P
+CCDS10.1    TNFRSF18
+CCDS11.1    TNFRSF4
+CCDS12.1    SDF4
+CCDS14.1    UBE2J2
+CCDS2.2 SAMD11
+CCDS3.1 NOC2L
+CCDS30547.1 OR4F5
+CCDS30550.1 KLHL17
+CCDS30551.1 AGRN
+CCDS4.1 PLEKHN1
+CCDS44036.1 TTLL10
+CCDS6.1 ISG15
+CCDS7.2 C1orf159
+CCDS76083.1 PERM1
+CCDS8.1 TTLL10
+
     
 
 As you can see, CCDS genes are more conservative and do not contain some of the ref seq genes. If you need to find out all the variants that belong to a particular gene, you can use 
@@ -493,8 +498,8 @@ As you can see, CCDS genes are more conservative and do not contain some of the 
     % vtools select variant 'refGene.name2 = "AGRN"' -t AGRN
     
 
-    Running: 13 918.9/s in 00:00:00
-    INFO: 91 variants selected.
+    Running: 21 1.0K/s in 00:00:00                                                                               
+    </I>NFO: 111 variants selected
     
 
 You can also output the pathway that this gene belong as follows: 
@@ -503,16 +508,16 @@ You can also output the pathway that this gene belong as follows:
          chr pos ref alt refGene.name2 keggpathway.kgID keggPathway.kgDesc -l 10 --all
     
 
-    1  955702  A  G  AGRN  hsa04512  ECM-receptor interaction
-    1  955802  A  T  AGRN  hsa04512  ECM-receptor interaction
-    1  955812  A  G  AGRN  hsa04512  ECM-receptor interaction
-    1  956056  A  G  AGRN  hsa04512  ECM-receptor interaction
-    1  956132  A  G  AGRN  hsa04512  ECM-receptor interaction
-    1  956443  A  G  AGRN  hsa04512  ECM-receptor interaction
-    1  956486  C  G  AGRN  hsa04512  ECM-receptor interaction
-    1  958089  C  A  AGRN  hsa04512  ECM-receptor interaction
-    1  961230  T  C  AGRN  hsa04512  ECM-receptor interaction
-    1  961997  C  T  AGRN  hsa04512  ECM-receptor interaction
+    1   1021740 G   C   AGRN    hsa04512    ECM-receptor interaction
+    1   1021740 G   C   AGRN    hsa04512    ECM-receptor interaction
+    1   1022868 A   G   AGRN    hsa04512    ECM-receptor interaction
+    1   1022868 A   G   AGRN    hsa04512    ECM-receptor interaction
+    1   1023351 A   G   AGRN    hsa04512    ECM-receptor interaction
+    1   1023351 A   G   AGRN    hsa04512    ECM-receptor interaction
+    1   1023525 A   G   AGRN    hsa04512    ECM-receptor interaction
+    1   1023525 A   G   AGRN    hsa04512    ECM-receptor interaction
+    1   1023573 A   G   AGRN    hsa04512    ECM-receptor interaction
+    1   1023573 A   G   AGRN    hsa04512    ECM-receptor interaction
     
 
 </details>
@@ -539,9 +544,9 @@ It is sometimes useful to select variants based on sample genotypes, to answer q
     
 
     sample_name  filename
-    SAMP1        V1.vcf
-    SAMP1        V2.vcf
-    SAMP1        V3.vcf
+    SAMP1       V1_hg38.vcf
+    SAMP2       V2_hg38.vcf
+    SAMP3       V3_hg38.vcf
     
 
 We can rename samples using command `vtools admin --rename_samples` but we can also identify samples by filename here. For example, the following command selects all variants imported from `V1.vcf` to a table V1. 
@@ -552,8 +557,8 @@ We can rename samples using command `vtools admin --rename_samples` but we can a
     
 
     INFO: 1 samples are selected by condition: filename = "V1.vcf"
-    Running: 2 791.8/s in 00:00:00
-    INFO: 989 variants selected.
+    Running: 3 1.0K/s in 00:00:00                                                                                   
+    INFO: 1269 variants selected.
     
 
 </details>
