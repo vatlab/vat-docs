@@ -1,5 +1,5 @@
 +++
-title = "Genotype"
+title = "genotype"
 description = ""
 weight = 4
 +++

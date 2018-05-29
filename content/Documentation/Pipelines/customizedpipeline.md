@@ -1,6 +1,6 @@
 
 +++
-title = "Customized pipeline"
+title = "Customized"
 description = ""
 weight = 2
 +++

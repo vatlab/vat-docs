@@ -1,6 +1,6 @@
 
 +++
-title = "Hugo gene"
+title = "HugoGene"
 description = ""
 weight = 2
 +++

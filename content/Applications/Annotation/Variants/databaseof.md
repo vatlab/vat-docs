@@ -1,6 +1,6 @@
 
 +++
-title = "Database of Genomic Variants"
+title = "database"
 description = ""
 weight = 5
 +++

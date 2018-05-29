@@ -1,6 +1,6 @@
 +++
 title = "Documentation"
-description = ""
+chapter = true
 weight = 2
 +++
 

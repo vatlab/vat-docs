@@ -1,6 +1,6 @@
 
 +++
-title = "Customized annotation databases"
+title = "Customized"
 description = ""
 weight = 3
 +++
