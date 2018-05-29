@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="generator" content="Hugo 0.40.2" />
     <meta name="description" content="Documentation for Variant Tools">
 <meta name="author" content="Bo Peng">
 
@@ -12,19 +12,19 @@
     <title>lifttover :: Variant Tools</title>
     
     
-    <link href="/vat-docs/css/nucleus.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/font-awesome.min.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/hybrid.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/featherlight.min.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/auto-complete.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/theme.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/hugo-theme.css?1527263171" rel="stylesheet">
+    <link href="/vat-docs/css/nucleus.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1527613838" rel="stylesheet">
     
-      <link href="/vat-docs/css/theme-mine.css?1527263171" rel="stylesheet">
+      <link href="/vat-docs/css/theme-mine.css?1527613838" rel="stylesheet">
     
 
-    <script src="/vat-docs/js/jquery-2.x.min.js?1527263171"></script>
+    <script src="/vat-docs/js/jquery-2.x.min.js?1527613838"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527263171"></script>
-<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527263171"></script>
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527613838"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527613838"></script>
 <script type="text/javascript">
     
         var baseurl = '\/vat-docs\/';
     
 </script>
-<script type="text/javascript" src="/vat-docs/js/search.js?1527263171"></script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1527613838"></script>
 
     
   </div>
@@ -3979,39 +3979,42 @@ optional arguments:
 <li>Because the UCSC liftover tools does not guarantee complete translation, variants that failed to map will have missing alternative coordinates.</li>
 </ol>
 
-<p><details><summary> Liftover from hg18 to hg19</summary> The following example demonstrates how to liftOver a project from hg18 to hg19. Note that the UCSC liftOver tool and needed chain files are automatically downloaded if they are not available.</p>
+<p><details><summary> Liftover from hg19 to hg38</summary> The following example demonstrates how to liftOver a project from hg18 to hg19. Note that the UCSC liftOver tool and needed chain files are automatically downloaded if they are not available.</p>
 
-<pre><code>% vtools liftover hg19
+<pre><code>% vtools init -f liftover
+% vtools import V1-3_hg19.vcf --build hg19
+% vtools liftover hg38
 
 
-INFO: Downloading liftOver tool from UCSC
 INFO: Downloading liftOver chain file from UCSC
 INFO: Exporting variants in BED format
-Exporting variants: 100% [======================&gt;] 12,994 151.9K/s in 00:00:00
+Exporting variants: 100% [===============================] 288 110.5K/s in 00:00:00
 INFO: Running UCSC liftOver tool
-INFO: Reading liftover chains
-Mapping coordinates
-INFO: 280 records failed to map.
-Updating table variant: 100% [======================&gt;] 12,714 31.2K/s in 00:00:00
+Updating table variant: 100% [============================] 288 780.0/s in 00:00:00
 </code></pre>
 
 <p>After the liftOver operation, three more fields are added to the master variant table (alt_bin, alt_chr, alt_pos)</p>
 
 <pre><code>% vtools show table variant
 
+Name:                   variant
+Description:            Master variant table
+Creation date:          May29
+Command:
+Fields:                 variant_id, bin, chr, pos, ref, alt, alt_bin, alt_chr, alt_pos
+Number of variants:     1611
+
 
 variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
-1, 585, 1, 533, G, C, 423, 585, 1, 10533
-2, 585, 1, 41342, T, A, 188, 585, 1, 51479
-3, 585, 1, 41791, G, A, 192, 585, 1, 51928
-4, 585, 1, 44449, T, C, 166, 585, 1, 54586
-5, 585, 1, 44539, C, T, 131, 585, 1, 54676
-6, 585, 1, 44571, G, C, 135, 585, 1, 54708
-7, 585, 1, 45162, C, T, 166, 585, 1, 55299
-8, 585, 1, 52066, T, C, 159, 585, 1, 62203
-9, 585, 1, 53534, G, A, 243, 585, 1, 63671
-10, 585, 1, 75891, T, C, 182, 585, 1, 86028
-(12984 records omitted, use parameter --limit to see more)
+52,586,1,230047,A,T,586,1,260296
+53,586,1,230058,T,G,586,1,260307
+54,586,1,231480,G,C,586,1,261729
+55,586,1,231504,G,A,586,1,261753
+56,586,1,231526,C,T,586,1,261775
+57,586,1,232223,C,T,587,1,262472
+58,586,1,234301,T,C,587,1,264550
+59,586,1,234308,A,G,587,1,264557
+... ...
 </code></pre>
 
 <p></details></p>
@@ -4022,26 +4025,22 @@ variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
 
 
 Project name:                test
-Primary reference genome:    hg18
-Secondary reference genome:  hg19
-Database engine:             sqlite3
+Primary reference genome:    hg19
+Secondary reference genome:  hg38
+Storage method:              hdf5
 Variant tables:              variant
 Annotation databases:
 
 
-% vtools liftover hg19 --flip
+% vtools liftover hg38 --flip
 
 
-INFO: Downloading liftOver tool from UCSC
 INFO: Downloading liftOver chain file from UCSC
 INFO: Exporting variants in BED format
-Exporting variants: 100.0% [=========&gt;] 577 55.9K/s in 00:00:00
+Exporting variants: 100% [===============================] 288 116.2K/s in 00:00:00
 INFO: Running UCSC liftOver tool
-INFO: Reading liftover chains
-Mapping coordinates
-INFO: 5 records failed to map.
-INFO: Flipping primary and alterantive reference genome
-Updating table variant: 100.0% [===========&gt;] 572 12.7K/s in 00:00:00
+INFO: Flipping primary and alternative reference genome
+Updating table variant: 100% [============================] 288 612.1/s in 00:00:00
 </code></pre>
 
 <p>Interruption of the flipping process will leave the project unusable because of mixed coordinates.</p>
@@ -4050,9 +4049,9 @@ Updating table variant: 100.0% [===========&gt;] 572 12.7K/s in 00:00:00
 
 
 Project name:                test
-Primary reference genome:    hg19
-Secondary reference genome:  hg18
-Database engine:             sqlite3
+Primary reference genome:    hg38
+Secondary reference genome:  hg19
+Storage method:              hdf5
 Variant tables:              variant
 Annotation databases: 
 
@@ -4061,17 +4060,15 @@ Annotation databases:
 
 
 variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
-1, 585, 1, 10533, G, C, 423, 585, 1, 533
-2, 585, 1, 51479, T, A, 188, 585, 1, 41342
-3, 585, 1, 51928, G, A, 192, 585, 1, 41791
-4, 585, 1, 54586, T, C, 166, 585, 1, 44449
-5, 585, 1, 54676, C, T, 131, 585, 1, 44539
-6, 585, 1, 54708, G, C, 135, 585, 1, 44571
-7, 585, 1, 55299, C, T, 166, 585, 1, 45162
-8, 585, 1, 62203, T, C, 159, 585, 1, 52066
-9, 585, 1, 63671, G, A, 243, 585, 1, 53534
-10, 585, 1, 86028, T, C, 182, 585, 1, 75891
-(12984 records omitted, use parameter --limit to see more)
+52,586,1,260296,A,T,586,1,230047
+53,586,1,260307,T,G,586,1,230058
+54,586,1,261729,G,C,586,1,231480
+55,586,1,261753,G,A,586,1,231504
+56,586,1,261775,C,T,586,1,231526
+57,587,1,262472,C,T,586,1,232223
+58,587,1,264550,T,C,586,1,234301
+59,587,1,264557,A,G,586,1,234308
+... ...
 </code></pre>
 
 <p></details></p>
@@ -6654,20 +6651,20 @@ variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vat-docs/js/clipboard.min.js?1527263171"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527263171"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527263171"></script>
-    <script src="/vat-docs/js/jquery.sticky.js?1527263171"></script>
-    <script src="/vat-docs/js/featherlight.min.js?1527263171"></script>
-    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527263171"></script>
-    <script src="/vat-docs/js/highlight.pack.js?1527263171"></script>
+    <script src="/vat-docs/js/clipboard.min.js?1527613838"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527613838"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527613838"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1527613838"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1527613838"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527613838"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1527613838"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vat-docs/js/modernizr.custom.71422.js?1527263171"></script>
-    <script src="/vat-docs/js/learn.js?1527263171"></script>
-    <script src="/vat-docs/js/hugo-learn.js?1527263171"></script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1527613838"></script>
+    <script src="/vat-docs/js/learn.js?1527613838"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1527613838"></script>
 
-    <link href="/vat-docs/mermaid/mermaid.css?1527263171" type="text/css" rel="stylesheet" />
-    <script src="/vat-docs/mermaid/mermaid.js?1527263171"></script>
+    <link href="/vat-docs/mermaid/mermaid.css?1527613838" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1527613838"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

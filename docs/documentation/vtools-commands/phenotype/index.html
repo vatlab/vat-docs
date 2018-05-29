@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="generator" content="Hugo 0.40.2" />
     <meta name="description" content="Documentation for Variant Tools">
 <meta name="author" content="Bo Peng">
 
@@ -12,19 +12,19 @@
     <title>Phenotype :: Variant Tools</title>
     
     
-    <link href="/vat-docs/css/nucleus.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/font-awesome.min.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/hybrid.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/featherlight.min.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/auto-complete.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/theme.css?1527263171" rel="stylesheet">
-    <link href="/vat-docs/css/hugo-theme.css?1527263171" rel="stylesheet">
+    <link href="/vat-docs/css/nucleus.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1527613838" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1527613838" rel="stylesheet">
     
-      <link href="/vat-docs/css/theme-mine.css?1527263171" rel="stylesheet">
+      <link href="/vat-docs/css/theme-mine.css?1527613838" rel="stylesheet">
     
 
-    <script src="/vat-docs/js/jquery-2.x.min.js?1527263171"></script>
+    <script src="/vat-docs/js/jquery-2.x.min.js?1527613838"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527263171"></script>
-<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527263171"></script>
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527613838"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527613838"></script>
 <script type="text/javascript">
     
         var baseurl = '\/vat-docs\/';
     
 </script>
-<script type="text/javascript" src="/vat-docs/js/search.js?1527263171"></script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1527613838"></script>
 
     
   </div>
@@ -4068,13 +4068,12 @@ Input/Output options:
 
 <pre><code>% vtools init test -f
 % vtools admin --load_snapshot vt_testData
-% vtools import CEU.vcf.gz --build hg38 --var_info DP --geno_info DP_geno
+% vtools import CEU_hg38.vcf --build hg38 --var_info DP --geno_info DP
 
-INFO: Importing variants from CEU.vcf.gz (1/1)
-CEU.vcf.gz: 100% [=================================] 300 14.0K/s in 00:00:00
-INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-Importing genotypes: 100% [======================] 18,000 9.0K/s in 00:00:02
-Copying genotype: 100% [===========================] 60 565.5K/s in 00:00:00
+INFO: Importing variants from CEU_hg38.vcf (1/1)
+CEU_hg38.vcf: 100% [======================================] 306 21.4K/s in 00:00:00
+INFO: 292 new variants (292 SNVs) from 306 lines are imported.
+Importing genotypes: 100% [================================] 292 3.5K/s in 00:00:00
 </code></pre>
 
 <p>There are 60 samples without genotype</p>
@@ -4082,16 +4081,16 @@ Copying genotype: 100% [===========================] 60 565.5K/s in 00:00:00
 <pre><code>% vtools show samples -l 10
 
 sample_name filename
-NA06985     CEU.vcf.gz
-NA06986     CEU.vcf.gz
-NA06994     CEU.vcf.gz
-NA07000     CEU.vcf.gz
-NA07037     CEU.vcf.gz
-NA07051     CEU.vcf.gz
-NA07346     CEU.vcf.gz
-NA07347     CEU.vcf.gz
-NA07357     CEU.vcf.gz
-NA10847     CEU.vcf.gz
+NA06985     CEU_hg38.vcf
+NA06986     CEU_hg38.vcf
+NA06994     CEU_hg38.vcf
+NA07000     CEU_hg38.vcf
+NA07037     CEU_hg38.vcf
+NA07051     CEU_hg38.vcf
+NA07346     CEU_hg38.vcf
+NA07347     CEU_hg38.vcf
+NA07357     CEU_hg38.vcf
+NA10847     CEU_hg38.vcf
 (50 records omitted)
 </code></pre>
 
@@ -4223,13 +4222,14 @@ INFO: 60 values of 1 phenotypes (1 new, 0 existing) of 60 samples are updated.
 
 % vtools show samples -l -1 
 
-sample_name filename    sex race
-NA06985     CEU.vcf.gz  F   1
-NA06986     CEU.vcf.gz  M   1
-NA06994     CEU.vcf.gz  F   1
+sample_name filename        sex race
+NA06985     CEU_hg38.vcf    F   1
+NA06986     CEU_hg38.vcf    M   1
+NA06994     CEU_hg38.vcf    F   1
+NA07000     CEU_hg38.vcf    F   1
+NA07037     CEU_hg38.vcf    F   1
+NA07051     CEU_hg38.vcf    F   1
 ... ...
-NA12873     CEU.vcf.gz  F   1
-NA12874     CEU.vcf.gz  M   1  
 </code></pre>
 
 <p></details></p>
@@ -4250,12 +4250,12 @@ NA12874     CEU.vcf.gz  M   1
 % vtools show samples
 
 sample_name filename    sex race    sample_total    sample_alt  sample_homo sample_het  sample_double_het
-NA06985     CEU.vcf.gz  F   1       287             110         40          30          0
-NA06986     CEU.vcf.gz  M   1       287             126         31          64          0
-NA06994     CEU.vcf.gz  F   1       287             130         37          56          0
+NA06985     CEU_hg38.vcf    F   1       292             110         40          30          0
+NA06986     CEU_hg38.vcf    M   1       292             126         31          64          0
+NA06994     CEU_hg38.vcf    F   1       292             131         37          57          0
 ... ...
-NA12873     CEU.vcf.gz  F   1       287             137         37          63          0
-NA12874     CEU.vcf.gz  M   1       287             100         30          40          0
+NA12873     CEU_hg38.vcf    F   1       288             137         37          63          0
+NA12874     CEU_hg38.vcf    M   1       292             101         30          41          0
 </code></pre>
 
 <p>gives statistic of different genotypes.</p>
@@ -4270,19 +4270,22 @@ NA12874     CEU.vcf.gz  M   1       287             100         30          40  
 
 <p><details><summary> Examples: Phenotype calculated from statistics of genotype info fields</summary></p>
 
-<pre><code>% vtools phenotype --from_stat &quot;meanDP=avg(DP_geno)&quot; &quot;minDP=min(DP_geno)&quot; &quot;maxDP=max(DP_geno)&quot;
+<pre><code>% import_update jma7$ vtools phenotype --from_stat &quot;meanDP=avg(DP)&quot; &quot;minDP=min(DP)&quot; &quot;maxDP=max(DP)&quot;
 
-Calculating phenotype: 100% [===================================================================================] 60 59.7/s in 00:00:01
-INFO: 180 values of 3 phenotypes (3 new, 0 existing) of 60 samples are updated.
+Calculating phenotype: 100% [===============================] 60 29.8/s in 00:00:02
+INFO: 180 values of 3 phenotypes (0 new, 3 existing) of 60 samples are updated.
 
 
 
 % vtools show samples
 
-sample_name filename    sex race    sample_total    sample_alt  sample_homo sample_het  sample_double_het   meanDP              minDP   maxDP
-NA06985     CEU.vcf.gz  F   1       287             110         40          30          0                       2.275261324041812   0       12
-NA06986     CEU.vcf.gz  M   1       287             126         31          64          0                       10.759581881533101  0       29
-NA06994     CEU.vcf.gz  F   1       287             130         37          56          0                       5.89198606271777    0       16
+sample_name filename        sex race    sample_total    sample_alt  sample_homo sample_het  sample_double_het   meanDP              minDP   maxDP
+NA06985     CEU_hg38.vcf    F   1       292             110         40          30          0                   2.2705479452054793  0.0     12.0
+NA06986     CEU_hg38.vcf    M   1       292             126         31          64          0                   10.736301369863014  0.0     29.0
+NA06994     CEU_hg38.vcf    F   1       292             131         37          57          0                   5.815068493150685   0.0     16.0
+... ...
+NA12873     CEU_hg38.vcf    F   1       288             137         37          63          0                   3.952054794520548   0.0     16.0
+NA12874     CEU_hg38.vcf    M   1       292             101         30          41          0                   3.886986301369863   0.0     14.0
 </code></pre>
 
 <p></details></p>
@@ -4291,15 +4294,15 @@ NA06994     CEU.vcf.gz  F   1       287             130         37          56  
 
 <p>The basic form of <code>vtools phenotype --output</code> is very similar to command <code>vtools show phenotypes</code>. They can both display all or a specified subset of phenotypes.</p>
 
-<p><details><summary> Examples: Output specified phenotypes</summary></p>
+<p><details><summary> Examples: Output specified phenotypes</summary>
+    % vtools phenotype &ndash;from_file phenotype.txt BMI
+    % vtools phenotype &ndash;output sample_name BMI</p>
 
-<pre><code>% vtools phenotype --output sample_name sample_wildtype BMI 
-
-NA06985      217    19.64
-NA06986      192    None
-NA06994      194    19.49
-NA07000      215    21.52
-NA07037      206    23.05
+<pre><code>NA06985 19.64
+NA06986 NA
+NA06994 19.49
+NA07000 21.52
+NA07037 23.05
 ...
 </code></pre>
 
@@ -4318,7 +4321,7 @@ NA07037      206    23.05
 
 % vtools phenotype --output &quot;avg(meanDP)&quot;
 
-4.523693379790941
+4.561244292237443
 </code></pre>
 
 <p></details></p>
@@ -6901,20 +6904,20 @@ NA07037      206    23.05
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vat-docs/js/clipboard.min.js?1527263171"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527263171"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527263171"></script>
-    <script src="/vat-docs/js/jquery.sticky.js?1527263171"></script>
-    <script src="/vat-docs/js/featherlight.min.js?1527263171"></script>
-    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527263171"></script>
-    <script src="/vat-docs/js/highlight.pack.js?1527263171"></script>
+    <script src="/vat-docs/js/clipboard.min.js?1527613838"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527613838"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527613838"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1527613838"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1527613838"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527613838"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1527613838"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vat-docs/js/modernizr.custom.71422.js?1527263171"></script>
-    <script src="/vat-docs/js/learn.js?1527263171"></script>
-    <script src="/vat-docs/js/hugo-learn.js?1527263171"></script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1527613838"></script>
+    <script src="/vat-docs/js/learn.js?1527613838"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1527613838"></script>
 
-    <link href="/vat-docs/mermaid/mermaid.css?1527263171" type="text/css" rel="stylesheet" />
-    <script src="/vat-docs/mermaid/mermaid.js?1527263171"></script>
+    <link href="/vat-docs/mermaid/mermaid.css?1527613838" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1527613838"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

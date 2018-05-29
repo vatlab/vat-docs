@@ -42,7 +42,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/phenotype/</guid>
-      <description>Import and manipulate phenotypes Usage % vtools phenotype -h usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]] [--set [EXPRESSION [EXPRESSION ...]]] [--from_stat [EXPRESSION [EXPRESSION ...]]] [--output [EXPRESSION [EXPRESSION ...]]] [-j N] [-g [COND [COND ...]]] [-s [COND [COND ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l LIMIT] [-v {0,1,2}] Import phenotypes from a file, or set phenotypes to constants, or to summary statistics of sample genotype fields. optional arguments: -h, --help show this help message and exit -f [INPUT_FILE [INPUT_FILE .</description>
+      <description>Import and manipulate phenotypes 1. Usage % vtools phenotype -h usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]] [--set [EXPRESSION [EXPRESSION ...]]] [--from_stat [EXPRESSION [EXPRESSION ...]]] [--output [EXPRESSION [EXPRESSION ...]]] [-j N] [-g [COND [COND ...]]] [-s [COND [COND ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l LIMIT] [-v {0,1,2}] Import phenotypes from a file, or set phenotypes to constants, or to summary statistics of sample genotype fields.</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/liftover/</guid>
-      <description>Adding coordinates from an alternative reference genome Usage % vtools liftover -h usage: vtools liftover [-h] [--flip] [-v STD[LOG]] build Convert coordinates of existing variants to alternative coordinates in an alternative reference genome. The UCSC liftover tool will be automatically downloaded if it is not available. positional arguments: build Name of the alternative reference genome optional arguments: -h, --help show this help message and exit --flip Flip primary and alternative reference genomes so that the specified build will become the primary reference genome of the project.</description>
+      <description>Adding coordinates from an alternative reference genome 1. Usage % vtools liftover -h usage: vtools liftover [-h] [--flip] [-v STD[LOG]] build Convert coordinates of existing variants to alternative coordinates in an alternative reference genome. The UCSC liftover tool will be automatically downloaded if it is not available. positional arguments: build Name of the alternative reference genome optional arguments: -h, --help show this help message and exit --flip Flip primary and alternative reference genomes so that the specified build will become the primary reference genome of the project.</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/show/</guid>
-      <description>Display project and system information Usage % vtools show -h usage: vtools show [-h] [-l N] [-v {0,1,2,3}] [{project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots}] [items [items ...]] Output information of all system and project related items such as variant tables, samples, phenotypes, annotation databases and fields. positional arguments: {project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots} Type of information to display, which can be &#39;project&#39; for summary of a project, &#39;tables&#39; for all variant tables (or all tables if --verbosity=2), &#39;table TBL&#39; for details of a specific table TBL, &#39;samples [COND]&#39; for sample name, files from which samples are imported, and associated phenotypes (can be supressed by option --verbosity 0) of all or selected samples, &#39;phenotypes [P1 P2.</description>
+      <description>Display project and system information 1. Usage % vtools show -h usage: vtools show [-h] [-l N] [-v {0,1,2,3}] [{project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots}] [items [items ...]] Output information of all system and project related items such as variant tables, samples, phenotypes, annotation databases and fields. positional arguments: {project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots} Type of information to display, which can be &#39;project&#39; for summary of a project, &#39;tables&#39; for all variant tables (or all tables if --verbosity=2), &#39;table TBL&#39; for details of a specific table TBL, &#39;samples [COND]&#39; for sample name, files from which samples are imported, and associated phenotypes (can be supressed by option --verbosity 0) of all or selected samples, &#39;phenotypes [P1 P2.</description>
     </item>
     
     <item>
@@ -69,7 +69,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/use/</guid>
-      <description>Use an annotation database Usage % vtools use -h usage: vtools use [-h] [--as NAME] [-l [LINKED_BY [LINKED_BY ...]]] [--anno_type {variant,position,range,field}] [--linked_fields [LINKED_FIELDS [LINKED_FIELDS ...]]] [-f [FILES [FILES ...]]] [--rebuild] [-j N] [-v {0,1,2}] source Link an annotation database to the project, download it from the variant tools website or build it from source if needed. positional arguments: source Use an annotation database ($source.DB or $source.DB.gz) if it is available, download or build the database if a description file ($source.</description>
+      <description>Use an annotation database 1. Usage % vtools use -h usage: vtools use [-h] [--as NAME] [-l [LINKED_BY [LINKED_BY ...]]] [--anno_type {variant,position,range,field}] [--linked_fields [LINKED_FIELDS [LINKED_FIELDS ...]]] [-f [FILES [FILES ...]]] [--rebuild] [-j N] [-v {0,1,2}] source Link an annotation database to the project, download it from the variant tools website or build it from source if needed. positional arguments: source Use an annotation database ($source.DB or $source.DB.gz) if it is available, download or build the database if a description file ($source.</description>
     </item>
     
     <item>
@@ -78,7 +78,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/select/</guid>
-      <description>Select variants from a variant table Usage % vtools select -h usage: vtools select [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]] [-c | -o [FIELDS [FIELDS ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}] from_table [condition [condition ...]] Select variants according to properties (variant and annotation fields) and membership (samples) of variant.</description>
+      <description>Select variants from a variant table 1. Usage % vtools select -h usage: vtools select [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]] [-c | -o [FIELDS [FIELDS ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}] from_table [condition [condition ...]] Select variants according to properties (variant and annotation fields) and membership (samples) of variant.</description>
     </item>
     
     <item>
@@ -87,7 +87,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/exclude/</guid>
-      <description>Exclude variants that match certain criteria Usage % vtools exclude -h usage: vtools exclude [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]] [-c | -o [FIELDS [FIELDS ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--order_by [FIELD [FIELD ...]]] [-u] [-v {0,1,2}] from_table [condition [condition ...]] Exclude variants according to properties (variant and annotation fields) and membership (samples) of variant.</description>
+      <description>Exclude variants that match certain criteria 1. Usage % vtools exclude -h usage: vtools exclude [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]] [-c | -o [FIELDS [FIELDS ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--order_by [FIELD [FIELD ...]]] [-u] [-v {0,1,2}] from_table [condition [condition ...]] Exclude variants according to properties (variant and annotation fields) and membership (samples) of variant.</description>
     </item>
     
     <item>
@@ -96,7 +96,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/compare/</guid>
-      <description>Compare two or more variant tables Usage % vtools compare -h usage: vtools compare [-h] [--union [TABLE [DESC ...]]] [--intersection [TABLE [DESC ...]]] [--difference [TABLE [DESC ...]]] [--expression EXPR [DESC ...]] [--mode {variant,site,genotype}] [--samples [SAMPLES [SAMPLES ...]]] [-v {0,1,2}] [tables [tables ...]] Get the difference, intersection and union of two or more variant tables, according to sites, variants, or genotypes of associated samples of these variants. Resulting variants can be counted or write to other variant tables.</description>
+      <description>Compare two or more variant tables 1. Usage % vtools compare -h usage: vtools compare [-h] [--union [TABLE [DESC ...]]] [--intersection [TABLE [DESC ...]]] [--difference [TABLE [DESC ...]]] [--expression EXPR [DESC ...]] [--mode {variant,site,genotype}] [--samples [SAMPLES [SAMPLES ...]]] [-v {0,1,2}] [tables [tables ...]] Get the difference, intersection and union of two or more variant tables, according to sites, variants, or genotypes of associated samples of these variants. Resulting variants can be counted or write to other variant tables.</description>
     </item>
     
     <item>
@@ -105,7 +105,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/associate/</guid>
-      <description>Identify genotype - phenotype association Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
+      <description>Identify genotype - phenotype association 1. Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
     </item>
     
     <item>
@@ -114,7 +114,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/output/</guid>
-      <description>Output variants in a variant table Usage % vtools output -h usage: vtools output [-h] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}] table fields [fields ...] Output variants, variant info fields, annotation fields and expressions that involve these fields in a tab or comma separated format. positional arguments: table variants to output. fields A list of fields that will be outputted.</description>
+      <description>Output variants in a variant table 1. Usage % vtools output -h usage: vtools output [-h] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]] [--all] [--order_by FIELD [FIELD ...]] [-v {0,1,2}] table fields [fields ...] Output variants, variant info fields, annotation fields and expressions that involve these fields in a tab or comma separated format. positional arguments: table variants to output. fields A list of fields that will be outputted.</description>
     </item>
     
     <item>
@@ -123,7 +123,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/export/</guid>
-      <description>Export variants and samples to external files Usage % vtools export -h usage: vtools export [-h] [-o [OUTPUT]] [-s [COND [COND ...]]] [--format FORMAT] [--build BUILD] [--header [HEADER [HEADER ...]]] [-j JOBS] [-v {0,1,2}] table Export variants and genotypes in text, vcf and other formats. positional arguments: table A variant table whose variants will be exported. If parameter --samples is specified, only variants belong to one or more of the samples will be exported.</description>
+      <description>Export variants and samples to external files 1. Usage % vtools export -h usage: vtools export [-h] [-o [OUTPUT]] [-s [COND [COND ...]]] [--format FORMAT] [--build BUILD] [--header [HEADER [HEADER ...]]] [-j JOBS] [-v {0,1,2}] table Export variants and genotypes in text, vcf and other formats. positional arguments: table A variant table whose variants will be exported. If parameter --samples is specified, only variants belong to one or more of the samples will be exported.</description>
     </item>
     
     <item>
@@ -132,7 +132,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/remove/</guid>
-      <description>Remove project, variant table, fields and others Usage % vtools remove -h usage: vtools remove [-h] [-v STD[LOG]] {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes} [items [items ...]] Remove from the current project various items such as variants genotypes, and annotation fields. positional arguments: {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes} Type of items to be removed. items Items to be removed, which should be, for &#39;project&#39; the name of project to be removed (optional), for &#39;tables&#39; names of one or more variant tables, for &#39;samples&#39; patterns using which matching samples are removed, for &#39;fields&#39; name of fields to be removed, for &#39;geno_fields&#39; name of genotype fields to be removed (cf.</description>
+      <description>Remove project, variant table, fields and others 1. Usage % vtools remove -h usage: vtools remove [-h] [-v STD[LOG]] {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes} [items [items ...]] Remove from the current project various items such as variants genotypes, and annotation fields. positional arguments: {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes} Type of items to be removed. items Items to be removed, which should be, for &#39;project&#39; the name of project to be removed (optional), for &#39;tables&#39; names of one or more variant tables, for &#39;samples&#39; patterns using which matching samples are removed, for &#39;fields&#39; name of fields to be removed, for &#39;geno_fields&#39; name of genotype fields to be removed (cf.</description>
     </item>
     
     <item>
@@ -141,7 +141,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/execute/</guid>
-      <description>Execute variant tools pipelines Usage % vtools execute -h usage: vtools execute [-h] [-i [INPUT_FILE [INPUT_FILE ...]]] [-o [OUTPUT_FILE [OUTPUT_FILE ...]]] [-j JOBS] [-d DELIMITER] [-v {0,1,2}] PIPELINE/QUERY [PIPELINE/QUERY ...] Execute a pipeline that uses external commands to process input files, usually to align raw reads to a reference genome and call variants from aligned reads. The pipelines are controlled by pipeline description files. This command can also be used to execute arbitrary SQL query against the project database.</description>
+      <description>Execute variant tools pipelines 1. Usage % vtools execute -h usage: vtools execute [-h] [-i [INPUT_FILE [INPUT_FILE ...]]] [-o [OUTPUT_FILE [OUTPUT_FILE ...]]] [-j JOBS] [-d DELIMITER] [-v {0,1,2}] PIPELINE/QUERY [PIPELINE/QUERY ...] Execute a pipeline that uses external commands to process input files, usually to align raw reads to a reference genome and call variants from aligned reads. The pipelines are controlled by pipeline description files. This command can also be used to execute arbitrary SQL query against the project database.</description>
     </item>
     
     <item>
@@ -150,7 +150,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools-commands/admin/</guid>
-      <description>Miscellaneous administrative procedures Usage % vtools admin -h usage: vtools admin [-h] [--update_resource [TYPE]] [--mirror_repository dest] [--merge_samples] [--rename_samples COND [COND ...]] [--rename_table NAME NEW_NAME] [--describe_table TABLE NEW_DESCRIPTION] [--validate_build] [--validate_sex] [--save_snapshot NAME MESSAGE] [--extra_files [FILE [FILE ...]]] [--load_snapshot NAME] [--set_runtime_option OPTION [OPTION ...]] [--reset_runtime_option OPT] [--fasta2crr FASTA [FASTA ...]] [-v {0,1,2,3}] Optimize or modify projects. Currently supports merging and rename of samples optional arguments: -h, --help show this help message and exit -v {0,1,2,3}, --verbosity {0,1,2,3} Output error and warning (0), info (1), debug (2) and trace (3) information to standard output (default to 1).</description>
+      <description>Miscellaneous administrative procedures 1. Usage % vtools admin -h usage: vtools admin [-h] [--update_resource [TYPE]] [--mirror_repository dest] [--merge_samples] [--rename_samples COND [COND ...]] [--rename_table NAME NEW_NAME] [--describe_table TABLE NEW_DESCRIPTION] [--validate_build] [--validate_sex] [--save_snapshot NAME MESSAGE] [--extra_files [FILE [FILE ...]]] [--load_snapshot NAME] [--set_runtime_option OPTION [OPTION ...]] [--reset_runtime_option OPT] [--fasta2crr FASTA [FASTA ...]] [-v {0,1,2,3}] Optimize or modify projects. Currently supports merging and rename of samples optional arguments: -h, --help show this help message and exit -v {0,1,2,3}, --verbosity {0,1,2,3} Output error and warning (0), info (1), debug (2) and trace (3) information to standard output (default to 1).</description>
     </item>
     
   </channel>

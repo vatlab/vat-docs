@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="generator" content="Hugo 0.40.2" />
     <meta name="description" content="Documentation for Variant Tools">
 <meta name="author" content="Bo Peng">
 
@@ -12,19 +12,19 @@
     <title>Import :: Variant Tools</title>
     
     
-    <link href="/vat-docs/css/nucleus.css?1527263170" rel="stylesheet">
-    <link href="/vat-docs/css/font-awesome.min.css?1527263170" rel="stylesheet">
-    <link href="/vat-docs/css/hybrid.css?1527263170" rel="stylesheet">
-    <link href="/vat-docs/css/featherlight.min.css?1527263170" rel="stylesheet">
-    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527263170" rel="stylesheet">
-    <link href="/vat-docs/css/auto-complete.css?1527263170" rel="stylesheet">
-    <link href="/vat-docs/css/theme.css?1527263170" rel="stylesheet">
-    <link href="/vat-docs/css/hugo-theme.css?1527263170" rel="stylesheet">
+    <link href="/vat-docs/css/nucleus.css?1527613837" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1527613837" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1527613837" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1527613837" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1527613837" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1527613837" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1527613837" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1527613837" rel="stylesheet">
     
-      <link href="/vat-docs/css/theme-mine.css?1527263170" rel="stylesheet">
+      <link href="/vat-docs/css/theme-mine.css?1527613837" rel="stylesheet">
     
 
-    <script src="/vat-docs/js/jquery-2.x.min.js?1527263170"></script>
+    <script src="/vat-docs/js/jquery-2.x.min.js?1527613837"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527263170"></script>
-<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527263170"></script>
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1527613837"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1527613837"></script>
 <script type="text/javascript">
     
         var baseurl = '\/vat-docs\/';
     
 </script>
-<script type="text/javascript" src="/vat-docs/js/search.js?1527263170"></script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1527613837"></script>
 
     
   </div>
@@ -4042,11 +4042,11 @@ optional arguments:
 <li>use command <code>vtools import input_file.vcf --var_info var_fields --geno_info geno_fields</code> to import variants, genotypes and related fields.</li>
 </ol>
 
-<div class="notices tip" ><ol>
+<div class="notices tip" ><ul>
 <li><p>If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands <code>bgzip</code> and <code>tabix</code>), you can use command <code>vtools show track FILENAME.vcf.gz</code> to get details of the vcf file. The [<code>track</code>][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project.</p></li>
 
 <li><p>If your vcf file contains novel variant and/or geno info fields, or if you would like to import all variant and genotype info fields into the project, you can create a customized <code>.fmt</code> file to import these. This process can be simplified using pipeline [import_vcf][6][?][6]. The command to use is similar to <code>vtools execute import_vcf --input my_file.vcf --output myvcf.fmt --build hg19</code>.</p></li>
-</ol>
+</ul>
 </div>
 
 
@@ -4227,7 +4227,7 @@ INFO: 2051 records are updated
 % vtools import CEU_hg38.vcf --build hg38 --var_info AA AC AN DP --geno
 
 INFO: Importing variants from CEU_hg38.vcf (1/1)
-CEU_hg38.vcf: 100% [==========================================================================================================================================================================] 306 13.1K/s in 00:00:00
+CEU_hg38.vcf: 100% [======================================] 306 13.1K/s in 00:00:00
 INFO: 292 new variants (292 SNVs) from 306 lines are imported.
 </code></pre>
 
@@ -7276,20 +7276,20 @@ After data import is finished, we will set <em>journal_mode</em> back to default
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vat-docs/js/clipboard.min.js?1527263170"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527263170"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527263170"></script>
-    <script src="/vat-docs/js/jquery.sticky.js?1527263170"></script>
-    <script src="/vat-docs/js/featherlight.min.js?1527263170"></script>
-    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527263170"></script>
-    <script src="/vat-docs/js/highlight.pack.js?1527263170"></script>
+    <script src="/vat-docs/js/clipboard.min.js?1527613837"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1527613837"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1527613837"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1527613837"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1527613837"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1527613837"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1527613837"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vat-docs/js/modernizr.custom.71422.js?1527263170"></script>
-    <script src="/vat-docs/js/learn.js?1527263170"></script>
-    <script src="/vat-docs/js/hugo-learn.js?1527263170"></script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1527613837"></script>
+    <script src="/vat-docs/js/learn.js?1527613837"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1527613837"></script>
 
-    <link href="/vat-docs/mermaid/mermaid.css?1527263170" type="text/css" rel="stylesheet" />
-    <script src="/vat-docs/mermaid/mermaid.js?1527263170"></script>
+    <link href="/vat-docs/mermaid/mermaid.css?1527613837" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1527613837"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
