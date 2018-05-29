@@ -1,6 +1,6 @@
 
 +++
-title = "HapMap"
+title = "hapmap"
 description = ""
 weight = 8
 +++

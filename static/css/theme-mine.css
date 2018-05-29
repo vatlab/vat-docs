@@ -215,3 +215,13 @@ div.notices ol {
     background:#FAE2E2;
     padding-bottom: 25px;
 }
+
+/* This selector comes from the parent theme and is overridden here */
+sidebar ul.topics li.parent ul, sidebar ul.topics > li.active ul {
+  display: none;
+}
+
+/* This resets display to block for our new ul.parent class */
+sidebar ul.topics li.parent > ul.parent {
+  display: block;
+}

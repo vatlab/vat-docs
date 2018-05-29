@@ -1,14 +1,15 @@
 +++
-title = "Supported types of variants"
+title = "Variants"
 weight = 1
+hidden = true
 +++
 
-# Supported types of variants
+## Supported types of variants
 
 
-## How variants are imported and stored in variant tools
+### How variants are imported and stored in variant tools
 
-*variant tools* import different types of variants as follows: 
+**Variant tools** import different types of variants as follows: 
 
 
 

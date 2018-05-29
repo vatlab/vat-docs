@@ -1,6 +1,6 @@
 
 +++
-title = "Thousand Genomes"
+title = "thousandGenomes"
 description = ""
 weight = 9
 +++

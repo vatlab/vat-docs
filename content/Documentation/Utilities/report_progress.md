@@ -1,6 +1,6 @@
 
 +++
-title = "report_progress"
+title = "report progress"
 description = ""
 weight = 1
 +++

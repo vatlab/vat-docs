@@ -1,5 +1,5 @@
 +++
-title = "Other functions"
+title = "other functions"
 description = ""
 weight = 7
 +++

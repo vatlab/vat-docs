@@ -1,6 +1,6 @@
 
 +++
-title = "linkage-physical map"
+title = "linkage physical map"
 description = ""
 weight = 4
 +++

@@ -1,6 +1,6 @@
 
 +++
-title = "Get Involved"
+title = "Get involved"
 description = ""
 weight = 2
 +++

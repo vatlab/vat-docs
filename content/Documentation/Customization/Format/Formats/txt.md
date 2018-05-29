@@ -49,7 +49,7 @@ weight = 1
 
 ### Import variants with columns chr, pos, ref, and alt
 
-(:toggleexample Examples: create a sample project:) Let us load a project with a few test datasets 
+<details><summary> Examples: create a sample project</summary> Let us load a project with a few test datasets 
 
     % vtools init basic 
     % vtools admin --load_snapshot vt_testData
@@ -59,11 +59,11 @@ weight = 1
     INFO: Snapshot vt_testData has been loaded
     
 
-(:exampleend:) 
+</details>
 
 This format can be used to import variants that are provided as four columns in the input file, 
 
-(:toggleexample Examples: Import variants using format `basic`:) File `variants.txt` has a list of variants as follows 
+<details><summary> Examples: Import variants using format `basic`</summary> File `variants.txt` has a list of variants as follows 
 
     % head variants.txt 
     
@@ -112,11 +112,11 @@ The variants can be displayed using command `vtools output`,
     1	203148360	G	C
     
 
-(:exampleend:) 
+</details>
 
 If the chr, pos, ref, alt columns are not columns 1 through 4 in the input file, you can use parameters `chr_col`, `pos_col`, `ref_col`, and `alt_col` to specify the columns of these fields. If the input data uses 0-based position, parameter `pos_adj` can be used to adjust input. 
 
-(:toggleexample Examples: Use parameters --pos_adj to import data in 0-based coordinates:) If the position used in `variants.txt` is zero-based (like all data downloaded from UCSC), you can use format parameter `--pos_adj 1` to add `1` to import positions: 
+<details><summary> Examples: Use parameters --pos_adj to import data in 0-based coordinates</summary> If the position used in `variants.txt` is zero-based (like all data downloaded from UCSC), you can use format parameter `--pos_adj 1` to add `1` to import positions: 
 
 
 
@@ -150,7 +150,7 @@ If the chr, pos, ref, alt columns are not columns 1 through 4 in the input file,
     1	203148361	G	C
     
 
-(:exampleend:) 
+</details>
 
 
 
@@ -158,7 +158,7 @@ If the chr, pos, ref, alt columns are not columns 1 through 4 in the input file,
 
 If we export data in `basic` format without any parameter, the output is similar to the output of command `vtools output variant chr pos ref alt`, 
 
-(:toggleexample Examples: export variants:) Let us get more variants, 
+<details><summary> Examples: export variants</summary> Let us get more variants, 
 
     % vtools import CEU.vcf.gz --var_info DP
     
@@ -196,11 +196,11 @@ Then export variants in `basic` format,
     1	203148265	GG	T
     
 
-(:exampleend:) 
+</details>
 
 You can specify more fields, even annotation fields, through parameter `--fields` 
 
-(:toggleexample Examples: export variant info fields:) 
+<details><summary> Examples: export variant info fields</summary> 
 
 
 
@@ -251,11 +251,11 @@ You can see the output has six columns, with depth (field `DP`) and rsname (fiel
     1	75891	T	C	182
     
 
-(:exampleend:) 
+</details>
 
 The `basic` format can also be used to export genotypes, 
 
-(:toggleexample Examples: export genotypes :) This example select 8 samples using condition ` 'sample_name like "NA128%"'`, 
+<details><summary> Examples: export genotypes </summary> This example select 8 samples using condition ` 'sample_name like "NA128%"'`, 
 
 
 
@@ -280,11 +280,11 @@ The `basic` format can also be used to export genotypes,
     1	44539	C	T		1	0	0	0	0		0	0
     
 
-(:exampleend:) 
+</details>
 
 The `--header` option can be used to specify a header, with `%(sample_names)s` being replaced by names of samples, 
 
-(:toggleexample Examples: specify a header to exported file:) 
+<details><summary> Examples: specify a header to exported file</summary> 
 
     % vtools export inSamples --samples 'sample_name like "NA128%"'  --format ~/vtools/format/basic --header chr pos ref alt "%(sample_names)s" > bb
     
@@ -306,4 +306,4 @@ The `--header` option can be used to specify a header, with `%(sample_names)s` b
     1	44449	T	C		1	0	0	0	0		0	0
     
 
-(:exampleend:)
+(:exampleend</summary>

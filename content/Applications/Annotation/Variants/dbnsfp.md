@@ -1,5 +1,5 @@
 +++
-title = "sbNSFP"
+title = "dbNSFP"
 description = ""
 weight = 2
 +++
