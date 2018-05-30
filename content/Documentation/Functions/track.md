@@ -67,16 +67,15 @@ VCF files that can be used as tracks must be bgzipped and tabix-indexed. Regular
 <details><summary> Examples: Annotate variants using vcf tracks</summary> Let us get some test data, and index the vcf file using the `tabix` program 
 
     % vtools init track
-    % vtools admin --load_snapshot vt_testData
-    % tabix -p vcf CEU.vcf.gz
-    % vtools import CEU.vcf.gz --build hg18
+    % tabix -p vcf CEU_hg38.vcf.gz
+    % vtools import CEU_hg38.vcf.gz --build hg38
     
 
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [============================================] 300 13.9K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [=================================] 18,000 9.0K/s in 00:00:02
-    Copying samples: 100% [=========================================] 75 74.9/s in 00:00:01
+    INFO: Importing variants from CEU_hg38.vcf.gz (1/1)
+    CEU_hg38.vcf.gz: 100% [===================================] 306 10.4K/s in 00:00:00
+    INFO: 292 new variants (292 SNVs) from 306 lines are imported.
+    Importing genotypes: 100% [================================] 292 2.7K/s in 00:00:00
+
     
 
 The track information can be displayed using command 
@@ -121,42 +120,42 @@ We can use the `track` function to display the info column in the original vcf f
 
 
 
-    % vtools output variant chr pos "track('CEU.vcf.gz')" -l 5
+    % vtools output variant chr pos "track('CEU_hg38.vcf.gz')" -l 5
     
 
-    1	533	AA=.;AC=6;AN=120;DP=423
-    1	41342	AA=.;AC=29;AN=120;DP=188
-    1	41791	AA=.;AC=5;AN=120;DP=192
-    1	44449	AA=C;AC=2;AN=120;DP=166
-    1	44539	AA=T;AC=2;AN=120;DP=131
+    1   10533   AA=.;AC=6;AN=120;DP=423
+    1   51479   AA=.;AC=29;AN=120;DP=188
+    1   51928   AA=.;AC=5;AN=120;DP=192
+    1   54586   AA=C;AC=2;AN=120;DP=166
+    1   54676   AA=T;AC=2;AN=120;DP=131
     
 
 The default parameter `col=8` is used to extract the info column of the info file. You can display other tracks such as name 
 
 
 
-    % vtools output variant chr pos "track('CEU.vcf.gz', 'name')" -l 5
+    % vtools output variant chr pos "track('CEU_hg38.vcf.gz', 'name')" -l 5
     
 
-    1	533	.
-    1	41342	.
-    1	41791	.
-    1	44449	.
-    1	44539	rs2462492
+    1   10533   .
+    1   51479   .
+    1   51928   .
+    1   54586   .
+    1   54676   rs2462492
     
 
 Values of individual info fields could be specified by `info.FIELD` where `FIELD` is the name of info field. 
 
 
 
-    % vtools output variant chr pos "track('CEU.vcf.gz', 'info.DP')" -l 5
+    % vtools output variant chr pos "track('CEU_hg38.vcf.gz', 'info.DP')" -l 5
     
 
-    1	533	423
-    1	41342	188
-    1	41791	192
-    1	44449	166
-    1	44539	131
+    1   10533   423
+    1   51479   188
+    1   51928   192
+    1   54586   166
+    1   54676   131
     
 
 If you know the name of the sample (in the vcf file, this example happens to has samples from this file), 
@@ -164,27 +163,28 @@ If you know the name of the sample (in the vcf file, this example happens to has
     % vtools show samples -l 5
     
 
-    sample_name	filename
-    NA06985	CEU.vcf.gz
-    NA06986	CEU.vcf.gz
-    NA06994	CEU.vcf.gz
-    NA07000	CEU.vcf.gz
-    NA07037	CEU.vcf.gz
+    sample_name filename
+    NA06985     CEU_hg38.vcf.gz
+    NA06986     CEU_hg38.vcf.gz
+    NA06994     CEU_hg38.vcf.gz
+    NA07000     CEU_hg38.vcf.gz
+    NA07037     CEU_hg38.vcf.gz
     (55 records omitted)
+
     
 
 you can get the genotype columns using sample name 
 
 
 
-    % vtools output variant chr pos "track('CEU.vcf.gz', 'NA06986')" -l 5
+    % vtools output variant chr pos "track('CEU_hg38.vcf.gz', 'NA06986')" -l 5
     
 
-    1	533	0|0:14:SMB
-    1	41342	0|1:16:SMB
-    1	41791	0|0:7:SM
-    1	44449	0|0:6:SM
-    1	44539	0|0:12:SM
+    1   10533   0|0:14:SMB
+    1   51479   0|1:16:SMB
+    1   51928   0|0:7:SM
+    1   54586   0|0:6:SM
+    1   54676   0|0:12:SM
     
 
 With the format information abtained from 
@@ -194,11 +194,11 @@ With the format information abtained from
     % vtools output variant chr pos "track('CEU.vcf.gz', 'format')" -l 5
     
 
-    1	533	GT:DP:CB
-    1	41342	GT:DP:CB
-    1	41791	GT:DP:CB
-    1	44449	GT:DP:CB
-    1	44539	GT:DP:CB
+    1   10533   GT:DP:CB
+    1   51479   GT:DP:CB
+    1   51928   GT:DP:CB
+    1   54586   GT:DP:CB
+    1   54676   GT:DP:CB
     
 
 we can list fields of the genotype columns, 
@@ -206,18 +206,18 @@ we can list fields of the genotype columns,
     % vtools output variant chr pos "track('CEU.vcf.gz', 'NA06986.GT')" -l 5
     
 
-    1	533	0|0
-    1	41342	0|1
-    1	41791	0|0
-    1	44449	0|0
-    1	44539	0|0
+    1   10533   0|0
+    1   51479   0|1
+    1   51928   0|0
+    1   54586   0|0
+    1   54676   0|0
     
 
 </details>
 
 A very useful feature of the vcf track is that **you can use vcf files from online** by specifying a URL instead of a local filename. 
 
-<details><summary> Examples: Annotate variants using online vcf files</summary> We would like to annotate our variants using VCF files from the 1000 genomes project. However, our project uses build `hg18` of the reference genome and the 1000 genomes project uses `hg19`. To make use of data from the 1000 genomes project, we need to first lift over our project: 
+<details><summary> Examples: Annotate variants using online vcf files</summary> We would like to annotate our variants using VCF files from the hg19 version of 1000 genomes project. To make use of data from the 1000 genomes project, we need to first lift over our project: 
 
 
 

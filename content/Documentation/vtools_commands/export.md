@@ -353,11 +353,11 @@ Anyway, if you have imported the whole `INFO` column of the input file, you can 
     % vtools output variant chr pos ref alt info -l 5
     
 
-    1   10533   G   C   AA=.;AC=6;AN=120;DP=423;REMAP_ALIGN=FP
-    1   51479   T   A   AA=.;AC=29;AN=120;DP=188;REMAP_ALIGN=FP
-    1   51928   G   A   AA=.;AC=5;AN=120;DP=192;REMAP_ALIGN=FP
-    1   54586   T   C   AA=C;AC=2;AN=120;DP=166;REMAP_ALIGN=FP
-    1   54676   C   T   AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP
+    1   10533   G   C   AA=.;AC=6;AN=120;DP=423
+    1   51479   T   A   AA=.;AC=29;AN=120;DP=188
+    1   51928   G   A   AA=.;AC=5;AN=120;DP=192
+    1   54586   T   C   AA=C;AC=2;AN=120;DP=166
+    1   54676   C   T   AA=T;AC=2;AN=120;DP=131
     
 
 
@@ -366,16 +366,16 @@ Anyway, if you have imported the whole `INFO` column of the input file, you can 
     % head my.vcf
     
 
-    1   10533   .   G   C   .   PASS    AA=.;AC=6;AN=120;DP=423;REMAP_ALIGN=FP  
-    1   51479   .   T   A   .   PASS    AA=.;AC=29;AN=120;DP=188;REMAP_ALIGN=FP 
-    1   51928   .   G   A   .   PASS    AA=.;AC=5;AN=120;DP=192;REMAP_ALIGN=FP  
-    1   54586   .   T   C   .   PASS    AA=C;AC=2;AN=120;DP=166;REMAP_ALIGN=FP  
-    1   54676   .   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP  
-    1   54708   .   G   C   .   PASS    AA=g;AC=7;AN=120;DP=135;REMAP_ALIGN=FP  
-    1   55299   .   C   T   .   PASS    AA=c;AC=20;AN=120;DP=166;HM2;REMAP_ALIGN=FP 
-    1   62203   .   T   C   .   PASS    AA=C;AC=18;AN=120;DP=159;REMAP_ALIGN=FP 
-    1   63671   .   G   A   .   PASS    AA=G;AC=18;AN=120;DP=243;REMAP_ALIGN=FP 
-    1   86028   .   T   C   .   PASS    AA=.;AC=11;AN=120;DP=182;REMAP_ALIGN=FP	
+    1   10533   .   G   C   .   PASS    AA=.;AC=6;AN=120;DP=423  
+    1   51479   .   T   A   .   PASS    AA=.;AC=29;AN=120;DP=188 
+    1   51928   .   G   A   .   PASS    AA=.;AC=5;AN=120;DP=192  
+    1   54586   .   T   C   .   PASS    AA=C;AC=2;AN=120;DP=166  
+    1   54676   .   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131  
+    1   54708   .   G   C   .   PASS    AA=g;AC=7;AN=120;DP=135  
+    1   55299   .   C   T   .   PASS    AA=c;AC=20;AN=120;DP=166;HM2 
+    1   62203   .   T   C   .   PASS    AA=C;AC=18;AN=120;DP=159 
+    1   63671   .   G   A   .   PASS    AA=G;AC=18;AN=120;DP=243 
+    1   86028   .   T   C   .   PASS    AA=.;AC=11;AN=120;DP=182	
     
 
 </details>
@@ -525,16 +525,16 @@ we can export them for selected variants,
     % head my.vcf
     
 
-    1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP  
-    22  50719683    .   T   C   .   PASS    AA=T;AC=1;AN=120;DP=298;REMAP_ALIGN=FP  
-    22  50719873    .   T   C   .   PASS    AA=T;AC=7;AN=120;DP=169;REMAP_ALIGN=FP  
-    22  50724422    rs5770822   C   T   .   PASS    AA=T;AC=41;AN=120;DP=367;REMAP_ALIGN=FP 
-    22  50725687    rs5770996   C   T   .   PASS    AA=T;AC=52;AN=120;DP=357;REMAP_ALIGN=FP 
-    22  50725859    rs6009957   T   C   .   PASS    AA=T;AC=37;AN=120;DP=331;REMAP_ALIGN=FP 
-    22  50734032    rs5770824   T   C   .   PASS    AA=T;AC=3;AN=120;DP=274;REMAP_ALIGN=FP  
-    22  50736511    .   C   T   .   PASS    AA=T;AC=4;AN=120;DP=317;REMAP_ALIGN=FP  
-    22  50737736    .   T   C   .   PASS    AA=T;AC=3;AN=120;DP=380;REMAP_ALIGN=FP  
-    22  50747800    rs3865766   C   T   .   PASS    AA=T;AC=51;AN=120;DP=253;HM3;REMAP_ALIGN=FP	
+    1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131  
+    22  50719683    .   T   C   .   PASS    AA=T;AC=1;AN=120;DP=298  
+    22  50719873    .   T   C   .   PASS    AA=T;AC=7;AN=120;DP=169  
+    22  50724422    rs5770822   C   T   .   PASS    AA=T;AC=41;AN=120;DP=367 
+    22  50725687    rs5770996   C   T   .   PASS    AA=T;AC=52;AN=120;DP=357 
+    22  50725859    rs6009957   T   C   .   PASS    AA=T;AC=37;AN=120;DP=331 
+    22  50734032    rs5770824   T   C   .   PASS    AA=T;AC=3;AN=120;DP=274  
+    22  50736511    .   C   T   .   PASS    AA=T;AC=4;AN=120;DP=317  
+    22  50737736    .   T   C   .   PASS    AA=T;AC=3;AN=120;DP=380  
+    22  50747800    rs3865766   C   T   .   PASS    AA=T;AC=51;AN=120;DP=253;HM3	
     
 
 Actually, because we are using columns such as `qual` from a VCF file, we can export these columns using a vcf `track`. The input `CEU.vcf.gz` file must be indexed though: 
@@ -546,16 +546,16 @@ Actually, because we are using columns such as `qual` from a VCF file, we can ex
     % head my.vcf
     
 
-    1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP  
-    22  50719683    .   T   C   .   PASS    AA=T;AC=1;AN=120;DP=298;REMAP_ALIGN=FP  
-    22  50719873    .   T   C   .   PASS    AA=T;AC=7;AN=120;DP=169;REMAP_ALIGN=FP  
-    22  50724422    rs5770822   C   T   .   PASS    AA=T;AC=41;AN=120;DP=367;REMAP_ALIGN=FP 
-    22  50725687    rs5770996   C   T   .   PASS    AA=T;AC=52;AN=120;DP=357;REMAP_ALIGN=FP 
-    22  50725859    rs6009957   T   C   .   PASS    AA=T;AC=37;AN=120;DP=331;REMAP_ALIGN=FP 
-    22  50734032    rs5770824   T   C   .   PASS    AA=T;AC=3;AN=120;DP=274;REMAP_ALIGN=FP  
-    22  50736511    .   C   T   .   PASS    AA=T;AC=4;AN=120;DP=317;REMAP_ALIGN=FP  
-    22  50737736    .   T   C   .   PASS    AA=T;AC=3;AN=120;DP=380;REMAP_ALIGN=FP  
-    22  50747800    rs3865766   C   T   .   PASS    AA=T;AC=51;AN=120;DP=253;HM3;REMAP_ALIGN=FP 
+    1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131  
+    22  50719683    .   T   C   .   PASS    AA=T;AC=1;AN=120;DP=298  
+    22  50719873    .   T   C   .   PASS    AA=T;AC=7;AN=120;DP=169  
+    22  50724422    rs5770822   C   T   .   PASS    AA=T;AC=41;AN=120;DP=367 
+    22  50725687    rs5770996   C   T   .   PASS    AA=T;AC=52;AN=120;DP=357 
+    22  50725859    rs6009957   T   C   .   PASS    AA=T;AC=37;AN=120;DP=331 
+    22  50734032    rs5770824   T   C   .   PASS    AA=T;AC=3;AN=120;DP=274  
+    22  50736511    .   C   T   .   PASS    AA=T;AC=4;AN=120;DP=317  
+    22  50737736    .   T   C   .   PASS    AA=T;AC=3;AN=120;DP=380  
+    22  50747800    rs3865766   C   T   .   PASS    AA=T;AC=51;AN=120;DP=253;HM3 
     
 
 Optionally, you can use rsnames in the `dbSNP` database 
@@ -567,16 +567,16 @@ Optionally, you can use rsnames in the `dbSNP` database
     % head my.vcf
     
 
-    1   54676   rs2462492   C   T   .   .   AA=T;AC=2;AN=120;DP=131;REMAP_ALIGN=FP  
-    22  50719683    rs73174428  T   C   .   .   AA=T;AC=1;AN=120;DP=298;REMAP_ALIGN=FP  
-    22  50719873    rs117910162 T   C   .   .   AA=T;AC=7;AN=120;DP=169;REMAP_ALIGN=FP  
-    22  50724422    rs5770822   C   T   .   .   AA=T;AC=41;AN=120;DP=367;REMAP_ALIGN=FP 
-    22  50725687    rs5770996   C   T   .   .   AA=T;AC=52;AN=120;DP=357;REMAP_ALIGN=FP 
-    22  50725859    rs6009957   T   C   .   .   AA=T;AC=37;AN=120;DP=331;REMAP_ALIGN=FP 
-    22  50734032    rs5770824   T   C   .   .   AA=T;AC=3;AN=120;DP=274;REMAP_ALIGN=FP  
-    22  50736511    rs73174435  C   T   .   .   AA=T;AC=4;AN=120;DP=317;REMAP_ALIGN=FP  
-    22  50737736    rs76593947  T   C   .   .   AA=T;AC=3;AN=120;DP=380;REMAP_ALIGN=FP  
-    22  50747800    rs3865766   C   T   .   .   AA=T;AC=51;AN=120;DP=253;HM3;REMAP_ALIGN=FP
+    1   54676   rs2462492   C   T   .   .   AA=T;AC=2;AN=120;DP=131  
+    22  50719683    rs73174428  T   C   .   .   AA=T;AC=1;AN=120;DP=298  
+    22  50719873    rs117910162 T   C   .   .   AA=T;AC=7;AN=120;DP=169  
+    22  50724422    rs5770822   C   T   .   .   AA=T;AC=41;AN=120;DP=367 
+    22  50725687    rs5770996   C   T   .   .   AA=T;AC=52;AN=120;DP=357 
+    22  50725859    rs6009957   T   C   .   .   AA=T;AC=37;AN=120;DP=331 
+    22  50734032    rs5770824   T   C   .   .   AA=T;AC=3;AN=120;DP=274  
+    22  50736511    rs73174435  C   T   .   .   AA=T;AC=4;AN=120;DP=317  
+    22  50737736    rs76593947  T   C   .   .   AA=T;AC=3;AN=120;DP=380  
+    22  50747800    rs3865766   C   T   .   .   AA=T;AC=51;AN=120;DP=253;HM3
     
 
 </details>
