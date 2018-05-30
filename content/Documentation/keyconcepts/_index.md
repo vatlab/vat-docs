@@ -15,10 +15,9 @@ weight = 1
 Let us create a sample project and import two datasets from the pilot phase of the 1000 genomes project: 
 
     % vtools init concept
-    % wget http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/release/2010_07/exon/snps/CEU.exon.2010_03.sites.vcf.gz
-    % wget http://ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/release/2010_07/exon/snps/JPT.exon.2010_03.sites.vcf.gz
-    % vtools import CEU.exon.2010_03.sites.vcf.gz --build hg19 --sample_name CEU --var_info AA AC AN DP 
-    % vtools import JPT.exon.2010_03.sites.vcf.gz --sample_name JPT --var_info AA AC AN DP
+    % vtools import CEU_hg38_all.vcf --build hg38 --sample_name CEU --var_info AA AC AN DP
+    % vtools import JPT_hg38_all.vcf --sample_name JPT --var_info AA AC AN DP
+
  
 
 The project properties can be displayed as follows 
@@ -26,13 +25,11 @@ The project properties can be displayed as follows
     % vtools show project
     
     Project name:                concept
-    Created on:                  Sun May 27 21:13:47 2018
-    Primary reference genome:    hg19
+    Primary reference genome:    hg38
     Secondary reference genome:  
-    Storage method:              sqlite
-    Runtime options:             verbosity=1, shared_resource=/Users/iceli/.variant_tools, local_resource=/Users/iceli/.variant_tools
+    Storage method:              hdf5
     Variant tables:              variant
-    Annotation databases:         
+    Annotation databases:  
 
 
 </details>
@@ -55,26 +52,26 @@ This project has a single **master variant table** with 4,858 variants:
     % vtools show tables
     
     table      #variants     date message
-    variant        4,858    May27 Master variant table
+    variant        4,839    May30 Master variant table
     
 
 Each variant has chr, position, reference and alternative alleles, 
 
     % vtools output variant chr pos ref alt --limit 5
     
-    1	1105366	T	C
-    1	1105411	G	A
-    1	1108138	C	T
-    1	1110240	T	A
-    1	1110294	G	A
+    1   1180123 T   C
+    1   1180168 G   A
+    1   1182895 C   T
+    1   1184997 T   A
+    1   1185051 G   A
 
 
 We can select all variants with reference allele `T` and save the results to a **variant table** named `refT`, 
 
     % vtools select variant 'ref="T"' --to_table refT 'variants with reference allele T'
     
-    Running: 3 647.4/s in 00:00:00                                                  
-    INFO: 787 variants selected.
+    Running: 3 1.5K/s in 00:00:00
+    INFO: 780 variants selected.
     
 
 Now there are two variant tables `variant` and `refT` in this project 
@@ -82,19 +79,19 @@ Now there are two variant tables `variant` and `refT` in this project
     % vtools show tables
     
     table      #variants     date message
-    refT             787    May27 variants with reference allele T
-    variant        4,858    May27 Master variant table
+    refT             780    May30 variants with reference allele T
+    variant        4,839    May30 Master variant table
     
 
 As you can see, all variants in table `refT` have reference allele `T`: 
 
     % vtools output refT chr pos ref alt --limit 5
     
-    1	1105366	T	C
-    1	1110240	T	A
-    1	3537996	T	C
-    1	6447088	T	C
-    1	6447275	T	C
+    1   1180123 T   C
+    1   1184997 T   A
+    1   3631572 T   C
+    1   6464441 T   C
+    1   6464628 T   C
     
 
 </details>
@@ -112,10 +109,8 @@ As you can see, all variants in table `refT` have reference allele `T`:
     
     variant.chr (char)      Chromosome name (VARCHAR)
     variant.pos (int)       Position (INT, 1-based)
-    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an
-                            insertion)
-    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an
-                            deletion)
+    variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
+    variant.alt (char)      Alternative allele (VARCHAR, - for missing allele of an deletion)
     variant.AA (char)
     variant.AC (int)
     variant.AN (int)
@@ -130,33 +125,34 @@ These fields are imported from the INFO fields of the vcf file, and are the ance
 
     % vtools  output refT chr pos ref alt AA AC AN DP --limit 5
     
-    1	1105366	T	C	T	4	114	3251
-    1	1110240	T	A	T	1	178	7275
-    1	3537996	T	C	C	156	156	1753
-    1	6447088	T	C	T	12	172	4691
-    1	6447275	T	C	T	9	176	6871
+    1   1180123 T   C   T   4   114 3251
+    1   1184997 T   A   T   1   178 7275
+    1   3631572 T   C   C   156 156 1753
+    1   6464441 T   C   T   12  172 4691
+    1   6464628 T   C   T   9   176 6871
     
 
 More variant info fields could be added to the project using command `vtools update`. 
 
 
 
-    % vtools update variant --from_file CEU.exon.2010_03.sites.vcf.gz --var_info id
+    % vtools update variant --from_file CEU_hg38_all.vcf --var_info id 
     
-    INFO: Using primary reference genome hg19 of the project.
-    Getting existing variants: 100% [============================] 4,858 261.1K/s in 00:00:00
-    INFO: Updating variants from CEU.exon.2010_03.sites.vcf.gz (1/1)
-    CEU.exon.2010_03.sites.vcf.gz: 100% [==========================] 3,500 5.2K/s in 00:00:00
-    INFO: Field id of 3,489 variants are updated
+    INFO: Using primary reference genome hg38 of the project.
+    Getting existing variants: 100% [=======================] 4,839 372.4K/s in 00:00:00
+    INFO: Updating variants from CEU_hg38_all.vcf (1/1)
+    CEU_hg38_all.vcf: 100% [==================================] 3,512 7.4K/s in 00:00:00
+    Getting existing variants: 100% [=======================] 4,839 368.5K/s in 00:00:00
+
 
 
     $ vtools output refT chr pos ref alt id AA AC AN DP -l 5
     
-    1	1105366	T	C	.         	T	4  	114	3251
-    1	1110240	T	A	.         	T	1  	178	7275
-    1	3537996	T	C	rs2760321 	C	156	156	1753
-    1	6447088	T	C	rs11800462	T	12 	172	4691
-    1	6447275	T	C	rs3170675 	T	9  	176	6871
+    1   1180123 T   C   .           T   4   114 3251
+    1   1184997 T   A   .           T   1   178 7275
+    1   3631572 T   C   rs2760321   C   156 156 1753
+    1   6464441 T   C   rs11800462  T   12  172 4691
+    1   6464628 T   C   rs3170675   T   9   176 6871
     
 
 </details>
@@ -169,46 +165,87 @@ More variant info fields could be added to the project using command `vtools upd
 
 <details><summary>Examples:</summary> Let us download and use an annotation database `dbSNP` version 135 for reference genome hg19
 
-    % vtools use dbSNP-hg19_135
+    % vtools use dbSNP
     
-    INFO: Downloading annotation database annoDB/dbSNP-hg19_135.ann
-    INFO: Downloading annotation database from annoDB/dbSNP-hg19_135.DB.gz
-    dbSNP-hg19_135.DB.gz: 100% [=========================] 1,719,968,746.0 1.5M/s in 00:18:49
-    INFO: Decompressing /Users/iceli/.variant_tools/annoDB/dbSNP-hg19_135.DB.gz
-    Upgrading dbSNP-hg19_135: 100% [=========================] 54,182,943 28.3K/s in 00:31:52
-    INFO: 2831938 variants are updated
+    INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
+    INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
     INFO: Using annotation DB dbSNP as dbSNP in project concept.
-    INFO: dbSNP version 135
+    INFO: dbSNP version 143, created using vcf file downloaded from NCBI
 
 This database provides the following **annotation fields** 
 
     % vtools show annotation dbSNP
     
-    Annotation database dbSNP (version hg19_135)
-    Description:            dbSNP version 135
+    Annotation database dbSNP (version hg38_143)
+    Description:            dbSNP version 143, created using vcf file downloaded from NCBI
     Database type:          variant
-    Reference genome hg19:  chr, start, refNCBI, alt
+    Reference genome hg38:  chr, pos, ref, alt
       chr (char)
-      start (int)           start position in chrom (1-based)
-      end (int)             end position in chrom (1-based). start=end means zero-length
-                            feature
-      name (char)           dbSNP reference SNP identifier
-      strand (char)         which DNA strand contains the observed alleles
-      refNCBI (char)        Reference genomic sequence from dbSNP
-      refUCSC (char)        Reference genomic sequence from UCSC lookup of
-                            chrom,chromStart,chromEnd
-      observed (char)       Strand-specific observed alleles
-      alt (char)            alternate allele on the '+' strand
-      molType (char)        sample type, can be one of unknown, genomic or cDNA
-      class (char)          Class of variant (single, in-del, het, named, mixed, insertion,
-                            deletion etc
-      valid (char)          validation status, can be unknown, by-cluster, by-frequency, by-
-                            submitter, by-2hit-2allele, by-hapmap, and by-1000genomes
-      avHet (float)         Average heterozygosity from all observations
-      avHetSE (float)       Standard error for the average heterozygosity
-      func (char)           Functional cetegory of the SNP (coding-synon, coding-nonsynon,
-                            intron, etc.)
-      locType (char)        Type of mapping inferred from size on reference.
+      pos (int)
+      name (char)           DB SNP ID (rsname)
+      ref (char)            Reference allele (as on the + strand)
+      alt (char)            Alternative allele (as on the + strand)
+      FILTER (char)         Inconsistent Genotype Submission For At Least One Sample
+      RS (int)              dbSNP ID (i.e. rs number)
+      RSPOS (int)           Chr position reported in dbSNP
+      RV (int)              RS orientation is reversed
+      VP (char)             Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
+      GENEINFO (char)       Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
+      dbSNPBuildID (int)    First dbSNP Build for RS
+      SAO (int)             Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
+      SSR (int)             Variant Suspect Reason Codes (may be more than one value added together) 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed,
+                            1024 - other
+      WGT (int)             Weight, 00 - unmapped, 1 - weight 1, 2 - weight 2, 3 - weight 3 or more
+      VC (char)             Variation Class
+      PM_flag (int)         Variant is Precious(Clinical,Pubmed Cited)
+      TPA_flag (int)        Provisional Third Party Annotation(TPA) (currently rs from PHARMGKB who will give phenotype data)
+      PMC_flag (int)        Links exist to PubMed Central article
+      S3D_flag (int)        Has 3D structure - SNP3D table
+      SLO_flag (int)        Has SubmitterLinkOut - From SNP->SubSNP->Batch.link_out
+      NSF_flag (int)        Has non-synonymous frameshift A coding region variation where one allele in the set changes all downstream amino acids. FxnClass = 44
+      NSM_flag (int)        Has non-synonymous missense A coding region variation where one allele in the set changes protein peptide. FxnClass = 42
+      NSN_flag (int)        Has non-synonymous nonsense A coding region variation where one allele in the set changes to STOP codon (TER). FxnClass = 41
+      REF_flag_flag (int)   Has reference A coding region variation where one allele in the set is identical to the reference sequence. FxnCode = 8
+      SYN_flag (int)        Has synonymous A coding region variation where one allele in the set does not change the encoded amino acid. FxnCode = 3
+      U3_flag (int)         In 3' UTR Location is in an untranslated region (UTR). FxnCode = 53
+      U5_flag (int)         In 5' UTR Location is in an untranslated region (UTR). FxnCode = 55
+      ASS_flag (int)        In acceptor splice site FxnCode = 73
+      DSS_flag (int)        In donor splice-site FxnCode = 75
+      INT_flag (int)        In Intron FxnCode = 6
+      R3_flag (int)         In 3' gene region FxnCode = 13
+      R5_flag (int)         In 5' gene region FxnCode = 15
+      OTH_flag (int)        Has other variant with exactly the same set of mapped positions on NCBI refernce assembly.
+      CFL_flag (int)        Has Assembly conflict. This is for weight 1 and 2 variant that maps to different chromosomes on different assemblies.
+      ASP_flag (int)        Is Assembly specific. This is set if the variant only maps to one assembly
+      MUT_flag (int)        Is mutation (journal citation, explicit fact): a low frequency variation that is cited in journal and other reputable sources
+      VLD_flag (int)        Is Validated.  This bit is set if the variant has 2+ minor allele count based on frequency or genotype data.
+      G5A_flag (int)        >5% minor allele frequency in each and all populations
+      G5_flag (int)         >5% minor allele frequency in 1+ populations
+      HD_flag (int)         Marker is on high density genotyping kit (50K density or greater).  The variant may have phenotype associations present in dbGaP.
+      GNO_flag (int)        Genotypes available. The variant has individual genotype (in SubInd table).
+      KGValidated_flag (int)
+                            1000 Genome validated
+      KGPhase1_flag (int)   1000 Genome phase 1 (incl. June Interim phase 1)
+      KGPilot123_flag (int) 1000 Genome discovery all pilots 2010(1,2,3)
+      KGPROD_flag (int)     Has 1000 Genome submission
+      OTHERKG_flag (int)    non-1000 Genome submission
+      PH3_flag (int)        HAP_MAP Phase 3 genotyped: filtered, non-redundant
+      CDA_flag (int)        Variation is interrogated in a clinical diagnostic assay
+      LSD_flag (int)        Submitted from a locus-specific database
+      MTP_flag (int)        Microattribution/third-party annotation(TPA:GWAS,PAGE)
+      OM_flag (int)         Has OMIM/OMIA
+      NOC_flag (int)        Contig allele not present in variant allele list. The reference sequence allele at the mapped position is not present in the variant allele list, adjusted for
+                            orientation.
+      WTD_flag (int)        Is Withdrawn by submitter If one member ss is withdrawn by submitter, then this bit is set.  If all member ss' are withdrawn, then the rs is deleted to
+                            SNPHistory
+      NOV_flag (int)        Rs cluster has non-overlapping allele sets. True when rs set has more than 2 alleles from different submissions and these sets share no alleles in common.
+      CAF (char)            An ordered, comma delimited list of allele frequencies based on 1000Genomes, starting with the reference allele followed by alternate alleles as ordered in the
+                            ALT column. Where a 1000Genomes alternate allele is not in the dbSNPs alternate allele set, the allele is added to the ALT column.  The minor allele is the
+                            second largest value in the list, and was previuosly reported in VCF as the GMAF.  This is the GMAF reported on the RefSNP and EntrezSNP pages and
+                            VariationReporter
+      COMMON (int)          RS is a common SNP.  A common SNP is one that has at least one 1000Genomes population with a minor allele of frequency >= 1% and for which 2 or more founders
+                            contribute to that minor allele frequency.
+
     
 
 The fields are now available in the project, 
@@ -226,55 +263,106 @@ The fields are now available in the project,
     variant.id (char)
     refT.chr (char)         Chromosome name (VARCHAR)
     dbSNP.chr (char)
-    dbSNP.start (int)       start position in chrom (1-based)
-    dbSNP.end (int)         end position in chrom (1-based). start=end means zero-length
-                            feature
-    dbSNP.name (char)       dbSNP reference SNP identifier
-    dbSNP.strand (char)     which DNA strand contains the observed alleles
-    dbSNP.refNCBI (char)    Reference genomic sequence from dbSNP
-    dbSNP.refUCSC (char)    Reference genomic sequence from UCSC lookup of
-                            chrom,chromStart,chromEnd
-    dbSNP.observed (char)   Strand-specific observed alleles
-    dbSNP.alt (char)        alternate allele on the '+' strand
-    dbSNP.molType (char)    sample type, can be one of unknown, genomic or cDNA
-    dbSNP.class (char)      Class of variant (single, in-del, het, named, mixed, insertion,
-                            deletion etc
-    dbSNP.valid (char)      validation status, can be unknown, by-cluster, by-frequency, by-
-                            submitter, by-2hit-2allele, by-hapmap, and by-1000genomes
-    dbSNP.avHet (float)     Average heterozygosity from all observations
-    dbSNP.avHetSE (float)   Standard error for the average heterozygosity
-    dbSNP.func (char)       Functional cetegory of the SNP (coding-synon, coding-nonsynon,
-                            intron, etc.)
-    dbSNP.locType (char)    Type of mapping inferred from size on reference.
+    dbSNP.pos (int)
+    dbSNP.name (char)       DB SNP ID (rsname)
+    dbSNP.ref (char)        Reference allele (as on the + strand)
+    dbSNP.alt (char)        Alternative allele (as on the + strand)
+    dbSNP.FILTER (char)     Inconsistent Genotype Submission For At Least One Sample
+    dbSNP.RS (int)          dbSNP ID (i.e. rs number)
+    dbSNP.RSPOS (int)       Chr position reported in dbSNP
+    dbSNP.RV (int)          RS orientation is reversed
+    dbSNP.VP (char)         Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
+    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
+    dbSNP.dbSNPBuildID (int)
+                            First dbSNP Build for RS
+    dbSNP.SAO (int)         Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
+    dbSNP.SSR (int)         Variant Suspect Reason Codes (may be more than one value added together) 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed,
+                            1024 - other
+    dbSNP.WGT (int)         Weight, 00 - unmapped, 1 - weight 1, 2 - weight 2, 3 - weight 3 or more
+    dbSNP.VC (char)         Variation Class
+    dbSNP.PM_flag (int)     Variant is Precious(Clinical,Pubmed Cited)
+    dbSNP.TPA_flag (int)    Provisional Third Party Annotation(TPA) (currently rs from PHARMGKB who will give phenotype data)
+    dbSNP.PMC_flag (int)    Links exist to PubMed Central article
+    dbSNP.S3D_flag (int)    Has 3D structure - SNP3D table
+    dbSNP.SLO_flag (int)    Has SubmitterLinkOut - From SNP->SubSNP->Batch.link_out
+    dbSNP.NSF_flag (int)    Has non-synonymous frameshift A coding region variation where one allele in the set changes all downstream amino acids. FxnClass = 44
+    dbSNP.NSM_flag (int)    Has non-synonymous missense A coding region variation where one allele in the set changes protein peptide. FxnClass = 42
+    dbSNP.NSN_flag (int)    Has non-synonymous nonsense A coding region variation where one allele in the set changes to STOP codon (TER). FxnClass = 41
+    dbSNP.REF_flag_flag (int)
+                            Has reference A coding region variation where one allele in the set is identical to the reference sequence. FxnCode = 8
+    dbSNP.SYN_flag (int)    Has synonymous A coding region variation where one allele in the set does not change the encoded amino acid. FxnCode = 3
+    dbSNP.U3_flag (int)     In 3' UTR Location is in an untranslated region (UTR). FxnCode = 53
+    dbSNP.U5_flag (int)     In 5' UTR Location is in an untranslated region (UTR). FxnCode = 55
+    dbSNP.ASS_flag (int)    In acceptor splice site FxnCode = 73
+    dbSNP.DSS_flag (int)    In donor splice-site FxnCode = 75
+    dbSNP.INT_flag (int)    In Intron FxnCode = 6
+    dbSNP.R3_flag (int)     In 3' gene region FxnCode = 13
+    dbSNP.R5_flag (int)     In 5' gene region FxnCode = 15
+    dbSNP.OTH_flag (int)    Has other variant with exactly the same set of mapped positions on NCBI refernce assembly.
+    dbSNP.CFL_flag (int)    Has Assembly conflict. This is for weight 1 and 2 variant that maps to different chromosomes on different assemblies.
+    dbSNP.ASP_flag (int)    Is Assembly specific. This is set if the variant only maps to one assembly
+    dbSNP.MUT_flag (int)    Is mutation (journal citation, explicit fact): a low frequency variation that is cited in journal and other reputable sources
+    dbSNP.VLD_flag (int)    Is Validated.  This bit is set if the variant has 2+ minor allele count based on frequency or genotype data.
+    dbSNP.G5A_flag (int)    >5% minor allele frequency in each and all populations
+    dbSNP.G5_flag (int)     >5% minor allele frequency in 1+ populations
+    dbSNP.HD_flag (int)     Marker is on high density genotyping kit (50K density or greater).  The variant may have phenotype associations present in dbGaP.
+    dbSNP.GNO_flag (int)    Genotypes available. The variant has individual genotype (in SubInd table).
+    dbSNP.KGValidated_flag (int)
+                            1000 Genome validated
+    dbSNP.KGPhase1_flag (int)
+                            1000 Genome phase 1 (incl. June Interim phase 1)
+    dbSNP.KGPilot123_flag (int)
+                            1000 Genome discovery all pilots 2010(1,2,3)
+    dbSNP.KGPROD_flag (int) Has 1000 Genome submission
+    dbSNP.OTHERKG_flag (int)
+                            non-1000 Genome submission
+    dbSNP.PH3_flag (int)    HAP_MAP Phase 3 genotyped: filtered, non-redundant
+    dbSNP.CDA_flag (int)    Variation is interrogated in a clinical diagnostic assay
+    dbSNP.LSD_flag (int)    Submitted from a locus-specific database
+    dbSNP.MTP_flag (int)    Microattribution/third-party annotation(TPA:GWAS,PAGE)
+    dbSNP.OM_flag (int)     Has OMIM/OMIA
+    dbSNP.NOC_flag (int)    Contig allele not present in variant allele list. The reference sequence allele at the mapped position is not present in the variant allele list, adjusted for
+                            orientation.
+    dbSNP.WTD_flag (int)    Is Withdrawn by submitter If one member ss is withdrawn by submitter, then this bit is set.  If all member ss' are withdrawn, then the rs is deleted to
+                            SNPHistory
+    dbSNP.NOV_flag (int)    Rs cluster has non-overlapping allele sets. True when rs set has more than 2 alleles from different submissions and these sets share no alleles in common.
+    dbSNP.CAF (char)        An ordered, comma delimited list of allele frequencies based on 1000Genomes, starting with the reference allele followed by alternate alleles as ordered in the
+                            ALT column. Where a 1000Genomes alternate allele is not in the dbSNPs alternate allele set, the allele is added to the ALT column.  The minor allele is the
+                            second largest value in the list, and was previuosly reported in VCF as the GMAF.  This is the GMAF reported on the RefSNP and EntrezSNP pages and
+                            VariationReporter
+    dbSNP.COMMON (int)      RS is a common SNP.  A common SNP is one that has at least one 1000Genomes population with a minor allele of frequency >= 1% and for which 2 or more founders
+                            contribute to that minor allele frequency.
+
+
 
 These fields can be used just like **variant info fields**, 
 
     % vtools output refT chr pos ref alt dbSNP.name --limit 5
     
-    1	1105366	T	C	.
-    1	1110240	T	A	.
-    1	3537996	T	C	.
-    1	6447088	T	C	.
-    1	6447275	T	C	.
+    1   1180123 T   C   rs111751804
+    1   1184997 T   A   rs116321663
+    1   3631572 T   C   rs2760321
+    1   6464441 T   C   rs11800462
+    1   6464628 T   C   rs3170675
     
 
 As you can see, not all variants are in dbSNP. If we select variants that are in dbSNP, about half of variants are in dbSNP, 
 
-    % vtools select variant 'dbSNP.chr is not NULL' -t inDBSNP 'variants in dbSNP version 135'
+    % vtools select variant 'dbSNP.chr is not NULL' -t inDBSNP 'variants in dbSNP version 143'
     
-    Running: 11 44.6/s in 00:00:00                                                           
-    INFO: 12 variants selected.
+    Running: 18 8.3/s in 00:00:02
+    INFO: 4833 variants selected.
     
 
 We can check the details of variants in dbSNP using 
 
-    % vtools output inDBSNP chr pos ref alt name strand func --limit 5
+    % vtools output inDBSNP chr pos ref alt name GENEINFO --limit 5
     
-    1 	17786644 	G	A	rs149108668	+	unknown
-    1 	150649639	C	T	rs148931998	+	intron
-    2 	219318677	A	G	rs116720220	+	untranslated-3
-    7 	128150523	G	A	rs146202908	+	unknown
-    16	67424843 	C	T	rs144127847	+	missense
+   1    1180123 T   C   rs111751804 TTLL10:254173|TTLL10-AS1:100506376
+    1   1180168 G   A   rs114390380 TTLL10:254173|TTLL10-AS1:100506376
+    1   1182895 C   T   rs61733845  TTLL10:254173
+    1   1184997 T   A   rs116321663 TTLL10:254173
+    1   1185051 G   A   rs1320571   TTLL10:254173
     
 
 </details>
@@ -291,16 +379,7 @@ A **track** file is a file that contains annotation information for variants and
 
     % vtools output variant chr pos ref alt 'track("wgEncodeGisRnaSeqH1hescCellPapPlusRawRep1.bigWig")' -l 10
     
-    1	1105366	T	C	3.0
-    1	1105411	G	A	2.0
-    1	1108138	C	T	.
-    1	1110240	T	A	.
-    1	1110294	G	A	.
-    1	3537996	T	C	.
-    1	3538692	G	C	.
-    1	3541597	C	T	.
-    1	3541652	G	A	1.0
-    1	3545211	G	A	.
+
     
 
 </details>
@@ -324,18 +403,18 @@ Not all samples have genotypes because variant tools can treat a list of variant
 
     % vtools show samples
     
-    sample_name	filename
-    CEU        	CEU.exon...3.sites.vcf.gz
-    JPT        	JPT.exon...3.sites.vcf.gz
+    sample_name filename
+    CEU         CEU_hg38_all.vcf
+    JPT         JPT_hg38_all.vcf
 
 
 However, for this particular project, the samples are just lists of variants so there is no genotype and genotype fields. 
 
     % vtools show genotypes
     
-    sample_name	filename                 	num_genotypes	sample_genotype_fields
-    CEU        	CEU.exon...3.sites.vcf.gz	3489         	
-    JPT        	JPT.exon...3.sites.vcf.gz	2900   
+    sample_name filename            num_genotypes   sample_genotype_fields
+    CEU         CEU_hg38_all.vcf    3470            GT
+    JPT         JPT_hg38_all.vcf    2878            GT  
     
 
 </details>
@@ -359,9 +438,9 @@ The samples are now have a phenotype called `num`,
 
     % vtools show samples
     
-    sample_name	filename                 	num
-    CEU        	CEU.exon...3.sites.vcf.gz	3489
-    JPT        	JPT.exon...3.sites.vcf.gz	2900
+    sample_name filename            num
+    CEU         CEU_hg38_all.vcf    3470
+    JPT         JPT_hg38_all.vcf    2878
     
 
 </details>
@@ -370,9 +449,9 @@ The samples are now have a phenotype called `num`,
 
 ### 8. Primary & alternative reference genome
 
-Variant Tools supports build hg18 and hg19 of the human genome natively. For reference genome of other species, you will need to provide fasta sequences of the reference genome and use command `vtools admin --fasta2crr` to convert it to a binary format that can be used by variant tools. 
+Variant Tools supports build hg18, hg19 and hg38 of the human genome natively. For reference genome of other species, you will need to provide fasta sequences of the reference genome and use command `vtools admin --fasta2crr` to convert it to a binary format that can be used by variant tools. 
 
-Because the same variants might have different coordinates on different reference genomes, it is very important to know the build of the reference genome of your data, which can be hg18 or hg19 for the human genome. The build information is important because it tells variant tools what annotation databases should be used. If you are uncertain about the reference genome used for your data, you could use a recent build and command `vtools admin --validate_build` to check if you have specified the correct build. 
+Because the same variants might have different coordinates on different reference genomes, it is very important to know the build of the reference genome of your data, which can be hg18, hg19 or hg38 for the human genome. The build information is important because it tells variant tools what annotation databases should be used. If you are uncertain about the reference genome used for your data, you could use a recent build and command `vtools admin --validate_build` to check if you have specified the correct build. 
 
 A sequencing analysis project might sometimes need to handle data using different reference genomes. For example, you might need to use a new batch of sample with variants called using a more recent reference genome, or some public control data that use an older reference genome. Variant tools allows you to important data in an **alternative reference genome** in addition to a **primary reference genome** that the project uses. Variant tools will automatically convert between different coordinates so you do not have to worry about matching variants across datasets. 
 
@@ -386,19 +465,18 @@ Whereas projects with a single reference genome will have unique coordinates for
 {{% /notice %}}
 
 
-<details><summary>Examples:</summary> Our project uses reference genome hg19 so we used dbSNP version 135 because the latter versions of dbSNP make use of reference genome hg38. If you would like to use a newer version of dbSNP for this project, you can first add an alternative reference genome to the project by lifting over existing variants: 
+<details><summary>Examples:</summary> Our project uses reference genome hg38 so we used dbSNP version 143 . If you would like to use another version of dbSNP for this project, you can first add an alternative reference genome to the project by lifting over existing variants: 
 
 
 
-    % vtools liftover hg38
+    % vtools liftover hg19
     
     INFO: Downloading liftOver chain file from UCSC
-    hg19ToHg38.over.chain.gz: 100% [=========================] 227,698.0 202.0K/s in 00:00:01
     INFO: Exporting variants in BED format
-    Exporting variants: 100% [===================================] 4,858 196.3K/s in 00:00:00
+    Exporting variants: 100% [===========================] 4,839 250.8K/s in 00:00:00
     INFO: Running UCSC liftOver tool
-    INFO: 97 records failed to map.
-    Updating table variant: 100% [=================================] 4,761 2.2K/s in 00:00:02
+    Updating table variant: 100% [========================] 4,839 735.4/s in 00:00:06
+
 
     
 
@@ -409,48 +487,34 @@ The project now has two reference genomes
     % vtools show project
 
     Project name:                concept
-    Created on:                  Sun May 27 21:13:47 2018
-    Primary reference genome:    hg19
-    Secondary reference genome:  hg38
-    Storage method:              sqlite
-    Runtime options:             verbosity=1, shared_resource=/Users/iceli/.variant_tools, local_resource=/Users/iceli/.variant_tools
+    Primary reference genome:    hg38
+    Secondary reference genome:  hg19
+    Storage method:              hdf5
     Variant tables:              inDBSNP
                                  refT
                                  variant
-    Annotation databases:        dbSNP (~/.variant_tools/annoDB/dbSNP, hg19_135)
+    Annotation databases:        dbSNP (~/.variant_tools/annoDB/dbSNP, hg38_143)
 
 
-Now if we remove and re-link to dbSNP, we can use version 143 of the database 
+Now if we remove and re-link to dbSNP, we can use version 141 of the database 
 
     % vtools remove annotations dbSNP
-    % vtools use dbSNP
+    % vtools use dbSNP-hg19_141
     
-    INFO: Removing annotation database dbSNP from the project
-    INFO: Choosing version dbSNP-hg38s_143 from 10 available databases.
-    INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
-    INFO: Downloading annotation database from annoDB/dbSNP-hg38_143.DB.gz
-    dbSNP-hg38_143.DB.gz: 100% [============================] 1,892,708,890.0 5.5M/s in 00:35:44
-    INFO: Decompressing /Users/iceli/.variant_tools/annoDB/dbSNP-hg38_143.DB.gz
+    INFO: Downloading annotation database annoDB/dbSNP-hg19_141.ann
     INFO: Using annotation DB dbSNP as dbSNP in project concept.
-    INFO: dbSNP version 143
+    INFO: dbSNP version 141
 
-Now we can select variants in dbSNP 141 and save to another table 
-
-    % vtools select variant 'dbSNP.chr is not NULL' -t inDBSNP143 'variants in dbSNP version 143'
+    % vtools select variant 'dbSNP.chr is not NULL' -t inDBSNP 'variants in dbSNP version 141'
     
-    Running: 18 39.6/s in 00:00:00                                                              
-    INFO: 4858 variants selected.
+    Running: 18 484.7/s in 00:00:00
+    INFO: 4833 variants selected.
     
-
+<!-- 
 A lot more variants are selected, showing the importance of using the latest version of database: 
 
-    % vtools show tables
+    % vtools show tables -->
     
-    table         #variants     date message
-    inDBSNP           2,550    May27 variants in dbSNP version 130
-    inDBSNP141        4,858    May27 variants in dbSNP version 141
-    refT                787    May27 variants with reference allele T
-    variant           4,858    May27 Master variant table
 
 </details>
 

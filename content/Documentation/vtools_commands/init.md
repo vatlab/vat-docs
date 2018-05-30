@@ -135,33 +135,33 @@ This project has variants from two samples and a single master variant table wit
 
     % vtools show samples
 
-    sample_name filename    HDF5
-    HG00096     HG00096.vcf tmp_1_1_genotypes.h5
-    HG00479     HG00479.vcf tmp_2_2_genotypes.h5
+    sample_name filename
+    CEU         CEU_hg38_all.vcf
+    JPT         JPT_hg38_all.vcf
     
     % vtools show tables
     
-    table      #variants    date message
-    variant       10,036    May21 Master variant table 
+    table      #variants     date message
+    variant        4,839    May30 Master variant table
     
 Variants from the HG00096 and HG00479 samples could be selected to separate variant tables using commands 
 
-    % vtools select variant --samples 'sample_name=="HG00096"' -t HG00096
+    % vtools select variant --samples "sample_name=='CEU'" -t CEU
                                  
-    INFO: 324 variants selected.
+    INFO: 3470 variants selected.
     
-    % vtools select variant --samples 'sample_name=="HG00479"' -t HG00479
+    % vtools select variant --samples "sample_name=='JPT'" -t JPT
     
-    INFO: 317 variants selected.
+    INFO: 2878 variants selected.
 
 The project now has three variant tables 
 
     % vtools show tables
     
     table      #variants     date message
-    HG00096                       324    May21
-    HG00479                       317    May21
-    variant                    10,036    May21 Master variant table
+    CEU            3,470    May30
+    JPT            2,878    May30
+    variant        4,839    May30 Master variant table
     
 
 </details>

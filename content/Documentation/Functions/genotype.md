@@ -11,6 +11,8 @@ weight = 4
 
 ## Usage
 
+##### This function is only supported when STOREMODE is set to sqlite. 
+
 Genotype information for a variant is not directly available in variant tools commands such as `vtools output` because these commands only output variant info or annotation fields. Function `genotype` can be used to retrieve genotypes of one or more samples from the genotype tables. In its single-sample mode, this function accepts a sample name and an optional field to display, 
 
 

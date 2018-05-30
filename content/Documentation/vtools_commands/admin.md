@@ -723,7 +723,7 @@ to use in-memory journal.
 
 {{% notice warning %}}
 The MEMORY journaling mode saves disk I/O but at the expense of database safety and integrity. If the application using SQLite crashes in the middle of a transaction when the MEMORY journaling mode is set, then the database file will very likely go corrupt [*][1].* You can enable it for data import operations such as `vtools import` and `vtools update --from_file` and set it to default (journal_mode=DELETE) afterwards. 
-{{% n/otice %}}
+{{% /notice %}}
 
 
 The pragmas are usually applied to all databases (e.g. project, genotype and annotation databases) but you can limit the pragma to certain databases if you prefix it with database name (e.g. `_geno.snchronous=OFF`). This, however, needs an understanding of the databases involved in a command, and is generally not recommended. Please read about supported pragma statements [here][2]. 

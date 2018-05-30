@@ -57,11 +57,9 @@ SNVs and INDELs are called separately and are saved by chromosomes. They can be 
 
 Although each genotypes from each sample consist of multiple *samples* (in variant tools term), they can be identified by their names. 
 
-
 {{% notice tip %}}
 Use command `vtools show samples` to see samples and their phenotypes. 
-{{% \notice %}}
-
+{{% /notice %}}
 
 #### 2.3 Separate variants into their own variant tables
 

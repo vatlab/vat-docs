@@ -533,7 +533,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
     
 
 
-{[% notice tip %]}
+{{% notice tip %}}
 Phenotypes can be used to select samples. 
 {{% /notice %}}
 

@@ -8,9 +8,9 @@ weight = 5
 # Samples that harbor the variant
 
 
-
-
 ## Usage
+
+##### This function is only supported when STOREMODE is set to sqlite. 
 
 The `samples` function is similar to `genotype` but it returns name of samples that contain the variant. When you use the function in command `vtools output var_table samples()`, this function will be evaluated for each variant in the variant table `var_table`. In its basic form, 
 
