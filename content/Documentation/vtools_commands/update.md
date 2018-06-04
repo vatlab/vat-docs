@@ -128,7 +128,7 @@ weight = 3
 
 ### 2. Details
 
-Command `` `vtools update `` updates **variant info fields** (and to a lesser extend **genotype info fields**) by adding more fields or updating values at existing fields. It does not add any new variant or genotype, and does not change existing variant, sample, or genotype. Using three parameters `--from_file`, `--from_stat`, and `--set`, variant information fields could be updated from external file, sample genotypes, and existing fields. 
+Command `` vtools update `` updates **variant info fields** (and to a lesser extend **genotype info fields**) by adding more fields or updating values at existing fields. It does not add any new variant or genotype, and does not change existing variant, sample, or genotype. Using three parameters `--from_file`, `--from_stat`, and `--set`, variant information fields could be updated from external file, sample genotypes, and existing fields. 
 
 <details>
 <summary> An illustration about `vtools update` </summary>
@@ -140,14 +140,14 @@ Command `` `vtools update `` updates **variant info fields** (and to a lesser ex
 
 Option `--from_file` allows command `vtools update` to update variant and/or genotype info fields by reading info from an external file. This process is similar to `vtools import` but has two major differences: 
 
-*   `` `vtools update `` does not import any new variant even if the external file has more variants. 
-*   `` `vtools update `` can add or update fields from **position, range or field based input files**. That is to say, you could update fields from input files that describes variants at particular locations or chromosomsal regions. Variants belonging to the same location or region will share the updated info. 
+*   `` vtools update `` does not import any new variant even if the external file has more variants. 
+*   `` vtools update `` can add or update fields from **position, range or field based input files**. That is to say, you could update fields from input files that describes variants at particular locations or chromosomsal regions. Variants belonging to the same location or region will share the updated info. 
 
 The variant or genotype fields that will be added or updated depends on the file format (cf. `vtools show formats`). File formats accept parameters to specify what fields to import. For example, parameters `--var_info` and `--geno_info` can be used with [format vcf][1] to specify which variant and genotype info fields to be updated from a `vcf` file. 
 
 <details><summary> Examples: create a project</summary> 
 
-Let us create a directory update and import an empty project with a few test vcf files `V1.vcf`, `V2.vcf` and `V3.vcf`, 
+Let us create a directory update and import an empty project with a few test vcf files `V1_hg38.vcf`, `V2_hg38.vcf` and `V3_hg38.vcf`, 
 
     % mkdir update
     % cd update
@@ -396,7 +396,7 @@ During the analysis of variants, it is common to have annotations in different f
 
 <details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname.Because this sample project uses hg18, we cannot use the default dbSNP database and has to use
 
-    % vtools use dbSNP-hg18_130
+    % vtools use dbSNP-hg38_143
 
     INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
     INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
@@ -480,10 +480,10 @@ We can then use this format (named `rsname.fmt`) to import variant info `func` t
 
 
 
-    % vtools update variant --format rsname --from_file dbSNP.info --db_file dbSNP-hg18_130.DB
+    % vtools update variant --format rsname --from_file dbSNP.info --db_file dbSNP-hg38_143.DB
     
 
-    INFO: Using primary reference genome hg18 of the project.
+    INFO: Using primary reference genome hg38 of the project.
     Getting existing variants: 100% [====================================] 1,611 229.7K/s in 00:00:00
     INFO: Updating variants from dbSNP.info (1/1)
     dbSNP.info: 100% [=======================================================] 209 3.0K/s in 00:00:00
@@ -793,7 +793,7 @@ We can also limit the statistics to genotypes that satisfy certain conditions (e
 
 
 
-    % vtools update variant --from_stat "cases_het_highDP=#(het)" --samples "filename in ('V1.vcf', 'V2.vcf')" --genotypes 'DP>15'
+    % vtools update variant --from_stat "cases_het_highDP=#(het)" --samples "filename in ('V1_hg38.vcf', 'V2_hg38.vcf')" --genotypes 'DP>15'
     
 
     INFO: 2 samples are selected
@@ -826,7 +826,7 @@ We can also limit the statistics to genotypes that satisfy certain conditions (e
 
 Then we can add a field `case_hom` to count the number of homozygotes for only these variants: 
 
-    % vtools update in_all --from_stat 'case_hom=#(hom)' --samples  "filename in ('V1.vcf', 'V2.vcf')"
+    % vtools update in_all --from_stat 'case_hom=#(hom)' --samples  "filename in ('V1_hg38.vcf', 'V2_hg38.vcf')"
     
 
     INFO: 2 samples are selected

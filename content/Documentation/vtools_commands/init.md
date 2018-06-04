@@ -67,7 +67,7 @@ Command `vtools init` creates a new project in the current directory. The projec
 
 **A directory can only have one project**. After a project is created, subsequent `vtools` calls will automatically load the project in the current directory. Working from outside of a project directory is not allowed. 
 
-A variant tools project `$name` consists of a project file `$name.proj`, a genotype database `$name_genotype.DB`, and a log file `$name.log`. In addition to the project databases under the project directory, variant tools will store 
+A variant tools project `$name` consists of a project file `$name.proj`, a genotype database (HDF5 or SQLite), and a log file `$name.log`. In addition to the project databases under the project directory, variant tools will store 
 
 *   annotation databases, format specification etc in a **local resource** directory, which is by default `~/.variant_tools`. You can use command "`vtools admin --set_runtime_option local_resource`" to relocate this directory if your home directory does not have enough free space. 
 *   temporary files stored in a system **temporary directory**, which is usually under `/tmp`. If your temp partition is not large enough, you can set runtime option `temp_dir` to another directory. This directory will be cleared automatically after a project is closed, so do not point it to a directory with existing files. 
@@ -116,11 +116,7 @@ If you are worried about losing your work by accidentally calling `vtools init` 
 
 A project could be created from a **parent project** with a subset of its variants and samples. For example, a child project with variants from a small chromosomal region could be created from a parent project to test a pipeline before it is applied to the whole project. This also allows differential analysis of subsets of variants (e.g. SNVs and indels) and samples. 
 
-The following filters could be applied to the parent project 
 
-*   `--variants` Only variants from the specified variant table of the parent project will be copied. Genotypes of samples will be affected because only genotypes related to these variants will be copied. 
-*   `--samples` Only samples matching specified conditions (e.g. sample names) will be copied. 
-*   `--genotypes` Only genotypes matching specified conditions (e.g. with quality score above certain threshold) will be copied. 
 
 <details><summary> Examples: create a parent project</summary> Let us start from a snapshot project `quickStartGuide`: 
 
@@ -162,11 +158,22 @@ The project now has three variant tables
     CEU            3,470    May30
     JPT            2,878    May30
     variant        4,839    May30 Master variant table
+
+
+
     
 
 </details>
 
-<details><summary> Examples: create subprojects from the parent project (The "--variants" option is only supported when STOREMODE is set to sqlite )</summary> You can create a subproject with variants from the CEU: 
+<details><summary> Examples (This function is only supported when STOREMODE is set to sqlite.): create subprojects from the parent project </summary> 
+
+The following filters could be applied to the parent project if the STOREMODE is set to SQLite. 
+
+*   `--variants` Only variants from the specified variant table of the parent project will be copied. Genotypes of samples will be affected because only genotypes related to these variants will be copied. 
+*   `--samples` Only samples matching specified conditions (e.g. sample names) will be copied. 
+*   `--genotypes` Only genotypes matching specified conditions (e.g. with quality score above certain threshold) will be copied. 
+
+You can create a subproject with variants from the CEU: 
 
 
     % mkdir myproj
@@ -284,12 +291,10 @@ which is a shortcut to commands
 
 
 
-#### 2.3 Create a project from several subprojects
+#### 2.3 (This function is only supported when STOREMODE is set to sqlite.) Create a project from several subprojects
 
 
-##### This function is only supported when STOREMODE is set to sqlite. 
-
-A project could also be created from one or more **children projects**. This allows flexible handling of batches of data (e.g. analyze data separately or jointly), and parallel processing of large datasets (e.g. split a project by chromosomes, analyze them separately, and combine the results). 
+A project could also be created from one or more **children projects** if the STOREMODE is set to sqlite. This allows flexible handling of batches of data (e.g. analyze data separately or jointly), and parallel processing of large datasets (e.g. split a project by chromosomes, analyze them separately, and combine the results). 
 
 Merging two or more variant tools projects will merge variants and samples from these projects. More specifically, 
 

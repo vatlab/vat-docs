@@ -114,16 +114,18 @@ It is easy to use system-provided annotation databases. Generally speaking, you 
 
 {{% notice tip %}}
 
-* Position-aware annotation databases (variant, position, and range) are ref-genome dependent. Most such annotation databases are built for a particular build of reference genome, but some of them support multiple reference genomes. 
+Position-aware annotation databases (variant, position, and range) are ref-genome dependent. Most such annotation databases are built for a particular build of reference genome, but some of them support multiple reference genomes. 
+{{% /notice %}}
 
-* Newer databases usually contain more updated annotation information and usually use more recent build of reference genome. If you are using *hg18* and would like to use annotation databases that use build *hg19* of the reference genome, you can liftover your project to add *hg19* as an alternative reference genome.  
+{{% notice tip %}}
+Newer databases usually contain more updated annotation information and usually use more recent build of reference genome. If you are using *hg18* and would like to use annotation databases that use build *hg19* of the reference genome, you can liftover your project to add *hg19* as an alternative reference genome.  
  
 {{% /notice %}}
 
 <details><summary> Examples: Use system-provided annotation databases</summary> Let us get a project 
 
 
-    % vtools import V1-3_hg19.vcf --build hg19
+    % vtools import V1-3_hg19_combine.vcf --build hg19
     
 
 This project uses build `hg19` of the reference genome, as shown in the output of command `vtools show` 

@@ -60,7 +60,7 @@ Attach:liftover.png
 
 
     % vtools init -f liftover
-    % vtools import V1-3_hg19.vcf --build hg19
+    % vtools import V1-3_hg19_combine.vcf --build hg19
     % vtools liftover hg38
     
 

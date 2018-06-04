@@ -108,8 +108,8 @@ The items being compare in this case are variants (namely `chr`, `pos`, `ref`, a
 <details><summary> Examples: Load a sample project and create a few variant tables</summary> 
 
     % vtools init compare
-    % vtools import V1-3_hg19.vcf --build hg19
-    % vtools use refGene
+    % vtools import V1-3_hg19_combine.vcf --build hg19
+    % vtools use refGene_exon
     % vtools use dbSNP
     % vtools select variant 'dbSNP.chr IS NOT NULL' -t inDbSNP 'In dbSNP database'
     % vtools select variant 'refGene_exon.chr IS NOT NULL' -t exonic 'In exonic regions of ref seq genes'
@@ -411,32 +411,15 @@ Although it is a bit confusing to return variants for a comparison of genotypes,
 
 #### 2.3 Count or output of genotypes shared by two or more samples
 
-<details><summary> Examples: identify genotypes that are identical across samples</summary> To make use of the sample project, we need to first assign different names to different samples because all our samples share the same name: 
+<details><summary> Examples: identify genotypes that are identical across samples</summary> 
 
-
-
-    % vtools show samples
-    
-
-    sample_name	filename
-    SAMP1	V1.vcf
-    SAMP1	V2.vcf
-    SAMP1	V3.vcf
-    
-
-To do that, we can run 
-
-
-
-    % vtools admin --rename_samples "filename = 'V2.vcf'" SAMP2
-    % vtools admin --rename_samples "filename = 'V3.vcf'" SAMP3
     % vtools show genotypes
     
 
     sample_name filename    num_genotypes   sample_genotype_fields
-    SAMP1       V1-3_hg19.vcf   1609            GT
-    SAMP2       V1-3_hg19.vcf   1610            GT
-    SAMP3       V1-3_hg19.vcf   1608            GT
+    SAMP1       V1-3_hg19_combine.vcf   1609            GT
+    SAMP2       V1-3_hg19_combine.vcf   1610            GT
+    SAMP3       V1-3_hg19_combine.vcf   1608            GT
     
 
 The following command shows number of genotypes that are shared by all three samples, 

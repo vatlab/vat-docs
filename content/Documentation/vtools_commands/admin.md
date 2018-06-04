@@ -273,9 +273,8 @@ If you would like to prefix sample names by a string (e.g. `V1` -> `SAMP_V1`), y
 
 
 
-#### 2.3 Merge samples by sample's name (`--merge_samples`)
+#### 2.3 (This function is only supported when STOREMODE is set to sqlite.) Merge samples by sample's name (`--merge_samples`)
 
-##### This function is only supported when STOREMODE is set to sqlite. 
 
 Command `vtools admin --merge_samples` merges samples with the same names to a single sample. This command is used when genotypes of a sample are stored in several files (e.g. chromosome by chromosome, or seprate files for SNPs and Indels resulting from the Illumina pipeline) and are imported as separate samples. These samples should be merged together because otherwise number of samples in the variant tools project will not match number of physical samples, and lead to erronous results during analysis. Because this command merge samples by names, samples to be merged should be renamed to have the same names if needed. 
 

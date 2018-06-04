@@ -438,8 +438,7 @@ Genotypes of selected samples can be outputted if you use use parameter `--sampl
 <details><summary> Examples: export genotypes of selected samples</summary> 
 
     % vtools init test -f
-    % vtools admin --load_snapshot vt_testData
-    % vtools import CEU.vcf.gz --geno_info DP_geno --var_info AA --build hg18
+    % vtools import CEU_hg38.vcf --geno_info DP --var_info AA --build hg38
     % vtools export variant  --samples 'sample_name like "NA128%"' --format_string "GT" -o my.vcf
     
 
