@@ -12,19 +12,19 @@
     <title>Peng2014_ex1 :: Variant Tools</title>
     
     
-    <link href="/vat-docs/css/nucleus.css?1528215212" rel="stylesheet">
-    <link href="/vat-docs/css/font-awesome.min.css?1528215212" rel="stylesheet">
-    <link href="/vat-docs/css/hybrid.css?1528215212" rel="stylesheet">
-    <link href="/vat-docs/css/featherlight.min.css?1528215212" rel="stylesheet">
-    <link href="/vat-docs/css/perfect-scrollbar.min.css?1528215212" rel="stylesheet">
-    <link href="/vat-docs/css/auto-complete.css?1528215212" rel="stylesheet">
-    <link href="/vat-docs/css/theme.css?1528215212" rel="stylesheet">
-    <link href="/vat-docs/css/hugo-theme.css?1528215212" rel="stylesheet">
+    <link href="/vat-docs/css/nucleus.css?1528215512" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1528215512" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1528215512" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1528215512" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1528215512" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1528215512" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1528215512" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1528215512" rel="stylesheet">
     
-      <link href="/vat-docs/css/theme-mine.css?1528215212" rel="stylesheet">
+      <link href="/vat-docs/css/theme-mine.css?1528215512" rel="stylesheet">
     
 
-    <script src="/vat-docs/js/jquery-2.x.min.js?1528215212"></script>
+    <script src="/vat-docs/js/jquery-2.x.min.js?1528215512"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1528215212"></script>
-<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1528215212"></script>
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1528215512"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1528215512"></script>
 <script type="text/javascript">
     
         var baseurl = '\/vat-docs\/';
     
 </script>
-<script type="text/javascript" src="/vat-docs/js/search.js?1528215212"></script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1528215512"></script>
 
     
   </div>
@@ -1513,7 +1513,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
  
   
     
-      <li data-nav-id="/vat-docs/documentation/customization/simulation/models/peng1/" title="Peng2014_ex1" class="dd-item active">
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/models/peng1/" title="Peng2014_ex1" class="dd-item ">
         <a href="/vat-docs/documentation/customization/simulation/models/peng1/">
         Peng2014_ex1
         
@@ -1533,8 +1533,8 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
   
     
     <li data-nav-id="/vat-docs/documentation/customization/simulation/models/peng1/" title="Peng2014_ex1" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/vat-docs/documentation/customization/simulation/models/peng1/">
@@ -4196,11 +4196,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
+<li>
+<ul>
 <li><a href="#simulations-for-the-first-example-of-peng-2014-genetic-epidemiology">Simulations for the first example of Peng (2014) Genetic Epidemiology</a>
 <ul>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#model">Model</a></li>
-<li><a href="#result">Result</a></li>
+<li><a href="#1-usage">1. Usage</a></li>
+<li><a href="#2-model">2. Model</a></li>
+<li><a href="#3-result">3. Result</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -4223,9 +4226,9 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 
 
-<h1 id="simulations-for-the-first-example-of-peng-2014-genetic-epidemiology">Simulations for the first example of Peng (2014) Genetic Epidemiology</h1>
+<h2 id="simulations-for-the-first-example-of-peng-2014-genetic-epidemiology">Simulations for the first example of Peng (2014) Genetic Epidemiology</h2>
 
-<h2 id="usage">Usage</h2>
+<h3 id="1-usage">1. Usage</h3>
 
 <pre><code>$ vtools show simulation Peng2014_ex1
 
@@ -4326,15 +4329,15 @@ Model parameters:
                       run the same pipeline using another region. (default: extracted.vcf)
 </code></pre>
 
-<h2 id="model">Model</h2>
+<h3 id="2-model">2. Model</h3>
 
 <p>As a demonstration of the simulation engines of VST, we simulated the evolution of a sequence of 63,000 base pairs on chromosome 17 (chr17:41,200,001-41,263,000) using four simulation methods: a neutral coalescent simulation using ms [Hudson 2002] (wrapped by VST), a neutral forward-time simulation, a simulation with natural selection, and a resampling-based simulation. This region overlaps with five isoforms (NM_007294, NM_007297, NM_007298, NM_007299, NM_007300) of BRCA1, with 5337 nucleotides (8.47%) within the coding regions of one of the isoforms. All coalescent and forward-time simulations assumed a demographic model that mimics the evolution of the European population. This model evolves an initial population of 8,100 individuals for 81,000 generations and expands it to 900,000 individuals in 370 generations after a short bottleneck of 7,900 individuals [Kryukov, et al. 2007]. A mutation rate of 1.8 × 10–8 was used for ms. A Jukes-Cantor DNA evolution model with mutation rate 2.4 × 10–8 was used for the forward-time simulations because the Jukes-Cantor model with mutation rate μ mutates a nucleotide to any of the four nucleotides at equal probability and has an effective mutation rate of 0.75 μ. For VST simulations with natural selection, we used constant fitness values 0.005, 0.02, and 0.1 for missense, stoploss, and stopgain mutations, respectively. A multiplicative model was used to combine fitness values if an individual carried more than one non-synonymous mutation. This model applies strong purifying selection to stopgain mutations and practically disallows the existence of such mutations in the population. The resampling-based simulation extracts genotypes at this region from the 1000 Genomes Project and expands the population to 10,000 individuals in 10 generations, subject to the same mutation, recombination, and selection forces as the forward-time simulation.</p>
 
 <p>With 10,000 replicates for each simulation method, we drew a sample of 700 individuals from the simulated population. We counted the number of mutants at each locus and then the number of loci in each mutation frequency class. The results from two neutral models obtained from ms and VST differed in that the VST simulations yielded less singleton variants. This difference may be partly due to the different mutation models used by the two programs. Whereas ms uses an infinite-sites model in which new mutations always lead to a new segregating site, VST uses a finite-sites mutation model where mutations can happen at existing segregating sites (Figure 1a). The allele frequency spectra of neutral and selection simulations differ only slightly because only 8.47% of the simulated region is under the influence of natural selection. We can observe a more significant difference between allele frequency spectra if we limit the loci to coding regions (Figure 1b).</p>
 
-<h2 id="result">Result</h2>
+<h3 id="3-result">3. Result</h3>
 
-<p>Attach:fig1.png</p>
+<p><img src = "fig1.png"></p>
 
 <p>Except for resampling-based simulations, the allele frequency spectra of the simulated datasets are, however, different from what we observed from 700 random samples of the 1000 Genomes Project [Abecasis, et al. 2012] (Figure 1, blue bars). The observed allele frequency spectrum has more singletons than most simulated datasets, especially for coding regions of the VST simulations with natural selection. The reasons for this phenomenon can be multi-fold but we suspect that most rare variants were introduced during the rapid expansion of the European population which had a much stronger effect than natural selection in coding regions.</p>
 
@@ -4342,7 +4345,6 @@ Model parameters:
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -7155,20 +7157,20 @@ Model parameters:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vat-docs/js/clipboard.min.js?1528215212"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.min.js?1528215212"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1528215212"></script>
-    <script src="/vat-docs/js/jquery.sticky.js?1528215212"></script>
-    <script src="/vat-docs/js/featherlight.min.js?1528215212"></script>
-    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1528215212"></script>
-    <script src="/vat-docs/js/highlight.pack.js?1528215212"></script>
+    <script src="/vat-docs/js/clipboard.min.js?1528215512"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1528215512"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1528215512"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1528215512"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1528215512"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1528215512"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1528215512"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vat-docs/js/modernizr.custom.71422.js?1528215212"></script>
-    <script src="/vat-docs/js/learn.js?1528215212"></script>
-    <script src="/vat-docs/js/hugo-learn.js?1528215212"></script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1528215512"></script>
+    <script src="/vat-docs/js/learn.js?1528215512"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1528215512"></script>
 
-    <link href="/vat-docs/mermaid/mermaid.css?1528215212" type="text/css" rel="stylesheet" />
-    <script src="/vat-docs/mermaid/mermaid.js?1528215212"></script>
+    <link href="/vat-docs/mermaid/mermaid.css?1528215512" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1528215512"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -7176,4 +7178,3 @@ Model parameters:
 
   </body>
 </html>
-

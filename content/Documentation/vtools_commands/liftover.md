@@ -46,7 +46,8 @@ Vtools provides a command which is based on the tool of USCS liftOver to map the
 An illustration of the liftover process 
 
 <details><summary> An illustration of the liftover process </summary>
-<img src= "/vat-docs/images/liftover.png" />
+<!-- <img src= "/vat-docs/images/liftover.png" /> -->
+![](/static/images/liftover.png)
 </details>
 
 
