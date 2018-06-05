@@ -132,8 +132,7 @@ Command `` vtools update `` updates **variant info fields** (and to a lesser ext
 
 <details>
 <summary> An illustration about `vtools update` </summary>
-<!-- <img src= "/vat-docs/images/update.png" /> -->
-![](/static/images/update.png)
+![](/images/update.png)
 </details> 
 
 
