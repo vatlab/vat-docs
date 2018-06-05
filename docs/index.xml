@@ -312,6 +312,16 @@ Intxroduction Variant Tools uses pipeline specification files to define pipeline
     </item>
     
     <item>
+      <title>Customized</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/format10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/format10/</guid>
+      <description>Specification of a variant tools pipeline This page describes the original pipeline format (version 1.0). Please refer to New? if you are editing a new pipeline specification file for variant tools 2.7 and later.
+1. Introduction Variant Tools uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator).</description>
+    </item>
+    
+    <item>
       <title>Data exploration/QC</title>
       <link>https://vatlab.github.io/vat-docs/applications/association/qc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -730,8 +740,7 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/genotype/</guid>
-      <description>genotypes of one or more samples Usage Genotype information for a variant is not directly available in variant tools commands such as vtools output because these commands only output variant info or annotation fields. Function genotype can be used to retrieve genotypes of one or more samples from the genotype tables. In its single-sample mode, this function accepts a sample name and an optional field to display,
-genotype(sample_name, params=&#39;&#39;)  where params can have be multiple parameters joined by &amp;amp;.</description>
+      <description>genotypes of one or more samples Usage This function is only supported when STOREMODE is set to sqlite. Genotype information for a variant is not directly available in variant tools commands such as vtools output because these commands only output variant info or annotation fields. Function genotype can be used to retrieve genotypes of one or more samples from the genotype tables. In its single-sample mode, this function accepts a sample name and an optional field to display,</description>
     </item>
     
     <item>
@@ -878,7 +887,7 @@ Database of Genomic Variants Database of genomic variants is a curated catalogue
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/samples/</guid>
-      <description>Samples that harbor the variant Usage The samples function is similar to genotype but it returns name of samples that contain the variant. When you use the function in command vtools output var_table samples(), this function will be evaluated for each variant in the variant table var_table. In its basic form,
+      <description>Samples that harbor the variant Usage This function is only supported when STOREMODE is set to sqlite. The samples function is similar to genotype but it returns name of samples that contain the variant. When you use the function in command vtools output var_table samples(), this function will be evaluated for each variant in the variant table var_table. In its basic form,
 samples()  returns a list of comma-separated names of samples that contain the variant, regardless the type of variant (homozygote etc).</description>
     </item>
     
@@ -1194,6 +1203,17 @@ Details Command interface % vtools_report meta_analysis -h usage: vtools_report 
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18snps/</guid>
       <description>HomePage Sample data # ** CASAVA depth-filtered snp calls ** #$ CMDLINE /CASAVA-1.8.0a19/filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 142.345267150165 # #$ COLUMNS seq_name pos bcalls_used bcalls_filt ref Q(snp) max_gt Q(max_gt) max_gt|poly_site Q(max_gt|poly_site) A_used C_used G_used T_used chr1 10231 5 9 C 28 AC 28 AC 59 3 2 0 0 chr1 10255 14 29 A 1 AA 9 AT 25 12 0 0 2 chr1 10264 15 19 C 18 AC 18 AC 51 4 11 0 0 chr1 10291 2 16 C 1 CC 10 CT 21 0 1 0 1 chr1 10330 3 14 C 2 CC 5 AC 28 2 1 0 0 chr1 13273 9 0 G 58 CG 54 CG 57 0 6 3 0 chr1 14464 18 0 A 60 AT 60 AT 93 12 0 0 6 chr1 14673 19 0 G 63 CG 63 CG 96 0 8 11 0 chr1 14699 23 0 C 72 CG 72 CG 105 0 14 9 0 chr1 14907 13 0 A 118 AG 65 AG 65 4 0 9 0 chr1 14930 14 2 A 119 AG 68 AG 68 5 0 9 0 chr1 14933 14 2 G 78 AG 78 AG 110 6 0 8 0 chr1 14976 4 0 G 18 AG 18 AG 47 2 0 2 0 chr1 15211 2 0 T 37 GG 5 GG 5 0 0 2 0 chr1 15817 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 15820 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 16487 12 0 T 62 CT 62 CT 94 0 6 0 6 chr1 17538 64 0 C 88 AC 88 AC 121 18 46 0 0 chr1 17746 53 1 A 22 AG 22 AG 55 39 0 14 0 chr1 17765 47 1 G 26 AG 26 AG 59 13 0 34 0 chr1 20131 1 0 G 8 CG 2 CG 3 0 1 0 0 chr1 20144 1 0 G 9 AG 2 AG 3 1 0 0 0 chr1 20206 2 0 C 4 CT 4 CT 30 0 1 0 1 chr1 20245 3 0 G 4 AG 4 AG 34 1 0 2 0 chr1 20304 2 0 G 2 GG 5 CG 27 0 1 1 0  Example vtools import --format Illumina_SNP Illumina_SNP.</description>
+    </item>
+    
+    <item>
+      <title>EBI</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/ebi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/ebi/</guid>
+      <description>1000 Genomes (EBI) This database contains all of the variants supplied by the 1000 Genomes Project downloaded from the European Bioinformatics Institute (EBI) website. The original vcf file can be obtained from here:
+ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.wgs.phase1_release_v3.20101123.snps_indels_sv.sites.vcf.gz
+This represents version 3 of an integrated variant call set based on both low coverage and exome whole genome sequence data from the 1000 Genomes project. All of the annotation data supplied through the INFO fields in the VCF file can be used to annotate, filter or select project variants.</description>
     </item>
     
     <item>

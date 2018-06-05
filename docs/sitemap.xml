@@ -51,11 +51,19 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/</loc>
   </url>
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/keyconcepts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/</loc>
   </url>
   
   <url>
@@ -139,6 +147,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/format10/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/qc/</loc>
   </url>
   
@@ -164,6 +176,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng2/</loc>
   </url>
   
   <url>
@@ -307,6 +323,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_commands/update/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/</loc>
   </url>
   
@@ -427,6 +447,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/vtools_commands/liftover/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/refgene/</loc>
   </url>
   
@@ -444,6 +468,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/esp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/faq/</loc>
   </url>
   
   <url>
@@ -616,6 +644,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/create_your_test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/ebi/</loc>
   </url>
   
   <url>
