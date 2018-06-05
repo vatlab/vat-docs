@@ -12,19 +12,19 @@
     <title>Introduction :: Variant Tools</title>
     
     
-    <link href="/vat-docs/css/nucleus.css?1528212692" rel="stylesheet">
-    <link href="/vat-docs/css/font-awesome.min.css?1528212692" rel="stylesheet">
-    <link href="/vat-docs/css/hybrid.css?1528212692" rel="stylesheet">
-    <link href="/vat-docs/css/featherlight.min.css?1528212692" rel="stylesheet">
-    <link href="/vat-docs/css/perfect-scrollbar.min.css?1528212692" rel="stylesheet">
-    <link href="/vat-docs/css/auto-complete.css?1528212692" rel="stylesheet">
-    <link href="/vat-docs/css/theme.css?1528212692" rel="stylesheet">
-    <link href="/vat-docs/css/hugo-theme.css?1528212692" rel="stylesheet">
+    <link href="/vat-docs/css/nucleus.css?1528215212" rel="stylesheet">
+    <link href="/vat-docs/css/font-awesome.min.css?1528215212" rel="stylesheet">
+    <link href="/vat-docs/css/hybrid.css?1528215212" rel="stylesheet">
+    <link href="/vat-docs/css/featherlight.min.css?1528215212" rel="stylesheet">
+    <link href="/vat-docs/css/perfect-scrollbar.min.css?1528215212" rel="stylesheet">
+    <link href="/vat-docs/css/auto-complete.css?1528215212" rel="stylesheet">
+    <link href="/vat-docs/css/theme.css?1528215212" rel="stylesheet">
+    <link href="/vat-docs/css/hugo-theme.css?1528215212" rel="stylesheet">
     
-      <link href="/vat-docs/css/theme-mine.css?1528212692" rel="stylesheet">
+      <link href="/vat-docs/css/theme-mine.css?1528215212" rel="stylesheet">
     
 
-    <script src="/vat-docs/js/jquery-2.x.min.js?1528212692"></script>
+    <script src="/vat-docs/js/jquery-2.x.min.js?1528215212"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1528212692"></script>
-<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1528212692"></script>
+<script type="text/javascript" src="/vat-docs/js/lunr.min.js?1528215212"></script>
+<script type="text/javascript" src="/vat-docs/js/auto-complete.js?1528215212"></script>
 <script type="text/javascript">
     
         var baseurl = '\/vat-docs\/';
     
 </script>
-<script type="text/javascript" src="/vat-docs/js/search.js?1528212692"></script>
+<script type="text/javascript" src="/vat-docs/js/search.js?1528215212"></script>
 
     
   </div>
@@ -1424,8 +1424,8 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
   
     
     <li data-nav-id="/vat-docs/documentation/customization/simulation/introduction/" title="Introduction" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/vat-docs/documentation/customization/simulation/introduction/">
@@ -1447,7 +1447,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
  
   
     
-      <li data-nav-id="/vat-docs/documentation/customization/simulation/introduction/" title="Introduction" class="dd-item active">
+      <li data-nav-id="/vat-docs/documentation/customization/simulation/introduction/" title="Introduction" class="dd-item ">
         <a href="/vat-docs/documentation/customization/simulation/introduction/">
         Introduction
         
@@ -4190,20 +4190,23 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
+<li>
+<ul>
 <li><a href="#variant-simulation-tools">Variant Simulation Tools</a>
 <ul>
-<li><a href="#what-is-variant-simulation-tools">What is <em>Variant Simulation Tools</em></a></li>
-<li><a href="#key-features">Key features</a></li>
-<li><a href="#basic-usages-of-vst">Basic usages of VST</a>
+<li><a href="#1-what-is-variant-simulation-tools">1. What is <em>Variant Simulation Tools</em></a></li>
+<li><a href="#2-key-features">2. Key features</a></li>
+<li><a href="#3-basic-usages-of-vst">3. Basic usages of VST</a>
 <ul>
-<li><a href="#step-1-check-available-simulation-models">Step 1: check available simulation models</a></li>
-<li><a href="#step-2-learn-the-details-of-a-simulation-model">Step 2: Learn the details of a simulation model</a></li>
-<li><a href="#step-3-perform-simulations">Step 3: Perform simulations</a></li>
+<li><a href="#3-1-step-1-check-available-simulation-models">3.1 Step 1: check available simulation models</a></li>
+<li><a href="#3-2-step-2-learn-the-details-of-a-simulation-model">3.2 Step 2: Learn the details of a simulation model</a></li>
+<li><a href="#3-3-step-3-perform-simulations">3.3 Step 3: Perform simulations</a></li>
 </ul></li>
-<li><a href="#some-technical-details">Some technical details</a>
+<li><a href="#4-some-technical-details">4. Some technical details</a>
 <ul>
-<li><a href="#option-seed-and-replicates">Option <code>--seed</code> and <code>--replicates</code></a></li>
-<li><a href="#specification-of-regions-option-regions">Specification of regions (option <code>--regions</code>)</a></li>
+<li><a href="#4-1-option-seed-and-replicates">4.1 Option <code>--seed</code> and <code>--replicates</code></a></li>
+<li><a href="#4-2-specification-of-regions-option-regions">4.2 Specification of regions (option <code>--regions</code>)</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -4227,13 +4230,18 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 
 
-<h1 id="variant-simulation-tools">Variant Simulation Tools</h1>
+<h2 id="variant-simulation-tools">Variant Simulation Tools</h2>
 
-<p>A presentation about variant simulation tools (Sep. 2014)</p>
+<figure>
+  <p><a href="VST.pdf"><img src="documents.jpg"></a>
+  <figcaption>A presentation about variant simulation tools (Sep. 2014)</figcaption>
+</figure>
 
-<p>Variant Simulation Tools is still under development. Development (subversion) versions of Variant Tools and <a href="http://simupop.sourceforge.net">simuPOP</a> are needed to use VST. Also, because of a lack of mature simulation models (only two examples in the submitted paper are available), users are strongly advised to <a href="mailto:bpeng@mdanderson.org">contact me</a> for the creation of any simulation model.</p>
+<p><font color=#FF0000>
+Variant Simulation Tools is still under development. Development (subversion) versions of Variant Tools and <a href="http://simupop.sourceforge.net">simuPOP</a> are needed to use VST. Also, because of a lack of mature simulation models (only two examples in the submitted paper are available), users are strongly advised to <a href="mailto:bpeng@mdanderson.org">contact me</a> for the creation of any simulation model.
+</font></p>
 
-<h2 id="what-is-variant-simulation-tools">What is <em>Variant Simulation Tools</em></h2>
+<h3 id="1-what-is-variant-simulation-tools">1. What is <em>Variant Simulation Tools</em></h3>
 
 <p><em>Variant Simulation Tools</em> (VST) is a simulation tool for post-GWAS genetic epidemiological studies using whole-genome or whole-exome next-gen sequencing data, with an emphasis on user-friendliness and reproducibility. Because simulating high-quality datasets for genetic epidemiological studies requires careful selection and validation of appropriate simulation method for particular applications, <strong>VST aims to provide validated application-specific simulation methods and simulated datasets</strong>. It distinguishes itself from other simulators in that</p>
 
@@ -4255,12 +4263,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <p>Each VST simulation encapsulates simulation methods and parameters that have been used for a particular application. It allows no or only a few parameters to make it easy to reproduce a simulation. In addition to simulation models, VST also distribute simulated datasets for some simulation models, making it easier for casual users to explore the properties of selected simulation models.</p>
 
-<p>Whereas it is easy to reproduce an existing VST simulation, <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Simulation.New?action=edit">creating a new simulation</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Simulation.New?action=edit">?</a> in VST requires some in-depth knowledge of <a href="http://simupop.sourceforge.net">simuPOP</a> and <a href="http://variantools.sourceforge.net">variant tools</a>. It is strongly recommended that you discuss your simulation study with other users of VST in <a href="https://lists.sourceforge.net/lists/listinfo/varianttools-user">the varianttools-user mailing list</a> before you write your own simulations. You could also <a href="mailto:bpeng@mdanderson.org">write to me</a> directly if you would like to discuss your project in private.</p>
+<p>Whereas it is easy to reproduce an existing VST simulation, <a href="/vat-docs/documentation/customization/simulation/">creating a new simulation</a> in VST requires some in-depth knowledge of <a href="http://simupop.sourceforge.net">simuPOP</a> and <a href="http://variantools.sourceforge.net">variant tools</a>.<font color=#FF0000>
+   It is strongly recommended that you discuss your simulation study with other users of VST in <a href="https://lists.sourceforge.net/lists/listinfo/varianttools-user">the varianttools-user mailing list</a> before you write your own simulations. </font> You could also <a href="mailto:bpeng@mdanderson.org">write to me</a> directly if you would like to discuss your project in private.</p>
 
-<p>Attach:repository.jpg<br />
-Schematic illustration of the role of the variant tools repository in the distribution of simulation models and simulated datasets. The repository provides simulation models and simulated datasets that can be downloaded using VST. Casual users can download simulated datasets and use them without running VST. Users who need to use a model without existing simulated datasets or need more replicates of an existing simulation can simulate data using VST. Advanced users who write their own simulation methods can choose to share their models with others by uploading their models to the repository.</p>
+<p><img src = "repository.jpg"></p>
 
-<h2 id="key-features">Key features</h2>
+<p>Schematic illustration of the role of the variant tools repository in the distribution of simulation models and simulated datasets. The repository provides simulation models and simulated datasets that can be downloaded using VST. Casual users can download simulated datasets and use them without running VST. Users who need to use a model without existing simulated datasets or need more replicates of an existing simulation can simulate data using VST. Advanced users who write their own simulation methods can choose to share their models with others by uploading their models to the repository.</p>
+
+<h3 id="2-key-features">2. Key features</h3>
 
 <ul>
 <li><strong>VST simulates real nucleotide sequences of the human genome</strong></li>
@@ -4288,13 +4298,13 @@ Schematic illustration of the role of the variant tools repository in the distri
 <li><strong>Datasets simulated by VST could be exported in VCF format, or analyzed directly using Variant Association Tools</strong></li>
 </ul>
 
-<p>Simulated datasets could be exported and analyzed by other programs, or imported into a variant tools project and analyzed directly using <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Association.HomePage?action=edit">Variant Association Tools</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Association.HomePage?action=edit">?</a>.</p>
+<p>Simulated datasets could be exported and analyzed by other programs, or imported into a variant tools project and analyzed directly using <a href="/vat-docs/applications/association/introduction/">Variant Association Tools</a>.</p>
 
-<h2 id="basic-usages-of-vst">Basic usages of VST</h2>
+<h3 id="3-basic-usages-of-vst">3. Basic usages of VST</h3>
 
-<h3 id="step-1-check-available-simulation-models">Step 1: check available simulation models</h3>
+<h4 id="3-1-step-1-check-available-simulation-models">3.1 Step 1: check available simulation models</h4>
 
-<p>After <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Main.Installation?action=edit">installing variant tools</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Main.Installation?action=edit">?</a>, run</p>
+<p>After <a href="/vat-docs/installation/">installing variant tools</a>, run</p>
 
 <pre><code>% vtools show simulations
 
@@ -4314,9 +4324,11 @@ Peng2014_ex1            Simulations of DNA sequences in specified regions using
 
 <p>to get a list of available simulation models.</p>
 
-<p>If you cannot find a simulation model that fits your need, please write to the <a href="https://lists.sourceforge.net/lists/listinfo/varianttools-user">varianttools-user mailing list</a> and check if others have performed similar simulations using VST. You could also <a href="mailto:bpeng@mdanderson.org">write to me</a> directly for potential collaboration on simulation part of your study.</p>
+<div class="notices tip" ><p>If you cannot find a simulation model that fits your need, please write to the [varianttools-user mailing list][7] and check if others have performed similar simulations using VST. You could also [write to me][4] directly for potential collaboration on simulation part of your study.</p>
+</div>
 
-<h3 id="step-2-learn-the-details-of-a-simulation-model">Step 2: Learn the details of a simulation model</h3>
+
+<h4 id="3-2-step-2-learn-the-details-of-a-simulation-model">3.2 Step 2: Learn the details of a simulation model</h4>
 
 <p>A <strong>simulation specification file</strong> can define multiple simulation models. Command <code>vtools show simulation SPECFILE</code> lists all simulation models defined in <code>SPECFILE</code> and their descriptions, include parameters they accept.</p>
 
@@ -4423,7 +4435,7 @@ Model parameters:
                       using another region. (default: extracted.vcf)
 </code></pre>
 
-<h3 id="step-3-perform-simulations">Step 3: Perform simulations</h3>
+<h4 id="3-3-step-3-perform-simulations">3.3 Step 3: Perform simulations</h4>
 
 <pre><code>% vtools simulate -h
 
@@ -4520,19 +4532,23 @@ INFO: Replace ex1_neutral_evolved_273426005.pop with ex1_neutral_evolved_2734260
 INFO: Replace cache/ex1_neutral_init_273426005.pop with cache/ex1_neutral_init_273426005.pop.file_info
 </code></pre>
 
-<h2 id="some-technical-details">Some technical details</h2>
+<h3 id="4-some-technical-details">4. Some technical details</h3>
 
-<h3 id="option-seed-and-replicates">Option <code>--seed</code> and <code>--replicates</code></h3>
+<h4 id="4-1-option-seed-and-replicates">4.1 Option <code>--seed</code> and <code>--replicates</code></h4>
 
 <p>A random seed will be used by default for each simulation. For each simulation, a file <code>cache/MODEL_SEED.cfg</code> will be created as the input file for the execution of the simulation pipeline. You can, however, use the <code>--seed</code> option to specify the seed of the simulation to reproduce a previous simulation.</p>
 
-<p>For reproducibility reasons, all simulated datasets provided my VST will be simulated with seeds <code>1</code>, <code>2</code>, <code>3</code>, &hellip;.</p>
+<div class="notices tip" ><p>For reproducibility reasons, all simulated datasets provided my VST will be simulated with seeds <code>1</code>, <code>2</code>, <code>3</code>, &hellip;.</p>
+</div>
+
 
 <p>The <code>vtools simulate</code> command by default only simulates one replicate of the simulation. It will repeat itself a number of times if option <code>--replicates</code> is specified. <code>SEED</code>, <code>SEED+1</code>, <code>SEED+2</code> etc will be used as seed for subsequent simulations.</p>
 
-<p>If you need to run multiple instances of <code>VST</code> at the same time, please use separate directories for different instances of the <code>vtools simulate</code> command.</p>
+<div class="notices warning" ><p>If you need to run multiple instances of <code>VST</code> at the same time, please use separate directories for different instances of the <code>vtools simulate</code> command.</p>
+</div>
 
-<h3 id="specification-of-regions-option-regions">Specification of regions (option <code>--regions</code>)</h3>
+
+<h4 id="4-2-specification-of-regions-option-regions">4.2 Specification of regions (option <code>--regions</code>)</h4>
 
 <p>Because VST simulates true genomic regions of the human genome, a key parameter of many simulation models is <code>--regions</code>. You can, for example, pass a region in <code>chr:start-end</code> format as</p>
 
@@ -4577,7 +4593,6 @@ INFO: Replace cache/ex1_neutral_init_273426005.pop with cache/ex1_neutral_init_2
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -7386,20 +7401,20 @@ INFO: Replace cache/ex1_neutral_init_273426005.pop with cache/ex1_neutral_init_2
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vat-docs/js/clipboard.min.js?1528212692"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.min.js?1528212692"></script>
-    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1528212692"></script>
-    <script src="/vat-docs/js/jquery.sticky.js?1528212692"></script>
-    <script src="/vat-docs/js/featherlight.min.js?1528212692"></script>
-    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1528212692"></script>
-    <script src="/vat-docs/js/highlight.pack.js?1528212692"></script>
+    <script src="/vat-docs/js/clipboard.min.js?1528215212"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.min.js?1528215212"></script>
+    <script src="/vat-docs/js/perfect-scrollbar.jquery.min.js?1528215212"></script>
+    <script src="/vat-docs/js/jquery.sticky.js?1528215212"></script>
+    <script src="/vat-docs/js/featherlight.min.js?1528215212"></script>
+    <script src="/vat-docs/js/html5shiv-printshiv.min.js?1528215212"></script>
+    <script src="/vat-docs/js/highlight.pack.js?1528215212"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vat-docs/js/modernizr.custom.71422.js?1528212692"></script>
-    <script src="/vat-docs/js/learn.js?1528212692"></script>
-    <script src="/vat-docs/js/hugo-learn.js?1528212692"></script>
+    <script src="/vat-docs/js/modernizr.custom.71422.js?1528215212"></script>
+    <script src="/vat-docs/js/learn.js?1528215212"></script>
+    <script src="/vat-docs/js/hugo-learn.js?1528215212"></script>
 
-    <link href="/vat-docs/mermaid/mermaid.css?1528212692" type="text/css" rel="stylesheet" />
-    <script src="/vat-docs/mermaid/mermaid.js?1528212692"></script>
+    <link href="/vat-docs/mermaid/mermaid.css?1528215212" type="text/css" rel="stylesheet" />
+    <script src="/vat-docs/mermaid/mermaid.js?1528215212"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -7407,4 +7422,3 @@ INFO: Replace cache/ex1_neutral_init_273426005.pop with cache/ex1_neutral_init_2
 
   </body>
 </html>
-
