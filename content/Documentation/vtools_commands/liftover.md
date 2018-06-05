@@ -45,7 +45,9 @@ Vtools provides a command which is based on the tool of USCS liftOver to map the
 
 An illustration of the liftover process 
 
-Attach:liftover.png 
+<details><summary> An illustration of the liftover process </summary>
+<img src=../liftover.png/>
+</details>
 
 
 *   This command adds `alt_chr` and `alt_pos` columns to the master variants table. 

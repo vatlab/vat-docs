@@ -98,5 +98,16 @@ Usage Here are the available gwasCatalog fields for annotation and filtering.</d
       <description>thousandGenomes The samples for the 1000 Genomes Project mostly are anonymous and have no associated medical or phenotype data. Variants in this annotation database are sometimes considered to be &amp;lsquo;neutral&amp;rsquo; and could be removed if the goal of a study is to look for variants with high penetrance that dispose to rare Mendelian diseases. This database contains all of the variants supplied by the 1000 Genomes Project. The original vcf file can be obtained from here:</description>
     </item>
     
+    <item>
+      <title>EBI</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/ebi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/ebi/</guid>
+      <description>1000 Genomes (EBI) This database contains all of the variants supplied by the 1000 Genomes Project downloaded from the European Bioinformatics Institute (EBI) website. The original vcf file can be obtained from here:
+ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.wgs.phase1_release_v3.20101123.snps_indels_sv.sites.vcf.gz
+This represents version 3 of an integrated variant call set based on both low coverage and exome whole genome sequence data from the 1000 Genomes project. All of the annotation data supplied through the INFO fields in the VCF file can be used to annotate, filter or select project variants.</description>
+    </item>
+    
   </channel>
 </rss>
