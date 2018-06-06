@@ -5,6 +5,8 @@ defaultContentLanguageInSubdir= true
 baseURL = "https://vatlab.github.io/vat-docs/"
 publishDir = "docs"
 
+canonifyurls=true
+
 [params]
   editURL = ""
   description = "Documentation for Variant Tools"
