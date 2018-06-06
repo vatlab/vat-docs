@@ -1,14 +1,13 @@
 +++
 title = "anno_utils"
-description = ""
 weight = 2
 +++
 
-# Annotation utility pipelines 
+## Annotation utility pipelines 
 
 
 
-## Usage
+### 1. Usage
 
     % vtools show pipeline anno_utils
     
@@ -81,11 +80,11 @@ weight = 2
 
 
 
-## Details
+### 2. Details
 
  
 
-### Converting a project to an annotation database (pipeline `proj2annoDB`)
+#### 2.1 Converting a project to an annotation database (pipeline `proj2annoDB`)
 
 You might have several projects and would like to use them to analyze a new project. For example, you might want to exclude from a project all variants that exist in a few control project (or projects with normal unaffected samples). You could achieve this by merging all these projects and analyze all variants together, but a more convenient way is to build annotation databases from these project and use them in the new project. 
 
@@ -154,13 +153,14 @@ You can then use this annotation database to annotation other projects
 
  
 
-### Converting a variant-based annotation database to a project (pipeline `annoDB2proj`)
+#### 2.2 Converting a variant-based annotation database to a project (pipeline `annoDB2proj`)
 
 If you would like to study a variant-based annotation database in details, for example, to annotate these variants using other annotation databases, you can convert it to a variant tools project using the `annoDB2proj` pipeline defined in `anno_utils.pipeline`. The resulting project has all the variants in the annotation database, but not the annotation fields, so you will have to `use` the original annotation database to get the annotations. 
 
 
-
+{{% notice warning%}}
 Annotation databases sometimes have multiple annotations for a variant (e.g. more than one dbSNP names for a variant). These variants will be imported only once in the resulting variant tools project. 
+{{% /notice %}}
 
 <details><summary> Convert database dbSNP to a project</summary> The input of this pipeline is the database DB file, which is usually under `~/.variant_tools/annoDB`. The output should be name of a directory that holds the created project. 
 
@@ -208,7 +208,7 @@ Annotation databases sometimes have multiple annotations for a variant (e.g. mor
 
  
 
-### Create an annotation specification file (.ann file) from a local or online VCF file (pipeline `annFileFromVcf`)
+#### 2.3 Create an annotation specification file (.ann file) from a local or online VCF file (pipeline `annFileFromVcf`)
 
 The default `vtools import` command by default imports variants but not related info fields from a vcf file. To access the info fields, you have the choices of 
 
@@ -237,12 +237,12 @@ The pipeline `annFileFromVcf` is designed to help you generate an annotation dat
 </details>
 
 
-
+{{% notice warning%}}
 The created .ann file might not have the correct build information and might not be always usable due to, for example, unacceptable field name. Always check the .ann file before you create an annotation database from it. 
-
+{{% /notice %}}
  
 
-### Create an annotation specification file (.ann file) from a text file (pipeline `annFileFromText`)
+#### 2.4 Create an annotation specification file (.ann file) from a text file (pipeline `annFileFromText`)
 
 During the analysis of dataset, you might have some summary report that can be used to direct further analysis, or you might have a text file that annotate some or all fields of your project. This pipeline help you convert these files to an annotation database so that you can use it in the project. 
 
@@ -354,4 +354,4 @@ Compared to the number of singletons in the project, the above command identifie
 
 Using `vtools select` with condition `kg_sum_geno.sum_variant_num = 1` will include variants that appear in more than one gene but has count 1 in one of them. It is better to use `vtools exclude` and condition `kg_sum_geno.sum_variant_num > 1` to find out variants that appear in only one gene once. 
 
-(:exampleend</summary>
+</details>

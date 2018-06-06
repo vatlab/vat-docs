@@ -1,5 +1,4 @@
 +++
 title = "Misc"
-description = ""
-weight = 7
+weight = 6
 +++

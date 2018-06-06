@@ -1,22 +1,22 @@
 
 +++
 title = "CancerGeneCensus"
-description = ""
 weight = 6
 +++
 
+## Cancer Genome Census
 
-## Data source
+### 1. Data source
 
 This database contains variants from the Cancer Genome Project. It is "an ongoing effort to catalogue those genes for which mutations have been causally implicated in cancer. The original census and analysis was published in Nature Reviews Cancer and supplemental analysis information related to the paper is also available. Currently, more than 1% of all human genes are implicated via mutation in cancer. Of these, approximately 90% have somatic mutations in cancer, 20% bear germline mutations that predispose to cancer and 10% show both somatic and germline mutations." [{1}][1] 
 
 
-
+{{% notice warning%}}
 Not all genes are available in the knownGene or refGene database so you will lose a few genes if you try to find all variants within these cancer genes through location information of knownGene or refGene. The latest version of Cancer Gene Census lists the following genes that are not available in refGene.name2: `AMER1, C12orf9, CDKN2a, FAM22B, H3F3AP4, IGH, IGK@, IGL@, KMT2A, KMT2B, KMT2C, NUTM1, NUTM2A, TCRB, TRA, TRD`. 
+{{%/notice%}}
 
 
-
-## Usage
+### 2. Usage
 
 This database should be linked to a field of common gene name, e.g. `refGene.name2`. You can use load it by 
 
@@ -63,7 +63,7 @@ If you would like to use the knownGene database, you will have to link through `
 
 
 
-## Fields
+### 3. Fields
 
     Description: Cancer Genome Project
     Database type: field
@@ -159,7 +159,7 @@ If you would like to use the knownGene database, you will have to link through `
 
 
 
-## Abbreviations
+### 4. Abbreviations
 
     Abbreviation	Term
     A	 amplification
@@ -212,9 +212,9 @@ If you would like to use the knownGene database, you will have to link through `
 
 
 
-## Examples
+### 5. Examples
 
-### Find variants belong to one of the cancer genes
+#### 5.1 Find variants belong to one of the cancer genes
 
     vtools use CancerGeneCensus --linked_by refGene.name2
     vtools select variant 'GeneSymbol is not NULL' -t CancerVariants
@@ -222,7 +222,7 @@ If you would like to use the knownGene database, you will have to link through `
 
 
 
-### Find variants that are in 5kb up and downstream of some cancer genes.
+#### 5.2 Find variants that are in 5kb up and downstream of some cancer genes.
 
 If you are interested in only some of the cancer genes, but would like to get variants not only within the genes, but also up and downstream of these genes, you will first have to get a list of genes. 
 

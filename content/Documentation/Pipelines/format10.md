@@ -1,14 +1,15 @@
 
 +++
-title = "Customized"
+title = "Customized10"
 weight = 2
+hidden = "true"
 +++
 
 
 ## Specification of a variant tools pipeline
 
 
-This page describes the original pipeline format (version 1.0). Please refer to [New][1][?][1] if you are editing a new pipeline specification file for variant tools 2.7 and later. 
+This page describes the original pipeline format (version 1.0). Please refer to [New][1] if you are editing a new pipeline specification file for variant tools 2.7 and later. 
 
 
 
@@ -127,7 +128,7 @@ where ${LOCAL_RESOURCE} is another pipeline variable that has value of project r
 
 
 
-## Section `[DEFAULT]` (command line options)
+### 3. Section `[DEFAULT]` (command line options)
 
 The `DEFAULT` section defines parameters that can be changed using command line arguments. For example, in the following `.pipeline` file (partial) 
 
@@ -175,7 +176,7 @@ you can load parameters `--bwa /path/to/bwa --samtools /path/to/samtools` using 
 
 
 
-### 3. Pipeline variables
+### 4. Pipeline variables
 
 
 
@@ -216,7 +217,7 @@ All pipelines starts with the following variables:
 
 *   `${TEMP_DIR}`: Project temporary directory (`$temp_dir`), which can be used to store, for example, java temp directories. This directory can be set by runtime option `$temp_dir`. A system temp directory will be used if the pipeline is executed without a variant tools project. 
 
-*   `{MODEL_NAME}` and `SEED`: Name of the simulation model (pipeline) and seed. Used by [Variant Simulation Tools][2][?][2]. 
+*   `{MODEL_NAME}` and `SEED`: Name of the simulation model (pipeline) and seed. Used by [Variant Simulation Tools][2]. 
 
 Varialbes defined in the `[Pipeline Description]` section are added before the execution of the pipeline. Then, for each step, variant tools defines 
 
@@ -684,6 +685,6 @@ This function converts a UCSC refGene.txt to BEd format so that it can be used b
 
 *   Import the module to your pipeline using `ImportModules('my_tools.py')`.
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.New?action=edit
- [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Simulation.HomePage?action=edit
+ [1]: /vat-docs/documentation/pipelines/customizedpipeline/
+ [2]: /vat-docs/documentation/customization/simulation/
  [3]: http://docs.python.org/2/library/re.html

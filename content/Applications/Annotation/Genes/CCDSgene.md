@@ -1,16 +1,16 @@
 
 +++
 title = "ccdsGene"
-description = ""
 weight = 1
 +++
 
+## CcdsGene
 
 This database contains high-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project. It was constructed from the UCSC Genome Browser ccdsGene track. If you would like to annotate your variants to these genes, you can use the simpler **ccdsGene** database. If you would like to determine the exons that your variants are in, use the **ccdsGene_exon** database. See the available annotation fields for each database below. 
 
 
 
-## ccdsGene
+### 1. ccdsGene
 
     % vtools show annotation ccdsGene -v2
     
@@ -91,7 +91,7 @@ This database contains high-confidence human gene annotations from the Consensus
 
 
 
-## ccdsGene_exon
+### 2. ccdsGene_exon
 
     % vtools show annotation ccdsGene_exon -v2
     

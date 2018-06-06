@@ -190,7 +190,7 @@ This database provides the following **annotation fields**
       RSPOS (int)           Chr position reported in dbSNP
       RV (int)              RS orientation is reversed
       VP (char)             Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
-      GENEINFO (char)       Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
+      GENEINFO (char)       Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (</summary>and each pair is delimited by a vertical bar (|)
       dbSNPBuildID (int)    First dbSNP Build for RS
       SAO (int)             Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
       SSR (int)             Variant Suspect Reason Codes (may be more than one value added together) 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed,
@@ -272,7 +272,7 @@ The fields are now available in the project,
     dbSNP.RSPOS (int)       Chr position reported in dbSNP
     dbSNP.RV (int)          RS orientation is reversed
     dbSNP.VP (char)         Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
-    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
+    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (</summary>and each pair is delimited by a vertical bar (|)
     dbSNP.dbSNPBuildID (int)
                             First dbSNP Build for RS
     dbSNP.SAO (int)         Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both

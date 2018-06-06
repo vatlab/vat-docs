@@ -52,9 +52,13 @@ Attach:liftover.png
 *   Annotation databases that use the alternative reference genome can now be used. 
 *   `vtools output` and `vtools export` can output alternative coordinates using parameter `--build`. 
 
+{{% notice tip %}}
+This feature is unavailable under windows because UCSC liftOver tool does not support windows. 
+{{% /notice %}}
 
-1.  This feature is unavailable under windows because UCSC liftOver tool does not support windows. 
-2.  Because the UCSC liftover tools does not guarantee complete translation, variants that failed to map will have missing alternative coordinates. 
+{{% notice tip%}}
+Because the UCSC liftover tools does not guarantee complete translation, variants that failed to map will have missing alternative coordinates. 
+{{% /notice %}}
 
 <details><summary> Liftover from hg19 to hg38</summary> The following example demonstrates how to liftOver a project from hg18 to hg19. Note that the UCSC liftOver tool and needed chain files are automatically downloaded if they are not available. 
 

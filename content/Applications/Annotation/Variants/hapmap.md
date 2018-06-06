@@ -1,13 +1,13 @@
 
 +++
 title = "hapmap"
-description = ""
 weight = 8
 +++
 
+## Hap Map
 
 
-## Usage
+### 1. Usage
 
 Population-specific databases from the HapMap project. They provide population-specific variant count and frequences. 
 
@@ -42,7 +42,7 @@ Population-specific databases from the HapMap project. They provide population-s
 
 
 
-## Details
+### 2. Details
 
     % vtools show annotation hapmap_CEU_freq
     

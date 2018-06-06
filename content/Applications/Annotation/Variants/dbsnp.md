@@ -1,21 +1,23 @@
 
 +++
 title = "dbSNP"
-description = ""
 weight = 3
 +++
 
 
-# dbSNP annotation databases
+## dbSNP annotation databases
 
 
 The default version of our **dbSNP** annotation is currently referring to dbSNP143 (using hg38 coordinates) as shown below. However, users can also retrieve older versions of dbSNP: dbSNP141, dbSNP138, dbSNP137, dbSNP135, dbSNP132, dbSNP131, dbSNP130, dbSNP129. The 129 and 130 versions use hg18 as a reference genome, 131, 132, 135, 137, 138 and 141 use hg19 and 143 uses hg38. The archived versions can be used by a variant tools project by referring to their specific names - for example: **dbSNP-hg18_129**. 
 
 
+{{% notice tip %}}
+dbSNP143 has many more flags and fields than previous versions. It also does not contain all variants that are defined in dbSNP141 and earlier. 
+{{%/notice%}}
 
-1.  dbSNP143 has many more flags and fields than previous versions. It also does not contain all variants that are defined in dbSNP141 and earlier. 
-2.  A dbSNP entry might match multiple variants. For example, `rs111688037` matches variants `T->A` and `T->C` at `chr6:31602679`. 
-
+{{% notice tip %}}
+A dbSNP entry might match multiple variants. For example, `rs111688037` matches variants `T->A` and `T->C` at `chr6:31602679`. 
+{{%/notice%}}
 
 
 ### version 

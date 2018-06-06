@@ -1,17 +1,16 @@
 +++
 title = "in_table"
-description = ""
 weight = 6
 +++
 
 
 
-# Test membership of variants in variant tables 
+## Test membership of variants in variant tables 
 
 
 
 
-## Usage
+### 1. Usage
 
 The `in_table` function is a simple function used to test is a variant is in a specified variant table. It accepts the name of a variant table and returns 1 if the variant belong to this table, and 0 otherwise. 
 
@@ -22,7 +21,7 @@ The `in_table` function is a simple function used to test is a variant is in a s
 
 
 
-## Details
+### 2. Details
 
 For example, command 
 

@@ -1,12 +1,11 @@
 
 +++
 title = "HugoGene"
-description = ""
 weight = 2
 +++
 
 
-# HUGO Gene Nomenclature Committee (HGNC) approved gene names
+## HUGO Gene Nomenclature Committee (HGNC) approved gene names
 
 
 The HUGO Gene Nomenclature Committee (HGNC) has assigned unique gene symbols and names to almost 38,000 human loci, of which around 19,000 are protein coding. genenames.org is a curated online repository of HGNC-approved gene nomenclature and associated resources including links to genomic, proteomic and phenotypic information, as well as dedicated gene family pages. 

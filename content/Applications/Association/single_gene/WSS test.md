@@ -1,27 +1,26 @@
 
 +++
 title = "WSS test"
-description = ""
-weight = 8
+weight = 7
 +++
 
 
 
-# Weighted Sum Statistic via Rank Test 
+## Weighted Sum Statistic via Rank Test 
 
 
 
-## Introduction
+### 1. Introduction
 
-The method proposed by Madsen and Browning 2009[^Bo Eskerod Madsen and Sharon R. Browning (2009) **A Groupwise Association Test for Rare Mutations Using a Weighted Sum Statistic**. *PLoS Genetics* doi:`10.1371/journal.pgen.1000384`. <http://dx.plos.org/10.1371/journal.pgen.1000384>^] first introduced the idea of assigning "weights" to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen & Browning paper the "weights" are defined as {$\sqrt{n\_iq\_i(1-q\_i)}$} with the assumption that the "rarer" the variant, the larger the risk effect it is to a phenotype. The {$q\_i$} in the original paper was based on observed control sample, which might result in inflated type I error[^Mathieu Lemire (2011) **Defining rare variants by their frequencies in controls may increase type I error**. *Nature Genetics* doi:`10.1038/ng.818`. <http://www.nature.com/doifinder/10.1038/ng.818>^]. Implementation of the WSS statistic in the `WSSRankTest` method uses the same definition for {$q_i$} but the Mann-Whitney U test ([definition and C++ implementation for this program][1]) now relies on a full permutation procedure rather than normal approximation, such that the bias is correctly accounted for. 
+The method proposed by Madsen and Browning 2009 first introduced the idea of assigning "weights" to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen & Browning paper the "weights" are defined as {$\sqrt{n\_iq\_i(1-q\_i)}$} with the assumption that the "rarer" the variant, the larger the risk effect it is to a phenotype. The {$q\_i$} in the original paper was based on observed control sample, which might result in inflated type I error(Mathieu Lemire, 2011). Implementation of the WSS statistic in the `WSSRankTest` method uses the same definition for {$q_i$} but the Mann-Whitney U test ([definition and C++ implementation for this program][1]) now relies on a full permutation procedure rather than normal approximation, such that the bias is correctly accounted for. 
 
-As with the [Varible Thresholds strategy][2][?][2], the idea of weighting can be applied to many other rare variant methods. The `WeightedBurdenBt` and `WeightedBurdenQt` methods implements the Madsen & Browning weighting based on controls (or samples with low quantitative phenotypic values) or the entire population, and tests for association for both case control and quantitative traits with/without presence of phenotype co-variates. 
+As with the [Varible Thresholds strategy][2], the idea of weighting can be applied to many other rare variant methods. The `WeightedBurdenBt` and `WeightedBurdenQt` methods implements the Madsen & Browning weighting based on controls (or samples with low quantitative phenotypic values) or the entire population, and tests for association for both case control and quantitative traits with/without presence of phenotype co-variates. 
 
 
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     vtools show test WSSRankTest
     
@@ -83,7 +82,7 @@ As with the [Varible Thresholds strategy][2][?][2], the idea of weighting can be
 
 
 
-### Application
+#### 2.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
@@ -141,7 +140,12 @@ As with the [Varible Thresholds strategy][2][?][2], the idea of weighting can be
 
 </details>
 
-[^#^]
+### Reference
+
+Bo Eskerod Madsen and Sharon R. Browning (2009) **A Groupwise Association Test for Rare Mutations Using a Weighted Sum Statistic**. *PLoS Genetics* doi:`10.1371/journal.pgen.1000384`. <http://dx.plos.org/10.1371/journal.pgen.1000384>
+
+Mathieu Lemire (2011) **Defining rare variants by their frequencies in controls may increase type I error**. *Nature Genetics* doi:`10.1038/ng.818`. <http://www.nature.com/doifinder/10.1038/ng.818>
+
 
  [1]: http://www.alglib.net/hypothesistesting/mannwhitneyu.php
- [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.VariableThresholds?action=edit
+ [2]: /vat-docs/applications/association/single_gene/vt-test/

@@ -1,17 +1,16 @@
 
 +++
 title = "variant_stat"
-description = ""
 weight = 6
 +++
 
 
 
-# Counting variants of different types, optionally by samples
+## Counting variants of different types, optionally by samples
 
 
 
-## Usage
+### 1. Usage
 
     % vtools_report variant_stat -h
     
@@ -58,7 +57,7 @@ weight = 6
 
 
 
-## Details
+### 2. Details
 
 This command calculates the number of snps, insertions, deletions and substitutions for groups of samples with some size metrics to characterize the indels. You can use parameters `--samples` to limit variants to specified samples, and `--group_by` to output statistics for each sample groups. For example, the statistics can be calculated 
 
@@ -67,16 +66,17 @@ This command calculates the number of snps, insertions, deletions and substituti
 *   grouped by samples (e.g. `--group_by aff`), or 
 *   for each sample separately (e.g. `--group_by filename sample_name`, because those two fields in the sample table uniquely identify each sample. 
 
-
+{{% notice warning%}}
+Note that
 
     % vtools_report variant_stat VTABLE
     % vtools_report variant_stat VTABLE --samples 1
     % vtools_report variant_stat VTABLE --group_by aff
-    
-
 might give different total variant count because the first command counts all variants in the `VTABLE`, the second and third commands count all variants in specified samples (all samples for condition `1`). Because some variants might not appear in any of the samples, the number of reported variants of the first command might be larger than the others. 
 
-You you would like to generate output for selected variants (e.g. variants on chromosome 1), you should use command `vtools select -t table` to generate a variant table and use this command to summarize them. 
+{{%/notice%}}
+
+You would like to generate output for selected variants (e.g. variants on chromosome 1), you should use command `vtools select -t table` to generate a variant table and use this command to summarize them. 
 
 
 

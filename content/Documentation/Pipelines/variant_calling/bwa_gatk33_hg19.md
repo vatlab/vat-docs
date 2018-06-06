@@ -1,17 +1,16 @@
 
 +++
 title = "bwa_gatk33_hg19"
-description = ""
 weight = 1
 +++
 
 
 
-# Variant calling using BWA and GATK best practice pipeline 
+## Variant calling using BWA and GATK best practice pipeline 
 
 
 
-## Usage
+### 1. Usage
 
     % vtools show pipeline bwa_gatk33_hg19
     
@@ -92,14 +91,14 @@ weight = 1
     
 
 
-
+{{% notice warning%}}
 Please specify correct readgroup information using parameters `--RGID`, `--RGLB`, `--RGPL`, `--RGPU` and `--RGSM` if you plan to analyze the generated bam file with other files (e.g. joint variant calling). 
+{{% /notice %}}
 
 
+### 2. Details
 
-## Details
-
-### Set up environment
+#### 2.1 Set up environment
 
 This pipeline uses the following external commands: 
 
@@ -114,7 +113,7 @@ You should add path to bwa and samtools to `$PATH` so that the pipeline can find
 
 
 
-### Test the environment
+#### 2.2 Test the environment
 
 After you installed the programs, you should running the following commands to test if everything works ok: 
 
@@ -130,7 +129,7 @@ This command will not only test the availability of tools, but also download all
 
 
 
-### Executing the pipeline in production mode
+#### 2.3 Executing the pipeline in production mode
 
 The pipeline will by default keep all intermediate files. If you restart the pipeline with different parameter or a different version of an external file, only the affected steps will be repeated. Intermediate files will be reused if available. This allows you to examine and fine-tune the pipeline to make sure it works as expected. 
 

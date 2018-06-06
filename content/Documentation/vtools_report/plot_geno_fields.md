@@ -1,16 +1,15 @@
 
 +++
 title = "plot_geno_fields"
-description = ""
 weight = 11
 +++
 
 
-# Plot genotype and/or genotype information fields
+## Plot genotype and/or genotype information fields
 
 
 
-## Usage
+### 1. Usage
 
     % vtools_report plot_geno_fields -h
     
@@ -91,6 +90,6 @@ weight = 11
 
 
 
-## Example
+### 2. Example
 
 Histograms, dot plots and box plots can be generated for variant info fields. The command interface is similar to `vtools_report plot_pheno_fields`.

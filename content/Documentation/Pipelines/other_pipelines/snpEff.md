@@ -2,16 +2,15 @@
 
 +++
 title = "snpEff"
-description = ""
 weight = 6
 +++
 
 
-# Variant effect provided by snpEFF 
+## Variant effect provided by snpEFF 
 
 
 
-## Usage
+### 1. Usage
 
 This pipeline exports variants in VCF format, call snpEff to predict its effect, and import the result as an variant info field EFF. 
 
@@ -55,7 +54,7 @@ This pipeline exports variants in VCF format, call snpEff to predict its effect,
 
 
 
-## Details
+### 2. Details
 
 This pipeline calls `snpEff` to estimate the effect of variants so you first need to download and install `snpEff`. 
 

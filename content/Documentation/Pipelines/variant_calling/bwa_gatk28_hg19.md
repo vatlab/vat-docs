@@ -1,19 +1,18 @@
 
 +++
 title = "bwa_gatk28_hg19"
-description = ""
 weight = 3
 +++
 
 
 
 
-# Calling variants using BWA and GATK best practice pipeline 
+## Calling variants using BWA and GATK best practice pipeline 
 
 
 
 
-## Usage
+### 1. Usage
 
     % vtools show pipeline bwa_gatk28_hg19
     
@@ -173,9 +172,9 @@ weight = 3
 
 
 
-## Details
+### 2. Details
 
-### Set up environment
+#### 2.1 Set up environment
 
 This pipeline uses the following external commands: 
 
@@ -191,7 +190,7 @@ You can add path to bwa and samtools to `$PATH` or pass full path name to option
 
 
 
-### Test the environment
+#### 2.2 Test the environment
 
 After you installed the programs, you should running the following commands to test if everything works ok: 
 
@@ -205,7 +204,7 @@ After you installed the programs, you should running the following commands to t
 
 
 
-### Executing the pipeline in production mode
+#### 2.3 Executing the pipeline in production mode
 
 The pipeline will by default keep all intermediate files. If you restart the pipeline with different parameter or a different version of an external file, only the affected steps will be repeated. Intermediate files will be reused if available. This allows you to examine and fine-tune the pipeline to make sure it works as expected. 
 

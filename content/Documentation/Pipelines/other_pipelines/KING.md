@@ -1,7 +1,6 @@
 
 +++
 title = "KING"
-description = ""
 weight = 7
 +++
 
@@ -9,11 +8,11 @@ weight = 7
 
 
 
-# Global ancestry and kinship inference
+## Global ancestry and kinship inference
 
 
 
-## Usage
+### 1. Usage
 
     % vtools show pipeline KING
     
@@ -63,7 +62,7 @@ weight = 7
 
 
 
-## Details
+### 2. Details
 
 This pipeline integrates global ancestry analysis (MDS method) and kinship analysis. It updates sample phenotypes with calculated MDS components and generate graphic report for ancestry analysis, and text report for kinship analysis. project with the outputs. To use this pipeline, you should first download and install [KING][1] and [PLINK][2] to your $PATH or somewhere, then execute a command similar to 
 

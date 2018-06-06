@@ -1,7 +1,6 @@
 
 +++
 title = "phenotype"
-description = ""
 weight = 4
 +++
 
@@ -225,8 +224,9 @@ This phenotype file now has 3 additional columns: affection status (1 or 2), gen
 </details>
 
 
-
+{{% notice tip %}}
 *variant tools* automatically probe the type of phenotype. Values that match value specified by parameter `--na` or cannot be converted to probed type (e.g. `''` or `None` in a column of numbers) will be treated as missing values. 
+{{% /notice %}}
 
 If you have a large number of phenotypes and you only need to import some of them, you can specify a list of phenotypes after the filename. 
 
@@ -285,9 +285,9 @@ Other features of this command include
 *   The input file can be standard input if specify `-` as input filename. This allows you to use a pipe to send me phenotype file. 
 *   *variant tools* automatically translate non-standard header names to a valid variant tools field name, by replacing non-alphanumeric characters with underscores (`'_'`). 
 
-
+{{% notice tip%}}
 If your input file does not have any header, you can use option `--header` to specify a list of headers. This is helpful for importing plink `.pfam` file, using a command similar to `vtools phenotype --from_file /tmp/test.tfam --header Family_ID sample_name Paternal_ID Maternal_ID Gender Status` 
-
+{{% notice %}}
 
 
 #### 2.2 New columns based on other phenotypes

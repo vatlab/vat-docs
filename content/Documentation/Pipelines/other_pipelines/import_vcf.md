@@ -1,15 +1,14 @@
 
 +++
 title = "import_vcf"
-description = ""
 weight = 1
 +++
 
 
-# Import all variant and genotype fields from vcf files
+## Import all variant and genotype fields from vcf files
 
 
-## Usage
+### 1. Usage
 
     % vtools show pipeline import_vcf
     
@@ -38,7 +37,7 @@ weight = 1
 
 
 
-## Details
+### 2. Details
 
 *variant tools* provides a general `vcf.fmt` that contains the definition of many commonly used variant and genotype info fields, but the command `vtools import` by default does not import any of them. The reasons behind this include 
 
@@ -56,9 +55,13 @@ Anyway, if you would like to import all information from an input vcf file, you 
 This pipeline assists this process by automating the creation of the `.fmt` file. 
 
 
+{{% notice tip%}}
+This pipeline outputs a `.fmt` file if you specify a output file using command line option `--output`. You can modify this file and use command `vtools import` to import data if the pipeline fails to execute (e.g. when an invalid field name is used). 
+{{% /notice %}}
 
-*   This pipeline outputs a `.fmt` file if you specify a output file using command line option `--output`. You can modify this file and use command `vtools import` to import data if the pipeline fails to execute (e.g. when an invalid field name is used). 
-*   Although you can specify multiple vcf files in the command line (parameter --input), the format will be generated from the first vcf file. These vcf files therefore must have the same variant and genotype fields. 
+{{% notice tip%}}
+Although you can specify multiple vcf files in the command line (parameter --input), the format will be generated from the first vcf file. These vcf files therefore must have the same variant and genotype fields. 
+{{% /notice %}}
 
 <details><summary> Import all fields from vcf files</summary> 
 
@@ -85,4 +88,4 @@ This pipeline assists this process by automating the creation of the `.fmt` file
     INFO: Command "vtools import V1.vcf V2.vcf V3.vcf --build hg19 --format cache/V1.vcf.fmt" completed successfully in 00:00:12
     
 
-(:exampleend</summary>
+</details>

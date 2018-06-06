@@ -1,12 +1,13 @@
 
 +++
 title = "EntrezGene"
-description = ""
 weight = 3
 +++
 
+## Entrez Gene
 
-### EntrezGene
+
+### 1. EntrezGene
 
     % vtools show annotation EntrezGene.DB
     
@@ -60,7 +61,7 @@ weight = 3
 
 
 
-### EntrezGene2RefSeq
+### 2. EntrezGene2RefSeq
 
 This is a field database that links `gene_id` to information to `refGene`. 
 

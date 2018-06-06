@@ -4,6 +4,7 @@ title = "genomicSuperDups"
 weight = 3
 +++
 
+## Genomic Super Dups
 
 See this blog [Why You Should Care About Segmental Duplications][1] for some nice explanation. 
 

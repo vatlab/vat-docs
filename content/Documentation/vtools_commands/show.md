@@ -266,9 +266,9 @@ Show values of specified phenotypes
 </details>
 
 
-
+{{% notice tip%}}
 Another command `vtools phenotype --output` can also output selected phenotypes. It is more powerful in that it has better control of the format of output, and more importantly, allow output of summary statistics of phenotypes. 
-
+{{%/notice %}}
 
 
 #### 2.5 Show genotype information for each sample (`genotypes`)
@@ -634,9 +634,9 @@ After using an annotation database with command `vtools use`, you can view the d
 </details>
 
 
-
+{{% notice tip%}}
 Although cannot be used as track files, `vtools show track` can display information of plain vcf file (not compressed, with extension `.vcf`), which can be used to show useful information of the header of such files. 
-
+{{% /notice%}}
 <details><summary> Examples: show details of an online vcf track </summary> 
 
 
@@ -1029,9 +1029,8 @@ Although cannot be used as track files, `vtools show track` can display informat
 </details>
 
 
-
+{{% notice tip%}}
 The header of BAM track provides many important information about the bam file. You should consult the SAM format specification for the meaning of them, but briefly: 
-
 
 
 *   `HD - header`: `VN` is for file format version, `SO` for sort order, which can be unsorted, queryname or coordinate. 
@@ -1039,9 +1038,12 @@ The header of BAM track provides many important information about the bam file. 
 *   `RG - Read group`: `ID` for read group identifier, `SM` for sample, `LB` for library, `DS` for description, `PU` for platform unit, `DT` for date the run was produced, `PL` for platform (e.g. illumina). 
 *   `PG - Program`: `ID` for program name, `VN` for program version, `CL` for command line. 
 *   `CO - Comment` 
+{{% /notice %}}
 
+{{% notice tip%}}
 The tags are also important if you need to filter reads by tag values. For example, `RG` can be used to differentiate reads that belong to different samples if the bam file contains reads from multiple samples. 
 
+{{% /notice %}}
 
 
 #### 2.9 Show supported input and output file formats (`formats` and `format`)

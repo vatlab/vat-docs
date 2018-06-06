@@ -1,17 +1,16 @@
 
 +++
 title = "ANNOVAR"
-description = ""
 weight =5
 +++
 
 
 
-# Gene-based annotation through ANNOVAR
+## Gene-based annotation through ANNOVAR
 
 
 
-## Usage
+### 1. Usage
 
     % vtools show pipeline ANNOVAR
     
@@ -62,7 +61,7 @@ weight =5
 
 
 
-## Details
+### 2. Details
 
 This pipeline makes it easier to use (a small portion of) ANNOVAR's gene-based annotation features to annotate variants, and update the *variant tools* project with the outputs. To use this pipeline, you should first download and install [ANNOVAR][1] somewhere, then execute a command similar to 
 

@@ -1,16 +1,15 @@
 
 +++
 title = "ChangeLog"
-description = ""
 weight = 1
 +++
 
 
-# Change Log of variant tools 
+## Change Log of variant tools 
 
 
 
-### Version 2.7.0 (Released on Jan 20, 2016)
+### 1. Version 2.7.0 (Released on Jan 20, 2016)
 
 MAJOR NEW FEATURES: 
 
@@ -24,14 +23,14 @@ BUG FIXES:
 
 
 
-### Version 2.6.1 (Released on Jan 15, 2015)
+### 2. Version 2.6.1 (Released on Jan 15, 2015)
 
 *   Fix a few small bugs introduced in 2.6.0. 
 *   Fix compatibility issues with Python 3. 
 
 
 
-### Version 2.6.0 (Released on Dec 15, 2014)
+### 3. Version 2.6.0 (Released on Dec 15, 2014)
 
 NEW FEATURES: 
 
@@ -41,7 +40,7 @@ NEW FEATURES:
 
 
 
-### Version 2.5.1 (Released on Nov 10, 2014)
+### 4. Version 2.5.1 (Released on Nov 10, 2014)
 
 BUG FIX: 
 
@@ -53,7 +52,7 @@ NEW FEATURES:
 
 
 
-### Version 2.5.0 (Release on Oct 15, 2014)
+### 5. Version 2.5.0 (Release on Oct 15, 2014)
 
 MAJOR NEW FEATURE: 
 
@@ -66,7 +65,7 @@ NEW FEATURES:
 
 
 
-### Version 2.4.1 ((Released on August 20, 2014))
+### 6. Version 2.4.1 ((Released on August 20, 2014))
 
 BUG FIX: 
 
@@ -74,7 +73,7 @@ BUG FIX:
 
 
 
-### Version 2.4.0 (Released on August 15, 2014)
+### 7. Version 2.4.0 (Released on August 15, 2014)
 
 MAJOR NEW FEATURE: 
 
@@ -96,7 +95,7 @@ BUGS:
 
 
 
-### Version 2.3.0 (Released on Feb 27, 2014)
+### 8. Version 2.3.0 (Released on Feb 27, 2014)
 
 BUGS: 
 
@@ -112,7 +111,7 @@ NEW FEATURE:
 
 
 
-### Version 2.2.0 (Released on Jan 16, 2014)
+### 9. Version 2.2.0 (Released on Jan 16, 2014)
 
 MAJOR NEW FEATURES: 
 
@@ -144,7 +143,7 @@ BUG FIXES:
 
 
 
-### Version 2.1.0 (Released on Nov. 6th)
+### 10. Version 2.1.0 (Released on Nov. 6th)
 
 MAJOR NEW FEATURES: 
 
@@ -169,7 +168,7 @@ BUGS:
 
 
 
-### Version 2.0.1 (Released on Oct 7th, 2013)
+### 11. Version 2.0.1 (Released on Oct 7th, 2013)
 
 NEW FEATURES: 
 
@@ -189,7 +188,7 @@ BUGS:
 
 
 
-### Version 2.0.0 (Released on Aug. 27, 2013)
+### 12. Version 2.0.0 (Released on Aug. 27, 2013)
 
 MAJOR NEW FEATURE: 
 
@@ -208,7 +207,7 @@ NEW FEATURE:
 *   Jul. 10: Change the output of `vtools show table TABLE` to make it more informative. 
 *   Jul. 5: Allow exporting genotypes in format csv. 
 *   Jun. 29: Add a feature that allows `vtools admin --rename_samples COND NAME1 NAME2` to rename samples by replacing the first incidence of `NAME1` in selected samples to `NAME2`. 
-*   Jun. 29: Add annotation database [genomicSuperDups][1][?][1] and [phast cons elements][2][?][2] 
+*   Jun. 29: Add annotation database [genomicSuperDups][1] and [phast cons elements][2] 
 *   May 24: Check duplicate genotypes after samples are imported. 
 *   Jun. 25: Allow importing csv files for command `vtools phenotype --from_file`. 
 *   Jun. 25: Add command `vtools show phenotypes P1 P2`. 
@@ -216,7 +215,7 @@ NEW FEATURE:
 
 
 
-### Version 1.0.6 (Released on May 16th, 2013)
+### 13. Version 1.0.6 (Released on May 16th, 2013)
 
 NEW FEATURE: 
 
@@ -235,7 +234,7 @@ BUG FIXES:
 
 
 
-### Version 1.0.5 (Released on Mar. 20, 2013)
+### 14. Version 1.0.5 (Released on Mar. 20, 2013)
 
 NEW FEATURES: 
 
@@ -249,7 +248,7 @@ BUG FIXES:
 
 
 
-### Version 1.0.4 (Released on Feb 22, 2013)
+### 15. Version 1.0.4 (Released on Feb 22, 2013)
 
 NEW FEATURES: 
 
@@ -260,7 +259,7 @@ NEW FEATURES:
 
 
 
-### Version 1.0.3 (Released on Sep 21, 2012)
+### 16. Version 1.0.3 (Released on Sep 21, 2012)
 
 NEW FEATURES: 
 
@@ -269,7 +268,7 @@ NEW FEATURES:
 *   Jun 16, 2012: Reorganize the import process to substantially improve the efficiency of `vtools import` when it is used to import files with a large number of samples. 
 *   Jun 15, 2012: Add command `vtools admin --rename_table` and `vtools admin --describe_table` to change the name and meta information of variant tables. 
 *   Jun 12, 2012: Allow a comment string when a variant table is created from command `vtools select`, `vtools exclude`, and `vtools compare`. 
-*   May 21, 2012: Add [Exact Tests of Hardy-Weinberg Equilibrium][3][?][3] and Fisher's exact test for case/ctrl associations to `vtools update` 
+*   May 21, 2012: Add [Exact Tests of Hardy-Weinberg Equilibrium][3] and Fisher's exact test for case/ctrl associations to `vtools update` 
 *   May 12, 2012: Add command `vtools admin`. 
 *   Jan 27, 2012: Analyze project database automatically (if needed) to improve the performance of queries. 
 *   Feb 29, 2012: Completion of the interface of command `vtools associate` 
@@ -284,7 +283,7 @@ BUGS:
 
 
 
-### Version 1.0.2 (released on Jan 24, 2012)
+### 17. Version 1.0.2 (released on Jan 24, 2012)
 
 NEW FEATURES: 
 
@@ -303,7 +302,7 @@ BUGS:
 
 
 
-### Version 1.0.1 (released on Jan 2nd, 2012)
+### 18. Version 1.0.1 (released on Jan 2nd, 2012)
 
 NEW FEATURES: 
 
@@ -343,6 +342,6 @@ INTERNAL IMPROVEMENTS:
 *   Nov 25, 2011: Improve efficiency of `vtools select` by creating indexes of relevant fields of the annotation database. 
 *   Dec 28, 2011: Improve efficiency of commands `vtools select` for ranged based queries by creating auxiliary binning tables.
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.GenomicSuperDups?action=edit
- [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Annotation.PhastCons?action=edit
- [3]: http://localhost/~iceli/wiki/pmwiki.php?n=Vtools.Update?action=edit
+ [1]: /vat-docs/applications/annotation/regions/genomic_super_dups/
+ [2]: /vat-docs/applications/annotation/regions/phast_cons/
+ [3]: /vat-docs/documentation/vtools_commands/update/

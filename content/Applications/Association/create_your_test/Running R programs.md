@@ -1,17 +1,16 @@
 
 +++
 title = "running R programs"
-description = ""
 weight = 1
 +++
 
 
 
-# A General Framework for Association Analysis Using R Programs 
+## A General Framework for Association Analysis Using R Programs 
 
 
 
-## Introduction
+### 1. Introduction
 
 A number of rare variant association methods as well as the flexible *VAT ensemble* algorithm makes it possible to conveniently evaluate variant associations via different statistical options. In addition to the existing association testing framework, `variant association tools` can talk to [R][1] via customized R programs prepared by users. Under this mechanism, users write up an R function that analyzes data of an association testing unit (e.g., gene) and specify the output statistic that passes into VAT to create formatted text file or annotation databases. Input association data comes directly from the project database, cleaned and annotated. Users can thus focus on customizing the association analysis without having to worry about file format conversions, quality control and annotations. Multiprocessing and auto results annotation features are also supported to guarantee efficient computation and neat output. This general R interface is not only suitable for evaluating novel statistical tests for method development projects, but also good for highly customized analysis of real world data with simple R scripts. 
 
@@ -19,9 +18,9 @@ The mechanism is implemented as `RTest` method which is available from `vtools a
 
 
 
-## Details
+### 2. Details
 
-### Interface
+#### 2.1 Interface
 
     vtools show test RTest
     
@@ -50,26 +49,25 @@ The mechanism is implemented as `RTest` method which is available from `vtools a
 
 A trivial example of the R script looks like the following 
 
-(:codestart r</summary> 
 
-1.  BEGINCONF 
-2.  [sample.size] 
-3.  [result] 
-4.  n=2 
-5.  columns=2 
-6.  name=beta0, beta1 
-7.  column_name=estimate, p.value 
-8.  ENDCONF 
+    1.  BEGINCONF 
+    2.  [sample.size] 
+    3.  [result] 
+    4.  n=2 
+    5.  columns=2 
+    6.  name=beta0, beta1 
+    7.  column_name=estimate, p.value 
+    8.  ENDCONF 
 
-regression = function (dat, phenotype.name, family = "gaussian") { 
+    regression = function (dat, phenotype.name, family = "gaussian") { 
 
-    y = dat@Y[, phenotype.name]
-      x = apply(dat@X, 1, function(i) sum(i, na.rm=T))
-      m = glm(y~x,family=family)
-      return (list(sample.size=length(y), result=summary(m)$coef[,c(1,4)]))
-    
+        y = dat@Y[, phenotype.name]
+          x = apply(dat@X, 1, function(i) sum(i, na.rm=T))
+          m = glm(y~x,family=family)
+          return (list(sample.size=length(y), result=summary(m)$coef[,c(1,4)]))
 
-} (:codeend</summary> 
+
+    } 
 
 To use this program for data analysis, 
 
@@ -83,13 +81,13 @@ To use this program for data analysis,
 
 
 
-### Format
+#### 2.2 Format
 
 You should have one main function in the R program named the same as the R script file name. This is the interface function that interacts with the `RTest` command, taking input parameters from command line and return output in specified format (see below for details) that can be recognized by `RTest` and be stored in databases. This main function can call any other R objects as long as they are available from R or implemented elsewhere in your R program. 
 
 
 
-#### Input parameters
+##### Input parameters
 
 The main function should be defined in the following format 
 
@@ -99,7 +97,7 @@ where the first argument has to be the data object variable name (e.g. `dat` in 
 
 
 
-#### Output configuration
+##### Output configuration
 
 The return object of the main R function should be a list with the properties of each element in the list been pre-specified as comment strings at the beginning of the scripts taking the following format 
 
@@ -138,7 +136,7 @@ It is important that the return R object matches the descriptions in the configu
 
 
 
-#### Data structure
+##### Data structure
 
 Data from `vtools associate` are passed into the main R function taking a variable name defined by the first argument of the function. For example if the first argument name is `dat` then you should manipulate the R variable `dat` in your R program. The `dat` object contains 3 default attributes and two optional attributes. 
 
@@ -159,13 +157,13 @@ Optional attributes
 
 
 
-### Cautions
+#### 2.3 Cautions
 
 This R interfacing mechanism is flexible, and fragile at the same time, because the `RTest` method of `vtools associate` will have no control over what are implemented inside the R program. It assumes the R program the users provide is flawless and can result in exactly the same output as specified in the configuration area. If any errors occurs in the program, `RTest` will not attempt to fix it. It instead will simply flag an association test as "failed". If you run an genome-wide association scan with your R program via `RTest` method and noticed all tests failed, its most likely your R program is problematic. 
 
 
 
-#### Debug suggestions
+##### Debug suggestions
 
 *   All error messages will be written to the project log file for you to look into. Take a look at the log file to figure out why failures occur and fix your R code. 
 *   A more advance option is to write out one or two groups of data with the R code to test interactively in R to see what's going wrong. The `--data_cache N` option will output N R scripts per thread with data-set coded in it, to `cache` folder. The file name will be `[Association Group Name].dat.R`. For debug purpose you can add `--data_cache 1` to the association command and run the command on a small variant table, find the R data file in `cache`, load it in R and play with the data-set to make sure your R function works, then remove the `--data_cache` option to actually perform association scans. 
@@ -174,14 +172,14 @@ This R interfacing mechanism is flexible, and fragile at the same time, because 
 
 
 
-## Example
+### 3. Example
 
 We provide some R interface examples for `RTest` method as extensions to the standard routines `vtools associate` provides. These examples are meant to be demonstrations for `RTest` method and are not thoroughly tested for use in a production environment. You are welcome to engineer them to better shape and use for your projects. We and other uses would appreciate it if you are willing to share your R program to the developers mailinglist (varianttools-devel@lists.sourceforge.net) and allow us to publish on this website for others to use. 
 
 
 
-*   [`MetaSKAT` analysis][2][?][2], contributed by Gao Wang (varianttools-devel) and Raphael Mourad (University of Chicago) 
+*   [`MetaSKAT` analysis][2], contributed by Gao Wang (varianttools-devel) and Raphael Mourad (University of Chicago) 
 *   The `RAssociation` package
 
  [1]: http://cran.r-project.org/
- [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.RMetaSKAT?action=edit
+ [2]: /vat-docs/applications/association/create_your_test/rtest/

@@ -1,11 +1,10 @@
 +++
 title = "transmission"
-description = ""
 weight = 3
 +++
 
 
-# Identification of recessive and de novo variants for family-based design 
+## Identification of recessive and de novo variants for family-based design 
 
 
 This pipeline is an extension to command `vtools_report transmission`, the differences are 
@@ -18,7 +17,7 @@ This pipeline is an extension to command `vtools_report transmission`, the diffe
 
 
 
-## Usage
+### 1. Usage
 
     % vtools show pipeline transmission
     
@@ -94,9 +93,9 @@ This pipeline is an extension to command `vtools_report transmission`, the diffe
 
 
 
-## Details
+### 2. Details
 
-### Identification of de novo variants in a family with affected offspring
+#### 2.1 Identification of de novo variants in a family with affected offspring
 
 This pipeline executes a series of vtools commands to identify de novo variants in a family with affected offsprng, unaffected parents, and an optional unaffected sibling. 
 
@@ -157,17 +156,17 @@ produces a log file
 
 
 
-### Identification of recessive variants in a family with affected offspring
+#### 2.2 Identification of recessive variants in a family with affected offspring
 
 This pipeline works similarly to the `denovo` pipeline (with the same input, output and other options), but tried to identify variants that are recessive in the affected offspring, heterozygous in parents, and wildtype or heterozygous in the unaffected sibling, if available. 
 
 
-
+{{% notice tip %}}
 Variants on sex chromosomes are handled in the same way as variants on autosomes. There must be some genotyping error if you observe recessive variants on chromosome Y. If you observe recessive variants on chromosome X, it means the variant is heterozygous for mother, and exists in father. 
+{{% /notice %}}
 
 
-
-### What is next?
+#### 2.3 What is next?
 
 The pipelines identify recessive or de novo variants and create a bunch of tables. You usually should filter the list more using combination of memberships, quality scores, and other information. For example, if you are looking for novel variants that are not in 1000 genomes, in exon regions, with high conservation score, not in genomic duplication regions, you can select the variants using command 
 

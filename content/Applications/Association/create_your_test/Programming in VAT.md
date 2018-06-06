@@ -1,15 +1,14 @@
 
 +++
 title = "programming in VAT"
-description = ""
 weight = 2
 +++
 
 
 
-# Identify genotype - phenotype association 
+## Identify genotype - phenotype association 
 
-## Usage
+### 1. Usage
 
     % vtools associate -h
     
@@ -118,8 +117,8 @@ weight = 2
 
 
 
-## Details
+### 2. Details
 
-Please check [the VAT homepage][1][?][1] for details.
+Please check [the VAT homepage][1] for details.
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.HomePage?action=edit
+ [1]: /vat-docs/applications/association/

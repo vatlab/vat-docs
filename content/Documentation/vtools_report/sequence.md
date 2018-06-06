@@ -1,17 +1,16 @@
 
 +++
 title = "sequence"
-description = ""
 weight = 4
 +++
 
 
 
-# Output DNA and protein sequence at specified chromosome regions
+## Output DNA and protein sequence at specified chromosome regions
 
 
 
-## Usage
+### 1. Usage
 
     % vtools_report sequence -h
     
@@ -99,9 +98,9 @@ weight = 4
 
 
 
-## Details
+### 2.Details
 
-### Output DNA sequence at specified regions
+#### 2.1 Output DNA sequence at specified regions
 
     % vtools init test
     % vtools_report sequence chr6:123456-123743 --build hg19
@@ -182,7 +181,7 @@ The default value for parameter `--numbered` is `left`. You can also put the num
 
 
 
-### Specify regions by gene and other names
+#### 2.2 Specify regions by gene and other names
 
 The regions could also be specified using `field_name:value` of a linked annotation database. For example, if you have used annotation database `refGene_exon` in your project, you could list the sequence of all exons in a gene using command 
 
@@ -309,7 +308,7 @@ Here you can see that from the 5' to 3', each intron starts with `CT` and ends w
 
 
 
-### Output RNA sequences of genes overlap with the specified region
+#### 2.3 Output RNA sequences of genes overlap with the specified region
 
 The `vtools_report sequence` command can also be used to output mRNA sequences of genes that overlap with the specified regions. Because mRNA consists pieces of regions (coding sequences in exons) and only complete mRNA sequence could be translated, this option outputs complete RNA sequence of the genes (isoforms, as in field `refGene.name`). The coding regions will be listed after the sequence name. 
 
@@ -345,7 +344,7 @@ For example, you can print output the RNA sequence of gene `ABRA` using command
 
 
 
-### Output protein sequences of genes overlap with the specified region
+#### 2.4 Output protein sequences of genes overlap with the specified region
 
 The `vtools_report sequence` command can also be used to output protein sequences of genes that overlap with the specified regions. Because mRNA consists pieces of regions (coding sequences in exons) and only complete mRNA sequence could be translated, this option outputs complete protein sequence of the genes (isoforms, as in field `refGene.name`). The coding regions will be listed after the sequence name. 
 
@@ -423,7 +422,7 @@ A gene can have multiple isoforms. The `--translate` option will print out prote
 
 
 
-### Mark a location, regions, variant, or a sequence
+#### 2.5 Mark a location, regions, variant, or a sequence
 
 The output of command `vtools_report sequence` can be long and it could be difficult for you to locate a particular location or region that is of interest. If this is the case, you can use option `--mark` to mark them in the output. 
 

@@ -1,22 +1,21 @@
 
 +++
 title = "avg_depth"
-description = ""
 weight = 1
 +++
 
 
-# Average depth of coverage Ratio
+## Average depth of coverage Ratio
 
 
 
-## About ``vtools_report avg_depth ``
+### 1. About ``vtools_report avg_depth ``
 
 This command report average depth of all variants, or variants divided by sample allele count. 
 
 
 
-## Usage
+### 2. Usage
 
     % vtools_report avg_depth -h
     
@@ -62,7 +61,7 @@ This command report average depth of all variants, or variants divided by sample
 
 
 
-## Example
+### 3. Example
 
     % vtools_report avg_depth variant -n num -d depth
     

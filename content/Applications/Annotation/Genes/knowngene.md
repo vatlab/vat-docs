@@ -1,17 +1,16 @@
 
 +++
 title = "knownGene"
-description = ""
 weight = 4
 +++
 
-
+## Known Gene
 
 The knownGene database is based on the UCSC Genome Browser knownGene track. knownGene shows gene predictions based on data from RefSeq, Genbank, CCDS and UniProt. If you would like to annotate your variants to these genes, you can use the simpler **knownGene** database. If you would like to determine the exons that your variants are in, use the **knownGene_exon** database. See the available annotation fields for each database below. 
 
 
 
-## knownGene
+### 1. knownGene
 
     % vtools show annotation knownGene -v2
     
@@ -79,7 +78,7 @@ The knownGene database is based on the UCSC Genome Browser knownGene track. know
 
 
 
-## knownGene_exon
+### 2. knownGene_exon
 
     % vtools show annotation knowGene_exon -v2
     

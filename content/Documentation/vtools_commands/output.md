@@ -410,7 +410,7 @@ These two databases bring in a large number of annotation fields, as listed by c
     dbSNP.RSPOS (int)       Chr position reported in dbSNP
     dbSNP.RV (int)          RS orientation is reversed
     dbSNP.VP (char)         Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
-    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
+    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (</summary>and each pair is delimited by a vertical bar (|)
     dbSNP.dbSNPBuildID (int)
                             First dbSNP Build for RS
     dbSNP.SAO (int)         Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both

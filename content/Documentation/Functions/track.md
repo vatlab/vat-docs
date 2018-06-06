@@ -1,14 +1,13 @@
 +++
 title = "track"
-description = ""
 weight = 3
 +++
 
 
-# Extract annotation from external files
+## Extract annotation from external files
 
 
-## Usage
+### 1. Usage
 
 Function `track(filename, field)` returns annotation information at column `col` (optional) in file `filename`, at position (`chr`, `pos` at primary or alternative reference genome) of each variant. For example, function 
 
@@ -18,8 +17,9 @@ Function `track(filename, field)` returns annotation information at column `col`
     
 
 
-
+{{% notice tip %}}
 single quote (`'`) should be used for string literals in SQL functions. Double quote (`"`) should be avoided although it sometimes works. 
+{{% /notice%}}
 
 output the "info" column of file `1000g.vcf.gz`, for variants at location `chr` and `pos`. 
 
@@ -36,9 +36,9 @@ The allowed and default values of the second option `field` vary for different f
 
 
 
-## Details
+### 2. Details
 
-### Display information about tracks
+#### 2.1 Display information about tracks
 
 Before you use each track, it is important to run command 
 
@@ -50,17 +50,27 @@ Before you use each track, it is important to run command
 to get the detailed information about the track file, and the available fields and their types. 
 
 
+{{% notice tip%}}
+As a shortcut to enter `track` function for multiple files, you can use wildcast characters in the first parameter (`filename`) of the `track` function. This will result in multiple `track()` function calls for each matching filename. For example, if you have `A01.BAM` and `A02.BAM` in the current directory, function `track('A*.BAM', 'calls')` is equivalent to `track('A01.BAM', 'calls') track('A02.BAM', 'calls')`. 
+{{% /notice%}}
 
-1.  As a shortcut to enter `track` function for multiple files, you can use wildcast characters in the first parameter (`filename`) of the `track` function. This will result in multiple `track()` function calls for each matching filename. For example, if you have `A01.BAM` and `A02.BAM` in the current directory, function `track('A*.BAM', 'calls')` is equivalent to `track('A01.BAM', 'calls') track('A02.BAM', 'calls')`. 
-2.  The return values of the returned field will be numeric if the column contains numeric data (e.g. flag, score, position). **Only the first record will be returned if a variant matches multiple records in the track file**. If an option `all=1` is passed to field (e.g. `track('my.bam', 'info?all=1')`), the `track` function will output all matching records as string, separated by a delimiter `|`. 
-3.  This function automatically chooses correct chromosome name (adding `chr` to chromosome name if needed), and position (adjust to 0-based position if needed) to match records in the track file. 
-4.  The return values are not adjusted. That is to say, columns such as `pos` will be 0-based for 0-based track files (e.g. bigBed files), and 1-based for 1-based track files (e.g. vcf). 
+{{% notice tip%}}
+The return values of the returned field will be numeric if the column contains numeric data (e.g. flag, score, position). **Only the first record will be returned if a variant matches multiple records in the track file**. If an option `all=1` is passed to field (e.g. `track('my.bam', 'info?all=1')`), the `track` function will output all matching records as string, separated by a delimiter `|`. 
+{{% /notice%}}
+
+{{% notice tip%}}
+This function automatically chooses correct chromosome name (adding `chr` to chromosome name if needed), and position (adjust to 0-based position if needed) to match records in the track file.
+{{% /notice%}}
+
+{{% notice tip%}}
+The return values are not adjusted. That is to say, columns such as `pos` will be 0-based for 0-based track files (e.g. bigBed files), and 1-based for 1-based track files (e.g. vcf). 
+{{% /notice%}}
 
 Please refer to [here][3] for more details of command vtools show, especially a brief description of the BAM header. 
 
  
 
-### Tabixed vcf tracks
+#### 2.2 Tabixed vcf tracks
 
 VCF files that can be used as tracks must be bgzipped and tabix-indexed. Regular vcf files can be converted to this format using commands `bgzip my.vcf` and `tabix -p vcf my.vcf.gz`. Parameter `col` for this format can be `1` (chrom), `2` (start, 1-based), `3` (name), `4` (ref), `5` (alt alleles), `6` (qual), `7` (filter), `8` (info), `9` (format string), `10` and more (for genotype columns for sample `col-9`); names of the columns `"chrom"`, `"pos"`, `"name"`, `"ref"`, `"alt"`, `"qual"`, `"filter"`, `"info"`, `"format"`; name of information fields available in the vcf file in the format of `info.FIELD`; name of samples for genotype columns, and name of genotype info fields in the format of `SAMPLE.FIELD`. If no `col` is specified, a default value `8` is passed to display the full `INFO` column of the vcf file. 
 
@@ -248,12 +258,12 @@ To pass the correct coordinates, option `--build hg19` is needed:
 </details>
 
 
-
+{{% notice tip %}}
 Available variant and genotype info fields are determined from the header of input vcf file. Columns such as `info.AA` is unacceptable if `AA` is not defined in the header. 
-
+{{% /notice %}}
  
 
-### bigWig tracks 
+#### 2.3 bigWig tracks 
 
 The bigWig tracks contains numeric values for locations (ranges). The default `col` value for this format is `4` (the value column), but you can specify `1` (chrom), `2` (start, 0-based), `3` (end, 1-based), `4` (value), and `"chrom"`, `"chromStart"`, `"chromEnd"`, and `"value"`. 
 
@@ -355,7 +365,7 @@ In addition to output, the track can also be used to select variants,
 
  
 
-### bigBed tracks 
+#### 2.4 bigBed tracks 
 
 BigBed is a compressed indexed BED format that contains three mandatory columns and nine optional columns. The default `col` value for this format is `` (return 1 for matched records), but you can be specify items such as `1` (chrom) and `chromStart` (start, 0-based) according to output of command `vtools show track BIGBEDFILE`. 
 
@@ -486,13 +496,14 @@ and
 
  
 
-### Indexed BAM tracks 
+#### 2.5 Indexed BAM tracks 
 
 Tracks in BAM format provides information regarding aligments, namely the reads that cover the starting position of each variant. If the variant is called from the provided BAM file, the BAM track provides information regarding the reads from which variants are called. 
 
 
-
+{{% notice tip%}}
 *variant tools* currently only use the starting location of variants so it ignores reads that overlap but do not cover the starting position of a variant (e.g. an insertion). 
+{{% /notice %}}
 
 A BAM track accepts the following fields, 
 
@@ -516,8 +527,9 @@ Parameters can be used to limit the reads to count or display, and change the wa
 7.  `show_seq=[1|0]`: A `.` is used by default when the nucleotide matches the reference genome at the location. The actual nucleotide sequence will be displayed if this option is set to `1`. 
 
 
-
+{{% notice tip%}}
 You can count the number of reads that match (or unmatch) the reference genome using parameter `coverage`type=0@@. 
+{{% /notice %}}
 
 <details><summary> Examples: Use BAM files to check the details of variant calls. </summary> Now suppose that we have a project with a list of variants (due to the size of BAM files, original data is not provided), we select the variants based on the sample from which they are called: 
 
@@ -784,6 +796,7 @@ Parameters `start` and `width` can be used to specify the window of sequences to
 
 Parameter `color=1` will make the insertion displayed in green, and nucleotide at variant site displayed in blue on terminal. Parameter `show_seq` displays real sequence instead of `.` for matched nucleotides. 
 
+
 You can also specify the types of reads so that you can count or display just a subsets of reads. For example, you can display all reads on the forward strand 
 
 
@@ -865,8 +878,9 @@ The last two functions are interesting as it shows the number of reads on forwar
 </details>
 
 
-
+{{% notice tip%}}
 An option `color=1` can be used with the `read` field to display insertions and variant allele in color (green and blue respectively). This is very helpful if you have long reads and reads that contain indels. 
+{{% /notice %}}
 
 Online BAM tracks can also be used so you do not have to download large BAM files in order to use them. 
 
@@ -883,8 +897,8 @@ Online BAM tracks can also be used so you do not have to download large BAM file
     1	44539	12
     
 
-(:exampleend</summary>
+</details>
 
  [1]: http://genome.ucsc.edu/goldenPath/help/bigWig.html
  [2]: http://genome.ucsc.edu/goldenPath/help/bigBed.html
- [3]: http://varianttools.sourceforge.net/Vtools/Show#toc10
+ [3]: /vat-docs/documentation/vtools_commands/show/

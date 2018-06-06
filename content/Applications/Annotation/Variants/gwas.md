@@ -1,15 +1,16 @@
 
 +++
 title = "gwasCatalog"
-description = ""
 weight = 7
 +++
+
+## Gwas Catalog
 
 The gwasCatalog is NHGRI's collection of Genome-Wide Association (GWA) Studies SNPs. We downloaded the data for this annotation source from the UCSC Genome Browser database (<http://genome.ucsc.edu/cgi-bin/hgTables?command=start>). You can use this annotation source as a position, range or field-based annotation source. Examples for usage as a range-based and field-based annotation source are given on this page. (By default the usage for this annotation source is a position-based annotation source). 
 
 
 
-## Usage 
+### 1. Usage 
 
 Here are the available gwasCatalog fields for annotation and filtering. 
 
@@ -160,9 +161,9 @@ Here are the available gwasCatalog fields for annotation and filtering.
 
 
 
-## Details
+### 2. Details
 
-### gwasCatalog: usage as a position-based annotation source (default)
+#### 2.1 gwasCatalog: usage as a position-based annotation source (default)
 
 To check if your variants contain any gwas hits, you can 
 
@@ -176,7 +177,7 @@ However, because GWA studies use tagging SNPs to identify associated (hopefully)
 
 
 
-### gwasCatalog: usage as a range-based annotation source
+#### 2.2 gwasCatalog: usage as a range-based annotation source
 
 The most flexible way to use this annotation source is to link your variants to GWA hits with a position range. The following links your variant positions to GWA hits using variant chromosomal locations that are +/- 5000bp within the GWA hit. 
 
@@ -226,7 +227,7 @@ Then you can generate a useful report showing what known gwas hits are near your
 
 
 
-### gwasCatalog: usage as a field-based annotation source
+#### 2.3 gwasCatalog: usage as a field-based annotation source
 
 In this usage, you can annotate your variants with published GWA hits that are in the same cytoband as your project variants. You can link your variants to the cytoBand annotation source and then annotate your variant cytoBands to published GWA hits 
 

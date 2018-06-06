@@ -4,6 +4,7 @@ title = "cytoBand"
 weight = 4
 +++
 
+## Cyto Band
 
 cytoBand defines cytogenic bands. This annotation source gives the approximate location of these bands as seen on Giemsa-stained chromosomes. This data was downloaded from the UCSC Genome Browser database (<http://genome.ucsc.edu/cgi-bin/hgTables>). 
 

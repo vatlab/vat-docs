@@ -1,6 +1,5 @@
 +++
 title = "compare"
-description = ""
 weight = 10
 +++
 
@@ -354,7 +353,7 @@ For example, suppose the master variant table `variant` has the following 4 vari
 
 
 | **variant** | **genotypes** |
-||
+|---|-----|
 | **chr**     | **pos**       | **ref** | **alt** | **GT** of SAMP1 | **GT** of SAMP2 |
 | 1           | 31705         | A       | G       | 2               | .               |
 | 1           | 50195         | T       | C       | .               | .               |
@@ -615,7 +614,7 @@ Here we redirect all progress bar etc from stderr to /dev/null to check only the
 
 
 | **site** |         | **tables** |
-||
+|----|------|
 | **chr**  | **pos** | **ref**    | **alt** | T1 | T2 |
 | 1        | 31705   | A          | G       | ✓  | ✓  |
 | 1        | 50195   | T          | C       | ✓  |    |

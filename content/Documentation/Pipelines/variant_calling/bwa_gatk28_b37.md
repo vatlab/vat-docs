@@ -1,13 +1,12 @@
 
 +++
 title = "bwa_gatk28_b37"
-description = ""
 weight = 4
 +++
 
 
-# Calling variants using BWA and GATK best practice pipeline (b37)
+## Calling variants using BWA and GATK best practice pipeline (b37)
 
-This pipeline is identical to [bwa\_gatk28\_hg19][1][?][1] except that it uses the `b37` reference genome.
+This pipeline is identical to [bwa\_gatk28\_hg19][1] except that it uses the `b37` reference genome.
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.BwaGatk28Hg19?action=edit
+ [1]:/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/

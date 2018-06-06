@@ -1,13 +1,12 @@
 
 +++
 title = "database"
-description = ""
 weight = 5
 +++
 
-s
 
-# Database of Genomic Variants
+
+## Database of Genomic Variants
 
 
 Database of genomic variants is a curated catalogue of human genomic structural variation. It is a range-based database that shows the range of such variants. 

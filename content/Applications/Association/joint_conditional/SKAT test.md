@@ -1,19 +1,18 @@
 
 +++
 title = "SKAT test"
-description = ""
 weight = 5
 +++
 
 
-# SNP-set (Sequence) Kernel Association Test Method 
+## SNP-set (Sequence) Kernel Association Test Method 
 
 
-## Introduction
+### 1. Introduction
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     vtools show test SKAT
     
@@ -99,7 +98,7 @@ weight = 5
 
 
 
-### Application
+#### 2.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
@@ -153,4 +152,4 @@ weight = 5
     ABL2	3180	794.385	0.963097
     
 
-(:exampleend</summary>
+</details>

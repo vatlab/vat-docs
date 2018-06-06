@@ -4,16 +4,17 @@ title = "PhastCons"
 weight = 2
 +++
 
+## Phast Cons
 
 The phastCons database annotates blocks of the genome with conservation scores using the phastCons algorithm (<http://compgen.bscb.cornell.edu/phast/help-pages/phastCons.txt>). The data that we are using was downloaded from the UCSC genome browser's phastCons46way track that contains conservation data for vertebrates. 
 
 
-
+{{% notice tip%}}
 PhastConsElements represents the most conserved regions so it covers a significantly percent of genome than the PhastCons database. 
+{{%/notice%}}
 
 
-
-## PhastConsElements
+### 1. PhastConsElements
 
     vtools show annotation PhastConsElements
     
@@ -59,7 +60,7 @@ PhastConsElements represents the most conserved regions so it covers a significa
 
 
 
-## phastCons
+### 2. phastCons
 
 The following example shows how you can use phastCons to annotate your variants with the average conservation score for the genomic block containing your variant. **phastCons.sum_data/phastCons.count** would give you this average score - see below to interpret these fields. This value could then be used to rank or filter your variants baed on the conservation score. 
 

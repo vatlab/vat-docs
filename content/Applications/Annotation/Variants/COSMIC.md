@@ -1,13 +1,12 @@
 
 +++
 title = "COSMIC"
-description = ""
 weight = 1
 +++
 
 
 
-# Catalogue of Somatic Mutations in Cancer
+## Catalogue of Somatic Mutations in Cancer
 
 
 COSMIC (Catalogue of Somatic Mutations in Cancer) is a data resource that is designed to store and display somatic mutation information and related details and contains information relating to human cancers. Data in COSMIC is curated from known Cancer Genes Literature and Systematic Screens. COSMIC data is freely downloadable in many formats on the project's FTP site: <ftp://ftp.sanger.ac.uk/pub/CGP/cosmic>. 

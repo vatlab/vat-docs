@@ -2,16 +2,15 @@
 
 +++
 title = "Tutorial"
-description = ""
-weight = 2
+weight = 1
 +++
 
 
-# Annotating variants using multiple annotation databases, a tutorial 
+## Annotating variants using multiple annotation databases, a tutorial 
 
 
 
-## Getting annotation databases
+### 1. Getting annotation databases
 
 This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory `~/.variant_tools` when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases. If you do no want to wait for the downloads and if you have enough disk space, you can download all variant tools resources into your local resource directory using the following commands: 
 
@@ -26,7 +25,7 @@ The amount of data to download is 29G as of October 2012, and is expected to gro
 
 
 
-## Download a snapshot project with some variants
+### 2. Download a snapshot project with some variants
 
 Let us create a project and download a snapshot project called `vt_quickStartGuide`. 
 
@@ -73,9 +72,9 @@ This project has variants from CEU and JPT populations of the 1000 genomes pilot
 
 
 
-## Annotating variants
+### 3. Annotating variants
 
-### Listing available annotation databases
+#### 3.1 Listing available annotation databases
 
 These are available annotation databases (as of October 2012) that can be downloaded and used automatically to annotate variants within a *variant tools* project. You can use the following command to list currently available databases. 
 
@@ -126,7 +125,7 @@ These are available annotation databases (as of October 2012) that can be downlo
 
 
 
-### How do I add an annotation database to my project?
+#### 3.2 How do I add an annotation database to my project?
 
 To add a gene-based annotation source such as **ccdsGene** to your project, the following command will accomplish this. If you haven't already downloaded this annotation database with this or another project, vtools will automatically download the database and associate **ccdsGene** annotations to your project. 
 
@@ -137,13 +136,13 @@ To add a gene-based annotation source such as **ccdsGene** to your project, the 
 
 
 
-### What genes do my variants belong to?
+#### 3.3 What genes do my variants belong to?
 
 There are several annotation sources that could be used to annotate your variants to gene transcripts. Some examples include **refGene**, **knownGene** and **ccdsGene**. To get more details of these databases use `vtools show annotation ccdsGene -v2` (or a similar command with refGene or knownGene) as described previously. This command downloads the **ccdsGene** data source allowing variants to be annotated to transcripts. 
 
 
 
-### What about the exon?
+#### 3.4 What about the exon?
 
 Gene-based annotation sources such as **ccdsGene**, **refGene** and **knownGene** have corresponding annotation sources that are exon-based: **ccdsGene_exon**, **refGene_exon** and **knownGene_exon** respectively (provided indirectly through the UCSC Genome Browser database). These exon-based annotation sources contain exon start and end coordinates that are used in lieu of gene start and end coordinates for linking the annotations to your variants. 
 
@@ -154,7 +153,7 @@ Gene-based annotation sources such as **ccdsGene**, **refGene** and **knownGene*
 
 
 
-### What pathways do my variants belong to? 
+#### 3.5 What pathways do my variants belong to? 
 
 This command downloads the **keggPathway** annotation source allowing variants to be annotated to KEGG pathways indirectly through transcript annotations (provided by the **ccdsGene** annotation source). 
 

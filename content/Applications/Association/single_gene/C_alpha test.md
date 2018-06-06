@@ -1,29 +1,26 @@
 
 +++
 title = "C-alpha test"
-description = ""
-weight = 3
+weight = 2
 +++
 
 
 
 
-# C-alpha Test for Protective Variants 
+## C-alpha Test for Protective Variants 
 
 
+### 1. Introduction
 
-
-## Introduction
-
-This implements the {$C(\alpha)$} test (Neale et al 2011[^Benjamin M. Neale, Manuel A. Rivas, Benjamin F. Voight, David Altshuler, Bernie Devlin, Marju Orho-Melander, Sekar Kathiresan, Shaun M. Purcell, Kathryn Roeder and Mark J. Daly (2011) **Testing for an Unusual Distribution of Rare Variants**. *PLoS Genetics* doi:`10.1371/journal.pgen.1001322`. <http://dx.plos.org/10.1371/journal.pgen.1001322>^]) for disease traits, to test for the hypothesis of rare variants disease association under the particular assumption that rare variants observed in cases and controls is a mixture of phenotypically deleterious, protective and neutral variants. Instead of using a cumulative dosage (or "burden") based summary statistic over a gene region, it directly contrasts the observed and expected distribution of minor alleles in cases and controls at each locus as an evidence of "unusual distribution", and combine evidences from multiple loci (whether it be an evidence of protective or deleterious) to formulate the {$C(\alpha)$} statistic: {$$T=\sum\_{i=1}^m[(y\_i-n\_ip\_0)^2-n\_ip\_0(1-p_0)]$$} 
+This implements the {$C(\alpha)$} test (Neale et al 2011) for disease traits, to test for the hypothesis of rare variants disease association under the particular assumption that rare variants observed in cases and controls is a mixture of phenotypically deleterious, protective and neutral variants. Instead of using a cumulative dosage (or "burden") based summary statistic over a gene region, it directly contrasts the observed and expected distribution of minor alleles in cases and controls at each locus as an evidence of "unusual distribution", and combine evidences from multiple loci (whether it be an evidence of protective or deleterious) to formulate the {$C(\alpha)$} statistic: {$$T=\sum\_{i=1}^m[(y\_i-n\_ip\_0)^2-n\_ip\_0(1-p_0)]$$} 
 
 The original paper evaluates p-value of the test under large sample normal assumption, which usually would not hold for the real world data. Implementation in this program also allows permutation based {$C(\alpha)$} test, if parameter `-p/--permutations` is set greater than 0. 
 
 
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     vtools show test Calpha
     
@@ -78,7 +75,7 @@ The original paper evaluates p-value of the test under large sample normal assum
 
 
 
-### Application
+#### 2.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
@@ -135,4 +132,6 @@ The original paper evaluates p-value of the test under large sample normal assum
 
 </details>
 
-[^#^]
+### Reference
+
+Benjamin M. Neale, Manuel A. Rivas, Benjamin F. Voight, David Altshuler, Bernie Devlin, Marju Orho-Melander, Sekar Kathiresan, Shaun M. Purcell, Kathryn Roeder and Mark J. Daly (2011) **Testing for an Unusual Distribution of Rare Variants**. *PLoS Genetics* doi:`10.1371/journal.pgen.1001322`. <http://dx.plos.org/10.1371/journal.pgen.1001322>

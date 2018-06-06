@@ -1,5 +1,4 @@
 +++
-title = "Basic data statistics"
-description = ""
+title = "Basic statistics"
 weight = 5
 +++

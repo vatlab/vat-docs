@@ -1,25 +1,24 @@
 
 +++
-title = "MetaSKAT analysis"
-description = ""
+title = "MetaSKAT"
 weight = 6
 +++
 
 
-# Association Analysis with the Meta SKAT R Program 
+## Association Analysis with the Meta SKAT R Program 
 
 
 The R extension for `RTest` is available [HERE][1]. For details on the format of this script please refer to the [`RTest` method documentation][2]. 
 
 
 
-## Example
+### 1. Example
 
 We analyze association with a binary trait named `X6` conditioning on 3 covariates `X8, X9, X10`. Group information is provided by `race`. For each testing group, data is first cleaned by removing samples missing greater than 50% calls, then by removing variants missing 50% calls. 
 
 
 
-#### Basic command
+#### 1.1 Basic command
 
 The following command uses the default parameter settings in the R script: 
 
@@ -63,7 +62,7 @@ Note that with such stringent cleaning criteria only 9 out of 131 groups are ana
 
 
 
-#### Use other parameters
+#### 1.2 Use other parameters
 
 From the way `MetaSKAT.VAT.R` is written we known `out_type` and `group_colname` are required. They have to be explicitly specified at all times. Other parameters have default values, which can be altered by passing them like, for example: 
 
@@ -71,9 +70,6 @@ From the way `MetaSKAT.VAT.R` is written we known `out_type` and `group_colname`
 
     ... -m "RTest ~/MetaSKAT.VAT.R --name MetaSKAT \
        --out_type 'D' --group_colname 'race' --pval.method 'davies' " ...
-    
-
-[^#^]
 
  [1]: http://vtools.houstonbioinformatics.org/programs/RTest/MetaSKAT.VAT.R
- [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.RTest?action=edit
+ [2]: /vat-docs/applications/association/create_your_test/running-r-programs/

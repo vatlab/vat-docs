@@ -1,17 +1,16 @@
 
 +++
 title = "Illumina"
-description = ""
 weight = 1
 +++
 
-
+## Illumina
 
 Expanded exome regions of Nextera Rapid Capture Exome and Expanded Exome Enrichment Kits from Illumina. 
 
 
 
-## Usage
+### Usage
 
     % vtools show annotation Illumina_NRCE
     

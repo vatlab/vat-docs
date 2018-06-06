@@ -1,5 +1,4 @@
 +++
-title = "Single variant analysis"
-description = ""
+title = "Single variant"
 weight = 6
 +++

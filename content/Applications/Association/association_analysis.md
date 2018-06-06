@@ -1,26 +1,25 @@
 
 +++
 title = "Association analysis"
-description = ""
 weight = 3
 +++
 
 
 
 
-# Association Analysis 
+## Association Analysis 
 
 
 
-## Statistical Tests for Genotype/phenotype Associations
+### 1. Statistical Tests for Genotype/phenotype Associations
 
-### The `VAT` association command
+#### 1.1 The `VAT` association command
 
 We will introduce the basic usage of this command without diving into each association test. For a complete demonstration of all the tests please refer to the documentation for `VAT` (on the sidebar of this webpage). 
 
 
 
-### Getting started
+#### 1.2 Getting started
 
 The general interface of `vtools associate` is as follows 
 
@@ -208,14 +207,15 @@ A basic association test requires the following input:
 *   number of CPU processors to be used for parallel computing 
 
 
-
+{{%notice warning%}}
 Missing values are not allowed in phenotype/covariates data. Samples having missing values in phenotype or any covariates will be removed and you will receive a warning message. If you want to retain samples having missing values in covariates we suggest you manually fill them with specified values (`vtools phenotype --set ... --samples ...`). For quantitative traits the value can be the sample mean, and for qualitative traits be the most likely category. 
+{{%/notice%}}
 
 In this tutorial we demonstrate basic association analysis of a disease phenotype and a quantitative phenotype (simulated traits `status` and `bmi`). We choose to include covariate phenotypes *gender* and *age* when we demonstrate the multivariate analysis. 
 
 
 
-#### Association analysis for common variants
+##### Association analysis for common variants
 
 For single variant analysis with disease trait: 
 
@@ -247,12 +247,12 @@ For single variant analysis with disease trait:
 we use a maximum of 100 million permutations per test, with an adaptive criteria {$p=5 \times 10^{-5}$}. It takes about 15 seconds to complete the analysis on 1711 groups analytically and about 15 minutes on the same data using permutation based p-value evaluations. 
 
 
-
+{{%notice tip%}}
 By setting `--name` (inside the `--method` option) to a different name `SNV_permute` it is possible to insert new results from permutation tests to the same database `SNV.DB` while keeping the results from the previous non-permutation based analysis intact. 
+{{%/notice %}}
 
 
-
-#### Association analysis for rare variants
+##### Association analysis for rare variants
 
 Instead of analyzing them individually, rare variants are usually grouped into association units and are analyzed by groups. For exome analysis association units are genes. The `--group_by/-g` option can be used to create flexible grouping themes for rare variant analysis from variant fields or annotation databases. For example the name2 field in the *refGene* database can be used to classify variants into genes for analysis: 
 
@@ -274,13 +274,13 @@ Permutation based analysis and other association methods (`vtools show tests` fo
 
 
 
-#### Resuming previously terminated analysis
+##### Resuming previously terminated analysis
 
 Exome-wide association scan typically consists of thousands of tests for gene-based analysis, and up to a million tests for single variant analysis. In many cases an association command may be interrupted before all tests are completed (e.g., commands terminated due to running out of reserved CPU time on clusters, etc). If you have used `--to_db` option in the previous command, then resuming the analysis is simple: just re-run the exact command that was interrupted. The program will skip the records that exist in the result database and only carry out the ones that are missing. If you want to start all over, you may apply a `--force` option to the association command so that the existing result database will be overwritten, regardless of the data it already contains. 
 
 
 
-#### Setting a *timeout* for permutation based association analysis
+##### Setting a *timeout* for permutation based association analysis
 
     Although with the "adaptive permutation" approach most permutation tests in an exome-wide a\
     ssociation scan would terminate early after a few thousand permutations, for scans involvin\
@@ -315,7 +315,7 @@ and re-run the association command with `--force` option so that the updated res
 
 
 
-#### Reset temporary data folder for association analysis
+##### Reset temporary data folder for association analysis
 
 We implemented a mechanism to optimally organize and access the genotype data for association testing. Temporary association databases will be generated on the fly and removed after the analysis is complete. By default these databases will be placed in the operating system's temp path (usually /tmp or /var/tmp on Unix-like system). We may need to specify a temporary folder for association testing that 1) has large disk space and 2) locates on a different physical harddrive than the original project database bundle. Using a small disk for the temporary data may cause program crash (in which case you will receive an error message complaining about disk space) or degraded performance (in which case you will receive a warning message). To reset the temp folder, use 
 
@@ -337,9 +337,9 @@ Two other runtime options `associate_num_of_readers` and `treat_missing_as_wildt
 
 
 
-### Viewing and Interpreting Association Results
+#### 1.3 Viewing and Interpreting Association Results
 
-#### View association analysis results
+##### View association analysis results
 
 (This feature is under development) 
 
@@ -376,7 +376,7 @@ This program generates graphs for {$p$} values, allowing for
 
 
 
-## Online Dataset Examples
+### 2. Online Dataset Examples
 
 You can use our snapshot for association `vt_ExomeAssociation` to test out the `VAT` association features. This is a non-trivial dataset of ~30k variants and ~3k samples with simulated phenotypes 
 

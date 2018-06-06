@@ -1,9 +1,10 @@
 
 +++
 title = "refGene"
-description = ""
 weight = 5
 +++
+
+## Ref Gene
 
 The RefGene database was created from the UCSC database. RefGene specifies known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq). If you would like to annotate your variants to genes, you can use the simpler **refGene** database. If you would like to determine the exons that your variants are in, use the **refGene_exon** database. See the available annotation fields for each database below. 
 
@@ -19,7 +20,7 @@ Although the majority of UCSC Known Genes (KG) are identical to RefSeq genes, th
 
 
 
-## refGene
+### 1. refGene
 
     % vtools show annotation refGene -v2
     
@@ -114,7 +115,7 @@ Although the majority of UCSC Known Genes (KG) are identical to RefSeq genes, th
 
 
 
-## refGene_exon
+### 2. refGene_exon
 
     % vtools show annotation refGene_exon -v2
     

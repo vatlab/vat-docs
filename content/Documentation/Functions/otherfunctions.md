@@ -1,15 +1,14 @@
 +++
 title = "other functions"
-description = ""
 weight = 7
 +++
 
 
-# Other customized SQL functions
+##  Other customized SQL functions
 
 
 
-## `vcf_variant`: Output variants in vcf format with padding alleles 
+### 1. `vcf_variant`: Output variants in vcf format with padding alleles 
 
 Function `vcf_variant(chr, pos, ref, alt, name=".")` returns a string that represent variants in vcf format. If the variant is a SNV, the output merely connects input by tab ('\t'). If the variant is an indel, it will pad reference (for insertion) or alternative (for deletion) allele with the allele before variant, adjust position, and generate an output that is acceptable by vcf. For example, if the variant is 
 
@@ -143,13 +142,13 @@ For variants with multiple entries in the `dbSNP` database, we can use option `-
 
  
 
-## `least_not_null`: a version of `min(x,y)` that ignores `NULL` 
+### 2. `least_not_null`: a version of `min(x,y)` that ignores `NULL` 
 
 This function is similar to `min(x,y,...)` but it ignores `NULL` values so `least(2, NULL, 4)` returns `2`. 
 
  
 
-## `HWE_exact`: exact Tests of Hardy-Weinberg Equilibrium 
+### 3. `HWE_exact`: exact Tests of Hardy-Weinberg Equilibrium 
 
 Special function `HWE_exact` implements a bi-allelic HWE exact test based on equation 2 of [this paper][1]. It requires 3 fields as input: 
 
@@ -191,7 +190,7 @@ Because of the small sample size, there are not many choices for p-values:
 
  
 
-## `Fisher_exact`: Fisher's exact test for case/ctrl associaiton 
+### 4. `Fisher_exact`: Fisher's exact test for case/ctrl associaiton 
 
 The function `Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_case, 2*num_gt_ctrl)` tests for association of an alternate allele with a phenotype (i.e., case or control) status. Given a variant site to be tested, the function takes in the following 4 parameters, that are obtainable through `vtools` functions: 
 
@@ -254,6 +253,6 @@ Again, there are not many possible p-values due to small sample size ...
     22	49534781	C	T	0.337597625574
     
 
-(:exampleend</summary>
+</details>
 
  [1]: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1199378/

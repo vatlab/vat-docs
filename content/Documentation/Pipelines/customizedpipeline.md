@@ -1,22 +1,20 @@
 
 +++
 title = "Customized"
-description = ""
-weight = 2
+weight = 1
 +++
 
 
 
+## Specification of a variant tools pipeline
 
 
-# Specification of a variant tools pipeline
+<font color = "red">
+This page describes the new pipeline format (version 1.1 and later). Please refer to [Format1_0][1] if you are editing a pipeline specification file for variant tools 2.7 and earlier.. 
+</font>
 
 
-This page describes the new pipeline format (version 1.1 and later). Please refer to [Format1_0][1][?][1] if you are editing a pipeline specification file for variant tools 2.7 and earlier.. 
-
-
-
-## Intxroduction
+### 1. Introduction
 
 *Variant Tools* uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator). You can use command 
 
@@ -134,53 +132,54 @@ This small example demonstrates almost all the features of pipeline specificatio
 
 
 
-
-
-*   A spec file should start with line 
+{{% notice info %}}
+A spec file should start with line 
 
     ##fileformat=PIPELINE1.1
-    
+{{% /notice %}}    
 
 
+{{% notice info %}}
+ Lines starts with `#` are comments. Some comments are significant and will be displayed in the output of `vtools show pipeline`. 
+ {{% /notice %}}
 
-*   Lines starts with `#` are comments. Some comments are significant and will be displayed in the output of `vtools show pipeline`. 
+{{% notice info %}}
+A pipeline spec file consists of a starting description section with no header, an optional `[DEFAULT]` section, and multiple pipeline step sections.
+{{% /notice %}}
 
-*   A pipeline spec file consists of a starting description section with no header, an optional `[DEFAULT]` section, and multiple pipeline step sections. 
-
-*   Values of an item can be expanded into multiple lines, e.g. 
-
-
+{{% notice info %}}
+Values of an item can be expanded into multiple lines, e.g. 
 
     name=this is a long text
       that continues to the second line
       or the third
+{{% /notice %}}
     
 
 
-
+{{% notice info%}}
 Consequently, **you can expand your comments or commands into several lines as long as you do not start from the first column**. An exception to this rule is when a large piece of text is quoted in triple quotes such as 
 
     ExecuteRScript('''
     data <- read.table("${input}")
     data <- data[1,]
     ''')
-    
-
-
 
 Note that `''' ... '''` literals are automatically translated to `r''' ... '''` so escape characters are not translated. Use `""" ... """` string literals if you would like to allow escape characters. 
+{{% /notice %}}   
+
+{{% notice info%}}
+You can use either `KEY = VALUE` or `KEY : VALUE`. The convention is to use `KEY = VALUE` for variable assignment and `KEY : VALUE` for all other. 
+{{% /notice %}}  
+
+{{% notice info%}}
+Pattern `${ }` are specially handled as pipeline variables. `;` and `%` are not special characters as in the original specification format. 
+{{% /notice %}}  
 
 
 
-*   You can use either `KEY = VALUE` or `KEY : VALUE`. The convention is to use `KEY = VALUE` for variable assignment and `KEY : VALUE` for all other. 
 
-*   Pattern `${ }` are specially handled as pipeline variables. `;` and `%` are not special characters as in the original specification format. 
-
-
-
-
-
-## Top Section 
+### 2. Top Section 
 
 A pipeline specification file should start with a description section (no header is needed). This section should have the following keys: 
 
@@ -194,18 +193,14 @@ A pipeline specification file should start with a description section (no header
     # Copyright line
     
     # This is the overall pipeline description
-    #
     
-
 
 
 *   `PIPELINE_description`: (Optional) Description of pipeline `PIPELINE`. `PIPELINE` has to be a valid pipeline defined in this file (with sections `PIPELINE_XX`). 
 
 
-
-If you have long descriptions (highly recommended!), you can break it into several paragraphs by adding HTML tags `<p>` or `<br>`. Tag `<p>` starts a new paragraph (two newlines) and tag `<br>` starts a new line (one newline). You can also use tags <ul> and <li> to generate itemized lists. For example, 
-
-
+{{% notice tip %}}
+If you have long descriptions (highly recommended!), you can break it into several paragraphs by adding HTML tags `<p>` or `<br>`. Tag `<p>` starts a new paragraph (two newlines) and tag `<br>` starts a new line (one newline). You can also use tags `<ul>` and `<li>` to generate itemized lists. For example, 
 
     This pipeline uses <ul>
       <li>tophat 2.0.13 
@@ -214,10 +209,7 @@ If you have long descriptions (highly recommended!), you can break it into sever
       <li>picard 1.82
       </ul>
     
-
 will produce output 
-
-
 
     This pipeline uses
       * tophat 2.0.13
@@ -225,9 +217,8 @@ will produce output
       * samtools 0.1.19
       * picard 1.82
     
-
 when the description is outputted using command `vtools show pipeline`. 
-
+{{% /notice %}}
 
 
 *   `NAME=VAL` (optional): Pipeline variables. This is usually a good place to define constant values that will be used by pipeline steps. For example: 
@@ -241,7 +232,7 @@ where ${local_resource} is another pipeline variable that has value of project r
 
 
 
-## Section `[DEFAULT]` (command line options)
+### 3. Section `[DEFAULT]` (command line options)
 
 The `DEFAULT` section defines parameters that can be changed using command line arguments. For example, in the following `.pipeline` file (partial) 
 
@@ -274,7 +265,7 @@ you will see at the end of the output the following description:
 That is to say, you can pass an alternative value of `opt_java` to this format using command-line options such as `--opt_java -Xmx32g` to change the value of this option. 
 
 
-
+{{% notice tip%}}
 If you have a large number of parameters, you can save them to an external file, one item per line, and load them by prefixing filename with a `"@"` symbol. For example, if you have a file `param.cfg` with content 
 
 
@@ -286,16 +277,16 @@ If you have a large number of parameters, you can save them to an external file,
     
 
 you can load parameters `--bwa /path/to/bwa --samtools /path/to/samtools` using `"@param.cfg"` from command line. 
+{{%/notice%}}
 
-
-
+{{% notice tip %}}
 You do not have to define parameter `--input` and `--output` but it is a good practice to define them in this section to provide description of the input and output of the pipeline. 
+{{% /notice %}}
 
 
+### 4. Pipeline variables
 
-## Pipeline variables
-
-### Definition of pipeline variables
+#### 4.1 Definition of pipeline variables
 
 Pipeline variables are variables associated with the execution of pipeline. They are added with the progression of the pipeline and provides runtime information for each step. All pipelines starts with the following variables: 
 
@@ -310,11 +301,17 @@ Pipeline variables are variables associated with the execution of pipeline. They
 For example, `${cmd_input}` and ${cmd_output} will be `['data.tgz']` and `['data.bam']` respectively for command `vtools execute bwa_gatk28_hg19 align --input data.tgz --output data.bam`. 
 
 
+{{% notice tip %}}
+A pipeline starts by default with `${cmd_input}` as input files but it can start without any input, or from another variable. 
+{{% /notice %}}
 
-*   A pipeline starts by default with `${cmd_input}` as input files but it can start without any input, or from another variable. 
-*   `${cmd_input}` and `${cmd_output}` will always be a list even if only one input or output file is passed. 
-*   `${cmd_input}` and @@${cmd_output} do not have to be a list of files. For example they can be used to specify input and output directories. 
+{{% notice tip %}}
+`${cmd_input}` and `${cmd_output}` will always be a list even if only one input or output file is passed. 
+{{% /notice %}}
 
+{{% notice tip %}}
+`${cmd_input}` and @@${cmd_output} do not have to be a list of files. For example they can be used to specify input and output directories. 
+{{% /notice %}}
 
 
 *   **Execution environment** including 
@@ -334,9 +331,9 @@ For example, `${cmd_input}` and ${cmd_output} will be `['data.tgz']` and `['data
 *   **User-defined variables** defined in the top section and pipeline sections. The top section usually defines constant that will be used later. The pipeline sections usually define variables as a result of certain action. 
 
 
-
+{{% notice tip%}}
 You can override some execution environment variables by re-defining it in the top section. In particular, if you define `${working_dir}` in the top section of the spec file, all jobs will be executed under this directory (although some actions can have their own working directories). 
-
+{{% /notice %}}
 
 
 *   **Runtime variables** including 
@@ -345,17 +342,26 @@ You can override some execution environment variables by re-defining it in the t
 
 
 
-### Use of Pipline variables
+#### 4.2 Use of Pipline variables
 
 It is important to remember that 
 
 
+{{% notice info %}}
+Pipeline variables are case-insensitive, read only, and can be only string or list of strings. List of strings are joined by space when they are outputted. 
+{{% /notice %}}
 
-*   Pipeline variables are case-insensitive, read only, and can be only string or list of strings. List of strings are joined by space when they are outputted. 
-*   All file-list variables such as `cmd_input`, `cmd_output`, `input`, `inputXXX`, `outputXXX` (where `XXX` is step of pipeline) and [their aliases][3] are list of strings, even if there is only one file in the list. 
-*   All command line arguments are list of strings. 
-*   All other variables such as user-defined variables can hold string only. 
+{{% notice info %}}
+All file-list variables such as `cmd_input`, `cmd_output`, `input`, `inputXXX`, `outputXXX` (where `XXX` is step of pipeline) and [their aliases][3] are list of strings, even if there is only one file in the list. 
+{{% /notice %}}
 
+{{% notice info %}}
+All command line arguments are list of strings. 
+{{% /notice %}}
+
+{{% notice info %}}
+All other variables such as user-defined variables can hold string only. 
+{{% /notice %}}
 For example, if the value of variable `cmd_input` is `['file1.txt', 'file2.txt']`, they will appear as `file1.txt file2.txt` when `${cmd_input}` is used in a command line (with proper quotation). 
 
 If you need to access one or more elements of the list of strings, use variables such as `${input[0]}`, `${cmd_output[-1]}`, `${input[2:]}` and `${input[0][:-3]}`. 
@@ -391,15 +397,18 @@ returns the output of the `hostname` command
     
 
 
+{{% notice warning %}}
+Use of shell variables (e.g. use a for loop in action `RunCommand`) is possible but can be tricky because pipeline and shell variables can take the same form. Whereas simple form of shell variables (`$VAR` instead of `${var}`) can be used without problem, the brace form `${var}` will trigger a warning message if `VAR` is a not valid pipeline variable, and return unexpected results otherwise. 
+{{% /notice %}}
 
-*   Use of shell variables (e.g. use a for loop in action `RunCommand`) is possible but can be tricky because pipeline and shell variables can take the same form. Whereas simple form of shell variables (`$VAR` instead of `${var}`) can be used without problem, the brace form `${var}` will trigger a warning message if `VAR` is a not valid pipeline variable, and return unexpected results otherwise. 
-*   Pipeline variables can use functions from common Python modules such as `os`, `sys`, `glob`, `subprocess`, and functions defined in modules imported using action `ImportModule`. If you need more modules, you can import them using inline script of action `ImportModule`. 
+{{% notice warning%}}
+Pipeline variables can use functions from common Python modules such as `os`, `sys`, `glob`, `subprocess`, and functions defined in modules imported using action `ImportModule`. If you need more modules, you can import them using inline script of action `ImportModule`. 
+{{% /notice %}}
 
 
+### 5. Step sections
 
-## Step sections
-
-### Name of step sections `[PIPELINE]`, `[XX]`, `[PIPELINE_XX]`, or `[PIPELINE_XX,PIPELINE1_XX]`, or `[*_XX]`
+#### 5.1 Name of step sections `[PIPELINE]`, `[XX]`, `[PIPELINE_XX]`, or `[PIPELINE_XX,PIPELINE1_XX]`, or `[*_XX]`
 
 A pipeline is, roughly speaking, a *pipe* that connects the input (e.g. raw reads in fastq format) to the output (e.g. aligned reads in bam format), going through a few steps (actions) along the way. A pipeline specification file can define multiple pipelines with different `PIPELINE`. Steps in a pipeline are numbered and will be executed in such order. The indexes of actions do not have to be consecutive so `align_10`, `align_20`, and `align_30` are acceptable. They do not even have to be defined in the order they are be executed. 
 
@@ -445,7 +454,7 @@ to define a step that will be executed by all pipelines defined in this file.
 
 
 
-### Content of pipeline step sections 
+#### 5.2 Content of pipeline step sections 
 
 For each step of a pipeline, we need to know 
 
@@ -473,10 +482,9 @@ Answers of these questions should be specified using the following keys:
     
 
 
-
-*   A pipeline will be terminated if there is no input file or if any of the specified input files does not exist. 
-
-
+{{% notice tip %}}
+A pipeline will be terminated if there is no input file or if any of the specified input files does not exist. 
+{{% /notice %}}
 
 *   **`input options`** (optional). By default, all input files are passed together to the action (so `${input}` equals to `${inputxxx}` where `XXX` is number of pipeline step. You can change this behavior by setting one or more input options, which are specified by one or more comma-separated `opt=val` options in the format of 
 
@@ -508,15 +516,14 @@ For example, the following example select all fastq files from input files and s
 *   **`skip=True/False`**: Skip an step if set to True (which is usually a variable. All input files will be passed directly to output by default. 
 
 
-
+{{% notice tip%}}
 An input option does not substitute `${input}` because it determines `${input}`. They can however use other variables such as `${cmd_output}`. For example, 
 
     ${bam_files} : ${input200:len(input200)==1})
     
     
-
 select files only if there are more than one input file. This is useful, for example, to merge bam files only if there are more than one input bam files. 
-
+{{% /notice %}}
 
 
 *   **`action`** (required): An action that will be executed by variant tools, sometimes repeatedly for different input files (e.g. for each or each pair of input files). Each action will return a list of output files, which will form the output files of the step. A list of actions can be specified in the format of `Action1, Action2, ...`. These actions will be executed sequentially and the output of a previous action will become the input of the following action. Please check the actions section for a list of available actions. **The `action=` key can be ignored.**. 
@@ -543,9 +550,9 @@ If an action differ only slightly across pipelines, you can use variable `${pipe
 uses passes an additional option `-g` to an action for pipeline `eu`. 
 
 
-
+{{% notice tip%}}
 Comments in pipeline steps will be displayed in the output of `vtools show pipeline`: 
-
+{{%/notice%}}
 
 
     [hg19_100]
@@ -557,7 +564,7 @@ Comments in pipeline steps will be displayed in the output of `vtools show pipel
 
 
 
-### Section options (`[pipeline_100: output_alias=hits]`) 
+#### 5.3 Section options (`[pipeline_100: output_alias=hits]`) 
 
 Pipeline steps accept a few options that tells variant tools how to handle input and output files. These options are specified in section head after section names in the format of 
 
@@ -593,13 +600,14 @@ Variant Tools currently supports the following options
 
 
 
-## Available actions
+### 6. Available actions
 
 Actions are functions that are executed by *Variant Tools*. 
 
 
-
+{{% notice info%}}
 Technically speaking, pipeline actions are evaluated as a Python expression to obtain a `PipelineAction` object. That is to say, you can use arbitrary python expressions such as list comprehension for this item. 
+{{% /notice %}}
 
 Given an action, variant tools 
 
@@ -699,7 +707,7 @@ to check the details of action `TerminateIf`.
 
 
 
-### Brief description of built-in actions
+#### 6.1 Brief description of built-in actions
 
 The following is a partial list of built-in actions defined by variant tools. The descriptions are brief and might have been outdated so please use command above to check the latest documentation. 
 
@@ -757,23 +765,32 @@ The following is a partial list of built-in actions defined by variant tools. Th
 *   **`RunCommand(cmd, working_dir=None, output=[], submitter=None)`**: Execute `cmd` (one command or a list of commands) under working directory `working_dir` (default to current project directory). A list of output files specified by `output` will be returned. If `output` is specified, three additional files, `filename.out#`, `filename.err#`, `filename.exe_info` (where `filename` is the first file in `output`) will be produced with command output, command error output, and command execution information, respectively. Command execution information contains command executed, start and ending time, file size and md5 signature of input and output files. **If output files already exist, newer than input files, size and md5 checksum of input and output files and command used match what have been recorded in `filename.exe_info`, the command will not be executed**. Because valid `filename.exe_info` files are only created after commands are completed successfully (not interrupted), a pipeline can be safely resumed if it is terminated due to user or system errors. 
 
 
+{{% notice tip %}}
+Multiple commands could be executed in a single `RunCommand` action. The pipeline will terminate if any of the commands returns non-zero code. 
+{{%/notice%}}
 
-*   Multiple commands could be executed in a single `RunCommand` action. The pipeline will terminate if any of the commands returns non-zero code. 
-*   Using option `output` to specify output files is highly recommended because otherwise the command will be re-executed if the pipeline is re-executed. If the command does not produce any new output (e.g. many vtools commands), you can generate a status output file and use it as output, as in 
-
+{{% notice tip %}}
+Using option `output` to specify output files is highly recommended because otherwise the command will be re-executed if the pipeline is re-executed. If the command does not produce any new output (e.g. many vtools commands), you can generate a status output file and use it as output, as in 
+{{% /notice %}}
     RunCommand(cmd=['vtools import ${input: " ".join(input)} --build hg19',
                    'vtools show genotypes > genotype.lst'],
                    output='genotype.lst')
     
+{{% notice tip %}}
+If a valid `working_dir` is set, the child process in which the commands are executed will switch to this directory but the current directory of the master process will remain the same. That is to say, all input and output filenames etc are still relative to the project path, but `os.path.abspath` might be needed if these path are used in the `cmd`. 
+{{% /notice %}}
 
-*   If a valid `working_dir` is set, the child process in which the commands are executed will switch to this directory but the current directory of the master process will remain the same. That is to say, all input and output filenames etc are still relative to the project path, but `os.path.abspath` might be needed if these path are used in the `cmd`. 
-*   If a `submitter` is defined, the submission command will be used to run the commands in background (e.g. `submitter='sh {} &'`) or as a separate job (e.g. @@submitter='qsub {}'). This allows parallel execution of pipeline steps. 
-*   If no output is specified, input files are passed through as output files. 
+{{% notice tip%}}
+If a `submitter` is defined, the submission command will be used to run the commands in background (e.g. `submitter='sh {} &'`) or as a separate job (e.g. @@submitter='qsub {}'). This allows parallel execution of pipeline steps. 
+{{%/notice%}}
 
+{{% notice tip%}}
+If no output is specified, input files are passed through as output files. 
+{{% /notice %}}
 
-
+{{% notice warning%}}
 Arbitrary command could be defined for this action, which in theory could destroy all your data or system. It is your responsibility to verify that a pipeline description file does not contain malicious piece of code and we (developers of variant tools) are not responsible for any damage that might have been caused. 
-
+{{%/notice%}}
 
 
 *   **`ExecuteRScript(script, working_dir=None, output=[], submitter=None)`**: Execute an in-line R script. 
@@ -790,7 +807,7 @@ Arbitrary command could be defined for this action, which in theory could destro
 
 
 
-### Define your own pipeline actions
+#### 6.2 Define your own pipeline actions
 
 You can define your pipeline actions to perform steps that cannot be performed by an existing command. There are several ways to achieve this. 
 
@@ -856,7 +873,7 @@ This function converts a UCSC refGene.txt to BED format so that it can be used b
 
 *   Import the module to your pipeline using `ImportModules('my_tools.py')`.
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Pipeline.Format10?action=edit
- [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Simulation.HomePage?action=edit
+ [1]: /vat-docs/documentation/pipelines/format10/
+ [2]: /vat-docs/documentation/customization/simulation/
  [3]: #alias
  [4]: http://docs.python.org/2/library/re.html

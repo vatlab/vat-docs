@@ -1,17 +1,16 @@
 +++
 title = "mut_sequence"
-description = ""
 weight = 2
 +++
 
 
 
-# Mutated sequence around variant site
+## Mutated sequence around variant site
 
 
 
 
-## Usage
+### 1. Usage
 
 Function `mut_sequence(chr, start, end)` returns the mutated sequence between `start` and `end` on chromosome `chr` of the reference genome (primary reference genome unless parameter `--build` is used to specify an alternative reference genome). If `end` is unspecified, `mut_sequence(chr, pos)` returns the mutated allele at the specified location. 
 
@@ -32,12 +31,12 @@ returns the alternative allele at the variant site for SNPs, `-` for deletion, a
 returns the 5-base sequence at and after the variant sites with the variant for all variants in the master variant table. 
 
 
-
+{{% notice tip%}}
 Function `mut_sequence` will be identical to `ref_sequence` if the variant is outside of the specified region (e.g. different `chr`). 
+{{%/notice%}}
 
 
-
-## Details
+### 2. Details
 
 <details><summary> Examples: output mutated sequence around variants</summary> Let us get a test project 
 
@@ -118,4 +117,4 @@ and check how the sequences are affected
     1	83119	A  	-             	CAA	C-A
     
 
-(:exampleend</summary>
+</details>

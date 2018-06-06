@@ -1,18 +1,18 @@
 
 +++
 title = "keggPathway"
-description = ""
 weight = 2
 +++
 
+## Kegg Pathway
 
-## About `keggPathway`
+### 1. About `keggPathway`
 
 This database provides KEGG pathway IDs and a pathway description for genes with CCDS IDs. If you would like to annotate variants to these KEGG pathways, you first need to annotate your variants with CCDS IDs. Variant tools databases such as **ccdsGene** annotates variants with CCDS IDs (see example below). 
 
 
 
-## Fields
+### 2. Fields
 
 *   **ccdsId** CCDS gene ID 
 *   **KgID** Kegg pathway ID 
@@ -20,7 +20,7 @@ This database provides KEGG pathway IDs and a pathway description for genes with
 
 
 
-## keggPathway
+### 3. keggPathway
 
     vtools show annotation keggPathway -v2
     
@@ -52,7 +52,7 @@ This database provides KEGG pathway IDs and a pathway description for genes with
 
 
 
-## Examples
+### 4. Examples
 
 First we need to use `dbNSFP` in our project to annotate our variants with CCDS IDs: 
 

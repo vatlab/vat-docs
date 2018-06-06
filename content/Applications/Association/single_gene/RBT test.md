@@ -1,19 +1,18 @@
 
 +++
 title = "RBT test"
-description = ""
-weight = 5
+weight = 4
 +++
 
 
 
-# Replication Based Test for Protective Variants 
+## Replication Based Test for Protective Variants 
 
 
 
-## Introduction
+### 1. Introduction
 
-This is implementation for the replication base test in Ionita-Laza et al 2011[^Iuliana Ionita-Laza, Joseph D. Buxbaum, Nan M. Laird and Christoph Lange (2011) **A New Testing Strategy to Identify Rare Variants with Either Risk or Protective Effect on Disease**. *PLoS Genetics* doi:`10.1371/journal.pgen.1001289`. <http://dx.plos.org/10.1371/journal.pgen.1001289>^]. The key of this method is *replication*, i.e., in the two-sided test of RBT it computes evidences to reject each of the two hypothesis 
+This is implementation for the replication base test in (Ionita-Laza et al 2011). The key of this method is *replication*, i.e., in the two-sided test of RBT it computes evidences to reject each of the two hypothesis 
 
 
 
@@ -26,9 +25,9 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
 
 
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     vtools show test RBT
     
@@ -85,7 +84,7 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
 
 
 
-### Application
+#### 2.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
@@ -144,4 +143,6 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
 
 </details>
 
-[^#^]
+
+### Reference
+Iuliana Ionita-Laza, Joseph D. Buxbaum, Nan M. Laird and Christoph Lange (2011) **A New Testing Strategy to Identify Rare Variants with Either Risk or Protective Effect on Disease**. *PLoS Genetics* doi:`10.1371/journal.pgen.1001289`. <http://dx.plos.org/10.1371/journal.pgen.1001289>

@@ -212,16 +212,36 @@ h5 {
 
 div.notices ol {
     margin-top: 0;
+    background:#E6F9E6;
+    padding-bottom: 25px;
+}
+
+div.notices ul {
+    margin-top: 0;
+    background:#E6F9E6;
+    padding-bottom: 25px;
+}
+
+div.warning ol {
+    margin-top: 0;
     background:#FAE2E2;
     padding-bottom: 25px;
 }
 
-/* This selector comes from the parent theme and is overridden here */
-sidebar ul.topics li.parent ul, sidebar ul.topics > li.active ul {
-  display: none;
+div.warning ul {
+    margin-top: 0;
+    background:#FAE2E2;
+    padding-bottom: 25px;
 }
 
-/* This resets display to block for our new ul.parent class */
-sidebar ul.topics li.parent > ul.parent {
-  display: block;
+div.info ol {
+    margin-top: 0;
+    background:#FFF2DB;
+    padding-bottom: 25px;
+}
+
+div.info ul {
+    margin-top: 0;
+    background:#FFF2DB;
+    padding-bottom: 25px;
 }

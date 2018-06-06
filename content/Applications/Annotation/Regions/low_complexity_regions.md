@@ -7,9 +7,9 @@ weight = 1
 
 
 
-# Low Complexity and RepetitiveRegions
+## Low Complexity and RepetitiveRegions
 
 
 
 
-## Low Complexity Regions
+### Low Complexity Regions

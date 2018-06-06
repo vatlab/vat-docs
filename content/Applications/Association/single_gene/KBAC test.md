@@ -1,18 +1,17 @@
 +++
 title = "KBAC test"
-description = ""
-weight = 4
+weight = 3
 +++
 
 
 
-# Kernel Based Adaptive Clustering Method 
+## Kernel Based Adaptive Clustering Method 
 
 
 
-## Introduction
+### 1. Introduction
 
-This is implementation for the KBAC statistic in Liu and Leal 2010[^Dajiang J. Liu and Suzanne M. Leal (2010) **A Novel Adaptive Method for the Analysis of Next-Generation Sequencing Data to Detect Complex Trait Associations with Rare Variants Due to Gene Main Effects and Interactions**. *PLoS Genetics* doi:`10.1371/journal.pgen.1001156`. <http://dx.plos.org/10.1371/journal.pgen.1001156>^]. It carries out case-control association testing for rare variants for whole exome association studies. Briefly, consider a gene of length n which harbors m rare variants. Genotype on the m variant sites & the disease status (case/control) are known for each individual. The program takes as input the m-site genotype and disease status (case/control) data files, and computes a p-value indicating the significance of association. Permutation has to be used to obtain valid p-values. 
+This is implementation for the KBAC statistic in (Liu and Leal 2010). It carries out case-control association testing for rare variants for whole exome association studies. Briefly, consider a gene of length n which harbors m rare variants. Genotype on the m variant sites & the disease status (case/control) are known for each individual. The program takes as input the m-site genotype and disease status (case/control) data files, and computes a p-value indicating the significance of association. Permutation has to be used to obtain valid p-values. 
 
 [An R package][1] is also available for use with standalone text dataset. 
 
@@ -21,13 +20,13 @@ Note a couple of differences between this implementation and the original versio
 
 
 *   The original paper provides 3 kernel options: hypergeometric, binomial and Gaussian kernels. The hypergeometric kernel generally performs best and is implemented. Other kernels are not implemented. 
-*   The `--alternative 2` option implements the spirit of the RBT test[^Iuliana Ionita-Laza, Joseph D. Buxbaum, Nan M. Laird and Christoph Lange (2011) **A New Testing Strategy to Identify Rare Variants with Either Risk or Protective Effect on Disease**. *PLoS Genetics* doi:`10.1371/journal.pgen.1001289`. <http://dx.plos.org/10.1371/journal.pgen.1001289>^] by performing two KBAC tests under both *protective* and *deleterious* assumptions and use the larger of the two statistics thus calculated as the final KBAC statistic. 
+*   The `--alternative 2` option implements the spirit of the RBT test (Ionita-Laza et al, 2011) by performing two KBAC tests under both *protective* and *deleterious* assumptions and use the larger of the two statistics thus calculated as the final KBAC statistic. 
 
 
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     vtools show test KBAC
     
@@ -85,7 +84,7 @@ Note a couple of differences between this implementation and the original versio
 
 
 
-### Application
+#### 2.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
@@ -145,6 +144,10 @@ Note a couple of differences between this implementation and the original versio
 
 </details>
 
-[^#^]
-
- [1]: http://code.google.com/p/kbac-statistic-implementation/
+### Reference
+ 
+ Dajiang J. Liu and Suzanne M. Leal (2010) **A Novel Adaptive Method for the Analysis of Next-Generation Sequencing Data to Detect Complex Trait Associations with Rare Variants Due to Gene Main Effects and Interactions**. *PLoS Genetics* doi:`10.1371/journal.pgen.1001156`. <http://dx.plos.org/10.1371/journal.pgen.1001156>
+ 
+ Iuliana Ionita-Laza, Joseph D. Buxbaum, Nan M. Laird and Christoph Lange (2011) **A New Testing Strategy to Identify Rare Variants with Either Risk or Protective Effect on Disease**. *PLoS Genetics* doi:`10.1371/journal.pgen.1001289`. <http://dx.plos.org/10.1371/journal.pgen.1001289>
+ 
+  [1]: http://code.google.com/p/kbac-statistic-implementation/

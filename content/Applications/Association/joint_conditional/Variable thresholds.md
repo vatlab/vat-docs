@@ -1,27 +1,26 @@
 
 +++
 title = "variable thresholds"
-description = ""
 weight = 4
 +++
 
 
 
-# Varible Thresholds Methods for Disease and Quantitative Traits 
+## Varible Thresholds Methods for Disease and Quantitative Traits 
 
 
 
-## Introduction
+### 1. Introduction
 
-This implements the variable thresholds version of [aggregation methods][1][?][1]. Similar to the [VT][2][?][2] method, the `VariableThresholdsBt` and `VariableThresholdsQt` tests use a variable thresholds definition for the rare variants being considered such that multiple test statistics are calculated for an aggregation unit. The final statistic is taken as the one that gives the best result. Type I error is controlled due to the use of permutation testing. 
+This implements the variable thresholds version of [aggregation methods][1]. Similar to the [VT][2] method, the `VariableThresholdsBt` and `VariableThresholdsQt` tests use a variable thresholds definition for the rare variants being considered such that multiple test statistics are calculated for an aggregation unit. The final statistic is taken as the one that gives the best result. Type I error is controlled due to the use of permutation testing. 
 
 Results from variable thresholds methods have one additional column, i.e., an MAF column reporting the statistic of VT at which it is derived. 
 
 
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     vtools show test VariableThresholdsBt
     
@@ -157,7 +156,7 @@ Results from variable thresholds methods have one additional column, i.e., an MA
 
 
 
-### Application
+#### 2.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
@@ -249,7 +248,7 @@ Results from variable thresholds methods have one additional column, i.e., an MA
     ACAP3	3180	3	17	2.70541	0.281718	2.01218	1000	0.000314465
     
 
-</summary>
+</details>
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.Aggregation?action=edit
- [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.VariableThresholds?action=edit
+ [1]: /vat-docs/applications/association/joint_conditional/aggre/
+ [2]: /vat-docs/applications/association/joint_conditional/variable-thresholds/

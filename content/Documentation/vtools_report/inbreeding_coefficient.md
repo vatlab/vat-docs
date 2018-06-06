@@ -1,26 +1,26 @@
 
 +++
 title = "inbreeding_coefficient"
-description = ""
 weight = 7
 +++
 
 
-# Calculation inbreeding coefficient for individual samples
+## Calculation inbreeding coefficient for individual samples
 
 `vtools_report inbreeding_coefficient` calculates the {$F$} statistic at **single individual sample level** from genotype data. It measures the reduction in heterozygosity for given genomic region of samples, compare to expected heterozygosity level under Hardy-Weinberg Equilibrium. For a two allelic locus, {$$P(AA)=p^2(1-F)+pF$$} {$$P(aa)=q^2(1-F)+qF$$} {$$P(Aa)=2pq(1-F)$$} We compute estimate for {$F$} as {$\hat{F}=1-\frac{\#observed(Aa)}{\#expected(Aa)}$} 
 
 
-
+{{% notice info %}}
 Variants included for calculation of {$F$} must be under HWE and be bi-allelic. Tri-allelic loci are automatically excluded from calculation. 
+{{% /notice %}}
 
 Estimate of MAF using given samples should be computed prior to calculation of {$F$}, via `vtools update TABLE --from_stat <em>maf=maf()</em>`. 
 
 
 
-## Details
+### 1. Details
 
-### Interface
+#### 1.1 Interface
 
     vtools_report inbreeding_coefficient -h
     
@@ -63,7 +63,7 @@ Estimate of MAF using given samples should be computed prior to calculation of {
 
 
 
-### Example
+#### 1.2 Example
 
 Compute MAF for given samples 
 

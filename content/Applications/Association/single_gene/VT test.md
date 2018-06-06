@@ -1,20 +1,19 @@
 
 +++
 title = "VT test"
-description = ""
-weight = 7
+weight = 6
 +++
 
 
 
 
-# Variable Thresholds Test for Case Control Data Analysis 
+## Variable Thresholds Test for Case Control Data Analysis 
 
 
 
-## Introduction
+### 1. Introduction
 
-The variable thresholds method (VT, Price et al 2010[^Alkes L. Price, Gregory V. Kryukov, Paul I.W. de Bakker, Shaun M. Purcell, Jeff Staples, Lee-Jen Wei and Shamil R. Sunyaev (2010) **Pooled Association Tests for Rare Variants in Exon-Resequencing Studies**. *The American Journal of Human Genetics* doi:`10.1016/j.ajhg.2010.04.005`. <http://linkinghub.elsevier.com/retrieve/pii/S0002929710002077>^]) tests for association between phenotypic values (case control or quantitative traits) with individuals' genotype "score" subject to a variable MAF threshold. It assumes that there exists a fixed yet unknown MAF threshold on a given genetic region which is related to the cutoff for the causality of variants on that loci. In testing the association for the genetic region, for each possible MAF threshold a genotype score is computed based on given collapsing theme, and is tested for association between the phenotype of interest; the final MAF threshold is chosen such that the association signal is strongest. Permutation procedure has to be used to control for type I error due to multiple testing. 
+The variable thresholds method (VT, Price et al 2010) tests for association between phenotypic values (case control or quantitative traits) with individuals' genotype "score" subject to a variable MAF threshold. It assumes that there exists a fixed yet unknown MAF threshold on a given genetic region which is related to the cutoff for the causality of variants on that loci. In testing the association for the genetic region, for each possible MAF threshold a genotype score is computed based on given collapsing theme, and is tested for association between the phenotype of interest; the final MAF threshold is chosen such that the association signal is strongest. Permutation procedure has to be used to control for type I error due to multiple testing. 
 
 The VT strategy creates a very flexible framework that can be applied to many association tests, including the use of external information such as weight theme by annotation scores, as the VT paper suggested. The `VTtest` method implements the test for case control phenotype using the CMC coding theme and Fisher's exact test, in addition to the original VT statistic. Permutation procedure is optimized due to the use of Fisher's exact test: the minimum {$p$} value resulted from Fisher's exact test on the original dataset have to exceed the expected significance level in order to enter the permutation test procedure; otherwise it will be reported as it is. This trick reduces the computation time the original VT test would require. 
 
@@ -22,9 +21,9 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
 
 
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     vtools show test VTtest
     
@@ -94,7 +93,7 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
 
 
 
-### Application
+#### 2.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
@@ -182,4 +181,6 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
 
 </details>
 
-[^#^]
+### Reference
+
+Alkes L. Price, Gregory V. Kryukov, Paul I.W. de Bakker, Shaun M. Purcell, Jeff Staples, Lee-Jen Wei and Shamil R. Sunyaev (2010) **Pooled Association Tests for Rare Variants in Exon-Resequencing Studies**. *The American Journal of Human Genetics* doi:`10.1016/j.ajhg.2010.04.005`. <http://linkinghub.elsevier.com/retrieve/pii/S0002929710002077>

@@ -1,14 +1,13 @@
 +++
 title = "samples"
-description = ""
 weight = 5
 +++
 
 
-# Samples that harbor the variant
+## Samples that harbor the variant
 
 
-## Usage
+### 1. Usage
 
 ##### This function is only supported when STOREMODE is set to sqlite. 
 
@@ -22,12 +21,12 @@ The `samples` function is similar to `genotype` but it returns name of samples t
 returns a list of comma-separated names of samples that contain the variant, regardless the type of variant (homozygote etc). 
 
 
-
+{{% notice tip %}}
 This function returns all samples that contain the variant, so it will return samples without genotype info (no `GT` column, and samples with homozygote wildtype allele (genotype with `GT=0`) as long as the variant is included in the sample. 
+{{% /notice %}}
 
 
-
-## Details
+### 2. Details
 
 The `samples` function accepts an optional parameter with `&` separated `KEY=VAL` pairs. Supported `KEY` include 
 
@@ -117,5 +116,6 @@ You can limit the samples to those with a particular type of genotype
 </details>
 
 
-
+{{% notice warning %}}
 Because this function needs to scan the whole genotype tables of samples for each variant, it is expected to be much slower than batch operations that process all genotypes. For example, it would be much faster to export genotypes in batch (e.g. using command `vtools export` to export variants and genotypes in csv or vcf formats) if you need to list genotypes of a large number of variants.
+{{% /notice %}}

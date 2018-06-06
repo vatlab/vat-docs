@@ -1,25 +1,24 @@
 
 +++
 title = "meta_analysis"
-description = ""
 weight = 9
 +++
 
 
 
-# Meta-analysis for Association Testing Results 
+## Meta-analysis for Association Testing Results 
 
 
 
-## Introduction
+### 1. Introduction
 
-`vtools_report meta_analysis` implements meta-analysis methods detailed in Willer et al 2010[^C. J. Willer, Y. Li and G. R. Abecasis (2010). **METAL: fast and efficient meta-analysis of genomewide association scans**. *Bioinformatics*^]. Two statistics are available: the sample size based statistic and inverse variance based statistic. Input of this command are multiple text or compressed text files of association results delimited by tabs. 
+`vtools_report meta_analysis` implements meta-analysis methods detailed in (Willer et al, 2010). Two statistics are available: the sample size based statistic and inverse variance based statistic. Input of this command are multiple text or compressed text files of association results delimited by tabs. 
 
 
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     % vtools_report meta_analysis -h
     
@@ -56,7 +55,7 @@ weight = 9
 
 
 
-### Example
+#### 2.2 Example
 
 Input files are 
 
@@ -114,5 +113,6 @@ To load the meta analysis result to the project
     INFO: Combined association tests result database. Created on Thu, 14 Mar 2013 17:35:44
     INFO: 7459 out of 23242 refGene.name2 are annotated through annotation database study1and2
     
+### Reference
 
-[^#^]
+C. J. Willer, Y. Li and G. R. Abecasis (2010). **METAL: fast and efficient meta-analysis of genomewide association scans**. *Bioinformatics*

@@ -1,23 +1,22 @@
 
 +++
 title = "report progress"
-description = ""
 weight = 1
 +++
 
 
-# Report the progress of the execution of pipelines 
+## Report the progress of the execution of pipelines 
 
 
 
 
-## ChangeLog
+### 1. ChangeLog
 
 *   Dec 30, 2013: Initial release 
 
 
 
-## Download
+### 2. Download
 
 Download [report_progress][1], use 
 
@@ -37,7 +36,7 @@ Note:  Python module [matplotlib][2] is required to execute this script.
 
 
 
-## Introduction
+### 3. Introduction
 
 *variant tools* records the progress of the execution of pipelines in log files. This script parses the log files, extract the starting end ending time of the execution of each step of the pipeline, and plots them in a resulting pdf file. 
 

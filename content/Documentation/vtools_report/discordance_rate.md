@@ -1,7 +1,6 @@
 
 +++
 title = "discordance_rate"
-description = ""
 weight = 2
 +++
 

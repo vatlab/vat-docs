@@ -1,15 +1,14 @@
 +++
 title = "genotype"
-description = ""
 weight = 4
 +++
 
 
-# genotypes of one or more samples 
+## genotypes of one or more samples 
 
 
 
-## Usage
+### 1. Usage
 
 ##### This function is only supported when STOREMODE is set to sqlite. 
 
@@ -32,7 +31,7 @@ returns the genotype (0 for homozygous wild type, 1 for heterzygous alternative,
 
 
 
-## Details
+### 2. Details
 
 <details><summary> Examples: Use `genotype` function to get genotypes of samples</summary> 
 
@@ -244,6 +243,10 @@ Finally, if you would like to view values of other genotype info fields (c.f. `v
 </details>
 
 
+{{% notice tip %}}
+Whereas the return value of `genotype(sample_name)` is an integer, the return value of `genotype(sample_cond)` is always a string, evern if only one sample is selected by the condition. 
+{{% /notice %}}
 
-1.  Whereas the return value of `genotype(sample_name)` is an integer, the return value of `genotype(sample_cond)` is always a string, evern if only one sample is selected by the condition. 
-2.  You could match returned genotypes with samples by comparing the output of `genotype(sample_cond)` with the output of `samples(sample_cond)`.
+{{% notice tip %}}
+You could match returned genotypes with samples by comparing the output of `genotype(sample_cond)` with the output of `samples(sample_cond)`.
+{{% /notice %}}

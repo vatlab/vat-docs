@@ -65,4 +65,4 @@ weight = 4
        --output raw_data.tar maxgt_data.tar poly_data.tar
     
 
-(:exampleend</summary>
+</details>

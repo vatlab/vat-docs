@@ -1,31 +1,30 @@
 
 +++
 title = "GroupStat&Write"
-description = ""
 weight = 1
 +++
 
 
 
-# Basic Statistics for Association Testing Units 
+## Basic Statistics for Association Testing Units 
 
 
 
-## Introduction
+### 1. Introduction
 
 `GroupStat` and `GroupWrite` are "ancillary" features for the collection of `VAT` association tests. Instead of carrying out association analysis, `GroupStat` reports summary statistics of an association test unit such as total allele counts, total variant counts, number of samples, etc., while `GroupWrite` output genotype and phenotype information (into zipped bundles) in the format compatible with the [SCORE-Seq software][1] such that the data can be closely examined or manipulated using other software tools. 
 
 
 
-Although the `vtools export` function may also write variant/genotype data into VCF and other formats with variants annotated and genotype calls cleaned after quality control, it will not be able to output result from fine-scale QC for each test unit (see the [usage of][2][?][2] `--discard_samples` and `--discard_variants`). The `GroupWrite` will output the exact dataset that goes into association testing methods 
+Although the `vtools export` function may also write variant/genotype data into VCF and other formats with variants annotated and genotype calls cleaned after quality control, it will not be able to output result from fine-scale QC for each test unit (see the [usage of][2] `--discard_samples` and `--discard_variants`). The `GroupWrite` will output the exact dataset that goes into association testing methods 
 
-It is recommended to run `GroupStat` and `GroupWrite` simultaneously with other association methods, as documented [here][2][?][2]. 
+It is recommended to run `GroupStat` and `GroupWrite` simultaneously with other association methods, as documented [here][2]. 
 
 
 
-## Details
+### 2. Details
 
-### Command interface
+#### 2.1 Command interface
 
     vtools show test GroupStat
     vtools show test GroupWrite
@@ -57,7 +56,7 @@ It is recommended to run `GroupStat` and `GroupWrite` simultaneously with other 
 
 
 
-### Application
+#### 2.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
@@ -67,7 +66,7 @@ It is recommended to run `GroupStat` and `GroupWrite` simultaneously with other 
      name2 --to_db gstat -j8 > gstat.txt
     
 
-(:exampleend</summary>
+</details>
 
  [1]: http://www.bios.unc.edu/~dlin/software/SCORE-Seq/
- [2]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.AssociationTesting?action=edit
+ [2]: /vat-docs/applications/association/

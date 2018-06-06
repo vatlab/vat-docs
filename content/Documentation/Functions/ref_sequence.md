@@ -1,15 +1,14 @@
 +++
 title = "ref_sequence"
-description = ""
 weight = 1
 +++
 
 
-# Reference sequence around variant site
+## Reference sequence around variant site
 
 
 
-## Usage
+### 1. Usage
 
 Function `ref_sequence(chr, start, end)` returns the reference sequence between `start` and `end` on chromosome `chr` of the reference genome (primary reference genome unless parameter `--build` is used to specify an alternative reference genome). If `end` is unspecified, `ref_sequence(chr, pos)` returns the reference allele at the specified location. This function is very useful in output the context of variants or select variants based on the contexts (e.g. select variants in CpG islands). 
 
@@ -31,7 +30,7 @@ returns the 5-base sequence at and after the variant sites, for all variants in 
 
 
 
-## Details
+### 2. Details
 
 <details><summary> Examples: output reference sequence around variants</summary> Let us get a test project 
 
@@ -109,4 +108,4 @@ The resulting new column `nRef` records the number of reference alleles in the 1
     1	16862	A	CCAGGAAGGTG	3
     
 
-(:exampleend</summary>
+</details>

@@ -1,34 +1,32 @@
 +++
 title = "dbNSFP"
-description = ""
 weight = 2
 +++
 
 
 
-# dbNSFP
+## dbNSFP
 
-(:skin vtools-annotation</summary> 
 
-(:toc</summary> 
 
 dbNSFP is an annotation database for non-synonymous SNPs assembled by Xiaoming Liu from the University of Texas School of Public Health (see citation below). With variant tools you can use the **dbNSFP** database or **dbNSFP-light** (a version with fewer features) - see which features are offered for each database version below. 
 
 
 
-## dbNSFP
+### 1. dbNSFP
 
+{{% notice warning%}}
 There can be frequent changes of name and their meanings of the fields across versions. Please pay close attention to the comments of fields before you use them. 
+{{%/notice%}}
 
-
-
+{{%notice tip%}}
 For the latest version dbNSFP 2.4 
 
 *   For `SIFT_score`, lower score means more damaging. 
 *   For Polyphen2 scores, higher score means more damaging. 
 *   There are multiple scores in fields `SIFT_score_all`, `SIFT_pred_all`, `Polyphen2_HDIV_score_all`, `Polyphen2_HVAR_score_all`, `Polyphen2_HDIV_pred_all` and `Polyphen2_HVAR_pred_all`. If you need a score for selecting most damaging variants, use fields such as `SIFT_score`, `SIFT_pred`, `Polyphen2_HDIV_score`, `Polyphen2_HVAR_score` and `Polyphen2_HVAR_pred`. 
 *   There can be multiple records for a variant so output of `vtools output` might be surprising (e.g. output score 0.4 with criterion 'score > 0.9'). Use option `--all` if you would like to see scores for all records. 
-
+{{%/notice%}}
 
 
     % vtools show annotation dbNSFP -v2
@@ -566,7 +564,7 @@ As a quick example, one can use dbNSFP to annotate all of the "damaging" non-syn
 
 
 
-## dbNSFP_gene
+### 2. dbNSFP_gene
 
     % vtools use dbNSFP_gene --linked_by refGene.name2
     % vtools show annotation dbNSFP_gene -v2
@@ -636,10 +634,11 @@ As a quick example, one can use dbNSFP to annotate all of the "damaging" non-syn
 
 
 
-## dbNSFP_light
+### 3. dbNSFP_light
 
+{{%notice warning%}}
 This light version of dbNSFP is only available for dbNSFP 1.0. 
-
+{{%/notice%}}
 
 
     vtools show annotation dbNSFP_light -v2

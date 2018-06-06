@@ -1,13 +1,12 @@
 
 +++
 title = "thousandGenomes"
-description = ""
 weight = 9
 +++
 
+## Thousand Genome
 
-
-## thousandGenomes
+### thousandGenomes
 
 The samples for the 1000 Genomes Project mostly are anonymous and have no associated medical or phenotype data. Variants in this annotation database are sometimes considered to be 'neutral' and could be removed if the goal of a study is to look for variants with high penetrance that dispose to rare Mendelian diseases. This database contains all of the variants supplied by the 1000 Genomes Project. The original vcf file can be obtained from here: 
 

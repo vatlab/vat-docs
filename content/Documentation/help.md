@@ -1,15 +1,14 @@
 +++
 title = "Help"
-description = ""
 weight = 3
 +++
 
 
-# Usage of variant tools commands
+## Usage of variant tools commands
 
 
 
-## Structure of commands
+### 1. Structure of commands
 
 `vtools` uses a subcommand system that is similar to `svn`. For example, command 
 
@@ -29,7 +28,7 @@ consists of:
 
 
 
-## Available subcommands 
+### 2. Available subcommands 
 
 `vtools` has a growing number of subcommands. To check the available subcommands, please use command `vtools -h`. 
 
@@ -88,7 +87,7 @@ consists of:
 
 
 
-## Logging and option `--verbosity` (`-v`)
+### 3. Logging and option `--verbosity` (`-v`)
 
 variant tools, by default, outputs information lines (starts with INFO and WARNING) and progress bars during the execution of commands. Additionally the information lines and detailed debug information (starts with DEBUG) are written to a project log file ($name.log). If something goes wrong, you can check this file for details. One particular feature of this file is that it **saves date and time of each log message** so that you can measure the performance of operations if needed. 
 
@@ -148,12 +147,12 @@ If, for example for a production pipeline you do not want any debug information 
 will suppress any logfile output (except for warnings). </details>
 
 
-
+{{% notice tip %}}
 The verbosity level when the project is created is the default verbosity level of the project. That is to say, if you create the project using `` `vtools init test -v0 ``, the subsequent `vtools` command will have a default verbosity level of 0. 
+{{%/notice%}}
 
 
-
-## Save output to files
+### 4. Save output to files
 
 Output from `vtools` can be saved to files via *standard output redirection*. The progress/warning/errors information will be displayed on screen while only the standard output will be written to files. 
 
@@ -191,7 +190,7 @@ the output is written to file `output.txt` while debug information continues to 
 
 
 
-## Conditions used in variant tools commands
+### 5. Conditions used in variant tools commands
 
 One of the key features of the command line interface of variant tools is that its use of *conditions*. For example, `vtools select variant COND` finds variants in table `variant` that match specified `COND`, `vtools select --samples COND` finds variants that belong to samples that match certain `COND`, and `vtools init --parent DIR --genotypes COND` copies genotypes that match specific conditions from parent project `DIR` to a new project. 
 

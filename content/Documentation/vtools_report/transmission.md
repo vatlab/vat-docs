@@ -1,18 +1,18 @@
 
 +++
 title = "transmission"
-description = ""
 weight = 8
 +++
 
 
-# Locate de novo, recessive and other variants that are transmitted from parents to offspring 
+## Locate de novo, recessive and other variants that are transmitted from parents to offspring 
 
+<font color=#FF0000>
  The `inconsistent` option of this command is not completed yet.  
+</font>
 
 
-
-## Usage
+### 1. Usage
 
     % vtools_report transmission -h
     

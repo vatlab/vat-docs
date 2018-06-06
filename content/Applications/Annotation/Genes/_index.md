@@ -1,5 +1,4 @@
 +++
 title = "Genes"
-description = ""
-weight = 4
+weight = 3
 +++

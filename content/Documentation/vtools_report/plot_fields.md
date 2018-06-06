@@ -1,7 +1,6 @@
 
 +++
 title = "plot_fields"
-description = ""
 weight = 10
 +++
 
@@ -9,11 +8,11 @@ weight = 10
 
 
 
-# Plot fields from variant tables
+## Plot fields from variant tables
 
 
 
-## Usage
+### 1. Usage
 
     % vtools_report plot_fields -h
     
@@ -84,6 +83,6 @@ weight = 10
 
 
 
-## Example
+### 2. Example
 
 Histograms, dot plots and box plots can be generated for variant info fields. The command interface is similar to `vtools_report plot_pheno_fields`.
