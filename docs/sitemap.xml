@@ -3,11 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/administration/allrecent/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/cmctest/</loc>
   </url>
   
   <url>
@@ -16,6 +16,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/development/changelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</loc>
   </url>
   
   <url>
@@ -35,30 +39,6 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/keyconcepts/</loc>
   </url>
   
@@ -67,15 +47,15 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/view_association_result/qq-plot-and-manhattan-plot/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</loc>
   </url>
   
   <url>
@@ -99,7 +79,11 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/collapsing-methods/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/collapisng/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/qc/demon/</loc>
   </url>
   
   <url>
@@ -135,7 +119,11 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/cmc-test/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/c_alpha-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/customized/</loc>
   </url>
   
   <url>
@@ -143,15 +131,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/format10/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/qc/</loc>
   </url>
   
   <url>
@@ -183,15 +163,11 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng2/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/qc/</loc>
   </url>
   
   <url>
@@ -199,7 +175,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggregation-methods/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggre/</loc>
   </url>
   
   <url>
@@ -251,14 +227,6 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/c_alpha-test/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/customized/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/annotation/misc/encode/</loc>
   </url>
   
@@ -267,7 +235,15 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/help/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/kbac-test/</loc>
   </url>
   
   <url>
@@ -276,14 +252,6 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/tutorials/case44ctrl20/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/administration/stylesheet/</loc>
   </url>
   
   <url>
@@ -307,6 +275,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/create_your_test/rtest/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/sam_info/</loc>
   </url>
   
@@ -323,7 +295,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/weighted-methods/</loc>
   </url>
   
   <url>
@@ -331,15 +303,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/tutorials/illumina5/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/kbac-test/</loc>
   </url>
   
   <url>
@@ -351,7 +315,15 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/administration/trafficstat/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/rbt-test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/</loc>
   </url>
   
   <url>
@@ -376,10 +348,6 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/applications/annotation/genes/knowngene/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</loc>
   </url>
   
   <url>
@@ -419,15 +387,15 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/rbt-test/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/rarecover/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/</loc>
   </url>
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/</loc>
   </url>
   
   <url>
@@ -463,19 +431,11 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/faq/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/metaskat-analysis/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/rarecover-test/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/misc/</loc>
   </url>
   
   <url>
@@ -488,6 +448,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/under-development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/vt-test/</loc>
   </url>
   
   <url>
@@ -531,15 +495,11 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/misc/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/vt-test/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/</loc>
   </url>
   
   <url>
@@ -579,7 +539,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/asum/</loc>
   </url>
   
   <url>
@@ -612,10 +572,6 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/applications/association/vat_stacking/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/association/single_gene/asum-test/</loc>
   </url>
   
   <url>
