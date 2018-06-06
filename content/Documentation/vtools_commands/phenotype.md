@@ -287,7 +287,7 @@ Other features of this command include
 
 {{% notice tip%}}
 If your input file does not have any header, you can use option `--header` to specify a list of headers. This is helpful for importing plink `.pfam` file, using a command similar to `vtools phenotype --from_file /tmp/test.tfam --header Family_ID sample_name Paternal_ID Maternal_ID Gender Status` 
-{{% notice %}}
+{{% /notice %}}
 
 
 #### 2.2 New columns based on other phenotypes

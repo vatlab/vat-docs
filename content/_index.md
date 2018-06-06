@@ -1,6 +1,3 @@
-
-
-
 ## Home of Variant Tools
 
 <figure>
