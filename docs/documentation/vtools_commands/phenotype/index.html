@@ -12,19 +12,19 @@
     <title>phenotype :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528259846" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528259846" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528259846" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528259846" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528259846" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528259846" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528259846" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528259846" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528259846" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528259846"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528259846"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528259846"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528259846"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
 
     
   </div>
@@ -3611,7 +3611,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
         <ul>
           
               <li> 
-                  <a class="padding" href="https://vatlab.github.io/vat-docs/"><i class='fa fa-fw fa-github'></i> Github repo</a>
+                  <a class="padding" href="https://github.com/vatlab/vat-docs"><i class='fa fa-fw fa-github'></i> Github repo</a>
               </li>
           
               <li> 
@@ -3698,6 +3698,9 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <ul>
 <li><a href="#2-1-importing-phenotypes-from-text-files">2.1 Importing phenotypes from text files</a></li>
 </ul></li>
+<li><a href="#2-2-new-columns-based-on-other-phenotypes">2.2 New columns based on other phenotypes</a></li>
+<li><a href="#2-3-new-columns-based-on-sample-genotype-and-genotype-information">2.3 New columns based on sample genotype and genotype information</a></li>
+<li><a href="#2-4-output-selected-phenotypes-using-option-output">2.4 Output selected phenotypes using option <code>--output</code></a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -3988,10 +3991,127 @@ NA10847     M
 <li><em>variant tools</em> automatically translate non-standard header names to a valid variant tools field name, by replacing non-alphanumeric characters with underscores (<code>'_'</code>).</li>
 </ul>
 
-<div class="notices tip" ><p>If your input file does not have any header, you can use option <code>--header</code> to specify a list of headers. This is helpful for importing plink <code>.pfam</code> file, using a command similar to <code>vtools phenotype --from_file /tmp/test.tfam --header Family_ID sample_name Paternal_ID Maternal_ID Gender Status</code>
-&lt;div class=&ldquo;notices &ldquo;</p>
+<div class="notices tip" ><p>If your input file does not have any header, you can use option <code>--header</code> to specify a list of headers. This is helpful for importing plink <code>.pfam</code> file, using a command similar to <code>vtools phenotype --from_file /tmp/test.tfam --header Family_ID sample_name Paternal_ID Maternal_ID Gender Status</code></p>
 </div>
 
+
+<h4 id="2-2-new-columns-based-on-other-phenotypes">2.2 New columns based on other phenotypes</h4>
+
+<p><code>vtools phenotype --set</code> command allows users to create new columns in the phenotype table based on other phenotypes.</p>
+
+<p><details><summary> Examples: Create a column race from CEU samples having race=1</summary></p>
+
+<pre><code>% vtools phenotype --set 'race=1' --samples 'filename like &quot;%CEU%&quot;'
+
+INFO: Adding phenotype race
+INFO: 60 values of 1 phenotypes (1 new, 0 existing) of 60 samples are updated.
+
+
+% vtools show samples -l -1 
+
+sample_name filename        sex race
+NA06985     CEU_hg38.vcf    F   1
+NA06986     CEU_hg38.vcf    M   1
+NA06994     CEU_hg38.vcf    F   1
+NA07000     CEU_hg38.vcf    F   1
+NA07037     CEU_hg38.vcf    F   1
+NA07051     CEU_hg38.vcf    F   1
+... ...
+</code></pre>
+
+<p></details></p>
+
+<p>the <code>--samples</code> option specify the subset of samples to which the new column value will be appended. Note above that <code>None</code> is assigned to samples that does not match the specified <code>--samples</code> condition. More examples on the <code>--samples</code> option are documented in <code>vtools update</code>, <code>vtools select</code>, etc.</p>
+
+<h4 id="2-3-new-columns-based-on-sample-genotype-and-genotype-information">2.3 New columns based on sample genotype and genotype information</h4>
+
+<p>With <code>vtools show genotypes</code> we know the total number of genotypes and available genotype information in the sample. <code>vtools phenotype --from_stat</code> further allows calculation of specific sample genotype properties.</p>
+
+<p><details><summary> Examples: Phenotype from genotype statistics</summary></p>
+
+<pre><code>% vtools phenotype --from_stat &quot;sample_total=#(GT)&quot;
+% vtools phenotype --from_stat &quot;sample_alt=#(alt)&quot;
+% vtools phenotype --from_stat &quot;sample_homo=#(hom)&quot;
+% vtools phenotype --from_stat &quot;sample_het=#(het)&quot;
+% vtools phenotype --from_stat &quot;sample_double_het=#(other)&quot;
+% vtools show samples
+
+sample_name filename    sex race    sample_total    sample_alt  sample_homo sample_het  sample_double_het
+NA06985     CEU_hg38.vcf    F   1       292             110         40          30          0
+NA06986     CEU_hg38.vcf    M   1       292             126         31          64          0
+NA06994     CEU_hg38.vcf    F   1       292             131         37          57          0
+... ...
+NA12873     CEU_hg38.vcf    F   1       288             137         37          63          0
+NA12874     CEU_hg38.vcf    M   1       292             101         30          41          0
+</code></pre>
+
+<p>gives statistic of different genotypes.</p>
+
+<ul>
+<li>Wild-type genotype can be directly calculated using <code>vtools phenotype --set &quot;sample_wt=sample_total-sample_homo-sample_het-sample_double_het&quot;</code></li>
+</ul>
+
+<p></details></p>
+
+<p>Another useful type of summary is the genotype information that usually summarizes genotype data quality. Notice that at the beginning of this example session we included genotype depth of coverage using option <code>--geno_info</code>. With this (and as many others as your <code>vcf</code> file provides) genotype information you can calculate summary statistics and append them to sample table. For example, <code>DP_geno</code> is the <em>read depth</em> for sample genotypes, a useful indicator of sample genotype quality. You may summarize <code>DP_geno</code> for each individual using the commands below:</p>
+
+<p><details><summary> Examples: Phenotype calculated from statistics of genotype info fields</summary></p>
+
+<pre><code>% import_update jma7$ vtools phenotype --from_stat &quot;meanDP=avg(DP)&quot; &quot;minDP=min(DP)&quot; &quot;maxDP=max(DP)&quot;
+
+Calculating phenotype: 100% [===============================] 60 29.8/s in 00:00:02
+INFO: 180 values of 3 phenotypes (0 new, 3 existing) of 60 samples are updated.
+
+
+
+% vtools show samples
+
+sample_name filename        sex race    sample_total    sample_alt  sample_homo sample_het  sample_double_het   meanDP              minDP   maxDP
+NA06985     CEU_hg38.vcf    F   1       292             110         40          30          0                   2.2705479452054793  0.0     12.0
+NA06986     CEU_hg38.vcf    M   1       292             126         31          64          0                   10.736301369863014  0.0     29.0
+NA06994     CEU_hg38.vcf    F   1       292             131         37          57          0                   5.815068493150685   0.0     16.0
+... ...
+NA12873     CEU_hg38.vcf    F   1       288             137         37          63          0                   3.952054794520548   0.0     16.0
+NA12874     CEU_hg38.vcf    M   1       292             101         30          41          0                   3.886986301369863   0.0     14.0
+</code></pre>
+
+<p></details></p>
+
+<h4 id="2-4-output-selected-phenotypes-using-option-output">2.4 Output selected phenotypes using option <code>--output</code></h4>
+
+<p>The basic form of <code>vtools phenotype --output</code> is very similar to command <code>vtools show phenotypes</code>. They can both display all or a specified subset of phenotypes.</p>
+
+<p><details><summary> Examples: Output specified phenotypes</summary>
+    % vtools phenotype &ndash;from_file phenotype.txt BMI
+    % vtools phenotype &ndash;output sample_name BMI</p>
+
+<pre><code>NA06985 19.64
+NA06986 NA
+NA06994 19.49
+NA07000 21.52
+NA07037 23.05
+...
+</code></pre>
+
+<p></details></p>
+
+<p>The power of command <code>vtools phenotype --output</code>, similar to <code>vtools output</code>, is its ability to output summary statistics of phenotypes. For example, you can use item <code>avg(meanDP)</code> to display the average of the <code>meanDP</code> field. Because pehnotype <code>meanDP</code> records average depth of all genotypes each sample, <code>avg(meanDP)</code> displays average depth of all genotypes of all samples.</p>
+
+<p><details><summary> Examples: Output summary statistics of phenotypes</summary></p>
+
+<p>For example, the following command outputs the wildtype genotype counts and BMI for each sample.</p>
+
+<pre><code>% vtools phenotype --output &quot;count(filename)&quot;
+
+60
+
+
+% vtools phenotype --output &quot;avg(meanDP)&quot;
+
+4.561244292237443
+</code></pre>
+
+<p></details></p>
 
 
 <footer class=" footline" >
@@ -6639,20 +6759,20 @@ NA10847     M
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528259846"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528259846"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528259846"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528259846"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528259846"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528259846"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528259846"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528259846"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528259846"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528259846"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528259846" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528259846"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
