@@ -25,8 +25,6 @@ Results from variable thresholds methods have one additional column, i.e., an MA
     vtools show test VariableThresholdsBt
     
 
-
-
     Name:          VariableThresholdsBt
     Description:   Variable thresholds method for disease traits, in the spirit of Price
                    et al 2010
@@ -167,37 +165,16 @@ Results from variable thresholds methods have one additional column, i.e., an MA
     _by name2 --to_db variablethresholdsBt -j8 > variablethresholdsBt.txt
     
 
-
-
-    
-
-
-
     vtools show fields | grep variablethresholdsBt.txt
     
 
-
-
-    
-
-
-
     head variablethresholdsBt.txt
     
-
-
-
-    
-
-
 
     vtools associate rare bmi --covariates age gender exposure -m "VariableThresholdsQt --name \
     VariableThresholdsQt --alternative 2 -p 5000 --permute_by X --adaptive 0.05" --group_by nam\
     e2 --to_db variablethresholdsQt -j8 > variablethresholdsQt.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     INFO: Starting 8 processes to load genotypes
@@ -208,12 +185,7 @@ Results from variable thresholds methods have one additional column, i.e., an MA
     INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 22:54:27
     
 
-
-
     vtools show fields | grep variablethresholdsQt.txt
-    
-
-
 
     variablethresholdsQt.name2   name2
     variablethresholdsQt.sample_size_VariableThresholdsQt sample size
@@ -229,13 +201,8 @@ Results from variable thresholds methods have one additional column, i.e., an MA
     variablethresholdsQt.MAF_threshold_VariableThresholdsQt The minor allele frequency at which the test statistic is maximized
     
 
-
-
     head variablethresholdsQt.txt
     
-
-
-
     name2	sample_size_VariableThresholdsQt	num_variants_VariableThresholdsQt	total_mac_VariableThresholdsQt	beta_x_VariableThresholdsQt	pvalue_VariableThresholdsQt	std_error_VariableThresholdsQt	num_permutations_VariableThresholdsQt	MAF_threshold_VariableThresholdsQt
     ABCB10	3180	6	122	5.93777	0.247752	3.68504	1000	0.000157233
     ABCD3	3180	3	42	-1.48612	0.301698	0.740477	1000	0.00267296
@@ -250,5 +217,5 @@ Results from variable thresholds methods have one additional column, i.e., an MA
 
 </details>
 
- [1]: /vat-docs/applications/association/joint_conditional/aggre/
- [2]: /vat-docs/applications/association/joint_conditional/variable-thresholds/
+ [1]:   /applications/association/joint_conditional/aggre/
+ [2]:   /applications/association/joint_conditional/variable-thresholds/

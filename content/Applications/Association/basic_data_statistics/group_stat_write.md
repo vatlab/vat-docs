@@ -29,9 +29,6 @@ It is recommended to run `GroupStat` and `GroupWrite` simultaneously with other 
     vtools show test GroupStat
     vtools show test GroupWrite
     
-
-
-
     Name:          GroupWrite
     Description:   Write data to disk for each testing group
     usage: vtools associate --method GroupWrite [-h] [--name NAME] directory
@@ -69,4 +66,4 @@ It is recommended to run `GroupStat` and `GroupWrite` simultaneously with other 
 </details>
 
  [1]: http://www.bios.unc.edu/~dlin/software/SCORE-Seq/
- [2]: /vat-docs/applications/association/
+ [2]:   /applications/association/

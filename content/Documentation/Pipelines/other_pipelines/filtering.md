@@ -13,8 +13,7 @@ weight = 8
 
 ## Usage
 
-    % vtools show pipeline filtering
-    
+    % vtools show pipeline filtering  
 
     Pipelines to filter variants.
     
@@ -132,7 +131,6 @@ produces a log file
 
     % cat logfile
     
-
     SUMMARY: Identification of de novo variants for family family
     
     Members: WGS3_2 WGS3_3 (unaffected parents), WGS3_1 (affected offspring)

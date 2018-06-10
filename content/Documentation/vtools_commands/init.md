@@ -9,7 +9,6 @@ weight = 1
 
     % vtools init -h
     
-
     usage: vtools init [-h] [-f] [--parent DIR_or_SNAPSHOT] [--variants [TABLE]]
                        [--samples [COND [COND ...]]]
                        [--genotypes [COND [COND ...]]]

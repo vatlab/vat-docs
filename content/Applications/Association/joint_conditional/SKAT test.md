@@ -16,9 +16,6 @@ weight = 5
 
     vtools show test SKAT
     
-
-
-
     Name:          SKAT
     Description:   SKAT (Wu et al 2011) wrapper of its original R implementation
     usage: vtools associate --method SKAT [-h] [--name NAME]
@@ -103,13 +100,9 @@ weight = 5
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 
 
-
     vtools associate rare status -m "SKAT --name skat quantitative" --group_by refGene.name2 --\
     to_db skat -j8 > skat.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     INFO: Starting 8 processes to load genotypes
@@ -120,26 +113,16 @@ weight = 5
     INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 21:34:23
     
 
-
-
     vtools show fields | grep skat
     
-
-
-
     skat.refGene_name2           refGene_name2
     skat.sample_size_skat        Sample size
     skat.Q_stats_skat            Test statistic for SKAT, "Q"
     skat.pvalue_skat             p-value
-    
-
 
 
     head skat.txt
     
-
-
-
     refGene_name2	sample_size_skat	Q_stats_skat	pvalue_skat
     AADACL4	3180	33707.7	0.379148
     ABCD3	3180	1178.25	0.961708

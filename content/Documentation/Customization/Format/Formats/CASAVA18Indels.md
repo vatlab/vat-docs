@@ -3,10 +3,9 @@ title = "CASAVA18Indels"
 weight = 11
 +++
 
+## CASAVA18IndelsCASAVA18Indels
 
-# HomePage
-
-## Sample data
+### Sample data
 
     #	**	CASAVA	depth-filtered	indel	calls	**
     #$	CMDLINE	/filterSmallVariants.pl	--chrom=chr1
@@ -46,9 +45,6 @@ weight = 11
 
     vtools import --format Illumina_INDEL Illumina_INDEL.txt --build hg18 
     
-
-
-
     INFO: Opening project f.proj
     INFO: Additional genotype fields: Q_indel
     INFO: Importing genotype from Illumina_INDEL.txt (1/1)
@@ -56,13 +52,8 @@ weight = 11
     INFO: 25 new variants from 25 records are imported, with 0 SNVs, 7 insertions, 18 deletions, and 0 complex variants.
     
 
-
-
     vtools show table variant -l -1
     
-
-
-
     INFO: Opening project f.proj
     variant_id, bin, chr, pos, ref, alt
     1, 585, 1, 10147, C, -

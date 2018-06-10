@@ -15,7 +15,7 @@ weight = 6
 
 The variable thresholds method (VT, Price et al 2010) tests for association between phenotypic values (case control or quantitative traits) with individuals' genotype "score" subject to a variable MAF threshold. It assumes that there exists a fixed yet unknown MAF threshold on a given genetic region which is related to the cutoff for the causality of variants on that loci. In testing the association for the genetic region, for each possible MAF threshold a genotype score is computed based on given collapsing theme, and is tested for association between the phenotype of interest; the final MAF threshold is chosen such that the association signal is strongest. Permutation procedure has to be used to control for type I error due to multiple testing. 
 
-The VT strategy creates a very flexible framework that can be applied to many association tests, including the use of external information such as weight theme by annotation scores, as the VT paper suggested. The `VTtest` method implements the test for case control phenotype using the CMC coding theme and Fisher's exact test, in addition to the original VT statistic. Permutation procedure is optimized due to the use of Fisher's exact test: the minimum {$p$} value resulted from Fisher's exact test on the original dataset have to exceed the expected significance level in order to enter the permutation test procedure; otherwise it will be reported as it is. This trick reduces the computation time the original VT test would require. 
+The VT strategy creates a very flexible framework that can be applied to many association tests, including the use of external information such as weight theme by annotation scores, as the VT paper suggested. The `VTtest` method implements the test for case control phenotype using the CMC coding theme and Fisher's exact test, in addition to the original VT statistic. Permutation procedure is optimized due to the use of Fisher's exact test: the minimum <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \\(p\\) value resulted from Fisher's exact test on the original dataset have to exceed the expected significance level in order to enter the permutation test procedure; otherwise it will be reported as it is. This trick reduces the computation time the original VT test would require. 
 
 Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versatile versions of VT method, which tests for both case control and quantitative traits, with/without presence of phenotype co-variates, and is capable of incorporating functional information. 
 
@@ -26,9 +26,6 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
 #### 2.1 Command interface
 
     vtools show test VTtest
-    
-
-
 
     Name:          VTtest
     Description:   VT statistic for disease traits, Price et al 2010
@@ -101,9 +98,6 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
 
     vtools associate rare status -m "VTtest --name vt -p 5000" --group_by name2 --to_db vt -j8 \
     > vt.txt
-    
-
-
 
     INFO: 3180 samples are found
     INFO: 2632 groups are found
@@ -114,13 +108,8 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
     INFO: Using annotation DB vt in project test.
     INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 20:48:50
     
-
-
-
-    vtools show fields | grep vt
     
-
-
+    vtools show fields | grep vt
 
     vt.name2                     name2
     vt.sample_size_vt            sample size
@@ -137,8 +126,6 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
     head vt.txt
     
 
-
-
     name2	sample_size_vt	num_variants_vt	total_mac_vt	statistic_vt	pvalue_vt	std_error_vt	num_permutations_vt
     ABCD3	3180	3	42	-0.0717229	0.753247	0.316505	1000
     ABCB10	3180	6	122	0.37788	0.396603	0.339246	1000
@@ -151,27 +138,13 @@ Please refer to `VariableThresholdsBt` and `VariableThresholdsQt` for more versa
     ABCG8	3180	12	152	0.187745	0.612388	0.310029	1000
     
 
-
-
     vtools associate rare status -m "VTtest --name vtfisher --cfisher --midp -p 5000" --group_b\
     y name2 --to_db vtfisher -j8 > vtfisher.txt
     
 
-
-
-    
-
-
-
     vtools show fields | grep vtfisher
     
-
-
-
     
-
-
-
     head vtfisher.txt
     
 

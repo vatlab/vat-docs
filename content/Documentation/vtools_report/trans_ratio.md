@@ -11,7 +11,7 @@ weight = 5
 
 
 
-### 1. About `` `vtools_report trans_ratio ``
+### 1. About ``vtools_report trans_ratio ``
 
 This command counts the number of transition and transversion variants and calculates its ratio. The expected ratio is 2 in human pseudo-genes (after the exclusion of transitions at CpG sites). 
 
@@ -19,8 +19,7 @@ This command counts the number of transition and transversion variants and calcu
 
 ### 2. Usage
 
-    % vtools_report trans_ratio -h
-    
+    % vtools_report trans_ratio -h  
 
     usage: vtools_report trans_ratio [-h] -n NUM_FIELD
                                      [--group_by [GROUP_BY [GROUP_BY ...]]]
@@ -60,17 +59,13 @@ This command counts the number of transition and transversion variants and calcu
 
 ### 3. Example
 
-    % vtools_report trans_ratio variant -n num
-    
+    % vtools_report trans_ratio variant -n num  
 
     num_of_transition	num_of_transversion	ratio
     4891	                2562	                1.909
-    
 
 
-
-    % vtools_report trans_ratio variant -n num --group_by num
-    
+    % vtools_report trans_ratio variant -n num --group_by num   
 
     sample_count    num_of_transition       num_of_transversion     ratio
     1               375                     170                     2.206

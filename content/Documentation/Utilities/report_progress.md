@@ -44,7 +44,6 @@ Note:  Python module [matplotlib][2] is required to execute this script.
 
     % report_progress -h
     
-
     usage: report_progress [-h] [--output OUTPUT] logfiles [logfiles ...]
     
     This script reads one or more local or remote log files produces by variant

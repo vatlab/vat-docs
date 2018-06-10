@@ -60,7 +60,6 @@ returns the
     % vtools admin --rename_samples "filename='V3.vcf'" SAMP3
     % vtools output variant chr pos ref alt "samples()" -l 10
     
-
     1	4540 	G	A	SAMP1,SAMP3
     1	5683 	G	T	SAMP1
     1	5966 	T	G	SAMP1,SAMP2,SAMP3
@@ -80,7 +79,6 @@ Just to show the results from `genotype()` and `samples()` match each other:
     % vtools output variant chr pos ref alt "genotype('SAMP1')" "genotype('SAMP2')" \
         "genotype('SAMP3')" "samples()"  -l 10
     
-
     1	4540 	G	A	1	.	1	SAMP1,SAMP3
     1	5683 	G	T	1	.	.	SAMP1
     1	5966 	T	G	1	1	1	SAMP1,SAMP2,SAMP3
@@ -100,7 +98,6 @@ You can limit the samples to those with a particular type of genotype
     % vtools output variant chr pos ref alt "genotype('SAMP1')" "genotype('SAMP2')" \
         "genotype('SAMP3')" "samples('geno_filter=GT=2')"  -l 10
     
-
     1	4540 	G	A	1	.	1	.
     1	5683 	G	T	1	.	.	.
     1	5966 	T	G	1	1	1	.

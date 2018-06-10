@@ -23,7 +23,6 @@ You should run the following command to see the availability of most recent vers
 
     % vtools show annotations evs ESP
     
-
     ESP-6500SI-V2-SSA137    NHLBI GO Exome Sequencing Project (Exome Variant
                             Server, NHLBI Exome Sequencing Project (ESP), Seattle,
                             WA (URL: http://evs.gs.washington.edu/EVS/) [6500
@@ -48,13 +47,10 @@ You should run the following command to see the availability of most recent vers
                             Server,  NHLBI Exome Sequencing Project (ESP),
                             Seattle, WA (URL: http://evs.gs.washington.edu/EVS/)
                             [5400 samples, December, 2011].)
-    
-
 
 
     % vtools show annotation ESP
     
-
     Description:            NHLBI GO Exome Sequencing Project (Exome Variant
       Server, NHLBI Exome Sequencing Project (ESP), Seattle, WA (URL:
       http://evs.gs.washington.edu/EVS/) [6500 samples, February, 2013].)

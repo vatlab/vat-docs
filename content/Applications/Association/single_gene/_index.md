@@ -28,12 +28,12 @@ Most statistical methods for rare variants were originally proposed for associat
 
 These **single gene analysis** methods are implemented in the form as they were originally published with minimal modifications or optimizations. They are good for analyzing gene and case control phenotype associations without adjusting for covariates. Please use [multivariate methods][9] if you want to perform conditional association analysis (`--covariates` option). The multivariate methods generalizes the scope of rare variant association tests to being able to handle both quantitative and case control data with flexible weighting and grouping approaches.
 
- [1]: /vat-docs/applications/association/single_gene/cmctest/
- [2]: /vat-docs/applications/association/single_gene/c_alpha-test/
- [3]: /vat-docs/applications/association/single_gene/kbac-test/
- [4]: /vat-docs/applications/association/single_gene/rbt-test/
- [5]:/vat-docs/applications/association/single_gene/rarecover/
- [6]: /vat-docs/applications/association/single_gene/vt-test/
- [7]: /vat-docs/applications/association/single_gene/wss-test/
- [8]: /vat-docs/applications/association/single_gene/asum/
- [9]: /vat-docs/applications/association/joint_conditional/
+ [1]:   /applications/association/single_gene/cmctest/
+ [2]:   /applications/association/single_gene/c_alpha-test/
+ [3]:   /applications/association/single_gene/kbac-test/
+ [4]:   /applications/association/single_gene/rbt-test/
+ [5]:  /applications/association/single_gene/rarecover/
+ [6]:   /applications/association/single_gene/vt-test/
+ [7]:   /applications/association/single_gene/wss-test/
+ [8]:   /applications/association/single_gene/asum/
+ [9]:   /applications/association/joint_conditional/

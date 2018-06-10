@@ -11,7 +11,6 @@ weight = 1
 ### 1. Usage
 
     % vtools show pipeline import_vcf
-    
 
     This pipeline creates a customized .fmt file to import all variant and
     genotype info fields of input vcf files.
@@ -66,8 +65,7 @@ Although you can specify multiple vcf files in the command line (parameter --inp
 <details><summary> Import all fields from vcf files</summary> 
 
     % vtools init test -f
-    % vtools execute import_vcf --input V*.vcf
-    
+    % vtools execute import_vcf --input V*.vcf 
 
     INFO: Executing import_vcf.import_vcf_0: Check the version of variant tools (version 2.1.1 and above is required to execute this pipeline)
     INFO: Executing import_vcf.import_vcf_10: Create a feild description file from input text file.

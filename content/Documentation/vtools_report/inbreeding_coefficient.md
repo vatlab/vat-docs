@@ -24,9 +24,6 @@ Estimate of MAF using given samples should be computed prior to calculation of {
 
     vtools_report inbreeding_coefficient -h
     
-
-
-
     usage: vtools_report inbreeding_coefficient [-h]
                                                 [--samples [SAMPLES [SAMPLES ...]]]
                                                 --maf_field MAF_FIELD [-v {0,1,2}]
@@ -83,12 +80,7 @@ Inbreeding coefficients are computed and saved to file `chr1.inbreeding.txt`
 
 
 
-    vtools_report inbreeding_coef chr1 --maf_field mafEUR --samples "super_pop='EUR'" \
-                                                                         > chr1.inbreeding.txt
-    head chr1.inbreeding.txt
-    
-
-
+    vtools_report inbreeding_coef chr1 --maf_field mafEUR --samples "super_pop='EUR'" > chr1.inbreeding.txt
 
     HG00118	0.00599944241381
     HG00119	0.00206096581669

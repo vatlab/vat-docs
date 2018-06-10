@@ -108,8 +108,8 @@ Snakemake has somewhat similar design with VPT. It is based on Python, integrate
  
  [3]: https://github.com/bpeng2000/SOS
  [4]: http://en.wikipedia.org/wiki/Bioinformatics_workflow_management_system
- [5]: /vat-docs/documentation/pipelines/customizedpipeline/
- [6]: /vat-docs/documentation/customization/simulation/
+ [5]:    /documentation/pipelines/customizedpipeline/
+ [6]:    /documentation/customization/simulation/
  [7]: http://seqware.github.io/docs/1-introduction/
- [8]: /vat-docs/installation/
+ [8]:  installation/
  [9]: https://bitbucket.org/johanneskoester/snakemake/wiki/Home

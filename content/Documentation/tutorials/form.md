@@ -285,5 +285,5 @@ The command to import data is the same
 
     vtools import myVars.lst --format myformat.fmt --build hg18
 
- [1]: /vat-docs/documentation/customization/format/formats/new/
- [2]: /vat-docs/documentation/customization/format/formats/functor/
+ [1]:    /documentation/customization/format/formats/new/
+ [2]:    /documentation/customization/format/formats/functor/

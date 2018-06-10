@@ -31,7 +31,6 @@ For the latest version dbNSFP 2.4
 
     % vtools show annotation dbNSFP -v2
     
-
     Annotation database dbNSFP (version hg18_hg19_2_1)
     Description:            dbNSFP version 2.1, maintained by Xiaoming Liu from
       UTSPH. Please cite "Liu X, Jian X, and Boerwinkle E. 2011. dbNSFP: a
@@ -559,7 +558,7 @@ As a quick example, one can use dbNSFP to annotate all of the "damaging" non-syn
 
 
 
-    vtools select variant "SIFT_pred = 'D' OR PolyPhen2_HDIV_pred like '%D%'" -t damaging_ns_snps
+    % vtools select variant "SIFT_pred = 'D' OR PolyPhen2_HDIV_pred like '%D%'" -t damaging_ns_snps
     
 
 
@@ -569,7 +568,6 @@ As a quick example, one can use dbNSFP to annotate all of the "damaging" non-syn
     % vtools use dbNSFP_gene --linked_by refGene.name2
     % vtools show annotation dbNSFP_gene -v2
     
-
     Annotation database dbNSFP_gene (version 2_1)
     Description:            dbNSFP_gene version 2.1, maintained by Dr. Xiaoming
       Liu from UTSPH. Please cite "Liu X, Jian X, and Boerwinkle E. 2011. dbNSFP:
@@ -643,7 +641,6 @@ This light version of dbNSFP is only available for dbNSFP 1.0.
 
     vtools show annotation dbNSFP_light -v2
     
-
     Annotation database dbNSFP_light (version hg18_hg19_1.3)
     Description: dbNSFP_light version 1.0, maintained by Xiaoming Liu from UTSPH.
         Please cite "Liu X, Jian X, and Boerwinkle E. 2011. dbNSFP: a

@@ -12,7 +12,6 @@ weight = 2
 
     % vtools associate -h
     
-
     usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]]
                             [--var_info [VAR_INFO [VAR_INFO ...]]]
                             [--geno_info [GENO_INFO [GENO_INFO ...]]]
@@ -121,4 +120,4 @@ weight = 2
 
 Please check [the VAT homepage][1] for details.
 
- [1]: /vat-docs/applications/association/
+ [1]:   /applications/association/

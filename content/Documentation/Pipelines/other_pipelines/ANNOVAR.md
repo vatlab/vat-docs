@@ -14,7 +14,6 @@ weight =5
 
     % vtools show pipeline ANNOVAR
     
-
     Pipeline to call ANNOVAR and import results as variant info fields.
     
     Available pipelines: geneanno
@@ -68,7 +67,6 @@ This pipeline makes it easier to use (a small portion of) ANNOVAR's gene-based a
 
 
     % vtools execute ANNOVAR  geneanno --annovar_path ~/bin/annovar
-    
 
     INFO: Executing step geneanno_0 of pipeline ANNOVAR: Load specified snapshot if a snapshot is specified. Otherwise use the existing project.
     INFO: Executing step geneanno_10 of pipeline ANNOVAR: Check the existence of ANNOVAR's annotate_variation.pl command.
@@ -112,7 +110,6 @@ After the execution of the pipeline, two variant info fields are added to the pr
 
 
     % vtools select variant 'mut_type is not NULL' --output chr pos ref alt mut_type function -l 10
-    
 
     1	900505  	G	C	synonymous SNV   	KLHL17:NM_198317:exon12:c.G1863C:p.V621V,
     1	1686040 	G	T	nonsynonymous SNV	NADK:NM_001198993:exon8:c.C786A:p.N262K,NADK:NM_023018:exon8:c.C786A:p.N262K,NADK:NM_001198995:exon6:c.C690A:p.N230K,NADK:NM_001198994:exon10:c.C1221A:p.N407K,

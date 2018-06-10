@@ -24,7 +24,6 @@ This database provides KEGG pathway IDs and a pathway description for genes with
 
     vtools show annotation keggPathway -v2
     
-
     Annotation database keggPathway (version 20110823)
     Description: kegg pathway for CCDS genes
     Database type: attribute
@@ -61,9 +60,8 @@ First we need to use `dbNSFP` in our project to annotate our variants with CCDS 
 
 We then load the keggPathway database linked by `ccdsGene.name` 
 
-    vtools use keggPathway --linked_by ccdsGene.name
+    % vtools use keggPathway --linked_by ccdsGene.name
     
-
     INFO: Opening project RA.proj
     WARNING: Cannot locate annotation database /Users/bpeng/vtools/ccdsKeggPathway
     WARNING: Cannot open annotation database /Users/bpeng/vtools/ccdsKeggPathway
@@ -82,8 +80,6 @@ We then load the keggPathway database linked by `ccdsGene.name`
 
 At the end of `vtools show fields` output, we can see 
 
-
-
     keggPathway.ccdsId           CCDS gene ID
     keggPathway.KgID             Kegg pathway ID
     keggPathway.KgDesc           Description of pathway
@@ -91,11 +87,8 @@ At the end of `vtools show fields` output, we can see
 
 Now, we can see which pathways our variants belong to: 
 
-
-
     vtools output NS_SNV chr pos ref alt genename kgID kgDesc  -l 10
     
-
     INFO: Opening project RA.proj
     INFO: Writing output
     1	878522	T	C	NOC2L	NA	NA
@@ -116,7 +109,6 @@ and we can select variants that belong to a pathway, for example,
 
     vtools select NS_SNV 'kgID="hsa00760"' --output chr pos ref alt genename kgDesc 
     
-
     INFO: Opening project RA.proj
     INFO: Writing output
     1	1675900	G	T	NADK	Metabolic pathways

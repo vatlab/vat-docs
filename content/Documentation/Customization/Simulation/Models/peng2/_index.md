@@ -17,7 +17,6 @@ weight = 2
 
     % vtools show simulation Peng2014_ex2
     
-
     Simulation of case control samples for 20 genes and analyze samples of different sizes (1000,
     2000, 3000, 4000 cases and matching number of controls) draw from European, Mexican American
     (mixed and matched case and control), and from both Asian (cases) and European (controls)

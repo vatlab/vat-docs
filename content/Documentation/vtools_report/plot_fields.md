@@ -16,7 +16,6 @@ weight = 10
 
     % vtools_report plot_fields -h
     
-
     usage: vtools_report plot_fields [-h] [--variants TABLE]
                                      [--save_data FILENAME]
                                      [--save_script FILENAME] [--width px]

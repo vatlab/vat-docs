@@ -34,8 +34,7 @@ for these variants. Here `dbSNP.name` is used to add rsname to the output. You c
 
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
-    % vtools import indels.vcf --build hg19
-    
+    % vtools import indels.vcf --build hg19   
 
     INFO: Importing variants from indels.vcf (1/1)
     indels.vcf: 100% [======================================================================] 184 15.4K/s in 00:00:00
@@ -50,7 +49,6 @@ The variants in vcf files are
 
     % sort indels.vcf -n -k2 | tail -5 | cut -f1-5
     
-
     1	819516	rs71315270	A	AT
     1	819612	rs34487673	TC	T
     1	819612	rs71315271	TC	T
@@ -62,8 +60,7 @@ If we output the variants, we can see that the padding alleles are removed, the 
 
 
 
-    % vtools output variant chr pos ref alt --order_by chr pos | tail -6
-    
+    % vtools output variant chr pos ref alt --order_by chr pos | tail -6 
 
     1	819517	-	T
     1	819613	C	-
@@ -78,7 +75,6 @@ We can output the variants in vcf format using function `vcf_variant`,
 
 
     % vtools output variant 'vcf_variant(chr, pos, ref, alt)' --order_by chr pos | tail -6
-    
 
     1	819516	A	AT
     1	819612	TC	T
@@ -94,8 +90,7 @@ Anyway, to produce vcf-like output, a name is needed. We can use a default value
 
 
 
-    % vtools output variant 'vcf_variant(chr, pos, ref, alt, ".")' --order_by chr pos | tail -6
-    
+    % vtools output variant 'vcf_variant(chr, pos, ref, alt, ".")' --order_by chr pos | tail -6  
 
     1	819516	.	A	AT
     1	819612	.	TC	T
@@ -112,7 +107,6 @@ or name from dbSNP
     % vtools use dbSNP
     % vtools output variant 'vcf_variant(chr, pos, ref, alt, dbSNP.name)' --order_by chr pos | tail -6
     
-
     1	819516	rs71315270	A	AT
     1	819612	rs34487673	TC	T
     1	819703	rs77305433	TCTATGTGTCT	T
@@ -126,7 +120,6 @@ For variants with multiple entries in the `dbSNP` database, we can use option `-
 
 
     % vtools output variant 'vcf_variant(chr, pos, ref, alt, dbSNP.name)' --order_by chr pos --all | tail -8
-    
 
     1	819516	rs71315270	A	AT
     1	819612	rs34487673	TC	T
@@ -170,14 +163,12 @@ If the optional field `other` is specified, then genotype 1/2 will be collapsed 
 
     % vtools update variant --set "hwe=HWE_exact(total, het, hom)"
     
-
     INFO: Adding field hwe
     
 
 Because of the small sample size, there are not many choices for p-values: 
 
-    % vtools output variant chr pos ref alt hwe -l5
-    
+    % vtools output variant chr pos ref alt hwe -l5  
 
     1	4540	G	A	1.0
     1	5683	G	T	1.0
@@ -206,7 +197,6 @@ The function `Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_
 
 
     % vtools update variant a --from_stat 'num_gt_case=#(GT)' 'num_var_alleles_case=#(alt)' --samples "phen1=1"
-    
 
     INFO: 1000 samples are selected
     Counting variants: 100% [=======================================] 1,000 11.1K/s in 00:00:00
@@ -218,8 +208,7 @@ The function `Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_
 
 
 
-    % vtools update variant a --from_stat 'num_gt_ctrl=#(GT)' 'num_var_alleles_ctrl=#(alt)' --samples "phen1=0"
-    
+    % vtools update variant a --from_stat 'num_gt_ctrl=#(GT)' 'num_var_alleles_ctrl=#(alt)' --samples "phen1=0" 
 
     INFO: 1000 samples are selected
     Counting variants: 100% [=====================================] 1,000 11.4K/s in 00:00:00
@@ -233,8 +222,7 @@ And calculate p-value for the Fisher's exact test:
 
 
 
-    % vtools update variant --set "prop_pval=Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_case, 2*num_gt_ctrl)"
-    
+    % vtools update variant --set "prop_pval=Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_case, 2*num_gt_ctrl)" 
 
     INFO: Adding field prop_pval
     
@@ -243,8 +231,7 @@ Again, there are not many possible p-values due to small sample size ...
 
 
 
-    % vtools output variant chr pos ref alt prop_pval | sort -k5 | head -5
-    
+    % vtools output variant chr pos ref alt prop_pval | sort -k5 | head -5   
 
     22	49522870	G	C	0.148032884657
     22	49529883	C	T	0.236820419247

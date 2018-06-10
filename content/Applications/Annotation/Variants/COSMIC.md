@@ -24,7 +24,6 @@ There is also a more detailed database (**CosmicMutantExport**) that can be link
     % vtools use CosmicCodingMuts
     % vtools show annotation CosmicCodingMuts -v2
     
-
     Annotation database CosmicCodingMuts (version v61_260912)
     Description: Cosmic coding mutation database.  This data contains mutations 
     affecting 10 or less nucleotides in REF.  The mutation data was obtained 
@@ -99,11 +98,8 @@ There is also a more detailed database (**CosmicMutantExport**) that can be link
     Range:           1 - 29906
     
 
-
-
     % vtools use CosmicNonCodingVariants
-    % vtools show annotation CosmicNonCodingVariants -v2
-    
+    % vtools show annotation CosmicNonCodingVariants -v2 
 
     Annotation database CosmicNonCodingVariants (version v61_260912)
     Description: Cosmic non-coding mutation database.  This data contains 
@@ -161,12 +157,9 @@ There is also a more detailed database (**CosmicMutantExport**) that can be link
     Unique Entries:  2
     
 
-
-
     % vtools use CosmicMutantExport --linked_by CosmicCodingMuts.COSMIC_ID
     % vtools show annotation CosmicMutantExport -v2
     
-
     Annotation database CosmicMutantExport (version v61_260912)
     Description: Cosmic mutant export.  This data contains all coding 
     point mutations.  The mutation data was obtained from the Sanger 

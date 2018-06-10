@@ -12,7 +12,6 @@ weight = 9
 
     % vtools exclude -h
     
-
     usage: vtools exclude [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]]
                           [-c | -o [FIELDS [FIELDS ...]]]
                           [--header [HEADER [HEADER ...]]] [-d DELIMITER]
@@ -114,11 +113,10 @@ selects 10 variants. If we remove non-synonymous variants with sift_score <= 0.9
 
 
 
-    % vtools exclude ns 'sift_score <= 0.95' -t ns_excl_benign
-    
+    % vtools exclude ns 'sift_score <= 0.95' -t ns_excl_benign   
 
-    Running: 0 0.0/s in 00:00:00
-    INFO: 9 variants selected.
+     Running: 0 0.0/s in 00:00:00
+     INFO: 9 variants selected.
     
 
 We track this difference using `vtools compare` 
@@ -134,7 +132,6 @@ and output the information for this variant
 
     % vtools output diff variant_id chr pos ref alt sift_score genename --build hg18
     
-
     1036	5	139908704	C	A	1	        ANKHD1-EIF4EBP3
     1036	5	139908704	C	A	0.942108	EIF4EBP3
     
@@ -145,7 +142,6 @@ if we use the complete `dbNSFP` annotation database we can show more fields
 
     % vtools output diff variant_id chr pos ref alt CCDSid sift_score genename Descriptive_gene_name --build hg18
     
-
     #id     chr  pos        ref  alt CCDSid         sift_score      genename            Descriptive_gene_name
     1036	5    139908704	C    A	 CCDS4224.1	1.0	        ANKHD1-EIF4EBP3	    ANKHD1-EIF4EBP3 readthrough
     1036	5    139908704	C    A	 CCDS4226.1	0.942108	EIF4EBP3	    eukaryotic translation initiation factor 4E binding protein 3

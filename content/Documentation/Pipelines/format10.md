@@ -180,7 +180,7 @@ you can load parameters `--bwa /path/to/bwa --samtools /path/to/samtools` using 
 
 
 
-#### 3.1 Definition of pipeline variables
+#### 4.1 Definition of pipeline variables
 
 Two different types of variables can be used in a spec file: command line options and pipeline variables. Command line options are defined in the `[DEFAULT]` section and are used in the spec file with syntax `%(NAME)s`. These variables are replaced right after a spec file is loaded and cannot be changed. 
 
@@ -241,7 +241,7 @@ is used to store each group of input files. For example, if the input fastq file
 
 
 
-### Use of Pipline variables
+#### 4.2 Use of Pipline variables
 
 It is important to remember that 
 
@@ -288,7 +288,7 @@ Use of shell variables (e.g. use a for loop in action `RunCommand`) is possible 
 
 
 
-## Pipeline action sections `[PIPELINE_XX]`, or `[PIPELINE_XX,PIPELINE1_XX]`, or `[*_XX]`
+### 5. Pipeline action sections `[PIPELINE_XX]`, or `[PIPELINE_XX,PIPELINE1_XX]`, or `[*_XX]`
 
 A pipeline is, roughly speaking, a *pipe* that connects the input (e.g. raw reads in fastq format) to the output (e.g. aligned reads in bam format), going through a few steps (actions) along the way. A pipeline specification file can define multiple pipelines with different `PIPELINE`. Steps in a pipeline are numbered and will be executed in such order. 
 
@@ -411,7 +411,7 @@ uses passes an additional option `-g` to an action for pipeline `eu`.
 
 
 
-## Available actions
+### 6. Available actions
 
 Actions are functions that are executed by *Variant Tools*. 
 
@@ -525,7 +525,7 @@ to check the details of action `TerminateIf`.
 
 
 
-### Brief description of built-in actions
+#### 6.1 Brief description of built-in actions
 
 The following is a partial list of built-in actions defined by variant tools. The descriptions are brief and might have been outdated so please use command above to check the latest documentation. 
 
@@ -604,7 +604,7 @@ Arbitrary command could be defined for this action, which in theory could destro
 
 
 
-### Define your own pipeline actions
+#### 6.2 Define your own pipeline actions
 
 You can define your pipeline actions to perform steps that cannot be performed by an existing command. Generally speaking, you will need to 
 
@@ -685,6 +685,6 @@ This function converts a UCSC refGene.txt to BEd format so that it can be used b
 
 *   Import the module to your pipeline using `ImportModules('my_tools.py')`.
 
- [1]: /vat-docs/documentation/pipelines/customizedpipeline/
- [2]: /vat-docs/documentation/customization/simulation/
+ [1]:    /documentation/pipelines/customizedpipeline/
+ [2]:    /documentation/customization/simulation/
  [3]: http://docs.python.org/2/library/re.html

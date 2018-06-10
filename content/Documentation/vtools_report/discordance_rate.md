@@ -10,7 +10,6 @@ weight = 2
 
     % vtools_report discordance_rate -h
     
-
     usage: vtools_report discordance_rate [-h] [-s [SAMPLES [SAMPLES ...]]]
                                           [--genotypes [GENOTYPES [GENOTYPES ...]]]
                                           [-v {0,1,2}]

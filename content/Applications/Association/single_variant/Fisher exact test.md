@@ -31,10 +31,8 @@ The function `Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_
 <details><summary> Examples: Fisher's exact test for case/ctrl association</summary> First, we compute statistics separately in cases and ctrls: 
 
 
-
     vtools update variant --from_stat 'num_gt_case=#(GT)' 'num_var_alleles_case=#(alt)' --samples "filename in ('V1.vcf', 'V2.vcf')"
     
-
     Counting variants: 100% [================================] 2 69.2/s in 00:00:00
     INFO: Adding field num_var_alleles_case
     INFO: Adding field num_gt_case
@@ -46,7 +44,6 @@ The function `Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_
 
     vtools update variant --from_stat "num_gt_ctrl=#(GT)" "num_var_alleles_ctrl=#(alt)" --samples "filename = 'V3.vcf'"
     
-
     Counting variants: 100% [===============================] 1 220.3/s in 00:00:00
     INFO: Adding field num_var_alleles_ctrl
     INFO: Adding field num_gt_ctrl
@@ -60,7 +57,6 @@ And calcualte p-value for the Fisher's exact test:
 
     vtools update variant --set "prop_pval=Fisher_exact(num_var_alleles_case, num_var_alleles_ctrl, 2*num_gt_case, 2*num_gt_ctrl)"
     
-
     INFO: Adding field prop_pva
     
 

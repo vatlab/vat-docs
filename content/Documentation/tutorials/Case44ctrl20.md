@@ -201,6 +201,6 @@ The following command count the number of transition and transversion mutations 
     # This command takes 48min to execute 
     % vtools_report trans_ratio variant -n num --by_count
 
- [1]: /vat-docs/vtools.pdf/
- [2]: /vat-docs/documentation/vtools_commands/import/
- [3]: /vat-docs/documentation/tutorials/subprojects/
+ [1]:  vtools.pdf/
+ [2]:    /documentation/vtools_commands/import/
+ [3]:    /documentation/tutorials/subprojects/

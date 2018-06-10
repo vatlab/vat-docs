@@ -169,7 +169,7 @@ This command downloads the **keggPathway** annotation source allowing variants t
     Resolving vtools.houstonbioinformatics.org... 70.39.145.13
     Connecting to vtools.houstonbioinformatics.org[70.39.145.13]:80... connected.
     HTTP request sent, awaiting response... 200 OK
-    Length: 350,847 [application/x-gzip]
+    Length: 350,847 [  /applications/x-gzip]
     
     100%[=============================================================================>] 350,847      330.94K/s             
     

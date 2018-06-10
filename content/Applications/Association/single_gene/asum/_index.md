@@ -11,9 +11,9 @@ weight = 8
 
 ### 1. Introduction
 
-The data-adaptive sum test (aSum) by (Han and Pan, 2010) is the first method that took into consideration the difference in direction of effects (protective or deleterious) of rare variants in the same genetic region analyzed by a rare variant association test. It is a two-stage approach. In the first stage the effect size of each rare variant is evaluated in a multivariate regression analysis, identifying the variants having significant "protective" effects, i.e., variants with a negative log odds ratio associated with a {$p$} value smaller than {$0.1$}. In the second stage, variants are collapsed across the genetic region similar to (Morris and Zeggini, 2010) but with the coding for protective variants *flipped*. The test statistic is a score test for logistic regression for case control data. 
+The data-adaptive sum test (aSum) by (Han and Pan, 2010) is the first method that took into consideration the difference in direction of effects (protective or deleterious) of rare variants in the same genetic region analyzed by a rare variant association test. It is a two-stage approach. In the first stage the effect size of each rare variant is evaluated in a multivariate regression analysis, identifying the variants having significant "protective" effects, i.e., variants with a negative log odds ratio associated with a \\(p\\) value smaller than <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \\(0.1\\). In the second stage, variants are collapsed across the genetic region similar to (Morris and Zeggini, 2010) but with the coding for protective variants *flipped*. The test statistic is a score test for logistic regression for case control data. 
 
-The implementation of stage 1 in this program differs from the original paper. Instead of evaluating the effect size for each variant, it evaluates the difference in MAF of each variant between case and controls via an exact test to determine which variants are to be re-coded in stage 2. The same {$p<0.1$} criteria is used for stage 1, but in effect is more stringent than the original criteria for a multivariate logistic regression analysis. 
+The implementation of stage 1 in this program differs from the original paper. Instead of evaluating the effect size for each variant, it evaluates the difference in MAF of each variant between case and controls via an exact test to determine which variants are to be re-coded in stage 2. The same \\(p<0.1\\) criteria is used for stage 1, but in effect is more stringent than the original criteria for a multivariate logistic regression analysis. 
 
 
 
@@ -23,9 +23,6 @@ The implementation of stage 1 in this program differs from the original paper. I
 
     vtools show test aSum
     
-
-
-
     Name:          aSum
     Description:   Adaptive Sum score test for protective and deleterious variants, Han &
                    Pan 2010
@@ -76,9 +73,6 @@ The implementation of stage 1 in this program differs from the original paper. I
 
     vtools associate rare status -m "aSum --name aSum -p 5000" --group_by name2 --to_db asum -j\
     8 > asum.txt
-    
-
-
 
     INFO: 3180 samples are found
     INFO: 2632 groups are found
@@ -94,9 +88,6 @@ The implementation of stage 1 in this program differs from the original paper. I
 
     vtools show fields | grep asum
     
-
-
-
     asum.name2                   name2
     asum.sample_size_aSum        sample size
     asum.num_variants_aSum       number of variants in each group (adjusted for specified MAF
@@ -111,9 +102,6 @@ The implementation of stage 1 in this program differs from the original paper. I
 
     head asum.txt
     
-
-
-
     name2	sample_size_aSum	num_variants_aSum	total_mac_aSum	statistic_aSum	pvalue_aSum	std_error_aSum	num_permutations_aSum
     AADACL4	3180	5	138	2.59057	0.32967	3.85368	1000
     ABCG5	3180	6	87	1.90472	0.335664	3.00098	1000

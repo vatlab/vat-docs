@@ -22,7 +22,7 @@ weight = 3
 
 *VAT* association pipeline 
 
-<img src = "association.png">
+<img src = "association.png" width = 500>
 
 
 
@@ -83,6 +83,6 @@ Results from association analysis are available as commandline standard output w
  [2]: mailto:bpeng@mdanderson.org
  [3]: http://www.bcm.edu/genetics/?pmid=10939
  [4]: mailto:varianttools-devel@lists.sourceforge.net
- [5]: /vat-docs/installation/
+ [5]:  installation/
  [6]: http://dx.doi.org/10.1016/j.ajhg.2014.04.004
- [7]: /vat-docs/applications/association/qc/
+ [7]:   /applications/association/qc/

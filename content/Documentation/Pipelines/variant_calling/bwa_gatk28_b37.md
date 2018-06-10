@@ -9,4 +9,4 @@ weight = 4
 
 This pipeline is identical to [bwa\_gatk28\_hg19][1] except that it uses the `b37` reference genome.
 
- [1]:/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/
+ [1]:   /documentation/pipelines/variant_calling/bwa_gatk28_hg19/

@@ -16,8 +16,7 @@ This pipeline exports variants in VCF format, call snpEff to predict its effect,
 
 
 
-    % vtools show pipeline snpEff
-    
+    % vtools show pipeline snpEff 
 
     A pipeline to call snpEff to annotate variants.
     
@@ -60,8 +59,7 @@ This pipeline calls `snpEff` to estimate the effect of variants so you first nee
 
 
 
-    % vtools execute snpEff eff --snpeff_path ~/bin/snpEff/
-    
+    % vtools execute snpEff eff --snpeff_path ~/bin/snpEff/   
 
     INFO: Executing step eff_0 of pipeline snpEff: Load specified snapshot if a snapshot is specified. Otherwise use the existing project.
     INFO: Executing step eff_10 of pipeline snpEff: Check the existence of command java
@@ -93,7 +91,6 @@ The field `EFF` is added to (or updated if it already exists) the project,
 
 
     % vtools output variant chr pos ref alt EFF -l 10
-    
 
     6	32797167	A	G	INTRON(MODIFIER||||653|TAP2||CODING|NM_018833.2.8|11|1),INTRON(MODIFIER||||703|TAP2||CODING|NM_000544.3.8|11|1)
     6	32369594	A	G	INTRON(MODIFIER||||455|BTNL2||CODING|NM_019602.1.8|3|1)

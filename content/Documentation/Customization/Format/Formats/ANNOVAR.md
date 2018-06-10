@@ -3,9 +3,9 @@ title = "ANNNOVAR"
 weight = 8
 +++
 
-# Importing ANNOVAR input file
+## Importing ANNOVAR input file
 
-## Format description
+### 1. Format description
 
 <http://www.openbioinformatics.org/annovar/annovar_input.html> 
 
@@ -13,7 +13,7 @@ weight = 8
 
 
 
-## Sample input
+### 2. Sample input
 
     1 161003087 161003087 C T comments: rs1000050, a SNP in Illumina SNP arrays
     1 84647761 84647761 C T comments: rs6576700 or SNP_A-1780419, a SNP in Affymetrix SNP arrays
@@ -31,7 +31,7 @@ weight = 8
 
 
 
-## How to import
+### 3. How to import
 
 Saving the above example file as `ex1.human`, one can import it using command 
 
@@ -39,7 +39,6 @@ Saving the above example file as `ex1.human`, one can import it using command
 
     vtools import --format ANNOVAR ex1.human --build hg18
     
-
     INFO: Importing genotype from ex1.human (1/1)
     ex1.human: 12
     INFO: 0 new variants from 11 records are imported, with 0 SNVs, 0 insertions,
@@ -52,7 +51,6 @@ The inputted variants can be displayed using
 
     vtools output variant chr pos ref alt
     
-
     1	161003087	C	T
     1	84647761	C	T
     1	13133880	TC	-

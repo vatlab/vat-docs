@@ -71,23 +71,23 @@ This is a 10-minute quick start guide using data from the 1000 genomes project. 
 
 *   Use **subprojects** to manage large projects. This strategy can be used to parallelize variant processing using multiple processors or a cluster [<img src="html.png" width = "25" height = "25" style = "display: inline" />][10]
 
- [1]: /vat-docs/documentation/tutorials/quickstartguide/
+ [1]:    /documentation/tutorials/quickstartguide/
  [2]: vtools.pdf
  [3]: VST.pdf
  [4]: VariantPipelineTools.pptx
  [5]: http://www.cse.buffalo.edu/ACM-BCB2014/
- [6]: /vat-docs/documentation/tutorials/acm-bcb/ 
- [7]: /vat-docs/documentation/tutorials/case44ctrl20/
- [8]: /vat-docs/documentation/tutorials/illumina5/
- [9]: /vat-docs/documentation/tutorials/compare/
- [10]: /vat-docs/documentation/tutorials/select/
- [11]: /vat-docs/documentation/tutorials/analysis/
- [12]: /vat-docs/documentation/tutorials/1000genome/
- [13]: /vat-docs/documentation/tutorials/annovar/
- [14]: /vat-docs/documentation/tutorials/form/
- [15]: /vat-docs/documentation/tutorials/sample/
- [16]: /vat-docs/documentation/tutorials/mouthgenome/
- [17]: /vat-docs/documentation/tutorials/annotation/
- [18]: /vat-docs/documentation/tutorials/association/
- [19]: /vat-docs/documentation/tutorials/testing/
- [20]: /vat-docs/documentation/tutorials/subprojects/
+ [6]:    /documentation/tutorials/acm-bcb/ 
+ [7]:    /documentation/tutorials/case44ctrl20/
+ [8]:    /documentation/tutorials/illumina5/
+ [9]:    /documentation/tutorials/compare/
+ [10]:    /documentation/tutorials/select/
+ [11]:    /documentation/tutorials/analysis/
+ [12]:    /documentation/tutorials/1000genome/
+ [13]:    /documentation/tutorials/annovar/
+ [14]:    /documentation/tutorials/form/
+ [15]:    /documentation/tutorials/sample/
+ [16]:    /documentation/tutorials/mouthgenome/
+ [17]:    /documentation/tutorials/annotation/
+ [18]:    /documentation/tutorials/association/
+ [19]:    /documentation/tutorials/testing/
+ [20]:    /documentation/tutorials/subprojects/

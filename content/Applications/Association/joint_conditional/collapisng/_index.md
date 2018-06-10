@@ -11,11 +11,12 @@ weight = 1
 
 ### 1. Introduction
 
-This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. *Collapsing* method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region {$X$}:{$$X = I\_(0,N)(\sum\_i^N X_i)$$} i.e., the observed genotype will be coded as {$1$} if there exists at least one mutation, and {$0$} otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010). 
+This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. *Collapsing* method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \\(X\\):
+$$X = I\_(0,N)(\sum\_i^N X_i)$$ i.e., the observed genotype will be coded as \\(1\\) if there exists at least one mutation, and \\(0\\) otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010). 
 
 Advantages in using collapsing methods instead of [aggregation methods][1] is in its robustness to LD of multiple rare variants in the region under investigation, which would potentially inflate type I error. However under additive assumptions of genetic effects, collapsing methods may be less powerful than aggregation methods. 
 
-Our program implements the collapsing coding in a logistic regression framework for disease traits analysis (case control data) as `CollapseBt` method, and a linear regression framework for quantitative traits analysis as `CollapseQt` method. {$p$} value for collapsing method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component. 
+Our program implements the collapsing coding in a logistic regression framework for disease traits analysis (case control data) as `CollapseBt` method, and a linear regression framework for quantitative traits analysis as `CollapseQt` method. \\(p\\) value for collapsing method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component. 
 
 
 
@@ -31,9 +32,6 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
 
     % vtools show test CollapseBt
     
-
-
-
     Name:          CollapseBt
     Description:   Collapsing method for disease traits, Li & Leal 2008
     usage: vtools associate --method CollapseBt [-h] [--name NAME]
@@ -72,12 +70,7 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
                             model. Default set to additive
     
 
-
-
     % vtools show test CollapseQt
-    
-
-
 
     Name:          CollapseQt
     Description:   Collapsing method for quantitative traits, Li & Leal 2008
@@ -130,9 +123,6 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
     % vtools associate rare status --covariates age gender bmi exposure -m "CollapseBt --name Col\
     lapseBt --alternative 2" --group_by name2 --to_db collapseBt -j8 > collapseBt.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     INFO: Starting 8 processes to load genotypes
@@ -143,12 +133,7 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
     INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 23:10:09
     
 
-
-
     % vtools show fields | grep collapseBt
-    
-
-
 
     collapseBt.name2             name2
     collapseBt.sample_size_CollapseBt sample size
@@ -171,13 +156,8 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
     collapseBt.wald_5_CollapseBt Wald statistic for covariate 5
     
 
-
-
     % head collapseBt.txt
     
-
-
-
     name2   sample_size_CollapseBt  num_variants_CollapseBt total_mac_CollapseBt    beta_x_CollapseBt       pvalue_CollapseBt       wald_x_CollapseBt       beta_2_CollapseBt    beta_2_pvalue_CollapseBt        wald_2_CollapseBt       beta_3_CollapseBt       beta_3_pvalue_CollapseBt        wald_3_CollapseBt       beta_4_CollapseBt    beta_4_pvalue_CollapseBt        wald_4_CollapseBt       beta_5_CollapseBt       beta_5_pvalue_CollapseBt        wald_5_CollapseBt
     AADACL4 3180    5       138     -0.2941 0.368956        -0.89843        0.0312903       4.30942E-09     5.87186 -0.296598       0.0154271       -2.42219    0.129942 1.83369E-40     13.3174 0.437372        0.00133613      3.2081
     AAMP    3180    3       35      0.00135633      0.997852        0.0026919       0.0312624       4.39097E-09     5.86875 -0.298944       0.0146254       -2.44152     0.130231        1.24946E-40     13.346  0.43547 0.00139464      3.19576
@@ -190,15 +170,14 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
     ABCA4   3180    43      492     -0.00909763     0.95585 -0.0553619      0.0312634       4.37388E-09     5.8694  -0.298919       0.0146254       -2.44153    0.130239 1.15466E-40     13.3519 0.435484        0.00139409      3.19587
     
 
-**QQ-plot**  Attach:collapseBt.jpg 
+**QQ-plot** 
+
+<img src = "collapseBt.jpg" width = 500>
 
 
 
     % vtools associate rare bmi --covariates age gender exposure -m "CollapseQt --name CollapseQt\
      --alternative 2" --group_by name2 --to_db collapseQt -j8 > collapseQt.txt
-    
-
-
 
     INFO: 3180 samples are found
     INFO: 2632 groups are found
@@ -210,13 +189,8 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
     INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 03:48:21
     
 
-
-
     % vtools show fields | grep collapseQt
     
-
-
-
     collapseQt.name2             name2
     collapseQt.sample_size_CollapseQt sample size
     collapseQt.num_variants_CollapseQt number of variants in each group (adjusted for specified MAF
@@ -235,12 +209,7 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
     collapseQt.wald_4_CollapseQt Wald statistic for covariate 4
     
 
-
-
     % head collapseQt.txt
-    
-
-
 
     name2   sample_size_CollapseQt  num_variants_CollapseQt total_mac_CollapseQt    beta_x_CollapseQt       pvalue_CollapseQt       wald_x_CollapseQt       beta_2_CollapseQt    beta_2_pvalue_CollapseQt        wald_2_CollapseQt       beta_3_CollapseQt       beta_3_pvalue_CollapseQt        wald_3_CollapseQt       beta_4_CollapseQt    beta_4_pvalue_CollapseQt        wald_4_CollapseQt
     ABCD3   3180    3       42      -0.487474       0.571152        -0.566415       0.0149956       0.0588415       1.89006 -0.0808192      0.693535        -0.394098    -0.941867       2.64731E-05     -4.20804
@@ -253,7 +222,7 @@ If the pattern of missing genotypes is not random in sample (e.g., missing ratio
     ABL2    3180    4       41      -0.613866       0.475633        -0.713429       0.0150498       0.0579226       1.89697 -0.0781101      0.703263        -0.380954    -0.945432       2.46814E-05     -4.22394
     ACADL   3180    5       65      1.33815 0.0528276       1.93705 0.0150444       0.0578831       1.89727 -0.082882       0.685934        -0.404416       -0.941384    2.64356E-05     -4.20836
     
-
+**QQ-plot** 
 <img src = "collapseBt.jpg" width = 500>
 
 </details>
@@ -266,5 +235,5 @@ Bingshan Li and Suzanne M. Leal (2008) **Methods for Detecting Associations with
 Gaurav Bhatia, Vikas Bansal, Olivier Harismendy, Nicholas J. Schork, Eric J. Topol, Kelly Frazer and Vineet Bafna (2010) **A Covering Method for Detecting Genetic Associations between Rare Variants and Common Phenotypes**. *PLoS Computational Biology* doi:`10.1371/journal.pcbi.1000954`. <http://dx.plos.org/10.1371/journal.pcbi.1000954>
 
 
- [1]: /vat-docs/applications/association/joint_conditional/aggre/
+ [1]:   /applications/association/joint_conditional/aggre/
  

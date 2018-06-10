@@ -13,7 +13,6 @@ weight = 11
 
     % vtools_report plot_geno_fields -h
     
-
     usage: vtools_report plot_geno_fields [-h] [--variants TABLE]
                                           [--samples [SAMPLES [SAMPLES ...]]]
                                           [--genotypes [GENOTYPES [GENOTYPES ...]]]

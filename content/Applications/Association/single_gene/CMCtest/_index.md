@@ -12,7 +12,7 @@ weight = 1
 
 ### 1. Introduction
 
-This is the Combined and Multivariate Collapsing (CMC, Li and Leal, 2008) test for rare variants. CMC method considers all variants in a test unit (e.g., a gene). It "collapses" all rare variants in the gene region such that the region is coded "0" if all loci are wildtype, and "1" if any one locus has a minor allele. Then it "combines" this coding with the rest of common variants in the gene region into a multivariate problem that tests for the null hypothesis that the gene region is not associated with a disease or quantitative trait. The statistic for CMC method can be {$\chi^2$} test for collapsed rare variants, Hotelling's {$T^2$} or multivariate regression analysis for joint analysis of common and rare variants. This program implements CMC method for rare variants with Fisher's exact test for evaluating association between rare variants and disease phenotypes (case/ctrl data). The use of Fisher's test results in exact p-value, avoiding the computationally intensive permutation procedure. 
+This is the Combined and Multivariate Collapsing (CMC, Li and Leal, 2008) test for rare variants. CMC method considers all variants in a test unit (e.g., a gene). It "collapses" all rare variants in the gene region such that the region is coded "0" if all loci are wildtype, and "1" if any one locus has a minor allele. Then it "combines" this coding with the rest of common variants in the gene region into a multivariate problem that tests for the null hypothesis that the gene region is not associated with a disease or quantitative trait. The statistic for CMC method can be <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \\(\chi^2\\) test for collapsed rare variants, Hotelling's \\(T^2\\) or multivariate regression analysis for joint analysis of common and rare variants. This program implements CMC method for rare variants with Fisher's exact test for evaluating association between rare variants and disease phenotypes (case/ctrl data). The use of Fisher's test results in exact p-value, avoiding the computationally intensive permutation procedure. 
 
 This test only works for case control data without covariates. Please refer to `CollapseBt` and `CollapseQt` for case control and quantitative traits using the collapsing theme under regression framework that incorporates covariates. 
 
@@ -24,9 +24,6 @@ This test only works for case control data without covariates. Please refer to `
 
     vtools show test CFisher
     
-
-
-
     Name:          CFisher
     Description:   Fisher's exact test on collapsed variant loci, Li & Leal 2008
     usage: vtools associate --method CFisher [-h] [--name NAME] [-q1 MAFUPPER]
@@ -76,9 +73,6 @@ This test only works for case control data without covariates. Please refer to `
     vtools associate rare status -m "CFisher --name Fisher --alternative 2" --group_by name2 --\
     to_db cfisher -j8 > cfisher.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     INFO: Starting 8 processes to load genotypes
@@ -93,9 +87,6 @@ This test only works for case control data without covariates. Please refer to `
 
     vtools show fields | grep cfisher
     
-
-
-
     cfisher.name2                name2
     cfisher.sample_size_Fisher   sample size
     cfisher.num_variants_Fisher  number of variants in each group (adjusted for specified MAF
@@ -108,9 +99,6 @@ This test only works for case control data without covariates. Please refer to `
 
     head cfisher.txt
     
-
-
-
     name2	sample_size_Fisher	num_variants_Fisher	total_mac_Fisher	statistic_Fisher	pvalue_Fisher
     AAMP	3180	3	35	1.27335	0.593442
     ABCD3	3180	3	42	0.821622	1
@@ -139,9 +127,6 @@ This collapsing test for rare variant is based on an exact test which guarantees
     vtools associate rare status -m "CFisher --name FisherMidP --alternative 1 --midp" --group_\
     by name2 --to_db cfisher -j8 > cfisher-midp.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     Loading genotypes: 100% [==========================] 3,180 33.3/s in 00:01:35
@@ -155,9 +140,6 @@ This collapsing test for rare variant is based on an exact test which guarantees
 
     vtools show fields | grep cfisher
     
-
-
-
     cfisher.name2                name2
     cfisher.sample_size_FisherMidP sample size
     cfisher.num_variants_FisherMidP number of variants in each group (adjusted for specified MAF
@@ -170,9 +152,6 @@ This collapsing test for rare variant is based on an exact test which guarantees
 
     head cfisher-midp.txt
     
-
-
-
     name2	sample_size_FisherMidP	num_variants_FisherMidP	total_mac_FisherMidP	statistic_FisherMidP	pvalue_FisherMidP
     AAMP	3180	3	35	1.27335	0.298742
     ABCB6	3180	7	151	0.91265	0.620991

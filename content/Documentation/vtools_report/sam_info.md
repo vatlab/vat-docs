@@ -11,4 +11,4 @@ weight = 3
 
 This command is deprecated with the new [`track`][1] function with BAM tracks.
 
- [1]: /vat-docs/documentation/vtools_commands/track/
+ [1]:    /documentation/vtools_commands/track/

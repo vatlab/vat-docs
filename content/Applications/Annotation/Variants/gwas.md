@@ -18,7 +18,6 @@ Here are the available gwasCatalog fields for annotation and filtering.
 
     vtools show annotation gwasCatalog -v2
     
-
     Annotation database gwasCatalog (version hg19_20140112)
     Description:            This database contains single nucleotide polymorphisms
       (SNPs) identified by published Genome-Wide Association Studies (GWAS),

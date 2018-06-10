@@ -14,7 +14,6 @@ The following fields are available for annotation.
 
     vtools show annotation cytoBand -v2
     
-
     DEBUG: Opening project temp.proj
     DEBUG: Loading annotation database cytoBand
     DEBUG: Loading annotation database gwasCatalog

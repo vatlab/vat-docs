@@ -3,9 +3,9 @@ title = "CASAVA18Snps"
 weight = 10
 +++
 
-# HomePage
+## CASAVA18Snps
 
-## Sample data
+### Sample data
 
     #	**	CASAVA	depth-filtered	snp	calls	**
     #$	CMDLINE	/CASAVA-1.8.0a19/filterSmallVariants.pl	--chrom=chr1
@@ -45,7 +45,6 @@ weight = 10
 
     vtools import --format Illumina_SNP Illumina_SNP.txt --build hg18
     
-
     INFO: Opening project f.proj
     INFO: Additional genotype fields: Q_max_gt
     INFO: Importing genotype from Illumina_SNP.txt (1/1)
@@ -58,7 +57,6 @@ The variants are
 
     vtools show table variant -l -1
     
-
     INFO: Opening project f.proj
     variant_id, bin, chr, pos, ref, alt
     1, 585, 1, 10231, C, A

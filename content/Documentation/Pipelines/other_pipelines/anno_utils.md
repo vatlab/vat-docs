@@ -10,7 +10,6 @@ weight = 2
 ### 1. Usage
 
     % vtools show pipeline anno_utils
-    
 
     This file defines a number of pipelines to manipulate variant tools annotation
     databases.
@@ -96,7 +95,6 @@ The `proj2annoDB` pipeline defined in `anno_utils.pipeline` can be used for this
     % vtools admin --load_snapshot vt_quickStartGuide
     % vtools execute anno_utils proj2annoDB --input test.proj --output myanno.ann
     
-
     INFO: Executing step proj2annoDB_0 of pipeline anno_utils: Check the existence of command sqlite3, which is required for this pipeline
     INFO: Command sqlite3 is located.
     INFO: Executing step proj2annoDB_5 of pipeline anno_utils: Dump project build information
@@ -136,7 +134,6 @@ You can then use this annotation database to annotation other projects
     % vtools use /path/to/myanno
     % vtools select variant 'myanno.chr is not NULL' -o chr pos ref alt myanno.AA myanno.AN -l 10
     
-
     1	1105366	T	C	T	114
     1	1105411	G	A	G	106
     1	1108138	C	T	c	130
@@ -169,7 +166,6 @@ Annotation databases sometimes have multiple annotations for a variant (e.g. mor
     % vtools init test_proj
     % vtools execute anno_utils annoDB2proj --input ~/.variant_tools/annoDB/dbSNP-hg19_137.DB.gz --output dbSNP
     
-
     INFO: Executing step annoDB2proj_0 of pipeline anno_utils: Check the existence of command sqlite3, which is required for this pipeline
     INFO: Command sqlite3 is located.
     INFO: Executing step annoDB2proj_10 of pipeline anno_utils: Decompress .DB.gz file if needed
@@ -226,7 +222,6 @@ The pipeline `annFileFromVcf` is designed to help you generate an annotation dat
     % vtools init test_proj
     % vtools execute anno_utils annFileFromVcf --input ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/00-All.vcf.gz --output dbSNP.ann
     
-
     INFO: Executing anno_utils.annFileFromVcf_10: Create a feild description file from input text file.
     [get_local_version] downloading the index file...
     INFO: Executing anno_utils.annFileFromVcf_20: Create an annotation file from fields guessed from input vcf file
@@ -259,7 +254,6 @@ The text file looks like this
 
     % head -5 kg.count
     
-
     knownGene name	sum variant num
     uc001abt.4	5
     uc001abv.1	18
@@ -273,8 +267,7 @@ However, you will need to import the genotype counts into the project before you
 
 
 
-    % vtools execute anno_utils annFileFromText -i kg.count  -o kg_sum_geno.ann
-    
+    % vtools execute anno_utils annFileFromText -i kg.count  -o kg_sum_geno.ann   
 
     INFO: Executing step annFileFromText_10 of pipeline anno_utils: Create a feild description file from input text file.
     INFO: Executing step annFileFromText_20 of pipeline anno_utils: Create an annotation file from fields guessed from input file
@@ -289,8 +282,7 @@ The .ann file created looks like
 
 
 
-    % cat kg_sum_geno.ann
-    
+    % cat kg_sum_geno.ann   
 
     [linked fields]
     *=knownGene_name
@@ -316,8 +308,7 @@ And you can use it to create an annotation database from `kg.count` and link it 
 
 
 
-    % vtools use kg_sum_geno.ann --linked_by knownGene.name
-    
+    % vtools use kg_sum_geno.ann --linked_by knownGene.name  
 
     INFO: Importing database kg_sum_geno from source files ['kg.count']
     INFO: Importing annotation data from kg.count
@@ -332,8 +323,7 @@ You can then use the `sum_variant_num` field from the `kg_sum_geno` database to 
 
 
 
-    % vtools select kg 'kg_sum_geno.sum_variant_num = 1' -t rare_variants
-    
+    % vtools select kg 'kg_sum_geno.sum_variant_num = 1' -t rare_variants  
 
     Running: 10,468 696.0/s in 00:00:15
     INFO: 2717 variants selected.
@@ -344,7 +334,6 @@ Compared to the number of singletons in the project, the above command identifie
 
 
     % vtools select kg 'variant.num=1' -c
-    
 
     Counting variants: 973 346.9/s in 00:00:02
     627489

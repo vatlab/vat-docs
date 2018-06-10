@@ -28,8 +28,8 @@ This part of the talk gives a minimal demonstration on data quality control and 
 *   [Tutorial][4]
 *   [Data bundle][6]
 
- [1]: /vat-docs/documentation/tutorials/tutorialacm/ 
- [2]: /vat-docs/documentation/tutorials/ACM-BCB2014-tutorial-data.tgz/
- [3]: /vat-docs/documentation/tutorials/vtools_tutorial.pdf/
- [4]: /vat-docs/documentation/tutorials/VATBasic.pdf/
+ [1]:    /documentation/tutorials/tutorialacm/ 
+ [2]:    /documentation/tutorials/ACM-BCB2014-tutorial-data.tgz/
+ [3]:    /documentation/tutorials/vtools_tutorial.pdf/
+ [4]:    /documentation/tutorials/VATBasic.pdf/
  [6]: http://swap.tigerwang.org/index.php/s/dwXiWSJu7AfMjH6/download

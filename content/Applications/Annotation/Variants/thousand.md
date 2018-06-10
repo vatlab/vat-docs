@@ -18,7 +18,6 @@ All of the annotation data supplied through the INFO fields in the VCF file can 
 
     % vtools show annotation thousandGenomes -v2
     
-
     Annotation database thousandGenomes (version hg19_v3_20101123)
     Description:            1000 Genomes VCF file analyzed in March 2012 from data
       generated from phase 1 of the project (available from: ftp://ftp.1000genomes

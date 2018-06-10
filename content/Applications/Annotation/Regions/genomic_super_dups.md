@@ -12,7 +12,6 @@ See this blog [Why You Should Care About Segmental Duplications][1] for some nic
 
     vtools show annotation genomicSuperDups -v2
     
-
     Annotation database genomicSuperDups (version hg19_20130626)
     Description:            Duplications of >1000 Bases of Non-RepeatMasked
       Sequence (>90 percent similar).

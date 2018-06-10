@@ -65,11 +65,11 @@ For more information on the use of these commands, please refer to the following
 [<img src="html.png" width = "25" height = "25" style = "display: inline" />][10] 
 *   **Select variants** belonging to specified genes [<img src="html.png" width = "25" height = "25" style = "display: inline" />][12]
 
- [1]: /vat-docs/documentation/vtools_commands/import/
- [2]: /vat-docs/documentation/vtools_commands/update/
- [3]: /vat-docs/documentation/applications/annotation/
- [4]:  /vat-docs/applications/annotation/variants/dbnsfp/
- [6]: /vat-docs/documentation/tutorials/case44ctrl20/
- [8]: /vat-docs/documentation/tutorials/illumina5/
- [10]: /vat-docs/documentation/tutorials/compare/
- [12]: /vat-docs/documentation/tutorials/select/
+ [1]:    /documentation/vtools_commands/import/
+ [2]:    /documentation/vtools_commands/update/
+ [3]:    /documentation/ /applications/annotation/
+ [4]:    /applications/annotation/variants/dbnsfp/
+ [6]:    /documentation/tutorials/case44ctrl20/
+ [8]:    /documentation/tutorials/illumina5/
+ [10]:    /documentation/tutorials/compare/
+ [12]:    /documentation/tutorials/select/

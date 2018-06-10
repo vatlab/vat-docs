@@ -13,7 +13,6 @@ weight = 4
 
     % vtools phenotype -h
     
-
     usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]]
                             [--set [EXPRESSION [EXPRESSION ...]]]
                             [--from_stat [EXPRESSION [EXPRESSION ...]]]
@@ -360,7 +359,7 @@ Another useful type of summary is the genotype information that usually summariz
 
 <details><summary> Examples: Phenotype calculated from statistics of genotype info fields</summary> 
 
-    % import_update jma7$ vtools phenotype --from_stat "meanDP=avg(DP)" "minDP=min(DP)" "maxDP=max(DP)"
+    % vtools phenotype --from_stat "meanDP=avg(DP)" "minDP=min(DP)" "maxDP=max(DP)"
     
     Calculating phenotype: 100% [===============================] 60 29.8/s in 00:00:02
     INFO: 180 values of 3 phenotypes (0 new, 3 existing) of 60 samples are updated.
@@ -387,6 +386,7 @@ Another useful type of summary is the genotype information that usually summariz
 The basic form of `vtools phenotype --output` is very similar to command `vtools show phenotypes`. They can both display all or a specified subset of phenotypes. 
 
 <details><summary> Examples: Output specified phenotypes</summary> 
+    
     % vtools phenotype --from_file phenotype.txt BMI
     % vtools phenotype --output sample_name BMI 
     

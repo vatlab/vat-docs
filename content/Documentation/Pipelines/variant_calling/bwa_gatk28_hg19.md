@@ -16,7 +16,6 @@ weight = 3
 
     % vtools show pipeline bwa_gatk28_hg19
     
-
     A pipeline to align raw reads from fastq or BAW/SAM files using BWA and GATK
     best practice. It uses hg19 of human reference genome and assumes paired-end
     reads in plain text and compressed formats.

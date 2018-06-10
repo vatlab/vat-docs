@@ -15,7 +15,6 @@ Population-specific databases from the HapMap project. They provide population-s
 
     % vtools show annotations hapmap -v0
     
-
     hapmap_ASW_freq-hg18_20100817
     hapmap_ASW_freq
     hapmap_CEU_freq-hg18_20100817
@@ -46,7 +45,6 @@ Population-specific databases from the HapMap project. They provide population-s
 
     % vtools show annotation hapmap_CEU_freq
     
-
     Annotation database hapmap_CEU_freq (version hg18_20100817)
     Description:            Allele frequency information of SNP markers of the CEU
       population of phase II and III of the HAPMAP project.

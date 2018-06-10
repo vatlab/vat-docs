@@ -1,3 +1,9 @@
++++
+title = "functor"
+weight = 12
++++
+
+
 # HomePage
 
 ## Import/Export adjustment functors

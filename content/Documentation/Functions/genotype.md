@@ -42,7 +42,6 @@ Let us get a simple project and name the samples properly
     % vtools admin --rename_samples "filename='V3.vcf'" SAMP3
     % vtools show samples
     
-
     sample_name	filename
     SAMP1      	V1.vcf
     SAMP2      	V2.vcf
@@ -53,8 +52,7 @@ There are about 1000 genotypes in three samples:
 
 
 
-    % vtools show genotypes
-    
+    % vtools show genotypes 
 
     sample_name	filename	num_genotypes	sample_genotype_fields
     SAMP1      	V1.vcf  	989          	GT
@@ -67,7 +65,6 @@ Now, in addition to the variant inforation, we would like to see the genotype of
 
 
     % vtools output variant chr pos ref alt "genotype('SAMP1')" -l 10
-    
 
     1	4540 	G	A	1
     1	5683 	G	T	1
@@ -88,7 +85,6 @@ The `genotype` can also be used to select variants. For example, the following c
     % vtools select variant "genotype('SAMP1')=1" --output chr pos ref alt \
         "genotype('SAMP1')" "genotype('SAMP2')" -l 10
     
-
     1	4540 	G	A	1	.
     1	5683 	G	T	1	.
     1	5966 	T	G	1	1
@@ -104,12 +100,10 @@ The `genotype` can also be used to select variants. For example, the following c
 In addition to genotype, you can use the `genotype()` funciton to display other genotype info fields (c.f. `vtools show genotypes`, for example, for a project with genotype info field `DP_geno`, we can specify name of the genotype info field as a second parameter: 
 
 
-
     % vtools init genotype -f
     % vtools import CEU.vcf.gz --geno_info DP_geno --build hg18
     % vtools output variant chr pos ref alt "genotype('NA12874')" "genotype('NA12874', 'field=DP_geno')" -l 10
     
-
     1	533  	G	C	1	9
     1	41342	T	A	0	3
     1	41791	G	A	0	2
@@ -152,7 +146,6 @@ returns genotypes of all samples, samples with `aff=1`, and depth of coverage of
     % vtools remove genotypes 'GT=0'
     % vtools output variant chr pos ref alt "genotype()"  -l 10
     
-
     1	533  	G	C	1,1,1,1,1,1
     1	41342	T	A	1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,2,1,1,1
     1	41791	G	A	1,1,1,1,1
@@ -172,7 +165,6 @@ If you would like to limit the samples, you can pass a condition (c.f. `vtools s
     % vtools phenotype --from_file phenotype.txt
     % vtools output variant chr pos ref alt "genotype('BMI>24')"  -l 10
     
-
     1	533  	G	C	.
     1	41342	T	A	1,1
     1	41791	G	A	1
@@ -188,7 +180,6 @@ If you would like to limit the samples, you can pass a condition (c.f. `vtools s
 If you need to know which samples have these genotypes, you can use function `samples()` with the same condition. 
 
     % vtools output variant chr pos ref alt "samples('BMI>24')"  -l 10
-    
 
     1	533  	G	C	.
     1	41342	T	A	NA11918,NA12814
@@ -206,8 +197,7 @@ Using strings inside the condition is bit tricky because you need to use backsla
 
 
 
-    % vtools output variant chr pos ref alt "genotype('sex=\'F\'')"  -l 10
-    
+    % vtools output variant chr pos ref alt "genotype('sex=\'F\'')"  -l 10  
 
     1	533  	G	C	1,1,1,1
     1	41342	T	A	1,1,1,1,1,1,1,1,2,1,1,1,1,1
@@ -225,8 +215,7 @@ Finally, if you would like to view values of other genotype info fields (c.f. `v
 
 
 
-    % vtools output variant chr pos ref alt "genotype('BMI>23', 'field=DP_geno&d=\t&missing=.')"  -l 10
-    
+    % vtools output variant chr pos ref alt "genotype('BMI>23', 'field=DP_geno&d=\t&missing=.')"  -l 10   
 
     1	533  	G	C	.	.	.	.	.	.	.	.	.	.
     1	41342	T	A	.	1	4	3	.	.	.	.	0	9

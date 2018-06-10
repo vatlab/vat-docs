@@ -13,7 +13,6 @@ weight = 8
 ### 1. Usage
 
     % vtools select -h
-    
 
     usage: vtools select [-h] [-s [COND [COND ...]]] [-t [TABLE [DESC ...]]]
                          [-c | -o [FIELDS [FIELDS ...]]]
@@ -113,6 +112,7 @@ The *condition* should be a SQL expression using one or more fields in the proje
 #### 2.1 Basic usages of the command
 
 <details><summary> Examples: Load a sample project</summary> Let us load a sample project simple from online: 
+
     % vtools init -f select
     % vtools import V*_hg38.vcf --build hg38
     
@@ -574,4 +574,4 @@ We can rename samples using command `vtools admin --rename_samples` but we can a
 Variants do not have to belong to any sample so it is not surprising that `vtools select TABLE --sample 1` do not have to select all variants in `TABLE`.
 {{% /notice%}}
 
- [1]: /vat-docs/documentation/help/
+ [1]:    /documentation/help/

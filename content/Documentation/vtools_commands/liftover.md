@@ -1,7 +1,6 @@
 
 +++
 title = "lifttover"
-description = ""
 weight = 5
 +++
 
@@ -14,7 +13,6 @@ weight = 5
 
     % vtools liftover -h
     
-
     usage: vtools liftover [-h] [--flip] [-v STD[LOG]] build
     
     Convert coordinates of existing variants to alternative coordinates in an
@@ -69,7 +67,6 @@ Because the UCSC liftover tools does not guarantee complete translation, variant
     % vtools import V1-3_hg19_combine.vcf --build hg19
     % vtools liftover hg38
     
-
     INFO: Downloading liftOver chain file from UCSC
     INFO: Exporting variants in BED format
     Exporting variants: 100% [===============================] 288 110.5K/s in 00:00:00
@@ -110,8 +107,7 @@ After the liftOver operation, three more fields are added to the master variant 
 
 
 
-    % vtools show
-    
+    % vtools show   
 
     Project name:                test
     Primary reference genome:    hg19
@@ -121,8 +117,7 @@ After the liftOver operation, three more fields are added to the master variant 
     Annotation databases:
     
 
-    % vtools liftover hg38 --flip
-    
+    % vtools liftover hg38 --flip 
 
     INFO: Downloading liftOver chain file from UCSC
     INFO: Exporting variants in BED format
@@ -139,8 +134,7 @@ Interruption of the flipping process will leave the project unusable because of 
 
 
 
-    % vtools show
-    
+    % vtools show   
 
     Project name:                test
     Primary reference genome:    hg38
@@ -152,7 +146,6 @@ Interruption of the flipping process will leave the project unusable because of 
 
     % vtools show table variant
     
-
     variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
     52,586,1,260296,A,T,586,1,230047
     53,586,1,260307,T,G,586,1,230058

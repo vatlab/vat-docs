@@ -10,7 +10,6 @@ weight = 2
 
     % vtools import -h
     
-
     usage: vtools import [-h] [--build BUILD] [--format FORMAT]
                          [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f]
                          [-j N] [-v {0,1,2}]
@@ -122,7 +121,6 @@ You can use command `vtools show snapshots` to get a list of available snapshots
 If we have a look at the header of `CEU.vcf.gz`, we can see 
 
     % gzcat CEU_hg38.vcf | head -15
-    
 
     ##fileformat=VCFv4.0
     ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
@@ -256,7 +254,7 @@ If you need total depth, you can obtained from the corresponding genotype field
 
 Here `DP=sum(DP)` looks strange but the first `DP` is a new variant info and the second `DP` is the existing genotype info. Now, variant info field `DP` stands for total depth and `NS` stands for number of times a variant shows up in the samples. 
 
-    %vtools output variant chr pos ref alt DP NS -l 5
+    % vtools output variant chr pos ref alt DP NS -l 5
     
     1   14677   G   A   15  2
     1   15820   G   T   7   1
@@ -555,8 +553,11 @@ An input file can have genotype data for zero (e.g. a list of variants), one, or
 
 
 {{% notice tip %}}
-*   Sample names could be changed using command `vtools admin --rename_samples` after they are imported. 
-*   If genotypes for samples are stored in separate files (e.g. chromosome by chromosome), they will be imported as separate samples. If proper sample names are provided, samples with the same names (and belong to the same physical sample) could be merged using command `vtools admin --merge_samples`. 
+Sample names could be changed using command `vtools admin --rename_samples` after they are imported. 
+{{% /notice %}}
+
+{{% notice tip %}}
+If genotypes for samples are stored in separate files (e.g. chromosome by chromosome), they will be imported as separate samples. If proper sample names are provided, samples with the same names (and belong to the same physical sample) could be merged using command `vtools admin --merge_samples`. 
 {{% /notice %}}
 
 <details><summary> Examples: import a list variants and create a sample without genotype</summary>
@@ -618,9 +619,9 @@ Variants from `CEU.vcf.gz` uses build `hg18` of the reference genome,
     % vtools import CEU_hg19.vcf --build hg19
     
     INFO: Importing variants from CEU_hg19.vcf (1/1)
-CEU_hg19.vcf: 100% [==================================] 309 17.8K/s in 00:00:00
-INFO: 288 new variants (288 SNVs) from 309 lines are imported.
-Importing genotypes: 100% [===========================] 288 3.1K/s in 00:00:00
+    CEU_hg19.vcf: 100% [==================================] 309 17.8K/s in 00:00:00
+    INFO: 288 new variants (288 SNVs) from 309 lines are imported.
+    Importing genotypes: 100% [===========================] 288 3.1K/s in 00:00:00
 
     
 
@@ -650,7 +651,7 @@ Data from `variants.txt` are in `hg19`, so we use option `--build hg19` to impor
     hg38ToHg19.over.chain.gz: 100% [====================] 231,197.0 503.6K/s in 00:00:00
     INFO: Running UCSC liftOver tool
     Updating coordinates: 100% [================================] 13 4.2K/s in 00:00:00
-INFO: Coordinates of 12 (13 total, 0 failed to map) new variants are updated.
+    INFO: Coordinates of 12 (13 total, 0 failed to map) new variants are updated.
     
 
 When you execute the second command, *variant tools* will 
@@ -710,7 +711,7 @@ Let us import variants from `variants.txt` using hg18,
     % vtools admin --validate_build
     
     Validate reference alleles: 100% [=======================] 12/3 10.3K/s in 00:00:00
-INFO: 8 non-insertion variants are checked. 3 mismatch variants found.
+    INFO: 8 non-insertion variants are checked. 3 mismatch variants found.
     
 
 3 mismatchs are identified, so we let us try using the `hg38` build of reference genome, 
@@ -720,7 +721,7 @@ INFO: 8 non-insertion variants are checked. 3 mismatch variants found.
     % vtools admin --validate_build
     
     Validate reference alleles: 100% [========================] 12 9.4K/s in 00:00:00
-INFO: 8 non-insertion variants are checked. 0 mismatch variants found.
+    INFO: 8 non-insertion variants are checked. 0 mismatch variants found.
     
 The variants are more likely created using `hg38`. The mismatch variants can be found in the project log file, or be listed with option `-v2`. It should be verified or removed from the project. 
 </details>

@@ -133,4 +133,4 @@ This command takes 9 min to execute.
     cd chr5
     vtools init chr5 --parent ../main --variants chr5
 
- [1]: /vat-docs/documentation/tutorials/case44ctrl20/
+ [1]:    /documentation/tutorials/case44ctrl20/

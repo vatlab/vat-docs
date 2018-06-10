@@ -3,14 +3,13 @@ title = "rsname"
 weight = 4
 +++
 
-# Importing variants from a list of dbSNP iDs (rsnames)
+## Importing variants from a list of dbSNP iDs (rsnames)
 
 
-## Format description
+### 1. Format description
 
     % vtools show format rsname
     
-
     Import variants (chr, pos, ref, alt) that are queried from dbSNP database
     using provided rsnames
     
@@ -33,7 +32,7 @@ weight = 4
 
 
 
-## Details
+### 2. Details
 
 This format retrieves variant information from `dbSNP`. To use this format, you should first download and decompress the dbSNP database 
 
@@ -49,7 +48,6 @@ You can then use the database to import variants from a list of rsnames:
 
     % vtools import variants.txt --format rsname --build hg19
     
-
     INFO: Importing variants from variants.txt (1/1)
     variants.txt: 100% [==================================] 25,462 9.6K/s in 00:00:02
     INFO: 25,944 new variants (25,885 SNVs, 50 insertions, 11 deletions) from 25,462 lines are imported.
@@ -64,7 +62,7 @@ If a rsname corrsponds to multiple variants, all of them will be imported. For e
 
 
 
-### Use a different version of dbSNP
+#### 2.1 Use a different version of dbSNP
 
 If you are interested in using a different version of dbSNP, you will need to 
 

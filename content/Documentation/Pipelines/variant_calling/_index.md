@@ -1,6 +1,9 @@
 +++
 title = "Variant calling"
-description = ""
 weight = 3
 +++
+
+## Variant calling
+
+{{% children %}}
 

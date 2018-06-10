@@ -24,9 +24,6 @@ The mechanism is implemented as `RTest` method which is available from `vtools a
 
     vtools show test RTest
     
-
-
-
     Name:          RTest
     Description:   A general framework for association analysis using R programs
     usage: vtools associate --method RTest [-h] [--name NAME] [--data_cache N]
@@ -60,13 +57,10 @@ A trivial example of the R script looks like the following
     8.  ENDCONF 
 
     regression = function (dat, phenotype.name, family = "gaussian") { 
-
         y = dat@Y[, phenotype.name]
           x = apply(dat@X, 1, function(i) sum(i, na.rm=T))
           m = glm(y~x,family=family)
           return (list(sample.size=length(y), result=summary(m)$coef[,c(1,4)]))
-
-
     } 
 
 To use this program for data analysis, 
@@ -182,4 +176,4 @@ We provide some R interface examples for `RTest` method as extensions to the sta
 *   The `RAssociation` package
 
  [1]: http://cran.r-project.org/
- [2]: /vat-docs/applications/association/create_your_test/rtest/
+ [2]:   /applications/association/create_your_test/rtest/

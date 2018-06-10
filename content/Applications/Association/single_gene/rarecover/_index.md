@@ -8,15 +8,13 @@ weight = 5
 
 ## A "Covering Algorithm" for Rare and Low Frequency Variants  
 
-
-
 ### 1. Introduction
 
 The RareCover test in (Bhatia et al 2010) is an efficient heuristic greedy algorithm to find an optimized combination of variants in a loci with the strongest association signal. It uses the same collapsing strategy and test statistic as in (Li and Leal, 2008) but scans over the loci, adding at each iteration the variants that contributes most to the statistic. 
 
-RareCover is related to the [Variable Thresholds test][1] yet differs in the sequence by which rare variants are incorporated into the test. Variable thresholds test assumes a fixed yet unknown MAF boundary of rare causal variants, while RareCover does not have the assumption. Still, it does not mean that RareCover would perform exhaustive search for all combinations of variants in a loci region. The "coverage" of RareCover method depends on the convergence cut-off {$Q$}. 
+RareCover is related to the [Variable Thresholds test][1] yet differs in the sequence by which rare variants are incorporated into the test. Variable thresholds test assumes a fixed yet unknown MAF boundary of rare causal variants, while RareCover does not have the assumption. Still, it does not mean that RareCover would perform exhaustive search for all combinations of variants in a loci region. The "coverage" of RareCover method depends on the convergence cut-off <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>\\(Q\\). 
 
-RareCover method is implemented in this program as a two-sided test with the tuning parameter {$Q=0.5$}, as recommanded by the original paper. 
+RareCover method is implemented in this program as a two-sided test with the tuning parameter \\(Q=0.5\\), as recommanded by the original paper. 
 
 
 
@@ -25,9 +23,6 @@ RareCover method is implemented in this program as a two-sided test with the tun
 #### 2.1 Command interface
 
     vtools show test RareCover
-    
-
-
 
     Name:          RareCover
     Description:   A "covering" method for detecting rare variants association, Bhatia et
@@ -86,9 +81,6 @@ RareCover method is implemented in this program as a two-sided test with the tun
     vtools associate rare status -m "RareCover --name RareCover -p 5000" --group_by name2 --to_\
     db rarecover -j8 > rarecover.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     INFO: Starting 8 processes to load genotypes
@@ -103,9 +95,6 @@ RareCover method is implemented in this program as a two-sided test with the tun
 
     vtools show fields | grep RareCover
     
-
-
-
     rarecover.sample_size_RareCover sample size
     rarecover.num_variants_RareCover number of variants in each group (adjusted for specified MAF
     rarecover.total_mac_RareCover total minor allele counts in a group (adjusted for MOI)
@@ -119,9 +108,6 @@ RareCover method is implemented in this program as a two-sided test with the tun
 
     head rarecover.txt
     
-
-
-
     name2   sample_size_RareCover   num_variants_RareCover  total_mac_RareCover     statistic_RareCover     pvalue_RareCover        std_error_RareCover     num_permutations_RareCover
     ABCG5   3180    6       87      0.991364        0.911089        3.32099 1000
     ABCB10  3180    6       122     5.54768 0.28971 3.25502 1000
@@ -144,4 +130,4 @@ Gaurav Bhatia, Vikas Bansal, Olivier Harismendy, Nicholas J. Schork, Eric J. Top
 
 Bingshan Li and Suzanne M. Leal (2008) **Methods for Detecting Associations with Rare Variants for Common Diseases: Application to Analysis of Sequence Data**. *The American Journal of Human Genetics* doi:`10.1016/j.ajhg.2008.06.024`. <http://linkinghub.elsevier.com/retrieve/pii/S0002929708004084> 
 
- [1]: /vat-docs/applications/association/single_gene/vt-test/
+ [1]:   /applications/association/single_gene/vt-test/

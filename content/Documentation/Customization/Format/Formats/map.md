@@ -5,17 +5,16 @@ weight = 7
 
 ## Import variants from file without ref and alt alleles 
 
-## Introduction
+### 1. Introduction
 
 From time to time, you might get a list of variants in map format, or as a list with only chromosome and position information. Reference and alternative alleles are not specified because the variants are from GWA studies with well-defined reference and alternative alleles. In this case, you can use format `map`, which automatically retrieve reference and alternative alleles from a specified dbSNP database. 
 
 
 
-## Format specification
+### 2. Format specification
 
     vtools show format format/map.fmt
     
-
     Format:      map
     Description: This input format imports variants from files in MAP format (with
       columns chr, name gen_dist, pos), or any delimiter-separated format
@@ -55,7 +54,7 @@ From time to time, you might get a list of variants in map format, or as a list 
 
 
 
-## Examples
+### 3. Examples
 
 You are given a list of variants with chromosome as the first column, and physical position as the third column: 
 
@@ -75,7 +74,7 @@ You are given a list of variants with chromosome as the first column, and physic
 
 
 
-### Download `dbSNP`
+#### 3.1 Download `dbSNP`
 
 The first step is to get the right version of dbSNP. Because the variants are in hg18, you cannot use the default version of dbSNP, which uses hg19. Instead, you should run 
 
@@ -89,7 +88,7 @@ The first command lists all available annotation databases, and the second comma
 
 
 
-### Import and filter variants
+#### 3.2 Import and filter variants
 
 The default column for the position column is 4, but the input file has it at the third column, so you will need to use parameter `--pos_idx 3`. You do not have to set other parameters (fields) if you are using dbSNP database provided by variant tools. 
 
@@ -107,7 +106,6 @@ This format will import multiple variants if there are multiple variants (usuall
 
     vtools output variant chr pos dbSNP.name ref alt 
     
-
     12	12180423	rs11054701	T	C
     12	12182746	rs2075241	G	C
     12	12184905	rs2160521	C	T

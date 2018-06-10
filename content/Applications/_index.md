@@ -1,5 +1,8 @@
 +++
 title = "Application"
-description = ""
 weight = 3
 +++
+
+## Application
+
+{{% children %}}

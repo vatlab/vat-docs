@@ -13,7 +13,6 @@ weight = 4
 ## Usage
 
     $ vtools show pipeline illumina
-    
 
     A pipeline to handle illumina data prepared by CASAVA 1.8+. It imports
     variants from SNPs.vcf and Indel.vcf of multiple samples, separate maxgt and

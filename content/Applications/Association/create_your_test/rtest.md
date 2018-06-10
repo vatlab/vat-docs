@@ -30,9 +30,6 @@ The following command uses the default parameter settings in the R script:
            --discard_samples '%(NA)>0.5' --discard_variants '%(NA)>0.5' \
            --group_by 'refGene.name2' -j8 --to_db MetaSKAT > MetaSKAT.txt
     
-
-
-
     INFO: Loading R script '/home/gw/MetaSKAT.VAT.R'
     INFO: 252 samples are found
     INFO: 131 groups are found
@@ -75,4 +72,4 @@ From the way `MetaSKAT.VAT.R` is written we known `out_type` and `group_colname`
 
 
  [1]: http://vtools.houstonbioinformatics.org/programs/RTest/MetaSKAT.VAT.R
- [2]: /vat-docs/applications/association/create_your_test/running-r-programs/
+ [2]:   /applications/association/create_your_test/running-r-programs/

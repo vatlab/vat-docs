@@ -56,5 +56,5 @@ Quality control is a key step in association analysis. We may use a variety of c
 
 
  [2]: http://downloads.statgen.us/VATData.tar.gz
- [4]: /vat-docs/applications/association/qc/demon
+ [4]:   /applications/association/qc/demon
  [6]: http://downloads.statgen.us/VATAdvanced.pdf

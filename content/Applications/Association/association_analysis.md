@@ -27,7 +27,6 @@ The general interface of `vtools associate` is as follows
 
     % vtools associate -h
     
-
     usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]]
                             [--var_info [VAR_INFO [VAR_INFO ...]]]
                             [--geno_info [GENO_INFO [GENO_INFO ...]]]
@@ -134,8 +133,7 @@ Each association test method (`-m/--method`) has its own commandline interface. 
 
 
 
-    % vtools show tests
-    
+    % vtools show tests   
 
     BurdenBt              Burden test for disease traits, Morris & Zeggini 2009
     BurdenQt              Burden test for quantitative traits, Morris & Zeggini
@@ -151,7 +149,6 @@ To show usage of a particular test,
 
     % vtools show test CFisher
     
-
     Name:          CFisher
     Description:   Fisher's exact test on collapsed variant loci, Li & Leal 2008
     usage: vtools associate --method CFisher [-h] [--name NAME] [-q1 MAFUPPER]
@@ -231,7 +228,7 @@ For single variant analysis with disease trait:
 
     
 
-{$p$} values calculated by this command are based on Wald statistic of logistic regression analysis. To evaluate p-values empirically, 
+p values calculated by this command are based on Wald statistic of logistic regression analysis. To evaluate p-values empirically, 
 
 
 
@@ -282,15 +279,7 @@ Exome-wide association scan typically consists of thousands of tests for gene-ba
 
 ##### Setting a *timeout* for permutation based association analysis
 
-    Although with the "adaptive permutation" approach most permutation tests in an exome-wide a\
-    ssociation scan would terminate early after a few thousand permutations, for scans involvin\
-    g up to a million association tests you are likely to see some tests running for hours, rep\
-    orting very small p-values in the end. These tests will temporarily hold up the computation\
-     resource (they have to be finished first before the rest of tests get started). We provide\
-     an option to set a time limit per test, in addition to using the adaptive permutation. Thi\
-    s option is useful particularly when your computation resource is tight, or if you use a cl\
-    uster that offers limited walltime, or if your sample size is small and result in extreme v\
-    alues of test statistic. To set the association timeout to 1 hour (3600s):
+Although with the "adaptive permutation" approach most permutation tests in an exome-wide association scan would terminate early after a few thousand permutations, for scans involving up to a million association tests you are likely to see some tests running for hours, reporting very small p-values in the end. These tests will temporarily hold up the computation resource (they have to be finished first before the rest of tests get started). We provide an option to set a time limit per test, in addition to using the adaptive permutation. This option is useful particularly when your computation resource is tight, or if you use a cluster that offers limited walltime, or if your sample size is small and result in extreme values of test statistic. To set the association timeout to 1 hour (3600s):
     
 
 

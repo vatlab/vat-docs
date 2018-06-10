@@ -14,7 +14,6 @@ weight = 15
 
     % vtools execute -h
     
-
     usage: vtools execute [-h] [-i [INPUT_FILE [INPUT_FILE ...]]]
                           [-o [OUTPUT_FILE [OUTPUT_FILE ...]]] [-j JOBS]
                           [-d DELIMITER] [-v {0,1,2}]
@@ -103,7 +102,6 @@ Display name of samples
 
     % vtools execute select sample_name from sample -v2
     
-
     DEBUG: Loading annotation database testNSFP
     DEBUG: Executing SQL statement: "select sample_name from sample"
     NA06985
@@ -119,7 +117,6 @@ The following query needs to be quoted because of the existence of *
 
     % vtools execute 'SELECT * FROM sample' -v2
     
-
     DEBUG: Opening project esp.proj
     DEBUG: Loading annotation database refGene_exon
     DEBUG: Loading annotation database ../annoDB/dbSNP-hg19_132

@@ -15,7 +15,6 @@ Database of genomic variants is a curated catalogue of human genomic structural 
 
     % vtools show annotation DGV -v2
     
-
     Annotation database DGV (version hg19_20130723)
     Description:            Database of Genomic Variants, a curated catalogue of
       human genomic structural variation.

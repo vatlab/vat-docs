@@ -12,8 +12,7 @@ weight = 11
 
     % vtools associate -h
     
-
-    usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]]
+     usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]]
                             [--var_info [VAR_INFO [VAR_INFO ...]]]
                             [--geno_info [GENO_INFO [GENO_INFO ...]]]
                             [-m METHODS [METHODS ...]]
@@ -121,4 +120,4 @@ weight = 11
 
 Please check [the VAT homepage][1] for details.
 
- [1]: /vat-docs/
+ [1]:  

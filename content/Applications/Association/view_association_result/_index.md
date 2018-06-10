@@ -7,8 +7,6 @@ weight = 11
 ## Graphic Summary of Association Analysis 
 
 
-
-
 ### 1. Introduction
 
 `vtools_report plot_association` generates QQ plot and Manhattan plot of p-values from output of `vtools associate` command. The graphics are powered by the `R` package `ggplot2`. Fonts, color, page layout etc can be specified from the command interface, generating high quality and customized graphs. 
@@ -65,13 +63,13 @@ Note that
 
 ##### QQ Plot samples
 
-Attach:qqplots.zip 
+[qqplots.zip](qqplots.zip)
 
 
 
 ##### Manhattan Plot samples
 
-Attach:manhattanplots.zip 
+[manhattanplots.zip](manhattanplots.zip)
 
 
 
@@ -81,9 +79,6 @@ Attach:manhattanplots.zip
 
     % vtools_report plot_association -h
     
-
-
-
     usage: vtools_report plot_association [-h] [-v {0,1,2}]
                                           {qq,manhattan,manhattan_plain} ...
     
@@ -102,12 +97,7 @@ Attach:manhattanplots.zip
                             vtools_report log files.
     
 
-
-
     % vtools_report plot_association qq -h
-    
-
-
 
     usage: vtools_report plot_association qq [-h] [--shape INTEGER]
                                              [--fixed_shape] [--no_slope]
@@ -157,15 +147,10 @@ Attach:manhattanplots.zip
                             with their identifiers in text.
       -f SIZE, --font_size SIZE
                             Font size of text labels. Default set to '2.5'.
-    
-
 
 
     % vtools_report plot_association manhattan -h
     
-
-
-
     usage: vtools_report plot_association manhattan [-h]
                                                     [--chrom CHROMOSOME [CHROMOSOME ...]]
                                                     [--chrom_prefix PREFIX]
@@ -231,13 +216,8 @@ Attach:manhattanplots.zip
                             Font size of text labels. Default set to '2.5'.
     
 
-
-
     % vtools_report plot_association manhattan_plain -h
     
-
-
-
     usage: vtools_report plot_association manhattan_plain [-h]
                                                           [--chrom CHROMOSOME [CHROMOSOME ...]]
                                                           [--chrom_prefix PREFIX]

@@ -82,9 +82,6 @@ Note that
 
     % vtools_report plot_association -h
     
-
-
-
     usage: vtools_report plot_association [-h] [-v {0,1,2}]
                                           {qq,manhattan,manhattan_plain} ...
     
@@ -103,13 +100,8 @@ Note that
                             vtools_report log files.
     
 
-
-
     % vtools_report plot_association qq -h
     
-
-
-
     usage: vtools_report plot_association qq [-h] [--shape INTEGER]
                                              [--fixed_shape] [--no_slope]
                                              [-t TITLE]
@@ -160,13 +152,8 @@ Note that
                             Font size of text labels. Default set to '2.5'.
     
 
-
-
     % vtools_report plot_association manhattan -h
     
-
-
-
     usage: vtools_report plot_association manhattan [-h]
                                                     [--chrom CHROMOSOME [CHROMOSOME ...]]
                                                     [--chrom_prefix PREFIX]

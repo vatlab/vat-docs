@@ -4,7 +4,8 @@ weight = 2
 +++
 
 ## Importing and exporting variants in .csv (comma-separated value) format
-### Format description
+
+### 1. Format description
 
 When this format is used to import data, it is similar to the [basic][1][?][1] format except that it assumes the use of commas, instead of tabs, as delimiters of the input format. 
 
@@ -12,7 +13,7 @@ When this format is used to export variants, it can be used to export arbitrary 
 
 
 
-### Fields
+### 2. Fields
 
     Format:                 csv
     Description:            Import variants (chr, pos, ref, alt) in csv format, or
@@ -45,7 +46,7 @@ When this format is used to export variants, it can be used to export arbitrary 
 
 
 
-### Examples
+### 3. Examples
 
 #### Import variants (similar to format `<a class='createlinktext' rel='nofollow'
     href='http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit'>basic</a><a rel='nofollow' 
@@ -77,7 +78,7 @@ If, for example, your input file has columns `chr, start, end, ref, alt`, you ca
 
 
 
-####x Export arbitrary fields and genotypes
+#### Export arbitrary fields and genotypes
 
 The following command demonstrate how to export variants and a large number of annotation fields from different annotation databases, with a more descriptive header added to the output file. To repeat this command, you will need to update a variant table with number of variants in cases and controls, mean quality scores (fields `case_num`, `ctrl_num`, `mean_Q_indel`, `mean_Q_gt`, obtained using command `vtools update --from_stat`), and use all relevant annotation databases (`refGene`, `thousandGenomes`, `dbSNP`, and `dbNSFP`). 
 

@@ -42,7 +42,6 @@ Function `mut_sequence` will be identical to `ref_sequence` if the variant is ou
 
     % vtools admin --load_snapshot vt_simple
     
-
     Downloading snapshot vt_simple.tar.gz from online
     INFO: Snapshot vt_simple has been loaded
     
@@ -51,7 +50,6 @@ It is not very useful but we can see the mutated sequence at the variant locatio
 
     % vtools output variant chr pos ref alt 'mut_sequence(chr, pos)' -l 10
     
-
     1	4540 	G	A	A
     1	5683 	G	T	T
     1	5966 	T	G	G
@@ -70,7 +68,6 @@ It is more useful to see the context of the variants
 
     % vtools output variant chr pos ref alt 'ref_sequence(chr, pos-1, pos+1)' 'mut_sequence(chr, pos-1, pos+1)' -l 10
     
-
     1	4540 	G	A	GGA	GAA
     1	5683 	G	T	TGC	TTC
     1	5966 	T	G	GTG	GGG
@@ -85,17 +82,13 @@ It is more useful to see the context of the variants
 
 Let us import some indels 
 
-
-
     % vtools init test -f
-    % vtools import SAMP3_complex_variants.vcf --build hg19
-    
+    % vtools import SAMP3_complex_variants.vcf --build hg19  
 
     INFO: Importing variants from /Users/bpeng1/vtools/test/vcf/SAMP3_complex_variants.vcf (1/1)
     SAMP3_complex_variants.vcf: 100% [=======================] 184 20.8K/s in 00:00:00
     INFO: 135 new variants (1 SNVs, 77 insertions, 58 deletions, 7 complex variants) from 184 lines are imported.
-    Importing genotypes: 0 0.0/s in 00:00:00                                                                                                                                                                                                                                                            
-    Copying samples: 0 0.0/s in 00:00:00      
+    Importing genotypes: 0 0.0/s in 00:00:00                                                                         Copying samples: 0 0.0/s in 00:00:00      
     
 
 and check how the sequences are affected 
@@ -104,7 +97,6 @@ and check how the sequences are affected
 
     % vtools output variant chr pos ref alt 'ref_sequence(chr, pos-1, pos+1)' 'mut_sequence(chr, pos-1, pos+1)' -l 10
     
-
     1	10434	-  	C             	ACC	ACCC
     1	10440	C  	-             	ACC	A-C
     1	54788	C  	-             	TCC	T-C

@@ -1,6 +1,8 @@
 +++
 title = "Documentation"
-chapter = true
 weight = 2
 +++
+## Documentation 
+
+{{% children %}}
 

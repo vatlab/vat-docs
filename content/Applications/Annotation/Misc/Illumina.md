@@ -12,8 +12,7 @@ Expanded exome regions of Nextera Rapid Capture Exome and Expanded Exome Enrichm
 
 ### Usage
 
-    % vtools show annotation Illumina_NRCE
-    
+    % vtools show annotation Illumina_NRCE  
 
     Annotation database Illumina_NRCE (version 20130307)
     Description:            This annotation database contains expanded exome

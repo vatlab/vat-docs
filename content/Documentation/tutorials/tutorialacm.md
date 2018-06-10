@@ -1178,5 +1178,5 @@ You can load it using command
 
 It is strongly recommended that you save copies of your project (snapshots) during the analysis of real-world projects.
 
- [1]: /vat-docs/documentation/tutorials/ACM-BCB2014-tutorial-data.tgz/
- [2]: /vat-docs/
+ [1]:    /documentation/tutorials/ACM-BCB2014-tutorial-data.tgz/
+ [2]:  

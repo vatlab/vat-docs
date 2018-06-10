@@ -20,8 +20,7 @@ Core simulation actions are defined in variant tools module `simulation`. You ca
 
 
 
-    % vtools show actions
-    
+    % vtools show actions  
 
     ... ignored ...
     Module:
@@ -47,7 +46,6 @@ You can then learn the details of an action using command
 
     % vtools show action CreatePopulation
     
-
     Help on class CreatePopulation in module variant_tools.simulation:
     
     class CreatePopulation(variant_tools.pipeline.PipelineAction)

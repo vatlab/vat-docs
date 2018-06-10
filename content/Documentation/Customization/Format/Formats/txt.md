@@ -5,10 +5,9 @@ weight = 1
 
 ## Importing variants from tab-delimited files
 
-### Format description
+### 1. Format description
 
-    % vtools show format basic
-    
+    % vtools show format basic  
 
     A basic variant import/export format that import variants with four tab-
     delimited columns (chr, pos, ref, alt), and export variants, optional variant
@@ -45,15 +44,14 @@ weight = 1
 
 
 
-## Examples
+### 2. Examples
 
-### Import variants with columns chr, pos, ref, and alt
+#### 2.1 Import variants with columns chr, pos, ref, and alt
 
 <details><summary> Examples: create a sample project</summary> Let us load a project with a few test datasets 
 
     % vtools init basic 
-    % vtools admin --load_snapshot vt_testData
-    
+    % vtools admin --load_snapshot vt_testData 
 
     Downloading snapshot vt_testData.tar.gz from online
     INFO: Snapshot vt_testData has been loaded
@@ -67,7 +65,6 @@ This format can be used to import variants that are provided as four columns in 
 
     % head variants.txt 
     
-
     1	203148112	T	-
     1	203148168	G	A
     1	203148202	G	C
@@ -86,7 +83,6 @@ You can import variants using format `basic` as follows:
 
     % vtools import variants.txt --format basic --build hg19
     
-
     INFO: Importing variants from variants.txt (1/1)
     variants.txt: 100% [===============================================] 20 9.9K/s in 00:00:00
     INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
@@ -98,7 +94,6 @@ You can import variants using format `basic` as follows:
 The variants can be displayed using command `vtools output`, 
 
     % vtools output variant chr pos ref alt -l 10
-    
 
     1	203148112	T	-
     1	203148168	G	A
@@ -123,7 +118,6 @@ If the chr, pos, ref, alt columns are not columns 1 through 4 in the input file,
     % vtools init import -f
     % vtools import variants.txt --format basic --pos_adj 1 --build hg19 
     
-
     vtools import variants.txt --format basic --pos_adj 1 --build hg19
     INFO: Importing variants from variants.txt (1/1)
     variants.txt: 100% [========================================] 20 758.8/s in 00:00:00
@@ -137,7 +131,6 @@ If the chr, pos, ref, alt columns are not columns 1 through 4 in the input file,
 
     % vtools output variant chr pos ref alt -l 10
     
-
     1	203148113	T	-
     1	203148169	G	A
     1	203148203	G	C
@@ -154,14 +147,13 @@ If the chr, pos, ref, alt columns are not columns 1 through 4 in the input file,
 
 
 
-### Export variants, variants info and genotypes 
+#### 2.2 Export variants, variants info and genotypes 
 
 If we export data in `basic` format without any parameter, the output is similar to the output of command `vtools output variant chr pos ref alt`, 
 
 <details><summary> Examples: export variants</summary> Let us get more variants, 
 
-    % vtools import CEU.vcf.gz --var_info DP
-    
+    % vtools import CEU.vcf.gz --var_info DP 
 
     INFO: Using primary reference genome hg18 of the project.
     Getting existing variants: 100% [=======================] 20 30.5K/s in 00:00:00
@@ -178,7 +170,6 @@ Then export variants in `basic` format,
 
 
     % vtools export variant --format basic > bb
-    
 
     Writing: 100% [========================================] 308 32.4K/s in 00:00:00
     INFO: 308 lines are exported from variant table variant
@@ -187,7 +178,6 @@ Then export variants in `basic` format,
 
 
     % head -5 bb
-    
 
     1	203148112	T	-
     1	203148168	G	A
@@ -205,8 +195,7 @@ You can specify more fields, even annotation fields, through parameter `--fields
 
 
     % vtools use dbSNP-hg18_130
-    % vtools export variant --fields DP dbSNP.name --format ~/vtools/format/basic > bb
-    
+    % vtools export variant --fields DP dbSNP.name --format ~/vtools/format/basic > bb  
 
     Writing: 100% [========================================] 308 29.3K/s in 00:00:00
     INFO: 308 lines are exported from variant table variant
@@ -216,8 +205,7 @@ You can see the output has six columns, with depth (field `DP`) and rsname (fiel
 
 
 
-    % head -30 bb
-    
+    % head -30 bb    
 
     1	203148112	T	-
     1	203148168	G	A
@@ -262,7 +250,6 @@ The `basic` format can also be used to export genotypes,
     % vtools select variant --samples 1 -t inSamples
     % vtools export inSamples --samples 'sample_name like "NA128%"'  --format ~/vtools/format/basic > bb
     
-
     INFO: Genotypes of 8 samples are exported.
     Writing: 100% [========================================] 288 10.6K/s in 00:00:00
     INFO: 288 lines are exported from variant table inSamples
@@ -272,7 +259,6 @@ The `basic` format can also be used to export genotypes,
 
     % head -5 bb
     
-
     1	533	G	C		0	0	0	1	0		1	1
     1	41342	T	A		0	0	1	1	0		0	0
     1	41791	G	A		0	0	0	0	0		0	0
@@ -288,7 +274,6 @@ The `--header` option can be used to specify a header, with `%(sample_names)s` b
 
     % vtools export inSamples --samples 'sample_name like "NA128%"'  --format ~/vtools/format/basic --header chr pos ref alt "%(sample_names)s" > bb
     
-
     INFO: Genotypes of 8 samples are exported.
     Writing: 100% [========================================] 288 12.9K/s in 00:00:00
     INFO: 288 lines are exported from variant table inSamples
@@ -298,7 +283,6 @@ The `--header` option can be used to specify a header, with `%(sample_names)s` b
 
     % head -5 bb
     
-
     chr	pos	ref	alt	NA12812	NA12813	NA12814	NA12815	NA12828	NA12872	NA12873	NA12874
     1	533	G	C		0	0	0	1	0		1	1
     1	41342	T	A		0	0	1	1	0		0	0

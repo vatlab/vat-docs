@@ -37,7 +37,6 @@ This script tries to address this problem by extending the standard `md5sum` pro
 If you are extremely impatient, you can skip the rest of this page and use command 
 
 
-
     % md5sumd * -v | gzip > .manifest.md5.gz
     
 
@@ -56,7 +55,6 @@ to check if the content of the directory has been altered during file transferri
 
     % md5sumd -h
     
-
     usage: md5sumd [-h] [--version] [-c [CHECKSUM]] [-v]
                    [FILE_OR_DIR [FILE_OR_DIR ...]]
     
@@ -96,8 +94,7 @@ Let us calculate the MD5 of a directory:
 
 
 
-    % md5sumd vtools
-    
+    % md5sumd vtools 
 
     b93f839744cd53fb87981c8254cc7511  vtools
     
@@ -106,7 +103,6 @@ If we copy the directory to somewhere else, we can see the signature is still th
 
     % cp -r vtools ~/Temp
     % md5sumd ~/Temp/vtools
-    
 
     b93f839744cd53fb87981c8254cc7511  ~/Temp/vtools/
     
@@ -115,7 +111,6 @@ If we change anything in that directory, the signature will be different
 
     % rm ~/Temp/vtools/*.pyc
     % md5sumd ~/Temp/vtools
-    
 
     c71b7236b19feb1682f1c7039e5df8f2  ~/Temp/vtools/
     
@@ -131,7 +126,6 @@ Now let us save the md5 checksum to a file,
     % md5sumd vtools > vtools.md5
     % md5sumd -c vtools.md5
     
-
     vtools: OK
     
 
@@ -140,8 +134,7 @@ When we transfer the directory to another place, we can still use this command t
 
 
     % rm -rf vtools/cache
-    % md5sumd --check vtools.md5
-    
+    % md5sumd --check vtools.md5    
 
     vtools: FAILED
     
@@ -154,8 +147,7 @@ It can be frustrating when a directory checksum mismatch happens but you have no
 
 
 
-    % md5sumd vtools -v > vtools.md5
-    
+    % md5sumd vtools -v > vtools.md5   
 
     Scanning 34366 files: 100%[====================================] 2,095,623,045 48.6M/s in 00:00:430
     
@@ -164,8 +156,7 @@ As you can see, the `--verbose` option even enables a progress bar, which can be
 
 
 
-    % head -5 vtools.md5
-    
+    % head -5 vtools.md5   
 
     2efce10e113804fc8a6b4e81ffd54f2e  vtools
     ## MD5	type	num_files	num_dirs	filesize	total_num_files	total_filesize	name
@@ -180,8 +171,7 @@ Then, if we change the directory a little bit and check it with the `--check` op
 
     % rm -f vtools/*pyc
     % rm vtools/source/*temp
-    % md5sumd -c vtools.md5
-    
+    % md5sumd -c vtools.md5  
 
     vtools/source: directory modified.
     vtools/source/cgatools_wrap_py3.cpp_temp: file removed.
@@ -202,8 +192,7 @@ Although the main strength of `md5sumd` is its ability to calculate directory md
 
 
     % cd vtools
-    % md5sumd -v * > vtools.md5
-    
+    % md5sumd -v * > vtools.md5  
 
     Scanning 65 files under annotation: 100%[============================] 194,919 17.0M/s in 00:00:000
     Scanning 32123 files under boost_1_49_0: 100%[===================] 281,585,238 16.4M/s in 00:00:170
@@ -225,7 +214,6 @@ If anything has been changes, we can check the change of contents using command
 
     % rm test/*DB*
     % md5sumd --check vtools.md5
-    
 
     MANIFEST: OK
     MANIFEST.in: OK
@@ -292,8 +280,7 @@ The `md5sumd --check` command will read from standard input if no filename (pyth
 
 
 
-    % md5sumd vtools gsl  | md5sumd -c -
-    
+    % md5sumd vtools gsl  | md5sumd -c -  
 
     vtools: OK
     gsl: OK

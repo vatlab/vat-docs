@@ -16,7 +16,6 @@ weight = 14
 
     % vtools remove -h
     
-
     usage: vtools remove [-h] [-v STD[LOG]]
     
                          {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes}
@@ -141,7 +140,6 @@ Show existing samples
 
     % vtools show samples
     
-
     filename	sample_name	aff	sex	BMI
     SAMP1.vcf	SAMP1	        1	M	22.78
     SAMP2.vcf	SAMP1	        2	F	24.43
@@ -153,7 +151,6 @@ Remove one sample with an affection status of 1
 
 
     % vtools remove samples 'aff = 1' -v2
-    
 
     INFO: Removing sample SAMP1 from file SAMP1.vcf
     
@@ -164,7 +161,6 @@ Show samples again
 
     % show samples
     
-
     INFO: Opening project sample.proj
     filename	sample_name	aff	sex	BMI
     SAMP2.vcf	SAMP1	        2	F	24.43
@@ -179,8 +175,7 @@ A project uses three databases, `dbNSFP`, `keggPathway`, and `dbSNP131`,
 
 
 
-    % vtools show
-    
+    % vtools show 
 
     Project name:                RA
     Primary reference genome:    hg18
@@ -194,8 +189,7 @@ You can remove `dbNSFP` from the project using command
 
 
 
-    % vtools remove annotations dbNSFP
-    
+    % vtools remove annotations dbNSFP   
 
     INFO: Removing annotation database dbNSFP from the project
     
@@ -206,7 +200,6 @@ You can remove `dbNSFP` from the project using command
 
     % vtools show
     
-
     WARNING: Failed to locate field genename
     WARNING: Cannot open annotation database keggPathway
     Project name:                RA

@@ -21,7 +21,6 @@ weight = 9
 #### 2.1 Command interface
 
     % vtools_report meta_analysis -h
-    
 
     usage: vtools_report meta_analysis [-h] [--beta col] [--pval col] [--se col]
                                        [-n col] [--link col [col ...]] [-m method]
@@ -62,9 +61,6 @@ Input files are
 
 
     % zless study1.gz
-    
-
-
 
     refGene_name2   sample_size_VT  num_variants_VT total_mac_VT    beta_x_VT       pvalue_VT       std_error_VT    num_permutations_VT     MAF_threshold_VT
     A1BG    159     2       24      0.0191151       0.891109        0.213265        1000    0.00628931
@@ -89,9 +85,6 @@ Result are outputted to both text file and database.
 
     % less study1and2.txt
     
-
-
-
     refGene_name2	p_meta	sample_size_meta	beta_x_VT_1	pvalue_VT_1	sample_size_VT_1	beta_x_VT_2	pvalue_VT_2	sample_size_VT_2
     RESP18	6.380E-01	238	0.570054	0.1998	119	-0.228113	0.537463	119
     STX6	8.583E-01	633	0.010475	0.875125	302	-0.434853	0.691309	331
@@ -105,9 +98,6 @@ To load the meta analysis result to the project
 
 
     % vtools use study1and2.DB --linked_by name2
-    
-
-
 
     INFO: Using annotation DB study1and2 in project SSc.
     INFO: Combined association tests result database. Created on Thu, 14 Mar 2013 17:35:44

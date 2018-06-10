@@ -873,7 +873,7 @@ This function converts a UCSC refGene.txt to BED format so that it can be used b
 
 *   Import the module to your pipeline using `ImportModules('my_tools.py')`.
 
- [1]: /vat-docs/documentation/pipelines/format10/
- [2]: /vat-docs/documentation/customization/simulation/
+ [1]:    /documentation/pipelines/format10/
+ [2]:    /documentation/customization/simulation/
  [3]: #alias
  [4]: http://docs.python.org/2/library/re.html

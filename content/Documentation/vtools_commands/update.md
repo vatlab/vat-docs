@@ -11,7 +11,6 @@ weight = 3
 
     % vtools update -h
     
-
     usage: vtools update [-h] [--from_file FROM_FILE [FROM_FILE ...]]
                          [--build BUILD] [--format FORMAT] [-j N]
                          [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]]
@@ -949,6 +948,6 @@ We can select variants that belong to a gene and output it
 
  [1]: http://www.1000genomes.org/node/101
  [2]: http://regulome.stanford.edu/
- [3]: /vat-docs/documentation/customization/format/formats/
- [4]: 1313/vat-docs/documentation/customization/format/formats/map/
+ [3]:    /documentation/customization/format/formats/
+ [4]: 1313   /documentation/customization/format/formats/map/
  [5]: http://www.sqlite.org/lang_aggfunc.html

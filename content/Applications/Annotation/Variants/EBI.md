@@ -16,7 +16,6 @@ This represents version 3 of an integrated variant call set based on both low co
 
     vtools show annotation thousandGenomesEBI -v2
     
-
     Annotation database thousandGenomesEBI (version hg19_phase1_release_v3.20101123)
     Description: 1000 Genomes VCF file (available from: ftp://ftp.1000genomes.ebi.ac.uk
         /vol1/ftp/release/20110521/ALL.wgs.phase1_release_v3.20101123.snps

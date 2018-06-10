@@ -18,7 +18,6 @@ PhastConsElements represents the most conserved regions so it covers a significa
 
     vtools show annotation PhastConsElements
     
-
     Description:            PhastCons Conservation Scores
     Database type:          range
     Number of records:      5,163,775
@@ -68,7 +67,6 @@ The following example shows how you can use phastCons to annotate your variants 
 
     vtools output variant chr pos ref alt phastCons.sum_data/phastCons.count  -l 10
     
-
     1	10434	-	C	NA
     1	10440	C	-	NA
     1	54789	C	-	0.0587041015625
@@ -85,8 +83,7 @@ Below is a description of the phastCons fields.
 
 
 
-    vtools show annotation phastCons
-    
+    vtools show annotation phastCons  
 
     Annotation database phastCons (version hg19_20110909)
     Description: PhastCons Conservation Scores

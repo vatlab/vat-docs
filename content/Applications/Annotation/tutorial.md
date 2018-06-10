@@ -14,8 +14,6 @@ weight = 1
 
 This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory `~/.variant_tools` when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases. If you do no want to wait for the downloads and if you have enough disk space, you can download all variant tools resources into your local resource directory using the following commands: 
 
-
-
     % wget --mirror http://vtools.houstonbioinformatics.org
     % rm -rf ~/.variant_tools   # remove existing directory if exists
     % mv vtools.houstonbioinformatics.org ~/.variant_tools
@@ -31,8 +29,7 @@ Let us create a project and download a snapshot project called `vt_quickStartGui
 
 
 
-    % vtools init anno
-    
+    % vtools init anno   
 
     INFO: variant tools 2.0.0 : Copyright (c) 2011 - 2012 Bo Peng
     INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
@@ -40,11 +37,8 @@ Let us create a project and download a snapshot project called `vt_quickStartGui
     INFO: Creating a new project anno
     
 
-
-
     % vtools admin --load_snapshot vt_quickStartGuide
     
-
     Downloading snapshot vt_quickStartGuide.tar.gz from online
     INFO: Snapshot vt_quickStartGuide has been loaded
     
@@ -55,7 +49,6 @@ This project has variants from CEU and JPT populations of the 1000 genomes pilot
 
     % vtools show samples
     
-
     sample_name	filename
     CEU	CEU.exon...3.sites.vcf.gz
     JPT	JPT.exon...3.sites.vcf.gz
@@ -65,7 +58,6 @@ This project has variants from CEU and JPT populations of the 1000 genomes pilot
 
     % vtools show tables
     
-
     table                 #variants     date  message
     variant                   4,858   
     
@@ -82,7 +74,6 @@ These are available annotation databases (as of October 2012) that can be downlo
 
     % vtools show annotations
     
-
     CancerGeneCensus-20111215
     CancerGeneCensus
     ccdsGene-hg19_20110909
@@ -129,12 +120,8 @@ These are available annotation databases (as of October 2012) that can be downlo
 
 To add a gene-based annotation source such as **ccdsGene** to your project, the following command will accomplish this. If you haven't already downloaded this annotation database with this or another project, vtools will automatically download the database and associate **ccdsGene** annotations to your project. 
 
-
-
     % vtools use ccdsGene
     
-
-
 
 #### 3.3 What genes do my variants belong to?
 
@@ -161,7 +148,6 @@ This command downloads the **keggPathway** annotation source allowing variants t
 
     % vtools use keggPathway --linked_by ccdsGene.name
     
-
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/keggPathway.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/keggPathway-20110823.DB.gz
     : Unsupported scheme.
@@ -170,13 +156,11 @@ This command downloads the **keggPathway** annotation source allowing variants t
     Resolving vtools.houstonbioinformatics.org... 70.39.145.13
     Connecting to vtools.houstonbioinformatics.org[70.39.145.13]:80... connected.
     HTTP request sent, awaiting response... 200 OK
-    Length: 350,847 [application/x-gzip]
+    Length: 350,847 [  /applications/x-gzip]
     
     100%[=============================================================================>] 350,847      330.94K/s             
     
-    18:54:26 (329.78 KB/s) - `./keggPathway-20110823.DB.gz' saved [350847/350847]
-    
-    
+    18:54:26 (329.78 KB/s) - `./keggPathway-20110823.DB.gz' saved [350847/350847]   
     FINISHED --18:54:26--
     Downloaded: 350,847 bytes in 1 files
     INFO: Using annotation DB keggPathway in project quickstart.
@@ -187,8 +171,6 @@ Now lets filter all of our variants to include only those involved in metabolic 
 
 
 
-    % vtools select variant 'kgDesc="Metabolic pathways"' -t metabolic                                                                                        
-    
-
+    % vtools select variant 'kgDesc="Metabolic pathways"' -t metabolic                                                                                
     Running: 2,788 2.1K/s in 00:00:01
     INFO: 109 variants selected.

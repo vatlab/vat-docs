@@ -80,7 +80,6 @@ VCF files that can be used as tracks must be bgzipped and tabix-indexed. Regular
     % tabix -p vcf CEU_hg38.vcf.gz
     % vtools import CEU_hg38.vcf.gz --build hg38
     
-
     INFO: Importing variants from CEU_hg38.vcf.gz (1/1)
     CEU_hg38.vcf.gz: 100% [===================================] 306 10.4K/s in 00:00:00
     INFO: 292 new variants (292 SNVs) from 306 lines are imported.
@@ -92,8 +91,7 @@ The track information can be displayed using command
 
 
 
-    % vtools show track CEU.vcf.gz | head -30
-    
+    % vtools show track CEU.vcf.gz | head -30   
 
     Version                 VCF v4.0
     Number of fields:       69
@@ -132,7 +130,6 @@ We can use the `track` function to display the info column in the original vcf f
 
     % vtools output variant chr pos "track('CEU_hg38.vcf.gz')" -l 5
     
-
     1   10533   AA=.;AC=6;AN=120;DP=423
     1   51479   AA=.;AC=29;AN=120;DP=188
     1   51928   AA=.;AC=5;AN=120;DP=192
@@ -144,8 +141,7 @@ The default parameter `col=8` is used to extract the info column of the info fil
 
 
 
-    % vtools output variant chr pos "track('CEU_hg38.vcf.gz', 'name')" -l 5
-    
+    % vtools output variant chr pos "track('CEU_hg38.vcf.gz', 'name')" -l 5   
 
     1   10533   .
     1   51479   .
@@ -160,7 +156,6 @@ Values of individual info fields could be specified by `info.FIELD` where `FIELD
 
     % vtools output variant chr pos "track('CEU_hg38.vcf.gz', 'info.DP')" -l 5
     
-
     1   10533   423
     1   51479   188
     1   51928   192
@@ -172,7 +167,6 @@ If you know the name of the sample (in the vcf file, this example happens to has
 
     % vtools show samples -l 5
     
-
     sample_name filename
     NA06985     CEU_hg38.vcf.gz
     NA06986     CEU_hg38.vcf.gz
@@ -187,8 +181,7 @@ you can get the genotype columns using sample name
 
 
 
-    % vtools output variant chr pos "track('CEU_hg38.vcf.gz', 'NA06986')" -l 5
-    
+    % vtools output variant chr pos "track('CEU_hg38.vcf.gz', 'NA06986')" -l 5  
 
     1   10533   0|0:14:SMB
     1   51479   0|1:16:SMB
@@ -203,7 +196,6 @@ With the format information abtained from
 
     % vtools output variant chr pos "track('CEU.vcf.gz', 'format')" -l 5
     
-
     1   10533   GT:DP:CB
     1   51479   GT:DP:CB
     1   51928   GT:DP:CB
@@ -215,7 +207,6 @@ we can list fields of the genotype columns,
 
     % vtools output variant chr pos "track('CEU.vcf.gz', 'NA06986.GT')" -l 5
     
-
     1   10533   0|0
     1   51479   0|1
     1   51928   0|0
@@ -233,7 +224,6 @@ A very useful feature of the vcf track is that **you can use vcf files from onli
 
     % vtools liftover hg19
     
-
     INFO: Exporting variants in BED format
     Exporting variants: 100% [==========================] 288 67.3K/s in 00:00:00
     INFO: Running UCSC liftOver tool
@@ -245,8 +235,7 @@ To pass the correct coordinates, option `--build hg19` is needed:
 
 
     % vtools output variant chr pos "track('http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.chr1.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz', 'info')" \
-    %     -l 5 --build hg19
-    
+    %     -l 5 --build hg19  
 
     1	10533	.
     1	51479	RSQ=0.7414;AVGPOST=0.9085;AA=T;AN=2184;THETA=0.0131;AC=235;VT=SNP;LDAF=0.1404;SNPSOURCE=LOWCOV;ERATE=0.0012;AF=0.11;ASN_AF=0.0035;AMR_AF=0.16;AFR_AF=0.03;EUR_AF=0.22
@@ -274,7 +263,6 @@ The bigWig tracks contains numeric values for locations (ranges). The default `c
     % wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromFaire/wgEncodeOpenChromFaireFrontalcortexocSig.bigWig
     % vtools init track -f
     % vtools import indels.vcf  --build hg19
-    
 
     INFO: Importing variants from indels.vcf (1/1)
     indels.vcf: 100% [============================================] 184 12.3K/s in 00:00:00
@@ -289,7 +277,6 @@ The detailed information about this track can be obtained by
 
     % vtools show track wgEncodeOpenChromFaireFrontalcortexocSig.bigWig
     
-
     Version:                4
     Primary data size       1320909131
     Zoom levels:            10
@@ -338,7 +325,6 @@ and we can show the track values for each variant using command
 
     % vtools output variant chr pos ref alt "track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig')" -l 5
     
-
     1	10434	-	C	0.00089999998454
     1	10440	C	-	0.00089999998454
     1	54789	C	-	0.00719999987632
@@ -353,7 +339,6 @@ In addition to output, the track can also be used to select variants,
     % vtools select variant "track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig') > 0.001" \
          --output chr pos ref alt "track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig')" -l 5
     
-
     1	54789	C	-	0.00719999987632
     1	54790	-	T	0.00719999987632
     1	63738	ACT	-	0.00710000004619
@@ -375,7 +360,6 @@ BigBed is a compressed indexed BED format that contains three mandatory columns 
     % vtools init track
     % vtools import indels.vcf  --build hg19
     
-
     INFO: Importing variants from indels.vcf (1/1)
     indels.vcf: 100% [============================================] 184 12.3K/s in 00:00:00
     INFO: 137 new variants (1 SNVs, 77 insertions, 58 deletions, 7 complex variants) from 184 lines are imported.
@@ -388,7 +372,6 @@ This tracks provides the following information:
 
 
     % vtools show track wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed
-    
 
     Version:                4
     Item count:             38378
@@ -443,8 +426,7 @@ The track provides provides numeric annotation for each variant,
 
 
 
-    % vtools output variant chr pos ref alt "track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed')" -l5
-    
+    % vtools output variant chr pos ref alt "track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed')" -l5s  
 
     1	10434	-	C	.
     1	10440	C	-	.
@@ -459,7 +441,6 @@ The first five variant does not overlap with any regions in the bigBed file, but
 
     % vtools select variant "track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed') = 1" -t encode
     
-
     Running: 0 0.0/s in 00:00:00
     INFO: 28 variants selected.
     
@@ -468,8 +449,7 @@ and lists fields from the bigBed file for these variants
 
 
 
-    % vtools output encode chr pos ref alt "track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed', 4)" -l5
-    
+    % vtools output encode chr pos ref alt "track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed', 4)" -l5  
 
     1	761958	-	    T    	LINC00115
     1	768117	GTTTT	-    	RP11-206L10.11
@@ -483,7 +463,6 @@ and
 
 
     % vtools output encode chr pos ref alt "track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed', 'score')" -l5
-    
 
     1	761958	-    	T    	692
     1	768117	GTTTT	-    	659
@@ -537,7 +516,6 @@ You can count the number of reads that match (or unmatch) the reference genome u
 
     % vtools select variant --samples "sample_name = 'WGS4_9'" -t ex49
     
-
     INFO: 1 samples are selected by condition: sample_name = 'WGS4_9'
     Running: 3,959 164.5/s in 00:00:24
     INFO: 1191 variants selected.
@@ -547,12 +525,11 @@ We first need to check the available information that can be retrived
 
 
 
-    $ vtools show track LP6005253-DNA_A02.bam
-    
+    $ vtools show track LP6005253-DNA_A02.bam  
 
     Header:
     @HD	VN:1.0	SO:coordinate
-    @PG	ID:CASAVA	VN:CASAVA-1.9.0a1_110909	CL:/illumina/development/casava/CASAVA-VariantCalling-2.12a_gVCF/bin/configureBuild.pl --targets all bam --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L5/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L6/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L7/Sample_LP6005253-DNA_A02 --outDir=/scratch/LP6005253-DNA_A02 --samtoolsRefFile=/illumina/scratch/services/Genomes/FASTA_UCSC/HumanNCBI37_UCSC/HumanNCBI37_UCSC_XX.fa --indelsSaveTempFiles --variantsConsensusVCF --jobsLimit=12 --variantsPrintUsedAlleleCounts --variantsWriteRealigned --sortKeepAllReads --bamChangeChromLabels=OFF --sgeQueue=prod-s.q
+    @PG	ID:CASAVA	VN:CASAVA-1.9.0a1_110909	CL:/illumina/ /development/casava/CASAVA-VariantCalling-2.12a_gVCF/bin/configureBuild.pl --targets all bam --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L5/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L6/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L7/Sample_LP6005253-DNA_A02 --outDir=/scratch/LP6005253-DNA_A02 --samtoolsRefFile=/illumina/scratch/services/Genomes/FASTA_UCSC/HumanNCBI37_UCSC/HumanNCBI37_UCSC_XX.fa --indelsSaveTempFiles --variantsConsensusVCF --jobsLimit=12 --variantsPrintUsedAlleleCounts --variantsWriteRealigned --sortKeepAllReads --bamChangeChromLabels=OFF --sgeQueue=prod-s.q
     @SQ	SN:chr1	LN:249250621
     @SQ	SN:chr2	LN:243199373
     @SQ	SN:chr3	LN:198022430
@@ -631,7 +608,6 @@ The depth of coverage of these variants could be obtained using the BAM track,
 
     % vtools output ex49 chr pos ref alt "track('LP6005253-DNA_A02.bam')" -l5
     
-
     1	1138963	C	T	26
     1	1470808	G	A	37
     1	6161109	C	T	27
@@ -645,7 +621,6 @@ The quality of reads and alignment can be displayed using fields `qual` and `map
 
     % vtools output ex49 chr pos ref alt "track('LP6005253-DNA_A02.bam', 'qual')" -l5
     
-
     1	1138963	C	T	34,34,32,30,33,39,40,41,31,34,23,25,37,33,34,40,40,2,11,31,33,24,2,40,39,35
     1	1470808	G	A	31,2,37,35,35,33,33,35,33,29,41,35,35,33,33,2,35,5,35,35,36,40,31,40,31,26,23,38,33,39,31,41,40,30,35,34,34
     1	6161109	C	T	10,31,32,39,31,39,41,41,35,2,22,40,38,28,39,40,39,35,41,20,40,35,39,38,35,30,34
@@ -655,8 +630,7 @@ The quality of reads and alignment can be displayed using fields `qual` and `map
 
 
 
-    % vtools output ex49 chr pos ref alt "track('LP6005253-DNA_A02.bam', 'mapq')" -l5
-    
+    % vtools output ex49 chr pos ref alt "track('LP6005253-DNA_A02.bam', 'mapq')" -l5   
 
     1	1138963	C	T	254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,241,254,254,254,254,254,254,254,254
     1	1470808	G	A	254,194,254,254,254,254,254,254,254,254,254,254,254,254,254,149,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254
@@ -671,7 +645,6 @@ We can exclude some reads depending on quality scores, using parameters `min_qua
 
     % vtools output ex49 chr pos ref alt "track('LP6005253-DNA_A02.bam', 'coverage?min_qual=30')" -l5
     
-
     1	1138963	C	T	20
     1	1470808	G	A	31
     1	6161109	C	T	22
@@ -685,7 +658,6 @@ Read TAGs can also be outputed or used in filter conditions. For example, this b
 
     % vtools output ex49 chr pos ref alt 'ref_sequence(chr, pos-3, pos+3)' "track('LP6005253-DNA_A02.bam', 'AS?min_qual=35')" -l5
     
-
     1	1138963	C	T	AGCCTCC	1007|1001|1001|966|941|1006|816|946|1002
     1	1470808	G	A	GGCGGCC	1007|475|783|951|998|878|967|968|1004|967|967|962|962|935|1004|1008|963|998
     1	6161109	C	T	TACCGTG	897|922|927|830|967|965|936|997|997|832|774|961|966|922|937|949|964
@@ -699,7 +671,6 @@ or its values to filter reads:
 
     % vtools output ex49 chr pos ref alt 'ref_sequence(chr, pos-3, pos+3)' "track('LP6005253-DNA_A02.bam', 'coverage?AS>1000')" -l5
     
-
     1	1138963	C	T	AGCCTCC	5
     1	1470808	G	A	GGCGGCC	7
     1	6161109	C	T	TACCGTG	0
@@ -718,8 +689,7 @@ First, we can display the nucleotide at the variant site using the `calls` param
 
 
     % bam=/path/to/a/bam/file
-    % vtools output exon1 chr pos ref alt "track('${bam}', 'calls?limit=20')"
-    
+    % vtools output exon1 chr pos ref alt "track('${bam}', 'calls?limit=20')"  
 
     1 	118420020	-           	T	IIIII.I.I.I..III.I.I
     1 	159023386	G           	A	.AAAAA..A.AA..A..A.A
@@ -750,7 +720,6 @@ You can display the reads around the variant site, using the `reads` parameter:
 
     % vtools output exon1 chr pos ref alt "track('${bam}', 'reads?limit=5')"
     
-
     1 	118420020	-           	T	T.....|T.....|T.....|T.....|T.....
     1 	159023386	G           	A	..   |A... |A....|A....|A....
     1 	160398161	G           	A	A    |..   |A..  |...  |A....
@@ -776,7 +745,6 @@ Parameters `start` and `width` can be used to specify the window of sequences to
 
     % vtools output exon1 chr pos ref alt "track('${bam}', 'reads?limit=5&start=-5&width=8&color=1&show_seq=1')"
     
-
     1 	118420020	-           	T	GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT
     1 	159023386	G           	A	AAGTGGT |AAGTGATG|AAGTGATG|AAGTGATG|AAGTGATG
     1 	160398161	G           	A	CTTCCA  |CTTCCGT |CTTCCATG|CTTCCGTG|CTTCCATG
@@ -803,7 +771,6 @@ You can also specify the types of reads so that you can count or display just a 
 
     % vtools output exon1 chr pos ref alt "track('${bam}', 'reads?limit=5&start=-5&width=8&color=1&show_seq=1&strand=+')"
     
-
     1 	118420020	-           	T	GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT
     1 	159023386	G           	A	AAGTGATG|AAGTGATG|AAGTGATG|AAGTGATG|AAGTGGTG
     1 	160398161	G           	A	CTTCCATG|CTTCCATG|CTTCCATG|CTTCCATG|CTTCCATG
@@ -825,7 +792,6 @@ Or display just the mismatch single-nucleotides
 
     % vtools output exon1 chr pos ref alt "track('${bam}', 'reads?limit=5&start=-5&width=8&type=1')"
     
-
     1 	118420020	-           	T
     1 	159023386	G           	A	.....A..|.....A..|.....A..|.....A..|.....A..
     1 	160398161	G           	A	.....A  |.....A..|.....A..|.....A..|.....A..
@@ -855,7 +821,6 @@ For example, we can output the number of reads that match (type 0), mismatch (ty
     	"track('${bam}', 'coverage?type=3&strand=+')" \
     	"track('${bam}', 'coverage?type=3&strand=-')"
     
-
     1 	118420020	-           	T	25 	9 	0 	16	0 	0 	0
     1 	159023386	G           	A	43 	18	25	0 	0 	0 	0
     1 	160398161	G           	A	50 	23	27	0 	0 	0 	0
@@ -888,7 +853,6 @@ Online BAM tracks can also be used so you do not have to download large BAM file
 
     % vtools output variant chr pos "track('ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/alignment/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam')" -l5
     
-
     [bam_index_load] attempting to download the remote index file.
     1	533	0
     1	41342	1
@@ -901,4 +865,4 @@ Online BAM tracks can also be used so you do not have to download large BAM file
 
  [1]: http://genome.ucsc.edu/goldenPath/help/bigWig.html
  [2]: http://genome.ucsc.edu/goldenPath/help/bigBed.html
- [3]: /vat-docs/documentation/vtools_commands/show/
+ [3]:    /documentation/vtools_commands/show/

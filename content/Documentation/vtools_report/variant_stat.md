@@ -14,7 +14,6 @@ weight = 6
 
     % vtools_report variant_stat -h
     
-
     usage: vtools_report variant_stat [-h] [-s [SAMPLES [SAMPLES ...]]]
                                       [-g [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}]
                                       table
@@ -71,7 +70,7 @@ Note that
 
     % vtools_report variant_stat VTABLE
     % vtools_report variant_stat VTABLE --samples 1
-    % vtools_report variant_stat VTABLE --group_by aff
+    % vtools_report variant_stat VTABLE --group_by aff   
 might give different total variant count because the first command counts all variants in the `VTABLE`, the second and third commands count all variants in specified samples (all samples for condition `1`). Because some variants might not appear in any of the samples, the number of reported variants of the first command might be larger than the others. 
 
 {{%/notice%}}
@@ -82,7 +81,6 @@ You would like to generate output for selected variants (e.g. variants on chromo
 
     % vtools_report variant_stat variant --group_by filename
     
-
     filename	num_sample	num_snps	num_insertions	num_deletions	num_substitutions	min_insertion_size	avg_insertion_size	max_insertion_size	min_deletion_size	avg_deletion_size	max_deletion_size
     case1.vcf	1	21504	322	75	0	1	2.64906832298	23	1	1.28	11
     case10.vcf	1	21069	317	77	0	1	2.64353312303	21	1	1.25974025974	6

@@ -342,6 +342,6 @@ INTERNAL IMPROVEMENTS:
 *   Nov 25, 2011: Improve efficiency of `vtools select` by creating indexes of relevant fields of the annotation database. 
 *   Dec 28, 2011: Improve efficiency of commands `vtools select` for ranged based queries by creating auxiliary binning tables.
 
- [1]: /vat-docs/applications/annotation/regions/genomic_super_dups/
- [2]: /vat-docs/applications/annotation/regions/phast_cons/
- [3]: /vat-docs/documentation/vtools_commands/update/
+ [1]:   /applications/annotation/regions/genomic_super_dups/
+ [2]:   /applications/annotation/regions/phast_cons/
+ [3]:    /documentation/vtools_commands/update/

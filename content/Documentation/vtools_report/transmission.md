@@ -16,7 +16,6 @@ weight = 8
 
     % vtools_report transmission -h
     
-
     usage: vtools_report transmission [-h] [--parents PARENTS PARENTS]
                                       [--offspring OFFSPRING [OFFSPRING ...]]
                                       [--denovo [DENOVO [DENOVO ...]]]

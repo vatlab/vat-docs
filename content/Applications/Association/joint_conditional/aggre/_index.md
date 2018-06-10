@@ -13,15 +13,15 @@ weight = 2
 
 ### 1. Introduction
 
-This is implementation of the fixed threshold aggregation methods for disease and quantitative traits. Originally described in (Morris and Zeggni, 2010) and known as Gene- or Region-based Analysis of Variants of Intermediate and Low frequency (GRANVIL), the *Aggregation* method for rare variants codes observed genotype of a genetic region the count of minor alleles: {$$X = \sum\_i^N X\_i$$} 
+This is implementation of the fixed threshold aggregation methods for disease and quantitative traits. Originally described in (Morris and Zeggni, 2010) and known as Gene- or Region-based Analysis of Variants of Intermediate and Low frequency (GRANVIL), the *Aggregation* method for rare variants codes observed genotype of a genetic region the count of minor alleles: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> $$X = \sum\_i^N X\_i$$ 
 
-Our program implements the aggregation methods in a logistic regression framework for disease traits analysis (case control data) as `BurdenBt` method, and a linear regression framework for quantitative traits analysis as `BurdenQt` method. {$p$} value for aggregation method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component. 
+Our program implements the aggregation methods in a logistic regression framework for disease traits analysis (case control data) as `BurdenBt` method, and a linear regression framework for quantitative traits analysis as `BurdenQt` method. \\(p\\) value for aggregation method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component. 
 
 
 
 #### 1.1 Adjust for missing genotypes
 
-The same `--NA_adjust` option is avaliable as with [collapsing methods][1] although they slightly differ in details, as described in Auer et al 2013[^personal communication with Paul L. Auer at Fred Hutchinson Cancer Research Center^]. 
+The same `--NA_adjust` option is avaliable as with [collapsing methods][1] although they slightly differ in details, as described in (Auer et al, 2013). 
 
 
 
@@ -30,9 +30,6 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
 #### 2.1 Command interface
 
     vtools show test BurdenBt
-    
-
-
 
     Name:          BurdenBt
     Description:   Burden test for disease traits, Morris & Zeggini 2009
@@ -70,12 +67,7 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
                             model. Default set to additive
     
 
-
-
     vtools show test BurdenQt
-    
-
-
 
     Name:          BurdenQt
     Description:   Burden test for quantitative traits, Morris & Zeggini 2009
@@ -123,9 +115,6 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
 
     vtools associate rare status --covariates gender age bmi exposure -m "BurdenBt --name Burde\
     nBt --alternative 2" --group_by name2 --to_db burdenBt -j8 > burdenBt.txt
-    
-
-
 
     INFO: 3180 samples are found
     INFO: 2632 groups are found
@@ -137,12 +126,7 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
     INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 17:39:05
     
 
-
-
     vtools show fields | grep burdenBt
-    
-
-
 
     burdenBt.name2               name2
     burdenBt.sample_size_BurdenBt sample size
@@ -165,13 +149,8 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
     burdenBt.wald_5_BurdenBt     Wald statistic for covariate 5
     
 
-
-
     head burdenBt.txt
     
-
-
-
     name2	sample_size_BurdenBt	num_variants_BurdenBt	total_mac_BurdenBt	beta_x_BurdenBt	pvalue_BurdenBt	wald_x_BurdenBt	beta_2_BurdenBt	beta_2_pvalue_BurdenBt	wald_2_BurdenBt	beta_3_BurdenBt	beta_3_pvalue_BurdenBt	wald_3_BurdenBt	beta_4_BurdenBt	beta_4_pvalue_BurdenBt	wald_4_BurdenBt	beta_5_BurdenBt	beta_5_pvalue_BurdenBt	wald_5_BurdenBt
     AADACL4	3180	5	138	-0.314582	0.321174	-0.992049	-0.295836	0.0157002	-2.41581	0.031285	4.33616E-09	5.87083	0.129902	1.92805E-40	13.3137	0.437291	0.00133887	3.20752
     AAMP	3180	3	35	0.00135633	0.997852	0.0026919	-0.298944	0.0146254	-2.44152	0.0312624	4.39097E-09	5.86875	0.130231	1.24946E-40	13.346	0.43547	0.00139464	3.19576
@@ -183,19 +162,14 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
     ABI2	3180	1	25	0.982737	0.0422609	2.03094	-0.30075	0.0140623	-2.45567	0.0311325	4.9292E-09	5.84954	0.129821	1.95802E-40	13.3125	0.436794	0.00135518	3.20403
     ABL2	3180	4	41	0.192361	0.698251	0.387682	-0.298745	0.0146809	-2.44016	0.0312678	4.39516E-09	5.86859	0.130322	1.10243E-40	13.3553	0.436387	0.00136405	3.20215
     
-
 **QQ-plot** 
-
-1.   Attach:burdenBt.jpg 
+<img src = "burdenBt.jpg" width = 500> 
 
 
 
     vtools associate rare bmi --covariates gender age exposure -m "BurdenQt --name BurdenQt --a\
     lternative 2" --group_by name2 --to_db burdenQt -j8 > burdenQt.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     INFO: Starting 8 processes to load genotypes
@@ -206,13 +180,8 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
     INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 23:01:44
     
 
-
-
     vtools show fields | grep burdenQt
     
-
-
-
     burdenQt.name2               name2
     burdenQt.sample_size_BurdenQt sample size
     burdenQt.num_variants_BurdenQt number of variants in each group (adjusted for specified MAF
@@ -235,9 +204,6 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
 
     head burdenQt.txt
     
-
-
-
     name2	sample_size_BurdenQt	num_variants_BurdenQt	total_mac_BurdenQt	beta_x_BurdenQt	pvalue_BurdenQt	wald_x_BurdenQt	beta_2_BurdenQt	beta_2_pvalue_BurdenQt	wald_2_BurdenQt	beta_3_BurdenQt	beta_3_pvalue_BurdenQt	wald_3_BurdenQt	beta_4_BurdenQt	beta_4_pvalue_BurdenQt	wald_4_BurdenQt
     AADACL4	3180	5	138	-0.461457	0.308686	-1.01815	-0.0716573	0.726877	-0.349314	0.0150768	0.0574562	1.90051	-0.939843	2.75155E-05	-4.19925
     ABCB10	3180	6	122	0.119	0.814045	0.23523	-0.0795874	0.697984	-0.388079	0.0150143	0.0585374	1.89233	-0.945568	2.50587E-05	-4.2205
@@ -249,7 +215,7 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
     ACADM	3180	4	103	0.0561593	0.916101	0.105355	-0.0778643	0.704415	-0.379401	0.0150232	0.0583868	1.89347	-0.942722	2.61415E-05	-4.2109
     ACAP3	3180	3	17	0.296682	0.823678	0.222835	-0.07936	0.698787	-0.386993	0.0150257	0.0583418	1.8938	-0.942487	2.61991E-05	-4.2104
     
-
+**QQ-plot** 
 <img src = "burdenQt.jpg" width = 500> 
 
 </details>
@@ -258,5 +224,7 @@ The same `--NA_adjust` option is avaliable as with [collapsing methods][1] altho
 
 Andrew P. Morris and Eleftheria Zeggini (2010) **An evaluation of statistical approaches to rare variant analysis in genetic association studies**. *Genetic Epidemiology* doi:`10.1002/gepi.20450`. <http://doi.wiley.com/10.1002/gepi.20450>
 
+Auer et al (2013) personal communication with Paul L. Auer at Fred Hutchinson Cancer Research Center
 
- [1]: /vat-docs/applications/association/joint_conditional/collapisng/
+
+ [1]:   /applications/association/joint_conditional/collapisng/

@@ -24,7 +24,6 @@ A dbSNP entry might match multiple variants. For example, `rs111688037` matches 
 
     % vtools show annotation dbSNP -v1
     
-
     Annotation database dbSNP (version hg38_143)
     Description:            dbSNP version 143, created using vcf file downloaded from NCBI
     Database type:          variant
@@ -136,7 +135,6 @@ A dbSNP entry might match multiple variants. For example, `rs111688037` matches 
 
     % vtools show annotation dbSNP-hg19_141 -v2
     
-
     Annotation database dbSNP (version hg19_141)
     Description:            dbSNP version 141
     Database type:          variant

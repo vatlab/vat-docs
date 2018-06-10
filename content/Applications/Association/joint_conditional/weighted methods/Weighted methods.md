@@ -10,7 +10,7 @@ weight = 3
 
 ### 1.1 Introduction
 
-This implements a collection of **weighted** aggregation tests. Different from plain [aggregation methods][1] which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a "weight" to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated "burden", e.g., {$$X=\sum\_i^N\omega\_iX\_i$$} where {$\omega\_i$}'s are the weights. The weights often reflect the relative importance of a variant in terms of its contribution to phenotype. 
+This implements a collection of **weighted** aggregation tests. Different from plain [aggregation methods][1] which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a "weight" to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated "burden", e.g., {$$X=\sum\_i^N\omega\_iX\_i$$} where <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \\(\omega\_i\\)'s are the weights. The weights often reflect the relative importance of a variant in terms of its contribution to phenotype. 
 
 The weighting approach was first proposed by (Madsen and Browning, 2010) with the assumption that "rarer" variants tend to be more important (the [WSS statistic][2]). This weighting theme is by far the most popular weights and has been adapted into a number of methods emerged later, such as (Lin and Tang, 2011) and (Wu et al, 2011). Other weighting themes such as KBAC and RBT weightings have different assumptions but they are also based solely on internal information from data. (Price et al, 2010) proposed the use of "external" weights, i.e., using functional annotation sources to calculate weight for rare variants. This weighting theme can also be naturally integrated into many rare variants methods. 
 
@@ -24,7 +24,7 @@ Implementation of `WeightedBurdenBt` and `WeightedBurdenQt` are similar to [aggr
 *   [KBAC][4] weight 
 *   External weights from annotation 
 
-Permutation methods have to be used to obtain {$p$} value for WSS (control based), KBAC and RBT weighting themes. 
+Permutation methods have to be used to obtain \\(p\\) value for WSS (control based), KBAC and RBT weighting themes. 
 
 
 
@@ -34,9 +34,6 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
 
     vtools show test WeightedBurdenBt
     
-
-
-
     Name:          WeightedBurdenBt
     Description:   Weighted genotype burden tests for disease traits, using one or many
                    arbitrary external weights as well as one of 4 internal
@@ -112,12 +109,7 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
                             model. Default set to additive
     
 
-
-
     vtools show test WeightedBurdenQt
-    
-
-
 
     Name:          WeightedBurdenQt
     Description:   Weighted genotype burden tests for quantitative traits, using one or
@@ -205,9 +197,6 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
     vtools associate rare status --covariates age gender bmi exposure -m "WeightedBurdenBt --na\
     me WeightedBurdenBt --alternative 2" --group_by name2 --to_db weightedburdenBt -j8 > weight\
     edburdenBt.txt
-    
-
-
 
     INFO: 3180 samples are found
     INFO: 2632 groups are found
@@ -219,12 +208,7 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
     INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 21:36:29
     
 
-
-
     vtools show fields | grep weightedburdenBt
-    
-
-
 
     weightedburdenBt.name2       name2
     weightedburdenBt.sample_size_WeightedBurdenBt sample size
@@ -247,13 +231,8 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
     weightedburdenBt.wald_5_WeightedBurdenBt Wald statistic for covariate 5
     
 
-
-
     head weightedburdenBt.txt
     
-
-
-
     name2	sample_size_WeightedBurdenBt	num_variants_WeightedBurdenBt	total_mac_WeightedBurdenBt	beta_x_WeightedBurdenBt	pvalue_WeightedBurdenBt	wald_x_WeightedBurdenBt	beta_2_WeightedBurdenBt	beta_2_pvalue_WeightedBurdenBt	wald_2_WeightedBurdenBt	beta_3_WeightedBurdenBt	beta_3_pvalue_WeightedBurdenBt	wald_3_WeightedBurdenBt	beta_4_WeightedBurdenBt	beta_4_pvalue_WeightedBurdenBt	wald_4_WeightedBurdenBt	beta_5_WeightedBurdenBt	beta_5_pvalue_WeightedBurdenBt	wald_5_WeightedBurdenBt
     AAMP	3180	3	35	0.0449657	0.979459	0.0257468	0.0312612	4.39155E-09	5.86873	-0.298905	0.0146383	-2.44121	0.130226	1.2303E-40	13.3472	0.435497	0.00139398	3.19589
     AADACL4	3180	5	138	-2.46402	0.191324	-1.30667	0.0313048	4.31926E-09	5.87148	-0.294729	0.0160925	-2.40681	0.129824	2.23801E-40	13.3025	0.437296	0.00134129	3.207
@@ -266,17 +245,14 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
     ABCD3	3180	3	42	-1.24687	0.595311	-0.531156	0.0312676	4.44499E-09	5.86672	-0.301058	0.0139996	-2.45727	0.130189	1.06821E-40	13.3577	0.436778	0.00135205	3.2047
     
 
-**QQ-plot**  Attach:weightedburdenBt.jpg 
-
+**QQ-plot** 
+<img src = "weightedburdenQt.jpg" width = 500>
 
 
     vtools associate rare bmi --covariates age gender exposure -m "WeightedBurdenQt --name Weig\
     htedBurdenQt --alternative 2" --group_by name2 --to_db weightedburdenQt -j8 > weightedburde\
     nQt.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     Loading genotypes: 100% [===============================] 3,180 24.4/s in 00:02:10
@@ -286,13 +262,8 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
     INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 21:51:44
     
 
-
-
     vtools show fields | grep weightedburdenQt
     
-
-
-
     weightedburdenQt.name2       name2
     weightedburdenQt.sample_size_WeightedBurdenQt sample size
     weightedburdenQt.num_variants_WeightedBurdenQt number of variants in each group (adjusted for specified MAF
@@ -311,12 +282,7 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
     weightedburdenQt.wald_4_WeightedBurdenQt Wald statistic for covariate 4
     
 
-
-
     head weightedburdenQt.txt
-    
-
-
 
     name2	sample_size_WeightedBurdenQt	num_variants_WeightedBurdenQt	total_mac_WeightedBurdenQt	beta_x_WeightedBurdenQt	pvalue_WeightedBurdenQt	wald_x_WeightedBurdenQt	beta_2_WeightedBurdenQt	beta_2_pvalue_WeightedBurdenQt	wald_2_WeightedBurdenQt	beta_3_WeightedBurdenQt	beta_3_pvalue_WeightedBurdenQt	wald_3_WeightedBurdenQt	beta_4_WeightedBurdenQt	beta_4_pvalue_WeightedBurdenQt	wald_4_WeightedBurdenQt
     AADACL4	3180	5	138	-3.3906	0.159775	-1.40616	0.0150701	0.0575284	1.89996	-0.0698905	0.733286	-0.340787	-0.940103	2.72704E-05	-4.20129
@@ -329,7 +295,7 @@ Permutation methods have to be used to obtain {$p$} value for WSS (control based
     ABI2	3180	1	25	5.96983	0.276415	1.0886	0.0150043	0.0586562	1.89144	-0.081478	0.691101	-0.397397	-0.941765	2.64399E-05	-4.20833
     ABL2	3180	4	41	-1.52705	0.578314	-0.555906	0.0150917	0.057261	1.902	-0.0773202	0.706151	-0.377064	-0.943905	2.54124E-05	-4.21733
     
-
+**QQ-plot** 
 <img src = "weightedburdenQt.jpg" width = 500>
 
 </details>
@@ -346,7 +312,7 @@ MichaelC. Wu, Seunggeun Lee, Tianxi Cai, Yun Li, Michael Boehnke and Xihong Lin 
 [^Alkes L. Price, Gregory V. Kryukov, Paul I.W. de Bakker, Shaun M. Purcell, Jeff Staples, Lee-Jen Wei and Shamil R. Sunyaev (2010) **Pooled Association Tests for Rare Variants in Exon-Resequencing Studies**. *The American Journal of Human Genetics* doi:`10.1016/j.ajhg.2010.04.005`. <http://linkinghub.elsevier.com/retrieve/pii/S0002929710002077>^]
 
 
- [1]: /vat-docs/applications/association/joint_conditional/aggre/
- [2]: /vat-docs/applications/association/single_gene/wss-test/
- [3]: /vat-docs/applications/association/single_gene/rbt-test/
- [4]: /vat-docs/applications/association/single_gene/kbac-test/
+ [1]:   /applications/association/joint_conditional/aggre/
+ [2]:   /applications/association/single_gene/wss-test/
+ [3]:   /applications/association/single_gene/rbt-test/
+ [4]:   /applications/association/single_gene/kbac-test/

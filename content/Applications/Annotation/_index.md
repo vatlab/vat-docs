@@ -11,7 +11,7 @@ weight = 1
 
 #### 1.1 Variant, info fields, and annotation fields
 
-Variants in a variant tools project are stored in a **master variant table** after they are [imported][1]from external data files. Multiple **variant info fields** could be added to this table to describe these variant. These fields could be [imported from a file][1] when variants are imported, or [updated][2] from files after variants are imported, calculated from samples as sample statistics, or derived from other variant info or annotation fields. Variant info fields are part of a project and are usually project-specific. 
+Variants in a variant tools project are stored in a **master variant table** after they are [imported][1] from external data files. Multiple **variant info fields** could be added to this table to describe these variant. These fields could be [imported from a file][1] when variants are imported, or [updated][2] from files after variants are imported, calculated from samples as sample statistics, or derived from other variant info or annotation fields. Variant info fields are part of a project and are usually project-specific. 
 
 **Annotation fields** are provided in *annotation databases* and are available to a project after they are [linked to the project][3]. Conceptually, annotation databases add columns to the master variant table so that you can [select variants][4] based on these fields, or [output][5]variants with these annotation fields. A key difference between an variant info field and an annotation field is that variant info is unique for each variant whereas there can be multiple annotation values for a single variant. Note that annotation databases vary greatly in number of fields and coverage of variants and *usually do not provide annotation for all variants*. 
 
@@ -112,29 +112,29 @@ F. Anthony San Lucas, Gao Wang, Paul Scheet, and Bo Peng (2012) [**Integrated an
 
 if you find Variant Annotation Tools helpful and use it in your publication. Thank you.
 
- [1]: /vat-docs/documentation/vtools_commands/import/
- [2]: /vat-docs/documentation/vtools_commands/update/
- [3]: /vat-docs/documentation/vtools_commands/use/
- [4]: /vat-docs/documentation/vtools_commands/select/
- [5]: /vat-docs/documentation/vtools_commands/output/
- [6]: /vat-docs/documentation/vtools_commands/export/
- [7]: /vat-docs/documentation/customization/format/formats
- [8]: /vat-docs/applications/annotation/tutorial/
- [9]: /vat-docs/applications/annotation/variants/dbnsfp/
- [10]: /vat-docs/applications/annotation/variants/esp/
- [11]: /vat-docs/applications/annotation/variants/dbsnp/
- [12]: /vat-docs/applications/annotation/variants/thousand/
- [13]: /vat-docs/applications/annotation/variants/ebi/
- [14]: /vat-docs/applications/annotation/variants/cosmic/
- [15]: /vat-docs/applications/annotation/variants/gwas/
- [16]: /vat-docs/applications/annotation/genes/refgene/
- [17]: /vat-docs/applications/annotation/genes/knowngene/
- [18]: /vat-docs/applications/annotation/genes/ccdsgene/
- [19]: /vat-docs/applications/annotation/regions/phast_cons/
- [20]: /vat-docs/applications/annotation/regions/cytoband/
- [21]: /vat-docs/applications/annotation/misc/keggpathway/
- [22]: /vat-docs/applications/annotation/genes/cancergenecensus/
+ [1]:    /documentation/vtools_commands/import/
+ [2]:    /documentation/vtools_commands/update/
+ [3]:    /documentation/vtools_commands/use/
+ [4]:    /documentation/vtools_commands/select/
+ [5]:    /documentation/vtools_commands/output/
+ [6]:    /documentation/vtools_commands/export/
+ [7]:    /documentation/customization/format/formats
+ [8]:   /applications/annotation/tutorial/
+ [9]:   /applications/annotation/variants/dbnsfp/
+ [10]:   /applications/annotation/variants/esp/
+ [11]:   /applications/annotation/variants/dbsnp/
+ [12]:   /applications/annotation/variants/thousand/
+ [13]:   /applications/annotation/variants/ebi/
+ [14]:   /applications/annotation/variants/cosmic/
+ [15]:   /applications/annotation/variants/gwas/
+ [16]:   /applications/annotation/genes/refgene/
+ [17]:   /applications/annotation/genes/knowngene/
+ [18]:   /applications/annotation/genes/ccdsgene/
+ [19]:   /applications/annotation/regions/phast_cons/
+ [20]:   /applications/annotation/regions/cytoband/
+ [21]:   /applications/annotation/misc/keggpathway/
+ [22]:   /applications/annotation/genes/cancergenecensus/
  [23]: http://www.sanger.ac.uk/genetics/CGP/Census/
- [24]: /vat-docs/applications/annotation/customized/
- [25]: /vat-docs/documentation/customization/format/formats/functor/
+ [24]:   /applications/annotation/customized/
+ [25]:    /documentation/customization/format/formats/functor/
  [26]: http://bioinformatics.oxfordjournals.org/content/28/3/421.abstract?sid=f64403e7-5050-4102-963c-e690efe003f7

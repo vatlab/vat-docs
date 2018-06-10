@@ -6,25 +6,24 @@ weight = 3
 ## Import variants and sample genotypes from PLINK format
 
 
-### Introduction
+### 1. Introduction
 
 `PLINK` is a widely used program for analyzing genotypic data for Genome-wide Association Studies (GWAS). It can be considered as standard input format for genotyping array data. An intermediate type of genetic data between genotyping arrays and exome sequencing is the exome genotyping array, or **exome chip**. Unlike its GWAS counterpart which focuses on relatively common variants, exome chips contain primarily non-singleton *coding* variants seen in existing whole genome and exome sequencing data, plus a small proportion of non-protein-altering variants such as GWAS tag SNPs, ancestry informative markers, etc. Since exome chips are essentially genotyping arrays, they are often distributed in `PLINK` data format. Variant tools can thus handle exome chip input and perform rare variants association analysis for exome chip samples. 
 
 The standard `PLINK` files can be a bundle of plain text files (PED & MAP dataset, or its transpose, TPED & FAM dataset), or a bundle of binary files (BED, BIM & FAM). `PLINK` provides commands to convert between text and binary formats. Since `PLINK` files do not specify for a variant which allele is reference and which is alternative, importing data to a variant tools project requires matching each variant to the reference sequence to determine reference and alternative alleles; complementary strand will be used when necessary. Variant tools performs the matching procedure against hg18 or hg19 reference genomes. Other reference genome builds are not supported. 
 
 
-
+{{% notice info %}}
 Currently only `PLINK` binary format (BED, BIM & FAM) is valid input. You need to use `PLINK` to convert text to binary format if necessary. 
+{{% /notice %}}
 
-
-
+{{% notice warning %}}
 A variant locus will be ignored if it is not polymorphic in input data. 
-
-## Format specification
+{{% /notice %}}
+### 2. Format specification
 
     vtools show format plink
     
-
     Format:      plink
     
     Description: Input format for PLINK dataset. Currently only PLINK binary PED file
@@ -53,7 +52,6 @@ As with other `vtools import` formats, importing `PLINK` data requires specifica
 
     vtools import /path/to/X --format plink --build hg19 --jobs $N
     
-
     INFO: Preprocessing files X to generate intermediate input files for import
     INFO: Determining major/minor allele from data
     Decoding X: 100% [===============================] 149,141 9.1K/s in 00:00:16

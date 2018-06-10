@@ -127,7 +127,7 @@ This command downloads the **ccdsGene** data source allowing variants to be anno
     Resolving vtools.houstonbioinformatics.org... 70.39.145.13
     Connecting to vtools.houstonbioinformatics.org[70.39.145.13]:80... connected.
     HTTP request sent, awaiting response... 200 OK
-    Length: 744,834 [application/x-gzip]
+    Length: 744,834 [  /applications/x-gzip]
     
     100%[=============================================================================>] 744,834      370.44K/s             
     
@@ -155,7 +155,7 @@ This command downloads the **keggPathway** annotation source allowing variants t
     Resolving vtools.houstonbioinformatics.org... 70.39.145.13
     Connecting to vtools.houstonbioinformatics.org[70.39.145.13]:80... connected.
     HTTP request sent, awaiting response... 200 OK
-    Length: 350,847 [application/x-gzip]
+    Length: 350,847 [  /applications/x-gzip]
     
     100%[=============================================================================>] 350,847      330.94K/s             
     
@@ -264,5 +264,5 @@ Simple report to list **all CEU and JPT variants involved in metabolic pathways*
 The example here was very simplistic using only 2 samples and the VCFs did not have genotype information within them. But hopefully this gives you a feel for how the software works. For more involved tutorials and details of `vtools` capabilities, please see our [documentation][2].
 
 
- [2]: /vat-docs/documentation/tutorials/
- [3]: /vat-docs/installation
+ [2]:    /documentation/tutorials/
+ [3]:  installation

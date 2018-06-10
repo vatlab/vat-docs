@@ -9,4 +9,4 @@ weight = 2
 
 This is the same pipeline as [bwa\_gatk33\_hg19][1] but uses build b37 of the human reference genome.
 
- [1]:/vat-docs/documentation/pipelines/variant_calling/bwa_gatk33_hg19/
+ [1]:   /documentation/pipelines/variant_calling/bwa_gatk33_hg19/

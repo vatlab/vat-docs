@@ -1,6 +1,5 @@
 +++
 title = "show"
-description = ""
 weight = 6
 +++
 
@@ -14,7 +13,6 @@ weight = 6
 
     % vtools show -h
     
-
     usage: vtools show [-h] [-l N] [-v {0,1,2,3}]
                        [{project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots}]
                        [items [items ...]]
@@ -99,9 +97,7 @@ Let us load a fairly large project from an online snapshot `vt_ExomeAssociation`
     INFO: Load genotypes
     INFO: Snapshot vt_ExomeAssociation has been loaded
     
-
-
-
+    
     % vtools show
     
     Project name:                show
@@ -358,7 +354,6 @@ Command `vtools show annotations` displays all available annotation databases wi
 
     % vtools show annotations | head -50
     
-
     CancerGeneCensus-20111215 Cancer Genome Project
     CancerGeneCensus-20120315 Cancer Genome Project
     CancerGeneCensus        Cancer Genome Project
@@ -682,8 +677,7 @@ Although cannot be used as track files, `vtools show track` can display informat
 
 
 
-    % vtools show track wgEncodeDukeDnase8988T.fdr01peaks.hg19.bb
-    
+    % vtools show track wgEncodeDukeDnase8988T.fdr01peaks.hg19.bb  
 
     Version:                4
     Item count:             196180
@@ -810,8 +804,7 @@ Although cannot be used as track files, `vtools show track` can display informat
 
 
 
-    % vtools show track ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/alignment/HG00096.chrom11.ILLUMINA.bwa.GBR.low_coverage.20120522.bam
-    
+    % vtools show track ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/alignment/HG00096.chrom11.ILLUMINA.bwa.GBR.low_coverage.20120522.bam 
 
     [bam_index_load] attempting to download the remote index file.
     [bam_index_load] attempting to download the remote index file.
@@ -1054,7 +1047,6 @@ The tags are also important if you need to filter reads by tag values. For examp
 
     % vtools show formats | head -50
     
-
     CASAVA18_snps           Input format illumina snps.txt file, created by CASAVA
                             version 1.8
                             (http://www.illumina.com/support/documentation.ilmn).
@@ -1111,7 +1103,6 @@ Comments can be suppressed using option `-v0`,
 
     % vtools show formats -v0
     
-
     CASAVA18_snps
     plink
     ANNOVAR
@@ -1140,8 +1131,7 @@ You can use command `vtools show format FMT` to list the details of a format. No
 
 
 
-    % vtools show format map
-    
+    % vtools show format map    
 
     Format:                 map
     Description:            This input format imports variants from files in MAP
@@ -1194,8 +1184,7 @@ Command `vtools show tests` shows a list of association tests that can be used i
 
 
 
-    % vtools show tests
-    
+    % vtools show tests   
 
     BurdenBt                Burden test for disease traits, Morris & Zeggini 2009
     BurdenQt                Burden test for quantitative traits, Morris & Zeggini
@@ -1247,7 +1236,6 @@ Display only the first 5 tests without description:
 
     % vtools show tests -v0 -l 5
     
-
     BurdenBt
     BurdenQt
     CFisher
@@ -1264,7 +1252,6 @@ If you are interested in more details of a particular test, you can use command 
 
     % vtools show test LogitRegBurden
     
-
     Name:          LogitRegBurden
     Description:   A versatile framework of association tests for disease traits
     usage: vtools associate --method LogitRegBurden [-h] [--name NAME]
@@ -1363,7 +1350,6 @@ Note that:
 
     % vtools show snapshots
     
-
     vt_qc                   snapshot for QC tutorial, exome data of 1000 genomes
                             project with simulated GD and GQ scores (online
                             snapshot)
@@ -1383,7 +1369,6 @@ If we create a snapshot,
 
     % vtools admin --save_snapshot test1 'a test snapshot'
     
-
     INFO: Copying genotypes
     INFO: Snapshot test1 has been saved
     
@@ -1394,7 +1379,6 @@ It will be displayed in the list
 
     % vtools show snapshots
     
-
     test1                   a test snapshot  (created: Jul12 16:37:00)
     vt_ExomeAssociation     Data with ~26k variants from chr1 and 2, ~3k samples,
                             3 phenotypes, ready for association testing.
@@ -1421,7 +1405,6 @@ Such local snapshots are stored in the project cache directory and are listed au
 
     % vtools admin --save_snapshot local_snapshot.tar 'a local snapshot'
     
-
     INFO: Copying genotypes
     INFO: Snapshot local_snapshot.tar has been saved
     
@@ -1430,7 +1413,6 @@ Such local snapshots are stored in the project cache directory and are listed au
 
     % vtools show snapshots -l 2 -v0
     
-
     test1
     vt_ExomeAssociation
     
@@ -1439,7 +1421,6 @@ You can show the details of such snapshots using command `vtools show snapshot N
 
     % vtools show snapshot local_snapshot.tar
     
-
     Name:                   local_snapshot.tar
     Source:                 local
     Creation date:          Jul12 16:39:24
@@ -1458,7 +1439,6 @@ You can show the details of such snapshots using command `vtools show snapshot N
 
     % vtools show runtime_options | head -50
     
-
     associate_num_of_readers None (default)
                             Use specified number of processes to read genotype
                             data for association tests. The default value is the
@@ -1515,7 +1495,6 @@ to see a list of runtime options, use command
 
     % vtools show runtime_options -v0
     
-
     associate_num_of_readers
     association_timeout
     import_num_of_readers
@@ -1532,7 +1511,6 @@ Furthermore, if you only need to check the exiting value of a runtime option, yo
 
     % vtools show runtime_option local_resource
     
-
     ~/.variant_tools
     
 

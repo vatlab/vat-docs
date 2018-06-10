@@ -3,10 +3,9 @@ title = "CGA"
 weight = 9
 +++
 
+## CGA
 
-# HomePage
-
-## Sample data
+### Sample data
 
     ASSEMBLY_ID    XXXX
     #CNV_WINDOW_WIDTH       2000

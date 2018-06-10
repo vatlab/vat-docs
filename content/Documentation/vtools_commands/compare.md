@@ -12,7 +12,6 @@ weight = 10
 
     % vtools compare -h
     
-
     usage: vtools compare [-h] [--union [TABLE [DESC ...]]]
                           [--intersection [TABLE [DESC ...]]]
                           [--difference [TABLE [DESC ...]]]
@@ -163,7 +162,6 @@ Variants that are in dbSNP database is in table `inDbSNP`. If you would like to 
 
     % vtools compare variant inDbSNP --difference notInDbSNP 'variants that are not in dbSNP'
     
-
     INFO: Reading 1,611 variants in variant...
     INFO: Reading 1,303 variants in inDbSNP...
     Writing to notInDbSNP: 100% [=========================] 308 37.1K/s in 00:00:00
@@ -174,7 +172,6 @@ Or, you can check what variants in the `AGRN` table are exonic
 
     % vtools compare G_AGRN exonic --intersection AGRN_exonic 'Exonic variants in gene AGRN'
     
-
     INFO: Reading 11 variants in G_AGRN...
     INFO: Reading 103 variants in exonic...
     Writing to AGRN_exonic: 100% [==============================] 11 1.8K/s in 00:00:00
@@ -185,8 +182,7 @@ If you only need to check the number of exonic variants in gene AGRN, you can us
 
 
 
-    % vtools compare G_AGRN exonic --intersection
-    
+    % vtools compare G_AGRN exonic --intersection 
 
     INFO: Reading 11 variants in G_AGRN...
     INFO: Reading 103 variants in exonic...
@@ -197,7 +193,6 @@ You can also get the number of variants that are not exonic, and in both tables 
 
     % vtools compare G_AGRN exonic 
     
-
     INFO: Reading approximately 11 variants in G_AGRN...
     INFO: Reading approximately 103 variants in exonic...
     INFO: Number of variants in A but not B, B but not A, A and B, and A or B
@@ -212,7 +207,6 @@ More than two variant tables can be specified. Option `--intersection` and `--un
 
     % vtools compare exonic 'G_*' --difference other 'Exonic variants not in AGRN and FAM41C'
     
-
     INFO: Reading 103 variants in exonic...
     INFO: Reading 11 variants in G_AGRN...
     INFO: Reading 2 variants in G_FAM41C...
@@ -280,8 +274,7 @@ If we would like to exclude variants that are not in DBSNP, but keep those in ex
 
 
 
-    % vtools compare --expression 'variant - inDBSNP | exonic'
-    
+    % vtools compare --expression 'variant - inDBSNP | exonic'   
 
     INFO: Comparing tables variant, inDBSNP, exonic
     INFO: Reading 1,611 variants in variant...
@@ -296,7 +289,6 @@ This command is equivalent to
 
     % vtools compare inDBSNP exonic variant --expression '_3 - _1 | _2'
     
-
     INFO: Reading 1,303 variants in inDBSNP...
     INFO: Reading 103 variants in exonic...
     INFO: Reading 1,611 variants in variant...
@@ -307,8 +299,7 @@ Let us conclude this example with an expression that does not make much sense
 
 
 
-    % vtools compare --expression 'variant - (inDBSNP & exonic ^ G_AGRN) | G_FAM41C'
-    
+    % vtools compare --expression 'variant - (inDBSNP & exonic ^ G_AGRN) | G_FAM41C'   
 
     INFO: Comparing tables variant, inDBSNP, exonic, G_AGRN, G_FAM41C
     INFO: Reading 1,611 variants in variant...
@@ -366,7 +357,6 @@ The first command would yield results
 
     % vtools compare variant --samples SAMP1 SAMP2 
     
-
     INFO: Reading genotype of sample SAMP1 of approximately 1,611 variants in variant...
     INFO: Reading genotype of sample SAMP2 of approximately 1,611 variants in variant...
     INFO: Number of genotypes in A only, B only, in A and B, and in A or B
@@ -383,7 +373,6 @@ The result of such comparisons, however, is affected by runtime option `treat_mi
 
     % vtools admin --set_runtime_option treat_missing_as_wildtype=1
     
-
     INFO: Option treat_missing_as_wildtype is set to True
     
 
@@ -393,7 +382,6 @@ The output of command changes to
 
     % vtools compare variant --samples SAMP1 SAMP2 
     
-
     INFO: Reading genotype of sample SAMP1 of approximately 1,611 variants in variant...
     INFO: Reading genotype of sample SAMP2 of approximately 1,611 variants in variant...
     INFO: Number of genotypes in A only, B only, in A and B, and in A or B
@@ -414,7 +402,6 @@ Although it is a bit confusing to return variants for a comparison of genotypes,
 
     % vtools show genotypes
     
-
     sample_name filename    num_genotypes   sample_genotype_fields
     SAMP1       V1-3_hg19_combine.vcf   1609            GT
     SAMP2       V1-3_hg19_combine.vcf   1610            GT
@@ -427,7 +414,6 @@ The following command shows number of genotypes that are shared by all three sam
 
     % vtools compare variant --intersection --samples SAMP1 SAMP2 SAMP3
     
-
     INFO: Reading genotypes of sample SAMP1 of approximately 1,611 geno in variant...
     INFO: Reading genotypes of sample SAMP2 of approximately 1,611 geno in variant...
     INFO: Reading genotypes of sample SAMP3 of approximately 1,611 geno in variant...
@@ -451,7 +437,6 @@ There are two cases to consider here. The first one is that the mutation might e
 
     % vtools compare variant --difference S1 --samples SAMP1 SAMP2 SAMP3 
     
-
     INFO: Reading genotypes of sample SAMP1 of approximately 1,611 geno in variant...
     INFO: Reading genotypes of sample SAMP2 of approximately 1,611 geno in variant...
     INFO: Reading genotypes of sample SAMP3 of approximately 1,611 geno in variant...
@@ -464,8 +449,7 @@ Let us have a look at the genotypes of the variants in table `S1` in the samples
 
 
 
-    % vtools export S1 --samples 1 --format csv | head -10
-    
+    % vtools export S1 --samples 1 --format csv | head -10 
 
     INFO: Genotypes of 3 samples are exported.
     INFO: Using 2 processes to handle 3 samples
@@ -493,8 +477,7 @@ However, if you are interested in further divide the genotypes, namely to identi
     % vtools select variant --samples "sample_name = 'SAMP1'" -t varSAMP1
     % vtools select variant --samples "sample_name = 'SAMP2'" -t varSAMP2
     % vtools select variant --samples "sample_name = 'SAMP3'" -t varSAMP3
-    % vtools show tables
-    
+    % vtools show tables   
 
     table          #variants     date message
     AGRN_exonic           11    May29 Exonic variants in gene AGRN
@@ -517,7 +500,6 @@ We can then identify genotypes that only appear in `SAMP1` using command
 
     % vtools compare varSAMP1 varSAMP2 varSAMP3 --difference SAMP1_only
     
-
     INFO: Reading 985 variants in varSAMP1...
     INFO: Reading 984 variants in varSAMP2...
     INFO: Reading 986 variants in varSAMP3...
@@ -528,7 +510,6 @@ We can then identify genotypes that only appear in `SAMP1` using command
 The genotypes associated with `SAMP1_only` only appear in `SAMP1`, 
 
     % vtools export SAMP1_only --samples 1 --format csv | head -10
-    
 
     INFO: Genotypes of 3 samples are exported.
     INFO: Using 2 processes to handle 3 samples
@@ -548,7 +529,6 @@ Note that the following commands cannot be used in this case
 
     % vtools compare varSAMP1 varSAMP2 varSAMP3 --difference --samples SAMP1 SAMP2 SAMP3
     
-
     INFO: Reading genotypes of sample SAMP1 of approximately 985 geno in varSAMP1...
     INFO: Reading genotypes of sample SAMP2 of approximately 984 geno in varSAMP2...
     INFO: Reading genotypes of sample SAMP3 of approximately 986 geno in varSAMP3...
@@ -568,7 +548,6 @@ To get a list of variants that are not-missing in all samples, we need to get th
 
     % vtools compare varSAMP1 varSAMP2 varSAMP3 --intersection varNotMissing
     
-
     INFO: Reading 985 variants in varSAMP1...
     INFO: Reading 984 variants in varSAMP2...
     INFO: Reading 986 variants in varSAMP3...
@@ -581,7 +560,6 @@ We can then find variants that with different genotypes in `SAMP1`:
 
     % vtools compare varNotMissing --samples SAMP1 SAMP2 SAMP3 --difference SAMP1_not_missing
     
-
     INFO: Reading genotypes of sample SAMP1 of approximately 509 geno in varNotMissing...
     INFO: Reading genotypes of sample SAMP2 of approximately 509 geno in varNotMissing...
     INFO: Reading genotypes of sample SAMP3 of approximately 509 geno in varNotMissing...
@@ -593,7 +571,6 @@ Only 7 variants that are not missing and have unique genotype in `SAMP1` exist:
 
     % vtools export SAMP1_not_missing --samples 1 --format csv 2> /dev/null
     
-
    <!--  1,73865,G,A,2,1,1
     1,536560,A,G,1,2,2
     1,758116,A,C,2,1,1
@@ -627,7 +604,6 @@ The number of variants for each type of comparison would be
 
     % vtools compare T1 T2 --mode site
     
-
     INFO: Reading locations of approximately 2 variants in T1...
     INFO: Reading locations of approximately 3 variants in T2...
     INFO: Number of sites in A only, B only, in A and B, and in A or B
@@ -659,7 +635,6 @@ The easiest one is to compare variants. The following command gets a list of `11
 
     % vtools compare WGS3_1 WGS3_2 WGS3_3 --difference by_variant
     
-
     INFO: Reading 4,343,418 variants in WGS3_1...
     INFO: Reading 4,367,814 variants in WGS3_2...
     INFO: Reading 4,455,890 variants in WGS3_3...
@@ -673,7 +648,6 @@ We can compare by genotype, that is to say, we only exclude variants that have d
 
     % vtools compare WGS3_1 WGS3_2 WGS3_3 --difference by_genotype --samples offspring father mother
     
-
     INFO: Reading genotypes of sample WGS3_1 of approximately 4,343,418 geno in WGS3_1...
     INFO: Reading genotypes of sample WGS3_2 of approximately 4,367,814 geno in WGS3_2...
     INFO: Reading genotypes of sample WGS3_3 of approximately 4,455,890 geno in WGS3_3...
@@ -688,7 +662,6 @@ Or, we can exclude all variants that have any other variants at the same locatio
 
     % vtools compare WGS3_1 WGS3_2 WGS3_3 --difference by_site --mode site
     
-
     INFO: Reading locations of approximately 4,343,418 sites in WGS3_1...
     INFO: Unique sites in table WGS3_1: 4326495
     INFO: Reading locations of approximately 4,367,814 sites in WGS3_2...
@@ -706,7 +679,6 @@ As we can see, excluding by genotype keeps the most of the variants. This should
 
     % vtools compare by_genotype by_variant by_site --difference by_genotype_only
     
-
     INFO: Reading 808,425 variants in by_genotype...
     INFO: Reading 113,553 variants in by_variant...
     INFO: Reading 95,653 variants in by_site...
@@ -714,11 +686,8 @@ As we can see, excluding by genotype keeps the most of the variants. This should
     694872
     
 
-
-
     % vtools output by_genotype_only "genotype('offspring')" "genotype('father')" "genotype('mother')" -l 10
     
-
     2	1	.
     2	1	1
     2	1	.
@@ -739,7 +708,6 @@ Site-difference produces a list that is a strict subset of varant-difference, as
 
     % vtools compare by_site by_variant
     
-
     INFO: Reading approximately 95,653 variants in by_site...
     INFO: Reading approximately 113,553 variants in by_variant...
     INFO: Number of variants in A but not B, B but not A, A and B, and A or B
@@ -752,7 +720,6 @@ but what exactly are the differences? Let us check the genotypes at these varian
 
     % vtools compare by_variant by_site --difference by_variant_only
     
-
     INFO: Reading 113,553 variants in by_variant...
     INFO: Reading 95,653 variants in by_site...
     Writing to by_site_only: 100% [=======================================================] 17,900 180.6K/s in 00:00:00
@@ -763,8 +730,7 @@ We can only confirm that these variants do not have any genotype for father and 
 
 
 
-    % vtools output by_variant_only "genotype('offspring')" "genotype('father')" "genotype('mother')" -l 10
-    
+    % vtools output by_variant_only "genotype('offspring')" "genotype('father')" "genotype('mother')" -l 10   
 
     1 	.	.
     1 	.	.
@@ -784,7 +750,6 @@ Then, how can we find variants that share the same locations as these in table `
 
     % vtools compare variant by_variant_only --difference not_at_variant_site --mode site
     
-
     INFO: Reading locations of approximately 10,126,300 sites in variant...
     INFO: Unique sites in table variant: 8725216
     INFO: Reading locations of approximately 17,900 sites in by_variant_only...
@@ -798,7 +763,6 @@ Then, how can we find variants that share the same locations as these in table `
 
     % compare variant not_at_variant_site --difference at_variant_site
     
-
     INFO: Reading 10,126,300 variants in variant...
     INFO: Reading 8,978,176 variants in not_at_variant_site...
     Writing to at_variant_site: 100% [====================================================] 61,905 172.0K/s in 00:00:00
@@ -811,7 +775,6 @@ As we can see, there are `61905` variants that share the same sites with `17900`
 
     % vtools compare by_variant_only at_variant_site
     
-
     INFO: Reading approximately 17,900 variants in by_variant_only...
     INFO: Reading approximately 61,905 variants in at_variant_site...
     INFO: Number of variants in A but not B, B but not A, A and B, and A or B
@@ -822,7 +785,6 @@ As we can see, there are `61905` variants that share the same sites with `17900`
 
     % vtools compare by_variant_only at_variant_site --mode site
     
-
     INFO: Reading locations of approximately 17,900 variants in by_variant_only...
     INFO: Reading locations of approximately 61,905 variants in at_variant_site...
     INFO: Number of sites in A only, B only, in A and B, and in A or B
@@ -836,7 +798,6 @@ As we can see, there are `61905` variants that share the same sites with `17900`
     % vtools output at_variant_site chr pos "genotype('offspring')" "genotype('father')" \
         "genotype('mother')" ref alt --order_by chr pos -l 20
     
-
     1	54721 	1	.	.	T    	-
     1	54721 	.	.	1	TTTCT	-
     1	817121	1	.	.	-    	CTTTAAGATTCAACCTGAA

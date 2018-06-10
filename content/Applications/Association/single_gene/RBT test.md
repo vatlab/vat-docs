@@ -30,9 +30,6 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
 #### 2.1 Command interface
 
     vtools show test RBT
-    
-
-
 
     Name:          RBT
     Description:   Replication Based Test for protective and deleterious variants,
@@ -92,9 +89,6 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
 
     vtools associate rare status -m "RBT --name RBT -p 5000" --group_by name2 --to_db rbt -j8 >\
      rbt.txt
-    
-
-
 
     INFO: 3180 samples are found
     INFO: 2632 groups are found
@@ -109,9 +103,6 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
 
 
     vtools show fields | grep RBT
-    
-
-
 
     rbt.sample_size_RBT          sample size
     rbt.num_variants_RBT         number of variants in each group (adjusted for specified MAF
@@ -126,9 +117,6 @@ Implementation of RBT in this program has both one-sided and two-sided versions 
 
     head rbt.txt
     
-
-
-
     name2   sample_size_RBT num_variants_RBT        total_mac_RBT   statistic_RBT   pvalue_RBT      std_error_RBT   num_permutations_RBT
     AADACL4 3180    5       138     1.37261 0.898102        2.99763 1000
     ABCB6   3180    7       151     4.94419 0.665335        3.29949 1000

@@ -19,7 +19,6 @@ This command report average depth of all variants, or variants divided by sample
 
     % vtools_report avg_depth -h
     
-
     usage: vtools_report avg_depth [-h] -n NUM_FIELD -d DEPTH_FIELD
                                    [--group_by [GROUP_BY [GROUP_BY ...]]]
                                    [-v {0,1,2}]
@@ -65,7 +64,6 @@ This command report average depth of all variants, or variants divided by sample
 
     % vtools_report avg_depth variant -n num -d depth
     
-
     num_of_variant	average_depth
     905	6.86372641088
     
@@ -73,7 +71,6 @@ This command report average depth of all variants, or variants divided by sample
 
 
     % vtools_report avg_depth variant -n num -d depth --group_by num
-    
 
     num	num_of_variant	average_depth
     1	410	7.18662601626

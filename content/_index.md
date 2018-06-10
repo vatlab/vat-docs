@@ -176,8 +176,9 @@ In summary, *variant tools* is NOT designed to be a black-box tool that analyzes
 |                        | [Merge data from several sub projects][63] (e.g. adding data from different batches).                                                                                                                                                                                  |
 |                        | [Split project into sub projects][63] to focus on particular sets of variants or samples.                                                                                                                                                                              |
 |                        | A resource management system to download and update resources on demand, or in batch.                                                                                                                                                                                         |
-
 Please refer to [a list of tutorials][64] to get started. 
+
+
 
 
 
@@ -203,68 +204,68 @@ Bo Peng (2014) [**Reproducible Simulations of Realistic Samples for Next-Generat
 
 for Variant Simulation Tools if you find variant tools helpful and use it in your publication. Thank you.
 
- [3]: /vat-docs/documentation/vtools_commands/use/
- [4]: /vat-docs/development/changelog/
- [5]: /vat-docs/applications/annotation/variants/gwas/
+ [3]:    /documentation/vtools_commands/use/
+ [4]:   /development/changelog/
+ [5]:   /applications/annotation/variants/gwas/
  [6]: http://bioinformatics.oxfordjournals.org/content/28/3/421
- [7]: /vat-docs/applications/annotation/variants/esp/
- [8]: /vat-docs/documentation/keyconcepts/
- [9]: /vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/
- [10]: /vat-docs/documentation/vtools_commands/import/
- [11]: /vat-docs/documentation/pipelines/other_pipelines/import_vcf/
- [12]: /vat-docs/documentation/customization/format/formats/casava18snps/
- [13]: /vat-docs/documentation/customization/format/formats/casava18indels/
- [14]: /vat-docs/documentation/customization/format/formats/cga/
- [15]: /vat-docs/documentation/pipelines/other_pipelines/illumina/
- [16]: /vat-docs/documentation/customization/format/formats/txt/
- [17]: /vat-docs/documentation/customization/format/formats/csv/
- [18]: /vat-docs/documentation/customization/format/formats/plink/
- [19]: /vat-docs/documentation/customization/format/formats/rsname/
- [20]: /vat-docs/documentation/customization/format/formats/map/
- [21]: /vat-docs/documentation/customization/format/formats/new/
- [22]: /vat-docs/documentation/vtools_commands/liftover/
- [23]: /vat-docs/documentation/functions/ref_sequence/
- [24]: /vat-docs/documentation/vtools_commands/admin/
- [25]: /vat-docs/applications/annotation/genes/ccdsgene/
- [26]: /vat-docs/applications/annotation/genes/ccdsgene/entrezgene/
- [27]: /vat-docs/applications/annotation/genes/ccdsgene/knowngene/
- [28]: /vat-docs/applications/annotation/genes/refgene/
- [29]: /vat-docs/applications/annotation/genes/hugogene/
- [30]: /vat-docs/applications/annotation/variants/cosmic/
- [31]: /vat-docs/applications/annotation/variants/databaseof/
- [32]: /vat-docs/applications/annotation/variants/dbsnp/
- [33]: /vat-docs/applications/annotation/variants/thousand/
- [34]: /vat-docs/applications/annotation/variants/hapmap/
- [35]: /vat-docs/applications/annotation/variants/dbnsfp/
- [36]: /vat-docs/applications/annotation/regions/phast_cons/
- [37]: /vat-docs/applications/annotation/regions/genomic_super_dups/
- [38]: /vat-docs/documentation/pipelines/other_pipelines/annovar/
- [39]: /vat-docs/documentation/pipelines/other_pipelines/snpeff/
- [40]: /vat-docs/documentation/pipelines/other_pipelines/anno_utils/
- [41]: /vat-docs/documentation/functions/track/
- [42]: /vat-docs/documentation/vtools_commands/update/
- [43]: /vat-docs/documentation/vtools_commands/select/
- [44]: /vat-docs/documentation/vtools_commands/compare/
- [45]: /vat-docs/documentation/pipelines/other_pipelines/filtering/
- [46]: /vat-docs/documentation/vtools_commands/output/
- [47]: /vat-docs/documentation/functions/genotype/
- [48]: /vat-docs/documentation/functions/samples/
- [49]: /vat-docs/documentation/vtools_commands/export/
- [50]: /vat-docs/documentation/customization/format/formats/annovar/
- [51]: /vat-docs/applications/association/introduction/
- [52]: /vat-docs/documentation/vtools_report/plot_association
- [53]: /vat-docs/documentation/vtools_report/meta_analysis
- [54]: /vat-docs/documentation/vtools_report/sequence/
- [55]: /vat-docs/documentation/vtools_report/discordance_rate/
- [56]: /vat-docs/documentation/vtools_report/avg_depth/
- [57]: /vat-docs/documentation/vtools_report/variant_stat/
- [58]: /vat-docs/documentation/vtools_report/trans_ratio/
- [59]: /vat-docs/documentation/vtools_report/plot_fields/
- [60]: /vat-docs/documentation/vtools_report/plot_geno_fields/
- [61]: /vat-docs/documentation/vtools_report/plot_pheno_fields/
- [62]: /vat-docs/documentation/vtools_commands/remove/
- [63]: /vat-docs/documentation/vtools_commands/init/
- [64]: /vat-docs/documentation/tutorials/
+ [7]:   /applications/annotation/variants/esp/
+ [8]:    /documentation/keyconcepts/
+ [9]:    /documentation/pipelines/variant_calling/bwa_gatk28_hg19/
+ [10]:    /documentation/vtools_commands/import/
+ [11]:    /documentation/pipelines/other_pipelines/import_vcf/
+ [12]:    /documentation/customization/format/formats/casava18snps/
+ [13]:    /documentation/customization/format/formats/casava18indels/
+ [14]:    /documentation/customization/format/formats/cga/
+ [15]:    /documentation/pipelines/other_pipelines/illumina/
+ [16]:    /documentation/customization/format/formats/txt/
+ [17]:    /documentation/customization/format/formats/csv/
+ [18]:    /documentation/customization/format/formats/plink/
+ [19]:    /documentation/customization/format/formats/rsname/
+ [20]:    /documentation/customization/format/formats/map/
+ [21]:    /documentation/customization/format/formats/new/
+ [22]:    /documentation/vtools_commands/liftover/
+ [23]:    /documentation/functions/ref_sequence/
+ [24]:    /documentation/vtools_commands/admin/
+ [25]:   /applications/annotation/genes/ccdsgene/
+ [26]:   /applications/annotation/genes/ccdsgene/entrezgene/
+ [27]:   /applications/annotation/genes/ccdsgene/knowngene/
+ [28]:   /applications/annotation/genes/refgene/
+ [29]:   /applications/annotation/genes/hugogene/
+ [30]:   /applications/annotation/variants/cosmic/
+ [31]:   /applications/annotation/variants/databaseof/
+ [32]:   /applications/annotation/variants/dbsnp/
+ [33]:   /applications/annotation/variants/thousand/
+ [34]:   /applications/annotation/variants/hapmap/
+ [35]:   /applications/annotation/variants/dbnsfp/
+ [36]:   /applications/annotation/regions/phast_cons/
+ [37]:   /applications/annotation/regions/genomic_super_dups/
+ [38]:    /documentation/pipelines/other_pipelines/annovar/
+ [39]:    /documentation/pipelines/other_pipelines/snpeff/
+ [40]:    /documentation/pipelines/other_pipelines/anno_utils/
+ [41]:    /documentation/functions/track/
+ [42]:    /documentation/vtools_commands/update/
+ [43]:    /documentation/vtools_commands/select/
+ [44]:    /documentation/vtools_commands/compare/
+ [45]:    /documentation/pipelines/other_pipelines/filtering/
+ [46]:    /documentation/vtools_commands/output/
+ [47]:    /documentation/functions/genotype/
+ [48]:    /documentation/functions/samples/
+ [49]:    /documentation/vtools_commands/export/
+ [50]:    /documentation/customization/format/formats/annovar/
+ [51]:   /applications/association/introduction/
+ [52]:    /documentation/vtools_report/plot_association
+ [53]:    /documentation/vtools_report/meta_analysis
+ [54]:    /documentation/vtools_report/sequence/
+ [55]:    /documentation/vtools_report/discordance_rate/
+ [56]:    /documentation/vtools_report/avg_depth/
+ [57]:    /documentation/vtools_report/variant_stat/
+ [58]:    /documentation/vtools_report/trans_ratio/
+ [59]:    /documentation/vtools_report/plot_fields/
+ [60]:    /documentation/vtools_report/plot_geno_fields/
+ [61]:    /documentation/vtools_report/plot_pheno_fields/
+ [62]:    /documentation/vtools_commands/remove/
+ [63]:    /documentation/vtools_commands/init/
+ [64]:    /documentation/tutorials/
  [65]: http://bioinformatics.oxfordjournals.org/content/28/3/421.abstract?sid=f64403e7-5050-4102-963c-e690efe003f7
  [66]: http://dx.doi.org/10.1016/j.ajhg.2014.04.004
  [67]: http://onlinelibrary.wiley.com/doi/10.1002/gepi.21867/abstract

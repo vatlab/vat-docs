@@ -15,7 +15,6 @@ weight = 12
 
     % vtools_report plot_pheno_fields -h
     
-
     usage: vtools_report plot_pheno_fields [-h]
                                            [--samples [SAMPLES [SAMPLES ...]]]
                                            [--save_data FILENAME]
@@ -104,10 +103,9 @@ The snapshot *vt_plots* containing phenotype information of ~1000 samples is use
     
 
 
-
 #### 1.1 Histogram
 
-    vtools_report plot_pheno_fields BMI logBMI BMI_qnormalized --hist hist.pdf --norm_curve
+    % vtools_report plot_pheno_fields BMI logBMI BMI_qnormalized --hist hist.pdf --norm_curve
     
 
 <img src = "histogram.png" width = 900>
@@ -120,7 +118,7 @@ Plot single field, stratified by given thresholds:
 
 
 
-    vtools_report plot_pheno_fields BMI --box box.pdf --stratify 21 23 25 27 29
+    % vtools_report plot_pheno_fields BMI --box box.pdf --stratify 21 23 25 27 29
     
 
 <img src = "boxplot1.png" width = 500>s
@@ -129,7 +127,7 @@ Plot single field, stratified by another field with given thresholds:
 
 
 
-    vtools_report plot_pheno_fields BMI gender --box box.pdf --stratify 2
+    % vtools_report plot_pheno_fields BMI gender --box box.pdf --stratify 2
     
 
 In this example, BMI values are stratified by samples gender information. Gender is 1 ("Below 2.0") for males, and 2 ("2.0 or more") for females. 
@@ -140,7 +138,7 @@ Plot multiple fields on the same graph:
 
 
 
-    vtools_report plot_pheno_fields MDS1 MDS2 --box box.pdf --color Accent
+    % vtools_report plot_pheno_fields MDS1 MDS2 --box box.pdf --color Accent
     
 
 <img src = "boxplot3.png" width = 500>
@@ -153,7 +151,7 @@ Dot plot for single field
 
 
 
-    vtools_report plot_pheno_fields BMI --dot dot.pdf
+    % vtools_report plot_pheno_fields BMI --dot dot.pdf
     
 
 <img src = "dotplot1.png" width = 500>
@@ -162,7 +160,7 @@ Dot plot for two fields
 
 
 
-    vtools_report plot_pheno_fields BMI logBMI --dot dot.pdf
+    % vtools_report plot_pheno_fields BMI logBMI --dot dot.pdf
     
 
 <img src = "dotplot2.png" width = 500>
@@ -171,7 +169,7 @@ Colored dot plot for three fields, with the third field being a continuous varia
 
 
 
-    vtools_report plot_pheno_fields MDS1 MDS2 BMI --dot dot.pdf
+    % vtools_report plot_pheno_fields MDS1 MDS2 BMI --dot dot.pdf
     
 
 <img src  = "dotplot3.png" width = 500>
@@ -180,7 +178,7 @@ Colored dot plot for three fields, with the third field being a discrete variabl
 
 
 
-    vtools_report plot_pheno_fields MDS1 MDS2 Population --dot dot.pdf --discrete_color Accent
+    % vtools_report plot_pheno_fields MDS1 MDS2 Population --dot dot.pdf --discrete_color Accent
     
 
 <img src = "dotplot4.png" width = 500>

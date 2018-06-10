@@ -12,7 +12,7 @@ weight = 7
 
 ### 1. Introduction
 
-The method proposed by Madsen and Browning 2009 first introduced the idea of assigning "weights" to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen & Browning paper the "weights" are defined as {$\sqrt{n\_iq\_i(1-q\_i)}$} with the assumption that the "rarer" the variant, the larger the risk effect it is to a phenotype. The {$q\_i$} in the original paper was based on observed control sample, which might result in inflated type I error(Mathieu Lemire, 2011). Implementation of the WSS statistic in the `WSSRankTest` method uses the same definition for {$q_i$} but the Mann-Whitney U test ([definition and C++ implementation for this program][1]) now relies on a full permutation procedure rather than normal approximation, such that the bias is correctly accounted for. 
+The method proposed by Madsen and Browning 2009 first introduced the idea of assigning "weights" to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen & Browning paper the "weights" are defined as <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \\(\sqrt{n\_iq\_i(1-q\_i)}\\) with the assumption that the "rarer" the variant, the larger the risk effect it is to a phenotype. The \\(q\_i\\) in the original paper was based on observed control sample, which might result in inflated type I error(Mathieu Lemire, 2011). Implementation of the WSS statistic in the `WSSRankTest` method uses the same definition for \\(q\_i\\) but the Mann-Whitney U test ([definition and C++ implementation for this program][1]) now relies on a full permutation procedure rather than normal approximation, such that the bias is correctly accounted for. 
 
 As with the [Varible Thresholds strategy][2], the idea of weighting can be applied to many other rare variant methods. The `WeightedBurdenBt` and `WeightedBurdenQt` methods implements the Madsen & Browning weighting based on controls (or samples with low quantitative phenotypic values) or the entire population, and tests for association for both case control and quantitative traits with/without presence of phenotype co-variates. 
 
@@ -23,9 +23,6 @@ As with the [Varible Thresholds strategy][2], the idea of weighting can be appli
 #### 2.1 Command interface
 
     vtools show test WSSRankTest
-    
-
-
 
     Name:          WSSRankTest
     Description:   Weighted sum method using rank test statistic, Madsen & Browning 2009
@@ -90,9 +87,6 @@ As with the [Varible Thresholds strategy][2], the idea of weighting can be appli
 
     % vtools associate rare status -m "WSSRankTest --name wss -p 5000" --group_by name2 --to_db w\
     ss -j8 > wss.txt
-    
-
-
 
     INFO: 3180 samples are found
     INFO: 2632 groups are found
@@ -107,9 +101,6 @@ As with the [Varible Thresholds strategy][2], the idea of weighting can be appli
 
 
     % vtools show fields | grep wss
-    
-
-
 
     wss.name2                    name2
     wss.sample_size_wss          sample size
@@ -125,7 +116,6 @@ As with the [Varible Thresholds strategy][2], the idea of weighting can be appli
 
     % head wss.txt
     
-
     name2	sample_size_wss	num_variants_wss	total_mac_wss	statistic_wss	pvalue_wss	std_error_wss	num_permutations_wss
     AADACL4	3180	5	138	34206	0.911089	11215.6	1000
     ABCD3	3180	3	42	12967	0.63037	6602.73	1000
@@ -148,4 +138,4 @@ Mathieu Lemire (2011) **Defining rare variants by their frequencies in controls 
 
 
  [1]: http://www.alglib.net/hypothesistesting/mannwhitneyu.php
- [2]: /vat-docs/applications/association/single_gene/vt-test/
+ [2]:   /applications/association/single_gene/vt-test/

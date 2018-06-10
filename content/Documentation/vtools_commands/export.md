@@ -13,7 +13,6 @@ weight = 13
 
     % vtools export -h
     
-
     usage: vtools export [-h] [-o [OUTPUT]] [-s [COND [COND ...]]]
                          [--format FORMAT] [--build BUILD]
                          [--header [HEADER [HEADER ...]]] [-j JOBS] [-v {0,1,2}]
@@ -82,8 +81,7 @@ Command `vtools show formats` lists all formats that are supported by *variant t
 
 <details><summary> Check details of file formats</summary> 
 
-    % vtools show format ANNOVAR
-    
+    % vtools show format ANNOVAR 
 
     Format:      ANNOVAR
     Description: Input format of ANNOVAR. No genotype is defined.
@@ -113,7 +111,6 @@ Note the `Columns` section in the above configuration file. Columns in this sect
 
     % vtools show format pileup_indel
     
-
     Format:      pileup_indel
     Description: Input format for samtools pileup indel caller. This format imports
       chr, pos, ref, alt and genotype.
@@ -153,7 +150,6 @@ The motivation of this export format is to prepare input files for annotating va
     % vtools export variant -o ANNOVAR.input --format ANNOVAR 
     % head ANNOVAR.input 
     
-
     1   10533   10533   G   C   
     1   51479   51479   T   A   
     1   51928   51928   G   A   
@@ -173,7 +169,6 @@ This optional comment field comes from the available fields in the variant table
     % vtools export variant -o ANNOVAR.input --format ANNOVAR --comment_string DP
     % head ANNOVAR.input 
     
-
     1   10533   10533   G   C   423
     1   51479   51479   T   A   188
     1   51928   51928   G   A   192
@@ -226,8 +221,7 @@ The basic command to export variants in vcf format is `vtools export TABLE --for
 When we export variants in vcf format, 
 
     % vtools export variant -o my.vcf
-    
-
+   
     INFO: Using 2 processes to handle 0 samples
     Selecting genotypes: 100% [===================================] 5 4.9/s in 00:00:01
     my.vcf: 100% [============================================] 292 15.6K/s in 00:00:00
@@ -238,7 +232,6 @@ The outputted file looks like
 
     % head my.vcf
     
-
     1   10533   .   G   C   .   PASS    .   
     1   51479   .   T   A   .   PASS    .   
     1   51928   .   G   A   .   PASS    .   
@@ -261,7 +254,6 @@ Indel variants are outputted in VCF format. That is to say, instead of using `-`
     % vtools admin --load_snapshot vt_testData
     % vtools import indels.vcf --build hg19
     
-
     INFO: Importing variants from indels.vcf (1/1)
     indels.vcf: 100% [==============================================] 184 21.5K/s in 00:00:00
     INFO: 137 new variants (1 SNVs, 77 insertions, 58 deletions, 7 complex variants) from 184 lines are imported.
@@ -273,7 +265,6 @@ When we export variants in vcf format,
 
     % vtools export variant -o my_indel.vcf
     
-
     Writing: 100% [=================================================] 137 22.5K/s in 00:00:00
     INFO: 129 lines are exported from variant table variant
     
@@ -284,7 +275,6 @@ The outputted file looks like
 
     % head my_indel.vcf
     
-
     1   10433   .   A   AC  .   PASS    .   
     1   10439   .   AC  A   .   PASS    .   
     1   54787   .   TC  T   .   PASS    .   
@@ -300,7 +290,6 @@ The outputted file looks like
 The difference is clear if you compare the output with what outputted from command `vtools output`: 
 
     % vtools output variant chr pos ref alt -l 10
-    
 
     1   10434   -   C
     1   10440   C   -
@@ -331,7 +320,6 @@ You can specify fields that are not defined in `vcf.fmt`. However, because *vari
     % vtools export variant --var_info AA -o my.vcf
     % head my.vcf
     
-
     1   10533   .   G   C   .   PASS    AA=.    
     1   51479   .   T   A   .   PASS    AA=.    
     1   51928   .   G   A   .   PASS    AA=.    
@@ -352,7 +340,6 @@ Anyway, if you have imported the whole `INFO` column of the input file, you can 
     % vtools import CEU_hg38.vcf --var_info AA info --geno_info DP --build hg38
     % vtools output variant chr pos ref alt info -l 5
     
-
     1   10533   G   C   AA=.;AC=6;AN=120;DP=423
     1   51479   T   A   AA=.;AC=29;AN=120;DP=188
     1   51928   G   A   AA=.;AC=5;AN=120;DP=192
@@ -365,7 +352,6 @@ Anyway, if you have imported the whole `INFO` column of the input file, you can 
     % vtools export variant --var_info info -o my.vcf
     % head my.vcf
     
-
     1   10533   .   G   C   .   PASS    AA=.;AC=6;AN=120;DP=423  
     1   51479   .   T   A   .   PASS    AA=.;AC=29;AN=120;DP=188 
     1   51928   .   G   A   .   PASS    AA=.;AC=5;AN=120;DP=192  
@@ -400,10 +386,8 @@ The `--header` option can be used to add a header to outputs. Although it is pos
     % vtools init test -f   
     % vtools import indels.vcf --build hg19
     % vtools export variant --header CHROM POS ID REF ALT QUAL FILTER INFO FORMAT -o my_indel.vcf
-    
     % head -5 my_indel.vcf
     
-
     CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT
     1	10433	.	A	AC	.	PASS	.	
     1	10439	.	AC	A	.	PASS	.	
@@ -421,7 +405,6 @@ Alternatively you can create a text file with a tab delimited and use `--header 
 
     % head -200 indels.vcf | grep '#' | vtools export variant --format ~/vtools/format/vcf --header - > my_indels.vcf
     
-
     INFO: Reading header from standard input
     Writing: 100% [=====================================================================] 137 13.8K/s in 00:00:00
     INFO: 129 lines are exported from variant table variant
@@ -441,7 +424,6 @@ Genotypes of selected samples can be outputted if you use use parameter `--sampl
     % vtools import CEU_hg38.vcf --geno_info DP --var_info AA --build hg38
     % vtools export variant  --samples 'sample_name like "NA128%"' --format_string "GT" -o my.vcf
     
-
     INFO: Genotypes of 8 samples are exported.
     Writing: 100% [==============================================] 288 10.6K/s in 00:00:00
     INFO: 286 lines are exported from variant table variant with 1 failed records
@@ -449,7 +431,6 @@ Genotypes of selected samples can be outputted if you use use parameter `--sampl
 
     % head -10 my.vcf
     
-
     1   10533   .   G   C   .   PASS    .   GT  0/0 0/0 0/0 0/1 0/0 0/0 0/1 0/1
     1   51479   .   T   A   .   PASS    .   GT  0/0 0/0 0/1 0/1 0/0 0/0 0/0 0/0
     1   51928   .   G   A   .   PASS    .   GT  0/0 0/0 0/0 0/0 0/0 0/0 0/0 0/0
@@ -471,7 +452,6 @@ You could export one or more genotype info fields using option `--geno_info` (Hi
     % vtools export variant --samples 'sample_name like "NA128%"'\
        --geno_info DP_geno --format_string 'GT:DP' -o my.vcf
     
-
     INFO: Genotypes of 8 samples are exported.
     INFO: Using 2 processes to handle 8 samples
     Selecting genotypes: 100% [===================================] 5 4.9/s in 00:00:01
@@ -479,11 +459,8 @@ You could export one or more genotype info fields using option `--geno_info` (Hi
     INFO: 288 lines are exported from variant table variant with 2 failed records
     
 
-
-
     % head -10 my.vcf
     
-
     1   10533   .   G   C   .   PASS    .   GT:DP   0/0:7.0 0/0:0.0 0/0:6.0 0/1:5.0 0/0:4.0 0/0:5.0 0/1:5.0 0/1:9.0
     1   51479   .   T   A   .   PASS    .   GT:DP   0/0:1.0 0/0:1.0 0/1:9.0 0/1:2.0 0/0:3.0 0/0:5.0 0/0:2.0 0/0:3.0
     1   51928   .   G   A   .   PASS    .   GT:DP   0/0:6.0 0/0:1.0 0/0:5.0 0/0:6.0 0/0:0.0 0/0:6.0 0/0:0.0 0/0:2.0
@@ -523,7 +500,6 @@ we can export them for selected variants,
     % vtools export 'AA=T' --id id --qual qual --var_info info --filter filter -o my.vcf
     % head my.vcf
     
-
     1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131  
     22  50719683    .   T   C   .   PASS    AA=T;AC=1;AN=120;DP=298  
     22  50719873    .   T   C   .   PASS    AA=T;AC=7;AN=120;DP=169  
@@ -544,7 +520,6 @@ Actually, because we are using columns such as `qual` from a VCF file, we can ex
         --filter 'track("CEU_hg38.vcf", "filter")' -o my.vcf
     % head my.vcf
     
-
     1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131  
     22  50719683    .   T   C   .   PASS    AA=T;AC=1;AN=120;DP=298  
     22  50719873    .   T   C   .   PASS    AA=T;AC=7;AN=120;DP=169  
@@ -563,8 +538,7 @@ Optionally, you can use rsnames in the `dbSNP` database
 
     % vtools use dbSNP
     % vtools export 'AA=T' --id dbSNP.name --qual qual --var_info info --filter dbSNP.filter -o my.vcf
-    % head my.vcf
-    
+    % head my.vcf  
 
     1   54676   rs2462492   C   T   .   .   AA=T;AC=2;AN=120;DP=131  
     22  50719683    rs73174428  T   C   .   .   AA=T;AC=1;AN=120;DP=298  
@@ -580,4 +554,4 @@ Optionally, you can use rsnames in the `dbSNP` database
 
 </details>
 
- [1]: /vat-docs/documentation/customization/format/formats/tped/
+ [1]:    /documentation/customization/format/formats/tped/

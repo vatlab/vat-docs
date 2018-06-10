@@ -15,7 +15,6 @@ weight = 16
 
     % vtools admin -h
     
-
     usage: vtools admin [-h] [--update_resource [TYPE]] [--mirror_repository dest]
                         [--merge_samples] [--rename_samples COND [COND ...]]
                         [--rename_table NAME NEW_NAME]
@@ -162,7 +161,6 @@ This command by default download all current resources (e.g. most recent version
     % vtools init temp   # needed if there is no project in the current directory
     % vtools admin --update_resource
     
-
     Scanning 112 local files: 100% [========================] 18,537,133,615 407.1M/s in 00:00:45
     INFO: 2 files need to be downloaded or updated
     1/2 annoDB/evs-6500.DB.gz: 100% [==========================] 109,502,699.0 1.4M/s in 00:01:17
@@ -209,7 +207,6 @@ There are four samples
 
     % vtools show samples
     
-
     sample_name	filename
     SAMP1       V1_hg38.vcf
     SAMP2       V2_hg38.vcf
@@ -223,7 +220,6 @@ The first three samples share the same name, which can lead to erroneous results
     % vtools admin --rename_samples 'filename="V2_hg38.vcf"' V2
     % vtools admin --rename_samples 'filename="V3_hg38.vcf"' V3
     
-
     INFO: 1 samples with names SAMP1 are renamed to V1
     INFO: 1 samples with names SAMP1 are renamed to V2
     INFO: 1 samples with names SAMP1 are renamed to V3
@@ -233,7 +229,6 @@ The samples now have different names:
 
     % vtools show samples
     
-
     sample_name	filename
     V1          V1_hg38.vcf
     V2          V2_hg38.vcf
@@ -245,7 +240,6 @@ If you would like to change names of multiple samples according to a pattern, yo
 
 
     % vtools admin --rename_samples 1 V SAMP
-    
 
     INFO: Rename 1 sample with name V1 to SAMP1
     INFO: Rename 1 sample with name V2 to SAMP2
@@ -256,7 +250,6 @@ If you would like to change names of multiple samples according to a pattern, yo
 
     % vtools show samples
     
-
     sample_name	filename
     SAMP1       V1_hg38.vcf
     SAMP2       V2_hg38.vcf
@@ -286,10 +279,8 @@ Command `vtools admin --merge_samples` merges samples with the same names to a s
     % vtools import V2.vcf 
     % vtools import V3.vcf 
     % vtools import CASAVA18_SNP.txt --format CASAVA18_snps 
-
     % vtools admin --rename_samples 'sample_name = "max_gt"' SAMP3
     
-
     INFO: 1 samples with names max_gt are renamed to SAMP3
     
 
@@ -297,7 +288,6 @@ Now we have four samples with the last two sharing the same name
 
     % vtools show genotypes
     
-
     sample_name	filename	num_genotypes	sample_genotype_fields
     SAMP1	V1.vcf	989	GT
     SAMP2	V2.vcf	990	GT
@@ -311,7 +301,6 @@ We can then merge the last two samples,
 
     % vtools admin --merge_samples
     
-
     INFO: 2 samples that share identical names will be merged to 1 samples
     Merging samples: 100% [=========================================] 2 235.8/s in 00:00:00
     
@@ -320,7 +309,6 @@ The genotypes are
 
     % vtools show genotypes
     
-
     sample_name	filename	num_genotypes	sample_genotype_fields
     SAMP1	V1.vcf	989	GT
     SAMP2	V2.vcf	990	GT
@@ -335,15 +323,13 @@ Samples to be merged should not share any genotype (variant) because it is other
 
     % vtools admin --rename_samples 1 SAMP2 SAMP1
     
-
-    INFO: Rename 1 sample with name SAMP2 to SAMP1
+     INFO: Rename 1 sample with name SAMP2 to SAMP1
     
 
 and try to merge `SAMP2` to `SAMP1`, we will get an error message because `SAMP1` and `SAMP2` share many of the variants. 
 
     % vtools admin --merge_samples
     
-
     INFO: 2 samples that share identical names will be merged to 1 samples
     Merging samples: 100% [=========================================] 2 197.5/s in 00:00:00
     ERROR: Failed to merge samples with name SAMP1 because there are 1979 genotypes for 1341 unique variants.
@@ -371,7 +357,6 @@ The project has three tables,
 
     % vtools show tables
     
-
     table          #variants     date message
     all variant        2,051    May29
     fromV1             1,269    May29 variants from v1
@@ -382,22 +367,19 @@ You can rename the `all variant` to `all_variant`
 
     % vtools admin --rename_table 'all variant' all_variant
     
-
     INFO: Table all variant is renamed to all_variant
     
 
 and give it a short description, 
 
     % vtools admin --describe_table 'all_variant' 'A replicate of the master variant table'
-    
 
     INFO: Description of table all_variant is updated
     
 
 The table now has a new name and a description, but its creation date and command are not changed. 
 
-    % vtools show table all_variant
-    
+    % vtools show table all_variant  
 
     Name:                   all_variant
     Description:            A replicate of the master variant table
@@ -420,7 +402,6 @@ Sometimes when you get a bunch of data, look everywhere in the folder and emails
     % vtools init test
     % vtools admin --load_snapshot vt_testData
     
-
     Downloading snapshot vt_testData.tar.gz from online
     INFO: Snapshot vt_testData has been loaded
     
@@ -429,7 +410,6 @@ We would like to import data from `V1.vcf`, `V2.vcf`, and `V3.vcf` but do not kn
 
     % vtools import V*.vcf --build hg19
     
-
     INFO: Importing variants from V1.vcf (1/3)
     V1.vcf: 100% [======================================] 1,000 19.3K/s in 00:00:00
     INFO: 989 new variants (989 SNVs) from 1,000 lines are imported.
@@ -449,7 +429,6 @@ Let us see if these 1,611 variants have the correct reference alleles at the spe
 
 
     % vtools admin --validate_build
-    
 
     Validate reference alleles: 100% [=============] 1,611/1,238 14.8K/s in 00:00:00
     INFO: 1611 non-insertion variants are checked. 1238 mismatch variants found.
@@ -461,8 +440,7 @@ As you can see, most of the variants do not have correct reference genomes. Now 
 
     % vtools init test -f
     % vtools import V*.vcf --build hg18
-    % vtools admin --validate_build
-    
+    % vtools admin --validate_build 
 
     Validate reference alleles: 100% [==================] 1,611 60.1K/s in 00:00:00
     INFO: 1611 non-insertion variants are checked. 0 mismatch variants found.
@@ -511,7 +489,6 @@ All changes to the current project will be lost if you revert to a previous snap
 
 
     % vtools admin --save_snapshot stage1 "after importing date"
-    
 
     INFO: Snapshot stage1 has been saved
     
@@ -520,8 +497,7 @@ A message is required to describe each snapshot so that you can know later on wh
 
 
 
-    % vtools show snapshots
-    
+    % vtools show snapshots 
 
     stage1                  after importing date  (122.0KB, created: Jul15
                             14:35:14)
@@ -546,7 +522,6 @@ If for some reason you would like to revert to a particular snapshot, you can do
 
 
     % vtools admin --load_snapshot stage1
-    
 
     INFO: Snapshot stage1 has been loaded
     
@@ -557,7 +532,6 @@ If the disk that holds your project does not have enough free diskspace to hold 
 
     % vtools admin --save_snapshot stage1.tgz "after importing phenotypes"
     
-
     INFO: Snapshot stage1.tgz has been saved
     
 
@@ -567,7 +541,6 @@ This snapshot will not be displayed by command `vtools show snapshots` because i
 
     % vtools show snapshots -l 2
     
-
     stage1                  after importing date  (122.0KB, created: Jul15
                             14:35:14)
     vt_qc                   snapshot for QC tutorial, exome data of 1000 genomes
@@ -579,8 +552,7 @@ but it can be viewed using command `vtools show snapshot`
 
 
 
-    % vtools show snapshot stage1.tgz
-    
+    % vtools show snapshot stage1.tgz  
 
     Name:                   stage1.tgz
     Source:                 local
@@ -593,8 +565,7 @@ You can revert to this snapshot using command
 
 
 
-    % vtools admin --load_snapshot stage1.tgz
-    
+    % vtools admin --load_snapshot stage1.tgz   
 
     INFO: Snapshot stage1.tgz has been loaded
     
@@ -630,7 +601,6 @@ A list of runtime options and their descriptions could be obtained by
 
     % vtools show runtime_options
     
-
     associate_num_of_readers None (default)
                             Use specified number of processes to read genotype
                             data for association tests. The default value is the
@@ -721,7 +691,7 @@ to use in-memory journal.
 
 
 {{% notice warning %}}
-The MEMORY journaling mode saves disk I/O but at the expense of database safety and integrity. If the application using SQLite crashes in the middle of a transaction when the MEMORY journaling mode is set, then the database file will very likely go corrupt [*][1].* You can enable it for data import operations such as `vtools import` and `vtools update --from_file` and set it to default (journal_mode=DELETE) afterwards. 
+The MEMORY journaling mode saves disk I/O but at the expense of database safety and integrity. If the application using SQLite crashes in the middle of a transaction when the MEMORY journaling mode is set, then the database file will very likely go corrupt [*][1].* You can enable it for data import operations such as `vtools import` and `vtools update --from_file` and set it to default (journal\_mode=DELETE) afterwards. 
 {{% /notice %}}
 
 

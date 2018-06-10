@@ -5,7 +5,7 @@ weight = 5
 
 ## Specification of external file formats 
 
-## Roles of format specification in variant tools:
+### 1. Roles of format specification in variant tools:
 
 Variant tools can import and export text files (or gzipped text files) in **delimiter-separated format**, namely records that are separated into columns by delimiters such as tab, space or comma. The file format must be **variant-oriented** (storing one or more variants by line), with the exception of sample-based PLINK format which is preprocessed internally into variant-oriented form for import. We use terms 
 
@@ -41,13 +41,13 @@ The four *fields* could, but not necessarily have to, be in four *columns* becau
 
 
 
-## The format specification file (`.fmt` file)
+### 2. The format specification file (`.fmt` file)
 
 A `.fmt` file describes the format of an external file so that it can be handled by variant tools. An format specification file follows an extended `.ini` format with section and key/value pairs. Details of this format can be found at [this link][1] because it is parsed by a Python ConfigParser object. This file should have at least a `[format description]` section and a few `field` sections. A format specification could be used to import and export files but you can ignore import or export specifications if you are only interested in exporting or importing. 
 
 
 
-### Section `[format description]`
+#### 2.1 Section `[format description]`
 
 This section should have keys 
 
@@ -97,7 +97,7 @@ General speaking, genotype info fields are sample specific so different samples 
 
 
 
-### Section `[DEFAULT]` (define parameters of a format)
+#### 2.2 Section `[DEFAULT]` (define parameters of a format)
 
 The default section defines values that exist, conceptually, in all sections. It is used to define parameters used for import or export. These parameters could be overriden using corresponding command line option. For example, in the following .fmt file (partial) 
 
@@ -148,7 +148,7 @@ Name of a variable cannot be any keyword (e.g. `field`, `comment`, `adj`, `type`
 
 
 
-### Field sections (import: how to extract fields from input file)
+#### 2.3 Field sections (import: how to extract fields from input file)
 
 Import fields sections describe the fields that can be imported if they appear in one of `variant`, `position`, `range`, `variant_info`, `genotype` and `genotype_info`. Because the value of these fields could be overridden using corresponding parameters of command `vtools import`, a `.fmt` file might define additional or alternative fields to provide alternative ways to import data in this format. 
 
@@ -193,7 +193,7 @@ Each field section can have the following keys:
 
 
 
-### Section `[Field formatter]` (export: how to format fields for output)
+#### 2.4 Section `[Field formatter]` (export: how to format fields for output)
 
 This section specifies how to format fields when they are outputted to a file. Fields that are not listed in this section will be converted to string directly, unless a special wildcast formatter `fmt_*` is specified. This section should look like 
 
@@ -217,7 +217,7 @@ to create a single string from multiple fields.
 
 
 
-### Column sections (export: how to organize fields into columns of output file)
+#### 2.5 Column sections (export: how to organize fields into columns of output file)
 
 Export reverses the import process. Instead of extracting fields from one or more columns, it generates columns from one or more fields. Column sections have title `col_#` where `#` is the index of column. They are specified in a similar way to fields. File formats without column specification cannot be used to export variants and samples. 
 
@@ -245,7 +245,7 @@ The basic steps of outputting a file is to collect values of all fields, apply f
 
 
 
-## Import and test
+### 3. Import and test
 
 After a file is created, you can use command 
 
@@ -265,7 +265,7 @@ to check if variants are correctly imported. If you believe that your format is 
 
 
 
-## Examples
+### 4. Examples
 
 You can learn from the system format files on how to define a format: 
 

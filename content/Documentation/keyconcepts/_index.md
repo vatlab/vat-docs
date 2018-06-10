@@ -1,6 +1,5 @@
 +++
 title = "Key concepts"
-description = ""
 weight = 1
 +++
 
@@ -190,7 +189,7 @@ This database provides the following **annotation fields**
       RSPOS (int)           Chr position reported in dbSNP
       RV (int)              RS orientation is reversed
       VP (char)             Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
-      GENEINFO (char)       Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (</summary>and each pair is delimited by a vertical bar (|)
+      GENEINFO (char)       Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
       dbSNPBuildID (int)    First dbSNP Build for RS
       SAO (int)             Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
       SSR (int)             Variant Suspect Reason Codes (may be more than one value added together) 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed,
@@ -272,7 +271,7 @@ The fields are now available in the project,
     dbSNP.RSPOS (int)       Chr position reported in dbSNP
     dbSNP.RV (int)          RS orientation is reversed
     dbSNP.VP (char)         Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
-    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (</summary>and each pair is delimited by a vertical bar (|)
+    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
     dbSNP.dbSNPBuildID (int)
                             First dbSNP Build for RS
     dbSNP.SAO (int)         Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
@@ -376,8 +375,19 @@ A **track** file is a file that contains annotation information for variants and
 <details><summary>Examples:</summary> If we download a [bigWig annotation file](http://www.iq-darwin.cremag.org/resources/encode/hg19/pliki/wgEncodeGisRnaSeqH1hescCellPapPlusRawRep1.bigWig) from the [UCSC ENCODE website][7], you can use it to annotate and select variants, 
 
 
-
+    % wget http://www.iq-darwin.cremag.org/resources/encode/hg19/pliki/wgEncodeGisRnaSeqH1hescCellPapPlusRawRep1.bigWig
     % vtools output variant chr pos ref alt 'track("wgEncodeGisRnaSeqH1hescCellPapPlusRawRep1.bigWig")' -l 10
+    
+    1	1180123	T	C	.
+    1	1180168	G	A	.
+    1	1182895	C	T	.
+    1	1184997	T	A	.
+    1	1185051	G	A	.
+    1	3631572	T	C	.
+    1	3632268	G	C	.
+    1	3635173	C	T	.
+    1	3635228	G	A	.
+    1	3638787	G	A	.
     
 
     
@@ -524,11 +534,11 @@ A lot more variants are selected, showing the importance of using the latest ver
 
 **Pipelines** are sequences of commands defined in pipeline configuration files, and are executed by command `vtools execute`. Pipelines are used, among many possibilities, to use external commands such as `bwa` and `gatk` to align raw reads and call genetic variants from aligned reads.
 
- [1]: /vat-docs/documentation/keyconcepts/supportedtypes/
- [2]: /vat-docs/documentation/vtools_commands/import/
+ [1]:    /documentation/keyconcepts/supportedtypes/
+ [2]:    /documentation/vtools_commands/import/
  [3]: http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41
- [4]: /vat-docs/documentation/vtools_commands/use/
+ [4]:    /documentation/vtools_commands/use/
  [5]: http://genome.ucsc.edu/goldenPath/help/bigBed.html
  [6]: http://genome.ucsc.edu/goldenPath/help/bigWig.html
  [7]: http://genome.ucsc.edu/ENCODE/
- [8]: /vat-docs/documentation/vtools_commands/phenotype/
+ [8]:    /documentation/vtools_commands/phenotype/

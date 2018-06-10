@@ -12,7 +12,6 @@ weight = 7
 
     % vtools use -h
     
-
     usage: vtools use [-h] [--as NAME] [-l [LINKED_BY [LINKED_BY ...]]]
                       [--anno_type {variant,position,range,field}]
                       [--linked_fields [LINKED_FIELDS [LINKED_FIELDS ...]]]
@@ -306,8 +305,7 @@ Some databases uses `hg19`, but most uses `hg38`. You can use most databases as 
 
 
 
-    % vtools use thousandGenomes
-    
+    % vtools use thousandGenomes  
 
     INFO: Choosing version thousandGenomes-hg19_v5b_20130502 from 3 available databases.
     INFO: Downloading annotation database annoDB/thousandGenomes-hg19_v5b_20130502.ann
@@ -322,7 +320,6 @@ The CancerGeneCensus database is a bit difficult to use because it is a field da
 
     % vtools use CancerGeneCensus --linked_by refGene.name2
     
-
     INFO: Choosing version CancerGeneCensus-20170912 from 4 available databases.
     INFO: Downloading annotation database annoDB/CancerGeneCensus-20170912.ann
     INFO: Downloading annotation database from annoDB/CancerGeneCensus-20170912.DB.gz
@@ -342,7 +339,6 @@ After you use these databases, you could get the details of them using command `
 
     % vtools show annotation refGene
     
-
     Annotation database refGene (version hg19_20130904)
     Description:            Known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq).
     Database type:          range
@@ -404,8 +400,7 @@ We can link to the refGene database using coding regions
 
 
 
-    % vtools use refGene --linked_fields chr cdsStart cdsEnd
-    
+    % vtools use refGene --linked_fields chr cdsStart cdsEnd  
 
     INFO: Choosing version refGene-hg38_20170201 from 5 available databases.
     INFO: Downloading annotation database annoDB/refGene-hg38_20170201.ann
@@ -418,7 +413,6 @@ only 253 variants are selected, that means most variants are not in the coding r
 
     % vtools select variant 'refGene.chr is not NULL' -c
     
-
     Counting variants: 19 1.2K/s in 00:00:00
     253
     
@@ -429,7 +423,6 @@ You can also link the database by an expanded region of each transcription regio
 
     % vtools use refGene --linked_fields chr 'txStart-5000' 'txEnd+5000'
     
-
     INFO: Choosing version refGene-hg38_20170201 from 5 available databases.
     INFO: Downloading annotation database annoDB/refGene-hg38_20170201.ann
     Binning ranges: 100% [=================================] 74,385 66.5K/s in 00:00:01
@@ -441,7 +434,6 @@ This time more variants are selected by the refGene database,
 
     % vtools select variant 'refGene.chr is not NULL' -c
     
-
     Counting variants: 22 1.0K/s in 00:00:00
     938
     
@@ -456,7 +448,6 @@ In addition to the fields used to link to the project, you can even change the t
 
     % vtools use gwasCatalog
     
-
     INFO: Choosing version gwasCatalog-hg38_20171004 from 3 available databases.
     INFO: Downloading annotation database annoDB/gwasCatalog-hg38_20171004.ann
     INFO: Using annotation DB gwasCatalog as gwasCatalog in project use.
@@ -469,7 +460,6 @@ One matching variant is found in our project
 
     % vtools select variant 'gwasCatalog.chr is not null' -c
     
-
     Counting variants: 3 1.2K/s in 00:00:00
     1
     
@@ -478,7 +468,6 @@ However, we can link the database as a range-based database to check if there is
 
     % vtools use gwasCatalog --anno_type range --linked_fields chr 'position - 10000' 'position + 10000'
     
-
     INFO: Choosing version gwasCatalog-hg38_20171004 from 3 available databases.
     INFO: Downloading annotation database annoDB/gwasCatalog-hg38_20171004.ann
     Binning ranges: 100% [=================================] 64,965 71.2K/s in 00:00:00
@@ -505,7 +494,6 @@ Because field-based databases can link to arbitrary fields, you do not have to u
 
     % vtools use CancerGeneCensus --linked_by refGene.name2
     
-
     INFO: Choosing version CancerGeneCensus-20170912 from 4 available databases.
     INFO: Downloading annotation database annoDB/CancerGeneCensus-20170912.ann
     INFO: Using annotation DB CancerGeneCensus as CancerGeneCensus in project use.
@@ -527,7 +515,6 @@ From the output of `vtools show annotation CancerGeneCensus`, you can see that t
 
     % vtools use knownGene
     
-
     INFO: Choosing version knownGene-hg38_20160328 from 6 available databases.
     INFO: Downloading annotation database annoDB/knownGene-hg38_20160328.ann
     INFO: Using annotation DB knownGene as knownGene in project use.
@@ -536,7 +523,6 @@ From the output of `vtools show annotation CancerGeneCensus`, you can see that t
 
     % vtools use CancerGeneCensus --linked_fields kgID --linked_by knownGene.name
     
-
     INFO: Downloading annotation database from annoDB/CancerGeneCensus.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/CancerGeneCensus-20130711.DB.gz
     INFO: Using annotation DB CancerGeneCensus in project test.
@@ -558,7 +544,6 @@ Note that you can link `GeneSymbol` (the default link-out field in the database)
 
     % vtools use CancerGeneCensus --linked_by knownGene.name
     
-
     INFO: Downloading annotation database from annoDB/CancerGeneCensus.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/CancerGeneCensus-20130711.DB.gz
     INFO: Using annotation DB CancerGeneCensus in project test.
@@ -573,7 +558,6 @@ There is also nothing prevents you from using other annotation database as a fie
 <details><summary> Examples: Use a position-based database as a field database to annotate cytoBand</summary> The gwasCatalog database has a field `region` that records the cytoband of each GWAS hit. If we first use `cytoBand`, 
 
     % vtools use cytoBand
-    
 
     INFO: Downloading annotation database from annoDB/cytoBand.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/cytoBand-hg19_20111216.DB.gz
@@ -585,8 +569,7 @@ and link the `gwasCatalog` database (originally a position-based database) to it
 
 
 
-    % vtools use gwasCatalog --anno_type field --linked_fields region --linked_by cytoBand.name
-    
+    % vtools use gwasCatalog --anno_type field --linked_fields region --linked_by cytoBand.name   
 
     INFO: Downloading annotation database from annoDB/gwasCatalog.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/gwasCatalog-hg19_20111220.DB.gz
@@ -600,8 +583,7 @@ For each variant, we have cytoband information as `cytoBand.name` (as well as `g
 
 
 
-    % vtools output variant chr pos cytoBand.name gwasCatalog.genes gwasCatalog.trait --all -l 10
-    
+    % vtools output variant chr pos cytoBand.name gwasCatalog.genes gwasCatalog.trait --all -l 10   
 
     1	4540	1p36.33	PRKCZ	Reasoning
     1	5683	1p36.33	PRKCZ	Reasoning
@@ -617,8 +599,7 @@ For each variant, we have cytoband information as `cytoBand.name` (as well as `g
 
 Although in this case we should use option `--all` to list all GAWS hits 
 
-    % vtools output variant chr pos cytoBand.name gwasCatalog.genes gwasCatalog.trait --all -l 10
-    
+    % vtools output variant chr pos cytoBand.name gwasCatalog.genes gwasCatalog.trait --all -l 10 
 
     1	4540	1p36.33	NR	Body mass index
     1	4540	1p36.33	PRKCZ	Height
@@ -652,4 +633,4 @@ The [anno_utils]([1]) pipelines provide a few pipelines that can help you create
 
 {{% /notice %}}
 
- [1]: /vat-docs/documentation/pipelines/other-pipelines/anno_utils/
+ [1]:    /documentation/pipelines/other-pipelines/anno_utils/

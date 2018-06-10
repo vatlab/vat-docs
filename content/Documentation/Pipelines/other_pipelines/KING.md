@@ -14,8 +14,7 @@ weight = 7
 
 ### 1. Usage
 
-    % vtools show pipeline KING
-    
+    % vtools show pipeline KING 
 
     Pipeline to call KING to perform global ancestry and kinship inference, and import ancestry analysis results as
     phenotypes into sample table.
@@ -75,8 +74,7 @@ After the execution of the pipeline, MDS analysis results are updated to phenoty
 
 
 
-    % vtools phenotype --output sample_name Population kin_mds1 kin_mds2 -l 10
-    
+    % vtools phenotype --output sample_name Population kin_mds1 kin_mds2 -l 10  
 
     HG00096	GBR	-0.0372	0.0185
     HG00097	GBR	-0.0369	-0.0768
@@ -92,8 +90,7 @@ After the execution of the pipeline, MDS analysis results are updated to phenoty
 
 and a graph `kin.mds.pdf` is generated for the same information. Additionally a summary of kinship analysis is available to identify related individuals 
 
-    % cat kin.RelatedIndividuals.txt
-    
+    % cat kin.RelatedIndividuals.txt 
 
     ID1 ID2 HetHet IBS0 Kinship Relationship
     HG00116 HG00120 0.116 0.0358 0.0781 3rd-degree

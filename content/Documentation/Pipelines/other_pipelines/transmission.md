@@ -21,7 +21,6 @@ This pipeline is an extension to command `vtools_report transmission`, the diffe
 
     % vtools show pipeline transmission
     
-
     Pipelines to detect different types of variants that are transmitted from parents to offspring.
     
     Available pipelines: denovo, recessive
@@ -125,7 +124,6 @@ produces a log file
 
     % cat logfile
     
-
     SUMMARY: Identification of de novo variants for family family
     
     Members: WGS3_2 WGS3_3 (unaffected parents), WGS3_1 (affected offspring)

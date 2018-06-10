@@ -3,11 +3,11 @@ title = "tped"
 weight = 6
 +++
 
-# PLINK/TPED format 
+## PLINK/TPED format 
 
 
 
-### About TPED format
+### 1. About TPED format
 
 Many software applications for linkage and association studies (e.g. [plink][1], [merlin][2]) accept PED/MAP format. The map file records basic information about markers, the Ped file contains sample genotype. Whereas variant tools can easily export in MAP format, it is difficult to export in PED format because this format is not variant oriented (output by variant). 
 
@@ -15,21 +15,20 @@ Fortunately, PLINK accepts a transposed PED format (TPED) that is variant orient
 
 
 
-Format `tped` cannot import from TPED files because this format does not specify reference and alternative alleles. To import PLINK TPED data please use [format `plink`][3][?][3] 
+Format `tped` cannot import from TPED files because this format does not specify reference and alternative alleles. To import PLINK TPED data please use [format `plink`][3] 
 
 
 
-#### The TPED/TFAM bundle
+#### 1.1 The TPED/TFAM bundle
 
 To make the exported TPED file compatible with other software applications that handles PLINK input, a TFAM file containing individual names is generated. Unlike a standard TFAM file which is the first six columns of a PED file, i.e., Family ID, Individual ID, Paternal ID, Maternal ID, Sex and Phenotype, the TFAM file exported here only has valid individual ID, with other columns being placeholders. However it is straightforward to create a TFAM file with information for other columns using `vtools phenotype --output` command. 
 
 
 
-### Format specification
+### 2. Format specification
 
     vtools show format tped
     
-
     Format:      tped
     Description: Output to TPED format with the first four columns chr name gen_pos
       pos, and the rest for genotypes. Variant tools cannot import from
@@ -65,7 +64,7 @@ By default, the corresponding TFAM file is named after the variant table from wh
 
 
 
-## Example
+### Example
 
 Output some variants. The genotypes for selected samples are ordered alphabetically by sample name (and the selected samples are recorded in the log file). 
 
@@ -172,5 +171,5 @@ A TFAM file is also generated,
 
  [1]: http://pngu.mgh.harvard.edu/~purcell/plink/
  [2]: http://www.sph.umich.edu/csg/abecasis/Merlin/
- [3]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Plink?action=edit
+ [3]: /  /documentation/customization/format/formats/tped/plink/
  [4]: http://pngu.mgh.harvard.edu/~purcell/plink/dataman.shtml

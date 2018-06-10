@@ -12,7 +12,6 @@ weight = 12
 ### 1. Usage
 
     % vtools output -h
-    
 
     usage: vtools output [-h] [--header [HEADER [HEADER ...]]] [-d DELIMITER]
                          [--na NA] [-l N] [--build BUILD] [-g [FIELD [FIELD ...]]]
@@ -93,7 +92,6 @@ This project has a single variant table and 8 variant info fields. To view varia
 
     % vtools output variant chr pos ref alt aa ac an dp -l 10
     
-
     1   10533   G   C   .   6   120 423
     1   51479   T   A   .   29  120 188
     1   51928   G   A   .   5   120 192
@@ -110,7 +108,6 @@ The first parameter is name of a variant table, which does not have to be the ma
 
     % vtools select variant 'aa="T"' -t 'aa=T'
     
-
     Running: 0 0.0/s in 00:00:00                                                  
     INFO: 22 variants selected.
     
@@ -119,7 +116,6 @@ and view the content of this variant table as follows:
 
     % vtools output 'aa=T' chr pos ref alt aa ac an dp -l 10
     
-
     1   54676       C   T   T   2   120 131
     22  51158111    T   C   T   1   120 298
     22  51158301    T   C   T   7   120 169
@@ -136,7 +132,6 @@ You can use comma to separate values using option `-d,`
 
     % vtools output variant chr pos ref alt aa ac an dp -l 10 -d,
     
-
     1,10533,G,C,.,6,120,423
     1,51479,T,A,.,29,120,188
     1,51928,G,A,.,5,120,192
@@ -156,7 +151,6 @@ or option `-d'\t'` to produce tab-delimited output:
 
     % vtools output variant chr pos ref alt aa ac an dp -l 10 -d'\t'
     
-
     1   10533   G   C   .   6   120 423
     1   51479   T   A   .   29  120 188
     1   51928   G   A   .   5   120 192
@@ -184,7 +178,6 @@ You can also specify a header to the output. There are three ways to specify hea
 
     % vtools output variant chr pos ref alt aa ac --header -l 10
     
-
     chr pos     ref alt aa  ac
     1   10533   G   C   .   6
     1   51479   T   A   .   29
@@ -205,7 +198,6 @@ If you are unhappy about the default header, you can specify one manually
 
     % vtools output variant chr pos ref alt aa ac --header chr pos ref alt 'ancestral allele' 'ancestral count' -l 10 -d,
     
-
     chr,pos,ref,alt,ancestral allele,ancestral count
     1,10533,G,C,.,6
     1,51479,T,A,.,29
@@ -224,8 +216,7 @@ If you have a longer header, or a header that is saved in a file, you can send t
 
 
     % echo chr pos ref alt 'ancestral allele' 'ancestral count' | \
-       vtools output variant chr pos ref alt aa ac --header - -l 10
-    
+       vtools output variant chr pos ref alt aa ac --header - -l 10   
 
     chr pos ref alt ancestral allele ancestral count
     1   10533   G   C   .   6
@@ -248,7 +239,6 @@ You can sort the output by one or more fields using option `--order_by`. *varian
 
     % vtools output variant chr pos ref alt aa ac --order_by ac alt -l 10
     
-
     1   526727      G   A   .   1
     1   726440      G   A   .   1
     1   773106      G   A   g   1
@@ -265,7 +255,6 @@ You can order in descending oder by specifying `DESC` after field name, for exam
 
     % vtools output variant chr pos ref alt aa ac --order_by 'ac DESC' 'aa' -l 10
     
-
     1   814790      C   T   c   7,2
     1   814790      C   G   c   7,2
     1   799463      T   C   N   120
@@ -286,7 +275,6 @@ If your project has a primary and a secondary reference genomes, you can output 
 
     % vtools liftover hg38
     
-
     INFO: Downloading liftOver chain file from UCSC
     INFO: Exporting variants in BED format
     Exporting variants: 100% [================================] 288 69.0K/s in 00:00:00
@@ -299,7 +287,6 @@ You can output variants in the primary reference genome,
 
     % vtools output variant chr pos ref alt aa ac --header  --order_by ac --build hg19 -l 10
     
-
     chr pos         ref alt aa  ac
     1   526727      G   A   .   1
     1   726440      G   A   .   1
@@ -317,7 +304,6 @@ or the alternative reference genome using option `--build`
 
     % vtools output variant chr pos ref alt aa ac --header  --order_by ac --build hg38 -l 10
     
-
     chr pos         ref alt aa  ac
     1   591347      G   A   .   1
     1   791060      G   A   .   1
@@ -347,7 +333,6 @@ You can output fields from one or more annotation databases in the same way as v
 
     % vtools use refGene
     
-
     INFO: Choosing version refGene-hg38_20170201 from 5 available databases.
     INFO: Downloading annotation database annoDB/refGene-hg38_20170201.ann
     INFO: Using annotation DB refGene as refGene in project output.
@@ -356,7 +341,6 @@ You can output fields from one or more annotation databases in the same way as v
 
     % vtools use dbSNP
     
-
     INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
     INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
     INFO: Using annotation DB dbSNP as dbSNP in project output.
@@ -369,7 +353,6 @@ These two databases bring in a large number of annotation fields, as listed by c
 
     % vtools show fields
     
-
     variant.chr (char)      Chromosome name (VARCHAR)
     variant.pos (int)       Position (INT, 1-based)
     variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
@@ -410,7 +393,7 @@ These two databases bring in a large number of annotation fields, as listed by c
     dbSNP.RSPOS (int)       Chr position reported in dbSNP
     dbSNP.RV (int)          RS orientation is reversed
     dbSNP.VP (char)         Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
-    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (</summary>and each pair is delimited by a vertical bar (|)
+    dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
     dbSNP.dbSNPBuildID (int)
                             First dbSNP Build for RS
     dbSNP.SAO (int)         Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
@@ -472,8 +455,7 @@ You can output annotation fields as follows:
 
 
 
-    % vtools output 'aa=T' chr pos ref alt dbSNP.name refGene.name refGene.name2 -l 10
-    
+    % vtools output 'aa=T' chr pos ref alt dbSNP.name refGene.name refGene.name2 -l 10  
 
     1  1105366   T  C  rs111751804  NM_001130045  TTLL10
     1  1110240   T  A  rs116321663  NM_001130045  TTLL10
@@ -495,7 +477,6 @@ This looks simple but the problem is more complicated than what is shown here, b
 
     % vtools output 'aa=T' chr pos ref alt dbSNP.name refGene.name refGene.name2 --all -l 10
     
-
     1   54676       C   T   rs2462492   .           .
     22  51158111    T   C   rs73174428  NM_033517   SHANK3
     22  51158301    T   C   rs117910162 NM_033517   SHANK3
@@ -513,7 +494,6 @@ A consequence of this is that duplicated records can be displayed if the field t
 
     % vtools output 'aa=T' chr pos ref alt dbSNP.name  refGene.name2 --all -l 10
     
-
     1   54676       C   T   rs2462492   .
     22  51158111    T   C   rs73174428  SHANK3
     22  51158301    T   C   rs117910162 SHANK3
@@ -550,7 +530,6 @@ In addition to basic arithmetic operations, *variant tools* accept additional ma
 
     % vtools output "aa=T" chr 'pos-1' 'refGene.name2 || "." || refGene.name' 'log(DP)' --header -l 10
     
-
     chr pos_1       refGene_name2_refGene_name  log_DP_
     1   54675       .                           4.875197323201151
     22  51158110    SHANK3.NM_033517            5.697093486505405
@@ -584,8 +563,7 @@ Command `vtools output` accepts the following aggregating functions:
 
 
     % vtools output variant 'avg(DP)'
-    
-
+   
     271.875
     
 
@@ -593,8 +571,7 @@ You can also output average of depth, grouped by variants that belong to genes,
 
 
 
-    % vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 -l 10
-    
+    % vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 -l 10    
 
     .               161 281.1366459627329
     ACR             5   240.6
@@ -621,8 +598,7 @@ Here `count(*)` is used to count the number of variants in each gene, and `NA` i
 
 Option `--all` should not be used in these commands because this option will lead to multiple entries for some variants, and biase the results. For example, the output of the following command differs from the previous one: 
 
-    % vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 --all -l 10
-    
+    % vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 --all -l 10   
 
     .               161 281.1366459627329
     ACR             5   240.6

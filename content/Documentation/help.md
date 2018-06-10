@@ -7,7 +7,6 @@ weight = 3
 ## Usage of variant tools commands
 
 
-
 ### 1. Structure of commands
 
 `vtools` uses a subcommand system that is similar to `svn`. For example, command 
@@ -103,38 +102,24 @@ The verbosity level of command line output can be controlled by option `--verbos
 
     % vtools init test -v2
     
-
     DEBUG: 
-    DEBUG: vtools init test -v2 -f
-    DEBUG: Using temporary directory /var/folders/bm/jnrrj61x185cw6rzzsxplkd00000gn/T/tmp0n22aZ
-    INFO: variant tools 1.0.3 : Copyright (c) 2011 - 2012 Bo Peng
-    INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
+    DEBUG: init test -v2
+    DEBUG: Using temporary directory /tmp/tmpg9b5gqd1/_tmp_525486
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project test
-    DEBUG: Creating core tables
-    DEBUG: Creating table project
-    DEBUG: Creating table filename
-    DEBUG: Creating table variant
-    DEBUG: Creating table sample
     
 
 
 
     % less test.log
     
-
-    2012-10-22 20:24:10,328: DEBUG: 
-    2012-10-22 20:24:10,329: DEBUG: vtools init test -v2 -f
-    2012-10-22 20:24:10,329: DEBUG: Using temporary directory /var/folders/bm/jnrrj61x185cw6rzzsxplkd00000gn/T/tmp0n22aZ
-    2012-10-22 20:24:10,329: INFO: variant tools 1.0.3 : Copyright (c) 2011 - 2012 Bo Peng
-    2012-10-22 20:24:10,329: INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
-    2012-10-22 20:24:10,329: INFO: Please visit http://varianttools.sourceforge.net for more information.
-    2012-10-22 20:24:10,330: INFO: Creating a new project test
-    2012-10-22 20:24:10,338: DEBUG: Creating core tables
-    2012-10-22 20:24:10,338: DEBUG: Creating table project
-    2012-10-22 20:24:10,377: DEBUG: Creating table filename
-    2012-10-22 20:24:10,384: DEBUG: Creating table variant
-    2012-10-22 20:24:10,391: DEBUG: Creating table sample
+    2018-06-07 17:54:27,174: DEBUG: 
+    2018-06-07 17:54:27,174: DEBUG: init test -v2
+    2018-06-07 17:54:27,175: DEBUG: Using temporary directory /tmp/tmpg9b5gqd1/_tmp_525486
+    2018-06-07 17:54:27,175: INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
+    2018-06-07 17:54:27,175: INFO: Please visit http://varianttools.sourceforge.net for more information.
+    2018-06-07 17:54:27,175: INFO: Creating a new project test
     
 
 If, for example for a production pipeline you do not want any debug information in the log file, you can set a runtime option `logfile_verbosity` to control the level of verbosity in the log file. For example, 
@@ -164,12 +149,14 @@ Output from `vtools` can be saved to files via *standard output redirection*. Th
     % vtools admin --load_snapshot vt_simple
     % vtools output variant chr pos ref alt -v2 > output.txt
     
-
     DEBUG: 
-    DEBUG: vtools output variant chr pos ref alt -v2
-    DEBUG: Using temporary directory /var/folders/bm/jnrrj61x185cw6rzzsxplkd00000gn/T/tmpBzRAJy
-    DEBUG: Opening project simple.proj
-    DEBUG: Running query SELECT variant.chr ,variant.pos ,variant.ref ,variant.alt  FROM variant     ;
+    DEBUG: output variant chr pos ref alt -v2
+    DEBUG: Using temporary directory /tmp/tmpy265fgcj/_tmp_104712
+    INFO: Upgrading variant tools project to version 2.7.20
+    hg18.crr: 100% [==================================================] 770,113,155.0 15.5M/s in 00:00:49
+    Verifying variants: 100% [=================================================] 1,611 32.4/s in 00:00:49
+    INFO: 0 variants are updated
+
     
 
 the output is written to file `output.txt` while debug information continues to be displayed and written to log file. 

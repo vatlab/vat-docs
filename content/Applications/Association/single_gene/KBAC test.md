@@ -30,9 +30,6 @@ Note a couple of differences between this implementation and the original versio
 
     vtools show test KBAC
     
-
-
-
     Name:          KBAC
     Description:   Kernel Based Adaptive Clustering method, Liu & Leal 2010
     usage: vtools associate --method KBAC [-h] [--name NAME] [-q1 MAFUPPER]
@@ -93,9 +90,6 @@ Note a couple of differences between this implementation and the original versio
     vtools associate rare status -m "KBAC --name kbac -p 5000" --group_by refGene.name2 --to_db\
      kbac -j8 > kbac.txt
     
-
-
-
     INFO: 3180 samples are found
     INFO: 2632 groups are found
     INFO: Starting 8 processes to load genotypes
@@ -106,12 +100,7 @@ Note a couple of differences between this implementation and the original versio
     INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 05:26:43
     
 
-
-
     vtools show fields | grep kbac
-    
-
-
 
     kbac.refGene_name2           refGene_name2
     kbac.sample_size_kbac        sample size
@@ -122,13 +111,8 @@ Note a couple of differences between this implementation and the original versio
     kbac.std_error_kbac          Empirical estimate of the standard deviation of statistic
     kbac.num_permutations_kbac   number of permutations at which p-value is evaluated
     
-
-
-
-    head kbac.txt
     
-
-
+    head kbac.txt
 
     refGene_name2   sample_size_kbac        num_variants_kbac       total_mac_kbac  statistic_kbac  pvalue_kbac     std_error_kbac  num_permutations_kbac
     ABCG5   3180    6       87      0.00610092      0.353646        0.00629806      1000

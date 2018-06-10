@@ -6,8 +6,6 @@ weight = 2
 
 
 
-
-
 ## Create annotation database 
 
 
@@ -59,7 +57,7 @@ For example, it a variant-based database provides coordinates for both hg18 and 
 
 
     hg18=chr,hg18_pos,ref,alt
-                  hg19=chr,hg19_pos,ref,alt
+    hg19=chr,hg19_pos,ref,alt
     
 
 where `chr`, `hg18_pos`, `hg19_pos`, `ref`, `alt` are fields defined below. 

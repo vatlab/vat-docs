@@ -402,8 +402,8 @@ Another example would be to limit, for example, a penetrance model to certain ch
 
  [3]: http://simupop.sourceforge.net
  [4]: mailto:bpeng@mdanderson.org
- [5]: /vat-docs/documentation/customization/simulation/
+ [5]:    /documentation/customization/simulation/
  [6]: http://variantools.sourceforge.net
  [7]: https://lists.sourceforge.net/lists/listinfo/varianttools-user
- [8]: /vat-docs/applications/association/introduction/
- [9]: /vat-docs/installation/
+ [8]:   /applications/association/introduction/
+ [9]:  installation/

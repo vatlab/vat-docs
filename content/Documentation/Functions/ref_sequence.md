@@ -34,8 +34,7 @@ returns the 5-base sequence at and after the variant sites, for all variants in 
 
 <details><summary> Examples: output reference sequence around variants</summary> Let us get a test project 
 
-    % vtools admin --load_snapshot vt_simple
-    
+    % vtools admin --load_snapshot vt_simple   
 
     Downloading snapshot vt_simple.tar.gz from online
     INFO: Snapshot vt_simple has been loaded
@@ -46,7 +45,6 @@ We can check if the imported reference alleles is consistent with the reference 
 
 
     % vtools output variant chr pos ref 'ref_sequence(chr, pos)' -l 10
-    
 
     1	4540	G	G
     1	5683	G	G
@@ -66,7 +64,6 @@ This means that we used the correct build of reference genome to import the data
 
     % vtools output variant chr pos ref 'ref_sequence(chr, pos-5, pos+5)' -l 10
     
-
     1	4540	G	GGGGGGAAGGT
     1	5683	G	CTGCTGCTTCT
     1	5966	T	GTGTGTGGGGG
@@ -84,7 +81,6 @@ Now, if you are interested in checking if the variants happen in a region with h
 
 
     % vtools update variant --set 'nRef=11-length(replace(ref_sequence(chr, pos-5, pos+5), ref, ""))'
-    
 
     INFO: Adding variant info field nRef
     
@@ -95,7 +91,6 @@ The resulting new column `nRef` records the number of reference alleles in the 1
 
     % vtools output variant chr pos ref 'ref_sequence(chr, pos-5, pos+5)' nRef -l 10
     
-
     1	4540	G	GGGGGGAAGGT	8
     1	5683	G	CTGCTGCTTCT	2
     1	5966	T	GTGTGTGGGGG	3
