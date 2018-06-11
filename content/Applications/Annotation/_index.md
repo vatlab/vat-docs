@@ -136,5 +136,5 @@ if you find Variant Annotation Tools helpful and use it in your publication. Tha
  [22]:   /applications/annotation/genes/cancergenecensus/
  [23]: http://www.sanger.ac.uk/genetics/CGP/Census/
  [24]:   /applications/annotation/customized/
- [25]:    /documentation/customization/format/formats/functor/
+ [25]:    /documentation/customization/format/Formats/functor/
  [26]: http://bioinformatics.oxfordjournals.org/content/28/3/421.abstract?sid=f64403e7-5050-4102-963c-e690efe003f7

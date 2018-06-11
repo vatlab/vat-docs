@@ -554,4 +554,4 @@ Optionally, you can use rsnames in the `dbSNP` database
 
 </details>
 
- [1]:    /documentation/customization/format/formats/tped/
+ [1]:    /documentation/customization/format/Formats/tped/

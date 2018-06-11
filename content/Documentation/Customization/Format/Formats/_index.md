@@ -52,19 +52,19 @@ Customize import/export format:
 
 *   Using [customized format specification][18] file (`.fmt`) to import/export arbitrary text format.
 
-[1]: /  /documentation/customization/format/formats/txt/
+[1]: /  /documentation/customization/format/Formats/txt/
 [2]:  http://www.1000genomes.org/node/101
-[3]: /  /documentation/customization/format/formats/csv/
-[4]: /  /documentation/customization/format/formats/annovar/
-[5]: /  /documentation/customization/format/formats/annovav/
-[6]: /  /documentation/customization/format/formats/casava18snps/
-[7]: /  /documentation/customization/format/formats/casava18indels/
-[8]: /  /documentation/customization/format/formats/cga/
-[9]: /  /documentation/customization/format/formats/cga/pileup/
-[10]: /  /documentation/customization/format/formats/map/
-[11]: /  /documentation/customization/format/formats/plink/
+[3]: /  /documentation/customization/format/Formats/csv/
+[4]: /  /documentation/customization/format/Formats/annovar/
+[5]: /  /documentation/customization/format/Formats/annovav/
+[6]: /  /documentation/customization/format/Formats/casava18snps/
+[7]: /  /documentation/customization/format/Formats/casava18indels/
+[8]: /  /documentation/customization/format/Formats/cga/
+[9]: /  /documentation/customization/format/Formats/cga/pileup/
+[10]: /  /documentation/customization/format/Formats/map/
+[11]: /  /documentation/customization/format/Formats/plink/
 [12]: http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml
 [14]: http://genetics.bwh.harvard.edu/pph2/bgi.shtml
-[15]: /  /documentation/customization/format/formats/tped
-[17]: /  /documentation/customization/format/formats/rsname/
-[18]:/  /documentation/customization/format/formats/new/
+[15]: /  /documentation/customization/format/Formats/tped
+[17]: /  /documentation/customization/format/Formats/rsname/
+[18]:/  /documentation/customization/format/Formats/new/

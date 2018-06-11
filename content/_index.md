@@ -213,16 +213,16 @@ for Variant Simulation Tools if you find variant tools helpful and use it in you
  [9]:    /documentation/pipelines/variant_calling/bwa_gatk28_hg19/
  [10]:    /documentation/vtools_commands/import/
  [11]:    /documentation/pipelines/other_pipelines/import_vcf/
- [12]:    /documentation/customization/format/formats/casava18snps/
- [13]:    /documentation/customization/format/formats/casava18indels/
- [14]:    /documentation/customization/format/formats/cga/
+ [12]:    /documentation/customization/format/Formats/casava18snps/
+ [13]:    /documentation/customization/format/Formats/casava18indels/
+ [14]:    /documentation/customization/format/Formats/cga/
  [15]:    /documentation/pipelines/other_pipelines/illumina/
- [16]:    /documentation/customization/format/formats/txt/
- [17]:    /documentation/customization/format/formats/csv/
- [18]:    /documentation/customization/format/formats/plink/
- [19]:    /documentation/customization/format/formats/rsname/
- [20]:    /documentation/customization/format/formats/map/
- [21]:    /documentation/customization/format/formats/new/
+ [16]:    /documentation/customization/format/Formats/txt/
+ [17]:    /documentation/customization/format/Formats/csv/
+ [18]:    /documentation/customization/format/Formats/plink/
+ [19]:    /documentation/customization/format/Formats/rsname/
+ [20]:    /documentation/customization/format/Formats/map/
+ [21]:    /documentation/customization/format/Formats/new/
  [22]:    /documentation/vtools_commands/liftover/
  [23]:    /documentation/functions/ref_sequence/
  [24]:    /documentation/vtools_commands/admin/
@@ -251,7 +251,7 @@ for Variant Simulation Tools if you find variant tools helpful and use it in you
  [47]:    /documentation/functions/genotype/
  [48]:    /documentation/functions/samples/
  [49]:    /documentation/vtools_commands/export/
- [50]:    /documentation/customization/format/formats/annovar/
+ [50]:    /documentation/customization/format/Formats/annovar/
  [51]:   /applications/association/introduction/
  [52]:    /documentation/vtools_report/plot_association
  [53]:    /documentation/vtools_report/meta_analysis
