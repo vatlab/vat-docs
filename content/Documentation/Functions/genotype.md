@@ -141,8 +141,7 @@ returns genotypes of all samples, samples with `aff=1`, and depth of coverage of
 
 
     % vtools init genotype -f
-    % vtools admin --load_snapshot vt_simple
-    % vtools import CEU.vcf.gz --geno_info DP_geno --build hg18
+    % vtools import CEU.vcf --geno_info DP_geno --build hg18
     % vtools remove genotypes 'GT=0'
     % vtools output variant chr pos ref alt "genotype()"  -l 10
     

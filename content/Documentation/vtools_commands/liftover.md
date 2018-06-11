@@ -87,17 +87,23 @@ After the liftOver operation, three more fields are added to the master variant 
     Command:
     Fields:                 variant_id, bin, chr, pos, ref, alt, alt_bin, alt_chr, alt_pos
     Number of variants:     1611
+
+
+    %  vtools output variant variant_id  bin chr pos ref alt alt_bin alt_chr alt_pos
     
 
-    variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
-    52,586,1,230047,A,T,586,1,260296
-    53,586,1,230058,T,G,586,1,260307
-    54,586,1,231480,G,C,586,1,261729
-    55,586,1,231504,G,A,586,1,261753
-    56,586,1,231526,C,T,586,1,261775
-    57,586,1,232223,C,T,587,1,262472
-    58,586,1,234301,T,C,587,1,264550
-    59,586,1,234308,A,G,587,1,264557
+    variant_id, bin, chr, pos, ref, alt, alt_bin, alt_chr, alt_pos
+    1   585 1   14677   G   A   585 1   14677
+    2   585 1   15820   G   T   585 1   15820
+    ... ...
+    52  586 1   230047  A   T   586 1   260296
+    53  586 1   230058  T   G   586 1   260307
+    54  586 1   231480  G   C   586 1   261729
+    55  586 1   231504  G   A   586 1   261753
+    56  586 1   231526  C   T   586 1   261775
+    57  586 1   232223  C   T   587 1   262472
+    58  586 1   234301  T   C   587 1   264550
+    59  586 1   234308  A   G   587 1   264557
     ... ...
     
 
@@ -144,17 +150,20 @@ Interruption of the flipping process will leave the project unusable because of 
     Annotation databases: 
     
 
-    % vtools show table variant
+    % vtools output variant variant_id  bin chr pos ref alt alt_bin alt_chr alt_pos 
     
     variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
-    52,586,1,260296,A,T,586,1,230047
-    53,586,1,260307,T,G,586,1,230058
-    54,586,1,261729,G,C,586,1,231480
-    55,586,1,261753,G,A,586,1,231504
-    56,586,1,261775,C,T,586,1,231526
-    57,587,1,262472,C,T,586,1,232223
-    58,587,1,264550,T,C,586,1,234301
-    59,587,1,264557,A,G,586,1,234308
+    1   585 1   14677   G   A   585 1   14677
+    2   585 1   15820   G   T   585 1   15820
+    ... ...
+    52  586 1   260296  A   T   586 1   230047
+    53  586 1   260307  T   G   586 1   230058
+    54  586 1   261729  G   C   586 1   231480
+    55  586 1   261753  G   A   586 1   231504
+    56  586 1   261775  C   T   586 1   231526
+    57  587 1   262472  C   T   586 1   232223
+    58  587 1   264550  T   C   586 1   234301
+    59  587 1   264557  A   G   586 1   234308
     ... ...
     
 

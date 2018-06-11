@@ -515,69 +515,68 @@ After using an annotation database with command `vtools use`, you can view the d
 
     % vtools show annotation knownGene -v2
     
-    DEBUG:
-    DEBUG: vtools show annotation knownGene -v2
-    DEBUG: Using temporary directory /var/folders/5b/4qkyrb3519qgn77s62853xrh0000gn/T/tmp3kkA40
-    DEBUG: Opening project show.proj
-    DEBUG: Loading annotation database ~/.variant_tools/annoDB/knownGene-hg19_20121219.DB
-    Annotation database knownGene (version hg19_20121219)
-    Description:            UCSC Known Genes
+    DEBUG: 
+    DEBUG: show annotation knownGene -v2
+    DEBUG: Using temporary directory /tmp/tmp3fjnagg2/_tmp_135971
+    Annotation database knownGene (version hg19_20130904)
+    Description:            Gene predictions based on data from RefSeq, Genbank, CCDS and UniProt, from the
+      UCSC KnownGene track.
     Database type:          range
-    Number of records:      80,922
-    Distinct ranges:        59,942
+    Number of records:      82,960
+    Distinct ranges:        60,726
     Reference genome hg19:  chr, txStart, txEnd
-    
+
     Field:                  name
     Type:                   string
     Comment:                Name of gene such as uc001aaa.3
-    Missing entries:        0
-    Unique Entries:         80,922
-    
+    Missing entries:        0 
+    Unique Entries:         82,960
+
     Field:                  chr
     Type:                   string
-    Missing entries:        0
+    Missing entries:        0 
     Unique Entries:         60
-    
+
     Field:                  strand
     Type:                   string
     Comment:                which DNA strand contains the observed alleles
-    Missing entries:        0
+    Missing entries:        0 
     Unique Entries:         2
-    
+
     Field:                  txStart
     Type:                   integer
     Comment:                Transcription start position
-    Missing entries:        0
-    Unique Entries:         48,076
+    Missing entries:        0 
+    Unique Entries:         48,720
     Range:                  1 - 249211537
-    
+
     Field:                  txEnd
     Type:                   integer
     Comment:                Transcription end position
-    Missing entries:        0
-    Unique Entries:         48,025
+    Missing entries:        0 
+    Unique Entries:         48,713
     Range:                  368 - 249213345
-    
+
     Field:                  cdsStart
     Type:                   integer
     Comment:                Coding region start
-    Missing entries:        0
-    Unique Entries:         50,891
+    Missing entries:        0 
+    Unique Entries:         51,789
     Range:                  1 - 249211537
-    
+
     Field:                  cdsEnd
     Type:                   integer
     Comment:                Coding region end
-    Missing entries:        0
-    Unique Entries:         50,876
+    Missing entries:        0 
+    Unique Entries:         51,745
     Range:                  0 - 249212562
-    
+
     Field:                  exonCount
     Type:                   integer
     Comment:                Number of exons
-    Missing entries:        0
-    Unique Entries:         115
-    Range:                  1 - 4461
+    Missing entries:        0 
+    Unique Entries:         119
+    Range:                  1 - 5065
     
 
 </details>
@@ -592,7 +591,7 @@ After using an annotation database with command `vtools use`, you can view the d
 
 
 
-    % vtools show track CEU.vcf.gz | head -30
+    % vtools show track CEU_hg38.vcf | head -30
     
     Version                 VCF v4.0
     Number of fields:       69

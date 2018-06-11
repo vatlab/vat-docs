@@ -41,69 +41,52 @@ Create a directory to put all your project files in - lets call it `tutorial`. A
     % vtools init quickstart
     
 
-    INFO: variant tools 1.0.3 : Copyright (c) 2011 - 2012 Bo Peng
-    INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
+    INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng
     INFO: Please visit http://varianttools.sourceforge.net for more information.
     INFO: Creating a new project quickstart
     
 
 
-
 ### 3. Import an example data set
 
-Download these example VCF files, put them in your `tutorial` directory and unzip them. 
 
+You could first download the sample project as a snapshot using command 
 
+    % vtools admin --load_snapshot vt_quickStartGuide_v3
 
-    ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/release/2010_07/exon/snps/CEU.exon.2010_03.sites.vcf.gz
-    ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/pilot_data/release/2010_07/exon/snps/JPT.exon.2010_03.sites.vcf.gz
+    
+You can then import data into your `quickstart` project. These example VCFs contain variants for the CEU and JPT populations from the 1000 Genomes project. 
+
+ 
+    % vtools import CEU_hg38_all.vcf --build hg38 --sample_name CEU
     
 
-You can then import this data into your `quickstart` project. These example VCFs contain variants for the CEU and JPT populations from the 1000 Genomes project. 
-
-
-
-    % vtools import CEU.exon.2010_03.sites.vcf.gz --build hg19 --sample_name CEU
-    
-
-    INFO: Importing variants from CEU.exon.2010_03.sites.vcf.gz (1/1)
-    CEU.exon.2010_03.sites.vcf.gz: 100% [=======================] 3,500 10.3K/s in 00:00:00
-    INFO: 3,489 new variants (3,489 SNVs) from 3,500 lines are imported.
+    Getting existing variants: 100% [========================] 292 245.2K/s in 00:00:00
+    INFO: Importing variants from CEU_hg38_all.vcf (1/1)
+    CEU_hg38_all.vcf: 100% [=================================] 3,512 6.8K/s in 00:00:00
+    INFO: 3,470 new variants (3,470 SNVs, 31 unsupported) from 3,512 lines are imported.
     WARNING: No genotype column could be found from the input file. Assuming no genotype.
-    Importing genotypes: 100% [==================================] 3,500 1.7K/s in 00:00:02
-    Copying genotype: 100% [=========================================] 1 3.8K/s in 00:00:00
+    Importing genotypes: 100% [=============================] 3,470 13.5K/s in 00:00:00
     
 
 
 
-    % vtools import JPT.exon.2010_03.sites.vcf.gz --sample_name JPT
+    % vtools import JPT_hg38_all.vcf --build hg38 --sample_name JPT
     
 
-    INFO: Using primary reference genome hg19 of the project.
-    Getting existing variants: 100% [==========================] 3,489 207.8K/s in 00:00:00
-    INFO: Importing variants from JPT.exon.2010_03.sites.vcf.gz (1/1)
-    JPT.exon.2010_03.sites.vcf.gz: 100% [=======================] 2,911 12.9K/s in 00:00:00
-    INFO: 1,369 new variants (1,369 SNVs) from 2,910 lines are imported.
+    Getting existing variants: 100% [======================] 3,762 380.9K/s in 00:00:00
+    INFO: Importing variants from JPT_hg38_all.vcf (1/1)
+    JPT_hg38_all.vcf: 100% [================================] 2,920 15.9K/s in 00:00:00
+    INFO: 1,369 new variants (1,369 SNVs, 31 unsupported) from 2,920 lines are imported.
     WARNING: No genotype column could be found from the input file. Assuming no genotype.
-    Importing genotypes: 100% [==================================] 2,910 1.5K/s in 00:00:02
-    Copying genotype: 100% [=========================================] 1 2.4K/s in 00:00:00
+    Importing genotypes: 100% [==============================] 1,369 4.7K/s in 00:00:00
+
     
 
 
 {{% notice tip %}}
 These two files do not have any sample names associated with them. We however give each file a sample name so that we can track the source of variants (CEU vs JPT). If you do not need to track variant membership, you can import the two files using a single command `vtools import *.vcf.gz --build hg19`. 
 {{% /notice %}}
-
-If for some reason you cannot download the source files from NCBI, you could download this sample project as a snapshot using command 
-
-
-
-    % vtools admin --load_snapshot vt_quickStartGuide
-    
-
-    Downloading snapshot vt_quickStartGuide.tar.gz from online
-    vt_quickStartGuide.tar.gz: 100% [============================] 112,837 81.8K/s in 00:00:01 
-    INFO: Snapshot vt_quickStartGuide has been loaded
     
 
 
@@ -119,64 +102,37 @@ This command downloads the **ccdsGene** data source allowing variants to be anno
     % vtools use ccdsGene
     
 
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/ccdsGene.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/ccdsGene-hg19_20110909.DB.gz
-    : Unsupported scheme.
-    --18:47:23--  http://vtools.houstonbioinformatics.org/annoDB/ccdsGene-hg19_20110909.DB.gz
-               => `./ccdsGene-hg19_20110909.DB.gz'
-    Resolving vtools.houstonbioinformatics.org... 70.39.145.13
-    Connecting to vtools.houstonbioinformatics.org[70.39.145.13]:80... connected.
-    HTTP request sent, awaiting response... 200 OK
-    Length: 744,834 [  /applications/x-gzip]
-    
-    100%[=============================================================================>] 744,834      370.44K/s             
-    
-    18:47:26 (369.03 KB/s) - `./ccdsGene-hg19_20110909.DB.gz' saved [744834/744834]
-    
-    
-    FINISHED --18:47:26--
-    Downloaded: 744,834 bytes in 1 files
-    INFO: Using annotation DB ccdsGene in project quickstart.
-    INFO: CCDS Genes
-    
+    INFO: Choosing version ccdsGene-hg38_20171008 from 4 available databases.
+    INFO: Downloading annotation database annoDB/ccdsGene-hg38_20171008.ann
+    INFO: /Users/jma7/.variant_tools/annoDB/ccdsGene-hg38_20171008.DB: MD5 signature mismatch, the database might have been upgraded locally.
+    INFO: Using annotation DB ccdsGene as ccdsGene in project quickstart.
+    INFO: High-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project.
+        
 
-This command downloads the **keggPathway** annotation source allowing variants to be annotated to KEGG pathways indirectly through transcript annotations (provided by the **ccdsGene** annotation source). 
+    This command downloads the **keggPathway** annotation source allowing variants to be annotated to KEGG pathways indirectly through transcript annotations (provided by the **ccdsGene** annotation source). 
 
 
 
     % vtools use keggPathway --linked_by ccdsGene.name
     
 
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/keggPathway.ann
-    INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/keggPathway-20110823.DB.gz
-    : Unsupported scheme.
-    --18:54:24--  http://vtools.houstonbioinformatics.org/annoDB/keggPathway-20110823.DB.gz
-               => `./keggPathway-20110823.DB.gz'
-    Resolving vtools.houstonbioinformatics.org... 70.39.145.13
-    Connecting to vtools.houstonbioinformatics.org[70.39.145.13]:80... connected.
-    HTTP request sent, awaiting response... 200 OK
-    Length: 350,847 [  /applications/x-gzip]
-    
-    100%[=============================================================================>] 350,847      330.94K/s             
-    
-    18:54:26 (329.78 KB/s) - `./keggPathway-20110823.DB.gz' saved [350847/350847]
-    
-    
-    FINISHED --18:54:26--
-    Downloaded: 350,847 bytes in 1 files
-    INFO: Using annotation DB keggPathway in project quickstart.
+    INFO: Choosing version keggPathway-20110823 from 1 available databases.
+    INFO: Downloading annotation database annoDB/keggPathway-20110823.ann
+    INFO: Using annotation DB keggPathway as keggPathway in project quickstart.
     INFO: kegg pathway for CCDS genes
+    INFO: 6745 out of 32508 ccdsGene.ccdsGene.name are annotated through annotation database keggPathway
+    WARNING: 204 out of 6949 values in annotation database keggPathway are not linked to the project.
     
 
 Now lets filter all of our variants to include only those involved in metabolic pathways. This command uses the pathway annotation source that we just downloaded to find all variants that are on transcripts of proteins known to be involved in metabolic pathways. These variants are then stored in a table called `metabolic`. 
 
 
 
-    % vtools select variant 'kgDesc="Metabolic pathways"' -t metabolic                                                                                        
+    % vtools select variant 'kgDesc="Metabolic pathways"' -t metabolic                                                                                     
     
 
-    Running: 2,788 2.1K/s in 00:00:01
-    INFO: 109 variants selected.
+    Running: 54 1.2K/s in 00:00:00
+    INFO: 280 variants selected.
     
 
 Now lets create a table of the metabolic pathway variants that are seen in the CEU population. 
@@ -186,9 +142,8 @@ Now lets create a table of the metabolic pathway variants that are seen in the C
     % vtools select metabolic --samples "sample_name='CEU'" -t metabolic_CEU
     
 
-    INFO: 1 samples are selected by condition: sample_name='CEU'
-    Running: 3 488.8/s in 00:00:00                                                                                           
-    INFO: 71 variants selected.
+    Running: 3 592.3/s in 00:00:00                                                                              
+    INFO: 197 variants selected.
     
 
 Lets to the same for the JPT population 
@@ -198,11 +153,9 @@ Lets to the same for the JPT population
     % vtools select metabolic --samples "sample_name='JPT'" -t metabolic_JPT
     
 
-    INFO: 1 samples are selected by condition: sample_name='JPT'
-    Running: 2 330.8/s in 00:00:00                                                                                           
-    INFO: 67 variants selected.
+    Running: 2 453.6/s in 00:00:00                                                  
+    INFO: 168 variants selected.
     
-
 
 
 ### 5. Basic analysis of variants
@@ -214,10 +167,10 @@ The `vtools sample_stat` command and `vtools_report`s provide analysis capabilit
     % vtools compare metabolic_CEU metabolic_JPT --difference unique_CEU_metabolic
     
 
-    INFO: Reading 71 variants in metabolic_CEU...
-    INFO: Reading 67 variants in metabolic_JPT...
-    Writing to unique_CEU_metabolic: 100.0% [=======================================================>] 42 3.5K/s in 00:00:00
-    
+    INFO: Reading 197 variants in metabolic_CEU...
+    INFO: Reading 168 variants in metabolic_JPT...
+    Writing to unique_CEU_metabolic: 100% [===================] 112 14.4K/s in 00:00:00
+    112
 
 
 
@@ -230,15 +183,16 @@ Report of **metabolic pathway variants unique to the CEU population** (when anal
     % vtools output unique_CEU_metabolic chr pos ref alt ccdsGene.name kgDesc > unique_CEU_metabolic_variants.txt
     
 
-    1	76650391	C	T	CCDS672.1	Glycosphingolipid biosynthesis - ganglio series
-    1	76650391	C	T	CCDS672.1	Metabolic pathways
-    1	76866926	T	C	CCDS672.1	Glycosphingolipid biosynthesis - ganglio series
-    1	76866926	T	C	CCDS672.1	Metabolic pathways
-    2	154866325	A	G	CCDS2199.1	O-Glycan biosynthesis
-    2	154866325	A	G	CCDS2199.1	Metabolic pathways
-    2	154960831	C	T	CCDS2199.1	O-Glycan biosynthesis
-    2	154960831	C	T	CCDS2199.1	Metabolic pathways
-    2	158120947	T	G	CCDS2203.1	O-Glycan biosynthesis
+    1   26022754    C   T   CCDS271.1   Metabolic pathways
+    1   43899601    C   T   CCDS492.1   Metabolic pathways
+    1   43899619    C   T   CCDS492.1   Metabolic pathways
+    1   76412118    C   T   CCDS672.1   Metabolic pathways
+    1   76628653    T   C   CCDS672.1   Metabolic pathways
+    1   109628106   G   A   CCDS30796.1 Metabolic pathways
+    1   109628244   C   T   CCDS30796.1 Metabolic pathways
+    1   109628739   C   T   CCDS30796.1 Metabolic pathways
+    1   119422310   T   C   CCDS902.1   Metabolic pathways
+    1   162566204   A   G   CCDS1240.1  Metabolic pathways
     ...
     
 
@@ -249,15 +203,15 @@ Simple report to list **all CEU and JPT variants involved in metabolic pathways*
     % vtools output metabolic chr pos ref alt ccdsGene.name kgDesc > metabolic_variants.txt
     
 
-    1	20916748	A	G	CCDS210.1	Pyrimidine metabolism
-    1	20916748	A	G	CCDS210.1	Drug metabolism - other enzymes
-    1	20916748	A	G	CCDS210.1	Metabolic pathways
-    1	76650391	C	T	CCDS672.1	Glycosphingolipid biosynthesis - ganglio series
-    1	76650391	C	T	CCDS672.1	Metabolic pathways
-    1	76865768	C	A	CCDS672.1	Glycosphingolipid biosynthesis - ganglio series
-    1	76865768	C	A	CCDS672.1	Metabolic pathways
-    1	76866926	T	C	CCDS672.1	Glycosphingolipid biosynthesis - ganglio series
-    1	76866926	T	C	CCDS672.1	Metabolic pathways
+    1   26022754    C   T   CCDS271.1   Metabolic pathways
+    1   26031165    C   A   CCDS271.1   Metabolic pathways
+    1   26031176    G   A   CCDS271.1   Metabolic pathways
+    1   43824858    A   G   CCDS492.1   Metabolic pathways
+    1   43899601    C   T   CCDS492.1   Metabolic pathways
+    1   43899619    C   T   CCDS492.1   Metabolic pathways
+    1   76412118    C   T   CCDS672.1   Metabolic pathways
+    1   76627495    C   A   CCDS672.1   Metabolic pathways
+    1   76628653    T   C   CCDS672.1   Metabolic pathways
     ...
     
 

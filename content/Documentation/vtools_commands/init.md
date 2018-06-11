@@ -126,7 +126,7 @@ A project could be created from a **parent project** with a subset of its varian
     INFO: Snapshot vt_quickStartGuide_v3 has been loaded
 
     
-This project has variants from two samples and a single master variant table with 4,858 variants: 
+This project has variants from two samples and a single master variant table with 4,839 variants: 
 
     % vtools show samples
 
@@ -139,7 +139,7 @@ This project has variants from two samples and a single master variant table wit
     table      #variants     date message
     variant        4,839    May30 Master variant table
     
-Variants from the HG00096 and HG00479 samples could be selected to separate variant tables using commands 
+Variants from the CEU and JPT samples could be selected to separate variant tables using commands 
 
     % vtools select variant --samples "sample_name=='CEU'" -t CEU
                                  

@@ -140,7 +140,7 @@ The `vtools phenotype --from_file` command identifies a sample by its name but i
 
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
-    % vtools import CEU_hg38.vcf --build hg38 --var_info DP --geno_info DP
+    % vtools import CEU_hg38.vcf --build hg38 --var_info DP --geno_info DP_geno
     
     INFO: Importing variants from CEU_hg38.vcf (1/1)
     CEU_hg38.vcf: 100% [======================================] 306 21.4K/s in 00:00:00
@@ -359,7 +359,7 @@ Another useful type of summary is the genotype information that usually summariz
 
 <details><summary> Examples: Phenotype calculated from statistics of genotype info fields</summary> 
 
-    % vtools phenotype --from_stat "meanDP=avg(DP)" "minDP=min(DP)" "maxDP=max(DP)"
+    % vtools phenotype --from_stat "meanDP=avg(DP_geno)" "minDP=min(DP_geno)" "maxDP=max(DP_geno)"
     
     Calculating phenotype: 100% [===============================] 60 29.8/s in 00:00:02
     INFO: 180 values of 3 phenotypes (0 new, 3 existing) of 60 samples are updated.

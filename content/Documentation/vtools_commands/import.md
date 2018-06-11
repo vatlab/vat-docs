@@ -601,7 +601,7 @@ although this sample does not have any genotype fields:
     % vtools show genotypes
     
     sample_name	filename	num_genotypes	sample_genotype_fields
-    noGT	variants.txt	20
+    noGT	variants.txt	12
     
 
 </details> 
