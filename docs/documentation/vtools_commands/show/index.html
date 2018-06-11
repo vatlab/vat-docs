@@ -12,19 +12,19 @@
     <title>show :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3736,7 +3736,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% vtools show -h
 
-
 usage: vtools show [-h] [-l N] [-v {0,1,2,3}]
                    [{project,tables,table,samples,phenotypes,genotypes,fields,annotations,annotation,track,formats,format,tests,test,runtime_options,runtime_option,snapshot,snapshots}]
                    [items [items ...]]
@@ -3814,8 +3813,6 @@ optional arguments:
 Downloading snapshot vt_ExomeAssociation.tar.gz from online
 INFO: Load genotypes
 INFO: Snapshot vt_ExomeAssociation has been loaded
-
-
 
 
 % vtools show
@@ -4062,7 +4059,6 @@ variant.af
 <p><details><summary> Examples: Show all annotation databases</summary> Show all annotation databases. With this command, <code>variant tools</code> connects to its ftp server and list all available annotation databases.</p>
 
 <pre><code>% vtools show annotations | head -50
-
 
 CancerGeneCensus-20111215 Cancer Genome Project
 CancerGeneCensus-20120315 Cancer Genome Project
@@ -4377,8 +4373,7 @@ info.SVTYPE             Type of structural variant
 
 <p><details><summary> Examples: show details of a bigBed track </summary></p>
 
-<pre><code>% vtools show track wgEncodeDukeDnase8988T.fdr01peaks.hg19.bb
-
+<pre><code>% vtools show track wgEncodeDukeDnase8988T.fdr01peaks.hg19.bb  
 
 Version:                4
 Item count:             196180
@@ -4501,8 +4496,7 @@ value (4 as FLOAT)      value
 
 <p><details><summary> Examples: show details of an online BAM track </summary> For indexed BAM file, this command lists the header of the BAM file, size of chromosomes, and available fields:</p>
 
-<pre><code>% vtools show track ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/alignment/HG00096.chrom11.ILLUMINA.bwa.GBR.low_coverage.20120522.bam
-
+<pre><code>% vtools show track ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/alignment/HG00096.chrom11.ILLUMINA.bwa.GBR.low_coverage.20120522.bam 
 
 [bam_index_load] attempting to download the remote index file.
 [bam_index_load] attempting to download the remote index file.
@@ -4743,7 +4737,6 @@ ones with mapq and qual scores that exceed the specified value, and with specifi
 
 <pre><code>% vtools show formats | head -50
 
-
 CASAVA18_snps           Input format illumina snps.txt file, created by CASAVA
                         version 1.8
                         (http://www.illumina.com/support/documentation.ilmn).
@@ -4800,7 +4793,6 @@ vcf                     Import vcf
 
 <pre><code>% vtools show formats -v0
 
-
 CASAVA18_snps
 plink
 ANNOVAR
@@ -4829,8 +4821,7 @@ tped
 
 <p><details><summary> Examples: Show details of a format</summary> If you would like to know the details of one specific format, you can use command <code>vtools show format FORMAT</code>,</p>
 
-<pre><code>% vtools show format map
-
+<pre><code>% vtools show format map    
 
 Format:                 map
 Description:            This input format imports variants from files in MAP
@@ -4879,8 +4870,7 @@ Format parameters:
 
 <p><details><summary> Examples: Show a list of supported association tests</summary> List all available association tests.</p>
 
-<pre><code>% vtools show tests
-
+<pre><code>% vtools show tests   
 
 BurdenBt                Burden test for disease traits, Morris &amp; Zeggini 2009
 BurdenQt                Burden test for quantitative traits, Morris &amp; Zeggini
@@ -4932,7 +4922,6 @@ aSum                    Adaptive Sum score test for protective and deleterious
 
 <pre><code>% vtools show tests -v0 -l 5
 
-
 BurdenBt
 BurdenQt
 CFisher
@@ -4948,7 +4937,6 @@ CollapseBt
 <p><details><summary> Examples: Show details of an association test</summary></p>
 
 <pre><code>% vtools show test LogitRegBurden
-
 
 Name:          LogitRegBurden
 Description:   A versatile framework of association tests for disease traits
@@ -5049,7 +5037,6 @@ optional arguments:
 
 <pre><code>% vtools show snapshots
 
-
 vt_qc                   snapshot for QC tutorial, exome data of 1000 genomes
                         project with simulated GD and GQ scores (online
                         snapshot)
@@ -5070,7 +5057,6 @@ vt_testData             An empty project with some test datasets (online
 
 <pre><code>% vtools admin --save_snapshot test1 'a test snapshot'
 
-
 INFO: Copying genotypes
 INFO: Snapshot test1 has been saved
 </code></pre>
@@ -5078,7 +5064,6 @@ INFO: Snapshot test1 has been saved
 <p>It will be displayed in the list</p>
 
 <pre><code>% vtools show snapshots
-
 
 test1                   a test snapshot  (created: Jul12 16:37:00)
 vt_ExomeAssociation     Data with ~26k variants from chr1 and 2, ~3k samples,
@@ -5104,7 +5089,6 @@ vt_testData             An empty project with some test datasets (online
 
 <pre><code>% vtools admin --save_snapshot local_snapshot.tar 'a local snapshot'
 
-
 INFO: Copying genotypes
 INFO: Snapshot local_snapshot.tar has been saved
 
@@ -5113,7 +5097,6 @@ INFO: Snapshot local_snapshot.tar has been saved
 
 % vtools show snapshots -l 2 -v0
 
-
 test1
 vt_ExomeAssociation
 </code></pre>
@@ -5121,7 +5104,6 @@ vt_ExomeAssociation
 <p>You can show the details of such snapshots using command <code>vtools show snapshot NAME</code> though.</p>
 
 <pre><code>% vtools show snapshot local_snapshot.tar
-
 
 Name:                   local_snapshot.tar
 Source:                 local
@@ -5138,7 +5120,6 @@ Description:            a local snapshot
 <p><details><summary> Examples: Show a list of runtime options</summary></p>
 
 <pre><code>% vtools show runtime_options | head -50
-
 
 associate_num_of_readers None (default)
                         Use specified number of processes to read genotype
@@ -5196,7 +5177,6 @@ treat_missing_as_wildtype False (default)
 
 <pre><code>% vtools show runtime_options -v0
 
-
 associate_num_of_readers
 association_timeout
 import_num_of_readers
@@ -5212,7 +5192,6 @@ verbosity
 <p>Furthermore, if you only need to check the exiting value of a runtime option, you can use command <code>vtools show runtime_option OPT</code>,</p>
 
 <pre><code>% vtools show runtime_option local_resource
-
 
 ~/.variant_tools
 </code></pre>
@@ -6187,6 +6166,38 @@ verbosity
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -7865,20 +7876,20 @@ verbosity
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

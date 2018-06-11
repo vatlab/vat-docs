@@ -12,19 +12,19 @@
     <title>aggregation :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3734,22 +3734,19 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-introduction">1. Introduction</h3>
 
-<p>This is implementation of the fixed threshold aggregation methods for disease and quantitative traits. Originally described in (Morris and Zeggni, 2010) and known as Gene- or Region-based Analysis of Variants of Intermediate and Low frequency (GRANVIL), the <em>Aggregation</em> method for rare variants codes observed genotype of a genetic region the count of minor alleles: {$$X = \sum_i^N X_i$$}</p>
+<p>This is implementation of the fixed threshold aggregation methods for disease and quantitative traits. Originally described in (Morris and Zeggni, 2010) and known as Gene- or Region-based Analysis of Variants of Intermediate and Low frequency (GRANVIL), the <em>Aggregation</em> method for rare variants codes observed genotype of a genetic region the count of minor alleles: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> $$X = \sum_i^N X_i$$</p>
 
-<p>Our program implements the aggregation methods in a logistic regression framework for disease traits analysis (case control data) as <code>BurdenBt</code> method, and a linear regression framework for quantitative traits analysis as <code>BurdenQt</code> method. {$p$} value for aggregation method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component.</p>
+<p>Our program implements the aggregation methods in a logistic regression framework for disease traits analysis (case control data) as <code>BurdenBt</code> method, and a linear regression framework for quantitative traits analysis as <code>BurdenQt</code> method. \(p\) value for aggregation method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component.</p>
 
 <h4 id="1-1-adjust-for-missing-genotypes">1.1 Adjust for missing genotypes</h4>
 
-<p>The same <code>--NA_adjust</code> option is avaliable as with <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/joint_conditional/collapisng/">collapsing methods</a> although they slightly differ in details, as described in Auer et al 2013[^personal communication with Paul L. Auer at Fred Hutchinson Cancer Research Center^].</p>
+<p>The same <code>--NA_adjust</code> option is avaliable as with <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/collapisng/">collapsing methods</a> although they slightly differ in details, as described in (Auer et al, 2013).</p>
 
 <h3 id="2-details">2. Details</h3>
 
 <h4 id="2-1-command-interface">2.1 Command interface</h4>
 
 <pre><code>vtools show test BurdenBt
-
-
-
 
 Name:          BurdenBt
 Description:   Burden test for disease traits, Morris &amp; Zeggini 2009
@@ -3787,12 +3784,7 @@ optional arguments:
                         model. Default set to additive
 
 
-
-
 vtools show test BurdenQt
-
-
-
 
 Name:          BurdenQt
 Description:   Burden test for quantitative traits, Morris &amp; Zeggini 2009
@@ -3837,9 +3829,6 @@ optional arguments:
 <pre><code>vtools associate rare status --covariates gender age bmi exposure -m &quot;BurdenBt --name Burde\
 nBt --alternative 2&quot; --group_by name2 --to_db burdenBt -j8 &gt; burdenBt.txt
 
-
-
-
 INFO: 3180 samples are found
 INFO: 2632 groups are found
 INFO: Starting 8 processes to load genotypes
@@ -3850,12 +3839,7 @@ INFO: Using annotation DB burdenBt in project test.
 INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 17:39:05
 
 
-
-
 vtools show fields | grep burdenBt
-
-
-
 
 burdenBt.name2               name2
 burdenBt.sample_size_BurdenBt sample size
@@ -3878,12 +3862,7 @@ burdenBt.beta_5_pvalue_BurdenBt p-value for covariate 5
 burdenBt.wald_5_BurdenBt     Wald statistic for covariate 5
 
 
-
-
 head burdenBt.txt
-
-
-
 
 name2   sample_size_BurdenBt    num_variants_BurdenBt   total_mac_BurdenBt  beta_x_BurdenBt pvalue_BurdenBt wald_x_BurdenBt beta_2_BurdenBt beta_2_pvalue_BurdenBt  wald_2_BurdenBt beta_3_BurdenBt beta_3_pvalue_BurdenBt  wald_3_BurdenBt beta_4_BurdenBt beta_4_pvalue_BurdenBt  wald_4_BurdenBt beta_5_BurdenBt beta_5_pvalue_BurdenBt  wald_5_BurdenBt
 AADACL4 3180    5   138 -0.314582   0.321174    -0.992049   -0.295836   0.0157002   -2.41581    0.031285    4.33616E-09 5.87083 0.129902    1.92805E-40 13.3137 0.437291    0.00133887  3.20752
@@ -3897,26 +3876,25 @@ ABI2    3180    1   25  0.982737    0.0422609   2.03094 -0.30075    0.0140623   
 ABL2    3180    4   41  0.192361    0.698251    0.387682    -0.298745   0.0146809   -2.44016    0.0312678   4.39516E-09 5.86859 0.130322    1.10243E-40 13.3553 0.436387    0.00136405  3.20215
 </code></pre>
 
-<p><strong>QQ-plot</strong></p>
+<p><strong>QQ-plot</strong>
+<img src = "burdenBt.jpg" width = 500></p>
 
-<ol>
-<li><p>Attach:burdenBt.jpg</p>
+<pre><code>vtools associate rare bmi --covariates gender age exposure -m &quot;BurdenQt --name BurdenQt --a\
+lternative 2&quot; --group_by name2 --to_db burdenQt -j8 &gt; burdenQt.txt
 
-<p>vtools associate rare bmi &ndash;covariates gender age exposure -m &ldquo;BurdenQt &ndash;name BurdenQt &ndash;a<br />
-lternative 2&rdquo; &ndash;group_by name2 &ndash;to_db burdenQt -j8 &gt; burdenQt.txt</p>
-
-<p>INFO: 3180 samples are found
+INFO: 3180 samples are found
 INFO: 2632 groups are found
 INFO: Starting 8 processes to load genotypes
 Loading genotypes: 100% [===========================] 3,180 33.7/s in 00:01:34
-Testing for association: 100% [=========================] 2,<sup>632</sup>&frasl;<sub>147</sub> 26.2/s in 00:01:40
+Testing for association: 100% [=========================] 2,632/147 26.2/s in 00:01:40
 INFO: Association tests on 2632 groups have completed. 147 failed.
 INFO: Using annotation DB burdenQt in project test.
-INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 23:01:44</p>
+INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 23:01:44
 
-<p>vtools show fields | grep burdenQt</p>
 
-<p>burdenQt.name2               name2
+vtools show fields | grep burdenQt
+
+burdenQt.name2               name2
 burdenQt.sample_size_BurdenQt sample size
 burdenQt.num_variants_BurdenQt number of variants in each group (adjusted for specified MAF
 burdenQt.total_mac_BurdenQt  total minor allele counts in a group (adjusted for MOI)
@@ -3931,11 +3909,14 @@ burdenQt.beta_3_pvalue_BurdenQt p-value for covariate 3
 burdenQt.wald_3_BurdenQt     Wald statistic for covariate 3
 burdenQt.beta_4_BurdenQt     estimate of beta for covariate 4
 burdenQt.beta_4_pvalue_BurdenQt p-value for covariate 4
-burdenQt.wald_4_BurdenQt     Wald statistic for covariate 4</p>
+burdenQt.wald_4_BurdenQt     Wald statistic for covariate 4
 
-<p>head burdenQt.txt</p>
 
-<p>name2   sample_size_BurdenQt    num_variants_BurdenQt   total_mac_BurdenQt  beta_x_BurdenQt pvalue_BurdenQt wald_x_BurdenQt beta_2_BurdenQt beta_2_pvalue_BurdenQt  wald_2_BurdenQt beta_3_BurdenQt beta_3_pvalue_BurdenQt  wald_3_BurdenQt beta_4_BurdenQt beta_4_pvalue_BurdenQt  wald_4_BurdenQt
+
+
+head burdenQt.txt
+
+name2   sample_size_BurdenQt    num_variants_BurdenQt   total_mac_BurdenQt  beta_x_BurdenQt pvalue_BurdenQt wald_x_BurdenQt beta_2_BurdenQt beta_2_pvalue_BurdenQt  wald_2_BurdenQt beta_3_BurdenQt beta_3_pvalue_BurdenQt  wald_3_BurdenQt beta_4_BurdenQt beta_4_pvalue_BurdenQt  wald_4_BurdenQt
 AADACL4 3180    5   138 -0.461457   0.308686    -1.01815    -0.0716573  0.726877    -0.349314   0.0150768   0.0574562   1.90051 -0.939843   2.75155E-05 -4.19925
 ABCB10  3180    6   122 0.119   0.814045    0.23523 -0.0795874  0.697984    -0.388079   0.0150143   0.0585374   1.89233 -0.945568   2.50587E-05 -4.2205
 ABHD1   3180    5   29  0.00268703  0.997829    0.00272057  -0.0787737  0.700934    -0.384095   0.0150272   0.0583193   1.89397 -0.943247   2.5858E-05  -4.21338
@@ -3944,16 +3925,19 @@ ABI2    3180    1   25  1.19633 0.276415    1.0886  -0.081478   0.691101    -0.3
 ABL2    3180    4   41  -0.613866   0.475633    -0.713429   -0.0781101  0.703263    -0.380954   0.0150498   0.0579226   1.89697 -0.945432   2.46814E-05 -4.22394
 ACADL   3180    5   65  1.30339 0.0536027   1.93075 -0.0819058  0.689433    -0.39966    0.0150828   0.0572499   1.90209 -0.940465   2.6925E-05  -4.20419
 ACADM   3180    4   103 0.0561593   0.916101    0.105355    -0.0778643  0.704415    -0.379401   0.0150232   0.0583868   1.89347 -0.942722   2.61415E-05 -4.2109
-ACAP3   3180    3   17  0.296682    0.823678    0.222835    -0.07936    0.698787    -0.386993   0.0150257   0.0583418   1.8938  -0.942487   2.61991E-05 -4.2104</p></li>
-</ol>
+ACAP3   3180    3   17  0.296682    0.823678    0.222835    -0.07936    0.698787    -0.386993   0.0150257   0.0583418   1.8938  -0.942487   2.61991E-05 -4.2104
+</code></pre>
 
-<p><img src = "burdenQt.jpg" width = 500></p>
+<p><strong>QQ-plot</strong>
+<img src = "burdenQt.jpg" width = 500></p>
 
 <p></details></p>
 
 <h3 id="reference">Reference</h3>
 
 <p>Andrew P. Morris and Eleftheria Zeggini (2010) <strong>An evaluation of statistical approaches to rare variant analysis in genetic association studies</strong>. <em>Genetic Epidemiology</em> doi:<code>10.1002/gepi.20450</code>. <a href="http://doi.wiley.com/10.1002/gepi.20450">http://doi.wiley.com/10.1002/gepi.20450</a></p>
+
+<p>Auer et al (2013) personal communication with Paul L. Auer at Fred Hutchinson Cancer Research Center</p>
 
 
 <footer class=" footline" >
@@ -4910,6 +4894,38 @@ ACAP3   3180    3   17  0.296682    0.823678    0.222835    -0.07936    0.698787
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6604,20 +6620,20 @@ ACAP3   3180    3   17  0.296682    0.823678    0.222835    -0.07936    0.698787
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

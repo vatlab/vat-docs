@@ -12,19 +12,19 @@
     <title>ANNNOVAR :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3699,11 +3699,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
+<li>
+<ul>
 <li><a href="#importing-annovar-input-file">Importing ANNOVAR input file</a>
 <ul>
-<li><a href="#format-description">Format description</a></li>
-<li><a href="#sample-input">Sample input</a></li>
-<li><a href="#how-to-import">How to import</a></li>
+<li><a href="#1-format-description">1. Format description</a></li>
+<li><a href="#2-sample-input">2. Sample input</a></li>
+<li><a href="#3-how-to-import">3. How to import</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -3726,15 +3729,15 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 
 
-<h1 id="importing-annovar-input-file">Importing ANNOVAR input file</h1>
+<h2 id="importing-annovar-input-file">Importing ANNOVAR input file</h2>
 
-<h2 id="format-description">Format description</h2>
+<h3 id="1-format-description">1. Format description</h3>
 
 <p><a href="http://www.openbioinformatics.org/annovar/annovar_input.html">http://www.openbioinformatics.org/annovar/annovar_input.html</a></p>
 
 <p><em>&ldquo;ANNOVAR takes text-based input files, where each line corresponds to one variant. On each line, the first five space- or tab- delimited columns represent chromosome, start position, end position, the reference nucleotides and the observed nucleotides. Additional columns can be supplied and will be printed out in identical form. For convenience, users can use “0” to fill in the reference nucleotides, if this information is not readily available. Insertions, deletions or block substitutions can be readily represented by this simple file format, by using “–” to represent a null nucleotide. One example is given below (this example is included as ex1.human file in the ANNOVAR package), with extra columns that serve as comments on the variants. By default, 1-based coordinate system will be assumed; if &ndash;zerostart argument is issued, a half-open zero-based coordinate system will be used in ANNOVAR instead.&rdquo;</em></p>
 
-<h2 id="sample-input">Sample input</h2>
+<h3 id="2-sample-input">2. Sample input</h3>
 
 <pre><code>1 161003087 161003087 C T comments: rs1000050, a SNP in Illumina SNP arrays
 1 84647761 84647761 C T comments: rs6576700 or SNP_A-1780419, a SNP in Affymetrix SNP arrays
@@ -3750,12 +3753,11 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 13 19695176 20003944 0 - comments: a 342kb deletion encompassing GJB6, associated with hearing loss
 </code></pre>
 
-<h2 id="how-to-import">How to import</h2>
+<h3 id="3-how-to-import">3. How to import</h3>
 
 <p>Saving the above example file as <code>ex1.human</code>, one can import it using command</p>
 
 <pre><code>vtools import --format ANNOVAR ex1.human --build hg18
-
 
 INFO: Importing genotype from ex1.human (1/1)
 ex1.human: 12
@@ -3766,7 +3768,6 @@ INFO: 0 new variants from 11 records are imported, with 0 SNVs, 0 insertions,
 <p>The inputted variants can be displayed using</p>
 
 <pre><code>vtools output variant chr pos ref alt
-
 
 1   161003087   C   T
 1   84647761    C   T
@@ -4891,6 +4892,38 @@ INFO: 0 new variants from 11 records are imported, with 0 SNVs, 0 insertions,
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -6436,20 +6469,20 @@ INFO: 0 new variants from 11 records are imported, with 0 SNVs, 0 insertions,
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

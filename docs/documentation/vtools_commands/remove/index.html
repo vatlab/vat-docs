@@ -12,19 +12,19 @@
     <title>remove :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3733,7 +3733,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% vtools remove -h
 
-
 usage: vtools remove [-h] [-v STD[LOG]]
 
                      {project,tables,samples,fields,geno_fields,annotations,variants,genotypes,phenotypes}
@@ -3836,7 +3835,6 @@ optional arguments:
 
 <pre><code>% vtools show samples
 
-
 filename    sample_name aff sex BMI
 SAMP1.vcf   SAMP1           1   M   22.78
 SAMP2.vcf   SAMP1           2   F   24.43
@@ -3847,14 +3845,12 @@ var_format.vcf  SRR028913.aln.sorted.bam    None    None     None
 
 <pre><code>% vtools remove samples 'aff = 1' -v2
 
-
 INFO: Removing sample SAMP1 from file SAMP1.vcf
 </code></pre>
 
 <p>Show samples again</p>
 
 <pre><code>% show samples
-
 
 INFO: Opening project sample.proj
 filename    sample_name aff sex BMI
@@ -3866,8 +3862,7 @@ var_format.vcf  SRR028913.aln.sorted.bam    None    None    None
 
 <p>A project uses three databases, <code>dbNSFP</code>, <code>keggPathway</code>, and <code>dbSNP131</code>,</p>
 
-<pre><code>% vtools show
-
+<pre><code>% vtools show 
 
 Project name:                RA
 Primary reference genome:    hg18
@@ -3879,8 +3874,7 @@ Annotation databases:        dbNSFP (1.1_0), keggPathway, dbSNP131 (0)
 
 <p>You can remove <code>dbNSFP</code> from the project using command</p>
 
-<pre><code>% vtools remove annotations dbNSFP
-
+<pre><code>% vtools remove annotations dbNSFP   
 
 INFO: Removing annotation database dbNSFP from the project
 </code></pre>
@@ -3888,7 +3882,6 @@ INFO: Removing annotation database dbNSFP from the project
 <p><code>dbNSFP</code> is no longer available, so <code>keggPathway</code> cannot be be loaded either, because it is linked by <code>dbNSFP.genename</code>.</p>
 
 <pre><code>% vtools show
-
 
 WARNING: Failed to locate field genename
 WARNING: Cannot open annotation database keggPathway
@@ -4902,6 +4895,38 @@ Annotation databases:        dbSNP131 (0)
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6580,20 +6605,20 @@ Annotation databases:        dbSNP131 (0)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

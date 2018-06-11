@@ -12,19 +12,19 @@
     <title>VT test :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3733,7 +3733,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <p>The variable thresholds method (VT, Price et al 2010) tests for association between phenotypic values (case control or quantitative traits) with individuals&rsquo; genotype &ldquo;score&rdquo; subject to a variable MAF threshold. It assumes that there exists a fixed yet unknown MAF threshold on a given genetic region which is related to the cutoff for the causality of variants on that loci. In testing the association for the genetic region, for each possible MAF threshold a genotype score is computed based on given collapsing theme, and is tested for association between the phenotype of interest; the final MAF threshold is chosen such that the association signal is strongest. Permutation procedure has to be used to control for type I error due to multiple testing.</p>
 
-<p>The VT strategy creates a very flexible framework that can be applied to many association tests, including the use of external information such as weight theme by annotation scores, as the VT paper suggested. The <code>VTtest</code> method implements the test for case control phenotype using the CMC coding theme and Fisher&rsquo;s exact test, in addition to the original VT statistic. Permutation procedure is optimized due to the use of Fisher&rsquo;s exact test: the minimum {$p$} value resulted from Fisher&rsquo;s exact test on the original dataset have to exceed the expected significance level in order to enter the permutation test procedure; otherwise it will be reported as it is. This trick reduces the computation time the original VT test would require.</p>
+<p>The VT strategy creates a very flexible framework that can be applied to many association tests, including the use of external information such as weight theme by annotation scores, as the VT paper suggested. The <code>VTtest</code> method implements the test for case control phenotype using the CMC coding theme and Fisher&rsquo;s exact test, in addition to the original VT statistic. Permutation procedure is optimized due to the use of Fisher&rsquo;s exact test: the minimum <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \(p\) value resulted from Fisher&rsquo;s exact test on the original dataset have to exceed the expected significance level in order to enter the permutation test procedure; otherwise it will be reported as it is. This trick reduces the computation time the original VT test would require.</p>
 
 <p>Please refer to <code>VariableThresholdsBt</code> and <code>VariableThresholdsQt</code> for more versatile versions of VT method, which tests for both case control and quantitative traits, with/without presence of phenotype co-variates, and is capable of incorporating functional information.</p>
 
@@ -3742,9 +3742,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <h4 id="2-1-command-interface">2.1 Command interface</h4>
 
 <pre><code>vtools show test VTtest
-
-
-
 
 Name:          VTtest
 Description:   VT statistic for disease traits, Price et al 2010
@@ -3813,9 +3810,6 @@ optional arguments:
 <pre><code>vtools associate rare status -m &quot;VTtest --name vt -p 5000&quot; --group_by name2 --to_db vt -j8 \
 &gt; vt.txt
 
-
-
-
 INFO: 3180 samples are found
 INFO: 2632 groups are found
 INFO: Starting 8 processes to load genotypes
@@ -3826,12 +3820,7 @@ INFO: Using annotation DB vt in project test.
 INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 20:48:50
 
 
-
-
 vtools show fields | grep vt
-
-
-
 
 vt.name2                     name2
 vt.sample_size_vt            sample size
@@ -3848,8 +3837,6 @@ vt.num_permutations_vt       number of permutations at which p-value is evaluate
 head vt.txt
 
 
-
-
 name2   sample_size_vt  num_variants_vt total_mac_vt    statistic_vt    pvalue_vt   std_error_vt    num_permutations_vt
 ABCD3   3180    3   42  -0.0717229  0.753247    0.316505    1000
 ABCB10  3180    6   122 0.37788 0.396603    0.339246    1000
@@ -3862,25 +3849,11 @@ ABL2    3180    4   41  0.0378648   0.593407    0.34231 1000
 ABCG8   3180    12  152 0.187745    0.612388    0.310029    1000
 
 
-
-
 vtools associate rare status -m &quot;VTtest --name vtfisher --cfisher --midp -p 5000&quot; --group_b\
 y name2 --to_db vtfisher -j8 &gt; vtfisher.txt
 
 
-
-
-
-
-
-
 vtools show fields | grep vtfisher
-
-
-
-
-
-
 
 
 head vtfisher.txt
@@ -4848,6 +4821,38 @@ head vtfisher.txt
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6542,20 +6547,20 @@ head vtfisher.txt
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

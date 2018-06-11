@@ -12,19 +12,19 @@
     <title>Import :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3741,7 +3741,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% vtools import -h
 
-
 usage: vtools import [-h] [--build BUILD] [--format FORMAT]
                      [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f]
                      [-j N] [-v {0,1,2}]
@@ -3850,7 +3849,6 @@ optional arguments:
 If we have a look at the header of <code>CEU.vcf.gz</code>, we can see</p>
 
 <pre><code>% gzcat CEU_hg38.vcf | head -15
-
 
 ##fileformat=VCFv4.0
 ##INFO=&lt;ID=DP,Number=1,Type=Integer,Description=&quot;Total Depth&quot;&gt;
@@ -3982,7 +3980,7 @@ INFO: 2051 records are updated
 
 <p>Here <code>DP=sum(DP)</code> looks strange but the first <code>DP</code> is a new variant info and the second <code>DP</code> is the existing genotype info. Now, variant info field <code>DP</code> stands for total depth and <code>NS</code> stands for number of times a variant shows up in the samples.</p>
 
-<pre><code>%vtools output variant chr pos ref alt DP NS -l 5
+<pre><code>% vtools output variant chr pos ref alt DP NS -l 5
 
 1   14677   G   A   15  2
 1   15820   G   T   7   1
@@ -4273,10 +4271,11 @@ Copying samples: 0 0.0/s in 00:00:00
 <li>One or more samples will be created for an input file with one or more samples. Variant tools will try to use sample names specified by parameter <code>--sample_name</code>, or names from header of input file. A NULL sample name will be used if no sample name could be determined.</li>
 </ol>
 
-<div class="notices tip" ><ul>
-<li>Sample names could be changed using command <code>vtools admin --rename_samples</code> after they are imported.</li>
-<li>If genotypes for samples are stored in separate files (e.g. chromosome by chromosome), they will be imported as separate samples. If proper sample names are provided, samples with the same names (and belong to the same physical sample) could be merged using command <code>vtools admin --merge_samples</code>.</li>
-</ul>
+<div class="notices tip" ><p>Sample names could be changed using command <code>vtools admin --rename_samples</code> after they are imported.</p>
+</div>
+
+
+<div class="notices tip" ><p>If genotypes for samples are stored in separate files (e.g. chromosome by chromosome), they will be imported as separate samples. If proper sample names are provided, samples with the same names (and belong to the same physical sample) could be merged using command <code>vtools admin --merge_samples</code>.</p>
 </div>
 
 
@@ -4334,11 +4333,10 @@ Variants from <code>CEU.vcf.gz</code> uses build <code>hg18</code> of the refere
 % vtools import CEU_hg19.vcf --build hg19
 
 INFO: Importing variants from CEU_hg19.vcf (1/1)
-</code></pre>
-
-<p>CEU_hg19.vcf: 100% [==================================] 309 17.8K/s in 00:00:00
+CEU_hg19.vcf: 100% [==================================] 309 17.8K/s in 00:00:00
 INFO: 288 new variants (288 SNVs) from 309 lines are imported.
-Importing genotypes: 100% [===========================] 288 3.1K/s in 00:00:00</p>
+Importing genotypes: 100% [===========================] 288 3.1K/s in 00:00:00
+</code></pre>
 
 <p>Data from <code>variants.txt</code> are in <code>hg19</code>, so we use option <code>--build hg19</code> to import them,</p>
 
@@ -4366,9 +4364,8 @@ INFO: Downloading liftOver chain file from UCSC
 hg38ToHg19.over.chain.gz: 100% [====================] 231,197.0 503.6K/s in 00:00:00
 INFO: Running UCSC liftOver tool
 Updating coordinates: 100% [================================] 13 4.2K/s in 00:00:00
+INFO: Coordinates of 12 (13 total, 0 failed to map) new variants are updated.
 </code></pre>
-
-<p>INFO: Coordinates of 12 (13 total, 0 failed to map) new variants are updated.</p>
 
 <p>When you execute the second command, <em>variant tools</em> will</p>
 
@@ -4429,9 +4426,8 @@ Different variants in one reference genome might be mapped to the same variant i
 % vtools admin --validate_build
 
 Validate reference alleles: 100% [=======================] 12/3 10.3K/s in 00:00:00
+INFO: 8 non-insertion variants are checked. 3 mismatch variants found.
 </code></pre>
-
-<p>INFO: 8 non-insertion variants are checked. 3 mismatch variants found.</p>
 
 <p>3 mismatchs are identified, so we let us try using the <code>hg38</code> build of reference genome,</p>
 
@@ -4440,9 +4436,8 @@ Validate reference alleles: 100% [=======================] 12/3 10.3K/s in 00:00
 % vtools admin --validate_build
 
 Validate reference alleles: 100% [========================] 12 9.4K/s in 00:00:00
+INFO: 8 non-insertion variants are checked. 0 mismatch variants found.
 </code></pre>
-
-<p>INFO: 8 non-insertion variants are checked. 0 mismatch variants found.</p>
 
 <p>The variants are more likely created using <code>hg38</code>. The mismatch variants can be found in the project log file, or be listed with option <code>-v2</code>. It should be verified or removed from the project.
 </details></p>
@@ -5448,6 +5443,38 @@ After data import is finished, we will set <em>journal_mode</em> back to default
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -7126,20 +7153,20 @@ After data import is finished, we will set <em>journal_mode</em> back to default
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

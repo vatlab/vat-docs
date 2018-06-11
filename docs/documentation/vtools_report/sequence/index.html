@@ -12,19 +12,19 @@
     <title>sequence :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3729,7 +3729,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% vtools_report sequence -h
 
-
 usage: vtools_report sequence [-h] [--build [BUILD]]
                               [--numbered [{left,right}]]
                               [--char_per_line CHAR_PER_LINE]
@@ -3817,7 +3816,6 @@ optional arguments:
 <pre><code>% vtools init test
 % vtools_report sequence chr6:123456-123743 --build hg19
 
-
 &gt;ref|hg19|chr6:123456-123743
 TTCCTGGAGTATTTTTCCCCTGACAAATTACTTATCATCTATCATAATTCAGGTTAAATGGCACTAACTC
 AGGGAAGGCTTCCCTAACTGCCTCCCTTCTCCAACCAAATTAGGAACAATTATATGGCCACATAGTATCG
@@ -3831,7 +3829,6 @@ CAGTAAGG
 <p>You can also output multiple sequences, or sequences in reverse order (on the - strand) if you specify a starting position that is larger than the ending position.</p>
 
 <pre><code>% vtools_report sequence chr6:123456-123743 chr6:123743-123456 --build hg19
-
 
 &gt;ref|hg19|chr6:123456-123743
 TTCCTGGAGTATTTTTCCCCTGACAAATTACTTATCATCTATCATAATTCAGGTTAAATGGCACTAACTC
@@ -3851,7 +3848,6 @@ AGGTCCTT
 
 <pre><code>% vtools_report sequence chr6:123456-123743 chr6:123743-123456 --numbered --build hg19
 
-
 &gt;ref|hg19|chr6:123456-123743
 123456 TTCCTGGAGT ATTTTTCCCC TGACAAATTA CTTATCATCT ATCATAATTC AGGTTAAATG
 123516 GCACTAACTC AGGGAAGGCT TCCCTAACTG CCTCCCTTCT CCAACCAAAT TAGGAACAAT
@@ -3869,7 +3865,6 @@ AGGTCCTT
 <p>The default value for parameter <code>--numbered</code> is <code>left</code>. You can also put the numbers to the right (referring to the 1-based position of the last base pair of each line) using option <code>--numbered right</code>,</p>
 
 <pre><code>% vtools_report sequence chr6:123456-123743 chr6:123743-123456 --numbered right --build hg19
-
 
 &gt;ref|hg19|chr6:123456-123743
 TTCCTGGAGT ATTTTTCCCC TGACAAATTA CTTATCATCT ATCATAATTC AGGTTAAATG 123515
@@ -3891,7 +3886,6 @@ TAATACTATC TACTATTCAT TAAACAGTCC CCTTTTTATG AGGTCCTT              123456
 
 <pre><code>% vtools use refGene_exon
 % vtools_report sequence refGene_exon.name2:ABRA -v0
-
 
 &gt;ref|hg19|chr8:107773742-107771711 (refGene_exon.name2:ABRA 1)
 TACAAGAAAACATCTTTTATTCTTATGCTATTTGTCTTTAACATTTGGCGTAGGTTTCACTTGTAATAGA
@@ -3943,7 +3937,6 @@ GGACACTGGCTAAAATGAGTGT
 <pre><code>% vtools use refGene
 % vtools use refGene_exon
 % vtools_report sequence 'refGene.name2:BRCA1-refGene_exon.name2:BRCA1'
-
 
 &gt;ref|hg19|chr17:41197820-41199659
 CTGGAGACAGAGAACACAAGCAGAGATTAGTGTCAATTCATTCTCCTGGACTAGGCTCTAATCAATCGAC
@@ -4014,7 +4007,6 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
 
 <pre><code>% vtools_report sequence refGene.name2:ABRA --transcribe --numbered
 
-
 &gt;mRNA|NM_139166|chr8:107782418-107781751,107773742-107773265 (1146 bp on reverse strand)
    1 ATGGCTCCGG GCGAAAAGGA AAGCGGGGAG GGCCCAGCCA AGAGCGCCCT CCGGAAGATA
   61 CGCACAGCCA CCCTGGTCAT CAGCTTGGCC CGAGGTTGGC AGCAGTGGGC GAATGAGAAC
@@ -4044,8 +4036,7 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
 
 <p>For example, you can print output the protein sequence of gene <code>ABRA</code> using command</p>
 
-<pre><code>% vtools_report sequence refGene.name2:ABRA --translate --numbered
-
+<pre><code>% vtools_report sequence refGene.name2:ABRA --translate --numbered  
 
 &gt;protein|NM_139166|chr8:107773265-107773742,107781751-107782418 (1146 bp)
   1 MAPGEKESGE GPAKSALRKI RTATLVISLA RGWQQWANEN SIRQAQEPTG WLPGGTQDSP
@@ -4060,7 +4051,6 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
 <p>A gene can have multiple isoforms. The <code>--translate</code> option will print out protein sequences of all isoforms, unless you list the isoforms of interest after parameter <code>--translate</code>. For example,</p>
 
 <pre><code>% vtools_report sequence refGene.name2:BRCA1 --number --translate NM_007300 NM_007299
-
 
 &gt;protein|NM_007299|chr17:41276113-41276034,41267796-41267743,41258550-41258473,41256973-41256885,41256278-41256139,41251897-41251792,41249306-41249261,41247939-41247863,41246877-41246761,41243049-41242961,41234592-41234421,41228628-41228505,41226538-41226348,41223255-41222945,41219712-41219625,41215968-41215891,41215390-41215350,41209152-41209069,41203134-41203080,41199720-41199660,41197819-41197801 (2100 bp on reverse strand)
   1 MDLSALRVEE VQNVINAMQK ILECPICLEL IKEPVSTKCD HIFCKFCMLK LLNQKKGPSQ
@@ -4126,7 +4116,6 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
 
 <pre><code>vtools_report sequence refGene.name2:WIF1 --build hg19 --translate --numbered --mark 12 65449852
 
-
 &gt;protein|NM_007191|chr12:65514971-65514824,65514336-65514197,65471634-65471526,65462684-65462544,65461570-65461475,65460516-65460421,65456356-65456261,65449906-65449811,65448993-65448898,65445250-65445129 (1140 bp on reverse strand)
   1 MARRSAFPAA ALWLWSILLC LLALRAEAGP PQEESLYLWI DAHQARVLIG FEEDILIVSE
  61 GKMAPFTHDF RKAQQRMPAI PVNIHSMNFT WQAAGQAEYF YEFLSLRSLD KGIMADPTVN
@@ -4141,7 +4130,6 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
 
 <pre><code>vtools_report sequence refGene.name2:WIF1 --build hg19 --translate --numbered --mark 12 65449852 C A
 
-
 &gt;protein|NM_007191|chr12:65514971-65514824,65514336-65514197,65471634-65471526,65462684-65462544,65461570-65461475,65460516-65460421,65456356-65456261,65449906-65449811,65448993-65448898,65445250-65445129 (1140 bp on reverse strand)
   1 MARRSAFPAA ALWLWSILLC LLALRAEAGP PQEESLYLWI DAHQARVLIG FEEDILIVSE
  61 GKMAPFTHDF RKAQQRMPAI PVNIHSMNFT WQAAGQAEYF YEFLSLRSLD KGIMADPTVN
@@ -4154,41 +4142,40 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
 
 <p>If you would like to mark the exon regions of this gene, you can do</p>
 
-<pre><code>vtools_report sequence refGene.name2:WIF1 --build hg19  --numbered --mark refGene_exon.name2:WIF1
-</code></pre>
+<pre><code>vtools_report sequence refGene.name2:WIF1 --build hg19  --numbered --mark refGene_exon.name2:WIF1    
 
-<p><code>&gt;ref|hg19|chr12:65444404-65515346 (refGene.name2 1)</code><br />
-<code>65444404 &lt;span  style='color: red;'&gt;GCTCAGAAAA CTAAAGCAGC ACCTTTATTT TATACATACA AACAGTATAA AATGTTTATT&lt;/span&gt;</code><br />
-<code>65444464 &lt;span  style='color: red;'&gt;AGGTAAGAGC TGTGTTTTGT TTACAATATA TTATATTGCT TCAAGCCAAT GCAAAAAGTT&lt;/span&gt;</code><br />
-<code>65444524 &lt;span  style='color: red;'&gt;CATACATTAT ATTCCCTATT TCATTGTGTT TAGAATATAT TATATTGTTT AAATGCCACT&lt;/span&gt;</code><br />
-<code>65444584 &lt;span  style='color: red;'&gt;ACCACAGTGT AATTTTTTTT TTTTTAATAC TGAATCTCTG GAATAATGGT AAGGTCAAAA&lt;/span&gt;</code><br />
-<code>65444644 &lt;span  style='color: red;'&gt;TATATTGTAT TGAGAGTTTA AAAATTAAGA GCAATTTTTA AAAATGTAAC AAACATCTAA&lt;/span&gt;</code><br />
-<code>65444704 &lt;span  style='color: red;'&gt;ATATCTGACA ATAAAATCTG AAATGCTGTA ACTTCAACAT TAACTGCACC ATCCAAATTC&lt;/span&gt;</code><br />
-<code>65444764 &lt;span  style='color: red;'&gt;TTGTGACTTA CGCATTTTTG CCCAATTTAA CCTTTCTGAT GTTCCCCTGC CCCCAGACAC&lt;/span&gt;</code><br />
-<code>65444824 &lt;span  style='color: red;'&gt;CATAAATGCA TTGTAATTTT GAAAATATCT GCCAACTACA CACTGAAAAT TTTAACCTGA&lt;/span&gt;</code><br />
-<code>65444884 &lt;span  style='color: red;'&gt;TCAATTGACA TAATATAAAA TCTGTCCCAA AGCACTGAAA CAAGAAAATC TATACCATCA&lt;/span&gt;</code><br />
-<code>65444944 &lt;span  style='color: red;'&gt;TGCTACAGAC GTACTTAGAA AACTTAAAAG GAAGAGTAAA TATCAGCTCA GTGATTTATA&lt;/span&gt;</code><br />
-<code>65445004 &lt;span  style='color: red;'&gt;ATGAAGCTAA TAAAATTCAG GCCAGTATTC TTAAGTGTAA TGAACATTAT TTGAACATTC&lt;/span&gt;</code><br />
-<code>65445064 &lt;span  style='color: red;'&gt;AACACATGAA AGGTTAACAA AGGCTATGAA CTTGGTGTAA CTTAAAACGT TTCAGATGTC&lt;/span&gt;</code><br />
-<code>65445124 &lt;span  style='color: red;'&gt;GGAGTTCACC AGATGTAATT GGATTCAGGT GGATCCCGCC GCTCCTCGGC CTTTTTAAGT&lt;/span&gt;</code><br />
-<code>65445184 &lt;span  style='color: red;'&gt;GAAGGCGTGT GCTGCCTGAG CTGGGCGCCT GCTGGCCTCA GGGCATGTAT GAGGCTGGCT&lt;/span&gt;</code><br />
-<code>65445244 &lt;span  style='color: red;'&gt;TCG&lt;/span&gt;TACCCTG CAAAATTATT CACAGCTTAA AAGGAAAGAA ACTACAAAAC CAGGCTCTTC</code><br />
-<code>65445304 AGATTCATTA TTAACCATTC AAATGAAATC CATTTTTGCC TTTTCAATCC AGAATGAAAA</code><br />
-<code>....</code><br />
-<code>65514844 &lt;span  style='color: red;'&gt;TGAGCATCGA TCCATAGGTA CAGGCTCTCC TCCTGCGGCG GCCCGGCCTC CGCCCGCAGT&lt;/span&gt;</code><br />
-<code>65514904 &lt;span  style='color: red;'&gt;GCCAGCAGGC ACAGGAGGAT GCTCCAGAGC CAGAGCGCGG CGGCAGGGAA GGCGCTCCTC&lt;/span&gt;</code><br />
-<code>65514964 &lt;span  style='color: red;'&gt;CGGGCCATGC TGCTCAGGAC CTCCTCGCTG CCGGGAAAAC TCCTCGTGCC GCACCTACGC&lt;/span&gt;</code><br />
-<code>65515024 &lt;span  style='color: red;'&gt;AACCTGGCGC CGTCAGATAC TCTGCTGCGC TGCAGCTCCC TCAGCCAGGG CTGTTCCCGT&lt;/span&gt;</code><br />
-<code>65515084 &lt;span  style='color: red;'&gt;TTAGACGGCT GGGCGCGTCG CCTCCCGGCC TGGGTGCCAA GGAGCCTGCG AGAGCAGGAG&lt;/span&gt;</code><br />
-<code>65515144 &lt;span  style='color: red;'&gt;GAGGGGGCAG GCAGGACGCG GGAGGAGGAG GGGGGGACCA GCGGGCGCGA GTCGCGCAAG&lt;/span&gt;</code><br />
-<code>65515204 &lt;span  style='color: red;'&gt;AAGATGGGGC GCGGGCGGGA GTGGGGGCGG CAGAGACGTA AGACTGGCAA AGCTGGCGAG&lt;/span&gt;</code><br />
-<code>65515264 &lt;span  style='color: red;'&gt;GCCAGCAGTC AGCGGGGCAA ATAGAGCGAG AACAGAAGAG CGGGAAGGGC TGGCGCGAGC&lt;/span&gt;</code><br />
-<code>65515324 &lt;span  style='color: red;'&gt;GAGGTGCGAG CGAGGAGTGG GGC&lt;/span&gt;</code></p>
+`&gt;ref|hg19|chr12:65444404-65515346 (refGene.name2 1)`  
+`65444404 &lt;span  style='color: red;'&gt;GCTCAGAAAA CTAAAGCAGC ACCTTTATTT TATACATACA AACAGTATAA AATGTTTATT&lt;/span&gt;`  
+`65444464 &lt;span  style='color: red;'&gt;AGGTAAGAGC TGTGTTTTGT TTACAATATA TTATATTGCT TCAAGCCAAT GCAAAAAGTT&lt;/span&gt;`  
+`65444524 &lt;span  style='color: red;'&gt;CATACATTAT ATTCCCTATT TCATTGTGTT TAGAATATAT TATATTGTTT AAATGCCACT&lt;/span&gt;`  
+`65444584 &lt;span  style='color: red;'&gt;ACCACAGTGT AATTTTTTTT TTTTTAATAC TGAATCTCTG GAATAATGGT AAGGTCAAAA&lt;/span&gt;`  
+`65444644 &lt;span  style='color: red;'&gt;TATATTGTAT TGAGAGTTTA AAAATTAAGA GCAATTTTTA AAAATGTAAC AAACATCTAA&lt;/span&gt;`  
+`65444704 &lt;span  style='color: red;'&gt;ATATCTGACA ATAAAATCTG AAATGCTGTA ACTTCAACAT TAACTGCACC ATCCAAATTC&lt;/span&gt;`  
+`65444764 &lt;span  style='color: red;'&gt;TTGTGACTTA CGCATTTTTG CCCAATTTAA CCTTTCTGAT GTTCCCCTGC CCCCAGACAC&lt;/span&gt;`  
+`65444824 &lt;span  style='color: red;'&gt;CATAAATGCA TTGTAATTTT GAAAATATCT GCCAACTACA CACTGAAAAT TTTAACCTGA&lt;/span&gt;`  
+`65444884 &lt;span  style='color: red;'&gt;TCAATTGACA TAATATAAAA TCTGTCCCAA AGCACTGAAA CAAGAAAATC TATACCATCA&lt;/span&gt;`  
+`65444944 &lt;span  style='color: red;'&gt;TGCTACAGAC GTACTTAGAA AACTTAAAAG GAAGAGTAAA TATCAGCTCA GTGATTTATA&lt;/span&gt;`  
+`65445004 &lt;span  style='color: red;'&gt;ATGAAGCTAA TAAAATTCAG GCCAGTATTC TTAAGTGTAA TGAACATTAT TTGAACATTC&lt;/span&gt;`  
+`65445064 &lt;span  style='color: red;'&gt;AACACATGAA AGGTTAACAA AGGCTATGAA CTTGGTGTAA CTTAAAACGT TTCAGATGTC&lt;/span&gt;`  
+`65445124 &lt;span  style='color: red;'&gt;GGAGTTCACC AGATGTAATT GGATTCAGGT GGATCCCGCC GCTCCTCGGC CTTTTTAAGT&lt;/span&gt;`  
+`65445184 &lt;span  style='color: red;'&gt;GAAGGCGTGT GCTGCCTGAG CTGGGCGCCT GCTGGCCTCA GGGCATGTAT GAGGCTGGCT&lt;/span&gt;`  
+`65445244 &lt;span  style='color: red;'&gt;TCG&lt;/span&gt;TACCCTG CAAAATTATT CACAGCTTAA AAGGAAAGAA ACTACAAAAC CAGGCTCTTC`  
+`65445304 AGATTCATTA TTAACCATTC AAATGAAATC CATTTTTGCC TTTTCAATCC AGAATGAAAA`  
+`....`  
+`65514844 &lt;span  style='color: red;'&gt;TGAGCATCGA TCCATAGGTA CAGGCTCTCC TCCTGCGGCG GCCCGGCCTC CGCCCGCAGT&lt;/span&gt;`  
+`65514904 &lt;span  style='color: red;'&gt;GCCAGCAGGC ACAGGAGGAT GCTCCAGAGC CAGAGCGCGG CGGCAGGGAA GGCGCTCCTC&lt;/span&gt;`  
+`65514964 &lt;span  style='color: red;'&gt;CGGGCCATGC TGCTCAGGAC CTCCTCGCTG CCGGGAAAAC TCCTCGTGCC GCACCTACGC&lt;/span&gt;`  
+`65515024 &lt;span  style='color: red;'&gt;AACCTGGCGC CGTCAGATAC TCTGCTGCGC TGCAGCTCCC TCAGCCAGGG CTGTTCCCGT&lt;/span&gt;`  
+`65515084 &lt;span  style='color: red;'&gt;TTAGACGGCT GGGCGCGTCG CCTCCCGGCC TGGGTGCCAA GGAGCCTGCG AGAGCAGGAG&lt;/span&gt;`  
+`65515144 &lt;span  style='color: red;'&gt;GAGGGGGCAG GCAGGACGCG GGAGGAGGAG GGGGGGACCA GCGGGCGCGA GTCGCGCAAG&lt;/span&gt;`  
+`65515204 &lt;span  style='color: red;'&gt;AAGATGGGGC GCGGGCGGGA GTGGGGGCGG CAGAGACGTA AGACTGGCAA AGCTGGCGAG&lt;/span&gt;`  
+`65515264 &lt;span  style='color: red;'&gt;GCCAGCAGTC AGCGGGGCAA ATAGAGCGAG AACAGAAGAG CGGGAAGGGC TGGCGCGAGC&lt;/span&gt;`  
+`65515324 &lt;span  style='color: red;'&gt;GAGGTGCGAG CGAGGAGTGG GGC&lt;/span&gt;` 
+</code></pre>
 
 <p>Finally, if you are looking for a particular sub-sequence of the output, you can try to mark the sequence</p>
 
-<pre><code>% vtools_report sequence refGene.name2:ABRA --transcribe --numbered --build hg19 --mark CTGCAC
-
+<pre><code>% vtools_report sequence refGene.name2:ABRA --transcribe --numbered --build hg19 --mark CTGCAC  
 
 &gt;mRNA|NM_139166|chr8:107782418-107781751,107773742-107773265 (1146 bp on reverse strand)
    1 ATGGCTCCGG GCGAAAAGGA AAGCGGGGAG GGCCCAGCCA AGAGCGCCCT CCGGAAGATA
@@ -5184,6 +5171,38 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6862,20 +6881,20 @@ AAGATCTAATTTCCATTAATTTGCTAAATTGCTGGCTAAGACACTGTGTGAAAAAACACCCACCTTCCTT
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

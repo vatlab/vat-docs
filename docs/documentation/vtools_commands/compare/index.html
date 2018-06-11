@@ -12,19 +12,19 @@
     <title>compare :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3730,7 +3730,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% vtools compare -h
 
-
 usage: vtools compare [-h] [--union [TABLE [DESC ...]]]
                       [--intersection [TABLE [DESC ...]]]
                       [--difference [TABLE [DESC ...]]]
@@ -3898,7 +3897,6 @@ variant         1,611    May29 Master variant table
 
 <pre><code>% vtools compare variant inDbSNP --difference notInDbSNP 'variants that are not in dbSNP'
 
-
 INFO: Reading 1,611 variants in variant...
 INFO: Reading 1,303 variants in inDbSNP...
 Writing to notInDbSNP: 100% [=========================] 308 37.1K/s in 00:00:00
@@ -3909,7 +3907,6 @@ Writing to notInDbSNP: 100% [=========================] 308 37.1K/s in 00:00:00
 
 <pre><code>% vtools compare G_AGRN exonic --intersection AGRN_exonic 'Exonic variants in gene AGRN'
 
-
 INFO: Reading 11 variants in G_AGRN...
 INFO: Reading 103 variants in exonic...
 Writing to AGRN_exonic: 100% [==============================] 11 1.8K/s in 00:00:00
@@ -3918,8 +3915,7 @@ Writing to AGRN_exonic: 100% [==============================] 11 1.8K/s in 00:00
 
 <p>If you only need to check the number of exonic variants in gene AGRN, you can use the <code>--intersection</code> option without parameter,</p>
 
-<pre><code>% vtools compare G_AGRN exonic --intersection
-
+<pre><code>% vtools compare G_AGRN exonic --intersection 
 
 INFO: Reading 11 variants in G_AGRN...
 INFO: Reading 103 variants in exonic...
@@ -3929,7 +3925,6 @@ INFO: Reading 103 variants in exonic...
 <p>You can also get the number of variants that are not exonic, and in both tables etc using similar options, but a shortcut to get all counts is</p>
 
 <pre><code>% vtools compare G_AGRN exonic 
-
 
 INFO: Reading approximately 11 variants in G_AGRN...
 INFO: Reading approximately 103 variants in exonic...
@@ -3944,7 +3939,6 @@ INFO: Number of variants in A but not B, B but not A, A and B, and A or B
 <p><details><summary> Examples: Comparing more than two tables</summary></p>
 
 <pre><code>% vtools compare exonic 'G_*' --difference other 'Exonic variants not in AGRN and FAM41C'
-
 
 INFO: Reading 103 variants in exonic...
 INFO: Reading 11 variants in G_AGRN...
@@ -3999,8 +3993,7 @@ Writing to other: 100% [===================================] 90 13.5K/s in 00:00
 
 <p>If we would like to exclude variants that are not in DBSNP, but keep those in exonic regions, we can run</p>
 
-<pre><code>% vtools compare --expression 'variant - inDBSNP | exonic'
-
+<pre><code>% vtools compare --expression 'variant - inDBSNP | exonic'   
 
 INFO: Comparing tables variant, inDBSNP, exonic
 INFO: Reading 1,611 variants in variant...
@@ -4013,7 +4006,6 @@ INFO: Reading 103 variants in exonic...
 
 <pre><code>% vtools compare inDBSNP exonic variant --expression '_3 - _1 | _2'
 
-
 INFO: Reading 1,303 variants in inDBSNP...
 INFO: Reading 103 variants in exonic...
 INFO: Reading 1,611 variants in variant...
@@ -4022,8 +4014,7 @@ INFO: Reading 1,611 variants in variant...
 
 <p>Let us conclude this example with an expression that does not make much sense</p>
 
-<pre><code>% vtools compare --expression 'variant - (inDBSNP &amp; exonic ^ G_AGRN) | G_FAM41C'
-
+<pre><code>% vtools compare --expression 'variant - (inDBSNP &amp; exonic ^ G_AGRN) | G_FAM41C'   
 
 INFO: Comparing tables variant, inDBSNP, exonic, G_AGRN, G_FAM41C
 INFO: Reading 1,611 variants in variant...
@@ -4097,7 +4088,6 @@ INFO: Reading 2 variants in G_FAM41C...
 
 <pre><code>% vtools compare variant --samples SAMP1 SAMP2 
 
-
 INFO: Reading genotype of sample SAMP1 of approximately 1,611 variants in variant...
 INFO: Reading genotype of sample SAMP2 of approximately 1,611 variants in variant...
 INFO: Number of genotypes in A only, B only, in A and B, and in A or B
@@ -4112,14 +4102,12 @@ INFO: Number of variants with genotypes in A only, B only, in A and B, and in A 
 
 <pre><code>% vtools admin --set_runtime_option treat_missing_as_wildtype=1
 
-
 INFO: Option treat_missing_as_wildtype is set to True
 </code></pre>
 
 <p>The output of command changes to</p>
 
 <pre><code>% vtools compare variant --samples SAMP1 SAMP2 
-
 
 INFO: Reading genotype of sample SAMP1 of approximately 1,611 variants in variant...
 INFO: Reading genotype of sample SAMP2 of approximately 1,611 variants in variant...
@@ -4139,7 +4127,6 @@ INFO: Number of variants with genotypes in A only, B only, in A and B, and in A 
 
 <pre><code>% vtools show genotypes
 
-
 sample_name filename    num_genotypes   sample_genotype_fields
 SAMP1       V1-3_hg19_combine.vcf   1609            GT
 SAMP2       V1-3_hg19_combine.vcf   1610            GT
@@ -4149,7 +4136,6 @@ SAMP3       V1-3_hg19_combine.vcf   1608            GT
 <p>The following command shows number of genotypes that are shared by all three samples,</p>
 
 <pre><code>% vtools compare variant --intersection --samples SAMP1 SAMP2 SAMP3
-
 
 INFO: Reading genotypes of sample SAMP1 of approximately 1,611 geno in variant...
 INFO: Reading genotypes of sample SAMP2 of approximately 1,611 geno in variant...
@@ -4170,7 +4156,6 @@ INFO: Genotypes in all samples: 432
 
 <pre><code>% vtools compare variant --difference S1 --samples SAMP1 SAMP2 SAMP3 
 
-
 INFO: Reading genotypes of sample SAMP1 of approximately 1,611 geno in variant...
 INFO: Reading genotypes of sample SAMP2 of approximately 1,611 geno in variant...
 INFO: Reading genotypes of sample SAMP3 of approximately 1,611 geno in variant...
@@ -4181,8 +4166,7 @@ Writing to S1: 100% [=====================================] 442 56.5K/s in 00:00
 
 <p>Let us have a look at the genotypes of the variants in table <code>S1</code> in the samples</p>
 
-<pre><code>% vtools export S1 --samples 1 --format csv | head -10
-
+<pre><code>% vtools export S1 --samples 1 --format csv | head -10 
 
 INFO: Genotypes of 3 samples are exported.
 INFO: Using 2 processes to handle 3 samples
@@ -4208,8 +4192,7 @@ INFO: 442 lines are exported from variant table S1
 <pre><code>% vtools select variant --samples &quot;sample_name = 'SAMP1'&quot; -t varSAMP1
 % vtools select variant --samples &quot;sample_name = 'SAMP2'&quot; -t varSAMP2
 % vtools select variant --samples &quot;sample_name = 'SAMP3'&quot; -t varSAMP3
-% vtools show tables
-
+% vtools show tables   
 
 table          #variants     date message
 AGRN_exonic           11    May29 Exonic variants in gene AGRN
@@ -4230,7 +4213,6 @@ variant            1,611    May29 Master variant table
 
 <pre><code>% vtools compare varSAMP1 varSAMP2 varSAMP3 --difference SAMP1_only
 
-
 INFO: Reading 985 variants in varSAMP1...
 INFO: Reading 984 variants in varSAMP2...
 INFO: Reading 986 variants in varSAMP3...
@@ -4241,7 +4223,6 @@ Writing to SAMP1_only: 100% [=============================] 263 37.5K/s in 00:00
 <p>The genotypes associated with <code>SAMP1_only</code> only appear in <code>SAMP1</code>,</p>
 
 <pre><code>% vtools export SAMP1_only --samples 1 --format csv | head -10
-
 
 INFO: Genotypes of 3 samples are exported.
 INFO: Using 2 processes to handle 3 samples
@@ -4260,7 +4241,6 @@ INFO: 263 lines are exported from variant table SAMP1_only
 
 <pre><code>% vtools compare varSAMP1 varSAMP2 varSAMP3 --difference --samples SAMP1 SAMP2 SAMP3
 
-
 INFO: Reading genotypes of sample SAMP1 of approximately 985 geno in varSAMP1...
 INFO: Reading genotypes of sample SAMP2 of approximately 984 geno in varSAMP2...
 INFO: Reading genotypes of sample SAMP3 of approximately 986 geno in varSAMP3...
@@ -4278,7 +4258,6 @@ INFO: Genotypes in sample SAMP1 only: 321
 
 <pre><code>% vtools compare varSAMP1 varSAMP2 varSAMP3 --intersection varNotMissing
 
-
 INFO: Reading 985 variants in varSAMP1...
 INFO: Reading 984 variants in varSAMP2...
 INFO: Reading 986 variants in varSAMP3...
@@ -4289,7 +4268,6 @@ Writing to varNotMissing: 100% [==========================] 509 50.3K/s in 00:00
 <p>We can then find variants that with different genotypes in <code>SAMP1</code>:</p>
 
 <pre><code>% vtools compare varNotMissing --samples SAMP1 SAMP2 SAMP3 --difference SAMP1_not_missing
-
 
 INFO: Reading genotypes of sample SAMP1 of approximately 509 geno in varNotMissing...
 INFO: Reading genotypes of sample SAMP2 of approximately 509 geno in varNotMissing...
@@ -4330,7 +4308,6 @@ Writing to SAMP1_not_missing: 0 0.0/s in 00:00:00
 
 <pre><code>% vtools compare T1 T2 --mode site
 
-
 INFO: Reading locations of approximately 2 variants in T1...
 INFO: Reading locations of approximately 3 variants in T2...
 INFO: Number of sites in A only, B only, in A and B, and in A or B
@@ -4356,7 +4333,6 @@ INFO: Number of variants in both tables with locations in A only, B only, in A a
 
 <pre><code>% vtools compare WGS3_1 WGS3_2 WGS3_3 --difference by_variant
 
-
 INFO: Reading 4,343,418 variants in WGS3_1...
 INFO: Reading 4,367,814 variants in WGS3_2...
 INFO: Reading 4,455,890 variants in WGS3_3...
@@ -4367,7 +4343,6 @@ Writing to by_variant: 100% [================================] 113,553 171.2K/s 
 <p>We can compare by genotype, that is to say, we only exclude variants that have different genotypes from the offspring.</p>
 
 <pre><code>% vtools compare WGS3_1 WGS3_2 WGS3_3 --difference by_genotype --samples offspring father mother
-
 
 INFO: Reading genotypes of sample WGS3_1 of approximately 4,343,418 geno in WGS3_1...
 INFO: Reading genotypes of sample WGS3_2 of approximately 4,367,814 geno in WGS3_2...
@@ -4380,7 +4355,6 @@ Writing to by_genotype: 100% [==================================================
 <p>Or, we can exclude all variants that have any other variants at the same locations.</p>
 
 <pre><code>% vtools compare WGS3_1 WGS3_2 WGS3_3 --difference by_site --mode site
-
 
 INFO: Reading locations of approximately 4,343,418 sites in WGS3_1...
 INFO: Unique sites in table WGS3_1: 4326495
@@ -4397,7 +4371,6 @@ Writing to by_site: 100% [======================================================
 
 <pre><code>% vtools compare by_genotype by_variant by_site --difference by_genotype_only
 
-
 INFO: Reading 808,425 variants in by_genotype...
 INFO: Reading 113,553 variants in by_variant...
 INFO: Reading 95,653 variants in by_site...
@@ -4405,10 +4378,7 @@ Writing to by_genotype_only: 100% [=============================================
 694872
 
 
-
-
 % vtools output by_genotype_only &quot;genotype('offspring')&quot; &quot;genotype('father')&quot; &quot;genotype('mother')&quot; -l 10
-
 
 2   1   .
 2   1   1
@@ -4428,7 +4398,6 @@ Writing to by_genotype_only: 100% [=============================================
 
 <pre><code>% vtools compare by_site by_variant
 
-
 INFO: Reading approximately 95,653 variants in by_site...
 INFO: Reading approximately 113,553 variants in by_variant...
 INFO: Number of variants in A but not B, B but not A, A and B, and A or B
@@ -4439,7 +4408,6 @@ INFO: Number of variants in A but not B, B but not A, A and B, and A or B
 
 <pre><code>% vtools compare by_variant by_site --difference by_variant_only
 
-
 INFO: Reading 113,553 variants in by_variant...
 INFO: Reading 95,653 variants in by_site...
 Writing to by_site_only: 100% [=======================================================] 17,900 180.6K/s in 00:00:00
@@ -4448,8 +4416,7 @@ Writing to by_site_only: 100% [=================================================
 
 <p>We can only confirm that these variants do not have any genotype for father and mother.</p>
 
-<pre><code>% vtools output by_variant_only &quot;genotype('offspring')&quot; &quot;genotype('father')&quot; &quot;genotype('mother')&quot; -l 10
-
+<pre><code>% vtools output by_variant_only &quot;genotype('offspring')&quot; &quot;genotype('father')&quot; &quot;genotype('mother')&quot; -l 10   
 
 1   .   .
 1   .   .
@@ -4467,7 +4434,6 @@ Writing to by_site_only: 100% [=================================================
 
 <pre><code>% vtools compare variant by_variant_only --difference not_at_variant_site --mode site
 
-
 INFO: Reading locations of approximately 10,126,300 sites in variant...
 INFO: Unique sites in table variant: 8725216
 INFO: Reading locations of approximately 17,900 sites in by_variant_only...
@@ -4481,7 +4447,6 @@ Writing to not_at_variant_site: 100% [==========================================
 
 % compare variant not_at_variant_site --difference at_variant_site
 
-
 INFO: Reading 10,126,300 variants in variant...
 INFO: Reading 8,978,176 variants in not_at_variant_site...
 Writing to at_variant_site: 100% [====================================================] 61,905 172.0K/s in 00:00:00
@@ -4492,7 +4457,6 @@ Writing to at_variant_site: 100% [==============================================
 
 <pre><code>% vtools compare by_variant_only at_variant_site
 
-
 INFO: Reading approximately 17,900 variants in by_variant_only...
 INFO: Reading approximately 61,905 variants in at_variant_site...
 INFO: Number of variants in A but not B, B but not A, A and B, and A or B
@@ -4502,7 +4466,6 @@ INFO: Number of variants in A but not B, B but not A, A and B, and A or B
 
 
 % vtools compare by_variant_only at_variant_site --mode site
-
 
 INFO: Reading locations of approximately 17,900 variants in by_variant_only...
 INFO: Reading locations of approximately 61,905 variants in at_variant_site...
@@ -4516,7 +4479,6 @@ INFO: Number of variants in both tables with locations in A only, B only, in A a
 
 % vtools output at_variant_site chr pos &quot;genotype('offspring')&quot; &quot;genotype('father')&quot; \
     &quot;genotype('mother')&quot; ref alt --order_by chr pos -l 20
-
 
 1   54721   1   .   .   T       -
 1   54721   .   .   1   TTTCT   -
@@ -5522,6 +5484,38 @@ INFO: Number of variants in both tables with locations in A only, B only, in A a
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -7200,20 +7194,20 @@ INFO: Number of variants in both tables with locations in A only, B only, in A a
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

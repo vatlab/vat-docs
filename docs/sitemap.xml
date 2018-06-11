@@ -635,11 +635,19 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/functor/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_commands/output/</loc>
   </url>
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_pheno_fields/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/annovav/</loc>
   </url>
   
   <url>
@@ -652,6 +660,10 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_association/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/pileup/</loc>
   </url>
   
   <url>
@@ -680,10 +692,6 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/tutorials/tutorialacm/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/functor/</loc>
   </url>
   
   <url>

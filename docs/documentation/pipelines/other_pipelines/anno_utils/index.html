@@ -12,19 +12,19 @@
     <title>anno_utils :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3734,7 +3734,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% vtools show pipeline anno_utils
 
-
 This file defines a number of pipelines to manipulate variant tools annotation
 databases.
 
@@ -3815,7 +3814,6 @@ Pipeline parameters:
 % vtools admin --load_snapshot vt_quickStartGuide
 % vtools execute anno_utils proj2annoDB --input test.proj --output myanno.ann
 
-
 INFO: Executing step proj2annoDB_0 of pipeline anno_utils: Check the existence of command sqlite3, which is required for this pipeline
 INFO: Command sqlite3 is located.
 INFO: Executing step proj2annoDB_5 of pipeline anno_utils: Dump project build information
@@ -3851,7 +3849,6 @@ INFO: Command &quot;vtools use myanno.ann --files cache/test.proj.dump --rebuild
 <pre><code>% vtools use /path/to/myanno
 % vtools select variant 'myanno.chr is not NULL' -o chr pos ref alt myanno.AA myanno.AN -l 10
 
-
 1   1105366 T   C   T   114
 1   1105411 G   A   G   106
 1   1108138 C   T   c   130
@@ -3878,7 +3875,6 @@ INFO: Command &quot;vtools use myanno.ann --files cache/test.proj.dump --rebuild
 
 <pre><code>% vtools init test_proj
 % vtools execute anno_utils annoDB2proj --input ~/.variant_tools/annoDB/dbSNP-hg19_137.DB.gz --output dbSNP
-
 
 INFO: Executing step annoDB2proj_0 of pipeline anno_utils: Check the existence of command sqlite3, which is required for this pipeline
 INFO: Command sqlite3 is located.
@@ -3934,7 +3930,6 @@ INFO: Running &quot;vtools import /Users/bpeng/Temp/cache/dbSNP.dump --format /U
 <pre><code>% vtools init test_proj
 % vtools execute anno_utils annFileFromVcf --input ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/00-All.vcf.gz --output dbSNP.ann
 
-
 INFO: Executing anno_utils.annFileFromVcf_10: Create a feild description file from input text file.
 [get_local_version] downloading the index file...
 INFO: Executing anno_utils.annFileFromVcf_20: Create an annotation file from fields guessed from input vcf file
@@ -3961,7 +3956,6 @@ INFO: Command &quot;echo '# Please refer to http://varianttools.sourceforge.net/
 
 <pre><code>% head -5 kg.count
 
-
 knownGene name  sum variant num
 uc001abt.4  5
 uc001abv.1  18
@@ -3973,8 +3967,7 @@ uc001abx.1  16
 
 <p>However, you will need to import the genotype counts into the project before you can use it. Because the text file contains annotation information for field <code>knownGene.name</code>, it is best to create an field-based annotation database that annotate this field. Pipeline <code>annFileFromText</code> from <code>anno_utils</code> can help you during this process. For example</p>
 
-<pre><code>% vtools execute anno_utils annFileFromText -i kg.count  -o kg_sum_geno.ann
-
+<pre><code>% vtools execute anno_utils annFileFromText -i kg.count  -o kg_sum_geno.ann   
 
 INFO: Executing step annFileFromText_10 of pipeline anno_utils: Create a feild description file from input text file.
 INFO: Executing step annFileFromText_20 of pipeline anno_utils: Create an annotation file from fields guessed from input file
@@ -3987,8 +3980,7 @@ INFO: Command &quot;cat cache/kg.count.fields &gt;&gt; kg_sum_geno.ann&quot; com
 
 <p>The .ann file created looks like</p>
 
-<pre><code>% cat kg_sum_geno.ann
-
+<pre><code>% cat kg_sum_geno.ann   
 
 [linked fields]
 *=knownGene_name
@@ -4012,8 +4004,7 @@ type=INT
 
 <p>And you can use it to create an annotation database from <code>kg.count</code> and link it to the project</p>
 
-<pre><code>% vtools use kg_sum_geno.ann --linked_by knownGene.name
-
+<pre><code>% vtools use kg_sum_geno.ann --linked_by knownGene.name  
 
 INFO: Importing database kg_sum_geno from source files ['kg.count']
 INFO: Importing annotation data from kg.count
@@ -4026,8 +4017,7 @@ INFO: 61223 out of 80922 knowngene.name are annotated through annotation databas
 
 <p>You can then use the <code>sum_variant_num</code> field from the <code>kg_sum_geno</code> database to filter variants:</p>
 
-<pre><code>% vtools select kg 'kg_sum_geno.sum_variant_num = 1' -t rare_variants
-
+<pre><code>% vtools select kg 'kg_sum_geno.sum_variant_num = 1' -t rare_variants  
 
 Running: 10,468 696.0/s in 00:00:15
 INFO: 2717 variants selected.
@@ -4036,7 +4026,6 @@ INFO: 2717 variants selected.
 <p>Compared to the number of singletons in the project, the above command identified a lot less variants.</p>
 
 <pre><code>% vtools select kg 'variant.num=1' -c
-
 
 Counting variants: 973 346.9/s in 00:00:02
 627489
@@ -5006,6 +4995,38 @@ Counting variants: 973 346.9/s in 00:00:02
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6696,20 +6717,20 @@ Counting variants: 973 346.9/s in 00:00:02
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

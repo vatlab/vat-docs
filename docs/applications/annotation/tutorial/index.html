@@ -12,19 +12,19 @@
     <title>Tutorial :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316017" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316017" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316017"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3741,8 +3741,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <p>Let us create a project and download a snapshot project called <code>vt_quickStartGuide</code>.</p>
 
-<pre><code>% vtools init anno
-
+<pre><code>% vtools init anno   
 
 INFO: variant tools 2.0.0 : Copyright (c) 2011 - 2012 Bo Peng
 INFO: San Lucas FA, Wang G, Scheet P, Peng B (2012) Bioinformatics 28(3):421-422
@@ -3750,10 +3749,7 @@ INFO: Please visit http://varianttools.sourceforge.net for more information.
 INFO: Creating a new project anno
 
 
-
-
 % vtools admin --load_snapshot vt_quickStartGuide
-
 
 Downloading snapshot vt_quickStartGuide.tar.gz from online
 INFO: Snapshot vt_quickStartGuide has been loaded
@@ -3763,7 +3759,6 @@ INFO: Snapshot vt_quickStartGuide has been loaded
 
 <pre><code>% vtools show samples
 
-
 sample_name filename
 CEU CEU.exon...3.sites.vcf.gz
 JPT JPT.exon...3.sites.vcf.gz
@@ -3772,7 +3767,6 @@ JPT JPT.exon...3.sites.vcf.gz
 
 
 % vtools show tables
-
 
 table                 #variants     date  message
 variant                   4,858   
@@ -3785,7 +3779,6 @@ variant                   4,858
 <p>These are available annotation databases (as of October 2012) that can be downloaded and used automatically to annotate variants within a <em>variant tools</em> project. You can use the following command to list currently available databases.</p>
 
 <pre><code>% vtools show annotations
-
 
 CancerGeneCensus-20111215
 CancerGeneCensus
@@ -3851,7 +3844,6 @@ thousandGenomes
 
 <pre><code>% vtools use keggPathway --linked_by ccdsGene.name
 
-
 INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/keggPathway.ann
 INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/keggPathway-20110823.DB.gz
 : Unsupported scheme.
@@ -3860,13 +3852,11 @@ INFO: Downloading annotation database from http://vtools.houstonbioinformatics.o
 Resolving vtools.houstonbioinformatics.org... 70.39.145.13
 Connecting to vtools.houstonbioinformatics.org[70.39.145.13]:80... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 350,847 [application/x-gzip]
+Length: 350,847 [  /applications/x-gzip]
 
 100%[=============================================================================&gt;] 350,847      330.94K/s             
 
-18:54:26 (329.78 KB/s) - `./keggPathway-20110823.DB.gz' saved [350847/350847]
-
-
+18:54:26 (329.78 KB/s) - `./keggPathway-20110823.DB.gz' saved [350847/350847]   
 FINISHED --18:54:26--
 Downloaded: 350,847 bytes in 1 files
 INFO: Using annotation DB keggPathway in project quickstart.
@@ -3875,9 +3865,7 @@ INFO: kegg pathway for CCDS genes
 
 <p>Now lets filter all of our variants to include only those involved in metabolic pathways. This command uses the pathway annotation source that we just downloaded to find all variants that are on transcripts of proteins known to be involved in metabolic pathways. These variants are then stored in a table called <code>metabolic</code>.</p>
 
-<pre><code>% vtools select variant 'kgDesc=&quot;Metabolic pathways&quot;' -t metabolic                                                                                        
-
-
+<pre><code>% vtools select variant 'kgDesc=&quot;Metabolic pathways&quot;' -t metabolic                                                                                
 Running: 2,788 2.1K/s in 00:00:01
 INFO: 109 variants selected.
 </code></pre>
@@ -4838,6 +4826,38 @@ INFO: 109 variants selected.
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6522,20 +6542,20 @@ INFO: 109 variants selected.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316017" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316017"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

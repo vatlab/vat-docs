@@ -12,19 +12,19 @@
     <title>C-alpha test :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316017" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316017" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316017"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3731,7 +3731,11 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-introduction">1. Introduction</h3>
 
-<p>This implements the {$C(\alpha)$} test (Neale et al 2011) for disease traits, to test for the hypothesis of rare variants disease association under the particular assumption that rare variants observed in cases and controls is a mixture of phenotypically deleterious, protective and neutral variants. Instead of using a cumulative dosage (or &ldquo;burden&rdquo;) based summary statistic over a gene region, it directly contrasts the observed and expected distribution of minor alleles in cases and controls at each locus as an evidence of &ldquo;unusual distribution&rdquo;, and combine evidences from multiple loci (whether it be an evidence of protective or deleterious) to formulate the {$C(\alpha)$} statistic: {$$T=\sum_{i=1}^m[(y_i-n_ip_0)^2-n_ip_0(1-p_0)]$$}</p>
+<p>This implements the {$C(\alpha)$} test (Neale et al 2011) for disease traits, to test for the hypothesis of rare variants disease association under the particular assumption that rare variants observed in cases and controls is a mixture of phenotypically deleterious, protective and neutral variants. Instead of using a cumulative dosage (or &ldquo;burden&rdquo;) based summary statistic over a gene region, it directly contrasts the observed and expected distribution of minor alleles in cases and controls at each locus as an evidence of &ldquo;unusual distribution&rdquo;, and combine evidences from multiple loci (whether it be an evidence of protective or deleterious) to formulate the
+\(C(\alpha)\) statistic:</p>
+
+<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+$$T=\sum_{i=1}^m[(y_i-n_ip_0)^2-n_ip_0(1-p_0)]$$</p>
 
 <p>The original paper evaluates p-value of the test under large sample normal assumption, which usually would not hold for the real world data. Implementation in this program also allows permutation based {$C(\alpha)$} test, if parameter <code>-p/--permutations</code> is set greater than 0.</p>
 
@@ -3740,9 +3744,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <h4 id="2-1-command-interface">2.1 Command interface</h4>
 
 <pre><code>vtools show test Calpha
-
-
-
 
 Name:          Calpha
 Description:   c-alpha test for unusual distribution of variants between cases and
@@ -3797,9 +3798,6 @@ optional arguments:
 <pre><code>vtools associate rare status -m &quot;Calpha --name Calpha -p 5000&quot; --group_by name2 --to_db cal\
 pha -j8 &gt; calpha.txt
 
-
-
-
 INFO: 3180 samples are found
 INFO: 2632 groups are found
 Loading genotypes: 100% [=====================] 3,180 27.6/s in 00:01:55
@@ -3813,9 +3811,6 @@ INFO: Annotation database used to record results of association tests. Created o
 
 vtools show fields | grep calpha
 
-
-
-
 calpha.refGene_name2         refGene_name2
 calpha.sample_size_Calpha    sample size
 calpha.num_variants_Calpha   number of variants in each group (adjusted for specified MAF
@@ -3827,9 +3822,6 @@ calpha.pvalue_Calpha         p-value
 
 
 head calpha.txt
-
-
-
 
 name2   sample_size_Calpha  num_variants_Calpha total_mac_Calpha    statistic_Calpha    pvalue_Calpha   std_error_Calpha    num_permutations_Calpha
 AADACL4 3180    5   138 0.0229344   0.407592    1.08434 1000
@@ -4805,6 +4797,38 @@ ACADL   3180    5   65  -0.50523    0.642358    0.943209    1000
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6499,20 +6523,20 @@ ACADL   3180    5   65  -0.50523    0.642358    0.943209    1000
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316017" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316017"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

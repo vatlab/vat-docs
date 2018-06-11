@@ -12,19 +12,19 @@
     <title>variable thresholds :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3730,7 +3730,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-introduction">1. Introduction</h3>
 
-<p>This implements the variable thresholds version of <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a>. Similar to the <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/joint_conditional/variable-thresholds/">VT</a> method, the <code>VariableThresholdsBt</code> and <code>VariableThresholdsQt</code> tests use a variable thresholds definition for the rare variants being considered such that multiple test statistics are calculated for an aggregation unit. The final statistic is taken as the one that gives the best result. Type I error is controlled due to the use of permutation testing.</p>
+<p>This implements the variable thresholds version of <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a>. Similar to the <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/variable-thresholds/">VT</a> method, the <code>VariableThresholdsBt</code> and <code>VariableThresholdsQt</code> tests use a variable thresholds definition for the rare variants being considered such that multiple test statistics are calculated for an aggregation unit. The final statistic is taken as the one that gives the best result. Type I error is controlled due to the use of permutation testing.</p>
 
 <p>Results from variable thresholds methods have one additional column, i.e., an MAF column reporting the statistic of VT at which it is derived.</p>
 
@@ -3739,8 +3739,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <h4 id="2-1-command-interface">2.1 Command interface</h4>
 
 <pre><code>vtools show test VariableThresholdsBt
-
-
 
 
 Name:          VariableThresholdsBt
@@ -3879,36 +3877,15 @@ optional arguments:
 _by name2 --to_db variablethresholdsBt -j8 &gt; variablethresholdsBt.txt
 
 
-
-
-
-
-
-
 vtools show fields | grep variablethresholdsBt.txt
-
-
-
-
-
-
 
 
 head variablethresholdsBt.txt
 
 
-
-
-
-
-
-
 vtools associate rare bmi --covariates age gender exposure -m &quot;VariableThresholdsQt --name \
 VariableThresholdsQt --alternative 2 -p 5000 --permute_by X --adaptive 0.05&quot; --group_by nam\
 e2 --to_db variablethresholdsQt -j8 &gt; variablethresholdsQt.txt
-
-
-
 
 INFO: 3180 samples are found
 INFO: 2632 groups are found
@@ -3920,12 +3897,7 @@ INFO: Using annotation DB variablethresholdsQt in project test.
 INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 22:54:27
 
 
-
-
 vtools show fields | grep variablethresholdsQt.txt
-
-
-
 
 variablethresholdsQt.name2   name2
 variablethresholdsQt.sample_size_VariableThresholdsQt sample size
@@ -3941,12 +3913,7 @@ variablethresholdsQt.num_permutations_VariableThresholdsQt number of permutation
 variablethresholdsQt.MAF_threshold_VariableThresholdsQt The minor allele frequency at which the test statistic is maximized
 
 
-
-
 head variablethresholdsQt.txt
-
-
-
 
 name2   sample_size_VariableThresholdsQt    num_variants_VariableThresholdsQt   total_mac_VariableThresholdsQt  beta_x_VariableThresholdsQt pvalue_VariableThresholdsQt std_error_VariableThresholdsQt  num_permutations_VariableThresholdsQt   MAF_threshold_VariableThresholdsQt
 ABCB10  3180    6   122 5.93777 0.247752    3.68504 1000    0.000157233
@@ -4918,6 +4885,38 @@ ACAP3   3180    3   17  2.70541 0.281718    2.01218 1000    0.000314465
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6612,20 +6611,20 @@ ACAP3   3180    3   17  2.70541 0.281718    2.01218 1000    0.000314465
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

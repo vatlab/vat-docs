@@ -12,19 +12,19 @@
     <title>genotype :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3752,7 +3752,6 @@ genotype('WGS1', 'field=DP')
 % vtools admin --rename_samples &quot;filename='V3.vcf'&quot; SAMP3
 % vtools show samples
 
-
 sample_name filename
 SAMP1       V1.vcf
 SAMP2       V2.vcf
@@ -3761,8 +3760,7 @@ SAMP3       V3.vcf
 
 <p>There are about 1000 genotypes in three samples:</p>
 
-<pre><code>% vtools show genotypes
-
+<pre><code>% vtools show genotypes 
 
 sample_name filename    num_genotypes   sample_genotype_fields
 SAMP1       V1.vcf      989             GT
@@ -3773,7 +3771,6 @@ SAMP3       V3.vcf      988             GT
 <p>Now, in addition to the variant inforation, we would like to see the genotype of variants in sample <code>SAMP1</code></p>
 
 <pre><code>% vtools output variant chr pos ref alt &quot;genotype('SAMP1')&quot; -l 10
-
 
 1   4540    G   A   1
 1   5683    G   T   1
@@ -3792,7 +3789,6 @@ SAMP3       V3.vcf      988             GT
 <pre><code>% vtools select variant &quot;genotype('SAMP1')=1&quot; --output chr pos ref alt \
     &quot;genotype('SAMP1')&quot; &quot;genotype('SAMP2')&quot; -l 10
 
-
 1   4540    G   A   1   .
 1   5683    G   T   1   .
 1   5966    T   G   1   1
@@ -3810,7 +3806,6 @@ SAMP3       V3.vcf      988             GT
 <pre><code>% vtools init genotype -f
 % vtools import CEU.vcf.gz --geno_info DP_geno --build hg18
 % vtools output variant chr pos ref alt &quot;genotype('NA12874')&quot; &quot;genotype('NA12874', 'field=DP_geno')&quot; -l 10
-
 
 1   533     G   C   1   9
 1   41342   T   A   0   3
@@ -3850,7 +3845,6 @@ genotype('BMI&gt;20', 'field=DP_geno&amp;missing=.')
 % vtools remove genotypes 'GT=0'
 % vtools output variant chr pos ref alt &quot;genotype()&quot;  -l 10
 
-
 1   533     G   C   1,1,1,1,1,1
 1   41342   T   A   1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,2,1,1,1
 1   41791   G   A   1,1,1,1,1
@@ -3868,7 +3862,6 @@ genotype('BMI&gt;20', 'field=DP_geno&amp;missing=.')
 <pre><code>% vtools phenotype --from_file phenotype.txt
 % vtools output variant chr pos ref alt &quot;genotype('BMI&gt;24')&quot;  -l 10
 
-
 1   533     G   C   .
 1   41342   T   A   1,1
 1   41791   G   A   1
@@ -3885,7 +3878,6 @@ genotype('BMI&gt;20', 'field=DP_geno&amp;missing=.')
 
 <pre><code>% vtools output variant chr pos ref alt &quot;samples('BMI&gt;24')&quot;  -l 10
 
-
 1   533     G   C   .
 1   41342   T   A   NA11918,NA12814
 1   41791   G   A   NA11918
@@ -3900,8 +3892,7 @@ genotype('BMI&gt;20', 'field=DP_geno&amp;missing=.')
 
 <p>Using strings inside the condition is bit tricky because you need to use backslash to pass condition <code>sex='F'</code> to the <code>genotype</code> function in the following example:</p>
 
-<pre><code>% vtools output variant chr pos ref alt &quot;genotype('sex=\'F\'')&quot;  -l 10
-
+<pre><code>% vtools output variant chr pos ref alt &quot;genotype('sex=\'F\'')&quot;  -l 10  
 
 1   533     G   C   1,1,1,1
 1   41342   T   A   1,1,1,1,1,1,1,1,2,1,1,1,1,1
@@ -3917,8 +3908,7 @@ genotype('BMI&gt;20', 'field=DP_geno&amp;missing=.')
 
 <p>Finally, if you would like to view values of other genotype info fields (c.f. <code>vtools show genotypes</code>), or using alternative delimiters, you can</p>
 
-<pre><code>% vtools output variant chr pos ref alt &quot;genotype('BMI&gt;23', 'field=DP_geno&amp;d=\t&amp;missing=.')&quot;  -l 10
-
+<pre><code>% vtools output variant chr pos ref alt &quot;genotype('BMI&gt;23', 'field=DP_geno&amp;d=\t&amp;missing=.')&quot;  -l 10   
 
 1   533     G   C   .   .   .   .   .   .   .   .   .   .
 1   41342   T   A   .   1   4   3   .   .   .   .   0   9
@@ -4910,6 +4900,38 @@ genotype('BMI&gt;20', 'field=DP_geno&amp;missing=.')
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6588,20 +6610,20 @@ genotype('BMI&gt;20', 'field=DP_geno&amp;missing=.')
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

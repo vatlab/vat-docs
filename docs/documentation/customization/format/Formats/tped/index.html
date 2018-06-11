@@ -12,19 +12,19 @@
     <title>tped :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3699,17 +3699,17 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#plink-tped-format">PLINK/TPED format</a>
-<ul>
 <li>
 <ul>
-<li><a href="#about-tped-format">About TPED format</a>
+<li><a href="#plink-tped-format">PLINK/TPED format</a>
 <ul>
-<li><a href="#the-tped-tfam-bundle">The TPED/TFAM bundle</a></li>
+<li><a href="#1-about-tped-format">1. About TPED format</a>
+<ul>
+<li><a href="#1-1-the-tped-tfam-bundle">1.1 The TPED/TFAM bundle</a></li>
 </ul></li>
-<li><a href="#format-specification">Format specification</a></li>
-</ul></li>
+<li><a href="#2-format-specification">2. Format specification</a></li>
 <li><a href="#example">Example</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -3732,24 +3732,23 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 
 
-<h1 id="plink-tped-format">PLINK/TPED format</h1>
+<h2 id="plink-tped-format">PLINK/TPED format</h2>
 
-<h3 id="about-tped-format">About TPED format</h3>
+<h3 id="1-about-tped-format">1. About TPED format</h3>
 
 <p>Many software applications for linkage and association studies (e.g. <a href="http://pngu.mgh.harvard.edu/~purcell/plink/">plink</a>, <a href="http://www.sph.umich.edu/csg/abecasis/Merlin/">merlin</a>) accept PED/MAP format. The map file records basic information about markers, the Ped file contains sample genotype. Whereas variant tools can easily export in MAP format, it is difficult to export in PED format because this format is not variant oriented (output by variant).</p>
 
 <p>Fortunately, PLINK accepts a transposed PED format (TPED) that is variant oriented. variant tools can export variants in this format using format <code>tped</code>.</p>
 
-<p>Format <code>tped</code> cannot import from TPED files because this format does not specify reference and alternative alleles. To import PLINK TPED data please use <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Plink?action=edit">format <code>plink</code></a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Plink?action=edit">?</a></p>
+<p>Format <code>tped</code> cannot import from TPED files because this format does not specify reference and alternative alleles. To import PLINK TPED data please use [format <code>plink</code>][3]</p>
 
-<h4 id="the-tped-tfam-bundle">The TPED/TFAM bundle</h4>
+<h4 id="1-1-the-tped-tfam-bundle">1.1 The TPED/TFAM bundle</h4>
 
 <p>To make the exported TPED file compatible with other software applications that handles PLINK input, a TFAM file containing individual names is generated. Unlike a standard TFAM file which is the first six columns of a PED file, i.e., Family ID, Individual ID, Paternal ID, Maternal ID, Sex and Phenotype, the TFAM file exported here only has valid individual ID, with other columns being placeholders. However it is straightforward to create a TFAM file with information for other columns using <code>vtools phenotype --output</code> command.</p>
 
-<h3 id="format-specification">Format specification</h3>
+<h3 id="2-format-specification">2. Format specification</h3>
 
 <pre><code>vtools show format tped
-
 
 Format:      tped
 Description: Output to TPED format with the first four columns chr name gen_pos
@@ -3784,7 +3783,7 @@ Format parameters:
 
 <p>By default, the corresponding TFAM file is named after the variant table from which variants/samples are exported. You can specify the TFAM file name by passing an additional parameter with specified filename: <code>--tfamfile FILENAME.tfam</code>. Note that the extension <code>.tfam</code> is required.</p>
 
-<h2 id="example">Example</h2>
+<h3 id="example">Example</h3>
 
 <p>Output some variants. The genotypes for selected samples are ordered alphabetically by sample name (and the selected samples are recorded in the log file).</p>
 
@@ -3879,6 +3878,8 @@ vtools export variant --format tped --samples 'sample_name like &quot;NA069%&quo
 7   NA06986 0   0   0   -9
 8   NA06994 0   0   0   -9
 </code></pre>
+
+<p>[3]: /  /documentation/customization/format/formats/tped/plink/</p>
 
 
 <footer class=" footline" >
@@ -4954,6 +4955,38 @@ vtools export variant --format tped --samples 'sample_name like &quot;NA069%&quo
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -6531,20 +6564,20 @@ vtools export variant --format tped --samples 'sample_name like &quot;NA069%&quo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

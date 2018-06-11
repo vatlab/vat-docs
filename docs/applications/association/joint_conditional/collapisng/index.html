@@ -12,19 +12,19 @@
     <title>collapsing :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316017" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316017" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316017"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3734,11 +3734,12 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-introduction">1. Introduction</h3>
 
-<p>This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. <em>Collapsing</em> method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region {$X$}:{$$X = I_(0,N)(\sum_i^N X_i)$$} i.e., the observed genotype will be coded as {$1$} if there exists at least one mutation, and {$0$} otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010).</p>
+<p>This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. <em>Collapsing</em> method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \(X\):
+$$X = I_(0,N)(\sum_i^N X_i)$$ i.e., the observed genotype will be coded as \(1\) if there exists at least one mutation, and \(0\) otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010).</p>
 
-<p>Advantages in using collapsing methods instead of <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> is in its robustness to LD of multiple rare variants in the region under investigation, which would potentially inflate type I error. However under additive assumptions of genetic effects, collapsing methods may be less powerful than aggregation methods.</p>
+<p>Advantages in using collapsing methods instead of <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> is in its robustness to LD of multiple rare variants in the region under investigation, which would potentially inflate type I error. However under additive assumptions of genetic effects, collapsing methods may be less powerful than aggregation methods.</p>
 
-<p>Our program implements the collapsing coding in a logistic regression framework for disease traits analysis (case control data) as <code>CollapseBt</code> method, and a linear regression framework for quantitative traits analysis as <code>CollapseQt</code> method. {$p$} value for collapsing method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component.</p>
+<p>Our program implements the collapsing coding in a logistic regression framework for disease traits analysis (case control data) as <code>CollapseBt</code> method, and a linear regression framework for quantitative traits analysis as <code>CollapseQt</code> method. \(p\) value for collapsing method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component.</p>
 
 <h4 id="1-1-adjust-for-missing-genotypes">1.1 Adjust for missing genotypes</h4>
 
@@ -3749,9 +3750,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <h4 id="2-1-command-interface">2.1 Command interface</h4>
 
 <pre><code>% vtools show test CollapseBt
-
-
-
 
 Name:          CollapseBt
 Description:   Collapsing method for disease traits, Li &amp; Leal 2008
@@ -3791,12 +3789,7 @@ optional arguments:
                         model. Default set to additive
 
 
-
-
 % vtools show test CollapseQt
-
-
-
 
 Name:          CollapseQt
 Description:   Collapsing method for quantitative traits, Li &amp; Leal 2008
@@ -3845,9 +3838,6 @@ optional arguments:
 % vtools associate rare status --covariates age gender bmi exposure -m &quot;CollapseBt --name Col\
 lapseBt --alternative 2&quot; --group_by name2 --to_db collapseBt -j8 &gt; collapseBt.txt
 
-
-
-
 INFO: 3180 samples are found
 INFO: 2632 groups are found
 INFO: Starting 8 processes to load genotypes
@@ -3858,12 +3848,7 @@ INFO: Using annotation DB collapseBt in project test.
 INFO: Annotation database used to record results of association tests. Created on Wed, 30 Jan 2013 23:10:09
 
 
-
-
 % vtools show fields | grep collapseBt
-
-
-
 
 collapseBt.name2             name2
 collapseBt.sample_size_CollapseBt sample size
@@ -3886,12 +3871,7 @@ collapseBt.beta_5_pvalue_CollapseBt p-value for covariate 5
 collapseBt.wald_5_CollapseBt Wald statistic for covariate 5
 
 
-
-
 % head collapseBt.txt
-
-
-
 
 name2   sample_size_CollapseBt  num_variants_CollapseBt total_mac_CollapseBt    beta_x_CollapseBt       pvalue_CollapseBt       wald_x_CollapseBt       beta_2_CollapseBt    beta_2_pvalue_CollapseBt        wald_2_CollapseBt       beta_3_CollapseBt       beta_3_pvalue_CollapseBt        wald_3_CollapseBt       beta_4_CollapseBt    beta_4_pvalue_CollapseBt        wald_4_CollapseBt       beta_5_CollapseBt       beta_5_pvalue_CollapseBt        wald_5_CollapseBt
 AADACL4 3180    5       138     -0.2941 0.368956        -0.89843        0.0312903       4.30942E-09     5.87186 -0.296598       0.0154271       -2.42219    0.129942 1.83369E-40     13.3174 0.437372        0.00133613      3.2081
@@ -3905,13 +3885,12 @@ ABCD3   3180    3       42      -0.255649       0.662305        -0.436732       
 ABCA4   3180    43      492     -0.00909763     0.95585 -0.0553619      0.0312634       4.37388E-09     5.8694  -0.298919       0.0146254       -2.44153    0.130239 1.15466E-40     13.3519 0.435484        0.00139409      3.19587
 </code></pre>
 
-<p><strong>QQ-plot</strong>  Attach:collapseBt.jpg</p>
+<p><strong>QQ-plot</strong></p>
+
+<p><img src = "collapseBt.jpg" width = 500></p>
 
 <pre><code>% vtools associate rare bmi --covariates age gender exposure -m &quot;CollapseQt --name CollapseQt\
  --alternative 2&quot; --group_by name2 --to_db collapseQt -j8 &gt; collapseQt.txt
-
-
-
 
 INFO: 3180 samples are found
 INFO: 2632 groups are found
@@ -3923,12 +3902,7 @@ INFO: Using annotation DB collapseQt in project test.
 INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 03:48:21
 
 
-
-
 % vtools show fields | grep collapseQt
-
-
-
 
 collapseQt.name2             name2
 collapseQt.sample_size_CollapseQt sample size
@@ -3948,12 +3922,7 @@ collapseQt.beta_4_pvalue_CollapseQt p-value for covariate 4
 collapseQt.wald_4_CollapseQt Wald statistic for covariate 4
 
 
-
-
 % head collapseQt.txt
-
-
-
 
 name2   sample_size_CollapseQt  num_variants_CollapseQt total_mac_CollapseQt    beta_x_CollapseQt       pvalue_CollapseQt       wald_x_CollapseQt       beta_2_CollapseQt    beta_2_pvalue_CollapseQt        wald_2_CollapseQt       beta_3_CollapseQt       beta_3_pvalue_CollapseQt        wald_3_CollapseQt       beta_4_CollapseQt    beta_4_pvalue_CollapseQt        wald_4_CollapseQt
 ABCD3   3180    3       42      -0.487474       0.571152        -0.566415       0.0149956       0.0588415       1.89006 -0.0808192      0.693535        -0.394098    -0.941867       2.64731E-05     -4.20804
@@ -3967,7 +3936,8 @@ ABL2    3180    4       41      -0.613866       0.475633        -0.713429       
 ACADL   3180    5       65      1.33815 0.0528276       1.93705 0.0150444       0.0578831       1.89727 -0.082882       0.685934        -0.404416       -0.941384    2.64356E-05     -4.20836
 </code></pre>
 
-<p><img src = "collapseBt.jpg" width = 500></p>
+<p><strong>QQ-plot</strong>
+<img src = "collapseBt.jpg" width = 500></p>
 
 <p></details></p>
 
@@ -4932,6 +4902,38 @@ ACADL   3180    5       65      1.33815 0.0528276       1.93705 0.0150444       
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6623,20 +6625,20 @@ ACADL   3180    5       65      1.33815 0.0528276       1.93705 0.0150444       
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316017" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316017"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -12,19 +12,19 @@
     <title>Customized10 :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316017" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316017" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316017"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3696,11 +3696,11 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <li><a href="#3-section-default-command-line-options">3. Section <code>[DEFAULT]</code> (command line options)</a></li>
 <li><a href="#4-pipeline-variables">4. Pipeline variables</a>
 <ul>
-<li><a href="#3-1-definition-of-pipeline-variables">3.1 Definition of pipeline variables</a></li>
+<li><a href="#4-1-definition-of-pipeline-variables">4.1 Definition of pipeline variables</a></li>
+<li><a href="#4-2-use-of-pipline-variables">4.2 Use of Pipline variables</a></li>
 </ul></li>
-<li><a href="#use-of-pipline-variables">Use of Pipline variables</a></li>
+<li><a href="#5-pipeline-action-sections-pipeline-xx-or-pipeline-xx-pipeline1-xx-or-xx">5. Pipeline action sections <code>[PIPELINE_XX]</code>, or <code>[PIPELINE_XX,PIPELINE1_XX]</code>, or <code>[*_XX]</code></a></li>
 </ul></li>
-<li><a href="#pipeline-action-sections-pipeline-xx-or-pipeline-xx-pipeline1-xx-or-xx">Pipeline action sections <code>[PIPELINE_XX]</code>, or <code>[PIPELINE_XX,PIPELINE1_XX]</code>, or <code>[*_XX]</code></a></li>
 </ul></li>
 <li><a href="#output-of-step-400-not-from-previous-step">output of step 400, not from previous step</a></li>
 <li><a href="#output-from-multiple-steps">output from multiple steps</a></li>
@@ -3708,10 +3708,13 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <li><a href="#if-your-pipeline-does-not-need-any-input-file-you-can-use-the-specfile">If your pipeline does not need any input file, you can use the SPECFILE</a></li>
 <li><a href="#itself-as-a-placeholder">itself as a placeholder.</a>
 <ul>
-<li><a href="#available-actions">Available actions</a>
+<li>
 <ul>
-<li><a href="#brief-description-of-built-in-actions">Brief description of built-in actions</a></li>
-<li><a href="#define-your-own-pipeline-actions">Define your own pipeline actions</a></li>
+<li><a href="#6-available-actions">6. Available actions</a>
+<ul>
+<li><a href="#6-1-brief-description-of-built-in-actions">6.1 Brief description of built-in actions</a></li>
+<li><a href="#6-2-define-your-own-pipeline-actions">6.2 Define your own pipeline actions</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -3737,7 +3740,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h2 id="specification-of-a-variant-tools-pipeline">Specification of a variant tools pipeline</h2>
 
-<p>This page describes the original pipeline format (version 1.0). Please refer to <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/pipelines/customizedpipeline/">New</a> if you are editing a new pipeline specification file for variant tools 2.7 and later.</p>
+<p>This page describes the original pipeline format (version 1.0). Please refer to <a href="https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/">New</a> if you are editing a new pipeline specification file for variant tools 2.7 and later.</p>
 
 <h3 id="1-introduction">1. Introduction</h3>
 
@@ -3865,7 +3868,7 @@ action=RunCommand(cmd=&quot;java %(opt_java)s SortSam ...&quot;)
 
 <h3 id="4-pipeline-variables">4. Pipeline variables</h3>
 
-<h4 id="3-1-definition-of-pipeline-variables">3.1 Definition of pipeline variables</h4>
+<h4 id="4-1-definition-of-pipeline-variables">4.1 Definition of pipeline variables</h4>
 
 <p>Two different types of variables can be used in a spec file: command line options and pipeline variables. Command line options are defined in the <code>[DEFAULT]</code> section and are used in the spec file with syntax <code>%(NAME)s</code>. These variables are replaced right after a spec file is loaded and cannot be changed.</p>
 
@@ -3898,7 +3901,7 @@ action=RunCommand(cmd=&quot;java %(opt_java)s SortSam ...&quot;)
 
 <li><p><code>${TEMP_DIR}</code>: Project temporary directory (<code>$temp_dir</code>), which can be used to store, for example, java temp directories. This directory can be set by runtime option <code>$temp_dir</code>. A system temp directory will be used if the pipeline is executed without a variant tools project.</p></li>
 
-<li><p><code>{MODEL_NAME}</code> and <code>SEED</code>: Name of the simulation model (pipeline) and seed. Used by <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/customization/simulation/">Variant Simulation Tools</a>.</p></li>
+<li><p><code>{MODEL_NAME}</code> and <code>SEED</code>: Name of the simulation model (pipeline) and seed. Used by <a href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/">Variant Simulation Tools</a>.</p></li>
 </ul>
 
 <p>Varialbes defined in the <code>[Pipeline Description]</code> section are added before the execution of the pipeline. Then, for each step, variant tools defines</p>
@@ -3921,7 +3924,7 @@ action=RunCommand(cmd=&quot;java %(opt_java)s SortSam ...&quot;)
 
 <p>is used to store each group of input files. For example, if the input fastq files are emitted in groups (more about this later), <code>${INPUT}</code> will be paired filenames. <strong>This variable should only be used in the <code>action</code> item of a step</strong>.</p>
 
-<h3 id="use-of-pipline-variables">Use of Pipline variables</h3>
+<h4 id="4-2-use-of-pipline-variables">4.2 Use of Pipline variables</h4>
 
 <p>It is important to remember that</p>
 
@@ -3956,7 +3959,7 @@ action=RunCommand(cmd=&quot;java %(opt_java)s SortSam ...&quot;)
 
 <p>Use of shell variables (e.g. use a for loop in action <code>RunCommand</code>) is possible but can be tricky because pipeline and shell variables can take the same form. Whereas simple form of shell variables (<code>$VAR</code> instead of <code>${VAR}</code>) can be used without problem, the brace form <code>${VAR}</code> will trigger a warning message if <code>VAR</code> is a not valid pipeline variable, and return unexpected results otherwise.</p>
 
-<h2 id="pipeline-action-sections-pipeline-xx-or-pipeline-xx-pipeline1-xx-or-xx">Pipeline action sections <code>[PIPELINE_XX]</code>, or <code>[PIPELINE_XX,PIPELINE1_XX]</code>, or <code>[*_XX]</code></h2>
+<h3 id="5-pipeline-action-sections-pipeline-xx-or-pipeline-xx-pipeline1-xx-or-xx">5. Pipeline action sections <code>[PIPELINE_XX]</code>, or <code>[PIPELINE_XX,PIPELINE1_XX]</code>, or <code>[*_XX]</code></h3>
 
 <p>A pipeline is, roughly speaking, a <em>pipe</em> that connects the input (e.g. raw reads in fastq format) to the output (e.g. aligned reads in bam format), going through a few steps (actions) along the way. A pipeline specification file can define multiple pipelines with different <code>PIPELINE</code>. Steps in a pipeline are numbered and will be executed in such order.</p>
 
@@ -4057,7 +4060,7 @@ action=RunCommand(cmd=&quot;java %(opt_java)s SortSam ...&quot;)
 
 <p>uses passes an additional option <code>-g</code> to an action for pipeline <code>eu</code>.</p>
 
-<h2 id="available-actions">Available actions</h2>
+<h3 id="6-available-actions">6. Available actions</h3>
 
 <p>Actions are functions that are executed by <em>Variant Tools</em>.</p>
 
@@ -4159,7 +4162,7 @@ class TerminateIf(PipelineAction)
 
 <p>to check the details of action <code>TerminateIf</code>.</p>
 
-<h3 id="brief-description-of-built-in-actions">Brief description of built-in actions</h3>
+<h4 id="6-1-brief-description-of-built-in-actions">6.1 Brief description of built-in actions</h4>
 
 <p>The following is a partial list of built-in actions defined by variant tools. The descriptions are brief and might have been outdated so please use command above to check the latest documentation.</p>
 
@@ -4217,7 +4220,7 @@ class TerminateIf(PipelineAction)
 
 <p>Arbitrary command could be defined for this action, which in theory could destroy all your data or system. It is your responsibility to verify that a pipeline description file does not contain malicious piece of code and we (developers of variant tools) are not responsible for any damage that might have been caused.</p>
 
-<h3 id="define-your-own-pipeline-actions">Define your own pipeline actions</h3>
+<h4 id="6-2-define-your-own-pipeline-actions">6.2 Define your own pipeline actions</h4>
 
 <p>You can define your pipeline actions to perform steps that cannot be performed by an existing command. Generally speaking, you will need to</p>
 
@@ -5254,6 +5257,38 @@ from variant_tools.pipeline import PipelineAction</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6940,20 +6975,20 @@ from variant_tools.pipeline import PipelineAction</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316017" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316017"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

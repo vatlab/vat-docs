@@ -12,19 +12,19 @@
     <title>Formats :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316017" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316017" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316017"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3693,7 +3693,10 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
+<li>
+<ul>
 <li><a href="#supported-import-update-export-file-formats">Supported import/update/export file formats</a></li>
+</ul></li>
 </ul>
 </nav>
     </div>
@@ -3715,7 +3718,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 
 
-<h1 id="supported-import-update-export-file-formats">Supported import/update/export file formats</h1>
+<h2 id="supported-import-update-export-file-formats">Supported import/update/export file formats</h2>
 
 <p><em>variant tools</em> uses file format specification files (<code>.fmt</code>) files to describe file formats so that commands such as <code>vtools import</code>, <code>vtools update</code> and <code>vtools export</code> know how to import data from and export data to files in such formats.</p>
 
@@ -3727,35 +3730,52 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <p><em>variant tools</em> can import and export data in the following formats. We try to update descriptions of these formats as soon as possible but please use commands such as</p>
 
-<p>% vtools show formats
-% vtools show format basic</p>
+<pre><code>% vtools show formats
+% vtools show format basic
+</code></pre>
 
 <p>to get the most updated information about these formats.</p>
 
-<p>| <strong>Name</strong>                                     | <strong>Import</strong> | <strong>Update</strong> | <strong>Export</strong> | <strong>Comment</strong>                                                                                                               |
-||
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit">basic</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit">?</a>                             | Y          |            | Y          | Import variants in tab-delimited format, export variants and optional variant info fields and genotypes                   |
-| VCF                                          | Y          | Y          | Y          | <a href="http://www.1000genomes.org/node/101">Variant Call Format</a> (VCF version 4.0 and 4.1)                                                                        |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Csv?action=edit">CSV</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Csv?action=edit">?</a>                               | Y          |            | Y          | csv format                                                                                                                |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVAR?action=edit">ANNOVAR</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVAR?action=edit">?</a>                           |            |            | Y          | Format of ANNOVAR input file.                                                                                             |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVARVariantFunction?action=edit">ANNOVAR_variant_function</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVARVariantFunction?action=edit">?</a>        | Y          |            |            | used to imported annotations from ANNOVAR *.variant_function files.                                                       |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVARVariantFunction?action=edit">ANNOVAR_exonic_variant_function</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.ANNOVARVariantFunction?action=edit">?</a> | Y          |            |            | imports annotations from files generated from ANNOVAR of the form *.exonic_variant_function.                            |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CASAVA18Snps?action=edit">CASAVA18_snps</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CASAVA18Snps?action=edit">?</a>                     | Y          |            |            | Illumina snps.txt format                                                                                                  |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CASAVA18Indels?action=edit">CASAVA18_indels</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CASAVA18Indels?action=edit">?</a>                   | Y          |            |            | indels.txt from Illumina                                                                                                  |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CGA?action=edit">CGA</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.CGA?action=edit">?</a>                               | Y          |            |            | Complete Genomics CGA <code>masterVarBeta$ID.tsv.bz2</code> file                                                                     |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.PileupIndel?action=edit">Pileup_indel</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.PileupIndel?action=edit">?</a>                      | Y          |            |            | Pileup Indel format                                                                                                       |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Map?action=edit">MAP</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Map?action=edit">?</a>                             | Y          |            |            | Import variants from files with only chr and pos information. reference and alternative alleles are retrieved from dbSNP. |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Plink?action=edit">PLINK</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Plink?action=edit">?</a>                           | Y          | Y          |            | Import variants and sample genotypes from PLINK file format. Currently only <a href="http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml">PLINK binary file input</a> is supported.   |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Polyphen2?action=edit">Polyphen2</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Polyphen2?action=edit">?</a>                       | Y          |            | Y          | Export data in Polyphen2 batch query, import information from results returned by the <a href="http://genetics.bwh.harvard.edu/pph2/bgi.shtml">polyphen2 batch query server</a>. |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.TPED?action=edit">TPED</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.TPED?action=edit">?</a>                            |            |            | Y          |                                                                                                                           |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.TwoAlleles?action=edit">twoalleles</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.TwoAlleles?action=edit">?</a>                      | Y          |            |            | Import alleles as allele 1 and 2, use a reference genome to determine which one is reference                              |
-| <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Rsname?action=edit">rsname</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.Rsname?action=edit">?</a>                          | Y          |            |            | Import variants from rsnames, using the dbSNP database to query variants                                                  |</p>
+<p>| <strong>Name</strong> | <strong>Import</strong> | <strong>Update</strong> | <strong>Export</strong> | <strong>Comment</strong>  |<br />
+|&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|<br />
+| [basic][1] | Y  |  a  | Y | Import variants in tab-delimited format, export variants and optional variant info fields and genotypes|
+| VCF   | Y   | Y  | Y | <a href="http://www.1000genomes.org/node/101">Variant Call Format</a> (VCF version 4.0 and 4.1) |
+| [CSV][3]           | Y   |       | Y   | csv format    |<br />
+| [ANNOVAR][4]     |         |         | Y     | Format of ANNOVAR input file.  |
+| [ANNOVAR_variant_function][5]  | Y     |     |   | used to imported annotations from ANNOVAR.variant_function files. |
+| [ANNOVAR_exonic_variant_function][5] | Y|    |  | imports annotations from files generated from ANNOVAR of the form.exonic_variant_function. |
+| [CASAVA18_snps][6]   | Y   |     |     | Illumina snps.txt format|
+| [CASAVA18_indels][7] | Y   |    |  | indels.txt from Illumina    |
+| [CGA][8]  | Y  |    |   | Complete Genomics CGA <code>masterVarBeta$ID.tsv.bz2</code> file  |
+| [Pileup_indel][9]   | Y   |  |     | Pileup Indel format |
+| [MAP][10]  | Y    |   |  | Import variants from files with only chr and pos information. reference and alternative alleles are retrieved from dbSNP. |
+| [PLINK][11] | Y | Y|  | Import variants and sample genotypes from PLINK file format. Currently only <a href="http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml">PLINK binary file input</a> is supported.   |
+| Polyphen2 | Y | | Y |Export data in Polyphen2 batch query, import information from results returned by the <a href="http://genetics.bwh.harvard.edu/pph2/bgi.shtml">polyphen2 batch query server</a>. |
+| [TPED][15]    |    |    | Y   |                               |
+| twoalleles  | Y  |     |  | Import alleles as allele 1 and 2, use a reference genome to determine which one is reference|
+| [rsname][17]    | Y    |    |       | Import variants from rsnames, using the dbSNP database to query variants    |</p>
 
 <p>Customize import/export format:</p>
 
 <ul>
-<li>Using <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.New?action=edit">customized format specification</a><a href="http://localhost/~iceli/wiki/pmwiki.php?n=Format.New?action=edit">?</a> file (<code>.fmt</code>) to import/export arbitrary text format.</li>
+<li>Using [customized format specification][18] file (<code>.fmt</code>) to import/export arbitrary text format.</li>
 </ul>
+
+<p>[1]: /  /documentation/customization/format/formats/txt/</p>
+
+<p>[3]: /  /documentation/customization/format/formats/csv/
+[4]: /  /documentation/customization/format/formats/annovar/
+[5]: /  /documentation/customization/format/formats/annovav/
+[6]: /  /documentation/customization/format/formats/casava18snps/
+[7]: /  /documentation/customization/format/formats/casava18indels/
+[8]: /  /documentation/customization/format/formats/cga/
+[9]: /  /documentation/customization/format/formats/cga/pileup/
+[10]: /  /documentation/customization/format/formats/map/
+[11]: /  /documentation/customization/format/formats/plink/</p>
+
+<p>[15]: /  /documentation/customization/format/formats/tped
+[17]: /  /documentation/customization/format/formats/rsname/
+[18]:/  /documentation/customization/format/formats/new/</p>
 
 
 <footer class=" footline" >
@@ -4730,6 +4750,38 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -6403,20 +6455,20 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

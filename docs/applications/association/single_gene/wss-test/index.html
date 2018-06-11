@@ -12,19 +12,19 @@
     <title>WSS test :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3731,18 +3731,15 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-introduction">1. Introduction</h3>
 
-<p>The method proposed by Madsen and Browning 2009 first introduced the idea of assigning &ldquo;weights&rdquo; to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen &amp; Browning paper the &ldquo;weights&rdquo; are defined as {$\sqrt{n_iq_i(1-q_i)}$} with the assumption that the &ldquo;rarer&rdquo; the variant, the larger the risk effect it is to a phenotype. The {$q_i$} in the original paper was based on observed control sample, which might result in inflated type I error(Mathieu Lemire, 2011). Implementation of the WSS statistic in the <code>WSSRankTest</code> method uses the same definition for {$q_i$} but the Mann-Whitney U test (<a href="http://www.alglib.net/hypothesistesting/mannwhitneyu.php">definition and C++ implementation for this program</a>) now relies on a full permutation procedure rather than normal approximation, such that the bias is correctly accounted for.</p>
+<p>The method proposed by Madsen and Browning 2009 first introduced the idea of assigning &ldquo;weights&rdquo; to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen &amp; Browning paper the &ldquo;weights&rdquo; are defined as <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \(\sqrt{n_iq_i(1-q_i)}\) with the assumption that the &ldquo;rarer&rdquo; the variant, the larger the risk effect it is to a phenotype. The \(q_i\) in the original paper was based on observed control sample, which might result in inflated type I error(Mathieu Lemire, 2011). Implementation of the WSS statistic in the <code>WSSRankTest</code> method uses the same definition for \(q_i\) but the Mann-Whitney U test (<a href="http://www.alglib.net/hypothesistesting/mannwhitneyu.php">definition and C++ implementation for this program</a>) now relies on a full permutation procedure rather than normal approximation, such that the bias is correctly accounted for.</p>
 
-<p>As with the <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/single_gene/vt-test/">Varible Thresholds strategy</a>, the idea of weighting can be applied to many other rare variant methods. The <code>WeightedBurdenBt</code> and <code>WeightedBurdenQt</code> methods implements the Madsen &amp; Browning weighting based on controls (or samples with low quantitative phenotypic values) or the entire population, and tests for association for both case control and quantitative traits with/without presence of phenotype co-variates.</p>
+<p>As with the <a href="https://vatlab.github.io/vat-docs/applications/association/single_gene/vt-test/">Varible Thresholds strategy</a>, the idea of weighting can be applied to many other rare variant methods. The <code>WeightedBurdenBt</code> and <code>WeightedBurdenQt</code> methods implements the Madsen &amp; Browning weighting based on controls (or samples with low quantitative phenotypic values) or the entire population, and tests for association for both case control and quantitative traits with/without presence of phenotype co-variates.</p>
 
 <h3 id="2-details">2. Details</h3>
 
 <h4 id="2-1-command-interface">2.1 Command interface</h4>
 
 <pre><code>vtools show test WSSRankTest
-
-
-
 
 Name:          WSSRankTest
 Description:   Weighted sum method using rank test statistic, Madsen &amp; Browning 2009
@@ -3804,9 +3801,6 @@ optional arguments:
 <pre><code>% vtools associate rare status -m &quot;WSSRankTest --name wss -p 5000&quot; --group_by name2 --to_db w\
 ss -j8 &gt; wss.txt
 
-
-
-
 INFO: 3180 samples are found
 INFO: 2632 groups are found
 INFO: Starting 8 processes to load genotypes
@@ -3821,9 +3815,6 @@ INFO: Annotation database used to record results of association tests. Created o
 
 % vtools show fields | grep wss
 
-
-
-
 wss.name2                    name2
 wss.sample_size_wss          sample size
 wss.num_variants_wss         number of variants in each group (adjusted for specified MAF
@@ -3837,7 +3828,6 @@ wss.num_permutations_wss     number of permutations at which p-value is evaluate
 
 
 % head wss.txt
-
 
 name2   sample_size_wss num_variants_wss    total_mac_wss   statistic_wss   pvalue_wss  std_error_wss   num_permutations_wss
 AADACL4 3180    5   138 34206   0.911089    11215.6 1000
@@ -4815,6 +4805,38 @@ ACADM   3180    4   103 19070   0.967033    9782.51 1000
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6509,20 +6531,20 @@ ACADM   3180    4   103 19070   0.967033    9782.51 1000
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

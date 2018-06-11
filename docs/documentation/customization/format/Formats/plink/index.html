@@ -12,19 +12,19 @@
     <title>plink :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3703,9 +3703,9 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <ul>
 <li><a href="#import-variants-and-sample-genotypes-from-plink-format">Import variants and sample genotypes from PLINK format</a>
 <ul>
-<li><a href="#introduction">Introduction</a></li>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-format-specification">2. Format specification</a></li>
 </ul></li>
-<li><a href="#format-specification">Format specification</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -3730,20 +3730,23 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h2 id="import-variants-and-sample-genotypes-from-plink-format">Import variants and sample genotypes from PLINK format</h2>
 
-<h3 id="introduction">Introduction</h3>
+<h3 id="1-introduction">1. Introduction</h3>
 
 <p><code>PLINK</code> is a widely used program for analyzing genotypic data for Genome-wide Association Studies (GWAS). It can be considered as standard input format for genotyping array data. An intermediate type of genetic data between genotyping arrays and exome sequencing is the exome genotyping array, or <strong>exome chip</strong>. Unlike its GWAS counterpart which focuses on relatively common variants, exome chips contain primarily non-singleton <em>coding</em> variants seen in existing whole genome and exome sequencing data, plus a small proportion of non-protein-altering variants such as GWAS tag SNPs, ancestry informative markers, etc. Since exome chips are essentially genotyping arrays, they are often distributed in <code>PLINK</code> data format. Variant tools can thus handle exome chip input and perform rare variants association analysis for exome chip samples.</p>
 
 <p>The standard <code>PLINK</code> files can be a bundle of plain text files (PED &amp; MAP dataset, or its transpose, TPED &amp; FAM dataset), or a bundle of binary files (BED, BIM &amp; FAM). <code>PLINK</code> provides commands to convert between text and binary formats. Since <code>PLINK</code> files do not specify for a variant which allele is reference and which is alternative, importing data to a variant tools project requires matching each variant to the reference sequence to determine reference and alternative alleles; complementary strand will be used when necessary. Variant tools performs the matching procedure against hg18 or hg19 reference genomes. Other reference genome builds are not supported.</p>
 
-<p>Currently only <code>PLINK</code> binary format (BED, BIM &amp; FAM) is valid input. You need to use <code>PLINK</code> to convert text to binary format if necessary.</p>
+<div class="notices info" ><p>Currently only <code>PLINK</code> binary format (BED, BIM &amp; FAM) is valid input. You need to use <code>PLINK</code> to convert text to binary format if necessary.</p>
+</div>
 
-<p>A variant locus will be ignored if it is not polymorphic in input data.</p>
 
-<h2 id="format-specification">Format specification</h2>
+<div class="notices warning" ><p>A variant locus will be ignored if it is not polymorphic in input data.</p>
+</div>
+
+
+<h3 id="2-format-specification">2. Format specification</h3>
 
 <pre><code>vtools show format plink
-
 
 Format:      plink
 
@@ -3770,7 +3773,6 @@ No configurable parameter is defined for this format.
 <p>As with other <code>vtools import</code> formats, importing <code>PLINK</code> data requires specification of format file (<code>--format</code>) and input data. Unlike with other formats, however, input filename for <code>PLINK</code> binary data is the base file name without extension. For example if you have <code>X.bed</code>, <code>X.bim</code> and <code>X.fam</code> files then the import command should be</p>
 
 <pre><code>vtools import /path/to/X --format plink --build hg19 --jobs $N
-
 
 INFO: Preprocessing files X to generate intermediate input files for import
 INFO: Determining major/minor allele from data
@@ -4808,6 +4810,38 @@ Copying genotype: 100% [========================] 4,485 194.8/s in 00:00:23
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -6433,20 +6467,20 @@ Copying genotype: 100% [========================] 4,485 194.8/s in 00:00:23
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

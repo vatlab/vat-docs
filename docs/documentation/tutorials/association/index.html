@@ -12,19 +12,19 @@
     <title>Quality control :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3825,7 +3825,7 @@ zcat g1000exomesnv.header.vcf.gz $fn | bgzip -c &gt; g1000exomesnv.vcf.gz
 
 <h4 id="1-2-software">1.2 Software</h4>
 
-<p>Quality control and association analysis will be performed with <em>variant association tools</em> (<code>vtools update</code>, <code>vtools select</code> and <code>vtools associate</code>) with simple annotations from <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/introduction/"><em>variant association tools</em></a>. A few other software are occasionally needed for certain tasks along the pipeline.</p>
+<p>Quality control and association analysis will be performed with <em>variant association tools</em> (<code>vtools update</code>, <code>vtools select</code> and <code>vtools associate</code>) with simple annotations from <a href="https://vatlab.github.io/vat-docs/applications/association/introduction/"><em>variant association tools</em></a>. A few other software are occasionally needed for certain tasks along the pipeline.</p>
 
 <p><details><summary>Other software</summary></p>
 
@@ -3918,7 +3918,7 @@ data_dir=&quot;./data&quot;
 
 <h4 id="2-1-preparing-input-format-configuration-file">2.1 Preparing input format configuration file</h4>
 
-<p>A &ldquo;data format configuration file&rdquo; *.fmt is required to build a project. This mechanism allows importing variants/samples from a number of arbitrary input format. It is always good practice to review and adapt a template fmt file for a specific data-set. We provide a few <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/vtools_commands/import/">FMT templates</a>, among which a vcf format template is available. A modified version of the template <code>vcf.fmt</code> results in <code>g1000vcf.fmt</code>. We created this file by extracting the meta information of the source vcf file and make changes accordingly on the <code>fmt</code> template. You should find this file in your project directory if you have loaded our snapshot <code>vt_qc</code>. Using this snapshot, you do not need to import any data for this tutorial. However you can modify and use the configuration files for your other projects.</p>
+<p>A &ldquo;data format configuration file&rdquo; *.fmt is required to build a project. This mechanism allows importing variants/samples from a number of arbitrary input format. It is always good practice to review and adapt a template fmt file for a specific data-set. We provide a few <a href="https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/">FMT templates</a>, among which a vcf format template is available. A modified version of the template <code>vcf.fmt</code> results in <code>g1000vcf.fmt</code>. We created this file by extracting the meta information of the source vcf file and make changes accordingly on the <code>fmt</code> template. You should find this file in your project directory if you have loaded our snapshot <code>vt_qc</code>. Using this snapshot, you do not need to import any data for this tutorial. However you can modify and use the configuration files for your other projects.</p>
 
 <div class="notices info" ><p><code>g1000vcf.fmt</code> is configured such that it will not import variant INFO fields (we will create separated annotation database for it) and genotype likelihood GL field (we will not use it in the analysis)</p>
 </div>
@@ -3926,11 +3926,11 @@ data_dir=&quot;./data&quot;
 
 <h5 id="optimize-the-performance">Optimize the performance</h5>
 
-<p>If you have a large volume of data to import, it is important to set &ldquo;runtime optimization&rdquo; parameters to speed up the process. Please read <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/vtools_commands/import/">this documentation</a> for details.</p>
+<p>If you have a large volume of data to import, it is important to set &ldquo;runtime optimization&rdquo; parameters to speed up the process. Please read <a href="https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/">this documentation</a> for details.</p>
 
 <h5 id="import-from-multiple-sources">Import from multiple sources</h5>
 
-<p>If your dataset is stored in multiple VCF file, please read <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/vtools_commands/import/">this documentation</a> for properly importing such dataset.</p>
+<p>If your dataset is stored in multiple VCF file, please read <a href="https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/">this documentation</a> for properly importing such dataset.</p>
 
 <h4 id="2-2-creating-annotations">2.2 Creating Annotations</h4>
 
@@ -3950,7 +3950,7 @@ data_dir=&quot;./data&quot;
 
 <h5 id="annotations-from-the-source-vcf-file">Annotations from the source VCF file</h5>
 
-<p>Two files are required to create annotation database: the source data and the <code>.ann</code> configuration file. A number of <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/annotation/customized/">ANN templates</a> are provided. To <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/annotation/customized/">create customized annotation configuration</a> please refer to the online documentation.</p>
+<p>Two files are required to create annotation database: the source data and the <code>.ann</code> configuration file. A number of <a href="https://vatlab.github.io/vat-docs/applications/annotation/customized/">ANN templates</a> are provided. To <a href="https://vatlab.github.io/vat-docs/applications/annotation/customized/">create customized annotation configuration</a> please refer to the online documentation.</p>
 
 <p>The snapshot we provided has intentionally left out information in the <code>INFO</code> field of the VCF file, which you will find in the file <code>variants.tsv.gz</code> in this snapshot, as well as the <code>g1000.ann</code> file to build annotation database from the <code>INFO</code> field of VCF file.</p>
 
@@ -4033,7 +4033,7 @@ g1000.SNPSOURCE              indicates if a snp was called when analysing the lo
 
 <h5 id="annovar-annotations"><code>ANNOVAR</code> Annotations</h5>
 
-<p>We want to annotate variants with <code>ANNOVAR</code> for variants functionality so that we can focus on functional variants in rare variants association analysis. Although all variants in this dataset should be found in the large collection of readily available annotation databases in <code>variant annotation tools</code>, we want to demonstrate here the use of customized text based annotation sources. For readily usable annotation please refer to documentation of <a href="1313/vat-docs/applications/annotation/introduction/"><code>variant annotation tools</code></a>.</p>
+<p>We want to annotate variants with <code>ANNOVAR</code> for variants functionality so that we can focus on functional variants in rare variants association analysis. Although all variants in this dataset should be found in the large collection of readily available annotation databases in <code>variant annotation tools</code>, we want to demonstrate here the use of customized text based annotation sources. For readily usable annotation please refer to documentation of [<code>variant annotation tools</code>][11].</p>
 
 <p>Firstly we output the variants for <code>ANNOVAR</code> to annotate:</p>
 
@@ -4172,7 +4172,7 @@ variant_id, bin, chr, pos, ref, alt, region_type, region_name
 
 <h3 id="3-basic-quality-control-data-preprocessing">3. Basic Quality Control &amp; Data Preprocessing</h3>
 
-<p>Quality control is a crucial yet tedious step in association analysis. To facilitate this step, we provide a variety of summary statistic along with a number of sample/variant selection and filtering operations for quality control purpose. In this section we will demonstrate some basic quality control procedures. Please refer to our <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/qc/">data exploration tutorial</a> for advanced summary statistics and QC measures.</p>
+<p>Quality control is a crucial yet tedious step in association analysis. To facilitate this step, we provide a variety of summary statistic along with a number of sample/variant selection and filtering operations for quality control purpose. In this section we will demonstrate some basic quality control procedures. Please refer to our <a href="https://vatlab.github.io/vat-docs/applications/association/qc/">data exploration tutorial</a> for advanced summary statistics and QC measures.</p>
 
 <h4 id="3-1-variant-genotype-level-qc">3.1 Variant &amp; Genotype Level QC</h4>
 
@@ -4635,6 +4635,8 @@ vtools phenotype --set &quot;missing_ratio = mnum/(M * 1.0)&quot;
 <h5 id="group-specific-filtering-of-missing-data-for-rare-variant-association-analysis">Group specific filtering of missing data for rare variant association analysis</h5>
 
 <p>After the variant/sample information field <code>missing_ratio</code> is calculated, an overall variant/sample level filtering can be performed. However we do not recommend the overall filtering for rare variant association analysis. In practice the distribution of missing genotype calls are not uniform. Some samples may not have data on a particular genetic region while other samples have (due to different exome capture arrays). To fully exploit the data we will filter variants and samples for missing data specific to each small genomic unit while carrying out association tests, as will be introduced in the next section of this tutorial.</p>
+
+<p>[11]: 1313  /applications/annotation/introduction/</p>
 
 
 <footer class=" footline" >
@@ -5600,6 +5602,38 @@ vtools phenotype --set &quot;missing_ratio = mnum/(M * 1.0)&quot;
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -7278,20 +7312,20 @@ vtools phenotype --set &quot;missing_ratio = mnum/(M * 1.0)&quot;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

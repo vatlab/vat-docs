@@ -12,19 +12,19 @@
     <title>md5sumd :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3769,7 +3769,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% md5sumd -h
 
-
 usage: md5sumd [-h] [--version] [-c [CHECKSUM]] [-v]
                [FILE_OR_DIR [FILE_OR_DIR ...]]
 
@@ -3805,8 +3804,7 @@ optional arguments:
 
 <p>Let us calculate the MD5 of a directory:</p>
 
-<pre><code>% md5sumd vtools
-
+<pre><code>% md5sumd vtools 
 
 b93f839744cd53fb87981c8254cc7511  vtools
 </code></pre>
@@ -3816,7 +3814,6 @@ b93f839744cd53fb87981c8254cc7511  vtools
 <pre><code>% cp -r vtools ~/Temp
 % md5sumd ~/Temp/vtools
 
-
 b93f839744cd53fb87981c8254cc7511  ~/Temp/vtools/
 </code></pre>
 
@@ -3824,7 +3821,6 @@ b93f839744cd53fb87981c8254cc7511  ~/Temp/vtools/
 
 <pre><code>% rm ~/Temp/vtools/*.pyc
 % md5sumd ~/Temp/vtools
-
 
 c71b7236b19feb1682f1c7039e5df8f2  ~/Temp/vtools/
 </code></pre>
@@ -3836,15 +3832,13 @@ c71b7236b19feb1682f1c7039e5df8f2  ~/Temp/vtools/
 <pre><code>% md5sumd vtools &gt; vtools.md5
 % md5sumd -c vtools.md5
 
-
 vtools: OK
 </code></pre>
 
 <p>When we transfer the directory to another place, we can still use this command to validate its content as long as the directory name is not changed. Now, if we change the directory, and check again,</p>
 
 <pre><code>% rm -rf vtools/cache
-% md5sumd --check vtools.md5
-
+% md5sumd --check vtools.md5    
 
 vtools: FAILED
 </code></pre>
@@ -3853,16 +3847,14 @@ vtools: FAILED
 
 <p>It can be frustrating when a directory checksum mismatch happens but you have no idea what has been changed. An interesting feature of the <code>md5sumd</code> command is that it can generate and output detailed file-level MD5 information and use it to figure out what exactly have been changed to a directory.</p>
 
-<pre><code>% md5sumd vtools -v &gt; vtools.md5
-
+<pre><code>% md5sumd vtools -v &gt; vtools.md5   
 
 Scanning 34366 files: 100%[====================================] 2,095,623,045 48.6M/s in 00:00:430
 </code></pre>
 
 <p>As you can see, the <code>--verbose</code> option even enables a progress bar, which can be helpful for directories that contain a large number of files. The output of this command has a lot more information, and it is interesting to see that there are 1,843,428 files of a total size of 28,615,195,835 under this directory.</p>
 
-<pre><code>% head -5 vtools.md5
-
+<pre><code>% head -5 vtools.md5   
 
 2efce10e113804fc8a6b4e81ffd54f2e  vtools
 ## MD5  type    num_files   num_dirs    filesize    total_num_files total_filesize  name
@@ -3875,8 +3867,7 @@ Scanning 34366 files: 100%[====================================] 2,095,623,045 4
 
 <pre><code>% rm -f vtools/*pyc
 % rm vtools/source/*temp
-% md5sumd -c vtools.md5
-
+% md5sumd -c vtools.md5  
 
 vtools/source: directory modified.
 vtools/source/cgatools_wrap_py3.cpp_temp: file removed.
@@ -3893,8 +3884,7 @@ vtools: FAILED
 <p>Although the main strength of <code>md5sumd</code> is its ability to calculate directory md5, it works well with files as well. For example, we can generate a md5 for all files and directories under a directory using command:</p>
 
 <pre><code>% cd vtools
-% md5sumd -v * &gt; vtools.md5
-
+% md5sumd -v * &gt; vtools.md5  
 
 Scanning 65 files under annotation: 100%[============================] 194,919 17.0M/s in 00:00:000
 Scanning 32123 files under boost_1_49_0: 100%[===================] 281,585,238 16.4M/s in 00:00:170
@@ -3914,7 +3904,6 @@ Scanning 121 files under test: 100%[==========================] 1,507,339,718 30
 
 <pre><code>% rm test/*DB*
 % md5sumd --check vtools.md5
-
 
 MANIFEST: OK
 MANIFEST.in: OK
@@ -3971,8 +3960,7 @@ vtools_report.spec: OK
 
 <p>The <code>md5sumd --check</code> command will read from standard input if no filename (python 2.7 or higher) or a filename with name <code>-</code> is specified. For example,</p>
 
-<pre><code>% md5sumd vtools gsl  | md5sumd -c -
-
+<pre><code>% md5sumd vtools gsl  | md5sumd -c -  
 
 vtools: OK
 gsl: OK
@@ -4939,6 +4927,38 @@ gsl: OK
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6625,20 +6645,20 @@ gsl: OK
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

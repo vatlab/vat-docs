@@ -12,19 +12,19 @@
     <title>admin :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316019" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316019" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678572" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678572" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316019" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678572" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678572"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316019"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678572"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678572"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316019"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678572"></script>
 
     
   </div>
@@ -3733,7 +3733,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% vtools admin -h
 
-
 usage: vtools admin [-h] [--update_resource [TYPE]] [--mirror_repository dest]
                     [--merge_samples] [--rename_samples COND [COND ...]]
                     [--rename_table NAME NEW_NAME]
@@ -3874,7 +3873,6 @@ Misc utilities:
 <pre><code>% vtools init temp   # needed if there is no project in the current directory
 % vtools admin --update_resource
 
-
 Scanning 112 local files: 100% [========================] 18,537,133,615 407.1M/s in 00:00:45
 INFO: 2 files need to be downloaded or updated
 1/2 annoDB/evs-6500.DB.gz: 100% [==========================] 109,502,699.0 1.4M/s in 00:01:17
@@ -3910,7 +3908,6 @@ INFO: 2 files need to be downloaded or updated
 
 <pre><code>% vtools show samples
 
-
 sample_name filename
 SAMP1       V1_hg38.vcf
 SAMP2       V2_hg38.vcf
@@ -3923,7 +3920,6 @@ SAMP3       V3_hg38.vcf
 % vtools admin --rename_samples 'filename=&quot;V2_hg38.vcf&quot;' V2
 % vtools admin --rename_samples 'filename=&quot;V3_hg38.vcf&quot;' V3
 
-
 INFO: 1 samples with names SAMP1 are renamed to V1
 INFO: 1 samples with names SAMP1 are renamed to V2
 INFO: 1 samples with names SAMP1 are renamed to V3
@@ -3932,7 +3928,6 @@ INFO: 1 samples with names SAMP1 are renamed to V3
 <p>The samples now have different names:</p>
 
 <pre><code>% vtools show samples
-
 
 sample_name filename
 V1          V1_hg38.vcf
@@ -3944,7 +3939,6 @@ V3          V3_hg38.vcf
 
 <pre><code>% vtools admin --rename_samples 1 V SAMP
 
-
 INFO: Rename 1 sample with name V1 to SAMP1
 INFO: Rename 1 sample with name V2 to SAMP2
 INFO: Rename 1 sample with name V3 to SAMP3
@@ -3953,7 +3947,6 @@ INFO: Rename 1 sample with name V3 to SAMP3
 
 
 % vtools show samples
-
 
 sample_name filename
 SAMP1       V1_hg38.vcf
@@ -3979,9 +3972,7 @@ SAMP3       V3_hg38.vcf
 % vtools import V2.vcf 
 % vtools import V3.vcf 
 % vtools import CASAVA18_SNP.txt --format CASAVA18_snps 
-
 % vtools admin --rename_samples 'sample_name = &quot;max_gt&quot;' SAMP3
-
 
 INFO: 1 samples with names max_gt are renamed to SAMP3
 </code></pre>
@@ -3989,7 +3980,6 @@ INFO: 1 samples with names max_gt are renamed to SAMP3
 <p>Now we have four samples with the last two sharing the same name</p>
 
 <pre><code>% vtools show genotypes
-
 
 sample_name filename    num_genotypes   sample_genotype_fields
 SAMP1   V1.vcf  989 GT
@@ -4002,7 +3992,6 @@ SAMP3   CASAVA18_SNP.txt    21  GT,Q_max_gt
 
 <pre><code>% vtools admin --merge_samples
 
-
 INFO: 2 samples that share identical names will be merged to 1 samples
 Merging samples: 100% [=========================================] 2 235.8/s in 00:00:00
 </code></pre>
@@ -4010,7 +3999,6 @@ Merging samples: 100% [=========================================] 2 235.8/s in 0
 <p>The genotypes are</p>
 
 <pre><code>% vtools show genotypes
-
 
 sample_name filename    num_genotypes   sample_genotype_fields
 SAMP1   V1.vcf  989 GT
@@ -4026,14 +4014,12 @@ SAMP3   CASAVA18_SNP.txt,V3.vcf 1009    GT,Q_max_gt
 
 <pre><code>% vtools admin --rename_samples 1 SAMP2 SAMP1
 
-
-INFO: Rename 1 sample with name SAMP2 to SAMP1
+ INFO: Rename 1 sample with name SAMP2 to SAMP1
 </code></pre>
 
 <p>and try to merge <code>SAMP2</code> to <code>SAMP1</code>, we will get an error message because <code>SAMP1</code> and <code>SAMP2</code> share many of the variants.</p>
 
 <pre><code>% vtools admin --merge_samples
-
 
 INFO: 2 samples that share identical names will be merged to 1 samples
 Merging samples: 100% [=========================================] 2 197.5/s in 00:00:00
@@ -4058,7 +4044,6 @@ vtools select variant --samples 'filename = &quot;V1_hg38.vcf&quot;' -t fromV1 '
 
 <pre><code>% vtools show tables
 
-
 table          #variants     date message
 all variant        2,051    May29
 fromV1             1,269    May29 variants from v1
@@ -4069,7 +4054,6 @@ variant            2,051    May29 Master variant table
 
 <pre><code>% vtools admin --rename_table 'all variant' all_variant
 
-
 INFO: Table all variant is renamed to all_variant
 </code></pre>
 
@@ -4077,14 +4061,12 @@ INFO: Table all variant is renamed to all_variant
 
 <pre><code>% vtools admin --describe_table 'all_variant' 'A replicate of the master variant table'
 
-
 INFO: Description of table all_variant is updated
 </code></pre>
 
 <p>The table now has a new name and a description, but its creation date and command are not changed.</p>
 
-<pre><code>% vtools show table all_variant
-
+<pre><code>% vtools show table all_variant  
 
 Name:                   all_variant
 Description:            A replicate of the master variant table
@@ -4105,7 +4087,6 @@ Number of variants:     2051
 <pre><code>% vtools init test
 % vtools admin --load_snapshot vt_testData
 
-
 Downloading snapshot vt_testData.tar.gz from online
 INFO: Snapshot vt_testData has been loaded
 </code></pre>
@@ -4113,7 +4094,6 @@ INFO: Snapshot vt_testData has been loaded
 <p>We would like to import data from <code>V1.vcf</code>, <code>V2.vcf</code>, and <code>V3.vcf</code> but do not know the correct reference genome to use, so we use <code>hg19</code></p>
 
 <pre><code>% vtools import V*.vcf --build hg19
-
 
 INFO: Importing variants from V1.vcf (1/3)
 V1.vcf: 100% [======================================] 1,000 19.3K/s in 00:00:00
@@ -4133,7 +4113,6 @@ INFO: 1,611 new variants (1,611 SNVs) from 2,995 lines (3 samples) are imported.
 
 <pre><code>% vtools admin --validate_build
 
-
 Validate reference alleles: 100% [=============] 1,611/1,238 14.8K/s in 00:00:00
 INFO: 1611 non-insertion variants are checked. 1238 mismatch variants found.
 </code></pre>
@@ -4142,8 +4121,7 @@ INFO: 1611 non-insertion variants are checked. 1238 mismatch variants found.
 
 <pre><code>% vtools init test -f
 % vtools import V*.vcf --build hg18
-% vtools admin --validate_build
-
+% vtools admin --validate_build 
 
 Validate reference alleles: 100% [==================] 1,611 60.1K/s in 00:00:00
 INFO: 1611 non-insertion variants are checked. 0 mismatch variants found.
@@ -4186,14 +4164,12 @@ INFO: 1611 non-insertion variants are checked. 0 mismatch variants found.
 
 <pre><code>% vtools admin --save_snapshot stage1 &quot;after importing date&quot;
 
-
 INFO: Snapshot stage1 has been saved
 </code></pre>
 
 <p>A message is required to describe each snapshot so that you can know later on what this snapshot is about:</p>
 
-<pre><code>% vtools show snapshots
-
+<pre><code>% vtools show snapshots 
 
 stage1                  after importing date  (122.0KB, created: Jul15
                         14:35:14)
@@ -4218,7 +4194,6 @@ vt_testData             An empty project with some test datasets (63.0KB,
 
 <pre><code>% vtools admin --load_snapshot stage1
 
-
 INFO: Snapshot stage1 has been loaded
 </code></pre>
 
@@ -4226,14 +4201,12 @@ INFO: Snapshot stage1 has been loaded
 
 <pre><code>% vtools admin --save_snapshot stage1.tgz &quot;after importing phenotypes&quot;
 
-
 INFO: Snapshot stage1.tgz has been saved
 </code></pre>
 
 <p>This snapshot will not be displayed by command <code>vtools show snapshots</code> because it is managed by the current project</p>
 
 <pre><code>% vtools show snapshots -l 2
-
 
 stage1                  after importing date  (122.0KB, created: Jul15
                         14:35:14)
@@ -4244,8 +4217,7 @@ vt_qc                   snapshot for QC tutorial, exome data of 1000 genomes
 
 <p>but it can be viewed using command <code>vtools show snapshot</code></p>
 
-<pre><code>% vtools show snapshot stage1.tgz
-
+<pre><code>% vtools show snapshot stage1.tgz  
 
 Name:                   stage1.tgz
 Source:                 local
@@ -4256,8 +4228,7 @@ Description:            after importing phenotypes
 
 <p>You can revert to this snapshot using command</p>
 
-<pre><code>% vtools admin --load_snapshot stage1.tgz
-
+<pre><code>% vtools admin --load_snapshot stage1.tgz   
 
 INFO: Snapshot stage1.tgz has been loaded
 </code></pre>
@@ -4284,7 +4255,6 @@ INFO: Snapshot stage1.tgz has been loaded
 <p>A list of runtime options and their descriptions could be obtained by</p>
 
 <pre><code>% vtools show runtime_options
-
 
 associate_num_of_readers None (default)
                         Use specified number of processes to read genotype
@@ -5391,6 +5361,38 @@ verbosity               1 (default)
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -7069,20 +7071,20 @@ verbosity               1 (default)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678572"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316019"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316019"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678572"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678572"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316019" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316019"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678572" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678572"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

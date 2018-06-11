@@ -12,19 +12,19 @@
     <title>weighted :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3731,30 +3731,27 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-1-introduction">1.1 Introduction</h3>
 
-<p>This implements a collection of <strong>weighted</strong> aggregation tests. Different from plain <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a &ldquo;weight&rdquo; to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated &ldquo;burden&rdquo;, e.g., {$$X=\sum_i^N\omega_iX_i$$} where {$\omega_i$}&rsquo;s are the weights. The weights often reflect the relative importance of a variant in terms of its contribution to phenotype.</p>
+<p>This implements a collection of <strong>weighted</strong> aggregation tests. Different from plain <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a &ldquo;weight&rdquo; to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated &ldquo;burden&rdquo;, e.g., {$$X=\sum_i^N\omega_iX_i$$} where <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \(\omega_i\)&rsquo;s are the weights. The weights often reflect the relative importance of a variant in terms of its contribution to phenotype.</p>
 
-<p>The weighting approach was first proposed by (Madsen and Browning, 2010) with the assumption that &ldquo;rarer&rdquo; variants tend to be more important (the <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/single_gene/wss-test/">WSS statistic</a>). This weighting theme is by far the most popular weights and has been adapted into a number of methods emerged later, such as (Lin and Tang, 2011) and (Wu et al, 2011). Other weighting themes such as KBAC and RBT weightings have different assumptions but they are also based solely on internal information from data. (Price et al, 2010) proposed the use of &ldquo;external&rdquo; weights, i.e., using functional annotation sources to calculate weight for rare variants. This weighting theme can also be naturally integrated into many rare variants methods.</p>
+<p>The weighting approach was first proposed by (Madsen and Browning, 2010) with the assumption that &ldquo;rarer&rdquo; variants tend to be more important (the <a href="https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/">WSS statistic</a>). This weighting theme is by far the most popular weights and has been adapted into a number of methods emerged later, such as (Lin and Tang, 2011) and (Wu et al, 2011). Other weighting themes such as KBAC and RBT weightings have different assumptions but they are also based solely on internal information from data. (Price et al, 2010) proposed the use of &ldquo;external&rdquo; weights, i.e., using functional annotation sources to calculate weight for rare variants. This weighting theme can also be naturally integrated into many rare variants methods.</p>
 
-<p>Implementation of <code>WeightedBurdenBt</code> and <code>WeightedBurdenQt</code> are similar to <a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> but allows the use of the following weighting themes:</p>
+<p>Implementation of <code>WeightedBurdenBt</code> and <code>WeightedBurdenQt</code> are similar to <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> but allows the use of the following weighting themes:</p>
 
 <ul>
-<li><a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/single_gene/wss-test/">WSS</a> weight, based on entire sample</li>
-<li><a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/single_gene/wss-test/">WSS</a> weight, based on controls or sample with above/below average phenotype values</li>
-<li><a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/single_gene/rbt-test/">RBT</a> weight</li>
-<li><a href="https://vatlab.github.io/vat-docs/vat-docs/applications/association/single_gene/kbac-test/">KBAC</a> weight</li>
+<li><a href="https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/">WSS</a> weight, based on entire sample</li>
+<li><a href="https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/">WSS</a> weight, based on controls or sample with above/below average phenotype values</li>
+<li><a href="https://vatlab.github.io/vat-docs/applications/association/single_gene/rbt-test/">RBT</a> weight</li>
+<li><a href="https://vatlab.github.io/vat-docs/applications/association/single_gene/kbac-test/">KBAC</a> weight</li>
 <li>External weights from annotation</li>
 </ul>
 
-<p>Permutation methods have to be used to obtain {$p$} value for WSS (control based), KBAC and RBT weighting themes.</p>
+<p>Permutation methods have to be used to obtain \(p\) value for WSS (control based), KBAC and RBT weighting themes.</p>
 
 <h3 id="2-details">2. Details</h3>
 
 <h4 id="2-1-command-interface">2.1 Command interface</h4>
 
 <pre><code>vtools show test WeightedBurdenBt
-
-
-
 
 Name:          WeightedBurdenBt
 Description:   Weighted genotype burden tests for disease traits, using one or many
@@ -3831,12 +3828,7 @@ optional arguments:
                         model. Default set to additive
 
 
-
-
 vtools show test WeightedBurdenQt
-
-
-
 
 Name:          WeightedBurdenQt
 Description:   Weighted genotype burden tests for quantitative traits, using one or
@@ -3921,9 +3913,6 @@ optional arguments:
 me WeightedBurdenBt --alternative 2&quot; --group_by name2 --to_db weightedburdenBt -j8 &gt; weight\
 edburdenBt.txt
 
-
-
-
 INFO: 3180 samples are found
 INFO: 2632 groups are found
 INFO: Starting 8 processes to load genotypes
@@ -3934,12 +3923,7 @@ INFO: Using annotation DB weightedburdenBt in project test.
 INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 21:36:29
 
 
-
-
 vtools show fields | grep weightedburdenBt
-
-
-
 
 weightedburdenBt.name2       name2
 weightedburdenBt.sample_size_WeightedBurdenBt sample size
@@ -3962,12 +3946,7 @@ weightedburdenBt.beta_5_pvalue_WeightedBurdenBt p-value for covariate 5
 weightedburdenBt.wald_5_WeightedBurdenBt Wald statistic for covariate 5
 
 
-
-
 head weightedburdenBt.txt
-
-
-
 
 name2   sample_size_WeightedBurdenBt    num_variants_WeightedBurdenBt   total_mac_WeightedBurdenBt  beta_x_WeightedBurdenBt pvalue_WeightedBurdenBt wald_x_WeightedBurdenBt beta_2_WeightedBurdenBt beta_2_pvalue_WeightedBurdenBt  wald_2_WeightedBurdenBt beta_3_WeightedBurdenBt beta_3_pvalue_WeightedBurdenBt  wald_3_WeightedBurdenBt beta_4_WeightedBurdenBt beta_4_pvalue_WeightedBurdenBt  wald_4_WeightedBurdenBt beta_5_WeightedBurdenBt beta_5_pvalue_WeightedBurdenBt  wald_5_WeightedBurdenBt
 AAMP    3180    3   35  0.0449657   0.979459    0.0257468   0.0312612   4.39155E-09 5.86873 -0.298905   0.0146383   -2.44121    0.130226    1.2303E-40  13.3472 0.435497    0.00139398  3.19589
@@ -3981,14 +3960,12 @@ ABCB6   3180    7   151 -0.349842   0.782487    -0.276079   0.0313125   4.21645E
 ABCD3   3180    3   42  -1.24687    0.595311    -0.531156   0.0312676   4.44499E-09 5.86672 -0.301058   0.0139996   -2.45727    0.130189    1.06821E-40 13.3577 0.436778    0.00135205  3.2047
 </code></pre>
 
-<p><strong>QQ-plot</strong>  Attach:weightedburdenBt.jpg</p>
+<p><strong>QQ-plot</strong>
+<img src = "weightedburdenQt.jpg" width = 500></p>
 
 <pre><code>vtools associate rare bmi --covariates age gender exposure -m &quot;WeightedBurdenQt --name Weig\
 htedBurdenQt --alternative 2&quot; --group_by name2 --to_db weightedburdenQt -j8 &gt; weightedburde\
 nQt.txt
-
-
-
 
 INFO: 3180 samples are found
 INFO: 2632 groups are found
@@ -3999,12 +3976,7 @@ INFO: Using annotation DB weightedburdenQt in project test.
 INFO: Annotation database used to record results of association tests. Created on Thu, 31 Jan 2013 21:51:44
 
 
-
-
 vtools show fields | grep weightedburdenQt
-
-
-
 
 weightedburdenQt.name2       name2
 weightedburdenQt.sample_size_WeightedBurdenQt sample size
@@ -4024,12 +3996,7 @@ weightedburdenQt.beta_4_pvalue_WeightedBurdenQt p-value for covariate 4
 weightedburdenQt.wald_4_WeightedBurdenQt Wald statistic for covariate 4
 
 
-
-
 head weightedburdenQt.txt
-
-
-
 
 name2   sample_size_WeightedBurdenQt    num_variants_WeightedBurdenQt   total_mac_WeightedBurdenQt  beta_x_WeightedBurdenQt pvalue_WeightedBurdenQt wald_x_WeightedBurdenQt beta_2_WeightedBurdenQt beta_2_pvalue_WeightedBurdenQt  wald_2_WeightedBurdenQt beta_3_WeightedBurdenQt beta_3_pvalue_WeightedBurdenQt  wald_3_WeightedBurdenQt beta_4_WeightedBurdenQt beta_4_pvalue_WeightedBurdenQt  wald_4_WeightedBurdenQt
 AADACL4 3180    5   138 -3.3906 0.159775    -1.40616    0.0150701   0.0575284   1.89996 -0.0698905  0.733286    -0.340787   -0.940103   2.72704E-05 -4.20129
@@ -4043,7 +4010,8 @@ ABI2    3180    1   25  5.96983 0.276415    1.0886  0.0150043   0.0586562   1.89
 ABL2    3180    4   41  -1.52705    0.578314    -0.555906   0.0150917   0.057261    1.902   -0.0773202  0.706151    -0.377064   -0.943905   2.54124E-05 -4.21733
 </code></pre>
 
-<p><img src = "weightedburdenQt.jpg" width = 500></p>
+<p><strong>QQ-plot</strong>
+<img src = "weightedburdenQt.jpg" width = 500></p>
 
 <p></details></p>
 
@@ -5013,6 +4981,38 @@ ABL2    3180    4   41  -1.52705    0.578314    -0.555906   0.0150917   0.057261
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6707,20 +6707,20 @@ ABL2    3180    4   41  -1.52705    0.578314    -0.555906   0.0150917   0.057261
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

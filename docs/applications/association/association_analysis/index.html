@@ -12,19 +12,19 @@
     <title>Association analysis :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3746,7 +3746,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <pre><code>% vtools associate -h
 
-
 usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]]
                         [--var_info [VAR_INFO [VAR_INFO ...]]]
                         [--geno_info [GENO_INFO [GENO_INFO ...]]]
@@ -3851,8 +3850,7 @@ Output of test statistics:
 
 <p>Each association test method (<code>-m/--method</code>) has its own commandline interface. To show all available association tests,</p>
 
-<pre><code>% vtools show tests
-
+<pre><code>% vtools show tests   
 
 BurdenBt              Burden test for disease traits, Morris &amp; Zeggini 2009
 BurdenQt              Burden test for quantitative traits, Morris &amp; Zeggini
@@ -3865,7 +3863,6 @@ CFisher               Fisher's exact test on collapsed variant loci, Li &amp; Le
 <p>To show usage of a particular test,</p>
 
 <pre><code>% vtools show test CFisher
-
 
 Name:          CFisher
 Description:   Fisher's exact test on collapsed variant loci, Li &amp; Leal 2008
@@ -3939,7 +3936,7 @@ optional arguments:
            -j8 &gt; SNV.txt
 </code></pre>
 
-<p>{$p$} values calculated by this command are based on Wald statistic of logistic regression analysis. To evaluate p-values empirically,</p>
+<p>p values calculated by this command are based on Wald statistic of logistic regression analysis. To evaluate p-values empirically,</p>
 
 <pre><code>% vtools associate common status \
            --covariates gender age \
@@ -3978,20 +3975,9 @@ adaptive 5e-5&quot; \
 
 <h5 id="setting-a-timeout-for-permutation-based-association-analysis">Setting a <em>timeout</em> for permutation based association analysis</h5>
 
-<pre><code>Although with the &quot;adaptive permutation&quot; approach most permutation tests in an exome-wide a\
-ssociation scan would terminate early after a few thousand permutations, for scans involvin\
-g up to a million association tests you are likely to see some tests running for hours, rep\
-orting very small p-values in the end. These tests will temporarily hold up the computation\
- resource (they have to be finished first before the rest of tests get started). We provide\
- an option to set a time limit per test, in addition to using the adaptive permutation. Thi\
-s option is useful particularly when your computation resource is tight, or if you use a cl\
-uster that offers limited walltime, or if your sample size is small and result in extreme v\
-alues of test statistic. To set the association timeout to 1 hour (3600s):
+<p>Although with the &ldquo;adaptive permutation&rdquo; approach most permutation tests in an exome-wide association scan would terminate early after a few thousand permutations, for scans involving up to a million association tests you are likely to see some tests running for hours, reporting very small p-values in the end. These tests will temporarily hold up the computation resource (they have to be finished first before the rest of tests get started). We provide an option to set a time limit per test, in addition to using the adaptive permutation. This option is useful particularly when your computation resource is tight, or if you use a cluster that offers limited walltime, or if your sample size is small and result in extreme values of test statistic. To set the association timeout to 1 hour (3600s):</p>
 
-
-
-
-% vtools admin --set_runtime_option association_timeout=3600
+<pre><code>% vtools admin --set_runtime_option association_timeout=3600
 % vtools show
 </code></pre>
 
@@ -5017,6 +5003,38 @@ optional arguments:
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6707,20 +6725,20 @@ optional arguments:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

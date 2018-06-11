@@ -12,19 +12,19 @@
     <title>basic :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316017" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316017" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316017"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3703,12 +3703,12 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <ul>
 <li><a href="#importing-variants-from-tab-delimited-files">Importing variants from tab-delimited files</a>
 <ul>
-<li><a href="#format-description">Format description</a></li>
-</ul></li>
-<li><a href="#examples">Examples</a>
+<li><a href="#1-format-description">1. Format description</a></li>
+<li><a href="#2-examples">2. Examples</a>
 <ul>
-<li><a href="#import-variants-with-columns-chr-pos-ref-and-alt">Import variants with columns chr, pos, ref, and alt</a></li>
-<li><a href="#export-variants-variants-info-and-genotypes">Export variants, variants info and genotypes</a></li>
+<li><a href="#2-1-import-variants-with-columns-chr-pos-ref-and-alt">2.1 Import variants with columns chr, pos, ref, and alt</a></li>
+<li><a href="#2-2-export-variants-variants-info-and-genotypes">2.2 Export variants, variants info and genotypes</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -3734,10 +3734,9 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h2 id="importing-variants-from-tab-delimited-files">Importing variants from tab-delimited files</h2>
 
-<h3 id="format-description">Format description</h3>
+<h3 id="1-format-description">1. Format description</h3>
 
-<pre><code>% vtools show format basic
-
+<pre><code>% vtools show format basic  
 
 A basic variant import/export format that import variants with four tab-
 delimited columns (chr, pos, ref, alt), and export variants, optional variant
@@ -3772,15 +3771,14 @@ Format parameters:
                         (default: chr,pos,ref,alt)
 </code></pre>
 
-<h2 id="examples">Examples</h2>
+<h3 id="2-examples">2. Examples</h3>
 
-<h3 id="import-variants-with-columns-chr-pos-ref-and-alt">Import variants with columns chr, pos, ref, and alt</h3>
+<h4 id="2-1-import-variants-with-columns-chr-pos-ref-and-alt">2.1 Import variants with columns chr, pos, ref, and alt</h4>
 
 <p><details><summary> Examples: create a sample project</summary> Let us load a project with a few test datasets</p>
 
 <pre><code>% vtools init basic 
-% vtools admin --load_snapshot vt_testData
-
+% vtools admin --load_snapshot vt_testData 
 
 Downloading snapshot vt_testData.tar.gz from online
 INFO: Snapshot vt_testData has been loaded
@@ -3793,7 +3791,6 @@ INFO: Snapshot vt_testData has been loaded
 <p><details><summary> Examples: Import variants using format <code>basic</code></summary> File <code>variants.txt</code> has a list of variants as follows</p>
 
 <pre><code>% head variants.txt 
-
 
 1   203148112   T   -
 1   203148168   G   A
@@ -3811,7 +3808,6 @@ INFO: Snapshot vt_testData has been loaded
 
 <pre><code>% vtools import variants.txt --format basic --build hg19
 
-
 INFO: Importing variants from variants.txt (1/1)
 variants.txt: 100% [===============================================] 20 9.9K/s in 00:00:00
 INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
@@ -3823,7 +3819,6 @@ Copying genotype: 0 0.0/s in 00:00:00
 <p>The variants can be displayed using command <code>vtools output</code>,</p>
 
 <pre><code>% vtools output variant chr pos ref alt -l 10
-
 
 1   203148112   T   -
 1   203148168   G   A
@@ -3846,7 +3841,6 @@ Copying genotype: 0 0.0/s in 00:00:00
 <pre><code>% vtools init import -f
 % vtools import variants.txt --format basic --pos_adj 1 --build hg19 
 
-
 vtools import variants.txt --format basic --pos_adj 1 --build hg19
 INFO: Importing variants from variants.txt (1/1)
 variants.txt: 100% [========================================] 20 758.8/s in 00:00:00
@@ -3859,7 +3853,6 @@ Copying genotype: 0 0.0/s in 00:00:00
 
 
 % vtools output variant chr pos ref alt -l 10
-
 
 1   203148113   T   -
 1   203148169   G   A
@@ -3875,14 +3868,13 @@ Copying genotype: 0 0.0/s in 00:00:00
 
 <p></details></p>
 
-<h3 id="export-variants-variants-info-and-genotypes">Export variants, variants info and genotypes</h3>
+<h4 id="2-2-export-variants-variants-info-and-genotypes">2.2 Export variants, variants info and genotypes</h4>
 
 <p>If we export data in <code>basic</code> format without any parameter, the output is similar to the output of command <code>vtools output variant chr pos ref alt</code>,</p>
 
 <p><details><summary> Examples: export variants</summary> Let us get more variants,</p>
 
-<pre><code>% vtools import CEU.vcf.gz --var_info DP
-
+<pre><code>% vtools import CEU.vcf.gz --var_info DP 
 
 INFO: Using primary reference genome hg18 of the project.
 Getting existing variants: 100% [=======================] 20 30.5K/s in 00:00:00
@@ -3898,7 +3890,6 @@ Copying samples: 100% [===============================] 120 558.0K/s in 00:00:00
 
 <pre><code>% vtools export variant --format basic &gt; bb
 
-
 Writing: 100% [========================================] 308 32.4K/s in 00:00:00
 INFO: 308 lines are exported from variant table variant
 
@@ -3906,7 +3897,6 @@ INFO: 308 lines are exported from variant table variant
 
 
 % head -5 bb
-
 
 1   203148112   T   -
 1   203148168   G   A
@@ -3922,8 +3912,7 @@ INFO: 308 lines are exported from variant table variant
 <p><details><summary> Examples: export variant info fields</summary></p>
 
 <pre><code>% vtools use dbSNP-hg18_130
-% vtools export variant --fields DP dbSNP.name --format ~/vtools/format/basic &gt; bb
-
+% vtools export variant --fields DP dbSNP.name --format ~/vtools/format/basic &gt; bb  
 
 Writing: 100% [========================================] 308 29.3K/s in 00:00:00
 INFO: 308 lines are exported from variant table variant
@@ -3931,8 +3920,7 @@ INFO: 308 lines are exported from variant table variant
 
 <p>You can see the output has six columns, with depth (field <code>DP</code>) and rsname (field <code>dbSNP.name</code>) as the last two columns. Note that missing entries are displayed as empty string.</p>
 
-<pre><code>% head -30 bb
-
+<pre><code>% head -30 bb    
 
 1   203148112   T   -
 1   203148168   G   A
@@ -3975,7 +3963,6 @@ INFO: 308 lines are exported from variant table variant
 <pre><code>% vtools select variant --samples 1 -t inSamples
 % vtools export inSamples --samples 'sample_name like &quot;NA128%&quot;'  --format ~/vtools/format/basic &gt; bb
 
-
 INFO: Genotypes of 8 samples are exported.
 Writing: 100% [========================================] 288 10.6K/s in 00:00:00
 INFO: 288 lines are exported from variant table inSamples
@@ -3984,7 +3971,6 @@ INFO: 288 lines are exported from variant table inSamples
 
 
 % head -5 bb
-
 
 1   533 G   C       0   0   0   1   0       1   1
 1   41342   T   A       0   0   1   1   0       0   0
@@ -4001,7 +3987,6 @@ INFO: 288 lines are exported from variant table inSamples
 
 <pre><code>% vtools export inSamples --samples 'sample_name like &quot;NA128%&quot;'  --format ~/vtools/format/basic --header chr pos ref alt &quot;%(sample_names)s&quot; &gt; bb
 
-
 INFO: Genotypes of 8 samples are exported.
 Writing: 100% [========================================] 288 12.9K/s in 00:00:00
 INFO: 288 lines are exported from variant table inSamples
@@ -4010,7 +3995,6 @@ INFO: 288 lines are exported from variant table inSamples
 
 
 % head -5 bb
-
 
 chr pos ref alt NA12812 NA12813 NA12814 NA12815 NA12828 NA12872 NA12873 NA12874
 1   533 G   C       0   0   0   1   0       1   1
@@ -5012,6 +4996,38 @@ chr pos ref alt NA12812 NA12813 NA12814 NA12815 NA12828 NA12872 NA12873 NA12874
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -6669,20 +6685,20 @@ chr pos ref alt NA12812 NA12813 NA12814 NA12815 NA12828 NA12872 NA12873 NA12874
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316017" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316017"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

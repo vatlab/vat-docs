@@ -12,19 +12,19 @@
     <title>track :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316018" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316018" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316018" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316018"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316018"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3776,7 +3776,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 </div>
 
 
-<p>Please refer to <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/vtools_commands/show/">here</a> for more details of command vtools show, especially a brief description of the BAM header.</p>
+<p>Please refer to <a href="https://vatlab.github.io/vat-docs/documentation/vtools_commands/show/">here</a> for more details of command vtools show, especially a brief description of the BAM header.</p>
 
 <h4 id="2-2-tabixed-vcf-tracks">2.2 Tabixed vcf tracks</h4>
 
@@ -3788,7 +3788,6 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 % tabix -p vcf CEU_hg38.vcf.gz
 % vtools import CEU_hg38.vcf.gz --build hg38
 
-
 INFO: Importing variants from CEU_hg38.vcf.gz (1/1)
 CEU_hg38.vcf.gz: 100% [===================================] 306 10.4K/s in 00:00:00
 INFO: 292 new variants (292 SNVs) from 306 lines are imported.
@@ -3797,8 +3796,7 @@ Importing genotypes: 100% [================================] 292 2.7K/s in 00:00
 
 <p>The track information can be displayed using command</p>
 
-<pre><code>% vtools show track CEU.vcf.gz | head -30
-
+<pre><code>% vtools show track CEU.vcf.gz | head -30   
 
 Version                 VCF v4.0
 Number of fields:       69
@@ -3836,7 +3834,6 @@ NA06986.GT              Genotype for sample NA06986
 
 <pre><code>% vtools output variant chr pos &quot;track('CEU_hg38.vcf.gz')&quot; -l 5
 
-
 1   10533   AA=.;AC=6;AN=120;DP=423
 1   51479   AA=.;AC=29;AN=120;DP=188
 1   51928   AA=.;AC=5;AN=120;DP=192
@@ -3846,8 +3843,7 @@ NA06986.GT              Genotype for sample NA06986
 
 <p>The default parameter <code>col=8</code> is used to extract the info column of the info file. You can display other tracks such as name</p>
 
-<pre><code>% vtools output variant chr pos &quot;track('CEU_hg38.vcf.gz', 'name')&quot; -l 5
-
+<pre><code>% vtools output variant chr pos &quot;track('CEU_hg38.vcf.gz', 'name')&quot; -l 5   
 
 1   10533   .
 1   51479   .
@@ -3860,7 +3856,6 @@ NA06986.GT              Genotype for sample NA06986
 
 <pre><code>% vtools output variant chr pos &quot;track('CEU_hg38.vcf.gz', 'info.DP')&quot; -l 5
 
-
 1   10533   423
 1   51479   188
 1   51928   192
@@ -3871,7 +3866,6 @@ NA06986.GT              Genotype for sample NA06986
 <p>If you know the name of the sample (in the vcf file, this example happens to has samples from this file),</p>
 
 <pre><code>% vtools show samples -l 5
-
 
 sample_name filename
 NA06985     CEU_hg38.vcf.gz
@@ -3884,8 +3878,7 @@ NA07037     CEU_hg38.vcf.gz
 
 <p>you can get the genotype columns using sample name</p>
 
-<pre><code>% vtools output variant chr pos &quot;track('CEU_hg38.vcf.gz', 'NA06986')&quot; -l 5
-
+<pre><code>% vtools output variant chr pos &quot;track('CEU_hg38.vcf.gz', 'NA06986')&quot; -l 5  
 
 1   10533   0|0:14:SMB
 1   51479   0|1:16:SMB
@@ -3898,7 +3891,6 @@ NA07037     CEU_hg38.vcf.gz
 
 <pre><code>% vtools output variant chr pos &quot;track('CEU.vcf.gz', 'format')&quot; -l 5
 
-
 1   10533   GT:DP:CB
 1   51479   GT:DP:CB
 1   51928   GT:DP:CB
@@ -3909,7 +3901,6 @@ NA07037     CEU_hg38.vcf.gz
 <p>we can list fields of the genotype columns,</p>
 
 <pre><code>% vtools output variant chr pos &quot;track('CEU.vcf.gz', 'NA06986.GT')&quot; -l 5
-
 
 1   10533   0|0
 1   51479   0|1
@@ -3926,7 +3917,6 @@ NA07037     CEU_hg38.vcf.gz
 
 <pre><code>% vtools liftover hg19
 
-
 INFO: Exporting variants in BED format
 Exporting variants: 100% [==========================] 288 67.3K/s in 00:00:00
 INFO: Running UCSC liftOver tool
@@ -3936,8 +3926,7 @@ Updating table variant: 100% [======================] 288 21.8K/s in 00:00:00
 <p>To pass the correct coordinates, option <code>--build hg19</code> is needed:</p>
 
 <pre><code>% vtools output variant chr pos &quot;track('http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.chr1.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz', 'info')&quot; \
-%     -l 5 --build hg19
-
+%     -l 5 --build hg19  
 
 1   10533   .
 1   51479   RSQ=0.7414;AVGPOST=0.9085;AA=T;AN=2184;THETA=0.0131;AC=235;VT=SNP;LDAF=0.1404;SNPSOURCE=LOWCOV;ERATE=0.0012;AF=0.11;ASN_AF=0.0035;AMR_AF=0.16;AFR_AF=0.03;EUR_AF=0.22
@@ -3962,7 +3951,6 @@ Updating table variant: 100% [======================] 288 21.8K/s in 00:00:00
 % vtools init track -f
 % vtools import indels.vcf  --build hg19
 
-
 INFO: Importing variants from indels.vcf (1/1)
 indels.vcf: 100% [============================================] 184 12.3K/s in 00:00:00
 INFO: 137 new variants (1 SNVs, 77 insertions, 58 deletions, 7 complex variants) from 184 lines are imported.
@@ -3973,7 +3961,6 @@ Copying samples: 0 0.0/s in 00:00:00
 <p>The detailed information about this track can be obtained by</p>
 
 <pre><code>% vtools show track wgEncodeOpenChromFaireFrontalcortexocSig.bigWig
-
 
 Version:                4
 Primary data size       1320909131
@@ -4022,7 +4009,6 @@ value (4, FLOAT)        value
 
 <pre><code>% vtools output variant chr pos ref alt &quot;track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig')&quot; -l 5
 
-
 1   10434   -   C   0.00089999998454
 1   10440   C   -   0.00089999998454
 1   54789   C   -   0.00719999987632
@@ -4034,7 +4020,6 @@ value (4, FLOAT)        value
 
 <pre><code>% vtools select variant &quot;track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig') &gt; 0.001&quot; \
      --output chr pos ref alt &quot;track('wgEncodeOpenChromFaireFrontalcortexocSig.bigWig')&quot; -l 5
-
 
 1   54789   C   -   0.00719999987632
 1   54790   -   T   0.00719999987632
@@ -4055,7 +4040,6 @@ value (4, FLOAT)        value
 % vtools init track
 % vtools import indels.vcf  --build hg19
 
-
 INFO: Importing variants from indels.vcf (1/1)
 indels.vcf: 100% [============================================] 184 12.3K/s in 00:00:00
 INFO: 137 new variants (1 SNVs, 77 insertions, 58 deletions, 7 complex variants) from 184 lines are imported.
@@ -4066,7 +4050,6 @@ Copying samples: 0 0.0/s in 00:00:00
 <p>This tracks provides the following information:</p>
 
 <pre><code>% vtools show track wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed
-
 
 Version:                4
 Item count:             38378
@@ -4120,8 +4103,7 @@ constituitiveExons (9, INTEGER) Number of constituitive exons used to estimate t
 
 <p>The track provides provides numeric annotation for each variant,</p>
 
-<pre><code>% vtools output variant chr pos ref alt &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed')&quot; -l5
-
+<pre><code>% vtools output variant chr pos ref alt &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed')&quot; -l5s  
 
 1   10434   -   C   .
 1   10440   C   -   .
@@ -4134,15 +4116,13 @@ constituitiveExons (9, INTEGER) Number of constituitive exons used to estimate t
 
 <pre><code>% vtools select variant &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed') = 1&quot; -t encode
 
-
 Running: 0 0.0/s in 00:00:00
 INFO: 28 variants selected.
 </code></pre>
 
 <p>and lists fields from the bigBed file for these variants</p>
 
-<pre><code>% vtools output encode chr pos ref alt &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed', 4)&quot; -l5
-
+<pre><code>% vtools output encode chr pos ref alt &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed', 4)&quot; -l5  
 
 1   761958  -       T       LINC00115
 1   768117  GTTTT   -       RP11-206L10.11
@@ -4154,7 +4134,6 @@ INFO: 28 variants selected.
 <p>and</p>
 
 <pre><code>% vtools output encode chr pos ref alt &quot;track('wgEncodeDukeAffyExonUrothelUt189SimpleSignalRep2.bigBed', 'score')&quot; -l5
-
 
 1   761958  -       T       692
 1   768117  GTTTT   -       659
@@ -4206,7 +4185,6 @@ INFO: 28 variants selected.
 
 <pre><code>% vtools select variant --samples &quot;sample_name = 'WGS4_9'&quot; -t ex49
 
-
 INFO: 1 samples are selected by condition: sample_name = 'WGS4_9'
 Running: 3,959 164.5/s in 00:00:24
 INFO: 1191 variants selected.
@@ -4214,12 +4192,11 @@ INFO: 1191 variants selected.
 
 <p>We first need to check the available information that can be retrived</p>
 
-<pre><code>$ vtools show track LP6005253-DNA_A02.bam
-
+<pre><code>$ vtools show track LP6005253-DNA_A02.bam  
 
 Header:
 @HD VN:1.0  SO:coordinate
-@PG ID:CASAVA   VN:CASAVA-1.9.0a1_110909    CL:/illumina/development/casava/CASAVA-VariantCalling-2.12a_gVCF/bin/configureBuild.pl --targets all bam --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L5/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L6/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L7/Sample_LP6005253-DNA_A02 --outDir=/scratch/LP6005253-DNA_A02 --samtoolsRefFile=/illumina/scratch/services/Genomes/FASTA_UCSC/HumanNCBI37_UCSC/HumanNCBI37_UCSC_XX.fa --indelsSaveTempFiles --variantsConsensusVCF --jobsLimit=12 --variantsPrintUsedAlleleCounts --variantsWriteRealigned --sortKeepAllReads --bamChangeChromLabels=OFF --sgeQueue=prod-s.q
+@PG ID:CASAVA   VN:CASAVA-1.9.0a1_110909    CL:/illumina/ /development/casava/CASAVA-VariantCalling-2.12a_gVCF/bin/configureBuild.pl --targets all bam --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L5/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L6/Sample_LP6005253-DNA_A02 --inSampleDir=/illumina/build/services/Projects/MDAnderson_Thompson2/LP6005253-DNA_A02/Aligned/D1LTMACXX_Aligned_MDAnderson_Thompson2_LP6005253-DNA_A02_121222_SN1012_0268_BD1LTMACXX_CE_L7/Sample_LP6005253-DNA_A02 --outDir=/scratch/LP6005253-DNA_A02 --samtoolsRefFile=/illumina/scratch/services/Genomes/FASTA_UCSC/HumanNCBI37_UCSC/HumanNCBI37_UCSC_XX.fa --indelsSaveTempFiles --variantsConsensusVCF --jobsLimit=12 --variantsPrintUsedAlleleCounts --variantsWriteRealigned --sortKeepAllReads --bamChangeChromLabels=OFF --sgeQueue=prod-s.q
 @SQ SN:chr1 LN:249250621
 @SQ SN:chr2 LN:243199373
 @SQ SN:chr3 LN:198022430
@@ -4296,7 +4273,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 
 <pre><code>% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam')&quot; -l5
 
-
 1   1138963 C   T   26
 1   1470808 G   A   37
 1   6161109 C   T   27
@@ -4308,7 +4284,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 
 <pre><code>% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam', 'qual')&quot; -l5
 
-
 1   1138963 C   T   34,34,32,30,33,39,40,41,31,34,23,25,37,33,34,40,40,2,11,31,33,24,2,40,39,35
 1   1470808 G   A   31,2,37,35,35,33,33,35,33,29,41,35,35,33,33,2,35,5,35,35,36,40,31,40,31,26,23,38,33,39,31,41,40,30,35,34,34
 1   6161109 C   T   10,31,32,39,31,39,41,41,35,2,22,40,38,28,39,40,39,35,41,20,40,35,39,38,35,30,34
@@ -4318,8 +4293,7 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 
 
 
-% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam', 'mapq')&quot; -l5
-
+% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam', 'mapq')&quot; -l5   
 
 1   1138963 C   T   254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,241,254,254,254,254,254,254,254,254
 1   1470808 G   A   254,194,254,254,254,254,254,254,254,254,254,254,254,254,254,149,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254,254
@@ -4332,7 +4306,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 
 <pre><code>% vtools output ex49 chr pos ref alt &quot;track('LP6005253-DNA_A02.bam', 'coverage?min_qual=30')&quot; -l5
 
-
 1   1138963 C   T   20
 1   1470808 G   A   31
 1   6161109 C   T   22
@@ -4344,7 +4317,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 
 <pre><code>% vtools output ex49 chr pos ref alt 'ref_sequence(chr, pos-3, pos+3)' &quot;track('LP6005253-DNA_A02.bam', 'AS?min_qual=35')&quot; -l5
 
-
 1   1138963 C   T   AGCCTCC 1007|1001|1001|966|941|1006|816|946|1002
 1   1470808 G   A   GGCGGCC 1007|475|783|951|998|878|967|968|1004|967|967|962|962|935|1004|1008|963|998
 1   6161109 C   T   TACCGTG 897|922|927|830|967|965|936|997|997|832|774|961|966|922|937|949|964
@@ -4355,7 +4327,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 <p>or its values to filter reads:</p>
 
 <pre><code>% vtools output ex49 chr pos ref alt 'ref_sequence(chr, pos-3, pos+3)' &quot;track('LP6005253-DNA_A02.bam', 'coverage?AS&gt;1000')&quot; -l5
-
 
 1   1138963 C   T   AGCCTCC 5
 1   1470808 G   A   GGCGGCC 7
@@ -4373,8 +4344,7 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 <p>First, we can display the nucleotide at the variant site using the <code>calls</code> parameter,</p>
 
 <pre><code>% bam=/path/to/a/bam/file
-% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'calls?limit=20')&quot;
-
+% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'calls?limit=20')&quot;  
 
 1   118420020   -               T   IIIII.I.I.I..III.I.I
 1   159023386   G               A   .AAAAA..A.AA..A..A.A
@@ -4405,7 +4375,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 
 <pre><code>% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'reads?limit=5')&quot;
 
-
 1   118420020   -               T   T.....|T.....|T.....|T.....|T.....
 1   159023386   G               A   ..   |A... |A....|A....|A....
 1   160398161   G               A   A    |..   |A..  |...  |A....
@@ -4428,7 +4397,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 <p>Parameters <code>start</code> and <code>width</code> can be used to specify the window of sequences to display:</p>
 
 <pre><code>% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'reads?limit=5&amp;start=-5&amp;width=8&amp;color=1&amp;show_seq=1')&quot;
-
 
 1   118420020   -               T   GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT
 1   159023386   G               A   AAGTGGT |AAGTGATG|AAGTGATG|AAGTGATG|AAGTGATG
@@ -4453,7 +4421,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 
 <pre><code>% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'reads?limit=5&amp;start=-5&amp;width=8&amp;color=1&amp;show_seq=1&amp;strand=+')&quot;
 
-
 1   118420020   -               T   GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT|GTTACTTTT
 1   159023386   G               A   AAGTGATG|AAGTGATG|AAGTGATG|AAGTGATG|AAGTGGTG
 1   160398161   G               A   CTTCCATG|CTTCCATG|CTTCCATG|CTTCCATG|CTTCCATG
@@ -4474,7 +4441,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 <p>Or display just the mismatch single-nucleotides</p>
 
 <pre><code>% vtools output exon1 chr pos ref alt &quot;track('${bam}', 'reads?limit=5&amp;start=-5&amp;width=8&amp;type=1')&quot;
-
 
 1   118420020   -               T
 1   159023386   G               A   .....A..|.....A..|.....A..|.....A..|.....A..
@@ -4502,7 +4468,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
     &quot;track('${bam}', 'coverage?type=3')&quot; \
     &quot;track('${bam}', 'coverage?type=3&amp;strand=+')&quot; \
     &quot;track('${bam}', 'coverage?type=3&amp;strand=-')&quot;
-
 
 1   118420020   -               T   25  9   0   16  0   0   0
 1   159023386   G               A   43  18  25  0   0   0   0
@@ -4534,7 +4499,6 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
 <p><details><summary> Examples: obtain depth of coverage of variants using online BAM files</summary></p>
 
 <pre><code>% vtools output variant chr pos &quot;track('ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/HG00096/alignment/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam')&quot; -l5
-
 
 [bam_index_load] attempting to download the remote index file.
 1   533 0
@@ -5514,6 +5478,38 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -7192,20 +7188,20 @@ Parameters start (default to 0), width (default to 5) and color (default to 0) c
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316018"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316018"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316018" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316018"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

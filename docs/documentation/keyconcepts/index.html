@@ -12,19 +12,19 @@
     <title>Key concepts :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528316017" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528316017" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1528678571" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1528678571" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528316017" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1528678571" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1528678571"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528316017"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1528678571"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1528678571"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528316017"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1528678571"></script>
 
     
   </div>
@@ -3752,9 +3752,9 @@ Annotation databases:
 
 <h3 id="2-variant-variant-table">2. Variant &amp; variant table</h3>
 
-<p><strong>Variants</strong> refer to DNA sequence variations at a particular locus. Each variant consists of a <em>chromosome name</em> (1, 2, &hellip;, X etc, without leading <code>chr</code>), a <em>position</em> (1-based), a <em>reference allele</em>, and an <em>alternative allele</em>, denoted by fields <strong><code>chr</code></strong>, <strong><code>pos</code></strong>, <strong><code>ref</code></strong>, and <strong><code>alt</code></strong>. variant tools currently supports <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/keyconcepts/supportedtypes/">SNV, small indels, and MNP (Multiple-nucleotide polymorphism)</a>. All variants are assumed to be on the forward (<code>+</code>) strand.</p>
+<p><strong>Variants</strong> refer to DNA sequence variations at a particular locus. Each variant consists of a <em>chromosome name</em> (1, 2, &hellip;, X etc, without leading <code>chr</code>), a <em>position</em> (1-based), a <em>reference allele</em>, and an <em>alternative allele</em>, denoted by fields <strong><code>chr</code></strong>, <strong><code>pos</code></strong>, <strong><code>ref</code></strong>, and <strong><code>alt</code></strong>. variant tools currently supports <a href="https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/">SNV, small indels, and MNP (Multiple-nucleotide polymorphism)</a>. All variants are assumed to be on the forward (<code>+</code>) strand.</p>
 
-<p>Unlike some other tools that can analyze variants in external files directly, <strong>variants must be imported into a project before they are annotated or analyzed</strong>. All variant tools project has a <strong>master variant table</strong> that consists of all variants in this project. These variants are usually <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/vtools_commands/import/">imported</a> from external files. A project can have many <strong>variant tables</strong> that consist of subsets of variants from the master variant table. They are usually created using command <code>vtools select</code> according to sample properties and annotation of variants. Information about variant tables can be listed by command <code>vtools show tables</code>. Names of variant tables can contain special characters such as &lsquo;@&rsquo;.</p>
+<p>Unlike some other tools that can analyze variants in external files directly, <strong>variants must be imported into a project before they are annotated or analyzed</strong>. All variant tools project has a <strong>master variant table</strong> that consists of all variants in this project. These variants are usually <a href="https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/">imported</a> from external files. A project can have many <strong>variant tables</strong> that consist of subsets of variants from the master variant table. They are usually created using command <code>vtools select</code> according to sample properties and annotation of variants. Information about variant tables can be listed by command <code>vtools show tables</code>. Names of variant tables can contain special characters such as &lsquo;@&rsquo;.</p>
 
 <p><details> <summary> Examples </summary></p>
 
@@ -3862,7 +3862,7 @@ $ vtools output refT chr pos ref alt id AA AC AN DP -l 5
 
 <h3 id="4-annotation-databases-annotation-fields">4. Annotation databases &amp; annotation fields</h3>
 
-<p><strong>Annotation databases</strong> are databases that provide annotation information for variants. They are not part of a project but they provide additional <strong>annotation fields</strong> to a project when they are <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/vtools_commands/use/">linked</a> to a project. Conceptually speaking, attaching annotation databases to a project adds info fields to variants of the project, although annotation databases usually annotate only part of the variants, leaving a lot of <code>NULL</code> values for these fields.</p>
+<p><strong>Annotation databases</strong> are databases that provide annotation information for variants. They are not part of a project but they provide additional <strong>annotation fields</strong> to a project when they are <a href="https://vatlab.github.io/vat-docs/documentation/vtools_commands/use/">linked</a> to a project. Conceptually speaking, attaching annotation databases to a project adds info fields to variants of the project, although annotation databases usually annotate only part of the variants, leaving a lot of <code>NULL</code> values for these fields.</p>
 
 <p><details><summary>Examples:</summary> Let us download and use an annotation database <code>dbSNP</code> version 135 for reference genome hg19</p>
 
@@ -3892,7 +3892,7 @@ Reference genome hg38:  chr, pos, ref, alt
   RSPOS (int)           Chr position reported in dbSNP
   RV (int)              RS orientation is reversed
   VP (char)             Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
-  GENEINFO (char)       Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (&lt;/summary&gt;and each pair is delimited by a vertical bar (|)
+  GENEINFO (char)       Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
   dbSNPBuildID (int)    First dbSNP Build for RS
   SAO (int)             Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
   SSR (int)             Variant Suspect Reason Codes (may be more than one value added together) 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed,
@@ -3973,7 +3973,7 @@ dbSNP.RS (int)          dbSNP ID (i.e. rs number)
 dbSNP.RSPOS (int)       Chr position reported in dbSNP
 dbSNP.RV (int)          RS orientation is reversed
 dbSNP.VP (char)         Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf
-dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (&lt;/summary&gt;and each pair is delimited by a vertical bar (|)
+dbSNP.GENEINFO (char)   Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)
 dbSNP.dbSNPBuildID (int)
                         First dbSNP Build for RS
 dbSNP.SAO (int)         Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both
@@ -4073,7 +4073,19 @@ INFO: 4833 variants selected.
 
 <p><details><summary>Examples:</summary> If we download a <a href="http://www.iq-darwin.cremag.org/resources/encode/hg19/pliki/wgEncodeGisRnaSeqH1hescCellPapPlusRawRep1.bigWig">bigWig annotation file</a> from the <a href="http://genome.ucsc.edu/ENCODE/">UCSC ENCODE website</a>, you can use it to annotate and select variants,</p>
 
-<pre><code>% vtools output variant chr pos ref alt 'track(&quot;wgEncodeGisRnaSeqH1hescCellPapPlusRawRep1.bigWig&quot;)' -l 10
+<pre><code>% wget http://www.iq-darwin.cremag.org/resources/encode/hg19/pliki/wgEncodeGisRnaSeqH1hescCellPapPlusRawRep1.bigWig
+% vtools output variant chr pos ref alt 'track(&quot;wgEncodeGisRnaSeqH1hescCellPapPlusRawRep1.bigWig&quot;)' -l 10
+
+1   1180123 T   C   .
+1   1180168 G   A   .
+1   1182895 C   T   .
+1   1184997 T   A   .
+1   1185051 G   A   .
+1   3631572 T   C   .
+1   3632268 G   C   .
+1   3635173 C   T   .
+1   3635228 G   A   .
+1   3638787 G   A   .
 </code></pre>
 
 <p></details></p>
@@ -4112,7 +4124,7 @@ JPT         JPT_hg38_all.vcf    2878            GT
 
 <h3 id="7-phenotype">7. Phenotype</h3>
 
-<p><strong>Phenotypes</strong> in variant tools are generally any properties of samples, such as blood pressure, weight, height, ethnicity, affection status, ID, and ID of parents. It could be <a href="https://vatlab.github.io/vat-docs/vat-docs/documentation/vtools_commands/phenotype/">imported</a> from a text file, calculated from samples (e.g. average quality score of all variants of a sample could be a phenotype of the sample), or from other phenotypes. Phenotypes are frequently used to identify groups of samples (e.g. by affection status using parameter <code>--samples 'aff=1'</code>), and in genotype-phenotype association analysis.</p>
+<p><strong>Phenotypes</strong> in variant tools are generally any properties of samples, such as blood pressure, weight, height, ethnicity, affection status, ID, and ID of parents. It could be <a href="https://vatlab.github.io/vat-docs/documentation/vtools_commands/phenotype/">imported</a> from a text file, calculated from samples (e.g. average quality score of all variants of a sample could be a phenotype of the sample), or from other phenotypes. Phenotypes are frequently used to identify groups of samples (e.g. by affection status using parameter <code>--samples 'aff=1'</code>), and in genotype-phenotype association analysis.</p>
 
 <p><details><summary>Examples:</summary> This project does not have any genotype and existing phenotype, we can add a phenotype <code>num</code> as the number of variants in each sample:</p>
 
@@ -5160,6 +5172,38 @@ A lot more variants are selected, showing the importance of using the latest ver
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -6838,20 +6882,20 @@ A lot more variants are selected, showing the importance of using the latest ver
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1528678571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528316017"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528316017"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1528678571"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1528678571"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528316017" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528316017"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1528678571" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1528678571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
