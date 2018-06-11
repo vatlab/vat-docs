@@ -10,57 +10,12 @@
     
     
     <item>
-      <title>All recent changes</title>
-      <link>https://vatlab.github.io/vat-docs/administration/allrecent/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/administration/allrecent/</guid>
-      <description>Annotation.New? &amp;hellip; March 06, 2018, at 09:45 PM by ?: VtoolsReport.InbreedingCoefficient? &amp;hellip; March 06, 2018, at 09:31 PM by ?: Main.Concepts? &amp;hellip; March 06, 2018, at 06:10 PM by ?: Main.Installation? &amp;hellip; March 06, 2018, at 03:31 AM by ?: Main.HomePage &amp;hellip; March 04, 2018, at 04:52 AM by ?: Vtools.Show? &amp;hellip; September 20, 2017, at 09:16 PM by ?: Annotation.DbSNP? &amp;hellip; September 05, 2017, at 07:19 PM by Man Chong Leong?</description>
-    </item>
-    
-    <item>
       <title>Autolink</title>
       <link>https://vatlab.github.io/vat-docs/administration/autolink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/administration/autolink/</guid>
-      <description>vtools -h|vtools/commands vtools init|vtools/init vtools import|vtools/import vtools export|vtools/export vtools update|vtools/update vtools phenotype|vtools/phenotype vtools liftover|vtools/liftover vtools show|vtools/show vtools subsample|vtools/subsample vtools remove|vtools/remove vtools merge|vtools/merge vtools use|vtools/use vtools output|vtools/output vtools select|vtools/select vtools admin|vtools/admin vtools exclude|vtools/exclude vtools execute|vtools/execute vtools compare|vtools/compare vtools associate|vtools/associate vtools_report -h|vtools/commands vtools_report trans_ratio|vtools_report/trans_ratio vtools_report avg_depth|vtools_report/avg_depth vtools_report variant_stat|vtools_report/variant_stat vtools_report discordance_rate|vtools_report/discordance_rate vtools_report inbreeding_coefficient|vtools_report/inbreeding_coefficient vtools_report sequence|vtools_report/sequence vtools_report plot_fields|vtools_report/plot_fields vtools_report plot_pheno_fields|vtools_report/plot_pheno_fields vtools_report plot_geno_fields|vtools_report/plot_geno_fields vtools_report plot_association|vtools_report/plot_association vtools_report meta_analysis|vtools_report/meta_analysis</description>
-    </item>
-    
-    <item>
-      <title>Style sheet</title>
-      <link>https://vatlab.github.io/vat-docs/administration/stylesheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/administration/stylesheet/</guid>
-      <description>table.zebra tr:nth-child(odd) {
-background-color: #f3f3f3;  }
-table.zebra {
-padding-top: 10px; padding-bottom: 10px; /* font-family: &amp;quot;Lucida Sans Unicode&amp;quot;, &amp;quot;Lucida Grande&amp;quot;, Sans-Serif; */ font-size: 14px; /* margin: 45px; */ /* width: 480px; */ text-align: left; border-collapse: collapse;  }
-table.zebra th {
-font-size: 16px; font-weight: normal; padding: 10px 8px; /* color: #039; */  }
-table.zebra td {
-padding: 8px;  /* text-align:left; */
-/* color: #669; */  }
-.escaped {</description>
-    </item>
-    
-    <item>
-      <title>Traffic statistics</title>
-      <link>https://vatlab.github.io/vat-docs/administration/trafficstat/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/administration/trafficstat/</guid>
-      <description>table.zebra tr:nth-child(odd) {
-background-color: #f3f3f3;  }
-table.zebra {
-padding-top: 10px; padding-bottom: 10px; /* font-family: &amp;quot;Lucida Sans Unicode&amp;quot;, &amp;quot;Lucida Grande&amp;quot;, Sans-Serif; */ font-size: 14px; /* margin: 45px; */ /* width: 480px; */ text-align: left; border-collapse: collapse;  }
-table.zebra th {
-font-size: 16px; font-weight: normal; padding: 10px 8px; /* color: #039; */  }
-table.zebra td {
-padding: 8px;  /* text-align:left; */
-/* color: #669; */  }
-.escaped {</description>
+      <description>Auto link vtools -h|vtools/commands vtools init|vtools/init vtools import|vtools/import vtools export|vtools/export vtools update|vtools/update vtools phenotype|vtools/phenotype vtools liftover|vtools/liftover vtools show|vtools/show vtools remove|vtools/remove vtools use|vtools/use vtools output|vtools/output vtools select|vtools/select vtools admin|vtools/admin vtools exclude|vtools/exclude vtools execute|vtools/execute vtools compare|vtools/compare vtools associate|vtools/associate vtools_report -h|vtools/commands vtools_report trans_ratio|vtools_report/trans_ratio vtools_report avg_depth|vtools_report/avg_depth vtools_report variant_stat|vtools_report/variant_stat vtools_report discordance_rate|vtools_report/discordance_rate vtools_report inbreeding_coefficient|vtools_report/inbreeding_coefficient vtools_report sequence|vtools_report/sequence vtools_report plot_fields|vtools_report/plot_fields vtools_report plot_pheno_fields|vtools_report/plot_pheno_fields vtools_report plot_geno_fields|vtools_report/plot_geno_fields vtools_report plot_association|vtools_report/plot_association vtools_report meta_analysis|vtools_report/meta_analysis</description>
     </item>
     
   </channel>

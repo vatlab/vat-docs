@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk33_hg19/</guid>
-      <description>Variant calling using BWA and GATK best practice pipeline Usage % vtools show pipeline bwa_gatk33_hg19 A pipeline to align raw reads from fastq or BAM/SAM files using BWA and GATK best practice. It uses hg19 of human reference genome and assumes paired-end reads in plain text and compressed formats. Available pipelines: align Pipeline &amp;quot;align&amp;quot;: Align raw reads from input files using bwa, gatk, and picard. This pipeline accepts raw input files in plain text format, SAM/BAM format, and their compressed versions (.</description>
+      <description>Variant calling using BWA and GATK best practice pipeline 1. Usage % vtools show pipeline bwa_gatk33_hg19 A pipeline to align raw reads from fastq or BAM/SAM files using BWA and GATK best practice. It uses hg19 of human reference genome and assumes paired-end reads in plain text and compressed formats. Available pipelines: align Pipeline &amp;quot;align&amp;quot;: Align raw reads from input files using bwa, gatk, and picard. This pipeline accepts raw input files in plain text format, SAM/BAM format, and their compressed versions (.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk33_b37/</guid>
-      <description>Variant calling using BWA and GATK best practice pipeline (b37) This is the same pipeline as bwa_gatk33_hg19? but uses build b37 of the human reference genome.</description>
+      <description>Variant calling using BWA and GATK best practice pipeline (b37) This is the same pipeline as bwa_gatk33_hg19 but uses build b37 of the human reference genome.</description>
     </item>
     
     <item>
@@ -33,7 +33,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/</guid>
-      <description>Calling variants using BWA and GATK best practice pipeline Usage % vtools show pipeline bwa_gatk28_hg19 A pipeline to align raw reads from fastq or BAW/SAM files using BWA and GATK best practice. It uses hg19 of human reference genome and assumes paired-end reads in plain text and compressed formats. Available pipelines: align, call Pipeline &amp;quot;align&amp;quot;: Align raw reads from input files using bwa, gatk, and picard. This pipeline accepts raw input files in plain text format, SAM/BAM format, and their compressed versions (.</description>
+      <description>Calling variants using BWA and GATK best practice pipeline 1. Usage % vtools show pipeline bwa_gatk28_hg19 A pipeline to align raw reads from fastq or BAW/SAM files using BWA and GATK best practice. It uses hg19 of human reference genome and assumes paired-end reads in plain text and compressed formats. Available pipelines: align, call Pipeline &amp;quot;align&amp;quot;: Align raw reads from input files using bwa, gatk, and picard. This pipeline accepts raw input files in plain text format, SAM/BAM format, and their compressed versions (.</description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_b37/</guid>
-      <description>Calling variants using BWA and GATK best practice pipeline (b37) This pipeline is identical to bwa_gatk28_hg19? except that it uses the b37 reference genome.</description>
+      <description>Calling variants using BWA and GATK best practice pipeline (b37) This pipeline is identical to bwa_gatk28_hg19 except that it uses the b37 reference genome.</description>
     </item>
     
   </channel>

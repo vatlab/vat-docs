@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/ref_sequence/</guid>
-      <description>Reference sequence around variant site Usage Function ref_sequence(chr, start, end) returns the reference sequence between start and end on chromosome chr of the reference genome (primary reference genome unless parameter --build is used to specify an alternative reference genome). If end is unspecified, ref_sequence(chr, pos) returns the reference allele at the specified location. This function is very useful in output the context of variants or select variants based on the contexts (e.</description>
+      <description>Reference sequence around variant site 1. Usage Function ref_sequence(chr, start, end) returns the reference sequence between start and end on chromosome chr of the reference genome (primary reference genome unless parameter --build is used to specify an alternative reference genome). If end is unspecified, ref_sequence(chr, pos) returns the reference allele at the specified location. This function is very useful in output the context of variants or select variants based on the contexts (e.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/mut_sequence/</guid>
-      <description>Mutated sequence around variant site Usage Function mut_sequence(chr, start, end) returns the mutated sequence between start and end on chromosome chr of the reference genome (primary reference genome unless parameter --build is used to specify an alternative reference genome). If end is unspecified, mut_sequence(chr, pos) returns the mutated allele at the specified location.
+      <description>Mutated sequence around variant site 1. Usage Function mut_sequence(chr, start, end) returns the mutated sequence between start and end on chromosome chr of the reference genome (primary reference genome unless parameter --build is used to specify an alternative reference genome). If end is unspecified, mut_sequence(chr, pos) returns the mutated allele at the specified location.
 Simply put, function mut_sequence in
 % vtools output variant chr pos &#39;mut_sequence(chr, pos)&#39;  returns the alternative allele at the variant site for SNPs, - for deletion, and XXXR for insertion of XXX before reference allele R.</description>
     </item>
@@ -35,9 +35,8 @@ Simply put, function mut_sequence in
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/track/</guid>
-      <description>Extract annotation from external files Usage Function track(filename, field) returns annotation information at column col (optional) in file filename, at position (chr, pos at primary or alternative reference genome) of each variant. For example, function
-% vtools output variant chr pos ref alt &amp;quot;track(&#39;1000g.vcf.gz&#39;, &#39;info&#39;)&amp;quot;  single quote (&#39;) should be used for string literals in SQL functions. Double quote (&amp;quot;) should be avoided although it sometimes works.
-output the &amp;ldquo;info&amp;rdquo; column of file 1000g.</description>
+      <description>Extract annotation from external files 1. Usage Function track(filename, field) returns annotation information at column col (optional) in file filename, at position (chr, pos at primary or alternative reference genome) of each variant. For example, function
+% vtools output variant chr pos ref alt &amp;quot;track(&#39;1000g.vcf.gz&#39;, &#39;info&#39;)&amp;quot;  single quote (&#39;) should be used for string literals in SQL functions. Double quote (&amp;quot;) should be avoided although it sometimes works.</description>
     </item>
     
     <item>
@@ -46,7 +45,7 @@ output the &amp;ldquo;info&amp;rdquo; column of file 1000g.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/genotype/</guid>
-      <description>genotypes of one or more samples Usage This function is only supported when STOREMODE is set to sqlite. Genotype information for a variant is not directly available in variant tools commands such as vtools output because these commands only output variant info or annotation fields. Function genotype can be used to retrieve genotypes of one or more samples from the genotype tables. In its single-sample mode, this function accepts a sample name and an optional field to display,</description>
+      <description>genotypes of one or more samples 1. Usage This function is only supported when STOREMODE is set to sqlite. Genotype information for a variant is not directly available in variant tools commands such as vtools output because these commands only output variant info or annotation fields. Function genotype can be used to retrieve genotypes of one or more samples from the genotype tables. In its single-sample mode, this function accepts a sample name and an optional field to display,</description>
     </item>
     
     <item>
@@ -55,7 +54,7 @@ output the &amp;ldquo;info&amp;rdquo; column of file 1000g.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/samples/</guid>
-      <description>Samples that harbor the variant Usage This function is only supported when STOREMODE is set to sqlite. The samples function is similar to genotype but it returns name of samples that contain the variant. When you use the function in command vtools output var_table samples(), this function will be evaluated for each variant in the variant table var_table. In its basic form,
+      <description>Samples that harbor the variant 1. Usage This function is only supported when STOREMODE is set to sqlite. The samples function is similar to genotype but it returns name of samples that contain the variant. When you use the function in command vtools output var_table samples(), this function will be evaluated for each variant in the variant table var_table. In its basic form,
 samples()  returns a list of comma-separated names of samples that contain the variant, regardless the type of variant (homozygote etc).</description>
     </item>
     
@@ -65,8 +64,8 @@ samples()  returns a list of comma-separated names of samples that contain the v
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/in_table/</guid>
-      <description> Test membership of variants in variant tables Usage The in_table function is a simple function used to test is a variant is in a specified variant table. It accepts the name of a variant table and returns 1 if the variant belong to this table, and 0 otherwise.
-in_table(&#39;table_name&#39;)  Details For example, command
+      <description> Test membership of variants in variant tables 1. Usage The in_table function is a simple function used to test is a variant is in a specified variant table. It accepts the name of a variant table and returns 1 if the variant belong to this table, and 0 otherwise.
+in_table(&#39;table_name&#39;)  2. Details For example, command
 % vtools admin --load_snapshot vt_simple % vtools show tables  </description>
     </item>
     
@@ -76,7 +75,7 @@ in_table(&#39;table_name&#39;)  Details For example, command
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/</guid>
-      <description>Other customized SQL functions vcf_variant: Output variants in vcf format with padding alleles Function vcf_variant(chr, pos, ref, alt, name=&amp;quot;.&amp;quot;) returns a string that represent variants in vcf format. If the variant is a SNV, the output merely connects input by tab (&amp;rsquo;\t&amp;rsquo;). If the variant is an indel, it will pad reference (for insertion) or alternative (for deletion) allele with the allele before variant, adjust position, and generate an output that is acceptable by vcf.</description>
+      <description>Other customized SQL functions 1. vcf_variant: Output variants in vcf format with padding alleles Function vcf_variant(chr, pos, ref, alt, name=&amp;quot;.&amp;quot;) returns a string that represent variants in vcf format. If the variant is a SNV, the output merely connects input by tab (&amp;rsquo;\t&amp;rsquo;). If the variant is an indel, it will pad reference (for insertion) or alternative (for deletion) allele with the allele before variant, adjust position, and generate an output that is acceptable by vcf.</description>
     </item>
     
   </channel>

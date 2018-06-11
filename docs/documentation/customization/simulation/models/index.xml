@@ -9,23 +9,5 @@
 	<atom:link href="https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Peng2014_ex1</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng1/</guid>
-      <description>Simulations for the first example of Peng (2014) Genetic Epidemiology Usage $ vtools show simulation Peng2014_ex1 Simulations of DNA sequences in specified regions using different simulation methods, for the first example in paper &amp;quot;Reproducible Simulations of realistic samples for next-gen sequencing studies using Variant Simulation Tools&amp;quot;. The simulated populations are analyzed and discarded to save diskspace. Available simulation models: ms, neutral, resample, with_selection Model &amp;quot;ms&amp;quot;: This simulator calls ms to execute coalescent-based simulations, create a population with simulated dataset and run through the same statistical analysis as other pipeline.</description>
-    </item>
-    
-    <item>
-      <title>Peng2014_ex2</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng2/</guid>
-      <description>Second example in Peng (2014) Genetic Epidemiology Usage % vtools show simulation Peng2014_ex2 Simulation of case control samples for 20 genes and analyze samples of different sizes (1000, 2000, 3000, 4000 cases and matching number of controls) draw from European, Mexican American (mixed and matched case and control), and from both Asian (cases) and European (controls) populations for a mismatch design. This simulation model has been used to simulate data for the second example in paper &amp;quot;Reproducible Simulations of realistic samples for next-gen sequencing studies using Variant Simulation Tools&amp;quot;.</description>
-    </item>
-    
   </channel>
 </rss>

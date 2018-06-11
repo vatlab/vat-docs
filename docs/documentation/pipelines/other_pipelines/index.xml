@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/import_vcf/</guid>
-      <description>Import all variant and genotype fields from vcf files Usage % vtools show pipeline import_vcf This pipeline creates a customized .fmt file to import all variant and genotype info fields of input vcf files. Available pipelines: import_vcf Pipeline &amp;quot;import_vcf&amp;quot;: This pipeline creates a customized .fmt file by scanning the header of input vcf files and imports all variant and genotype info fields of the input files in VCF format. If an output file is specified (--output), it will be used to save the customized .</description>
+      <description>Import all variant and genotype fields from vcf files 1. Usage % vtools show pipeline import_vcf This pipeline creates a customized .fmt file to import all variant and genotype info fields of input vcf files. Available pipelines: import_vcf Pipeline &amp;quot;import_vcf&amp;quot;: This pipeline creates a customized .fmt file by scanning the header of input vcf files and imports all variant and genotype info fields of the input files in VCF format.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/anno_utils/</guid>
-      <description>Annotation utility pipelines Usage % vtools show pipeline anno_utils This file defines a number of pipelines to manipulate variant tools annotation databases. Available pipelines: annFileFromText, annFileFromVcf, annoDB2proj, proj2annoDB Pipeline &amp;quot;annFileFromText&amp;quot;: This pipeline reads a tab, comma or space delimited file, take its header as name of fields, guess the type of each column, and output an .ann file with these fields. The annotation database is assumed to be of type &amp;quot;field&amp;quot; and use the first column as the linked field.</description>
+      <description>Annotation utility pipelines 1. Usage % vtools show pipeline anno_utils This file defines a number of pipelines to manipulate variant tools annotation databases. Available pipelines: annFileFromText, annFileFromVcf, annoDB2proj, proj2annoDB Pipeline &amp;quot;annFileFromText&amp;quot;: This pipeline reads a tab, comma or space delimited file, take its header as name of fields, guess the type of each column, and output an .ann file with these fields. The annotation database is assumed to be of type &amp;quot;field&amp;quot; and use the first column as the linked field.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/annovar/</guid>
-      <description>Gene-based annotation through ANNOVAR Usage % vtools show pipeline ANNOVAR Pipeline to call ANNOVAR and import results as variant info fields. Available pipelines: geneanno Pipeline &amp;quot;geneanno&amp;quot;: This pipeline exports variants in specified variant table (parameter --var_table, default to variant), executes ANNOVAR&#39;s gene- based annotation (annotate_variantion.pl --geneanno), and imports specified fields from output of the command. Four fields (two for all variants and two for exonic variants) will be imported unless you disable some of them using parameters --variant_info and --exonic_info.</description>
+      <description>Gene-based annotation through ANNOVAR 1. Usage % vtools show pipeline ANNOVAR Pipeline to call ANNOVAR and import results as variant info fields. Available pipelines: geneanno Pipeline &amp;quot;geneanno&amp;quot;: This pipeline exports variants in specified variant table (parameter --var_table, default to variant), executes ANNOVAR&#39;s gene- based annotation (annotate_variantion.pl --geneanno), and imports specified fields from output of the command. Four fields (two for all variants and two for exonic variants) will be imported unless you disable some of them using parameters --variant_info and --exonic_info.</description>
     </item>
     
     <item>
@@ -61,7 +61,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/snpeff/</guid>
-      <description>Variant effect provided by snpEFF Usage This pipeline exports variants in VCF format, call snpEff to predict its effect, and import the result as an variant info field EFF.
+      <description>Variant effect provided by snpEFF 1. Usage This pipeline exports variants in VCF format, call snpEff to predict its effect, and import the result as an variant info field EFF.
 % vtools show pipeline snpEff A pipeline to call snpEff to annotate variants. Available pipelines: eff Pipeline &amp;quot;eff&amp;quot;: This pipeline export variants in VCF format, call snpEff to annotate it, and import the EFF info as an information field. This pipeline will automatically download appropriate snpEff database (e.</description>
     </item>
     
@@ -71,7 +71,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/king/</guid>
-      <description>Global ancestry and kinship inference Usage % vtools show pipeline KING Pipeline to call KING to perform global ancestry and kinship inference, and import ancestry analysis results as phenotypes into sample table. Available pipelines: king Pipeline &amp;quot;king&amp;quot;: This pipeline exports genotypes in specified variant table (parameter --var_table, default to variant) for specified samples (parameter --samples, default to all samples), executes PLINK&#39;s LD pruning, (R^2&amp;lt;0.5) and analysis selected variants using KING&#39;s population ancestry and kingship analysis.</description>
+      <description>Global ancestry and kinship inference 1. Usage % vtools show pipeline KING Pipeline to call KING to perform global ancestry and kinship inference, and import ancestry analysis results as phenotypes into sample table. Available pipelines: king Pipeline &amp;quot;king&amp;quot;: This pipeline exports genotypes in specified variant table (parameter --var_table, default to variant) for specified samples (parameter --samples, default to all samples), executes PLINK&#39;s LD pruning, (R^2&amp;lt;0.5) and analysis selected variants using KING&#39;s population ancestry and kingship analysis.</description>
     </item>
     
     <item>

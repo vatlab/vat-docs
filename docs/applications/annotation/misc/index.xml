@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/</guid>
-      <description> Expanded exome regions of Nextera Rapid Capture Exome and Expanded Exome Enrichment Kits from Illumina.
+      <description> Illumina Expanded exome regions of Nextera Rapid Capture Exome and Expanded Exome Enrichment Kits from Illumina.
 Usage % vtools show annotation Illumina_NRCE Annotation database Illumina_NRCE (version 20130307) Description: This annotation database contains expanded exome targeted regions covered by the Nextera Rapid Capture Expanded platform from illumina. Database type: range Reference genome hg19: Chromosome, Start, End Name Name of region Chromosome Start Transcription start position End Transcription end position  </description>
     </item>
     
@@ -25,8 +25,8 @@ Usage % vtools show annotation Illumina_NRCE Annotation database Illumina_NRCE (
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/misc/keggpathway/</guid>
-      <description>About keggPathway This database provides KEGG pathway IDs and a pathway description for genes with CCDS IDs. If you would like to annotate variants to these KEGG pathways, you first need to annotate your variants with CCDS IDs. Variant tools databases such as ccdsGene annotates variants with CCDS IDs (see example below).
-Fields  ccdsId CCDS gene ID KgID Kegg pathway ID KgDesc Description of pathway  keggPathway vtools show annotation keggPathway -v2 Annotation database keggPathway (version 20110823) Description: kegg pathway for CCDS genes Database type: attribute Number of records: 19,584 Reference genome *: [&#39;ccdsId&#39;] Field: ccdsId Type: string Comment: CCDS gene ID Missing entries: 0 Unique entries: 6,949 Field: KgID Type: string Comment: Kegg pathway ID Missing entries: 0 Unique entries: 209 Field: KgDesc Type: string Comment: Description of pathway Missing entries: 0 Unique entries: 209  Examples First we need to use dbNSFP in our project to annotate our variants with CCDS IDs:</description>
+      <description>Kegg Pathway 1. About keggPathway This database provides KEGG pathway IDs and a pathway description for genes with CCDS IDs. If you would like to annotate variants to these KEGG pathways, you first need to annotate your variants with CCDS IDs. Variant tools databases such as ccdsGene annotates variants with CCDS IDs (see example below).
+2. Fields  ccdsId CCDS gene ID KgID Kegg pathway ID KgDesc Description of pathway  3.</description>
     </item>
     
     <item>

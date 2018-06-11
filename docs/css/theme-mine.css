@@ -44,6 +44,7 @@ a {
     color: var(--MAIN-LINK-color);
 }
 
+
 .anchor {
     color: var(--MAIN-ANCHOR-color);
 }
@@ -102,9 +103,18 @@ a:hover {
     color: orange !important;
 }
 
-#sidebar ul.topics > li > a {
+#sidebar ul.topics > li  a  {
     line-height: 1.5rem;
     font-size: 1.05rem;
+    display:inline-block;
+    margin-right:10px
+}
+
+
+
+#sidebar ul.topics > li  i  {
+    display:inline-block;
+    
 }
 
 #sidebar hr {
@@ -245,3 +255,6 @@ div.info ul {
     background:#FFF2DB;
     padding-bottom: 25px;
 }
+
+
+

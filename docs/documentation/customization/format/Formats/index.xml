@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/txt/</guid>
-      <description>Importing variants from tab-delimited files Format description % vtools show format basic A basic variant import/export format that import variants with four tab- delimited columns (chr, pos, ref, alt), and export variants, optional variant info fields and genotypes. Columns: 1 Output variant info fields as one column 2 variant position, set --pos_adj to -1 to export variants in 0-based positions. 3 reference allele 4 alternative allele 5 genotype in numeric style Formatters are provided for fields: gt variant: chr Chromosome pos 1-based position, set --pos_adj to 1 if input position is 0 based.</description>
+      <description>Importing variants from tab-delimited files 1. Format description % vtools show format basic A basic variant import/export format that import variants with four tab- delimited columns (chr, pos, ref, alt), and export variants, optional variant info fields and genotypes. Columns: 1 Output variant info fields as one column 2 variant position, set --pos_adj to -1 to export variants in 0-based positions. 3 reference allele 4 alternative allele 5 genotype in numeric style Formatters are provided for fields: gt variant: chr Chromosome pos 1-based position, set --pos_adj to 1 if input position is 0 based.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/csv/</guid>
-      <description>Importing and exporting variants in .csv (comma-separated value) format Format description When this format is used to import data, it is similar to the basic? format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
+      <description>Importing and exporting variants in .csv (comma-separated value) format 1. Format description When this format is used to import data, it is similar to the basic? format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
 When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command vtools output --delimiter , (output fields with a delimiter of comma), except that the vtools export --format csv command will properly quote field values when it contains comma, quotation mark etc.</description>
     </item>
     
@@ -34,7 +34,7 @@ When this format is used to export variants, it can be used to export arbitrary 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/plink/</guid>
-      <description>Import variants and sample genotypes from PLINK format Introduction PLINK is a widely used program for analyzing genotypic data for Genome-wide Association Studies (GWAS). It can be considered as standard input format for genotyping array data. An intermediate type of genetic data between genotyping arrays and exome sequencing is the exome genotyping array, or exome chip. Unlike its GWAS counterpart which focuses on relatively common variants, exome chips contain primarily non-singleton coding variants seen in existing whole genome and exome sequencing data, plus a small proportion of non-protein-altering variants such as GWAS tag SNPs, ancestry informative markers, etc.</description>
+      <description>Import variants and sample genotypes from PLINK format 1. Introduction PLINK is a widely used program for analyzing genotypic data for Genome-wide Association Studies (GWAS). It can be considered as standard input format for genotyping array data. An intermediate type of genetic data between genotyping arrays and exome sequencing is the exome genotyping array, or exome chip. Unlike its GWAS counterpart which focuses on relatively common variants, exome chips contain primarily non-singleton coding variants seen in existing whole genome and exome sequencing data, plus a small proportion of non-protein-altering variants such as GWAS tag SNPs, ancestry informative markers, etc.</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ When this format is used to export variants, it can be used to export arbitrary 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/rsname/</guid>
-      <description>Importing variants from a list of dbSNP iDs (rsnames) Format description % vtools show format rsname Import variants (chr, pos, ref, alt) that are queried from dbSNP database using provided rsnames Columns: None defined, cannot export to this format variant: chr Obtain chromosome from dbSNP by rsname pos Obtain position from dbSNP by rsname ref Obtain reference allele from dbSNP by rsname alt Obtain alternative allele from dbSNP by rsname Format parameters: sep delimiter used to separate input fields (default: &#39;,&#39;) rsname_col Index for the column with rsname (default: 1) dbfile Name of an attached dbSNP database or path to the dbSNP database in sqlite format (default: dbSNP- hg19_138.</description>
+      <description>Importing variants from a list of dbSNP iDs (rsnames) 1. Format description % vtools show format rsname Import variants (chr, pos, ref, alt) that are queried from dbSNP database using provided rsnames Columns: None defined, cannot export to this format variant: chr Obtain chromosome from dbSNP by rsname pos Obtain position from dbSNP by rsname ref Obtain reference allele from dbSNP by rsname alt Obtain alternative allele from dbSNP by rsname Format parameters: sep delimiter used to separate input fields (default: &#39;,&#39;) rsname_col Index for the column with rsname (default: 1) dbfile Name of an attached dbSNP database or path to the dbSNP database in sqlite format (default: dbSNP- hg19_138.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ When this format is used to export variants, it can be used to export arbitrary 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/new/</guid>
-      <description>Specification of external file formats Roles of format specification in variant tools: Variant tools can import and export text files (or gzipped text files) in delimiter-separated format, namely records that are separated into columns by delimiters such as tab, space or comma. The file format must be variant-oriented (storing one or more variants by line), with the exception of sample-based PLINK format which is preprocessed internally into variant-oriented form for import.</description>
+      <description>Specification of external file formats 1. Roles of format specification in variant tools: Variant tools can import and export text files (or gzipped text files) in delimiter-separated format, namely records that are separated into columns by delimiters such as tab, space or comma. The file format must be variant-oriented (storing one or more variants by line), with the exception of sample-based PLINK format which is preprocessed internally into variant-oriented form for import.</description>
     </item>
     
     <item>
@@ -61,7 +61,7 @@ When this format is used to export variants, it can be used to export arbitrary 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/tped/</guid>
-      <description>PLINK/TPED format About TPED format Many software applications for linkage and association studies (e.g. plink, merlin) accept PED/MAP format. The map file records basic information about markers, the Ped file contains sample genotype. Whereas variant tools can easily export in MAP format, it is difficult to export in PED format because this format is not variant oriented (output by variant).
+      <description>PLINK/TPED format 1. About TPED format Many software applications for linkage and association studies (e.g. plink, merlin) accept PED/MAP format. The map file records basic information about markers, the Ped file contains sample genotype. Whereas variant tools can easily export in MAP format, it is difficult to export in PED format because this format is not variant oriented (output by variant).
 Fortunately, PLINK accepts a transposed PED format (TPED) that is variant oriented.</description>
     </item>
     
@@ -71,7 +71,7 @@ Fortunately, PLINK accepts a transposed PED format (TPED) that is variant orient
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/map/</guid>
-      <description>Import variants from file without ref and alt alleles Introduction From time to time, you might get a list of variants in map format, or as a list with only chromosome and position information. Reference and alternative alleles are not specified because the variants are from GWA studies with well-defined reference and alternative alleles. In this case, you can use format map, which automatically retrieve reference and alternative alleles from a specified dbSNP database.</description>
+      <description>Import variants from file without ref and alt alleles 1. Introduction From time to time, you might get a list of variants in map format, or as a list with only chromosome and position information. Reference and alternative alleles are not specified because the variants are from GWA studies with well-defined reference and alternative alleles. In this case, you can use format map, which automatically retrieve reference and alternative alleles from a specified dbSNP database.</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@ Fortunately, PLINK accepts a transposed PED format (TPED) that is variant orient
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/annovar/</guid>
-      <description>Importing ANNOVAR input file Format description http://www.openbioinformatics.org/annovar/annovar_input.html
+      <description>Importing ANNOVAR input file 1. Format description http://www.openbioinformatics.org/annovar/annovar_input.html
 &amp;ldquo;ANNOVAR takes text-based input files, where each line corresponds to one variant. On each line, the first five space- or tab- delimited columns represent chromosome, start position, end position, the reference nucleotides and the observed nucleotides. Additional columns can be supplied and will be printed out in identical form. For convenience, users can use “0” to fill in the reference nucleotides, if this information is not readily available.</description>
     </item>
     
@@ -90,7 +90,7 @@ Fortunately, PLINK accepts a transposed PED format (TPED) that is variant orient
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/cga/</guid>
-      <description>HomePage Sample data ASSEMBLY_ID XXXX #CNV_WINDOW_WIDTH 2000 #COSMIC COSMIC v48 #DBSNP_BUILD dbSNP build 132 #DGV_VERSION 9 #FORMAT_VERSION 1.7 #GENERATED_AT XXX #GENERATED_BY cgatools #GENE_ANNOTATIONS NCBI build 37.2 #GENOME_REFERENCE NCBI build 37 #MIRBASE_VERSION miRBase version 16 #PFAM_DATE XXX #REPMASK_GENERATED_AT XXX #SAMPLE XXX #SEGDUP_GENERATED_AT XXX #SOFTWARE_VERSION 1.12.0.47 #TYPE VAR-OLPL &amp;gt;locus ploidy chromosome begin end zygosity varType reference allele1Seq allele2Seq allele1Score allele2Score allele1HapLink allele2HapLink xRef evidenceIntervalId allele1ReadCount allele2ReadCount referenceAlleleReadCount totalReadCount allele1Gene allele2Gene pfam miRBaseId repeatMasker segDupOverlap relativeCoverage calledPloidy 1 2 chr1 0 10000 no-call no-ref = ?</description>
+      <description>CGA Sample data ASSEMBLY_ID XXXX #CNV_WINDOW_WIDTH 2000 #COSMIC COSMIC v48 #DBSNP_BUILD dbSNP build 132 #DGV_VERSION 9 #FORMAT_VERSION 1.7 #GENERATED_AT XXX #GENERATED_BY cgatools #GENE_ANNOTATIONS NCBI build 37.2 #GENOME_REFERENCE NCBI build 37 #MIRBASE_VERSION miRBase version 16 #PFAM_DATE XXX #REPMASK_GENERATED_AT XXX #SAMPLE XXX #SEGDUP_GENERATED_AT XXX #SOFTWARE_VERSION 1.12.0.47 #TYPE VAR-OLPL &amp;gt;locus ploidy chromosome begin end zygosity varType reference allele1Seq allele2Seq allele1Score allele2Score allele1HapLink allele2HapLink xRef evidenceIntervalId allele1ReadCount allele2ReadCount referenceAlleleReadCount totalReadCount allele1Gene allele2Gene pfam miRBaseId repeatMasker segDupOverlap relativeCoverage calledPloidy 1 2 chr1 0 10000 no-call no-ref = ?</description>
     </item>
     
     <item>
@@ -99,7 +99,7 @@ Fortunately, PLINK accepts a transposed PED format (TPED) that is variant orient
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18snps/</guid>
-      <description>HomePage Sample data # ** CASAVA depth-filtered snp calls ** #$ CMDLINE /CASAVA-1.8.0a19/filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 142.345267150165 # #$ COLUMNS seq_name pos bcalls_used bcalls_filt ref Q(snp) max_gt Q(max_gt) max_gt|poly_site Q(max_gt|poly_site) A_used C_used G_used T_used chr1 10231 5 9 C 28 AC 28 AC 59 3 2 0 0 chr1 10255 14 29 A 1 AA 9 AT 25 12 0 0 2 chr1 10264 15 19 C 18 AC 18 AC 51 4 11 0 0 chr1 10291 2 16 C 1 CC 10 CT 21 0 1 0 1 chr1 10330 3 14 C 2 CC 5 AC 28 2 1 0 0 chr1 13273 9 0 G 58 CG 54 CG 57 0 6 3 0 chr1 14464 18 0 A 60 AT 60 AT 93 12 0 0 6 chr1 14673 19 0 G 63 CG 63 CG 96 0 8 11 0 chr1 14699 23 0 C 72 CG 72 CG 105 0 14 9 0 chr1 14907 13 0 A 118 AG 65 AG 65 4 0 9 0 chr1 14930 14 2 A 119 AG 68 AG 68 5 0 9 0 chr1 14933 14 2 G 78 AG 78 AG 110 6 0 8 0 chr1 14976 4 0 G 18 AG 18 AG 47 2 0 2 0 chr1 15211 2 0 T 37 GG 5 GG 5 0 0 2 0 chr1 15817 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 15820 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 16487 12 0 T 62 CT 62 CT 94 0 6 0 6 chr1 17538 64 0 C 88 AC 88 AC 121 18 46 0 0 chr1 17746 53 1 A 22 AG 22 AG 55 39 0 14 0 chr1 17765 47 1 G 26 AG 26 AG 59 13 0 34 0 chr1 20131 1 0 G 8 CG 2 CG 3 0 1 0 0 chr1 20144 1 0 G 9 AG 2 AG 3 1 0 0 0 chr1 20206 2 0 C 4 CT 4 CT 30 0 1 0 1 chr1 20245 3 0 G 4 AG 4 AG 34 1 0 2 0 chr1 20304 2 0 G 2 GG 5 CG 27 0 1 1 0  Example vtools import --format Illumina_SNP Illumina_SNP.</description>
+      <description>CASAVA18Snps Sample data # ** CASAVA depth-filtered snp calls ** #$ CMDLINE /CASAVA-1.8.0a19/filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 142.345267150165 # #$ COLUMNS seq_name pos bcalls_used bcalls_filt ref Q(snp) max_gt Q(max_gt) max_gt|poly_site Q(max_gt|poly_site) A_used C_used G_used T_used chr1 10231 5 9 C 28 AC 28 AC 59 3 2 0 0 chr1 10255 14 29 A 1 AA 9 AT 25 12 0 0 2 chr1 10264 15 19 C 18 AC 18 AC 51 4 11 0 0 chr1 10291 2 16 C 1 CC 10 CT 21 0 1 0 1 chr1 10330 3 14 C 2 CC 5 AC 28 2 1 0 0 chr1 13273 9 0 G 58 CG 54 CG 57 0 6 3 0 chr1 14464 18 0 A 60 AT 60 AT 93 12 0 0 6 chr1 14673 19 0 G 63 CG 63 CG 96 0 8 11 0 chr1 14699 23 0 C 72 CG 72 CG 105 0 14 9 0 chr1 14907 13 0 A 118 AG 65 AG 65 4 0 9 0 chr1 14930 14 2 A 119 AG 68 AG 68 5 0 9 0 chr1 14933 14 2 G 78 AG 78 AG 110 6 0 8 0 chr1 14976 4 0 G 18 AG 18 AG 47 2 0 2 0 chr1 15211 2 0 T 37 GG 5 GG 5 0 0 2 0 chr1 15817 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 15820 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 16487 12 0 T 62 CT 62 CT 94 0 6 0 6 chr1 17538 64 0 C 88 AC 88 AC 121 18 46 0 0 chr1 17746 53 1 A 22 AG 22 AG 55 39 0 14 0 chr1 17765 47 1 G 26 AG 26 AG 59 13 0 34 0 chr1 20131 1 0 G 8 CG 2 CG 3 0 1 0 0 chr1 20144 1 0 G 9 AG 2 AG 3 1 0 0 0 chr1 20206 2 0 C 4 CT 4 CT 30 0 1 0 1 chr1 20245 3 0 G 4 AG 4 AG 34 1 0 2 0 chr1 20304 2 0 G 2 GG 5 CG 27 0 1 1 0  Example vtools import --format Illumina_SNP Illumina_SNP.</description>
     </item>
     
     <item>
@@ -108,17 +108,36 @@ Fortunately, PLINK accepts a transposed PED format (TPED) that is variant orient
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18indels/</guid>
-      <description>HomePage Sample data # ** CASAVA depth-filtered indel calls ** #$ CMDLINE /filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 143.988337798483 # #$ COLUMNS seq_name pos type ref_upstream ref/indel ref_downstream Q(indel) max_gtype Q(max_gtype) depth alt_reads indel_reads other_reads repeat_unit ref_repeat_count indel_repeat_count chr1 10147 1D CTAACCCTAA C/- CCCTAACCCT 70 het 70 6 2 3 1 C 4 3 chr1 10231 1D CTAACCCTAA C/- CCCTAACCCT 1203 het 284 53 7 30 17 C 4 3 chr1 10353 1I CCCTAACCCT -/A ACCCTAACCC 434 het 118 17 3 8 9 A 1 2 chr1 10390 1D CTAACCCTAA C/- CCCTAACCCC 765 het 399 39 9 19 12 C 4 3 chr1 10397 1D TAACCCCTAA C/- CCCTAACCCT 730 het 496 38 11 20 9 C 4 3 chr1 10440 1D CTAACCCTAA C/- CCCTAACCCT 774 het 302 31 7 21 3 C 4 3 chr1 28327 1D AAGCCTGTAG T/- TGCTCATCTG 3 het 3 2 1 1 0 T 2 1 chr1 54711 1I AAACCTTGTA -/T TTTTTCTTTC 37 het 37 21 8 2 12 T 5 6 chr1 62240 2D AGACACACAT AC/-- ACACACACAC 100 het 100 22 16 4 2 AC 8 7 chr1 83830 8D AGAAAGAAAG AGAAAGAA/-------- AGAAAGAAAG 273 het 161 13 3 6 4 AGAA 11 9 chr1 108546 BP_RIGHT N/A ------/CTATCA AAAAAAAAAA 28 het 28 13 9 2 2 N/A 0 0 chr1 123089 2D TGTGGACATG TA/-- TATATATATA 142 het 142 13 9 4 0 TA 6 5 chr1 128590 1D CTTCAAGTTC A/- CCCCCTTTTT 220 het 220 13 4 5 8 A 1 0 chr1 129011 3D GGGATGTAGA ATG/--- ATAAGGCTCT 258 het 258 12 5 6 1 ATG 1 0 chr1 136743 1I GGTGAGGCAA -/C GGGCTCACAC 76 het 76 80 66 6 12 C 0 1 chr1 136889 1D TGTGAGGCAA G/- GGGCTCGGGC 205 het 205 41 29 8 8 G 4 3 chr1 237577 1I AAAGGGGGTT -/C ATTATCTAGG 60 het 60 51 45 4 2 C 0 1 chr1 247917 3D ACCCAACCTC AGG/--- AGTTCAGGGC 69 hom 5 2 0 2 0 AGG 1 0 chr1 255910 2I TGTGTGTGTA --/TG TGTGTGTGTG 257 het 28 7 1 5 1 TG 10 11 chr1 531809 2D CACACTTATG CA/-- CACATTCACA 327 het 327 25 17 8 1 CA 3 2 chr1 532239 2D TGTTCACATT CA/-- CACTCATACA 325 het 325 64 53 10 2 CA 2 1 chr1 532259 3D CACAGCCCAA AAT/--- AATATACACA 303 het 303 61 43 9 10 AAT 2 1 chr1 537252 2D AGCCACATGT GG/-- GACAGGGCAG 6 hom 2 1 0 1 0 G 3 1 chr1 537494 5I CAGCGTCCAT -----/GCCCA GCCGGCCTCC 23 het 3 2 0 1 1 GCCCA 0 1 chr1 537641 50D ATCCCCCTCT CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC/-------------------------------------------------- TTTCTCCTCT 66 het 66 22 18 3 10 CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC 1 0  Example vtools import --format Illumina_INDEL Illumina_INDEL.</description>
+      <description>CASAVA18IndelsCASAVA18Indels Sample data # ** CASAVA depth-filtered indel calls ** #$ CMDLINE /filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 143.988337798483 # #$ COLUMNS seq_name pos type ref_upstream ref/indel ref_downstream Q(indel) max_gtype Q(max_gtype) depth alt_reads indel_reads other_reads repeat_unit ref_repeat_count indel_repeat_count chr1 10147 1D CTAACCCTAA C/- CCCTAACCCT 70 het 70 6 2 3 1 C 4 3 chr1 10231 1D CTAACCCTAA C/- CCCTAACCCT 1203 het 284 53 7 30 17 C 4 3 chr1 10353 1I CCCTAACCCT -/A ACCCTAACCC 434 het 118 17 3 8 9 A 1 2 chr1 10390 1D CTAACCCTAA C/- CCCTAACCCC 765 het 399 39 9 19 12 C 4 3 chr1 10397 1D TAACCCCTAA C/- CCCTAACCCT 730 het 496 38 11 20 9 C 4 3 chr1 10440 1D CTAACCCTAA C/- CCCTAACCCT 774 het 302 31 7 21 3 C 4 3 chr1 28327 1D AAGCCTGTAG T/- TGCTCATCTG 3 het 3 2 1 1 0 T 2 1 chr1 54711 1I AAACCTTGTA -/T TTTTTCTTTC 37 het 37 21 8 2 12 T 5 6 chr1 62240 2D AGACACACAT AC/-- ACACACACAC 100 het 100 22 16 4 2 AC 8 7 chr1 83830 8D AGAAAGAAAG AGAAAGAA/-------- AGAAAGAAAG 273 het 161 13 3 6 4 AGAA 11 9 chr1 108546 BP_RIGHT N/A ------/CTATCA AAAAAAAAAA 28 het 28 13 9 2 2 N/A 0 0 chr1 123089 2D TGTGGACATG TA/-- TATATATATA 142 het 142 13 9 4 0 TA 6 5 chr1 128590 1D CTTCAAGTTC A/- CCCCCTTTTT 220 het 220 13 4 5 8 A 1 0 chr1 129011 3D GGGATGTAGA ATG/--- ATAAGGCTCT 258 het 258 12 5 6 1 ATG 1 0 chr1 136743 1I GGTGAGGCAA -/C GGGCTCACAC 76 het 76 80 66 6 12 C 0 1 chr1 136889 1D TGTGAGGCAA G/- GGGCTCGGGC 205 het 205 41 29 8 8 G 4 3 chr1 237577 1I AAAGGGGGTT -/C ATTATCTAGG 60 het 60 51 45 4 2 C 0 1 chr1 247917 3D ACCCAACCTC AGG/--- AGTTCAGGGC 69 hom 5 2 0 2 0 AGG 1 0 chr1 255910 2I TGTGTGTGTA --/TG TGTGTGTGTG 257 het 28 7 1 5 1 TG 10 11 chr1 531809 2D CACACTTATG CA/-- CACATTCACA 327 het 327 25 17 8 1 CA 3 2 chr1 532239 2D TGTTCACATT CA/-- CACTCATACA 325 het 325 64 53 10 2 CA 2 1 chr1 532259 3D CACAGCCCAA AAT/--- AATATACACA 303 het 303 61 43 9 10 AAT 2 1 chr1 537252 2D AGCCACATGT GG/-- GACAGGGCAG 6 hom 2 1 0 1 0 G 3 1 chr1 537494 5I CAGCGTCCAT -----/GCCCA GCCGGCCTCC 23 het 3 2 0 1 1 GCCCA 0 1 chr1 537641 50D ATCCCCCTCT CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC/-------------------------------------------------- TTTCTCCTCT 66 het 66 22 18 3 10 CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC 1 0  Example vtools import --format Illumina_INDEL Illumina_INDEL.</description>
     </item>
     
     <item>
-      <title></title>
+      <title>functor</title>
       <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/functor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/functor/</guid>
       <description>HomePage Import/Export adjustment functors The following are all the adjustment functions that are provided by variant tools. The export functors are of course only used for exporting variants using .fmt files, and are not used in .ann files.
 Adjust input  IncreaseBy(inc=1), converting 5 -&amp;gt; 6  Increase input integer value by inc. This is usually used to adjust 0-based position to 1-based position that is used by variant tools.</description>
+    </item>
+    
+    <item>
+      <title>ANNNOVAR variants</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/annovav/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/annovav/</guid>
+      <description>Generating and importing ANNOVAR annotations for variants in vtools vtools supports the generation of an ANNOVAR input file through the ANNOVAR.fmt format. In addition, there are two ANNOVAR format files (ANNOVAR_variant_function.fmt and ANNOVAR_exonic_variant_function.fmt) that support the import of ANNOVAR generated annotations.
+1. Example of running annovar on variants in vtools and importing the resulting annotations # export all variants in the variant table to an annovar file (an input file for annovar) vtools export variant ANNOVAR.</description>
+    </item>
+    
+    <item>
+      <title>ANNNOVAR variants</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/pileup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/pileup/</guid>
+      <description>Pileup Indel 1. Sample data chr10 57162 D1 G * homo 26 3 6 chr10 62899 I4 AAAA * hete 31 17 33 chr10 85429 I1 A * homo 38 29 32 chr10 87126 I24 TGCATTTACGTGATCTTGGCTCAC * hete 51 10 38 chr10 87668 D3 CTC * hete 52 27 34 chr10 89301 D1 A * hete 37 7 45 chr10 89448 I3 AGG * hete 27 4 31 chr10 93681 I1 G * hete 21 12 111 chr10 94117 I3 CAA * hete 29 29 81 chr10 94848 D3 TTA * hete 54 7 48 chr10 95775 I1 T * hete 44 6 44 chr10 97572 D1 T * hete 44 8 55 chr10 98719 I1 T * hete 48 13 39 chr10 99022 I1 T * homo 52 19 36 chr10 100224 D6 CCCTAA * hete 41 12 31 chr10 100433 D6 ACCCTC * hete 50 2 20 chr10 100799 I1 G * hete 50 4 22 chr10 101382 D1 G * hete 54 12 39 chr10 101729 D3 GTA * hete 51 19 58 chr10 103093 D1 T * homo 57 23 33 chr10 103731 D2 GA * hete 46 6 28 chr10 106207 D9 TTGTTTTTG * hete 46 6 24 chr10 106216 D4 TTTT * homo 49 11 19 chr10 107344 I1 C * hete 54 6 32 chr10 108119 I1 G * hete 31 7 19 chr10 108176 I1 A * hete 46 3 22 chr10 110565 D2 AA * hete 47 4 11 chr10 110582 D2 AG * hete 51 2 13 chr10 110806 D7 TTTTTTT * hete 55 5 14 chr10 110829 I3 GGG * hete 45 2 13 chr10 111125 I1 T * homo 52 11 14 chr10 112581 D2 CC * homo 30 8 8 chr10 113972 D1 G * hete 56 7 40 chr10 114040 I1 A * hete 57 4 33 chr10 114710 D1 C * hete 56 4 28 chr10 117629 I8 CCAGATCC * hete 42 4 27 chr10 123201 D1 C * homo 58 20 22  2.</description>
     </item>
     
   </channel>

@@ -9,15 +9,5 @@
 	<atom:link href="https://vatlab.github.io/vat-docs/applications/association/view_association_result/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>QQ plot and Manhattan plot</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/view_association_result/qq-plot-and-manhattan-plot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/view_association_result/qq-plot-and-manhattan-plot/</guid>
-      <description>Graphic Summary of Association Analysis Introduction vtools_report plot_association generates QQ plot and Manhattan plot of p-values from output of vtools associate command. The graphics are powered by the R package ggplot2. Fonts, color, page layout etc can be specified from the command interface, generating high quality and customized graphs.
-Input data format vtools associate command typically generates two types of output: output of gene based association tests and single variant analysis.</description>
-    </item>
-    
   </channel>
 </rss>

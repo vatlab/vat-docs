@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/create_your_test/running-r-programs/</guid>
-      <description>A General Framework for Association Analysis Using R Programs Introduction A number of rare variant association methods as well as the flexible VAT ensemble algorithm makes it possible to conveniently evaluate variant associations via different statistical options. In addition to the existing association testing framework, variant association tools can talk to R via customized R programs prepared by users. Under this mechanism, users write up an R function that analyzes data of an association testing unit (e.</description>
+      <description>A General Framework for Association Analysis Using R Programs 1. Introduction A number of rare variant association methods as well as the flexible VAT ensemble algorithm makes it possible to conveniently evaluate variant associations via different statistical options. In addition to the existing association testing framework, variant association tools can talk to R via customized R programs prepared by users. Under this mechanism, users write up an R function that analyzes data of an association testing unit (e.</description>
     </item>
     
     <item>
@@ -24,7 +24,17 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/create_your_test/programming-in-vat/</guid>
-      <description>Identify genotype - phenotype association Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
+      <description>Identify genotype - phenotype association 1. Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
+    </item>
+    
+    <item>
+      <title>rtest</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/create_your_test/rtest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/create_your_test/rtest/</guid>
+      <description>Association Analysis with the Meta SKAT R Program The R extension for RTest is available HERE. For details on the format of this script please refer to the RTest method documentation.
+1. Example We analyze association with a binary trait named X6 conditioning on 3 covariates X8, X9, X10. Group information is provided by race. For each testing group, data is first cleaned by removing samples missing greater than 50% calls, then by removing variants missing 50% calls.</description>
     </item>
     
   </channel>

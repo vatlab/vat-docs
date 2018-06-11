@@ -15,8 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/</guid>
-      <description>Average depth of coverage Ratio About vtools_report avg_depth This command report average depth of all variants, or variants divided by sample allele count.
-Usage % vtools_report avg_depth -h usage: vtools_report avg_depth [-h] -n NUM_FIELD -d DEPTH_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table Command &#39;vtools update table --from_stat &amp;quot;meanDP=avg(DP_geno)&amp;quot;&#39; calculates the average depth of variants across sample (e.g. average depth of three variants if the variant appears three times in the sample).</description>
+      <description>Average depth of coverage Ratio 1. About vtools_report avg_depth This command report average depth of all variants, or variants divided by sample allele count.
+2. Usage % vtools_report avg_depth -h usage: vtools_report avg_depth [-h] -n NUM_FIELD -d DEPTH_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table Command &#39;vtools update table --from_stat &amp;quot;meanDP=avg(DP_geno)&amp;quot;&#39; calculates the average depth of variants across sample (e.g. average depth of three variants if the variant appears three times in the sample).</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ Usage % vtools_report avg_depth -h usage: vtools_report avg_depth [-h] -n NUM_FI
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/sequence/</guid>
-      <description>Output DNA and protein sequence at specified chromosome regions Usage % vtools_report sequence -h usage: vtools_report sequence [-h] [--build [BUILD]] [--numbered [{left,right}]] [--char_per_line CHAR_PER_LINE] [--transcribe [GENE [GENE ...]]] [--translate [GENE [GENE ...]]] [--mark [MARK [MARK ...]]] [--mark_complement] [--mark_reverse] [--hide_unmatched] [-v {0,1,2,3}] regions [regions ...] positional arguments: regions One or more chromosome regions in the format of chr :start-end (e.g. chr21:33,031,597-33,041,570), Field:Value from a region-based annotation database (e.g. refGene.name2:TRIM2 or refGene_exon.</description>
+      <description>Output DNA and protein sequence at specified chromosome regions 1. Usage % vtools_report sequence -h usage: vtools_report sequence [-h] [--build [BUILD]] [--numbered [{left,right}]] [--char_per_line CHAR_PER_LINE] [--transcribe [GENE [GENE ...]]] [--translate [GENE [GENE ...]]] [--mark [MARK [MARK ...]]] [--mark_complement] [--mark_reverse] [--hide_unmatched] [-v {0,1,2,3}] regions [regions ...] positional arguments: regions One or more chromosome regions in the format of chr :start-end (e.g. chr21:33,031,597-33,041,570), Field:Value from a region-based annotation database (e.g. refGene.name2:TRIM2 or refGene_exon.</description>
     </item>
     
     <item>
@@ -52,8 +52,8 @@ Usage % vtools_report avg_depth -h usage: vtools_report avg_depth [-h] -n NUM_FI
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/</guid>
-      <description>Transition-transversion Ratio About `vtools_report trans_ratio This command counts the number of transition and transversion variants and calculates its ratio. The expected ratio is 2 in human pseudo-genes (after the exclusion of transitions at CpG sites).
-Usage % vtools_report trans_ratio -h usage: vtools_report trans_ratio [-h] -n NUM_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table This command counts the number of transition (A&amp;lt;-&amp;gt;G and C&amp;lt;-&amp;gt;T) and transversion variants (others) and calculate its ratio.</description>
+      <description>Transition-transversion Ratio 1. About vtools_report trans_ratio This command counts the number of transition and transversion variants and calculates its ratio. The expected ratio is 2 in human pseudo-genes (after the exclusion of transitions at CpG sites).
+2. Usage % vtools_report trans_ratio -h usage: vtools_report trans_ratio [-h] -n NUM_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table This command counts the number of transition (A&amp;lt;-&amp;gt;G and C&amp;lt;-&amp;gt;T) and transversion variants (others) and calculate its ratio.</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@ Usage % vtools_report trans_ratio -h usage: vtools_report trans_ratio [-h] -n NU
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/variant_stat/</guid>
-      <description>Counting variants of different types, optionally by samples Usage % vtools_report variant_stat -h usage: vtools_report variant_stat [-h] [-s [SAMPLES [SAMPLES ...]]] [-g [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table Command &#39;vtools variant_stat&#39; calculates the number of snps, insertions, deletions and substitutions for groups of samples with some size metrics to characterize the indels. The statistics can be calculated for all samples (effectively for the master variant table when parameters --samples and --group_by are ignored), a subset of samples (e.</description>
+      <description>Counting variants of different types, optionally by samples 1. Usage % vtools_report variant_stat -h usage: vtools_report variant_stat [-h] [-s [SAMPLES [SAMPLES ...]]] [-g [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table Command &#39;vtools variant_stat&#39; calculates the number of snps, insertions, deletions and substitutions for groups of samples with some size metrics to characterize the indels. The statistics can be calculated for all samples (effectively for the master variant table when parameters --samples and --group_by are ignored), a subset of samples (e.</description>
     </item>
     
     <item>
@@ -82,7 +82,8 @@ Variants included for calculation of {$F$} must be under HWE and be bi-allelic. 
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/transmission/</guid>
       <description>Locate de novo, recessive and other variants that are transmitted from parents to offspring The inconsistent option of this command is not completed yet.
-Usage % vtools_report transmission -h usage: vtools_report transmission [-h] [--parents PARENTS PARENTS] [--offspring OFFSPRING [OFFSPRING ...]] [--denovo [DENOVO [DENOVO ...]]] [--recessive [RECESSIVE [RECESSIVE ...]]] [--inconsistent [INCONSISTENT [INCONSISTENT ...]]] [-v {0,1,2}] optional arguments: -h, --help show this help message and exit --parents PARENTS PARENTS Names of parents, which should uniquely identify two samples.</description>
+
+1. Usage % vtools_report transmission -h usage: vtools_report transmission [-h] [--parents PARENTS PARENTS] [--offspring OFFSPRING [OFFSPRING ...]] [--denovo [DENOVO [DENOVO ...]]] [--recessive [RECESSIVE [RECESSIVE ...]]] [--inconsistent [INCONSISTENT [INCONSISTENT ...]]] [-v {0,1,2}] optional arguments: -h, --help show this help message and exit --parents PARENTS PARENTS Names of parents, which should uniquely identify two samples.</description>
     </item>
     
     <item>
@@ -91,8 +92,8 @@ Usage % vtools_report transmission -h usage: vtools_report transmission [-h] [--
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/meta_analysis/</guid>
-      <description>Meta-analysis for Association Testing Results Introduction vtools_report meta_analysis implements meta-analysis methods detailed in Willer et al 2010[^C. J. Willer, Y. Li and G. R. Abecasis (2010). METAL: fast and efficient meta-analysis of genomewide association scans. Bioinformatics^]. Two statistics are available: the sample size based statistic and inverse variance based statistic. Input of this command are multiple text or compressed text files of association results delimited by tabs.
-Details Command interface % vtools_report meta_analysis -h usage: vtools_report meta_analysis [-h] [--beta col] [--pval col] [--se col] [-n col] [--link col [col .</description>
+      <description>Meta-analysis for Association Testing Results 1. Introduction vtools_report meta_analysis implements meta-analysis methods detailed in (Willer et al, 2010). Two statistics are available: the sample size based statistic and inverse variance based statistic. Input of this command are multiple text or compressed text files of association results delimited by tabs.
+2. Details 2.1 Command interface % vtools_report meta_analysis -h usage: vtools_report meta_analysis [-h] [--beta col] [--pval col] [--se col] [-n col] [--link col [col .</description>
     </item>
     
     <item>
@@ -101,7 +102,7 @@ Details Command interface % vtools_report meta_analysis -h usage: vtools_report 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_fields/</guid>
-      <description>Plot fields from variant tables Usage % vtools_report plot_fields -h usage: vtools_report plot_fields [-h] [--variants TABLE] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of fields that will be outputted. optional arguments: -h, --help show this help message and exit --variants TABLE Limit value of fields to variant in specified variant table.</description>
+      <description>Plot fields from variant tables 1. Usage % vtools_report plot_fields -h usage: vtools_report plot_fields [-h] [--variants TABLE] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of fields that will be outputted. optional arguments: -h, --help show this help message and exit --variants TABLE Limit value of fields to variant in specified variant table.</description>
     </item>
     
     <item>
@@ -110,26 +111,7 @@ Details Command interface % vtools_report meta_analysis -h usage: vtools_report 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/</guid>
-      <description>Plot genotype and/or genotype information fields Usage % vtools_report plot_geno_fields -h usage: vtools_report plot_geno_fields [-h] [--variants TABLE] [--samples [SAMPLES [SAMPLES ...]]] [--genotypes [GENOTYPES [GENOTYPES ...]]] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of genotype fields that will be outputted. optional arguments: -h, --help show this help message and exit --variants TABLE Limit value of fields to variant in specified variant table.</description>
-    </item>
-    
-    <item>
-      <title>plot_pheno_fields</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_pheno_fields/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_pheno_fields/</guid>
-      <description>Plot Sample phenotype fields Usage % vtools_report plot_pheno_fields -h usage: vtools_report plot_pheno_fields [-h] [--samples [SAMPLES [SAMPLES ...]]] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of fields that will be outputted. optional arguments: -h, --help show this help message and exit --samples [SAMPLES [SAMPLES .</description>
-    </item>
-    
-    <item>
-      <title>plot_association</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_association/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_association/</guid>
-      <description>Graphic Summary of Association Analysis Introduction vtools_report plot_association generates QQ plot and Manhattan plot of p-values from output of vtools associate command. The graphics are powered by the R package ggplot2. Fonts, color, page layout etc can be specified from the command interface, generating high quality and customized graphs.
-Input data format vtools associate command typically generates two types of output: output of gene based association tests and single variant analysis.</description>
+      <description>Plot genotype and/or genotype information fields 1. Usage % vtools_report plot_geno_fields -h usage: vtools_report plot_geno_fields [-h] [--variants TABLE] [--samples [SAMPLES [SAMPLES ...]]] [--genotypes [GENOTYPES [GENOTYPES ...]]] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of genotype fields that will be outputted.</description>
     </item>
     
   </channel>

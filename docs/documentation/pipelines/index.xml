@@ -10,32 +10,22 @@
     
     
     <item>
-      <title>Introduction</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/introduction/</guid>
-      <description>Calling variants using BWA and GATK best practice pipeline Usage This pipeline is deprecated because version 2.3 of the GATK resource bundle is no longer available.
-% vtools show pipeline bwa_gatk_hg19 A pipeline to align raw reads from fastq or BAW/SAM files using BWA and GATK best practice. It uses hg19 of human reference genome and assumes paired-end reads in plain text and compressed formats. Available pipelines: align, call Pipeline &amp;quot;align&amp;quot;: Align raw reads from input files using bwa, gatk, and picard.</description>
-    </item>
-    
-    <item>
       <title>Customized</title>
       <link>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</guid>
-      <description>Specification of a variant tools pipeline This page describes the new pipeline format (version 1.1 and later). Please refer to Format1_0? if you are editing a pipeline specification file for variant tools 2.7 and earlier..
-Intxroduction Variant Tools uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator).</description>
+      <description>Specification of a variant tools pipeline This page describes the new pipeline format (version 1.1 and later). Please refer to Format1_0 if you are editing a pipeline specification file for variant tools 2.7 and earlier.. 
+1. Introduction Variant Tools uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator).</description>
     </item>
     
     <item>
-      <title>Customized</title>
+      <title>Customized10</title>
       <link>https://vatlab.github.io/vat-docs/documentation/pipelines/format10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/format10/</guid>
-      <description>Specification of a variant tools pipeline This page describes the original pipeline format (version 1.0). Please refer to New? if you are editing a new pipeline specification file for variant tools 2.7 and later.
+      <description>Specification of a variant tools pipeline This page describes the original pipeline format (version 1.0). Please refer to New if you are editing a new pipeline specification file for variant tools 2.7 and later.
 1. Introduction Variant Tools uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator).</description>
     </item>
     

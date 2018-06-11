@@ -15,22 +15,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/utilities/report_progress/</guid>
-      <description>Report the progress of the execution of pipelines ChangeLog  Dec 30, 2013: Initial release  Download Download report_progress, use
+      <description>Report the progress of the execution of pipelines 1. ChangeLog  Dec 30, 2013: Initial release  2. Download Download report_progress, use
 % python report_progress
 or execute
 % report_progress
 directly after chmod +x report_progress.
 Note: Python module matplotlib is required to execute this script.
-Introduction variant tools records the progress of the execution of pipelines in log files. This script parses the log files, extract the starting end ending time of the execution of each step of the pipeline, and plots them in a resulting pdf file.</description>
-    </item>
-    
-    <item>
-      <title>md5sumd</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/utilities/_md5sumd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/utilities/_md5sumd/</guid>
-      <description>Generate and check with MD5 checksum for files and directories ChangeLog  Apr. 19, 2013: Minor error message improvement. Mar. 20, 2013: Version 1.0.1 with format change to handle non-ASCII filenames. February, 2013: Initial public release of version 1.0.  Download  Source code: md5sumd? (use python or python3 to run it) Windows executable: md5sumd.exe? MacOSX executable: md5sumd_macosx.zip? (decompress to get a binary file)  NOTE: If you have a filesystem with non-ASCII filenames encoded not in UTF-8, the directory md5sum might not work across platform unless you use the Python 3 version of the script (use python3 on source code).</description>
+3. Introduction variant tools records the progress of the execution of pipelines in log files. This script parses the log files, extract the starting end ending time of the execution of each step of the pipeline, and plots them in a resulting pdf file.</description>
     </item>
     
   </channel>
