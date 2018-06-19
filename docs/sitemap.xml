@@ -71,7 +71,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/txt/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/txt/</loc>
   </url>
   
   <url>
@@ -143,7 +143,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/</loc>
   </url>
   
   <url>
@@ -183,7 +183,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/csv/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</loc>
   </url>
   
   <url>
@@ -271,7 +271,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/plink/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</loc>
   </url>
   
   <url>
@@ -351,7 +351,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/rsname/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</loc>
   </url>
   
   <url>
@@ -395,7 +395,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/new/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</loc>
   </url>
   
   <url>
@@ -467,7 +467,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/tped/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/tped/</loc>
   </url>
   
   <url>
@@ -507,7 +507,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/map/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/map/</loc>
   </url>
   
   <url>
@@ -523,7 +523,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/annovar/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/annovar/</loc>
   </url>
   
   <url>
@@ -559,7 +559,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/cga/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/cga/</loc>
   </url>
   
   <url>
@@ -583,7 +583,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18snps/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/casava18snps/</loc>
   </url>
   
   <url>
@@ -607,7 +607,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/casava18indels/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/casava18indels/</loc>
   </url>
   
   <url>
@@ -631,7 +631,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/functor/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/functor/</loc>
   </url>
   
   <url>
@@ -643,7 +643,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/annovav/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/annovav/</loc>
   </url>
   
   <url>
@@ -659,7 +659,7 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/pileup/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/pileup/</loc>
   </url>
   
   <url>
