@@ -1,5 +1,5 @@
 +++
-title = "Formats"
+title = "formats"
 weight = 2
 +++
 
