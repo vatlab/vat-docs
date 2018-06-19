@@ -308,22 +308,23 @@ at the end of this file, and import this field using
 
     % vtools init import -f
     % export STOREMODE="sqlite"
-    % vtools import CEU_hg38.vcf --format my_vcf.fmt --build hg38 --var_info AA AC AN DP --geno_info DP_geno CB_geno
+    % vtools import CEU_hg38.vcf --format my_vcf.fmt --build hg38 --var_info AA AC AN DP --geno_info DP CB_geno
 
-    INFO: Importing variants from CEU.vcf.gz (1/1)
-    CEU.vcf.gz: 100% [====================================================] 300 12.4K/s in 00:00:00
-    INFO: 288 new variants (288 SNVs) from 300 lines are imported.
-    Importing genotypes: 100% [=========================================] 18,000 9.0K/s in 00:00:02
-    Copying genotype: 100% [==============================================] 60 484.0K/s in 00:00:00
+    INFO: Importing variants from CEU_hg38.vcf (1/1)
+    CEU_hg38.vcf: 100% [====================================================] 305 14.8K/s in 00:00:00
+    INFO: 292 new variants (292 SNVs) from 305 lines are imported.
+    Importing genotypes: 100% [===========================================] 18,300 9.1K/s in 00:00:02
+    Copying samples: 100% [===================================================] 80 79.9/s in 00:00:01
+
 
     % vtools show genotypes -l5
     
-    sample_name filename    num_genotypes   sample_genotype_fields
-    NA06985 CEU.vcf.gz  287 GT,DP_geno,CB_geno
-    NA06986 CEU.vcf.gz  287 GT,DP_geno,CB_geno
-    NA06994 CEU.vcf.gz  287 GT,DP_geno,CB_geno
-    NA07000 CEU.vcf.gz  287 GT,DP_geno,CB_geno
-    NA07037 CEU.vcf.gz  287 GT,DP_geno,CB_geno
+    sample_name filename        num_genotypes   sample_genotype_fields
+    NA06985     CEU_hg38.vcf    292             GT,DP,CB_geno
+    NA06986     CEU_hg38.vcf    292             GT,DP,CB_geno
+    NA06994     CEU_hg38.vcf    292             GT,DP,CB_geno
+    NA07000     CEU_hg38.vcf    292             GT,DP,CB_geno
+    NA07037     CEU_hg38.vcf    292             GT,DP,CB_geno
     (55 records omitted)
 
 </details>
