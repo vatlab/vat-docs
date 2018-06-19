@@ -1,6 +1,7 @@
 +++
 title = "Pipelines"
 weight = 8
+hidden = "true"
 +++
 
 ## Documenting and Executing Bioinformatics Pipelines using Variant Pipeline Tools (Under development)

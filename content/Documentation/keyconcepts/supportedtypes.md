@@ -1,7 +1,6 @@
 +++
 title = "Variants"
 weight = 1
-hidden = true
 +++
 
 ## Supported types of variants
