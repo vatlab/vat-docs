@@ -10,15 +10,6 @@
     
     
     <item>
-      <title>low complexity regions</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/low_complexity_regions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/low_complexity_regions/</guid>
-      <description> Low Complexity and RepetitiveRegions Low Complexity Regions </description>
-    </item>
-    
-    <item>
       <title>PhastCons</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
