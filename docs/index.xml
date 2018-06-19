@@ -69,6 +69,17 @@ Usage % vtools show annotation Illumina_NRCE Annotation database Illumina_NRCE (
     </item>
     
     <item>
+      <title>PhastCons</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</guid>
+      <description>Phast Cons The phastCons database annotates blocks of the genome with conservation scores using the phastCons algorithm (http://compgen.bscb.cornell.edu/phast/help-pages/phastCons.txt). The data that we are using was downloaded from the UCSC genome browser&amp;rsquo;s phastCons46way track that contains conservation data for vertebrates.
+PhastConsElements represents the most conserved regions so it covers a significantly percent of genome than the PhastCons database.
+ 1. PhastConsElements vtools show annotation PhastConsElements Description: PhastCons Conservation Scores Database type: range Number of records: 5,163,775 Distinct ranges: 5,163,775 Reference genome hg19: chr, start, end Field: chr Type: string Missing entries: 0 Unique Entries: 88 Field: start Type: integer Comment: Start position in chromosome Missing entries: 0 Unique Entries: 5,093,542 Range: 1 - 249231389 Field: end Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 5,093,841 Range: 12 - 249231641 Field: name Type: string Comment: Name of conserved region Missing entries: 0 Unique Entries: 4,358 Field: score Type: integer Comment: Phast cons score from 0 to 1000 Missing entries: 0 Unique Entries: 580 Range: 177 - 1000  2.</description>
+    </item>
+    
+    <item>
       <title>Quick start</title>
       <link>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -161,15 +172,6 @@ Usage % vtools show annotation Illumina_NRCE Annotation database Illumina_NRCE (
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/init/</guid>
       <description>Create a new project 1. Usage % vtools init -h usage: vtools init [-h] [-f] [--parent DIR_or_SNAPSHOT] [--variants [TABLE]] [--samples [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--children DIR_OR_SNAPSHOT [DIR_OR_SNAPSHOT ...]] [-v {0,1,2}] project Create a new project in the current directory. This command will fail if another project already exists in this directory, unless option &#39;--force&#39; is used to remove the existing project. positional arguments: project Name of a new project.</description>
-    </item>
-    
-    <item>
-      <title>low complexity regions</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/low_complexity_regions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/low_complexity_regions/</guid>
-      <description> Low Complexity and RepetitiveRegions Low Complexity Regions </description>
     </item>
     
     <item>
@@ -292,17 +294,6 @@ HGNC The HGNC annotation database is a field database that, by default, annotate
     </item>
     
     <item>
-      <title>PhastCons</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</guid>
-      <description>Phast Cons The phastCons database annotates blocks of the genome with conservation scores using the phastCons algorithm (http://compgen.bscb.cornell.edu/phast/help-pages/phastCons.txt). The data that we are using was downloaded from the UCSC genome browser&amp;rsquo;s phastCons46way track that contains conservation data for vertebrates.
-PhastConsElements represents the most conserved regions so it covers a significantly percent of genome than the PhastCons database.
- 1. PhastConsElements vtools show annotation PhastConsElements Description: PhastCons Conservation Scores Database type: range Number of records: 5,163,775 Distinct ranges: 5,163,775 Reference genome hg19: chr, start, end Field: chr Type: string Missing entries: 0 Unique Entries: 88 Field: start Type: integer Comment: Start position in chromosome Missing entries: 0 Unique Entries: 5,093,542 Range: 1 - 249231389 Field: end Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 5,093,841 Range: 12 - 249231641 Field: name Type: string Comment: Name of conserved region Missing entries: 0 Unique Entries: 4,358 Field: score Type: integer Comment: Phast cons score from 0 to 1000 Missing entries: 0 Unique Entries: 580 Range: 177 - 1000  2.</description>
-    </item>
-    
-    <item>
       <title>anno_utils</title>
       <link>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/anno_utils/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -347,6 +338,16 @@ When this format is used to export variants, it can be used to export arbitrary 
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/discordance_rate/</guid>
       <description>Usage % vtools_report discordance_rate -h usage: vtools_report discordance_rate [-h] [-s [SAMPLES [SAMPLES ...]]] [--genotypes [GENOTYPES [GENOTYPES ...]]] [-v {0,1,2}] Report discordance rate, namely the number of genotype calls that differ between a pair of samples divided by the total number of SNPs for which both calls are non-missing, between pairs of samples. The statistics can be calculated for all samples or selected samples specified by parameter --samples. This command output a n by n matrix with sample names in the header.</description>
+    </item>
+    
+    <item>
+      <title>genomicSuperDups</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic_super_dups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic_super_dups/</guid>
+      <description>Genomic Super Dups See this blog Why You Should Care About Segmental Duplications for some nice explanation.
+vtools show annotation genomicSuperDups -v2 Annotation database genomicSuperDups (version hg19_20130626) Description: Duplications of &amp;gt;1000 Bases of Non-RepeatMasked Sequence (&amp;gt;90 percent similar). Database type: range Number of records: 51,599 Distinct ranges: 40,832 Reference genome hg19: chr, start, end Field: chr Type: string Comment: Reference sequence chromosome or scaffold Missing entries: 0 Unique Entries: 80 Field: start Type: integer Comment: Start position in chromosome Missing entries: 0 Unique Entries: 30,451 Range: 1 - 249235635 Field: end Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 30,690 Range: 1832 - 249240008 Field: name Type: string Comment: Other chromosome involved Missing entries: 0 Unique Entries: 30,525 Field: otherChr Type: string Comment: Other chromosome or scaffold Missing entries: 0 Unique Entries: 80 Field: otherStart Type: integer Comment: Start position of other region Missing entries: 0 Unique Entries: 30,451 Range: 0 - 249235634 Field: otherEnd Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 30,690 Range: 1832 - 249240008 Field: otherSize Type: integer Comment: Total size of other chromosome Missing entries: 0 Unique Entries: 80 Range: 19913 - 249250621 Field: alignL Type: integer Comment: spaces/positions in alignment Missing entries: 0 Unique Entries: 13,141 Range: 1001 - 777920 Field: indelN Type: integer Comment: number of indels Missing entries: 0 Unique Entries: 436 Range: 0 - 993 Field: indelS Type: integer Comment: indel spaces Missing entries: 0 Unique Entries: 4,617 Range: 0 - 92315 Field: matchB Type: integer Comment: aligned bases that match Missing entries: 0 Unique Entries: 12,497 Range: 1000 - 766171 Field: mismatchB Type: integer Comment: aligned bases that do not match Missing entries: 0 Unique Entries: 12,623 Range: 900 - 766171 Field: transitionsB Type: integer Comment: number of transitions Missing entries: 0 Unique Entries: 2,659 Range: 0 - 9703 Field: transversionsB Type: integer Comment: number of transversions Missing entries: 0 Unique Entries: 1,880 Range: 0 - 5953 Field: fracMatch Type: float Comment: fraction of matching bases Missing entries: 0 Unique Entries: 1,442 Range: 0 - 4002 Field: fracMatchIndel Type: float Comment: fraction of matching bases with indels Missing entries: 0 Unique Entries: 21,193 Range: 0.</description>
     </item>
     
     <item>
@@ -449,22 +450,23 @@ Simply put, function mut_sequence in
     </item>
     
     <item>
+      <title>cytoBand</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</guid>
+      <description> Cyto Band cytoBand defines cytogenic bands. This annotation source gives the approximate location of these bands as seen on Giemsa-stained chromosomes. This data was downloaded from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables).
+The following fields are available for annotation.
+vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Loading annotation database cytoBand DEBUG: Loading annotation database gwasCatalog Annotation database cytoBand (version hg19_20111216) Description: Cyto Band Database type: range Number of records: 862 Number of distinct ranges: 862 Reference genome hg19: [&#39;chr&#39;, &#39;begin&#39;, &#39;end&#39;] Field: chr Type: chromosome Missing entries: 0 Unique Entries: 24 Field: begin Type: integer Comment: start position on chromosome Missing entries: 0 Unique Entries: 667 Range: 1 - 243700001 Field: end Type: integer Comment: end position on chromosome Missing entries: 0 Unique Entries: 690 Range: 2200000 - 249250621 Field: name Type: string Comment: name of cytogenic band Missing entries: 0 Unique Entries: 259 Field: gieStain Type: string Comment: giemsa stain results Missing entries: 0 Unique Entries: 8  </description>
+    </item>
+    
+    <item>
       <title>dbSNP</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</guid>
       <description>dbSNP annotation databases The default version of our dbSNP annotation is currently referring to dbSNP143 (using hg38 coordinates) as shown below. However, users can also retrieve older versions of dbSNP: dbSNP141, dbSNP138, dbSNP137, dbSNP135, dbSNP132, dbSNP131, dbSNP130, dbSNP129. The 129 and 130 versions use hg18 as a reference genome, 131, 132, 135, 137, 138 and 141 use hg19 and 143 uses hg38. The archived versions can be used by a variant tools project by referring to their specific names - for example: dbSNP-hg18_129.</description>
-    </item>
-    
-    <item>
-      <title>genomicSuperDups</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic_super_dups/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic_super_dups/</guid>
-      <description>Genomic Super Dups See this blog Why You Should Care About Segmental Duplications for some nice explanation.
-vtools show annotation genomicSuperDups -v2 Annotation database genomicSuperDups (version hg19_20130626) Description: Duplications of &amp;gt;1000 Bases of Non-RepeatMasked Sequence (&amp;gt;90 percent similar). Database type: range Number of records: 51,599 Distinct ranges: 40,832 Reference genome hg19: chr, start, end Field: chr Type: string Comment: Reference sequence chromosome or scaffold Missing entries: 0 Unique Entries: 80 Field: start Type: integer Comment: Start position in chromosome Missing entries: 0 Unique Entries: 30,451 Range: 1 - 249235635 Field: end Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 30,690 Range: 1832 - 249240008 Field: name Type: string Comment: Other chromosome involved Missing entries: 0 Unique Entries: 30,525 Field: otherChr Type: string Comment: Other chromosome or scaffold Missing entries: 0 Unique Entries: 80 Field: otherStart Type: integer Comment: Start position of other region Missing entries: 0 Unique Entries: 30,451 Range: 0 - 249235634 Field: otherEnd Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 30,690 Range: 1832 - 249240008 Field: otherSize Type: integer Comment: Total size of other chromosome Missing entries: 0 Unique Entries: 80 Range: 19913 - 249250621 Field: alignL Type: integer Comment: spaces/positions in alignment Missing entries: 0 Unique Entries: 13,141 Range: 1001 - 777920 Field: indelN Type: integer Comment: number of indels Missing entries: 0 Unique Entries: 436 Range: 0 - 993 Field: indelS Type: integer Comment: indel spaces Missing entries: 0 Unique Entries: 4,617 Range: 0 - 92315 Field: matchB Type: integer Comment: aligned bases that match Missing entries: 0 Unique Entries: 12,497 Range: 1000 - 766171 Field: mismatchB Type: integer Comment: aligned bases that do not match Missing entries: 0 Unique Entries: 12,623 Range: 900 - 766171 Field: transitionsB Type: integer Comment: number of transitions Missing entries: 0 Unique Entries: 2,659 Range: 0 - 9703 Field: transversionsB Type: integer Comment: number of transversions Missing entries: 0 Unique Entries: 1,880 Range: 0 - 5953 Field: fracMatch Type: float Comment: fraction of matching bases Missing entries: 0 Unique Entries: 1,442 Range: 0 - 4002 Field: fracMatchIndel Type: float Comment: fraction of matching bases with indels Missing entries: 0 Unique Entries: 21,193 Range: 0.</description>
     </item>
     
     <item>
@@ -580,17 +582,6 @@ Description of the data from Rutgers Computational Genetics Lab:</description>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_b37/</guid>
       <description>Calling variants using BWA and GATK best practice pipeline (b37) This pipeline is identical to bwa_gatk28_hg19 except that it uses the b37 reference genome.</description>
-    </item>
-    
-    <item>
-      <title>cytoBand</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</guid>
-      <description> Cyto Band cytoBand defines cytogenic bands. This annotation source gives the approximate location of these bands as seen on Giemsa-stained chromosomes. This data was downloaded from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables).
-The following fields are available for annotation.
-vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Loading annotation database cytoBand DEBUG: Loading annotation database gwasCatalog Annotation database cytoBand (version hg19_20111216) Description: Cyto Band Database type: range Number of records: 862 Number of distinct ranges: 862 Reference genome hg19: [&#39;chr&#39;, &#39;begin&#39;, &#39;end&#39;] Field: chr Type: chromosome Missing entries: 0 Unique Entries: 24 Field: begin Type: integer Comment: start position on chromosome Missing entries: 0 Unique Entries: 667 Range: 1 - 243700001 Field: end Type: integer Comment: end position on chromosome Missing entries: 0 Unique Entries: 690 Range: 2200000 - 249250621 Field: name Type: string Comment: name of cytogenic band Missing entries: 0 Unique Entries: 259 Field: gieStain Type: string Comment: giemsa stain results Missing entries: 0 Unique Entries: 8  </description>
     </item>
     
     <item>

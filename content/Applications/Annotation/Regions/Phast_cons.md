@@ -1,7 +1,7 @@
 
 +++
 title = "PhastCons"
-weight = 2
+weight = 1
 +++
 
 ## Phast Cons

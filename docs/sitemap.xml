@@ -47,6 +47,10 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</loc>
   </url>
   
@@ -95,10 +99,6 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/low_complexity_regions/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/functions/ref_sequence/</loc>
   </url>
   
@@ -143,10 +143,6 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/</loc>
-  </url>
-  
-  <url>
     <loc>https://vatlab.github.io/vat-docs/development/getinvolved/</loc>
   </url>
   
@@ -160,10 +156,6 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/customization/simulation/models/peng2/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</loc>
   </url>
   
   <url>
@@ -199,11 +191,19 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/customization/format/formats/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic_super_dups/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/annotation/misc/keggpathway/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/documentation/utilities/_md5sumd/</loc>
+    <loc>https://vatlab.github.io/vat-docs/documentation/utilities/md5sumd/</loc>
   </url>
   
   <url>
@@ -263,11 +263,11 @@
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</loc>
   </url>
   
   <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic_super_dups/</loc>
+    <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</loc>
   </url>
   
   <url>
@@ -332,10 +332,6 @@
   
   <url>
     <loc>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_b37/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</loc>
   </url>
   
   <url>

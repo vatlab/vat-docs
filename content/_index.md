@@ -227,8 +227,8 @@ for Variant Simulation Tools if you find variant tools helpful and use it in you
  [23]:    /documentation/functions/ref_sequence/
  [24]:    /documentation/vtools_commands/admin/
  [25]:   /applications/annotation/genes/ccdsgene/
- [26]:   /applications/annotation/genes/ccdsgene/entrezgene/
- [27]:   /applications/annotation/genes/ccdsgene/knowngene/
+ [26]:   /applications/annotation/genes/entrezgene/
+ [27]:   /applications/annotation/genes/knowngene/
  [28]:   /applications/annotation/genes/refgene/
  [29]:   /applications/annotation/genes/hugogene/
  [30]:   /applications/annotation/variants/cosmic/
@@ -252,7 +252,7 @@ for Variant Simulation Tools if you find variant tools helpful and use it in you
  [48]:    /documentation/functions/samples/
  [49]:    /documentation/vtools_commands/export/
  [50]:    /documentation/customization/format/Formats/annovar/
- [51]:   /applications/association/introduction/
+ [51]:   /applications/association/
  [52]:    /documentation/vtools_report/plot_association
  [53]:    /documentation/vtools_report/meta_analysis
  [54]:    /documentation/vtools_report/sequence/

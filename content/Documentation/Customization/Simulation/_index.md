@@ -405,5 +405,5 @@ Another example would be to limit, for example, a penetrance model to certain ch
  [5]:    /documentation/customization/simulation/
  [6]: http://variantools.sourceforge.net
  [7]: https://lists.sourceforge.net/lists/listinfo/varianttools-user
- [8]:   /applications/association/introduction/
+ [8]:   /applications/association/
  [9]:  installation/

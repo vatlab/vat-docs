@@ -1013,7 +1013,7 @@ After the variant/sample information field `missing_ratio` is calculated, an ove
  [1]: ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20110521/
  [2]: ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/exome_pull_down_targets/
  [3]:ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/supporting/phase1_samples_integrated_20101123.ped
- [4]:   /applications/association/introduction/
+ [4]:   /applications/association/
  [5]: http://www.openbioinformatics.org/annovar/
  [6]: http://people.virginia.edu/~wc9c/KING/
  [7]: http://pngu.mgh.harvard.edu/~purcell/plink

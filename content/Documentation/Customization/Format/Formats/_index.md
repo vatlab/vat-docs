@@ -1,7 +1,6 @@
 +++
-title = "Formats"
+title = "formats"
 weight = 2
-hidden = "true"
 +++
 
 ## Supported import/update/export file formats

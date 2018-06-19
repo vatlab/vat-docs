@@ -1,7 +1,7 @@
 
 +++
 title = "genomicSuperDups"
-weight = 3
+weight = 2
 +++
 
 ## Genomic Super Dups
