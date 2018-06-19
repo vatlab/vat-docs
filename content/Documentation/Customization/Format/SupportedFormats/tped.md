@@ -171,5 +171,5 @@ A TFAM file is also generated,
 
  [1]: http://pngu.mgh.harvard.edu/~purcell/plink/
  [2]: http://www.sph.umich.edu/csg/abecasis/Merlin/
- [3]: /  /documentation/customization/format/Formats/tped/plink/
+ [3]: /  /documentation/customization/format/supportedformats/tped/plink/
  [4]: http://pngu.mgh.harvard.edu/~purcell/plink/dataman.shtml
