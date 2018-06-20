@@ -12,19 +12,19 @@
     <title>Import :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529531515" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529531515" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529531515" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529531515" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529531515" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529531515" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529531515" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529531515" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534442" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534442" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534442" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534442" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534442" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534442" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534442" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534442" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529531515" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534442" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534442"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529531515"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529531515"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534442"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534442"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529531515"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534442"></script>
 
     
   </div>
@@ -3777,7 +3777,7 @@ optional arguments:
 <li>use command <code>vtools import input_file.vcf --var_info var_fields --geno_info geno_fields</code> to import variants, genotypes and related fields.</li>
 </ol>
 
-<div class="notices tip" ><p>If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands <code>bgzip</code> and <code>tabix</code>), you can use command <code>vtools show track FILENAME.vcf.gz</code> to get details of the vcf file. The [<code>track</code>][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project.</p>
+<div class="notices tip" ><p>If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands <code>bgzip</code> and <code>tabix</code>), you can use command <code>vtools show track FILENAME.vcf.gz</code> to get details of the vcf file. The <a href="http://vtools.houstonbioinformatics.org/format/CASAVA18_snps.fmt"><code>track</code></a> function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project.</p>
 </div>
 
 
@@ -4017,11 +4017,11 @@ NA07037     CEU_hg38.vcf    292             GT,DP,CB_geno
 
 <p>Command <code>vtools import</code> imports variants, sample genotypes and related information fields from formats other than VCF as well. The imported variants are saved to the master variant table <code>variant</code> of the project, along with their information fields.</p>
 
-<div class="notices tip" ><p>Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as <code>&lt;INS&gt;</code> or <code>DUP:TANDEM&gt;</code>. For details about how different types of variants are imported into <em>variant tools</em>, please refer to <a href="[1]">here</a>.</p>
+<div class="notices tip" ><p>Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as <code>&lt;INS&gt;</code> or <code>DUP:TANDEM&gt;</code>. For details about how different types of variants are imported into <em>variant tools</em>, please refer to <a href="http://docs.python.org/library/configparser.html">here</a>.</p>
 </div>
 
 
-<div class="notices tip" ><p>It is sometimes useful to import only variants to a project. The variant info could be added later using command <a href="https://vatlab.github.io/vat-docs/Documentation/vtools_commands/update/"><code>vtools update</code></a>, or built into an annotation database to reduce the size of the project.</p>
+<div class="notices tip" ><p>It is sometimes useful to import only variants to a project. The variant info could be added later using command <a href="https://vatlab.github.io/vat-docs/documentation/vtools_commands/update/"><code>vtools update</code></a>, or built into an annotation database to reduce the size of the project.</p>
 </div>
 
 
@@ -7104,20 +7104,20 @@ After data import is finished, we will set <em>journal_mode</em> back to default
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529531515"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529531515"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529531515"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529531515"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529531515"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529531515"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534442"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534442"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534442"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534442"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534442"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534442"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534442"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529531515"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529531515"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534442"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534442"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534442"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529531515" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529531515"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534442" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534442"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
