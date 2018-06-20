@@ -208,16 +208,6 @@ Note: Python module matplotlib is required to execute this script.
     </item>
     
     <item>
-      <title>ACM-BCB</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/acm-bcb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/acm-bcb/</guid>
-      <description>Tutorial for ACM-BCB 2014 1. Integrated Analysis of Next-Generation-Sequencing Data using Variant Tools This part of the talk gives an overview of variant tools, its concepts, components, and tutorials on how to import, annotate, and select variants.
- Tutorial Sample data Slides  2. Association Analysis of Whole Exome Sequence Data using Variant Association Tools This part of the talk gives a minimal demonstration on data quality control and association analysis of rare variants.</description>
-    </item>
-    
-    <item>
       <title>Autolink</title>
       <link>https://vatlab.github.io/vat-docs/administration/autolink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -430,17 +420,6 @@ Simply put, function mut_sequence in
     </item>
     
     <item>
-      <title>Performance</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/case44ctrl20/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/case44ctrl20/</guid>
-      <description>Processing 44 whole genome cases and 200 exome controls 1. Data source Whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls. This tutorial demonstrates the same set of commands used in the home page presentation but uses the complete dataset. The dataset used in this tutorial is not publicly available.
-2. Import data Create a project
-# Performance data is collected on a Mac Workstation with 2x2.</description>
-    </item>
-    
-    <item>
       <title>bwa_gatk28_hg19</title>
       <link>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -524,15 +503,6 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/update/</guid>
       <description>Add new or update existing variant and genotype info fields 1. Usage % vtools update -h usage: vtools update [-h] [--from_file FROM_FILE [FROM_FILE ...]] [--build BUILD] [--format FORMAT] [-j N] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [--set [EXPR [EXPR ...]]] [--from_stat [EXPR [EXPR ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [-v {0,1,2}] table Add or update fields of existing variants and genotype from other fields, statistics of genotypes and genotype info, or files that annotate variants or their locations (e.</description>
-    </item>
-    
-    <item>
-      <title>weighted</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/weighted-methods/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/weighted-methods/</guid>
-      <description>Weighted Burden Test for Disease and Quantitative Traits 1.1 Introduction This implements a collection of weighted aggregation tests. Different from plain aggregation methods which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a &amp;ldquo;weight&amp;rdquo; to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated &amp;ldquo;burden&amp;rdquo;, e.g., {$$X=\sum_i^N\omega_iX_i$$} where  \(\omega_i\)&amp;rsquo;s are the weights.</description>
     </item>
     
     <item>
@@ -672,7 +642,7 @@ As always, we need to find an empty directory and create a new project:</descrip
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</guid>
-      <description>SNP-set (Sequence) Kernel Association Test Method 1. Introduction 2. Details 2.1 Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011).</description>
+      <description>SNP-set (Sequence) Kernel Association Test Method 1. Details 1.1 Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011).</description>
     </item>
     
     <item>
