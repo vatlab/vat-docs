@@ -58,8 +58,8 @@ weight = 1
       align_1001:         Send a warning message if default read group is used.
     
     Pipeline parameters:
-      name                Name of the job to be executed. All intermediate files generated from this pipeline will be saved to $CACHE_DIR/$NAME where
-                          $CACHE_DIR is the cache directory of the project.
+      name                Name of the job to be executed. All intermediate files generated from this pipeline will be saved to \\(CACHE_DIR/$NAME where
+                          \\(CACHE_DIR is the cache directory of the project.
       strict_prog_version Whether or not use other version of programs if the exact version does not exist. Setting it to False allows variant tools to
                           use other versions of the programs. (default: False)
       production          If set to True or 1, all intermediate files will be removed. The whole pipeline would need to be rerun if a different

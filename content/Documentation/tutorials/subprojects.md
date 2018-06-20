@@ -87,9 +87,9 @@ For example, perhaps on a cluster system, you can do, for each `$sample_name`,
 
 
 
-    mkdir ${sample_name}_hg18
-    cd ${sample_name}_hg18
-    vtools init $sample_name
+    mkdir \\({sample_name}_hg18
+    cd \\({sample_name}_hg18
+    vtools init \\(sample_name
     vtools import ../data/hg18/$sample_name.vcf --build hg18
     
 

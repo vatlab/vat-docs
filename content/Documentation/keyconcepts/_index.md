@@ -145,7 +145,7 @@ More variant info fields could be added to the project using command `vtools upd
 
 
 
-    $ vtools output refT chr pos ref alt id AA AC AN DP -l 5
+    \\( vtools output refT chr pos ref alt id AA AC AN DP -l 5
     
     1   1180123 T   C   .           T   4   114 3251
     1   1184997 T   A   .           T   1   178 7275

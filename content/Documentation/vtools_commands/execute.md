@@ -43,10 +43,10 @@ weight = 15
       -h, --help            show this help message and exit
       -i [INPUT_FILE [INPUT_FILE ...]], --input [INPUT_FILE [INPUT_FILE ...]]
                             Input files to the pipeline, which will be passed to
-                            the pipelines as pipeline variable ${CMD_INPUT}.
+                            the pipelines as pipeline variable \\({CMD_INPUT}.
       -o [OUTPUT_FILE [OUTPUT_FILE ...]], --output [OUTPUT_FILE [OUTPUT_FILE ...]]
                             Names of output files of the pipeline, which will be
-                            passed to the pipelines as ${CMD_OUTPUT}.
+                            passed to the pipelines as \\({CMD_OUTPUT}.
       -j JOBS, --jobs JOBS  Maximum number of concurrent jobs to execute.
       -d DELIMITER, --delimiter DELIMITER
                             Delimiter used to output results of a SQL query.

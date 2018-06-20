@@ -97,7 +97,7 @@ weight = 3
     Pipeline parameters:
       name                Name of the job to be executed. All intermediate
                           files generated from this pipeline will be saved
-                          to $CACHE_DIR/$NAME where $CACHE_DIR is the
+                          to \\(CACHE_DIR/$NAME where \\(CACHE_DIR is the
                           cache directory of the project. (default:
                           bwa_gatk28_hg19)
       strict_prog_version Whether or not use other version of programs if
@@ -109,12 +109,12 @@ weight = 3
                           rerun if a different parameter or different
                           version of external program is used. (default:
                           False)
-      bwa                 path to bwa. Default to 'bwa' (use $PATH to
+      bwa                 path to bwa. Default to 'bwa' (use \\(PATH to
                           determine actual path) (default: bwa)
       samtools            path to samtools. Default to 'samtools' (use
-                          $PATH to determine actual path) (default:
+                          \\(PATH to determine actual path) (default:
                           samtools)
-      java                path to java. Default to 'java' (use $PATH to
+      java                path to java. Default to 'java' (use \\(PATH to
                           determine actual path) (default: java)
       picard_path         Path to picard jar files
       gatk_path           Path to GATK jar file GenomeAnalysisTK.jar

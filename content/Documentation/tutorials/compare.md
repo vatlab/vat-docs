@@ -79,10 +79,10 @@ We can use `vtools_report variant_stat` to calculate number of different types o
 
     % for table in CG1 CG2 Illumina1 Illumina2
     % do
-        vtools select $table 'alt!="-"' 'ref!="-"' 'length(alt)=1' 'length(ref)=1' -c
-        vtools select $table 'ref="-"' -c
-        vtools select $table 'alt="-"' -c
-        vtools select $table 'alt!="-"' 'ref!="-"' 'length(alt) > 1 OR length(ref) > 1' -c
+        vtools select \\(table 'alt!="-"' 'ref!="-"' 'length(alt)=1' 'length(ref)=1' -c
+        vtools select \\(table 'ref="-"' -c
+        vtools select \\(table 'alt="-"' -c
+        vtools select \\(table 'alt!="-"' 'ref!="-"' 'length(alt) > 1 OR length(ref) > 1' -c
     % done
     
 

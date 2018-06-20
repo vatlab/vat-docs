@@ -17,8 +17,8 @@ Getting details of commands
 
 
 
-    $ vtools -h
-    $ vtools init -h
+    \\( vtools -h
+    \\( vtools init -h
     
 
 
@@ -32,7 +32,7 @@ Getting details of file formats, fields, pipelines, association tests, file trac
 
 Getting a list of all supported file formats: 
 
-    $ vtools show formats -v0
+    \\( vtools show formats -v0
     
 
     CASAVA18_snps
@@ -56,7 +56,7 @@ Getting a list of all supported file formats:
 
 and details of a particular format: 
 
-    $ vtools show format basic
+    \\( vtools show format basic
     
 
     A basic variant import/export format that import variants with four tab-
@@ -99,7 +99,7 @@ and details of a particular format:
 
 Create an empty project 
 
-    $ vtools init tutorial
+    \\( vtools init tutorial
     
 
     INFO: variant tools 2.4.0 : Copyright (c) 2011 - 2014 Bo Peng
@@ -110,7 +110,7 @@ Create an empty project
 
 You cannot create a project in a folder with another project 
 
-    $ vtools init tutorial
+    \\( vtools init tutorial
     
 
     ERROR: A project can only be created in a directory without another project.
@@ -118,7 +118,7 @@ You cannot create a project in a folder with another project
 
 but you can use option `--force` to override this 
 
-    $ vtools init tutorial -f
+    \\( vtools init tutorial -f
     
 
     INFO: variant tools 2.4.0 : Copyright (c) 2011 - 2014 Bo Peng
@@ -133,7 +133,7 @@ but you can use option `--force` to override this
 
 Let us have a look at the data 
 
-    $ gzcat CEU.vcf.gz | head -10
+    \\( gzcat CEU.vcf.gz | head -10
     
 
     ##fileformat=VCFv4.0
@@ -146,7 +146,7 @@ Let us have a look at the data
     ##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
     ##FORMAT=<ID=CB,Number=1,Type=String,Description="Called by S(Sanger), M(UMich), B(BI)">
     ##rsIDs=dbSNP b129 mapped to NCBI 36.3, August 10, 2009
-    bpeng1@BCBMC02MG1WJF6T:~/temp$ gzcat CEU.vcf.gz | head -14
+    bpeng1@BCBMC02MG1WJF6T:~/temp\\)  gzcat CEU.vcf.gz | head -14
     ##fileformat=VCFv4.0
     ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
     ##INFO=<ID=HM2,Number=0,Type=Flag,Description="HapMap2 membership">
@@ -167,7 +167,7 @@ If the compressed .vcf file is indexed (with `.tbi` file), you can use `vtools` 
 
 
 
-    $ vtools show track CEU.vcf.gz
+    \\( vtools show track CEU.vcf.gz
     
 
     Version                 VCF v4.0
@@ -208,7 +208,7 @@ Looking for
 
 Import data with one variant information field `AA`, 
 
-    $ vtools import CEU.vcf.gz --var_info AA --build hg18
+    \\( vtools import CEU.vcf.gz --var_info AA --build hg18
     
 
     INFO: Importing variants from CEU.vcf.gz (1/1)
@@ -220,7 +220,7 @@ Import data with one variant information field `AA`,
 
 Show the status of the project 
 
-    $ vtools show
+    \\( vtools show
     
 
     Project name:                tutorial
@@ -234,7 +234,7 @@ Show the status of the project
 
 available variant tables 
 
-    $ vtools show tables
+    \\( vtools show tables
     
 
     table      #variants     date message
@@ -243,7 +243,7 @@ available variant tables
 
 details of a variant table 
 
-    $ vtools show table variant
+    \\( vtools show table variant
     
 
     Name:                   variant
@@ -256,7 +256,7 @@ details of a variant table
 
 all genotypes 
 
-    $ vtools show genotypes -l 10
+    \\( vtools show genotypes -l 10
     
 
     sample_name	filename  	num_genotypes	sample_genotype_fields
@@ -274,7 +274,7 @@ all genotypes
 
 Information fields for each variant 
 
-    $ vtools show fields
+    \\( vtools show fields
     
 
     variant.chr (char)      Chromosome name (VARCHAR)
@@ -286,7 +286,7 @@ Information fields for each variant
 
 Output variants in a specified variant table with specified info fields 
 
-    $ vtools output variant chr pos ref alt AA -l 10
+    \\( vtools output variant chr pos ref alt AA -l 10
     
 
     1	533  	G	C	.
@@ -311,7 +311,7 @@ Command update adds more variant info fields to the project.
 
 #### 4.1 import additional information from the source files
 
-    $ vtools update variant --from_file CEU.vcf.gz --var_info DP
+    \\( vtools update variant --from_file CEU.vcf.gz --var_info DP
     
 
     INFO: Using primary reference genome hg18 of the project.
@@ -323,7 +323,7 @@ Command update adds more variant info fields to the project.
 
 A new field `DP` is added, 
 
-    $ vtools show fields
+    \\( vtools show fields
     
 
     variant.chr (char)      Chromosome name (VARCHAR)
@@ -336,7 +336,7 @@ A new field `DP` is added,
 
 
 
-    $ vtools output variant chr pos ref alt AA DP -l 10
+    \\( vtools output variant chr pos ref alt AA DP -l 10
     
 
     1	533  	G	C	.	423
@@ -359,7 +359,7 @@ Count the number of alternative alleles (not genotypes), homozygotes, heterozygo
 
 
 
-    $ vtools update variant --from_stat 'num=#(alt)' 'hom=#(hom)' 'het=#(het)' 'maf=maf()'
+    \\( vtools update variant --from_stat 'num=#(alt)' 'hom=#(hom)' 'het=#(het)' 'maf=maf()'
     
 
     Counting variants: 100% [==================================] 60 1.1K/s in 00:00:00
@@ -373,7 +373,7 @@ Count the number of alternative alleles (not genotypes), homozygotes, heterozygo
 
 
 
-    $ vtools output variant chr pos ref alt num hom het maf -l 10
+    \\( vtools output variant chr pos ref alt num hom het maf -l 10
     
 
     1	533  	G	C	6 	0	6 	0.05
@@ -391,7 +391,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
 
 
 
-    $ vtools show samples -l 10
+    \\( vtools show samples -l 10
     
 
     sample_name	filename
@@ -410,7 +410,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
 
 
 
-    $ vtools update variant --from_stat 'num12=#(alt)' 'hom12=#(hom)' 'het12=#(het)' \
+    \\( vtools update variant --from_stat 'num12=#(alt)' 'hom12=#(hom)' 'het12=#(het)' \
         'maf12=maf()' --samples "sample_name like 'NA12%'"
     
 
@@ -426,7 +426,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
 
 
 
-    $ vtools output variant chr pos num maf num12 maf12 -l 10
+    \\( vtools output variant chr pos num maf num12 maf12 -l 10
     
 
     1	533  	6 	0.05           	4 	0.0588235294118
@@ -443,7 +443,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
 
 
 
-    $ vtools show fields
+    \\( vtools show fields
     
 
     variant.chr (char)      Chromosome name (VARCHAR)
@@ -472,7 +472,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
 
 ### 5. Phenotypes (`` `vtools phenotype ``)
 
-    $ vtools show phenotypes -l 10
+    \\( vtools show phenotypes -l 10
     
 
     sample_name
@@ -491,7 +491,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
 
 
 
-    $ head -5 phenotype.txt 
+    \\( head -5 phenotype.txt 
     
 
     sample_name	aff	sex	BMI
@@ -503,7 +503,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
 
 
 
-    $ vtools phenotype --from_file phenotype.txt 
+    \\( vtools phenotype --from_file phenotype.txt 
     
 
     INFO: Adding phenotype aff of type INT
@@ -515,7 +515,7 @@ We can also calculate sample statistics for a subset of samples (e.g. in cases a
 
 
 
-    $ vtools show phenotypes -l 10
+    \\( vtools show phenotypes -l 10
     
 
     sample_name	aff	sex	BMI
@@ -538,7 +538,7 @@ Phenotypes can be used to select samples.
 {{% /notice %}}
 
 
-    $ vtools show samples -l 10
+    \\( vtools show samples -l 10
     
 
     sample_name	filename  	aff	sex	BMI
@@ -557,7 +557,7 @@ Phenotypes can be used to select samples.
 
 
 
-    $ vtools update variant --from_stat 'nCase=#(alt)' --samples 'aff=2'
+    \\( vtools update variant --from_stat 'nCase=#(alt)' --samples 'aff=2'
     
 
     INFO: 35 samples are selected
@@ -569,7 +569,7 @@ Phenotypes can be used to select samples.
 
 
 
-    $ vtools update variant --from_stat 'nCtrl=#(alt)' --samples 'aff=1'
+    \\( vtools update variant --from_stat 'nCtrl=#(alt)' --samples 'aff=1'
     
 
     INFO: 25 samples are selected
@@ -587,7 +587,7 @@ The master variant table `variant` contains all variants in the project, we can 
 
 
 
-    $ vtools show fields
+    \\( vtools show fields
     
 
     variant.chr (char)      Chromosome name (VARCHAR)
@@ -618,7 +618,7 @@ The master variant table `variant` contains all variants in the project, we can 
 
 Select variant and output to another table (option `--to_table`) 
 
-    $ vtools select variant 'maf > 0.1' -t common 'Variants with MAF > 0.1'
+    \\( vtools select variant 'maf > 0.1' -t common 'Variants with MAF > 0.1'
     
 
     Running: 0 0.0/s in 00:00:00                                                          
@@ -627,7 +627,7 @@ Select variant and output to another table (option `--to_table`)
 
 
 
-    $ vtools show tables
+    \\( vtools show tables
     
 
     table      #variants     date message
@@ -637,7 +637,7 @@ Select variant and output to another table (option `--to_table`)
 
 
 
-    $ vtools output common chr pos ref alt AA maf -l 10
+    \\( vtools output common chr pos ref alt AA maf -l 10
     
 
     1	41342 	T	A	.	0.241666666667
@@ -656,7 +656,7 @@ Count the number of variants
 
 
 
-    $ vtools select common 'hom > 2' --count
+    \\( vtools select common 'hom > 2' --count
     
 
     Counting variants: 0 0.0/s in 00:00:00                                                
@@ -667,7 +667,7 @@ or output them,
 
 
 
-    $ vtools select common 'hom > 2' -o chr pos hom het maf -l 10
+    \\( vtools select common 'hom > 2' -o chr pos hom het maf -l 10
     
 
     1	41342 	3 	23	0.241666666667
@@ -686,7 +686,7 @@ You can also select variants from specified samples
 
 
 
-    $ vtools select common --samples "sample_name = 'NA12776'" -t common_in_12776
+    \\( vtools select common --samples "sample_name = 'NA12776'" -t common_in_12776
     
 
     INFO: 1 samples are selected by condition: sample_name = 'NA12776'
@@ -698,7 +698,7 @@ You can also select variants from specified samples
 
 ### 7. Annotation databases (`` `vtools use ``)
 
-    $ vtools show annotations -v0 -l 10
+    \\( vtools show annotations -v0 -l 10
     
 
     CancerGeneCensus-20130711
@@ -718,7 +718,7 @@ You can also select variants from specified samples
 
 #### 7.1 Genes 
 
-    $ vtools use refGene
+    \\( vtools use refGene
     
 
     INFO: Downloading annotation database from annoDB/refGene.ann
@@ -730,7 +730,7 @@ You can also select variants from specified samples
 
 
 
-    $ vtools liftover hg19
+    \\( vtools liftover hg19
     
 
     INFO: Downloading liftOver chain file from UCSC
@@ -742,7 +742,7 @@ You can also select variants from specified samples
 
 Coordinates in hg18 
 
-    $ vtools output variant chr pos ref alt -l 10
+    \\( vtools output variant chr pos ref alt -l 10
     
 
     1	533  	G	C
@@ -759,7 +759,7 @@ Coordinates in hg18
 
 Coordinates in hg19 
 
-    $ vtools output variant chr pos ref alt -l 10 --build hg19
+    \\( vtools output variant chr pos ref alt -l 10 --build hg19
     
 
     1	10533	G	C
@@ -776,7 +776,7 @@ Coordinates in hg19
 
 
 
-    $ vtools use refGene
+    \\( vtools use refGene
     
 
     INFO: Downloading annotation database from annoDB/refGene.ann
@@ -787,7 +787,7 @@ Coordinates in hg19
 
 
 
-    $ vtools show annotation refGene
+    \\( vtools show annotation refGene
     
 
     Annotation database refGene (version hg19_20130904)
@@ -813,7 +813,7 @@ Coordinates in hg19
 
 
 
-    $ vtools show fields
+    \\( vtools show fields
     
 
     variant.chr (char)      Chromosome name (VARCHAR)
@@ -863,7 +863,7 @@ Coordinates in hg19
 
 
 
-    $ vtools output variant chr pos refGene.name refGene.name2 -l10
+    \\( vtools output variant chr pos refGene.name refGene.name2 -l10
     
 
     1	533  	.	.
@@ -880,7 +880,7 @@ Coordinates in hg19
 
 
 
-    $ vtools select variant 'refGene.chr IS NOT NULL' -t in_gene
+    \\( vtools select variant 'refGene.chr IS NOT NULL' -t in_gene
     
 
     Running: 4 902.7/s in 00:00:00                                                        
@@ -889,7 +889,7 @@ Coordinates in hg19
 
 
 
-    $ vtools output in_gene chr pos refGene.name refGene.name2 -l10
+    \\( vtools output in_gene chr pos refGene.name refGene.name2 -l10
     
 
     1	695745	NR_033908	LOC100288069
@@ -908,7 +908,7 @@ Coordinates in hg19
 
 #### 7.2 dbSNP, dbNSFP, 1000 genomes
 
-    $ vtools use dbSNP
+    \\( vtools use dbSNP
     
 
     INFO: Downloading annotation database from annoDB/dbSNP.ann
@@ -919,7 +919,7 @@ Coordinates in hg19
 
 
 
-    $ vtools select common 'dbSNP.chr IS NOT NULL' -t in_dbSNP
+    \\( vtools select common 'dbSNP.chr IS NOT NULL' -t in_dbSNP
     
 
     Running: 0 0.0/s in 00:00:00                                                          
@@ -928,7 +928,7 @@ Coordinates in hg19
 
 
 
-    $ vtools output in_dbSNP chr pos ref alt dbSNP.name -l 10
+    \\( vtools output in_dbSNP chr pos ref alt dbSNP.name -l 10
     
 
     1	41342 	T	A	rs116400033
@@ -947,7 +947,7 @@ Select damaging variants
 
 
 
-    $ vtools use dbNSFP
+    \\( vtools use dbNSFP
     
 
     INFO: Downloading annotation database from annoDB/dbNSFP.ann
@@ -964,7 +964,7 @@ Select damaging variants
 
 Unfortunately, this dataset does not have any nonsynonymous variants recorded in dbNSFP 
 
-    $ vtools select variant 'dbNSFP.chr is not NULL' -c
+    \\( vtools select variant 'dbNSFP.chr is not NULL' -c
     
 
     Counting variants: 0 0.0/s in 00:00:00                                                
@@ -977,7 +977,7 @@ Unfortunately, this dataset does not have any nonsynonymous variants recorded in
 
 #### 8.1 Function `ref_genome`
 
-    $ vtools output common chr pos ref 'ref_sequence(chr, pos)' -l 10 
+    \\( vtools output common chr pos ref 'ref_sequence(chr, pos)' -l 10 
     
 
     1	41342 	T	T
@@ -994,7 +994,7 @@ Unfortunately, this dataset does not have any nonsynonymous variants recorded in
 
 
 
-    $ vtools output common chr pos ref 'ref_sequence(chr, pos-5, pos+5)' -l 10 
+    \\( vtools output common chr pos ref 'ref_sequence(chr, pos-5, pos+5)' -l 10 
     
 
     1	41342 	T	TGTATTTTATG
@@ -1015,7 +1015,7 @@ Unfortunately, this dataset does not have any nonsynonymous variants recorded in
 
 You can check the genotype of variants in a particular sample 
 
-    $ vtools output common chr pos ref alt "genotype('NA07037')" -l 10
+    \\( vtools output common chr pos ref alt "genotype('NA07037')" -l 10
     
 
     1	41342 	T	A	0
@@ -1032,7 +1032,7 @@ You can check the genotype of variants in a particular sample
 
 or in all samples 
 
-    $ vtools output common chr pos "genotype()" -l 2
+    \\( vtools output common chr pos "genotype()" -l 2
     
 
     1	41342	0,1,1,0,0,1,0,1,1,0,0,0,1,0,0,1,0,0,1,0,1,0,1,1,2,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,2,1,1,1,0,0,0,1,1,2,0,1,0,0,1,1,0,0,0,0
@@ -1041,7 +1041,7 @@ or in all samples
 
 Function `samples` outputs name of samples that harbor the variants 
 
-    $ vtools output common "samples('geno_filter=GT!=0')" -l 2
+    \\( vtools output common "samples('geno_filter=GT!=0')" -l 2
     
 
     NA06986,NA06994,NA07051,NA07347,NA07357,NA11830,NA11840,NA11918,NA11920,NA11992,NA11993,NA11994,NA12005,NA12044,NA12154,NA12234,NA12414,NA12489,NA12716,NA12717,NA12760,NA12761,NA12762,NA12776,NA12814,NA12815
@@ -1054,7 +1054,7 @@ Function `samples` outputs name of samples that harbor the variants
 
 A track is an external file that contains information about variants, which can be in format `vcf`, `bam` and `BigWig` and `BigBed`. 
 
-    $ vtools output common chr pos ref alt "track('CEU.vcf.gz')" -l 10
+    \\( vtools output common chr pos ref alt "track('CEU.vcf.gz')" -l 10
     
 
     1	41342 	T	A	AA=.;AC=29;AN=120;DP=188
@@ -1077,7 +1077,7 @@ The `track` function is particularly useful for checking reads that cover a vari
 
 #### 8.4 Pipeline `ANNOVA`
 
-    $ vtools show pipeline ANNOVAR 
+    \\( vtools show pipeline ANNOVAR 
     
 
     Pipeline to call ANNOVAR and import results as variant info fields.
@@ -1106,7 +1106,7 @@ The `track` function is particularly useful for checking reads that cover a vari
     Pipeline parameters:
       var_table           Variant table for the variants to be analyzed. (default: variant)
       annovar_path        Path to a directory that contains annotate_variation.pl, if the script
-                          is not in the default $PATH.
+                          is not in the default \\(PATH.
       dbtype              --dbtype parameter that will be passed to annotate_variation.pl
                           --dbtype. The default value if refGene, but you can also use knownGene,
                           ensGene. (default: refGene)
@@ -1119,7 +1119,7 @@ The `track` function is particularly useful for checking reads that cover a vari
 
 Using ANNOVAR to annotate variants 
 
-    $ vtools execute ANNOVAR --annovar_path ~/bin/annovar/ 
+    \\( vtools execute ANNOVAR --annovar_path ~/bin/annovar/ 
     
 
     INFO: Executing ANNOVAR.geneanno_0: Load specified snapshot if a snapshot is specified. Otherwise use the existing project.
@@ -1157,7 +1157,7 @@ Save a snapshot of the project
 
 
 
-    $ vtools admin --save_snapshot ACM-BCB2014-tutorial.tgz 'Tutorial section for AVM BCB meeting'
+    \\( vtools admin --save_snapshot ACM-BCB2014-tutorial.tgz 'Tutorial section for AVM BCB meeting'
     
 
     ACM-BCB2014-tutorial.tgz: 100% [================================] 358,722 13.6M/s in 00:00:00
@@ -1168,7 +1168,7 @@ You can load it using command
 
 
 
-    $ vtools admin --load_snapshot ACM-BCB2014-tutorial.tgz 
+    \\( vtools admin --load_snapshot ACM-BCB2014-tutorial.tgz 
     
 
     Extracting ACM-BCB2014-tutorial.tgz:   0.0% [>                                 ]  in 00:00:00

@@ -25,14 +25,14 @@ weight = 8
     snapshot will be loaded and overwrite the existing project. The parameter --samples is
     required to specify the name of samples in the order of offspring (proband), parents and
     sibling. Parameter --name is recommended to give all variant tables a prefix. This pipeline
-    will produce tables $name_denovo (variants that are observed only in the proband),
-    $name_denovo_by_site (variants that are observed in the proband with no variant in parents
-    and sibling at this site). A table $name_denovo_SNP will be created with all SNP markers in
-    table $name_denovo. And, depending on values of parameter --databases, it can produce tables
-    $table_1kg for variants in 1000 genomes project, $table_dbSNP for variants in dbSNP project,
-    and $table_refGene, $table_refGene_exon, $table_ccdsGene, $table_ccdsGene_exon,
-    $table_CancerGenomeCensus, $table_COSMIC, $table_dbNSFP, $table_phastCons,
-    $table_phastConsElements, $table_genomicSuperDups for tables in respective annotation
+    will produce tables \\(name_denovo (variants that are observed only in the proband),
+    \\(name_denovo_by_site (variants that are observed in the proband with no variant in parents
+    and sibling at this site). A table \\(name_denovo_SNP will be created with all SNP markers in
+    table \\(name_denovo. And, depending on values of parameter --databases, it can produce tables
+    \\(table_1kg for variants in 1000 genomes project, \\(table_dbSNP for variants in dbSNP project,
+    and \\(table_refGene, \\(table_refGene_exon, \\(table_ccdsGene, \\(table_ccdsGene_exon,
+    \\(table_CancerGenomeCensus, \\(table_COSMIC, \\(table_dbNSFP, \\(table_phastCons,
+    \\(table_phastConsElements, \\(table_genomicSuperDups for tables in respective annotation
     databases. It is up to you to select variants based on these membership tables using the
     'vtools compare' command.  The project will be saved to a snapshot if a name (or filename
     with extension .tar or .tar.gz) is specified as the output.
@@ -45,7 +45,7 @@ weight = 8
       denovo_20:          Locate de novo variants of the proband
       denovo_30:          Locate de novo variants by site (no parental variants at the sites,
                           even if the variants are different). This table contains a subset of
-                          table $name_denovo.
+                          table \\(name_denovo.
       denovo_50:          Create variant tables according to their membership in different
                           annotation databases
       denovo_100:         Save the project to a snapshot if an output is specified.
@@ -59,14 +59,14 @@ weight = 8
     for which the snapshot will be loaded and overwrite the existing project. The parameter
     --samples is required to specify the name of samples in the order of offspring (proband),
     parents, and sibling. Parameter --name is recommended to give all variant tables a prefix.
-    This pipeline will produce tables $name_recessive (variants that are observed only in the
-    proband), $name_recessive_by_site (variants that are observed in the proband with no variant
-    in parents and sibling at this site). A table $name_denovo_SNP will be created with all SNP
-    markers in table $name_denovo. And, depending on values of parameter --databases, it can
-    produce tables $table_1kg for variants in 1000 genomes project, $table_dbSNP for variants in
-    dbSNP project, and $table_refGene, $table_refGene_exon, $table_ccdsGene,
-    $table_ccdsGene_exon, $table_CancerGenomeCensus, $table_COSMIC, $table_dbNSFP,
-    $table_phastCons, $table_phastConsElements, $table_genomicSuperDups for tables in respective
+    This pipeline will produce tables \\(name_recessive (variants that are observed only in the
+    proband), \\(name_recessive_by_site (variants that are observed in the proband with no variant
+    in parents and sibling at this site). A table \\(name_denovo_SNP will be created with all SNP
+    markers in table \\(name_denovo. And, depending on values of parameter --databases, it can
+    produce tables \\(table_1kg for variants in 1000 genomes project, \\(table_dbSNP for variants in
+    dbSNP project, and \\(table_refGene, \\(table_refGene_exon, \\(table_ccdsGene,
+    \\(table_ccdsGene_exon, \\(table_CancerGenomeCensus, \\(table_COSMIC, \\(table_dbNSFP,
+    \\(table_phastCons, \\(table_phastConsElements, \\(table_genomicSuperDups for tables in respective
     annotation databases. It is up to you to select variants based on these membership tables
     using the 'vtools compare' command.  Two optional output files are allowed. The project will
     be saved to a snapshot if a name (or filename with extension .tar or .tar.gz) is specified
@@ -79,7 +79,7 @@ weight = 8
                           proband and his or her sibling, if available.
       recessive_15:       Import all annotation databases
       recessive_20:       Locate recessive variants of the proband (homozygous only in proband)
-                          and save variants in table $name_recessive
+                          and save variants in table \\(name_recessive
       recessive_50:       Create variant tables according to their membership in different
                           annotation databases
       recessive_100:      Save the project to a snapshot if an output is specified.

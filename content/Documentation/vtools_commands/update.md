@@ -721,7 +721,7 @@ However, because this dataset does not record wildtype alleles, the minior allel
 
 In this case, missing genotypes are counted, 
 
-    $ vtools update variant --from_stat 'maf1=maf()'
+    \\( vtools update variant --from_stat 'maf1=maf()'
     
 
     Updating variant: 100% [================================] 2,051 24.1K/s in 00:00:00

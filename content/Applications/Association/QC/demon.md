@@ -39,13 +39,13 @@ Exome variant sites with higher coverage are extracted from the original VCF fil
     #!bin/bash
     chrs='1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X' 
     data\_dir="/home/guest/Data1000g" 
-    zcat $data\_dir/ALL.chr1.phase1\_release\_v3.20101123.snps\_indels\_svs.genotypes.vcf.gz | head -500 |grep -        P "^#" | bgzip -c > g1000exomesnv.header.vcf.gz 
-    for chr in $chrs
+    zcat \\(data\_dir/ALL.chr1.phase1\_release\_v3.20101123.snps\_indels\_svs.genotypes.vcf.gz | head -500 |grep -        P "^#" | bgzip -c > g1000exomesnv.header.vcf.gz 
+    for chr in \\(chrs
     do 
-        echo $chr
-        zcat $data_dir/ALL.chr$chr.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz 	  | grep -v -P                  "^#" | grep -P "SNPSOURCE=EXOME" | grep -P "VT=SNP" | bgzip -c > g1000exomesnv_chr$chr.vcf.gz
+        echo \\(chr
+        zcat \\(data_dir/ALL.chr$chr.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz 	  | grep -v -P                  "^#" | grep -P "SNPSOURCE=EXOME" | grep -P "VT=SNP" | bgzip -c > g1000exomesnv_chr$chr.vcf.gz
     done
-    fn=\`for i in $chr; do echo g1000exomesnv_chr$i.vcf.gz; done\` zcat g1000exomesnv.header.vcf.gz $fn | bgzip         -c > g1000exomesnv.vcf.gz 
+    fn=\`for i in \\(chr; do echo g1000exomesnv_chr$i.vcf.gz; done\` zcat g1000exomesnv.header.vcf.gz \\(fn | bgzip         -c > g1000exomesnv.vcf.gz 
 
 
 
@@ -217,7 +217,7 @@ The snapshot we provided has intentionally left out information in the `INFO` fi
 
 
 
-    vtools use $script_dir/g1000.ann --file $data_dir/g1000exomesnv.vcf.gz -j8
+    vtools use \\(script_dir/g1000.ann --file \\(data_dir/g1000exomesnv.vcf.gz -j8
     
 
 
@@ -310,8 +310,8 @@ Firstly we output the variants for `ANNOVAR` to annotate:
 
 
 
-    vtools output variant chr pos pos ref alt > $data_dir/exomesnv.txt
-    /path/to/annotate_variation.pl $data_dir/exomesnv.txt $data_dir/humandb/ -buildver hg19
+    vtools output variant chr pos pos ref alt > \\(data_dir/exomesnv.txt
+    /path/to/annotate_variation.pl \\(data_dir/exomesnv.txt \\(data_dir/humandb/ -buildver hg19
     
 
 
@@ -333,10 +333,10 @@ Then we import the annotated result into the project database, using two of our 
 
 
     vtools update variant --format ANNOVAR_exonic_variant_function \
-    	       --from_file $data_dir/exomesnv.txt.exonic_variant_function \
+    	       --from_file \\(data_dir/exomesnv.txt.exonic_variant_function \
     	       --var_info mut_type function genename
     vtools update variant --format ANNOVAR_variant_function \
-    	       --from_file $data_dir/exomesnv.txt.variant_function \
+    	       --from_file \\(data_dir/exomesnv.txt.variant_function \
     	       --var_info region_type region_name
     
 
@@ -634,7 +634,7 @@ We discuss in this section the organization and use of sample phenotype informat
 
 
 
-    vtools phenotype --from_file $data_dir/g1000_simulated_phenotypes.txt
+    vtools phenotype --from_file \\(data_dir/g1000_simulated_phenotypes.txt
     
 
 
@@ -809,7 +809,7 @@ There are 268 samples having a *yes* tag for being unrelated Europeans. Within t
 
 
 
-    vtools phenotype --from_file $data_dir/European_PC.txt
+    vtools phenotype --from_file \\(data_dir/European_PC.txt
     
 
 
@@ -871,7 +871,7 @@ Note that all the 5 variants displayed above are singletons ($MAF=\frac{1}{268\t
 
 <details><summary> variant counts by type</summary>
 
-arr=(\`vtools select variant -c -v0\`) arr+=(\`vtools select variant "af\_ie>0" -c -v0\`) for i in 1 2 3 do arr+=(\`vtools select variant "num\_ie=$i" -c -v0\`) done echo ${arr[1]} "out of a total of" ${arr[0]} "variants are selected in our sample, among which" ${arr[2]} "are singletons," ${arr[3]} "are doubletons and" ${arr[4]} "are tripletons".
+arr=(\`vtools select variant -c -v0\`) arr+=(\`vtools select variant "af\_ie>0" -c -v0\`) for i in 1 2 3 do arr+=(\`vtools select variant "num\_ie=$i" -c -v0\`) done echo \\({arr[1]} "out of a total of" \\({arr[0]} "variants are selected in our sample, among which" \\({arr[2]} "are singletons," \\({arr[3]} "are doubletons and" \\({arr[4]} "are tripletons".
 
 </details>
 
@@ -888,7 +888,7 @@ Exact Test of Hardy-Weinberg Equilibrium is implemented as in Wigginton et al (2
     vtools update variant --set "hwe=HWE_exact(num_ie, het_ie, hom_ie, other_ie)"
     
 
-An `hwe` field is created with *p-values* from the HWE test. We want to filter out variant sites with $HWE<5\times10^{-8}$, which is 1132 variants. It turns out most of these variants have MAF greater than 0.01. 
+An `hwe` field is created with *p-values* from the HWE test. We want to filter out variant sites with \\(HWE<5\times10^{-8}$, which is 1132 variants. It turns out most of these variants have MAF greater than 0.01. 
 
 
 
@@ -981,7 +981,7 @@ Although there is no missing genotype calls in our test data (or, missing genoty
     vtools update variant --set "missing_ratio = mnum/(N * 1.0)"
     
 
-where $N$ is the total sample size. 
+where \\(N\\)  is the total sample size. 
 
 
 
@@ -991,7 +991,7 @@ where $N$ is the total sample size.
     vtools phenotype --set "missing_ratio = mnum/(M * 1.0)"
     
 
-where $M$ is the total number of variant sites. 
+where \\(M\\)  is the total number of variant sites. 
 
 
 

@@ -50,7 +50,7 @@ As with other `vtools import` formats, importing `PLINK` data requires specifica
 
 
 
-    vtools import /path/to/X --format plink --build hg19 --jobs $N
+    vtools import /path/to/X --format plink --build hg19 --jobs \\(N
     
     INFO: Preprocessing files X to generate intermediate input files for import
     INFO: Determining major/minor allele from data

@@ -28,7 +28,7 @@ weight = 9
                                        file [file ...]
     
     positional arguments:
-      file                  Input text files in the format of $vtools associate
+      file                  Input text files in the format of \\(vtools associate
                             output (supports plain text, gz or bz2 compressed text
                             files)
     

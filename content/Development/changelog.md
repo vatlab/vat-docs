@@ -139,7 +139,7 @@ BUG FIXES:
 *   Nov 14: Fix the use of annotation field if the annotation database has the same name of a variant table. 
 *   Nov 18: Fix import PLINK format to allow for arbitrary coding for unknown "sex" status in `fam` file. 
 *   Nov 20: Properly handle meta analysis input with trailing white space in column names. 
-*   Nov 27: Properly handle missing data in external weight for $vtools associate command. 
+*   Nov 27: Properly handle missing data in external weight for \\(vtools associate command. 
 
 
 
@@ -174,7 +174,7 @@ NEW FEATURES:
 
 *   Oct 5: Update dbNSFP to version 2.1. 
 *   Oct 3: align columns of output of command `vtools output` and `vtools show genotypes` using variable spaces. 
-*   Sep 23: Save ${local_resource} in annoDB to increase portability of projects. 
+*   Sep 23: Save \\({local_resource} in annoDB to increase portability of projects. 
 *   Sep 2: Expand command `vtool compare` to compare location and genotypes as well. 
 
 BUGS: 

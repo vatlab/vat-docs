@@ -32,9 +32,9 @@ Import data that are outputted from CASAVA v18. The data are organized by sample
     % for dir in Data/SS*
     % do
     	name=${dir##*/}
-    	echo "Processing", $name
-    	vtools import --format CASAVA18_indels $dir/Variations/indels/*.txt --sample $name --build hg19
-    	vtools import --format CASAVA18_snps $dir/Variations/snps/*.txt --sample $name --build hg19
+    	echo "Processing", \\(name
+    	vtools import --format CASAVA18_indels \\(dir/Variations/indels/*.txt --sample \\(name --build hg19
+    	vtools import --format CASAVA18_snps \\(dir/Variations/snps/*.txt --sample \\(name --build hg19
     % done
     
 

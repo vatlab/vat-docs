@@ -47,8 +47,8 @@ weight = 7
       reported_ancestry   Field name for self-reported ancestry. This is the name of the column of population group
                           information in "vtools show samples" command. If specified, the global ancestry inference will
                           be reported on a graph with colored dots indicating sample's self-reported ancestry group.
-      king_path           Path to a directory that contains the "king" program, if it is not in the default $PATH.
-      plink_path          Path to a directory that contains the "plink" program, if it is not in the default $PATH.
+      king_path           Path to a directory that contains the "king" program, if it is not in the default \\(PATH.
+      plink_path          Path to a directory that contains the "plink" program, if it is not in the default \\(PATH.
       num_comp            number of MDS components in global ancestry analysis that will be imported to sample table.
                           (default: 5)
       maf                 Minor Allele Frequency cutoff. Variants having MAF smaller than this value will be dropped from
@@ -63,7 +63,7 @@ weight = 7
 
 ### 2. Details
 
-This pipeline integrates global ancestry analysis (MDS method) and kinship analysis. It updates sample phenotypes with calculated MDS components and generate graphic report for ancestry analysis, and text report for kinship analysis. project with the outputs. To use this pipeline, you should first download and install [KING][1] and [PLINK][2] to your $PATH or somewhere, then execute a command similar to 
+This pipeline integrates global ancestry analysis (MDS method) and kinship analysis. It updates sample phenotypes with calculated MDS components and generate graphic report for ancestry analysis, and text report for kinship analysis. project with the outputs. To use this pipeline, you should first download and install [KING][1] and [PLINK][2] to your \\(PATH or somewhere, then execute a command similar to 
 
 
 

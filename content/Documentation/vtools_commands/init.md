@@ -306,7 +306,7 @@ Because subprojects might have overlapping variants, variant tables, and samples
 
 
 {{% notice tip %}}
-Variant tables from children projects will be copied to `$name (from $proj)` before they are merged. This allows you to keep track of information from the original projects, or compare tables from children projects.
+Variant tables from children projects will be copied to `$name (from \\(proj)` before they are merged. This allows you to keep track of information from the original projects, or compare tables from children projects.
 {{% /notice %}}
 
 <details><summary> Examples: merge subprojects</summary> Continue from the previous example, if we just merge the CEU and JPT projects we created, 

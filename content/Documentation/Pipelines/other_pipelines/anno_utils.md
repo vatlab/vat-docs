@@ -60,7 +60,7 @@ weight = 2
     variants and variant info fields of a variant tools project. The database can
     then be used, for example, to filter variants from another project. The input
     of this pipeline should be a vtools project database ($name.proj), the output
-    is a .ann file ($name.ann). $name.ann, $name.DB and $name.DB.gz will be
+    is a .ann file ($name.ann). \\(name.ann, \\(name.DB and \\(name.DB.gz will be
     created. If a variant table is specified through parameter -export, only
     variants in specified variant table will be dumped.
       proj2annoDB_0:      Check the existence of command sqlite3, which is

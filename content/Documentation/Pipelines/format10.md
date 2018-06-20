@@ -124,7 +124,7 @@ when the description is outputted using command `vtools show pipeline`.
 
 
 
-where ${LOCAL_RESOURCE} is another pipeline variable that has value of project runtime option `$local_resource`. We will talk about pipeline variables in details later. 
+where \\({LOCAL_RESOURCE} is another pipeline variable that has value of project runtime option `$local_resource`. We will talk about pipeline variables in details later. 
 
 
 
@@ -256,14 +256,14 @@ If you need to output pipeline variables in any other format, you can use a func
 
 
 
-    ${CMD_OUTPUT: os.path.basename(CMD_OUTPUT[0])}
+    \\({CMD_OUTPUT: os.path.basename(CMD_OUTPUT[0])}
     
 
 passes value of `CMD_OUTPUT` to a Python lambda function `lambda x: os.path.basename(x[0])`, which will be `"output.bam"` if `${CMD_OUTPUT}` equals to `"/path/to/output.bam"`. 
 
 
 
-    ${INPUT: ','.join(sorted([x for x in INPUT if '_R1_' in x]))}
+    \\({INPUT: ','.join(sorted([x for x in INPUT if '_R1_' in x]))}
     
 
 takes a list of input files, select files with `_R1_` in filename, sort them, and output them as comma-separated list. 
@@ -272,14 +272,14 @@ This mechanism is very powerful in that the lambda function can take zero or mor
 
 
 
-    ${: "-f" if "%(force)s" == "Yes" else ""}
+    \\({: "-f" if "%(force)s" == "Yes" else ""}
     
 
 returns `-f` if a command line parameter `force` is set to "Yes". 
 
 
 
-    ${INPUT,CMD_OUTPUT: os.path.join(CMD_OUTPUT[0], INPUT[0])}
+    \\({INPUT,CMD_OUTPUT: os.path.join(CMD_OUTPUT[0], INPUT[0])}
     
 
 
@@ -316,7 +316,7 @@ Answers of these questions should be specified using the following keys:
     input=${OUTPUT400}
     
     # output from multiple steps
-    input=${OUTPUT400} ${OUTPUT500}
+    input=${OUTPUT400} \\({OUTPUT500}
     
     # all files in a directory
     input=${:glob.glob('*.gz')}
@@ -402,7 +402,7 @@ If an action differ only slightly across pipelines, you can use variable `${PIPE
 
 
     [eu_100,af_100]
-        action= ..... ${PIPELINE_NAME: '-g' if PIPELINE_NAME='eu' else ''}
+        action= ..... \\({PIPELINE_NAME: '-g' if PIPELINE_NAME='eu' else ''}
     
 
 uses passes an additional option `-g` to an action for pipeline `eu`. 
@@ -589,7 +589,7 @@ The following is a partial list of built-in actions defined by variant tools. Th
 *   Multiple commands could be executed in a single `RunCommand` action. The pipeline will terminate if any of the commands returns non-zero code. 
 *   Using option `output` to specify output files is highly recommended because otherwise the command will be re-executed if the pipeline is re-executed. If the command does not produce any new output (e.g. many vtools commands), you can generate a status output file and use it as output, as in 
 
-    RunCommand(cmd=['vtools import ${INPUT: " ".join(INPUT)} --build hg19',
+    RunCommand(cmd=['vtools import \\({INPUT: " ".join(INPUT)} --build hg19',
                    'vtools show genotypes > genotype.lst'],
                    output='genotype.lst')
     

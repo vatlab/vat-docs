@@ -103,9 +103,9 @@ although a spec file that defines multiple pipelines, accepts multiple command l
     [p1_20]
     # Execute a single command
     input:
-        ${cmd_input}
+        \\({cmd_input}
     RunCommand(cmd='''
-       a very long command > ${var1} ''',
+       a very long command > \\({var1} ''',
        output='${var1}')
     
     [p1_200]
@@ -228,7 +228,7 @@ when the description is outputted using command `vtools show pipeline`.
 
 
 
-where ${local_resource} is another pipeline variable that has value of project runtime option `$local_resource`. We will talk about pipeline variables in details later. 
+where \\({local_resource} is another pipeline variable that has value of project runtime option `$local_resource`. We will talk about pipeline variables in details later. 
 
 
 
@@ -243,7 +243,7 @@ The `DEFAULT` section defines parameters that can be changed using command line 
         Parameter passed to the java command, default to -Xmx4g to use a maximum of 4g heap space.
     
     [align_5]
-    RunCommand(cmd="java ${opt_java} SortSam ...")
+    RunCommand(cmd="java \\({opt_java} SortSam ...")
     
 
 The value of `opt_java` will be used to replace all instances of `${opt_java}` in the pipeline configuration file (or its derivatives, more on this later). The parameter has a default value `-Xmx4g` and a help message, which will be displayed when you view the details of this parameter. 
@@ -298,7 +298,7 @@ Pipeline variables are variables associated with the execution of pipeline. They
 
 
 
-For example, `${cmd_input}` and ${cmd_output} will be `['data.tgz']` and `['data.bam']` respectively for command `vtools execute bwa_gatk28_hg19 align --input data.tgz --output data.bam`. 
+For example, `${cmd_input}` and \\({cmd_output} will be `['data.tgz']` and `['data.bam']` respectively for command `vtools execute bwa_gatk28_hg19 align --input data.tgz --output data.bam`. 
 
 
 {{% notice tip %}}
@@ -370,14 +370,14 @@ If you need to output pipeline variables in any other format, you can use a func
 
 
 
-    ${cmd_output: os.path.basename(cmd_output[0])}
+    \\({cmd_output: os.path.basename(cmd_output[0])}
     
 
 passes value of `cmd_output` to a Python lambda function `lambda x: os.path.basename(x[0])`, which will be `"output.bam"` if `${cmd_output}` equals to `"/path/to/output.bam"`. 
 
 
 
-    ${input: ','.join(sorted([x for x in input if '_R1_' in x]))}
+    \\({input: ','.join(sorted([x for x in input if '_R1_' in x]))}
     
 
 takes a list of input files, select files with `_R1_` in filename, sort them, and output them as comma-separated list. 
@@ -393,7 +393,7 @@ returns the output of the `hostname` command
 
 
 
-    ${input,cmd_output: OS.PATH.JOIN(cmd_output[0], input[0])}
+    \\({input,cmd_output: OS.PATH.JOIN(cmd_output[0], input[0])}
     
 
 
@@ -472,13 +472,13 @@ Answers of these questions should be specified using the following keys:
 
 
     # output of step 400, not from previous step
-    input: ${output400}
+    input: \\({output400}
     
     # output from multiple steps
-    input: ${output400} ${output500}
+    input: \\({output400} \\({output500}
     
     # all files in a directory
-    input: ${:glob.glob('*.gz')}
+    input: \\({:glob.glob('*.gz')}
     
 
 
@@ -499,7 +499,7 @@ For example, the following example select all fastq files from input files and s
 
 
 
-    input:  ${cmd_input}
+    input:  \\({cmd_input}
         : select='fastq', group='pair'
     
 
@@ -519,7 +519,7 @@ For example, the following example select all fastq files from input files and s
 {{% notice tip%}}
 An input option does not substitute `${input}` because it determines `${input}`. They can however use other variables such as `${cmd_output}`. For example, 
 
-    ${bam_files} : ${input200:len(input200)==1})
+    \\({bam_files} : \\({input200:len(input200)==1})
     
     
 select files only if there are more than one input file. This is useful, for example, to merge bam files only if there are more than one input bam files. 
@@ -544,7 +544,7 @@ If an action differ only slightly across pipelines, you can use variable `${pipe
 
 
     [eu_100,af_100]
-        ..... ${pipeline_name: '-g' if PIPELINE_NAME='eu' else ''}
+        ..... \\({pipeline_name: '-g' if PIPELINE_NAME='eu' else ''}
     
 
 uses passes an additional option `-g` to an action for pipeline `eu`. 
@@ -594,7 +594,7 @@ Variant Tools currently supports the following options
     ...
     
     [hg19_200]
-    input:  ${accepted_hits}
+    input:  \\({accepted_hits}
     RunCommand('...')
     
 
@@ -772,7 +772,7 @@ Multiple commands could be executed in a single `RunCommand` action. The pipelin
 {{% notice tip %}}
 Using option `output` to specify output files is highly recommended because otherwise the command will be re-executed if the pipeline is re-executed. If the command does not produce any new output (e.g. many vtools commands), you can generate a status output file and use it as output, as in 
 {{% /notice %}}
-    RunCommand(cmd=['vtools import ${input: " ".join(input)} --build hg19',
+    RunCommand(cmd=['vtools import \\({input: " ".join(input)} --build hg19',
                    'vtools show genotypes > genotype.lst'],
                    output='genotype.lst')
     

@@ -248,7 +248,7 @@ Then, you can use the following commands to create tables of variants for each g
 
     for gene in GENE1 GENE2 GENE3
     do
-        vtools select variant "refGene.name2='${gene}'" -t ${gene}_ext
+        vtools select variant "refGene.name2='${gene}'" -t \\({gene}_ext
     done
 
  [1]: http://www.sanger.ac.uk/genetics/CGP/Census/

@@ -38,7 +38,7 @@ This pipeline exports variants in VCF format, call snpEff to predict its effect,
     Pipeline parameters:
       var_table           Variant table for the variants to be analyzed. (default:
                           variant)
-      java                path to java. Default to 'java' (use $PATH to determine actual
+      java                path to java. Default to 'java' (use \\(PATH to determine actual
                           path) (default: java)
       opt_java            Option to java program. -Djava.io.tmpdir is frequently used to
                           set java temporary directory if system temporary partition is

@@ -10,7 +10,7 @@ weight = 3
 
 ### 1.1 Introduction
 
-This implements a collection of **weighted** aggregation tests. Different from plain [aggregation methods][1] which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a "weight" to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated "burden", e.g., $$X=\sum\_i^N\omega\_iX\_i$$ where $\omega\_i$ are the weights. The weights often reflect the relative importance of a variant in terms of its contribution to phenotype. 
+This implements a collection of **weighted** aggregation tests. Different from plain [aggregation methods][1] which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a "weight" to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated "burden", e.g., $$X=\sum\_i^N\omega\_iX\_i$$where \\(\omega\_i\\)  are the weights. The weights often reflect the relative importance of a variant in terms of its contribution to phenotype. 
 
 The weighting approach was first proposed by (Madsen and Browning, 2010) with the assumption that "rarer" variants tend to be more important (the [WSS statistic][2]). This weighting theme is by far the most popular weights and has been adapted into a number of methods emerged later, such as (Lin and Tang, 2011) and (Wu et al, 2011). Other weighting themes such as KBAC and RBT weightings have different assumptions but they are also based solely on internal information from data. (Price et al, 2010) proposed the use of "external" weights, i.e., using functional annotation sources to calculate weight for rare variants. This weighting theme can also be naturally integrated into many rare variants methods. 
 
@@ -24,7 +24,7 @@ Implementation of `WeightedBurdenBt` and `WeightedBurdenQt` are similar to [aggr
 *   [KBAC][4] weight 
 *   External weights from annotation 
 
-Permutation methods have to be used to obtain $p$ value for WSS (control based), KBAC and RBT weighting themes. 
+Permutation methods have to be used to obtain \\(p\\)  value for WSS (control based), KBAC and RBT weighting themes. 
 
 
 

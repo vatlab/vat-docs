@@ -12,7 +12,7 @@ weight = 4
 
 ## Usage
 
-    $ vtools show pipeline illumina
+    \\( vtools show pipeline illumina
 
     A pipeline to handle illumina data prepared by CASAVA 1.8+. It imports
     variants from SNPs.vcf and Indel.vcf of multiple samples, separate maxgt and
@@ -59,8 +59,8 @@ weight = 4
 
 <details><summary> Examples: Import illumina data</summary> 
 
-    $ vtools init test --force
-    $ vtools execute illumina load_data --input /path/to/data/LP* \
+    \\( vtools init test --force
+    \\( vtools execute illumina load_data --input /path/to/data/LP* \
        --output raw_data.tar maxgt_data.tar poly_data.tar
     
 

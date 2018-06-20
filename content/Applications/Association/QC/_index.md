@@ -29,7 +29,7 @@ Quality control is a key step in association analysis. We may use a variety of c
     
 
 *   Hardy–Weinberg equilibrium Filter (`vtools update`) 
-    *   remove variants which does not pass Hardy–Weinberg equilibrium criterion (e.g. HWE pvalue < $10^{-8}$ ). 
+    *   remove variants which does not pass Hardy–Weinberg equilibrium criterion (e.g. HWE pvalue < \\(10^{-8}\\)  ). 
     
 
 *   Basic Summary Statistics on Variant Level (`vtools update`) 

@@ -46,7 +46,7 @@ weight = 16
                             databases), 'format' (all formats), and 'snapshot'
                             (all online snapshots). Identical resources that are
                             available locally (under ~/.variant_tools or runtime
-                            option $local_resource) are ignored. Note that option
+                            option \\(local_resource) are ignored. Note that option
                             'all' will download all versions of annotation
                             databases which can be slow and take a lot of disk
                             spaces.

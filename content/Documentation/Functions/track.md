@@ -525,7 +525,7 @@ We first need to check the available information that can be retrived
 
 
 
-    $ vtools show track LP6005253-DNA_A02.bam  
+    \\( vtools show track LP6005253-DNA_A02.bam  
 
     Header:
     @HD	VN:1.0	SO:coordinate

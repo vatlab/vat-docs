@@ -36,7 +36,7 @@ weight = 2
                             score, with fields shown in command 'vtools show
                             genotypes'). If a variant is filtered for one sample
                             but not another, it will be included if runtime option
-                            $treat_missing_as_wildtype is set to True, and
+                            \\(treat_missing_as_wildtype is set to True, and
                             discarded otherwise.
       -v {0,1,2}, --verbosity {0,1,2}
                             Output error and warning (0), info (1) and debug (2)

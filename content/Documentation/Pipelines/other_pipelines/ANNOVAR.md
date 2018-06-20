@@ -44,7 +44,7 @@ weight =5
                           (default: variant)
       annovar_path        Path to a directory that contains
                           annotate_variation.pl, if the script is not in
-                          the default $PATH.
+                          the default \\(PATH.
       dbtype              --dbtype parameter that will be passed to
                           annotate_variation.pl --dbtype. The default
                           value if refGene, but you can also use

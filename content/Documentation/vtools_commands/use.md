@@ -23,11 +23,11 @@ weight = 7
     
     positional arguments:
       source                Use an annotation database ($source.DB or
-                            $source.DB.gz) if it is available, download or build
+                            \\(source.DB.gz) if it is available, download or build
                             the database if a description file ($source.ann) is
                             available. Otherwise, this command will download a
                             description file and the corresponding database from
-                            web (c.f. runtime variable $search_path) and the
+                            web (c.f. runtime variable \\(search_path) and the
                             latest version of the datavase). If all means fail,
                             this command will try to download the source of the
                             annotation database (or use source files provided by
@@ -76,8 +76,8 @@ weight = 7
                             database is specified.
       --rebuild             If set, variant tools will always rebuild the
                             annotation database from source, ignoring existing
-                            local and online database. In addition to $name.DB,
-                            variant tools will also create $name-$version.DB.gz
+                            local and online database. In addition to \\(name.DB,
+                            variant tools will also create \\(name-$version.DB.gz
                             that can be readily distributed.
       -j N, --jobs N        If need to build database from source, maximum number
                             of processes to use.

@@ -14,7 +14,7 @@ weight = 1
 
 ### 1. Usage
 
-    $ vtools show simulation Peng2014_ex1
+    \\( vtools show simulation Peng2014_ex1
     
     Simulations of DNA sequences in specified regions using different simulation methods, for the
     first example in paper "Reproducible Simulations of realistic samples for next-gen sequencing

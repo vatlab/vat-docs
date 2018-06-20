@@ -21,7 +21,7 @@ This is implementation for the replication base test in (Ionita-Laza et al 2011)
 
 The final statistic is based on the stronger of the two evidences, adjusted for multiple testing. To increase the power of this approach a weighting theme is applied to variant counts in case or control group using a transformation of the probability of observing such counts under a Poisson model. 
 
-Implementation of RBT in this program has both one-sided and two-sided versions via the `--alternative` parameter. The one-sided testing strategy tests for the presence of variants conferring risk to disease by focusing on variants that have higher observed frequency in cases compared with controls. Permutation procedure is used in both one-sided and two-sided tests to obtain valid $p$ value. 
+Implementation of RBT in this program has both one-sided and two-sided versions via the `--alternative` parameter. The one-sided testing strategy tests for the presence of variants conferring risk to disease by focusing on variants that have higher observed frequency in cases compared with controls. Permutation procedure is used in both one-sided and two-sided tests to obtain valid \\(p\\)  value. 
 
 
 

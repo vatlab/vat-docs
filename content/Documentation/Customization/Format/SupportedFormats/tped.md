@@ -57,7 +57,7 @@ To make the exported TPED file compatible with other software applications that 
                    2 for number of alternative alleles. (default:
                    genotype)
       tfamfile     (export) Name of the tfam file to be outputed. Filename that does not
-                   ends with .tfam will be ignored. (default: $table.tfam)
+                   ends with .tfam will be ignored. (default: \\(table.tfam)
     
 
 By default, the corresponding TFAM file is named after the variant table from which variants/samples are exported. You can specify the TFAM file name by passing an additional parameter with specified filename: `--tfamfile FILENAME.tfam`. Note that the extension `.tfam` is required. 

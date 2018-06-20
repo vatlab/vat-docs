@@ -41,7 +41,7 @@ Or, if you prefer separating the tables, you can use commands
 
     % for gene in geneA geneB geneC
     % do
-        vtools select variant "refGene.name2='$gene'" -t $gene
+        vtools select variant "refGene.name2='$gene'" -t \\(gene
     % done
     
 
@@ -143,7 +143,7 @@ Or separately for each gene:
 
     % for gene in geneA geneB geneC
     % do
-        vtools select variant "refGene_exon.name2='$gene'" -t ${gene}_exon
+        vtools select variant "refGene_exon.name2='$gene'" -t \\({gene}_exon
     % done
     
 

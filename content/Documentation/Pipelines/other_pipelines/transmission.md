@@ -30,13 +30,13 @@ This pipeline is an extension to command `vtools_report transmission`, the diffe
     (no --input is specified), or a snapshot (--input) for which the snapshot will be loaded and
     overwrite the existing project. The parameter --parents and --offspring are required to specify the
     name of parents, proband (affected offspring), and one optional sibling. Parameter --name is
-    recommended to give all variant tables a prefix. This pipeline will produce tables $name_denovo
-    (variants that are observed only in the proband), A table $name_denovo_SNP will be created with all
-    SNP markers in table $name_denovo. And, depending on values of parameter --databases, it can produce
-    tables $table_1kg for variants in 1000 genomes project, $table_dbSNP for variants in dbSNP project,
-    and $table_refGene, $table_refGene_exon, $table_ccdsGene, $table_ccdsGene_exon,
-    $table_CancerGenomeCensus, $table_COSMIC, $table_dbNSFP, $table_phastCons, $table_phastConsElements,
-    $table_genomicSuperDups for tables in respective annotation databases. It is up to you to select
+    recommended to give all variant tables a prefix. This pipeline will produce tables \\(name_denovo
+    (variants that are observed only in the proband), A table \\(name_denovo_SNP will be created with all
+    SNP markers in table \\(name_denovo. And, depending on values of parameter --databases, it can produce
+    tables \\(table_1kg for variants in 1000 genomes project, \\(table_dbSNP for variants in dbSNP project,
+    and \\(table_refGene, \\(table_refGene_exon, \\(table_ccdsGene, \\(table_ccdsGene_exon,
+    \\(table_CancerGenomeCensus, \\(table_COSMIC, \\(table_dbNSFP, \\(table_phastCons, \\(table_phastConsElements,
+    \\(table_genomicSuperDups for tables in respective annotation databases. It is up to you to select
     variants based on these membership tables using the 'vtools compare' command.  The project will be
     saved to a snapshot if a name (or filename with extension .tar or .tar.gz) is specified as the
     output.
@@ -58,13 +58,13 @@ This pipeline is an extension to command `vtools_report transmission`, the diffe
     current project (no --input is specified), or a snapshot (--input) for which the snapshot will be
     loaded and overwrite the existing project. The parameter --parents and --offspring are required to
     specify the name of parents, proband (affected offspring), and one optional sibling. Parameter --name
-    is recommended to give all variant tables a prefix. This pipeline will produce tables $name_recessive
-    (variants that are observed only in the proband). A table $name_denovo_SNP will be created with all
-    SNP markers in table $name_denovo. And, depending on values of parameter --databases, it can produce
-    tables $table_1kg for variants in 1000 genomes project, $table_dbSNP for variants in dbSNP project,
-    and $table_refGene, $table_refGene_exon, $table_ccdsGene, $table_ccdsGene_exon,
-    $table_CancerGenomeCensus, $table_COSMIC, $table_dbNSFP, $table_phastCons, $table_phastConsElements,
-    $table_genomicSuperDups for tables in respective annotation databases. It is up to you to select
+    is recommended to give all variant tables a prefix. This pipeline will produce tables \\(name_recessive
+    (variants that are observed only in the proband). A table \\(name_denovo_SNP will be created with all
+    SNP markers in table \\(name_denovo. And, depending on values of parameter --databases, it can produce
+    tables \\(table_1kg for variants in 1000 genomes project, \\(table_dbSNP for variants in dbSNP project,
+    and \\(table_refGene, \\(table_refGene_exon, \\(table_ccdsGene, \\(table_ccdsGene_exon,
+    \\(table_CancerGenomeCensus, \\(table_COSMIC, \\(table_dbNSFP, \\(table_phastCons, \\(table_phastConsElements,
+    \\(table_genomicSuperDups for tables in respective annotation databases. It is up to you to select
     variants based on these membership tables using the 'vtools compare' command.  Two optional output
     files are allowed. The project will be saved to a snapshot if a name (or filename with extension .tar
     or .tar.gz) is specified as the output.
@@ -74,7 +74,7 @@ This pipeline is an extension to command `vtools_report transmission`, the diffe
                           execute this pipeline)
       recessive_10:       Import all annotation databases
       recessive_20:       Locate recessive variants of the proband (homozygous only in proband) and save
-                          variants in table $name_recessive
+                          variants in table \\(name_recessive
       recessive_50:       Create variant tables according to their membership in different annotation
                           databases
       recessive_100:      Save the project to a snapshot if an output is specified.
