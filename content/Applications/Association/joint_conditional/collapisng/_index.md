@@ -12,7 +12,7 @@ weight = 1
 ### 1. Introduction
 
 This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. *Collapsing* method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region $X$:
-$$X = I\_(0,N)(\sum\_i^N X_i)$$ i.e., the observed genotype will be coded as $1$ if there exists at least one mutation, and $0$ otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010). 
+$$X = I_{(0,N)}(\sum_i^N X_i)$$ i.e., the observed genotype will be coded as $1$ if there exists at least one mutation, and $0$ otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010). 
 
 Advantages in using collapsing methods instead of [aggregation methods][1] is in its robustness to LD of multiple rare variants in the region under investigation, which would potentially inflate type I error. However under additive assumptions of genetic effects, collapsing methods may be less powerful than aggregation methods. 
 
@@ -22,7 +22,7 @@ Our program implements the collapsing coding in a logistic regression framework 
 
 #### 1.1 Adjust for missing genotypes
 
-If the pattern of missing genotypes is not random in sample (e.g., missing ratio in cases is different from in controls), then type I error can be inflated. For small proportion of missing data, this issue can be alleviated using methods proposed by Auer et al 2013[^personal communication with Paul L. Auer at Fred Hutchinson Cancer Research Center^], which is implemented as an option `--NA_adjust`. 
+If the pattern of missing genotypes is not random in sample (e.g., missing ratio in cases is different from in controls), then type I error can be inflated. For small proportion of missing data, this issue can be alleviated using methods proposed by (Auer et al, 2013), which is implemented as an option `--NA_adjust`. 
 
 
 
@@ -234,6 +234,9 @@ Bingshan Li and Suzanne M. Leal (2008) **Methods for Detecting Associations with
 
 Gaurav Bhatia, Vikas Bansal, Olivier Harismendy, Nicholas J. Schork, Eric J. Topol, Kelly Frazer and Vineet Bafna (2010) **A Covering Method for Detecting Genetic Associations between Rare Variants and Common Phenotypes**. *PLoS Computational Biology* doi:`10.1371/journal.pcbi.1000954`. <http://dx.plos.org/10.1371/journal.pcbi.1000954>
 
+Auer et al(2013) Personal communication with Paul L. Auer at Fred Hutchinson Cancer Research Center
+
 
  [1]:   /applications/association/joint_conditional/aggre/
+ 
  

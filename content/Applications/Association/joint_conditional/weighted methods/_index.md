@@ -246,7 +246,7 @@ Permutation methods have to be used to obtain $p$ value for WSS (control based),
     
 
 **QQ-plot** 
-<img src = "weightedburdenQt.jpg" width = 500>
+<img src = "weightedburdenBt.jpg" width = 500>
 
 
     vtools associate rare bmi --covariates age gender exposure -m "WeightedBurdenQt --name Weig\

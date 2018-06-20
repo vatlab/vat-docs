@@ -12,9 +12,9 @@ weight = 5
 
 The RareCover test in (Bhatia et al 2010) is an efficient heuristic greedy algorithm to find an optimized combination of variants in a loci with the strongest association signal. It uses the same collapsing strategy and test statistic as in (Li and Leal, 2008) but scans over the loci, adding at each iteration the variants that contributes most to the statistic. 
 
-RareCover is related to the [Variable Thresholds test][1] yet differs in the sequence by which rare variants are incorporated into the test. Variable thresholds test assumes a fixed yet unknown MAF boundary of rare causal variants, while RareCover does not have the assumption. Still, it does not mean that RareCover would perform exhaustive search for all combinations of variants in a loci region. The "coverage" of RareCover method depends on the convergence cut-off <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>\\(Q\\). 
+RareCover is related to the [Variable Thresholds test][1] yet differs in the sequence by which rare variants are incorporated into the test. Variable thresholds test assumes a fixed yet unknown MAF boundary of rare causal variants, while RareCover does not have the assumption. Still, it does not mean that RareCover would perform exhaustive search for all combinations of variants in a loci region. The "coverage" of RareCover method depends on the convergence cut-off $Q$. 
 
-RareCover method is implemented in this program as a two-sided test with the tuning parameter \\(Q=0.5\\), as recommanded by the original paper. 
+RareCover method is implemented in this program as a two-sided test with the tuning parameter $Q=0.5$, as recommanded by the original paper. 
 
 
 
