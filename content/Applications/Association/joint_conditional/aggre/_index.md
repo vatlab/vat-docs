@@ -13,9 +13,9 @@ weight = 2
 
 ### 1. Introduction
 
-This is implementation of the fixed threshold aggregation methods for disease and quantitative traits. Originally described in (Morris and Zeggni, 2010) and known as Gene- or Region-based Analysis of Variants of Intermediate and Low frequency (GRANVIL), the *Aggregation* method for rare variants codes observed genotype of a genetic region the count of minor alleles: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> $$X = \sum\_i^N X\_i$$ 
+This is implementation of the fixed threshold aggregation methods for disease and quantitative traits. Originally described in (Morris and Zeggni, 2010) and known as Gene- or Region-based Analysis of Variants of Intermediate and Low frequency (GRANVIL), the *Aggregation* method for rare variants codes observed genotype of a genetic region the count of minor alleles:  $$X = \sum\_i^N X\_i$$ 
 
-Our program implements the aggregation methods in a logistic regression framework for disease traits analysis (case control data) as `BurdenBt` method, and a linear regression framework for quantitative traits analysis as `BurdenQt` method. \\(p\\) value for aggregation method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component. 
+Our program implements the aggregation methods in a logistic regression framework for disease traits analysis (case control data) as `BurdenBt` method, and a linear regression framework for quantitative traits analysis as `BurdenQt` method. $p$ value for aggregation method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component. 
 
 
 

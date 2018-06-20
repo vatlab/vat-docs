@@ -343,13 +343,13 @@ Variant tools can import SNVs, Indels and complex variants with reference and al
 {{% /notice %}}
 
 {{% notice tip %}}
-It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](Documentation/vtools Commands/update.md), or built into an annotation database to reduce the size of the project. 
+It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](/Documentation/vtools_commands/update/), or built into an annotation database to reduce the size of the project. 
 {{% /notice %}}
 
 
 #### 3.1 File formats and format specification files (.fmt) (option `--format`)
 
-`` vtools import `` can handle input file in many different formats (e.g. `.vcf`) and their gzipped or bzipped versions (e.g. `.vcf.gz`). variant tools relies on [format specification files](Documentation/Customization/Format/_index.md)  to describe a file format. These files (with extension `.fmt`) tell variant tools how to read from an input file. They are available online and will be downloaded automatically to the local resource directory of variant tools. Please refer to the variant tools [input file format](Documentation/Customization/Format/supportedformats/_index.md) for a list of supported formats, or use command `vtools show formats` to get a list of formats, and `vtools show format FMT` for details of a format. 
+`` vtools import `` can handle input file in many different formats (e.g. `.vcf`) and their gzipped or bzipped versions (e.g. `.vcf.gz`). variant tools relies on [format specification files](/Documentation/Customization/Format/)  to describe a file format. These files (with extension `.fmt`) tell variant tools how to read from an input file. They are available online and will be downloaded automatically to the local resource directory of variant tools. Please refer to the variant tools [input file format](/Documentation/Customization/Format/supportedformats/) for a list of supported formats, or use command `vtools show formats` to get a list of formats, and `vtools show format FMT` for details of a format. 
 
 A format specification file defines how to import variants (fields `chr`, `pos`, `ref`, and `alt`), variant info fields, genotypes, and genotype infor fields from input files. It basically tells command `vtools import` what fields are available from input file, from which column each field should be read, how to post-process input (e.g convert 0-based positions to 1-based), and how to store the data (data type). 
 

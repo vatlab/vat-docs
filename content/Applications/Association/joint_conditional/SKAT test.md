@@ -8,11 +8,9 @@ weight = 5
 ## SNP-set (Sequence) Kernel Association Test Method 
 
 
-### 1. Introduction
+### 1. Details
 
-### 2. Details
-
-#### 2.1 Command interface
+#### 1.1 Command interface
 
     vtools show test SKAT
     
@@ -95,7 +93,7 @@ weight = 5
 
 
 
-#### 2.2 Application
+#### 1.2 Application
 
 <details><summary> Example using **snapshot** `vt_ExomeAssociation`</summary> 
 

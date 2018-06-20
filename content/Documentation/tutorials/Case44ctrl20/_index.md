@@ -9,7 +9,7 @@ hidden = true
 
 ### 1. Data source
 
-Whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls. This tutorial demonstrates the same set of commands used in the [home page presentation][1] but uses the complete dataset. The dataset used in this tutorial is not publicly available. 
+Whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls. This tutorial demonstrates the same set of commands used in the [home page presentation](vtools.pdf) but uses the complete dataset. The dataset used in this tutorial is not publicly available. 
 
 
 
@@ -54,7 +54,7 @@ After all three sets of data are imported, the project
 *   takes 4.2G diskspace (RA.proj: 1.25G, RA_genotype.DB: 2.92G) 
 
 {{% notice tip %}}
-If you have more data, you can create several subprojects, each import part of the data, and then merge the subprojects to create a parent project with all data. Because subprojects can import data simultaneously, this strategy allows you to import data more efficiently. Added benefits include separate (and faster) analysis in subprojects, faster re-creation of the main project if needed, and easy management of different batches/versions of data. Please refer to [this tutorial]([3]) for more details. 
+If you have more data, you can create several subprojects, each import part of the data, and then merge the subprojects to create a parent project with all data. Because subprojects can import data simultaneously, this strategy allows you to import data more efficiently. Added benefits include separate (and faster) analysis in subprojects, faster re-creation of the main project if needed, and easy management of different batches/versions of data. Please refer to [this tutorial](/documentation/tutorials/subprojects/) for more details. 
 {{% /notice %}}
 
 
@@ -201,6 +201,5 @@ The following command count the number of transition and transversion mutations 
     # This command takes 48min to execute 
     % vtools_report trans_ratio variant -n num --by_count
 
- [1]:  vtools.pdf/
+
  [2]:    /documentation/vtools_commands/import/
- [3]:    /documentation/tutorials/subprojects/

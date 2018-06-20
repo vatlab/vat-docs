@@ -11,12 +11,12 @@ weight = 1
 
 ### 1. Introduction
 
-This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. *Collapsing* method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \\(X\\):
-$$X = I\_(0,N)(\sum\_i^N X_i)$$ i.e., the observed genotype will be coded as \\(1\\) if there exists at least one mutation, and \\(0\\) otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010). 
+This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. *Collapsing* method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region $X$:
+$$X = I\_(0,N)(\sum\_i^N X_i)$$ i.e., the observed genotype will be coded as $1$ if there exists at least one mutation, and $0$ otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010). 
 
 Advantages in using collapsing methods instead of [aggregation methods][1] is in its robustness to LD of multiple rare variants in the region under investigation, which would potentially inflate type I error. However under additive assumptions of genetic effects, collapsing methods may be less powerful than aggregation methods. 
 
-Our program implements the collapsing coding in a logistic regression framework for disease traits analysis (case control data) as `CollapseBt` method, and a linear regression framework for quantitative traits analysis as `CollapseQt` method. \\(p\\) value for collapsing method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component. 
+Our program implements the collapsing coding in a logistic regression framework for disease traits analysis (case control data) as `CollapseBt` method, and a linear regression framework for quantitative traits analysis as `CollapseQt` method. $p$ value for collapsing method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component. 
 
 
 
