@@ -12,19 +12,19 @@
     <title>ACM-BCB tutorial :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535286" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534681" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535286" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535286"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534681"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535286"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535286"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535286"></script>
 
     
   </div>
@@ -3698,8 +3698,8 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <p>Getting details of commands</p>
 
-<pre><code>$ vtools -h
-$ vtools init -h
+<pre><code>\\( vtools -h
+\\( vtools init -h
 </code></pre>
 
 <div class="notices tip" ><p>The <a href="https://vatlab.github.io/vat-docs/">variant tools website</a> has detailed explanation and examples for all commands, utilities and pipelines.</p>
@@ -3710,7 +3710,7 @@ $ vtools init -h
 
 <p>Getting a list of all supported file formats:</p>
 
-<pre><code>$ vtools show formats -v0
+<pre><code>\\( vtools show formats -v0
 
 
 CASAVA18_snps
@@ -3734,7 +3734,7 @@ tped
 
 <p>and details of a particular format:</p>
 
-<pre><code>$ vtools show format basic
+<pre><code>\\( vtools show format basic
 
 
 A basic variant import/export format that import variants with four tab-
@@ -3775,7 +3775,7 @@ Format parameters:
 
 <p>Create an empty project</p>
 
-<pre><code>$ vtools init tutorial
+<pre><code>\\( vtools init tutorial
 
 
 INFO: variant tools 2.4.0 : Copyright (c) 2011 - 2014 Bo Peng
@@ -3786,7 +3786,7 @@ INFO: Creating a new project tutorial
 
 <p>You cannot create a project in a folder with another project</p>
 
-<pre><code>$ vtools init tutorial
+<pre><code>\\( vtools init tutorial
 
 
 ERROR: A project can only be created in a directory without another project.
@@ -3794,7 +3794,7 @@ ERROR: A project can only be created in a directory without another project.
 
 <p>but you can use option <code>--force</code> to override this</p>
 
-<pre><code>$ vtools init tutorial -f
+<pre><code>\\( vtools init tutorial -f
 
 
 INFO: variant tools 2.4.0 : Copyright (c) 2011 - 2014 Bo Peng
@@ -3807,7 +3807,7 @@ INFO: Creating a new project tutorial
 
 <p>Let us have a look at the data</p>
 
-<pre><code>$ gzcat CEU.vcf.gz | head -10
+<pre><code>\\( gzcat CEU.vcf.gz | head -10
 
 
 ##fileformat=VCFv4.0
@@ -3820,7 +3820,7 @@ INFO: Creating a new project tutorial
 ##FORMAT=&lt;ID=DP,Number=1,Type=Integer,Description=&quot;Read Depth&quot;&gt;
 ##FORMAT=&lt;ID=CB,Number=1,Type=String,Description=&quot;Called by S(Sanger), M(UMich), B(BI)&quot;&gt;
 ##rsIDs=dbSNP b129 mapped to NCBI 36.3, August 10, 2009
-bpeng1@BCBMC02MG1WJF6T:~/temp$ gzcat CEU.vcf.gz | head -14
+bpeng1@BCBMC02MG1WJF6T:~/temp\\)  gzcat CEU.vcf.gz | head -14
 ##fileformat=VCFv4.0
 ##INFO=&lt;ID=DP,Number=1,Type=Integer,Description=&quot;Total Depth&quot;&gt;
 ##INFO=&lt;ID=HM2,Number=0,Type=Flag,Description=&quot;HapMap2 membership&quot;&gt;
@@ -3839,7 +3839,7 @@ bpeng1@BCBMC02MG1WJF6T:~/temp$ gzcat CEU.vcf.gz | head -14
 
 <p>If the compressed .vcf file is indexed (with <code>.tbi</code> file), you can use <code>vtools</code> to show its information</p>
 
-<pre><code>$ vtools show track CEU.vcf.gz
+<pre><code>\\( vtools show track CEU.vcf.gz
 
 
 Version                 VCF v4.0
@@ -3882,7 +3882,7 @@ NA06985.CB              Called by S(Sanger), M(UMich), B(BI) for sample NA06985
 
 <p>Import data with one variant information field <code>AA</code>,</p>
 
-<pre><code>$ vtools import CEU.vcf.gz --var_info AA --build hg18
+<pre><code>\\( vtools import CEU.vcf.gz --var_info AA --build hg18
 
 
 INFO: Importing variants from CEU.vcf.gz (1/1)
@@ -3894,7 +3894,7 @@ Copying samples: 100% [==============================================] 79 78.9/s
 
 <p>Show the status of the project</p>
 
-<pre><code>$ vtools show
+<pre><code>\\( vtools show
 
 
 Project name:                tutorial
@@ -3908,7 +3908,7 @@ Annotation databases:
 
 <p>available variant tables</p>
 
-<pre><code>$ vtools show tables
+<pre><code>\\( vtools show tables
 
 
 table      #variants     date message
@@ -3917,7 +3917,7 @@ variant          288    Sep19 Master variant table
 
 <p>details of a variant table</p>
 
-<pre><code>$ vtools show table variant
+<pre><code>\\( vtools show table variant
 
 
 Name:                   variant
@@ -3930,7 +3930,7 @@ Number of variants:     288
 
 <p>all genotypes</p>
 
-<pre><code>$ vtools show genotypes -l 10
+<pre><code>\\( vtools show genotypes -l 10
 
 
 sample_name filename    num_genotypes   sample_genotype_fields
@@ -3948,7 +3948,7 @@ NA10847     CEU.vcf.gz  287             GT
 
 <p>Information fields for each variant</p>
 
-<pre><code>$ vtools show fields
+<pre><code>\\( vtools show fields
 
 
 variant.chr (char)      Chromosome name (VARCHAR)
@@ -3960,7 +3960,7 @@ variant.AA (char)
 
 <p>Output variants in a specified variant table with specified info fields</p>
 
-<pre><code>$ vtools output variant chr pos ref alt AA -l 10
+<pre><code>\\( vtools output variant chr pos ref alt AA -l 10
 
 
 1   533     G   C   .
@@ -3981,7 +3981,7 @@ variant.AA (char)
 
 <h4 id="4-1-import-additional-information-from-the-source-files">4.1 import additional information from the source files</h4>
 
-<pre><code>$ vtools update variant --from_file CEU.vcf.gz --var_info DP
+<pre><code>\\( vtools update variant --from_file CEU.vcf.gz --var_info DP
 
 
 INFO: Using primary reference genome hg18 of the project.
@@ -3993,7 +3993,7 @@ INFO: Field DP of 288 variants are updated
 
 <p>A new field <code>DP</code> is added,</p>
 
-<pre><code>$ vtools show fields
+<pre><code>\\( vtools show fields
 
 
 variant.chr (char)      Chromosome name (VARCHAR)
@@ -4006,7 +4006,7 @@ variant.DP (int)
 
 
 
-$ vtools output variant chr pos ref alt AA DP -l 10
+\\( vtools output variant chr pos ref alt AA DP -l 10
 
 
 1   533     G   C   .   423
@@ -4025,7 +4025,7 @@ $ vtools output variant chr pos ref alt AA DP -l 10
 
 <p>Count the number of alternative alleles (not genotypes), homozygotes, heterozygotes, and calculate minior allele frequency for each variant</p>
 
-<pre><code>$ vtools update variant --from_stat 'num=#(alt)' 'hom=#(hom)' 'het=#(het)' 'maf=maf()'
+<pre><code>\\( vtools update variant --from_stat 'num=#(alt)' 'hom=#(hom)' 'het=#(het)' 'maf=maf()'
 
 
 Counting variants: 100% [==================================] 60 1.1K/s in 00:00:00
@@ -4039,7 +4039,7 @@ INFO: 288 records are updated
 
 
 
-$ vtools output variant chr pos ref alt num hom het maf -l 10
+\\( vtools output variant chr pos ref alt num hom het maf -l 10
 
 
 1   533     G   C   6   0   6   0.05
@@ -4055,7 +4055,7 @@ $ vtools output variant chr pos ref alt num hom het maf -l 10
 
 <p>We can also calculate sample statistics for a subset of samples (e.g. in cases and controls)</p>
 
-<pre><code>$ vtools show samples -l 10
+<pre><code>\\( vtools show samples -l 10
 
 
 sample_name filename
@@ -4074,7 +4074,7 @@ NA10847     CEU.vcf.gz
 
 
 
-$ vtools update variant --from_stat 'num12=#(alt)' 'hom12=#(hom)' 'het12=#(het)' \
+\\( vtools update variant --from_stat 'num12=#(alt)' 'hom12=#(hom)' 'het12=#(het)' \
     'maf12=maf()' --samples &quot;sample_name like 'NA12%'&quot;
 
 
@@ -4090,7 +4090,7 @@ INFO: 288 records are updated
 
 
 
-$ vtools output variant chr pos num maf num12 maf12 -l 10
+\\( vtools output variant chr pos num maf num12 maf12 -l 10
 
 
 1   533     6   0.05            4   0.0588235294118
@@ -4107,7 +4107,7 @@ $ vtools output variant chr pos num maf num12 maf12 -l 10
 
 
 
-$ vtools show fields
+\\( vtools show fields
 
 
 variant.chr (char)      Chromosome name (VARCHAR)
@@ -4134,7 +4134,7 @@ variant.maf12 (float)   Created from stat &quot;maf()&quot; for samples [&quot;s
 
 <h3 id="5-phenotypes-vtools-phenotype">5. Phenotypes (<code>`vtools phenotype</code>)</h3>
 
-<pre><code>$ vtools show phenotypes -l 10
+<pre><code>\\( vtools show phenotypes -l 10
 
 
 sample_name
@@ -4153,7 +4153,7 @@ NA10847
 
 
 
-$ head -5 phenotype.txt 
+\\( head -5 phenotype.txt 
 
 
 sample_name aff sex BMI
@@ -4165,7 +4165,7 @@ NA07000 2   F   21.52
 
 
 
-$ vtools phenotype --from_file phenotype.txt 
+\\( vtools phenotype --from_file phenotype.txt 
 
 
 INFO: Adding phenotype aff of type INT
@@ -4177,7 +4177,7 @@ WARNING: 1 missing values are identified for phenotype BMI
 
 
 
-$ vtools show phenotypes -l 10
+\\( vtools show phenotypes -l 10
 
 
 sample_name aff sex BMI
@@ -4198,7 +4198,7 @@ NA10847     2   M   14.6
 </div>
 
 
-<pre><code>$ vtools show samples -l 10
+<pre><code>\\( vtools show samples -l 10
 
 
 sample_name filename    aff sex BMI
@@ -4217,7 +4217,7 @@ NA10847     CEU.vcf.gz  2   M   14.6
 
 
 
-$ vtools update variant --from_stat 'nCase=#(alt)' --samples 'aff=2'
+\\( vtools update variant --from_stat 'nCase=#(alt)' --samples 'aff=2'
 
 
 INFO: 35 samples are selected
@@ -4229,7 +4229,7 @@ INFO: 288 records are updated
 
 
 
-$ vtools update variant --from_stat 'nCtrl=#(alt)' --samples 'aff=1'
+\\( vtools update variant --from_stat 'nCtrl=#(alt)' --samples 'aff=1'
 
 
 INFO: 25 samples are selected
@@ -4243,7 +4243,7 @@ INFO: 288 records are updated
 
 <p>The master variant table <code>variant</code> contains all variants in the project, we can select subsets of variants from this table and create multiple variant tables.</p>
 
-<pre><code>$ vtools show fields
+<pre><code>\\( vtools show fields
 
 
 variant.chr (char)      Chromosome name (VARCHAR)
@@ -4274,7 +4274,7 @@ variant.nCtrl (int)     Created from stat &quot;#(alt)&quot; for samples ['aff=1
 
 <p>Select variant and output to another table (option <code>--to_table</code>)</p>
 
-<pre><code>$ vtools select variant 'maf &gt; 0.1' -t common 'Variants with MAF &gt; 0.1'
+<pre><code>\\( vtools select variant 'maf &gt; 0.1' -t common 'Variants with MAF &gt; 0.1'
 
 
 Running: 0 0.0/s in 00:00:00                                                          
@@ -4283,7 +4283,7 @@ INFO: 89 variants selected.
 
 
 
-$ vtools show tables
+\\( vtools show tables
 
 
 table      #variants     date message
@@ -4293,7 +4293,7 @@ variant          288    Sep19 Master variant table
 
 
 
-$ vtools output common chr pos ref alt AA maf -l 10
+\\( vtools output common chr pos ref alt AA maf -l 10
 
 
 1   41342   T   A   .   0.241666666667
@@ -4310,7 +4310,7 @@ $ vtools output common chr pos ref alt AA maf -l 10
 
 <p>Count the number of variants</p>
 
-<pre><code>$ vtools select common 'hom &gt; 2' --count
+<pre><code>\\( vtools select common 'hom &gt; 2' --count
 
 
 Counting variants: 0 0.0/s in 00:00:00                                                
@@ -4319,7 +4319,7 @@ Counting variants: 0 0.0/s in 00:00:00
 
 <p>or output them,</p>
 
-<pre><code>$ vtools select common 'hom &gt; 2' -o chr pos hom het maf -l 10
+<pre><code>\\( vtools select common 'hom &gt; 2' -o chr pos hom het maf -l 10
 
 
 1   41342   3   23  0.241666666667
@@ -4336,7 +4336,7 @@ Counting variants: 0 0.0/s in 00:00:00
 
 <p>You can also select variants from specified samples</p>
 
-<pre><code>$ vtools select common --samples &quot;sample_name = 'NA12776'&quot; -t common_in_12776
+<pre><code>\\( vtools select common --samples &quot;sample_name = 'NA12776'&quot; -t common_in_12776
 
 
 INFO: 1 samples are selected by condition: sample_name = 'NA12776'
@@ -4346,7 +4346,7 @@ INFO: 88 variants selected.
 
 <h3 id="7-annotation-databases-vtools-use">7. Annotation databases (<code>`vtools use</code>)</h3>
 
-<pre><code>$ vtools show annotations -v0 -l 10
+<pre><code>\\( vtools show annotations -v0 -l 10
 
 
 CancerGeneCensus-20130711
@@ -4364,7 +4364,7 @@ DGV-hg19_20130723
 
 <h4 id="7-1-genes">7.1 Genes</h4>
 
-<pre><code>$ vtools use refGene
+<pre><code>\\( vtools use refGene
 
 
 INFO: Downloading annotation database from annoDB/refGene.ann
@@ -4376,7 +4376,7 @@ to make it compatible with the annotation database.
 
 
 
-$ vtools liftover hg19
+\\( vtools liftover hg19
 
 
 INFO: Downloading liftOver chain file from UCSC
@@ -4388,7 +4388,7 @@ Updating table variant: 100% [================================] 288 1.6K/s in 00
 
 <p>Coordinates in hg18</p>
 
-<pre><code>$ vtools output variant chr pos ref alt -l 10
+<pre><code>\\( vtools output variant chr pos ref alt -l 10
 
 
 1   533     G   C
@@ -4405,7 +4405,7 @@ Updating table variant: 100% [================================] 288 1.6K/s in 00
 
 <p>Coordinates in hg19</p>
 
-<pre><code>$ vtools output variant chr pos ref alt -l 10 --build hg19
+<pre><code>\\( vtools output variant chr pos ref alt -l 10 --build hg19
 
 
 1   10533   G   C
@@ -4422,7 +4422,7 @@ Updating table variant: 100% [================================] 288 1.6K/s in 00
 
 
 
-$ vtools use refGene
+\\( vtools use refGene
 
 
 INFO: Downloading annotation database from annoDB/refGene.ann
@@ -4433,7 +4433,7 @@ INFO: Known human protein-coding and non-protein-coding genes taken from the NCB
 
 
 
-$ vtools show annotation refGene
+\\( vtools show annotation refGene
 
 
 Annotation database refGene (version hg19_20130904)
@@ -4459,7 +4459,7 @@ Reference genome hg19:  chr, txStart, txEnd
 
 
 
-$ vtools show fields
+\\( vtools show fields
 
 
 variant.chr (char)      Chromosome name (VARCHAR)
@@ -4509,7 +4509,7 @@ refGene.cdsEndStat (char)
 
 
 
-$ vtools output variant chr pos refGene.name refGene.name2 -l10
+\\( vtools output variant chr pos refGene.name refGene.name2 -l10
 
 
 1   533     .   .
@@ -4526,7 +4526,7 @@ $ vtools output variant chr pos refGene.name refGene.name2 -l10
 
 
 
-$ vtools select variant 'refGene.chr IS NOT NULL' -t in_gene
+\\( vtools select variant 'refGene.chr IS NOT NULL' -t in_gene
 
 
 Running: 4 902.7/s in 00:00:00                                                        
@@ -4535,7 +4535,7 @@ INFO: 121 variants selected.
 
 
 
-$ vtools output in_gene chr pos refGene.name refGene.name2 -l10
+\\( vtools output in_gene chr pos refGene.name refGene.name2 -l10
 
 
 1   695745  NR_033908   LOC100288069
@@ -4552,7 +4552,7 @@ $ vtools output in_gene chr pos refGene.name refGene.name2 -l10
 
 <h4 id="7-2-dbsnp-dbnsfp-1000-genomes">7.2 dbSNP, dbNSFP, 1000 genomes</h4>
 
-<pre><code>$ vtools use dbSNP
+<pre><code>\\( vtools use dbSNP
 
 
 INFO: Downloading annotation database from annoDB/dbSNP.ann
@@ -4563,7 +4563,7 @@ INFO: dbSNP version 138, created using vcf file downloaded from NCBI
 
 
 
-$ vtools select common 'dbSNP.chr IS NOT NULL' -t in_dbSNP
+\\( vtools select common 'dbSNP.chr IS NOT NULL' -t in_dbSNP
 
 
 Running: 0 0.0/s in 00:00:00                                                          
@@ -4572,7 +4572,7 @@ INFO: 83 variants selected.
 
 
 
-$ vtools output in_dbSNP chr pos ref alt dbSNP.name -l 10
+\\( vtools output in_dbSNP chr pos ref alt dbSNP.name -l 10
 
 
 1   41342   T   A   rs116400033
@@ -4589,7 +4589,7 @@ $ vtools output in_dbSNP chr pos ref alt dbSNP.name -l 10
 
 <p>Select damaging variants</p>
 
-<pre><code>$ vtools use dbNSFP
+<pre><code>\\( vtools use dbNSFP
 
 
 INFO: Downloading annotation database from annoDB/dbNSFP.ann
@@ -4606,7 +4606,7 @@ if you find this database useful.
 
 <p>Unfortunately, this dataset does not have any nonsynonymous variants recorded in dbNSFP</p>
 
-<pre><code>$ vtools select variant 'dbNSFP.chr is not NULL' -c
+<pre><code>\\( vtools select variant 'dbNSFP.chr is not NULL' -c
 
 
 Counting variants: 0 0.0/s in 00:00:00                                                
@@ -4617,7 +4617,7 @@ Counting variants: 0 0.0/s in 00:00:00
 
 <h4 id="8-1-function-ref-genome">8.1 Function <code>ref_genome</code></h4>
 
-<pre><code>$ vtools output common chr pos ref 'ref_sequence(chr, pos)' -l 10 
+<pre><code>\\( vtools output common chr pos ref 'ref_sequence(chr, pos)' -l 10 
 
 
 1   41342   T   T
@@ -4634,7 +4634,7 @@ Counting variants: 0 0.0/s in 00:00:00
 
 
 
-$ vtools output common chr pos ref 'ref_sequence(chr, pos-5, pos+5)' -l 10 
+\\( vtools output common chr pos ref 'ref_sequence(chr, pos-5, pos+5)' -l 10 
 
 
 1   41342   T   TGTATTTTATG
@@ -4653,7 +4653,7 @@ $ vtools output common chr pos ref 'ref_sequence(chr, pos-5, pos+5)' -l 10
 
 <p>You can check the genotype of variants in a particular sample</p>
 
-<pre><code>$ vtools output common chr pos ref alt &quot;genotype('NA07037')&quot; -l 10
+<pre><code>\\( vtools output common chr pos ref alt &quot;genotype('NA07037')&quot; -l 10
 
 
 1   41342   T   A   0
@@ -4670,7 +4670,7 @@ $ vtools output common chr pos ref 'ref_sequence(chr, pos-5, pos+5)' -l 10
 
 <p>or in all samples</p>
 
-<pre><code>$ vtools output common chr pos &quot;genotype()&quot; -l 2
+<pre><code>\\( vtools output common chr pos &quot;genotype()&quot; -l 2
 
 
 1   41342   0,1,1,0,0,1,0,1,1,0,0,0,1,0,0,1,0,0,1,0,1,0,1,1,2,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,2,1,1,1,0,0,0,1,1,2,0,1,0,0,1,1,0,0,0,0
@@ -4679,7 +4679,7 @@ $ vtools output common chr pos ref 'ref_sequence(chr, pos-5, pos+5)' -l 10
 
 <p>Function <code>samples</code> outputs name of samples that harbor the variants</p>
 
-<pre><code>$ vtools output common &quot;samples('geno_filter=GT!=0')&quot; -l 2
+<pre><code>\\( vtools output common &quot;samples('geno_filter=GT!=0')&quot; -l 2
 
 
 NA06986,NA06994,NA07051,NA07347,NA07357,NA11830,NA11840,NA11918,NA11920,NA11992,NA11993,NA11994,NA12005,NA12044,NA12154,NA12234,NA12414,NA12489,NA12716,NA12717,NA12760,NA12761,NA12762,NA12776,NA12814,NA12815
@@ -4690,7 +4690,7 @@ NA07000,NA07037,NA07051,NA11829,NA11840,NA11894,NA11995,NA12004,NA12144,NA12155,
 
 <p>A track is an external file that contains information about variants, which can be in format <code>vcf</code>, <code>bam</code> and <code>BigWig</code> and <code>BigBed</code>.</p>
 
-<pre><code>$ vtools output common chr pos ref alt &quot;track('CEU.vcf.gz')&quot; -l 10
+<pre><code>\\( vtools output common chr pos ref alt &quot;track('CEU.vcf.gz')&quot; -l 10
 
 
 1   41342   T   A   AA=.;AC=29;AN=120;DP=188
@@ -4711,7 +4711,7 @@ NA07000,NA07037,NA07051,NA11829,NA11840,NA11894,NA11995,NA12004,NA12144,NA12155,
 
 <h4 id="8-4-pipeline-annova">8.4 Pipeline <code>ANNOVA</code></h4>
 
-<pre><code>$ vtools show pipeline ANNOVAR 
+<pre><code>\\( vtools show pipeline ANNOVAR 
 
 
 Pipeline to call ANNOVAR and import results as variant info fields.
@@ -4740,7 +4740,7 @@ snapshot will be loaded (and overwrite the present project).
 Pipeline parameters:
   var_table           Variant table for the variants to be analyzed. (default: variant)
   annovar_path        Path to a directory that contains annotate_variation.pl, if the script
-                      is not in the default $PATH.
+                      is not in the default \\(PATH.
   dbtype              --dbtype parameter that will be passed to annotate_variation.pl
                       --dbtype. The default value if refGene, but you can also use knownGene,
                       ensGene. (default: refGene)
@@ -4753,7 +4753,7 @@ Pipeline parameters:
 
 <p>Using ANNOVAR to annotate variants</p>
 
-<pre><code>$ vtools execute ANNOVAR --annovar_path ~/bin/annovar/ 
+<pre><code>\\( vtools execute ANNOVAR --annovar_path ~/bin/annovar/ 
 
 
 INFO: Executing ANNOVAR.geneanno_0: Load specified snapshot if a snapshot is specified. Otherwise use the existing project.
@@ -4787,7 +4787,7 @@ INFO: Running vtools update variant --from_file cache/annovar_input.exonic_varia
 
 <p>Save a snapshot of the project</p>
 
-<pre><code>$ vtools admin --save_snapshot ACM-BCB2014-tutorial.tgz 'Tutorial section for AVM BCB meeting'
+<pre><code>\\( vtools admin --save_snapshot ACM-BCB2014-tutorial.tgz 'Tutorial section for AVM BCB meeting'
 
 
 ACM-BCB2014-tutorial.tgz: 100% [================================] 358,722 13.6M/s in 00:00:00
@@ -4796,7 +4796,7 @@ INFO: Snapshot ACM-BCB2014-tutorial.tgz has been saved
 
 <p>You can load it using command</p>
 
-<pre><code>$ vtools admin --load_snapshot ACM-BCB2014-tutorial.tgz 
+<pre><code>\\( vtools admin --load_snapshot ACM-BCB2014-tutorial.tgz 
 
 
 Extracting ACM-BCB2014-tutorial.tgz:   0.0% [&gt;                                 ]  in 00:00:00
@@ -7477,20 +7477,20 @@ INFO: Snapshot ACM-BCB2014-tutorial.tgz has been loaded
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535286"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535286"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534681" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534681"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535286" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535286"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

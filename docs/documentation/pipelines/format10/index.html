@@ -12,19 +12,19 @@
     <title>Customized10 :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534680" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535285" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534680" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535285" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535285"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534680"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534680"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535285"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535285"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534680"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535285"></script>
 
     
   </div>
@@ -3781,7 +3781,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 </code></pre></li>
 </ul>
 
-<p>where ${LOCAL_RESOURCE} is another pipeline variable that has value of project runtime option <code>$local_resource</code>. We will talk about pipeline variables in details later.</p>
+<p>where \({LOCAL_RESOURCE} is another pipeline variable that has value of project runtime option <code>$local_resource</code>. We will talk about pipeline variables in details later.</p>
 
 <h3 id="3-section-default-command-line-options">3. Section <code>[DEFAULT]</code> (command line options)</h3>
 
@@ -3890,24 +3890,24 @@ action=RunCommand(cmd=&quot;java %(opt_java)s SortSam ...&quot;)
 
 <p>If you need to output pipeline variables in any other format, you can use a function form of the variable <code>${VAR: lambda_func}</code> using Python lambda function. For example,</p>
 
-<pre><code>${CMD_OUTPUT: os.path.basename(CMD_OUTPUT[0])}
+<pre><code>\\({CMD_OUTPUT: os.path.basename(CMD_OUTPUT[0])}
 </code></pre>
 
 <p>passes value of <code>CMD_OUTPUT</code> to a Python lambda function <code>lambda x: os.path.basename(x[0])</code>, which will be <code>&quot;output.bam&quot;</code> if <code>${CMD_OUTPUT}</code> equals to <code>&quot;/path/to/output.bam&quot;</code>.</p>
 
-<pre><code>${INPUT: ','.join(sorted([x for x in INPUT if '_R1_' in x]))}
+<pre><code>\\({INPUT: ','.join(sorted([x for x in INPUT if '_R1_' in x]))}
 </code></pre>
 
 <p>takes a list of input files, select files with <code>_R1_</code> in filename, sort them, and output them as comma-separated list.</p>
 
 <p>This mechanism is very powerful in that the lambda function can take zero or more than one pipeline variables. For example</p>
 
-<pre><code>${: &quot;-f&quot; if &quot;%(force)s&quot; == &quot;Yes&quot; else &quot;&quot;}
+<pre><code>\\({: &quot;-f&quot; if &quot;%(force)s&quot; == &quot;Yes&quot; else &quot;&quot;}
 </code></pre>
 
 <p>returns <code>-f</code> if a command line parameter <code>force</code> is set to &ldquo;Yes&rdquo;.</p>
 
-<pre><code>${INPUT,CMD_OUTPUT: os.path.join(CMD_OUTPUT[0], INPUT[0])}
+<pre><code>\\({INPUT,CMD_OUTPUT: os.path.join(CMD_OUTPUT[0], INPUT[0])}
 </code></pre>
 
 <p>Use of shell variables (e.g. use a for loop in action <code>RunCommand</code>) is possible but can be tricky because pipeline and shell variables can take the same form. Whereas simple form of shell variables (<code>$VAR</code> instead of <code>${VAR}</code>) can be used without problem, the brace form <code>${VAR}</code> will trigger a warning message if <code>VAR</code> is a not valid pipeline variable, and return unexpected results otherwise.</p>
@@ -3941,7 +3941,7 @@ action=RunCommand(cmd=&quot;java %(opt_java)s SortSam ...&quot;)
 
 <h1 id="output-from-multiple-steps">output from multiple steps</h1>
 
-<p>input=${OUTPUT400} ${OUTPUT500}</p>
+<p>input=${OUTPUT400} \({OUTPUT500}</p>
 
 <h1 id="all-files-in-a-directory">all files in a directory</h1>
 
@@ -4008,7 +4008,7 @@ action=RunCommand(cmd=&quot;java %(opt_java)s SortSam ...&quot;)
 <p>If an action differ only slightly across pipelines, you can use variable <code>${PIPELINE_NAME}</code> to perform different actions for different pipelines. For example,</p>
 
 <pre><code>[eu_100,af_100]
-    action= ..... ${PIPELINE_NAME: '-g' if PIPELINE_NAME='eu' else ''}
+    action= ..... \\({PIPELINE_NAME: '-g' if PIPELINE_NAME='eu' else ''}
 </code></pre>
 
 <p>uses passes an additional option <code>-g</code> to an action for pipeline <code>eu</code>.</p>
@@ -4160,7 +4160,7 @@ class TerminateIf(PipelineAction)
 
 <li><p>Using option <code>output</code> to specify output files is highly recommended because otherwise the command will be re-executed if the pipeline is re-executed. If the command does not produce any new output (e.g. many vtools commands), you can generate a status output file and use it as output, as in</p>
 
-<p>RunCommand(cmd=[&lsquo;vtools import ${INPUT: &ldquo; &ldquo;.join(INPUT)} &ndash;build hg19&rsquo;,
+<p>RunCommand(cmd=[&lsquo;vtools import \({INPUT: &ldquo; &ldquo;.join(INPUT)} &ndash;build hg19&rsquo;,
                &lsquo;vtools show genotypes &gt; genotype.lst&rsquo;],
                output=&lsquo;genotype.lst&rsquo;)</p></li>
 
@@ -6925,20 +6925,20 @@ from variant_tools.pipeline import PipelineAction</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535285"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535285"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534680" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534680"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535285" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535285"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

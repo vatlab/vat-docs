@@ -12,19 +12,19 @@
     <title>filtering :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535286" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534681" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535286" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535286"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534681"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535286"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535286"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535286"></script>
 
     
   </div>
@@ -3693,14 +3693,14 @@ the current project (no --input is specified), or a snapshot (--input) for which
 snapshot will be loaded and overwrite the existing project. The parameter --samples is
 required to specify the name of samples in the order of offspring (proband), parents and
 sibling. Parameter --name is recommended to give all variant tables a prefix. This pipeline
-will produce tables $name_denovo (variants that are observed only in the proband),
-$name_denovo_by_site (variants that are observed in the proband with no variant in parents
-and sibling at this site). A table $name_denovo_SNP will be created with all SNP markers in
-table $name_denovo. And, depending on values of parameter --databases, it can produce tables
-$table_1kg for variants in 1000 genomes project, $table_dbSNP for variants in dbSNP project,
-and $table_refGene, $table_refGene_exon, $table_ccdsGene, $table_ccdsGene_exon,
-$table_CancerGenomeCensus, $table_COSMIC, $table_dbNSFP, $table_phastCons,
-$table_phastConsElements, $table_genomicSuperDups for tables in respective annotation
+will produce tables \\(name_denovo (variants that are observed only in the proband),
+\\(name_denovo_by_site (variants that are observed in the proband with no variant in parents
+and sibling at this site). A table \\(name_denovo_SNP will be created with all SNP markers in
+table \\(name_denovo. And, depending on values of parameter --databases, it can produce tables
+\\(table_1kg for variants in 1000 genomes project, \\(table_dbSNP for variants in dbSNP project,
+and \\(table_refGene, \\(table_refGene_exon, \\(table_ccdsGene, \\(table_ccdsGene_exon,
+\\(table_CancerGenomeCensus, \\(table_COSMIC, \\(table_dbNSFP, \\(table_phastCons,
+\\(table_phastConsElements, \\(table_genomicSuperDups for tables in respective annotation
 databases. It is up to you to select variants based on these membership tables using the
 'vtools compare' command.  The project will be saved to a snapshot if a name (or filename
 with extension .tar or .tar.gz) is specified as the output.
@@ -3713,7 +3713,7 @@ with extension .tar or .tar.gz) is specified as the output.
   denovo_20:          Locate de novo variants of the proband
   denovo_30:          Locate de novo variants by site (no parental variants at the sites,
                       even if the variants are different). This table contains a subset of
-                      table $name_denovo.
+                      table \\(name_denovo.
   denovo_50:          Create variant tables according to their membership in different
                       annotation databases
   denovo_100:         Save the project to a snapshot if an output is specified.
@@ -3727,14 +3727,14 @@ be applied either to the current project (no --input is specified), or a snapsho
 for which the snapshot will be loaded and overwrite the existing project. The parameter
 --samples is required to specify the name of samples in the order of offspring (proband),
 parents, and sibling. Parameter --name is recommended to give all variant tables a prefix.
-This pipeline will produce tables $name_recessive (variants that are observed only in the
-proband), $name_recessive_by_site (variants that are observed in the proband with no variant
-in parents and sibling at this site). A table $name_denovo_SNP will be created with all SNP
-markers in table $name_denovo. And, depending on values of parameter --databases, it can
-produce tables $table_1kg for variants in 1000 genomes project, $table_dbSNP for variants in
-dbSNP project, and $table_refGene, $table_refGene_exon, $table_ccdsGene,
-$table_ccdsGene_exon, $table_CancerGenomeCensus, $table_COSMIC, $table_dbNSFP,
-$table_phastCons, $table_phastConsElements, $table_genomicSuperDups for tables in respective
+This pipeline will produce tables \\(name_recessive (variants that are observed only in the
+proband), \\(name_recessive_by_site (variants that are observed in the proband with no variant
+in parents and sibling at this site). A table \\(name_denovo_SNP will be created with all SNP
+markers in table \\(name_denovo. And, depending on values of parameter --databases, it can
+produce tables \\(table_1kg for variants in 1000 genomes project, \\(table_dbSNP for variants in
+dbSNP project, and \\(table_refGene, \\(table_refGene_exon, \\(table_ccdsGene,
+\\(table_ccdsGene_exon, \\(table_CancerGenomeCensus, \\(table_COSMIC, \\(table_dbNSFP,
+\\(table_phastCons, \\(table_phastConsElements, \\(table_genomicSuperDups for tables in respective
 annotation databases. It is up to you to select variants based on these membership tables
 using the 'vtools compare' command.  Two optional output files are allowed. The project will
 be saved to a snapshot if a name (or filename with extension .tar or .tar.gz) is specified
@@ -3747,7 +3747,7 @@ as the output.
                       proband and his or her sibling, if available.
   recessive_15:       Import all annotation databases
   recessive_20:       Locate recessive variants of the proband (homozygous only in proband)
-                      and save variants in table $name_recessive
+                      and save variants in table \\(name_recessive
   recessive_50:       Create variant tables according to their membership in different
                       annotation databases
   recessive_100:      Save the project to a snapshot if an output is specified.
@@ -6523,20 +6523,20 @@ family_denovo_in_genomicSuperDups: 24836 (de novo variants in database genomicSu
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535286"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535286"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534681" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534681"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535286" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535286"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

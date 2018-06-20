@@ -12,19 +12,19 @@
     <title>inbreeding_coefficient :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535286" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535286" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534681" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535286" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535286"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534681"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535286"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535286"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535286"></script>
 
     
   </div>
@@ -3674,13 +3674,13 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h2 id="calculation-inbreeding-coefficient-for-individual-samples">Calculation inbreeding coefficient for individual samples</h2>
 
-<p><code>vtools_report inbreeding_coefficient</code> calculates the $F$ statistic at <strong>single individual sample level</strong> from genotype data. It measures the reduction in heterozygosity for given genomic region of samples, compare to expected heterozygosity level under Hardy-Weinberg Equilibrium. For a two allelic locus, $$P(AA)=p^2(1-F)+pF$$ $$P(aa)=q^2(1-F)+qF$$ $$P(Aa)=2pq(1-F)$$ We compute estimate for $F$ as $\hat{F}=1-\frac{#observed(Aa)}{#expected(Aa)}$</p>
+<p><code>vtools_report inbreeding_coefficient</code> calculates the \(F\)  statistic at <strong>single individual sample level</strong> from genotype data. It measures the reduction in heterozygosity for given genomic region of samples, compare to expected heterozygosity level under Hardy-Weinberg Equilibrium. For a two allelic locus, $$P(AA)=p^2(1-F)+pF$$$$P(aa)=q^2(1-F)+qF$$$$P(Aa)=2pq(1-F)$$We compute estimate for \(F\)  as \(\hat{F}=1-\frac{#observed(Aa)}{#expected(Aa)}\)</p>
 
-<div class="notices info" ><p>Variants included for calculation of $F$ must be under HWE and be bi-allelic. Tri-allelic loci are automatically excluded from calculation.</p>
+<div class="notices info" ><p>Variants included for calculation of \(F\)  must be under HWE and be bi-allelic. Tri-allelic loci are automatically excluded from calculation.</p>
 </div>
 
 
-<p>Estimate of MAF using given samples should be computed prior to calculation of $F$, via <code>vtools update TABLE --from_stat &lt;em&gt;maf=maf()&lt;/em&gt;</code>.</p>
+<p>Estimate of MAF using given samples should be computed prior to calculation of \(F$, via <code>vtools update TABLE --from_stat &lt;em&gt;maf=maf()&lt;/em&gt;</code>.</p>
 
 <h3 id="1-details">1. Details</h3>
 
@@ -6423,20 +6423,20 @@ HG00124 0.0129693670104
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535286"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535286"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535286"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534681" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534681"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535286" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535286"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

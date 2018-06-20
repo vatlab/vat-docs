@@ -12,19 +12,19 @@
     <title>show :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535285" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534681" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535285" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535285"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534681"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535285"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535285"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535285"></script>
 
     
   </div>
@@ -4543,18 +4543,18 @@ Header:
 @RG ID:SRR062634    LB:2845856850   SM:HG00096  PI:206  CN:WUGSC    PL:ILLUMINA DS:SRP001294
 @RG ID:SRR062635    LB:2845856850   SM:HG00096  PI:206  CN:WUGSC    PL:ILLUMINA DS:SRP001294
 @RG ID:SRR062641    LB:2845856850   SM:HG00096  PI:206  CN:WUGSC    PL:ILLUMINA DS:SRP001294
-@PG ID:bwa_index    PN:bwa  VN:0.5.9-r16    CL:bwa index -a bwtsw $reference_fasta
-@PG ID:bwa_aln_fastq    PN:bwa  PP:bwa_index    VN:0.5.9-r16    CL:bwa aln -q 15 -f $sai_file $reference_fasta $fastq_file
-@PG ID:bwa_sam  PN:bwa  PP:bwa_aln_fastq    VN:0.5.9-r16    CL:bwa sampe -a 618 -r $rg_line -f $sam_file $reference_fasta $sai_file(s) $fastq_file(s)
-@PG ID:sam_to_fixed_bam PN:samtools PP:bwa_sam  VN:0.1.17 (r973:277)    CL:samtools view -bSu $sam_file | samtools sort -n -o - samtools_nsort_tmp | samtools fixmate /dev/stdin /dev/stdout | samtools sort -o - samtools_csort_tmp | samtools fillmd -u - $reference_fasta &gt; $fixed_bam_file
-@PG ID:gatk_target_interval_creator PN:GenomeAnalysisTK PP:sam_to_fixed_bam VN:1.2-29-g0acaf2d  CL:java $jvm_args -jar GenomeAnalysisTK.jar -T RealignerTargetCreator -R $reference_fasta -o $intervals_file -known $known_indels_file(s)
-@PG ID:bam_realignment_around_known_indels  PN:GenomeAnalysisTK PP:gatk_target_interval_creator VN:1.2-29-g0acaf2d  CL:java $jvm_args -jar GenomeAnalysisTK.jar -T IndelRealigner -R $reference_fasta -I $bam_file -o $realigned_bam_file -targetIntervals $intervals_file -known $known_indels_file(s) -LOD 0.4 -model KNOWNS_ONLY -compress 0 --disable_bam_indexing
-@PG ID:bam_count_covariates PN:GenomeAnalysisTK PP:bam_realignment_around_known_indels  VN:1.2-29-g0acaf2d  CL:java $jvm_args -jar GenomeAnalysisTK.jar -T CountCovariates -R $reference_fasta -I $bam_file -recalFile $bam_file.recal_data.csv -knownSites $known_sites_file(s) -l INFO -L '1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;X;Y;MT' -cov ReadGroupCovariate -cov QualityScoreCovariate -cov CycleCovariate -cov DinucCovariate
-@PG ID:bam_recalibrate_quality_scores   PN:GenomeAnalysisTK PP:bam_count_covariates VN:1.2-29-g0acaf2d  CL:java $jvm_args -jar GenomeAnalysisTK.jar -T TableRecalibration -R $reference_fasta -recalFile $bam_file.recal_data.csv -I $bam_file -o $recalibrated_bam_file -l INFO -compress 0 --disable_bam_indexing
-@PG ID:bam_calculate_bq PN:samtools PP:bam_recalibrate_quality_scores   VN:0.1.17 (r973:277)    CL:samtools calmd -Erb $bam_file $reference_fasta &gt; $bq_bam_file
-@PG ID:bam_merge    PN:picard   PP:bam_calculate_bq VN:1.53 CL:java $jvm_args -jar MergeSamFiles.jar INPUT=$bam_file(s) OUTPUT=$merged_bam VALIDATION_STRINGENCY=SILENT
-@PG ID:bam_mark_duplicates  PN:picard   PP:bam_merge    VN:1.53 CL:java $jvm_args -jar MarkDuplicates.jar INPUT=$bam_file OUTPUT=$markdup_bam_file ASSUME_SORTED=TRUE METRICS_FILE=/dev/null VALIDATION_STRINGENCY=SILENT
-@PG ID:bam_merge.1  PN:picard   PP:bam_mark_duplicates  VN:1.53 CL:java $jvm_args -jar MergeSamFiles.jar INPUT=$bam_file(s) OUTPUT=$merged_bam VALIDATION_STRINGENCY=SILENT
+@PG ID:bwa_index    PN:bwa  VN:0.5.9-r16    CL:bwa index -a bwtsw \\(reference_fasta
+@PG ID:bwa_aln_fastq    PN:bwa  PP:bwa_index    VN:0.5.9-r16    CL:bwa aln -q 15 -f \\(sai_file \\(reference_fasta \\(fastq_file
+@PG ID:bwa_sam  PN:bwa  PP:bwa_aln_fastq    VN:0.5.9-r16    CL:bwa sampe -a 618 -r \\(rg_line -f \\(sam_file \\(reference_fasta \\(sai_file(s) \\(fastq_file(s)
+@PG ID:sam_to_fixed_bam PN:samtools PP:bwa_sam  VN:0.1.17 (r973:277)    CL:samtools view -bSu \\(sam_file | samtools sort -n -o - samtools_nsort_tmp | samtools fixmate /dev/stdin /dev/stdout | samtools sort -o - samtools_csort_tmp | samtools fillmd -u - \\(reference_fasta &gt; \\(fixed_bam_file
+@PG ID:gatk_target_interval_creator PN:GenomeAnalysisTK PP:sam_to_fixed_bam VN:1.2-29-g0acaf2d  CL:java \\(jvm_args -jar GenomeAnalysisTK.jar -T RealignerTargetCreator -R \\(reference_fasta -o \\(intervals_file -known \\(known_indels_file(s)
+@PG ID:bam_realignment_around_known_indels  PN:GenomeAnalysisTK PP:gatk_target_interval_creator VN:1.2-29-g0acaf2d  CL:java \\(jvm_args -jar GenomeAnalysisTK.jar -T IndelRealigner -R \\(reference_fasta -I \\(bam_file -o \\(realigned_bam_file -targetIntervals \\(intervals_file -known \\(known_indels_file(s) -LOD 0.4 -model KNOWNS_ONLY -compress 0 --disable_bam_indexing
+@PG ID:bam_count_covariates PN:GenomeAnalysisTK PP:bam_realignment_around_known_indels  VN:1.2-29-g0acaf2d  CL:java \\(jvm_args -jar GenomeAnalysisTK.jar -T CountCovariates -R \\(reference_fasta -I \\(bam_file -recalFile \\(bam_file.recal_data.csv -knownSites \\(known_sites_file(s) -l INFO -L '1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;X;Y;MT' -cov ReadGroupCovariate -cov QualityScoreCovariate -cov CycleCovariate -cov DinucCovariate
+@PG ID:bam_recalibrate_quality_scores   PN:GenomeAnalysisTK PP:bam_count_covariates VN:1.2-29-g0acaf2d  CL:java \\(jvm_args -jar GenomeAnalysisTK.jar -T TableRecalibration -R \\(reference_fasta -recalFile \\(bam_file.recal_data.csv -I \\(bam_file -o \\(recalibrated_bam_file -l INFO -compress 0 --disable_bam_indexing
+@PG ID:bam_calculate_bq PN:samtools PP:bam_recalibrate_quality_scores   VN:0.1.17 (r973:277)    CL:samtools calmd -Erb \\(bam_file \\(reference_fasta &gt; \\(bq_bam_file
+@PG ID:bam_merge    PN:picard   PP:bam_calculate_bq VN:1.53 CL:java \\(jvm_args -jar MergeSamFiles.jar INPUT=$bam_file(s) OUTPUT=$merged_bam VALIDATION_STRINGENCY=SILENT
+@PG ID:bam_mark_duplicates  PN:picard   PP:bam_merge    VN:1.53 CL:java \\(jvm_args -jar MarkDuplicates.jar INPUT=$bam_file OUTPUT=$markdup_bam_file ASSUME_SORTED=TRUE METRICS_FILE=/dev/null VALIDATION_STRINGENCY=SILENT
+@PG ID:bam_merge.1  PN:picard   PP:bam_mark_duplicates  VN:1.53 CL:java \\(jvm_args -jar MergeSamFiles.jar INPUT=$bam_file(s) OUTPUT=$merged_bam VALIDATION_STRINGENCY=SILENT
 @CO $known_indels_file(s) = ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_mapping_resources/ALL.wgs.indels_mills_devine_hg19_leftAligned_collapsed_double_hit.indels.sites.vcf.gz
 @CO $known_indels_file(s) .= ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_mapping_resources/ALL.wgs.low_coverage_vqsr.20101123.indels.sites.vcf.gz
 @CO $known_sites_file(s) = ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_mapping_resources/ALL.wgs.dbsnp.build135.snps.sites.vcf.gz
@@ -7825,20 +7825,20 @@ verbosity
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535285"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535285"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534681" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534681"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535285" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535285"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

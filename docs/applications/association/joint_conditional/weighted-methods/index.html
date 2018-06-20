@@ -12,19 +12,19 @@
     <title>weighted :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534681" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535285" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534681" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535285" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535285"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534681"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535285"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535285"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535285"></script>
 
     
   </div>
@@ -3684,7 +3684,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-1-introduction">1.1 Introduction</h3>
 
-<p>This implements a collection of <strong>weighted</strong> aggregation tests. Different from plain <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a &ldquo;weight&rdquo; to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated &ldquo;burden&rdquo;, e.g., $$X=\sum_i^N\omega_iX_i$$ where $\omega_i$ are the weights. The weights often reflect the relative importance of a variant in terms of its contribution to phenotype.</p>
+<p>This implements a collection of <strong>weighted</strong> aggregation tests. Different from plain <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a &ldquo;weight&rdquo; to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated &ldquo;burden&rdquo;, e.g., $$X=\sum_i^N\omega_iX_i$$where \(\omega_i\)  are the weights. The weights often reflect the relative importance of a variant in terms of its contribution to phenotype.</p>
 
 <p>The weighting approach was first proposed by (Madsen and Browning, 2010) with the assumption that &ldquo;rarer&rdquo; variants tend to be more important (the <a href="https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/">WSS statistic</a>). This weighting theme is by far the most popular weights and has been adapted into a number of methods emerged later, such as (Lin and Tang, 2011) and (Wu et al, 2011). Other weighting themes such as KBAC and RBT weightings have different assumptions but they are also based solely on internal information from data. (Price et al, 2010) proposed the use of &ldquo;external&rdquo; weights, i.e., using functional annotation sources to calculate weight for rare variants. This weighting theme can also be naturally integrated into many rare variants methods.</p>
 
@@ -3698,7 +3698,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <li>External weights from annotation</li>
 </ul>
 
-<p>Permutation methods have to be used to obtain $p$ value for WSS (control based), KBAC and RBT weighting themes.</p>
+<p>Permutation methods have to be used to obtain \(p\)  value for WSS (control based), KBAC and RBT weighting themes.</p>
 
 <h3 id="2-details">2. Details</h3>
 
@@ -6656,20 +6656,20 @@ ABL2    3180    4   41  -1.52705    0.578314    -0.555906   0.0150917   0.057261
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535285"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534681"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535285"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534681" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534681"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535285" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535285"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

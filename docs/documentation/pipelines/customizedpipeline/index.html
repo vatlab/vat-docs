@@ -12,19 +12,19 @@
     <title>Customized :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534680" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535284" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534680" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535284" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535284"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534680"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534680"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535284"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535284"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534680"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535284"></script>
 
     
   </div>
@@ -3792,9 +3792,9 @@ CheckVariantToolVersion('2.7')
 [p1_20]
 # Execute a single command
 input:
-    ${cmd_input}
+    \\({cmd_input}
 RunCommand(cmd='''
-   a very long command &gt; ${var1} ''',
+   a very long command &gt; \\({var1} ''',
    output='${var1}')
 
 [p1_200]
@@ -3908,7 +3908,7 @@ data &lt;- data[1,]
 </code></pre></li>
 </ul>
 
-<p>where ${local_resource} is another pipeline variable that has value of project runtime option <code>$local_resource</code>. We will talk about pipeline variables in details later.</p>
+<p>where \({local_resource} is another pipeline variable that has value of project runtime option <code>$local_resource</code>. We will talk about pipeline variables in details later.</p>
 
 <h3 id="3-section-default-command-line-options">3. Section <code>[DEFAULT]</code> (command line options)</h3>
 
@@ -3919,7 +3919,7 @@ opt_java=-Xmx4g
     Parameter passed to the java command, default to -Xmx4g to use a maximum of 4g heap space.
 
 [align_5]
-RunCommand(cmd=&quot;java ${opt_java} SortSam ...&quot;)
+RunCommand(cmd=&quot;java \\({opt_java} SortSam ...&quot;)
 </code></pre>
 
 <p>The value of <code>opt_java</code> will be used to replace all instances of <code>${opt_java}</code> in the pipeline configuration file (or its derivatives, more on this later). The parameter has a default value <code>-Xmx4g</code> and a help message, which will be displayed when you view the details of this parameter.</p>
@@ -3967,7 +3967,7 @@ RunCommand(cmd=&quot;java ${opt_java} SortSam ...&quot;)
 </ul></li>
 </ul>
 
-<p>For example, <code>${cmd_input}</code> and ${cmd_output} will be <code>['data.tgz']</code> and <code>['data.bam']</code> respectively for command <code>vtools execute bwa_gatk28_hg19 align --input data.tgz --output data.bam</code>.</p>
+<p>For example, <code>${cmd_input}</code> and \({cmd_output} will be <code>['data.tgz']</code> and <code>['data.bam']</code> respectively for command <code>vtools execute bwa_gatk28_hg19 align --input data.tgz --output data.bam</code>.</p>
 
 <div class="notices tip" ><p>A pipeline starts by default with <code>${cmd_input}</code> as input files but it can start without any input, or from another variable.</p>
 </div>
@@ -4039,12 +4039,12 @@ For example, if the value of variable <code>cmd_input</code> is <code>['file1.tx
 
 <p>If you need to output pipeline variables in any other format, you can use a function form of the variable <code>${var: lambda_func}</code> using Python lambda function. For example,</p>
 
-<pre><code>${cmd_output: os.path.basename(cmd_output[0])}
+<pre><code>\\({cmd_output: os.path.basename(cmd_output[0])}
 </code></pre>
 
 <p>passes value of <code>cmd_output</code> to a Python lambda function <code>lambda x: os.path.basename(x[0])</code>, which will be <code>&quot;output.bam&quot;</code> if <code>${cmd_output}</code> equals to <code>&quot;/path/to/output.bam&quot;</code>.</p>
 
-<pre><code>${input: ','.join(sorted([x for x in input if '_R1_' in x]))}
+<pre><code>\\({input: ','.join(sorted([x for x in input if '_R1_' in x]))}
 </code></pre>
 
 <p>takes a list of input files, select files with <code>_R1_</code> in filename, sort them, and output them as comma-separated list.</p>
@@ -4056,7 +4056,7 @@ For example, if the value of variable <code>cmd_input</code> is <code>['file1.tx
 
 <p>returns the output of the <code>hostname</code> command</p>
 
-<pre><code>${input,cmd_output: OS.PATH.JOIN(cmd_output[0], input[0])}
+<pre><code>\\({input,cmd_output: OS.PATH.JOIN(cmd_output[0], input[0])}
 </code></pre>
 
 <div class="notices warning" ><p>Use of shell variables (e.g. use a for loop in action <code>RunCommand</code>) is possible but can be tricky because pipeline and shell variables can take the same form. Whereas simple form of shell variables (<code>$VAR</code> instead of <code>${var}</code>) can be used without problem, the brace form <code>${var}</code> will trigger a warning message if <code>VAR</code> is a not valid pipeline variable, and return unexpected results otherwise.</p>
@@ -4125,15 +4125,15 @@ For example, if the value of variable <code>cmd_input</code> is <code>['file1.tx
 
 <h1 id="output-of-step-400-not-from-previous-step">output of step 400, not from previous step</h1>
 
-<p>input: ${output400}</p>
+<p>input: \({output400}</p>
 
 <h1 id="output-from-multiple-steps">output from multiple steps</h1>
 
-<p>input: ${output400} ${output500}</p>
+<p>input: \({output400} \({output500}</p>
 
 <h1 id="all-files-in-a-directory">all files in a directory</h1>
 
-<p>input: ${:glob.glob(&rsquo;*.gz&rsquo;)}</p></li>
+<p>input: \({:glob.glob(&rsquo;*.gz&rsquo;)}</p></li>
 </ul>
 
 <div class="notices tip" ><p>A pipeline will be terminated if there is no input file or if any of the specified input files does not exist.</p>
@@ -4148,7 +4148,7 @@ For example, if the value of variable <code>cmd_input</code> is <code>['file1.tx
 
 <p>For example, the following example select all fastq files from input files and send them to pipeline action in pairs:</p>
 
-<pre><code>input:  ${cmd_input}
+<pre><code>input:  \\({cmd_input}
     : select='fastq', group='pair'
 </code></pre>
 
@@ -4166,7 +4166,7 @@ For example, if the value of variable <code>cmd_input</code> is <code>['file1.tx
 
 <div class="notices tip" ><p>An input option does not substitute <code>${input}</code> because it determines <code>${input}</code>. They can however use other variables such as <code>${cmd_output}</code>. For example,</p>
 
-<pre><code>${bam_files} : ${input200:len(input200)==1})
+<pre><code>\\({bam_files} : \\({input200:len(input200)==1})
 </code></pre>
 
 <p>select files only if there are more than one input file. This is useful, for example, to merge bam files only if there are more than one input bam files.</p>
@@ -4186,7 +4186,7 @@ For example, if the value of variable <code>cmd_input</code> is <code>['file1.tx
 <p>If an action differ only slightly across pipelines, you can use variable <code>${pipeline_name}</code> to perform different actions for different pipelines. For example,</p>
 
 <pre><code>[eu_100,af_100]
-    ..... ${pipeline_name: '-g' if PIPELINE_NAME='eu' else ''}
+    ..... \\({pipeline_name: '-g' if PIPELINE_NAME='eu' else ''}
 </code></pre>
 
 <p>uses passes an additional option <code>-g</code> to an action for pipeline <code>eu</code>.</p>
@@ -4225,7 +4225,7 @@ RunCommand(&lsquo;tophat &hellip;.&rsquo;)</p>
 &hellip;</p>
 
 <p>[hg19_200]
-input:  ${accepted_hits}
+input:  \({accepted_hits}
 RunCommand(&lsquo;&hellip;&rsquo;)</p></li>
 </ul>
 
@@ -4374,7 +4374,7 @@ class TerminateIf(PipelineAction)
 <p><div class="notices tip" ><p>Using option <code>output</code> to specify output files is highly recommended because otherwise the command will be re-executed if the pipeline is re-executed. If the command does not produce any new output (e.g. many vtools commands), you can generate a status output file and use it as output, as in</p>
 </div>
 
-    RunCommand(cmd=[&lsquo;vtools import ${input: &ldquo; &ldquo;.join(input)} &ndash;build hg19&rsquo;,
+    RunCommand(cmd=[&lsquo;vtools import \({input: &ldquo; &ldquo;.join(input)} &ndash;build hg19&rsquo;,
                    &lsquo;vtools show genotypes &gt; genotype.lst&rsquo;],
                    output=&lsquo;genotype.lst&rsquo;)</p>
 
@@ -7139,20 +7139,20 @@ from variant_tools.pipeline import PipelineAction</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535284"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535284"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535284"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535284"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535284"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535284"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535284"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535284"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535284"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535284"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534680" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534680"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535284" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535284"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

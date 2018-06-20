@@ -12,19 +12,19 @@
     <title>Association :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534680" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535285" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535285" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534680" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535285" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535285"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534680"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534680"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535285"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535285"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534680"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535285"></script>
 
     
   </div>
@@ -3717,13 +3717,13 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="6-fine-scale-data-cleaning-for-association-test-units">6. Fine-scale Data Cleaning for Association Test Units</h3>
 
-<p>Associate tests for rare variants are often carried out by units of <em>groups</em>, which is usually <em>genes</em> in the context of exome analysis. The distribution of missing genotype data in each group might be different, and as has been discussed in previous section it is recommended to perform fine-scale cleaning of missing data while running association analysis. This is implemented as options <code>--discard_samples '%(NA)&gt;p'</code> and <code>--discard_variants '%(NA)&gt;p'</code>. The first option will dynamically remove samples having more than a proportion of $p$ missing genotypes within each association <em>group</em>; the second option will remove variant sites based on specified missingness criteria after the first option is applied.</p>
+<p>Associate tests for rare variants are often carried out by units of <em>groups</em>, which is usually <em>genes</em> in the context of exome analysis. The distribution of missing genotype data in each group might be different, and as has been discussed in previous section it is recommended to perform fine-scale cleaning of missing data while running association analysis. This is implemented as options <code>--discard_samples '%(NA)&gt;p'</code> and <code>--discard_variants '%(NA)&gt;p'</code>. The first option will dynamically remove samples having more than a proportion of \(p\)  missing genotypes within each association <em>group</em>; the second option will remove variant sites based on specified missingness criteria after the first option is applied.</p>
 
 <p>For genes having too few variant sites after data cleaning, we can analyze them first yet keep a record of the actual number of variant sites that contributed to each association test unit (using <code>GroupStat</code>) and clean out the results for groups failing to satisfy some minimum variant sites cut-off.</p>
 
 <h3 id="7-storing-and-representing-association-results">7. Storing and Representing Association Results</h3>
 
-<p>Results from association analysis are available as commandline standard output which can be redirected to a file. It is also possible (and is strongly recommended) to record the results into an annotation database via <code>--to_db</code> option. Using a database to store the results will not only facilitate post-analysis variant selection/output conditioning on variant properties annotated by association analysis, but also make it possible to interrupt an association scan at any time and resume the analysis without having to start all over. Association results $p$ values) can be graphically viewed using AssociationViewer, a utility software that produces high quality QQ and Manhattan plots of $p$ values.</p>
+<p>Results from association analysis are available as commandline standard output which can be redirected to a file. It is also possible (and is strongly recommended) to record the results into an annotation database via <code>--to_db</code> option. Using a database to store the results will not only facilitate post-analysis variant selection/output conditioning on variant properties annotated by association analysis, but also make it possible to interrupt an association scan at any time and resume the analysis without having to start all over. Association results \(p\)  values) can be graphically viewed using AssociationViewer, a utility software that produces high quality QQ and Manhattan plots of \(p\)  values.</p>
 
 
 <footer class=" footline" >
@@ -6395,20 +6395,20 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535285"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535285"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534680" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534680"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535285" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535285"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

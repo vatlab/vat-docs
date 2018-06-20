@@ -12,19 +12,19 @@
     <title>collapsing :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534680" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534680" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529535284" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529535284" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534680" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529535284" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529535284"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534680"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534680"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529535284"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529535284"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534680"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529535284"></script>
 
     
   </div>
@@ -3687,12 +3687,12 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-introduction">1. Introduction</h3>
 
-<p>This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. <em>Collapsing</em> method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region $X$:
-$$X = I_{(0,N)}(\sum_i^N X_i)$$ i.e., the observed genotype will be coded as $1$ if there exists at least one mutation, and $0$ otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010).</p>
+<p>This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. <em>Collapsing</em> method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region \(X\):
+$$X = I_{(0,N)}(\sum_i^N X_i)$$i.e., the observed genotype will be coded as {$1$} if there exists at least one mutation, and \(0\)  otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010).</p>
 
 <p>Advantages in using collapsing methods instead of <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/aggre/">aggregation methods</a> is in its robustness to LD of multiple rare variants in the region under investigation, which would potentially inflate type I error. However under additive assumptions of genetic effects, collapsing methods may be less powerful than aggregation methods.</p>
 
-<p>Our program implements the collapsing coding in a logistic regression framework for disease traits analysis (case control data) as <code>CollapseBt</code> method, and a linear regression framework for quantitative traits analysis as <code>CollapseQt</code> method. $p$ value for collapsing method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component.</p>
+<p>Our program implements the collapsing coding in a logistic regression framework for disease traits analysis (case control data) as <code>CollapseBt</code> method, and a linear regression framework for quantitative traits analysis as <code>CollapseQt</code> method. \(p\)  value for collapsing method is based on asymptotic normal distribution of the Wald statistic in generalized linear models. One could incorporate a number of phenotype covariates in collapsing tests and evaluate the significance of the genetics component.</p>
 
 <h4 id="1-1-adjust-for-missing-genotypes">1.1 Adjust for missing genotypes</h4>
 
@@ -6577,20 +6577,20 @@ ACADL   3180    5       65      1.33815 0.0528276       1.93705 0.0150444       
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529535285"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534680"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534680"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529535285"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529535285"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534680" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534680"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529535285" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529535285"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
