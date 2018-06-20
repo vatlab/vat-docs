@@ -12,19 +12,19 @@
     <title>aSum test :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529528701" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529528701" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529528701" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529528701" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529528701" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529528701" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529528701" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529528701" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529531516" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529531516" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529531516" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529531516" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529531516" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529531516" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529531516" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529531516" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529528701" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529531516" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529528701"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529531516"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529528701"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529528701"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529531516"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529531516"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529528701"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529531516"></script>
 
     
   </div>
@@ -3684,9 +3684,9 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <h3 id="1-introduction">1. Introduction</h3>
 
-<p>The data-adaptive sum test (aSum) by (Han and Pan, 2010) is the first method that took into consideration the difference in direction of effects (protective or deleterious) of rare variants in the same genetic region analyzed by a rare variant association test. It is a two-stage approach. In the first stage the effect size of each rare variant is evaluated in a multivariate regression analysis, identifying the variants having significant &ldquo;protective&rdquo; effects, i.e., variants with a negative log odds ratio associated with a \(p\) value smaller than <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> \(0.1\). In the second stage, variants are collapsed across the genetic region similar to (Morris and Zeggini, 2010) but with the coding for protective variants <em>flipped</em>. The test statistic is a score test for logistic regression for case control data.</p>
+<p>The data-adaptive sum test (aSum) by (Han and Pan, 2010) is the first method that took into consideration the difference in direction of effects (protective or deleterious) of rare variants in the same genetic region analyzed by a rare variant association test. It is a two-stage approach. In the first stage the effect size of each rare variant is evaluated in a multivariate regression analysis, identifying the variants having significant &ldquo;protective&rdquo; effects, i.e., variants with a negative log odds ratio associated with a $p$ value smaller than $0.1$. In the second stage, variants are collapsed across the genetic region similar to (Morris and Zeggini, 2010) but with the coding for protective variants <em>flipped</em>. The test statistic is a score test for logistic regression for case control data.</p>
 
-<p>The implementation of stage 1 in this program differs from the original paper. Instead of evaluating the effect size for each variant, it evaluates the difference in MAF of each variant between case and controls via an exact test to determine which variants are to be re-coded in stage 2. The same \(p&lt;0.1\) criteria is used for stage 1, but in effect is more stringent than the original criteria for a multivariate logistic regression analysis.</p>
+<p>The implementation of stage 1 in this program differs from the original paper. Instead of evaluating the effect size for each variant, it evaluates the difference in MAF of each variant between case and controls via an exact test to determine which variants are to be re-coded in stage 2. The same $p&lt;0.1$ criteria is used for stage 1, but in effect is more stringent than the original criteria for a multivariate logistic regression analysis.</p>
 
 <h3 id="2-details">2. Details</h3>
 
@@ -6469,20 +6469,20 @@ ACAP3   3180    3   17  0.0273585   0.404595    1.26823 1000
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529528701"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529528701"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529528701"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529528701"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529528701"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529528701"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529528701"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529531516"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529531516"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529531516"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529531516"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529531516"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529531516"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529531516"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529528701"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529528701"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529528701"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529531516"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529531516"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529531516"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529528701" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529528701"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529531516" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529531516"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

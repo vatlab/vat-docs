@@ -12,19 +12,19 @@
     <title>Import :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529528700" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529528700" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529528700" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529528700" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529528700" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529528700" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529528700" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529528700" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529531515" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529531515" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529531515" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529531515" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529531515" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529531515" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529531515" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529531515" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529528700" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529531515" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529528700"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529531515"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529528700"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529528700"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529531515"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529531515"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529528700"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529531515"></script>
 
     
   </div>
@@ -4027,7 +4027,7 @@ NA07037     CEU_hg38.vcf    292             GT,DP,CB_geno
 
 <h4 id="3-1-file-formats-and-format-specification-files-fmt-option-format">3.1 File formats and format specification files (.fmt) (option <code>--format</code>)</h4>
 
-<p><code>vtools import</code> can handle input file in many different formats (e.g. <code>.vcf</code>) and their gzipped or bzipped versions (e.g. <code>.vcf.gz</code>). variant tools relies on <a href="https://vatlab.github.io/vat-docs/Documentation/Customization/Format/">format specification files</a>  to describe a file format. These files (with extension <code>.fmt</code>) tell variant tools how to read from an input file. They are available online and will be downloaded automatically to the local resource directory of variant tools. Please refer to the variant tools <a href="https://vatlab.github.io/vat-docs/Documentation/Customization/Format/supportedformats/">input file format</a> for a list of supported formats, or use command <code>vtools show formats</code> to get a list of formats, and <code>vtools show format FMT</code> for details of a format.</p>
+<p><code>vtools import</code> can handle input file in many different formats (e.g. <code>.vcf</code>) and their gzipped or bzipped versions (e.g. <code>.vcf.gz</code>). variant tools relies on <a href="https://vatlab.github.io/vat-docs/documentation/customization/format/">format specification files</a>  to describe a file format. These files (with extension <code>.fmt</code>) tell variant tools how to read from an input file. They are available online and will be downloaded automatically to the local resource directory of variant tools. Please refer to the variant tools <a href="https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/">input file format</a> for a list of supported formats, or use command <code>vtools show formats</code> to get a list of formats, and <code>vtools show format FMT</code> for details of a format.</p>
 
 <p>A format specification file defines how to import variants (fields <code>chr</code>, <code>pos</code>, <code>ref</code>, and <code>alt</code>), variant info fields, genotypes, and genotype infor fields from input files. It basically tells command <code>vtools import</code> what fields are available from input file, from which column each field should be read, how to post-process input (e.g convert 0-based positions to 1-based), and how to store the data (data type).</p>
 
@@ -7104,20 +7104,20 @@ After data import is finished, we will set <em>journal_mode</em> back to default
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529528700"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529528700"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529528700"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529528700"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529528700"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529528700"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529528700"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529531515"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529528700"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529528700"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529528700"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529531515"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529531515"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529528700" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529528700"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529531515" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529531515"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
