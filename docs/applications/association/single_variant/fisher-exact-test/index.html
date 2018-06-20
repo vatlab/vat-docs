@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="generator" content="Hugo 0.36.1" />
     <meta name="description" content="Documentation for Variant Tools">
 <meta name="author" content="Bo Peng">
 
@@ -12,19 +12,19 @@
     <title>Fisher exact test :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529510619" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529510619" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529510619" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529510619" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529510619" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529510619" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529510619" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529510619" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529522067" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529522067" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529522067" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529522067" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529522067" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529522067" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529522067" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529522067" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529510619" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529522067" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529510619"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529522067"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529510619"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529510619"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529522067"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529522067"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529510619"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529522067"></script>
 
     
   </div>
@@ -3671,7 +3671,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 <p>Genetic association studies of common variants in case control samples usually compare directly the differences in frequencies of an allele or genotype between case and control populations, with the assumption that a significant difference in frequencies is indication to association between the locus and increase risk of disease. Many statistical tests for binomial or multinomial proportions can be used for such analysis, including Fisher&rsquo;s exact test, {$\chi^2$} test and Cochran-Armitage Trend Test. For rare variants association tests, single variant analysis will be underpowered (see Sahai H. 1996(H. Sahai and A. Khurshid (1996) <strong>Formulas and tables for the determination of sample sizes and power in clinical trials for testing differences in proportions for the matched pair design: a review</strong>. <em>Fundamental &amp; Clinical Pharmacology</em> doi:<code>10.1111/j.1472-8206.1996.tb00614.x</code>. <a href="http://doi.wiley.com/10.1111/j.1472-8206.1996.tb00614.x">http://doi.wiley.com/10.1111/j.1472-8206.1996.tb00614.x</a>) for power and sample size estimation for tests for proportions). Still single variant tests can be useful when only summary statistics is avaiable for controls (e.g., only MAF is available from public database), or one wants to compare the differences in frequency between populations for other purposes. For single variants analysis we offer the Fisher&rsquo;s exact test routine which is abit conservative but guarantees type I error control for small sample sizes. Fisher&rsquo;s test method in <code>VAT</code> is implemented as a special function for <code>vtools update</code> command, which is very efficient.</p>
 
-<p>For Single variant tests adjusting for covariates, or tests for quantitative phenotypes, please refer to the <a href="http://localhost/~iceli/wiki/pmwiki.php?n=Association.Multivariate?action=edit">multivariate methods</a> in <code>VAT</code>.</p>
+<p>For Single variant tests adjusting for covariates, or tests for quantitative phenotypes, please refer to the <a href="https://vatlab.github.io/vat-docs/applications/association/joint_conditional/">multivariate methods</a> in <code>VAT</code>.</p>
 
 <h3 id="2-usage">2. Usage</h3>
 
@@ -6389,20 +6389,20 @@ INFO: Adding field prop_pva
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529510619"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529510619"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529510619"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529510619"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529510619"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529510619"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529510619"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529522067"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529522067"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529522067"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529522067"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529522067"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529522067"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529522067"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529510619"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529510619"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529510619"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529522067"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529522067"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529522067"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529510619" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529510619"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529522067" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529522067"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

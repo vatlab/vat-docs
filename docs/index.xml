@@ -209,10 +209,10 @@ Note: Python module matplotlib is required to execute this script.
     
     <item>
       <title>ACM-BCB</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/</link>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/acm-bcb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/</guid>
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/acm-bcb/</guid>
       <description>Tutorial for ACM-BCB 2014 1. Integrated Analysis of Next-Generation-Sequencing Data using Variant Tools This part of the talk gives an overview of variant tools, its concepts, components, and tutorials on how to import, annotate, and select variants.
  Tutorial Sample data Slides  2. Association Analysis of Whole Exome Sequence Data using Variant Association Tools This part of the talk gives a minimal demonstration on data quality control and association analysis of rare variants.</description>
     </item>
@@ -317,7 +317,7 @@ HGNC The HGNC annotation database is a field database that, by default, annotate
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</guid>
-      <description>Importing and exporting variants in .csv (comma-separated value) format 1. Format description When this format is used to import data, it is similar to the basic? format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
+      <description>Importing and exporting variants in .csv (comma-separated value) format 1. Format description When this format is used to import data, it is similar to the basic format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
 When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command vtools output --delimiter , (output fields with a delimiter of comma), except that the vtools export --format csv command will properly quote field values when it contains comma, quotation mark etc.</description>
     </item>
     

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.40.2" />
+    <meta name="generator" content="Hugo 0.36.1" />
     <meta name="description" content="Documentation for Variant Tools">
 <meta name="author" content="Bo Peng">
 
@@ -12,19 +12,19 @@
     <title>select :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529510621" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529510621" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529510621" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529510621" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529510621" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529510621" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529510621" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529510621" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529522068" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529522068" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529522068" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529522068" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529522068" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529522068" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529522068" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529522068" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529510621" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529522068" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529510621"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529522068"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529510621"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529510621"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529522068"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529522068"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529510621"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529522068"></script>
 
     
   </div>
@@ -3920,6 +3920,7 @@ Counting variants: 0 0.0/s in 00:00:00
 <p><details><summary> Examples: Select variants based on database membership</summary> Let us first link the project to the dbSNP database</p>
 
 <pre><code>% vtools use dbSNP
+
 INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
 INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
 INFO: Using annotation DB dbSNP as dbSNP in project select.
@@ -3930,7 +3931,7 @@ INFO: dbSNP version 143, created using vcf file downloaded from NCBI
 
 <pre><code>% vtools select variant 'dbSNP.chr IS NOT NULL' -t inDbSNP 'variants in dbSNP version 130'
 
-Running: 6 97.9/s in 00:00:00                                                                                   
+Running: 6 97.9/s in 00:00:00                                                                               
 INFO: 1429 variants selected.
 </code></pre>
 
@@ -3982,7 +3983,6 @@ INFO: dbNSFP version 2.0b4, maintained by Xiaoming Liu from UTSPH. Please cite &
 
 <pre><code>% vtools select variant 'dbNSFP.chr IS NOT NULL' -t ns 'non-synonymous variants in dbNSFP database'
 
-
 Running: 3 63.7/s in 00:00:00
 INFO: 12 variants selected.
 </code></pre>
@@ -3990,7 +3990,6 @@ INFO: 12 variants selected.
 <p>then select variants that are probably damaging according to SIFT scores</p>
 
 <pre><code>% vtools select ns 'SIFT_score &lt; 0.05' -t damaging 'probably damaging'
-
 
 Running: 0 0.0/s in 00:00:00
 INFO: 5 variants selected.
@@ -4000,7 +3999,6 @@ INFO: 5 variants selected.
 
 <pre><code>% vtools select ns 'SIFT_score &lt; 0.05' --output chr pos ref alt SIFT_score \
      dbNSFP.MutationAssessor_pred PolyPhen2_HDIV_score PolyPhen2_HDIV_pred
-
 
 1  879501  G  C  .     medium   .                  .
 1  908247  G  T  0.03  low      0.999;0.998;0.998  D;D;D
@@ -4015,7 +4013,6 @@ INFO: 5 variants selected.
 
 <pre><code>% vtools select ns 'SIFT_score &lt; 0.05 or PolyPhen2_HDIV_pred like &quot;%D%&quot;' -t damaging 'Damaging predicted by either SIFT or polyphen2'
 
-
 WARNING: Existing table damaging is renamed to damaging_Jul14_214229.
 Running: 0 0.0/s in 00:00:00
 INFO: 6 variants selected.
@@ -4025,7 +4022,6 @@ INFO: 6 variants selected.
 <p>Because a table <code>damage</code> has been created before, the existing table is renamed before a new table is created. If you do not need such backup tables, you can remove them using command <code>vtools remove tables</code>,</p>
 
 <pre><code>% vtools remove tables '*Jul*'
-
 
 INFO: Removing table damaging_Jul14_214229
 </code></pre>
@@ -4038,8 +4034,7 @@ INFO: Removing table damaging_Jul14_214229
 
 <p><details><summary> Examples: Select variants by gene, exon regions and pathway membership</summary> Let us first load the keggPathway database. Because this database is a field database that annotates ccdsGene ID, it should be linked to a database that contains CCDS ID:</p>
 
-<pre><code>% vtools use ccdsGene
-
+<pre><code>% vtools use ccdsGene  
 
 INFO: Choosing version ccdsGene-hg38_20171008 from 4 available databases.
 INFO: Downloading annotation database annoDB/ccdsGene-hg38_20171008.ann
@@ -4050,7 +4045,6 @@ INFO: High-confidence human gene annotations from the Consensus Coding Sequence 
 
 
 % vtools use keggPathway --linked_by ccdsGene.name
-
 
 INFO: Choosing version keggPathway-20110823 from 1 available databases.
 INFO: Downloading annotation database annoDB/keggPathway-20110823.ann
@@ -4066,11 +4060,8 @@ WARNING: 204 out of 6949 values in annotation database keggPathway are not linke
 
 <pre><code>% vtools output variant ccdsGene.name refGene.name2 | sort | uniq
 
-
-.   .
-</code></pre>
-
-<p>.   AGRN
+   .   .
+.   AGRN
 .   B3GALT6
 .   C1orf159
 .   FAM41C
@@ -4107,22 +4098,21 @@ CCDS44036.1 TTLL10
 CCDS6.1 ISG15
 CCDS7.2 C1orf159
 CCDS76083.1 PERM1
-CCDS8.1 TTLL10</p>
+CCDS8.1 TTLL10
+</code></pre>
 
 <p>As you can see, CCDS genes are more conservative and do not contain some of the ref seq genes. If you need to find out all the variants that belong to a particular gene, you can use</p>
 
 <pre><code>% vtools select variant 'refGene.name2 = &quot;AGRN&quot;' -t AGRN
 
-
-Running: 21 1.0K/s in 00:00:00                                                                               
-&lt;/I&gt;NFO: 111 variants selected
+Running: 21 1.0K/s in 00:00:00                                                                             
+INFO: 111 variants selected
 </code></pre>
 
 <p>You can also output the pathway that this gene belong as follows:</p>
 
 <pre><code>% vtools select variant 'refGene.name2 = &quot;AGRN&quot;' --output \
      chr pos ref alt refGene.name2 keggpathway.kgID keggPathway.kgDesc -l 10 --all
-
 
 1   1021740 G   C   AGRN    hsa04512    ECM-receptor interaction
 1   1021740 G   C   AGRN    hsa04512    ECM-receptor interaction
@@ -4154,7 +4144,6 @@ Running: 21 1.0K/s in 00:00:00
 
 <pre><code>% vtools show samples
 
-
 sample_name  filename
 SAMP1       V1_hg38.vcf
 SAMP2       V2_hg38.vcf
@@ -4165,9 +4154,8 @@ SAMP3       V3_hg38.vcf
 
 <pre><code>% vtools select variant --samples 'filename = &quot;V1.vcf&quot;' -t V1 'variants imported from V1.vcf'
 
-
 INFO: 1 samples are selected by condition: filename = &quot;V1.vcf&quot;
-Running: 3 1.0K/s in 00:00:00                                                                                   
+Running: 3 1.0K/s in 00:00:00                                                                           
 INFO: 1269 variants selected.
 </code></pre>
 
@@ -6854,20 +6842,20 @@ INFO: 1269 variants selected.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529510621"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529510621"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529510621"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529510621"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529510621"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529510621"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529510621"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529522069"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529522069"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529522069"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529522069"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529522069"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529522069"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529522069"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529510621"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529510621"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529510621"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529522069"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529522069"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529522069"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529510621" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529510621"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529522069" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529522069"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
