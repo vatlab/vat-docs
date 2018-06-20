@@ -94,7 +94,7 @@ The vcf format can store arbitary variant and genotype information fields. *vari
 
 {{% notice tip %}}
 
- If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`][5] function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
+ If your vcf file is bgzipped and tabix indexed (you can run compress and index your vcf file using commands `bgzip` and `tabix`), you can use command `vtools show track FILENAME.vcf.gz` to get details of the vcf file. The [`track`](http://vtools.houstonbioinformatics.org/format/CASAVA18_snps.fmt) function can also be used to retrieve such information when needed so you do not have to import variant info fields into the project. 
  {{% /notice %}}
 
  {{% notice tip %}}
@@ -339,11 +339,11 @@ at the end of this file, and import this field using
 Command `` vtools import `` imports variants, sample genotypes and related information fields from formats other than VCF as well. The imported variants are saved to the master variant table `variant` of the project, along with their information fields. 
 
 {{% notice tip %}}
-Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here]([1]).
+Variant tools can import SNVs, Indels and complex variants with reference and alternative alleles explicitly listed in the source files. It cannot yet handle structural variants such as large indels listed in vcf file as `<INS>` or `DUP:TANDEM>`. For details about how different types of variants are imported into *variant tools*, please refer to [here](http://docs.python.org/library/configparser.html).
 {{% /notice %}}
 
 {{% notice tip %}}
-It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](/Documentation/vtools_commands/update/), or built into an annotation database to reduce the size of the project. 
+It is sometimes useful to import only variants to a project. The variant info could be added later using command [`vtools update`](/documentation/vtools_commands/update/), or built into an annotation database to reduce the size of the project. 
 {{% /notice %}}
 
 
@@ -769,10 +769,10 @@ Finally, if you need to import a large amount of data from multiple files, it ca
 
 
  
- [1]: http://docs.python.org/library/configparser.html
+
  [2]: http://docs.python.org/2/library/re.html#re.match
  [3]: mailto:varianttools-devel@lists.sourceforge.net
  [4]: http://vtools.houstonbioinformatics.org/format/ANNOVAR.fmt
- [5]: http://vtools.houstonbioinformatics.org/format/CASAVA18_snps.fmt
+
  
  

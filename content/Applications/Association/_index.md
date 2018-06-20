@@ -76,7 +76,7 @@ For genes having too few variant sites after data cleaning, we can analyze them 
 
 ### 7. Storing and Representing Association Results
 
-Results from association analysis are available as commandline standard output which can be redirected to a file. It is also possible (and is strongly recommended) to record the results into an annotation database via `--to_db` option. Using a database to store the results will not only facilitate post-analysis variant selection/output conditioning on variant properties annotated by association analysis, but also make it possible to interrupt an association scan at any time and resume the analysis without having to start all over. Association results ({$p$} values) can be graphically viewed using AssociationViewer, a utility software that produces high quality QQ and Manhattan plots of {$p$} values. 
+Results from association analysis are available as commandline standard output which can be redirected to a file. It is also possible (and is strongly recommended) to record the results into an annotation database via `--to_db` option. Using a database to store the results will not only facilitate post-analysis variant selection/output conditioning on variant properties annotated by association analysis, but also make it possible to interrupt an association scan at any time and resume the analysis without having to start all over. Association results $p$ values) can be graphically viewed using AssociationViewer, a utility software that produces high quality QQ and Manhattan plots of $p$ values. 
 
 
  [1]: mailto:wangow@gmail.com

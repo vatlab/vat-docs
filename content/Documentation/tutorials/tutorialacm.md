@@ -24,7 +24,7 @@ Getting details of commands
 
 {{% notice tip %}}
 
-The [variant tools website][2] has detailed explanation and examples for all commands, utilities and pipelines.
+The [variant tools website](https://vatlab.github.io/vat-docs/) has detailed explanation and examples for all commands, utilities and pipelines.
 
 {{% /notice %}}
 
@@ -1178,5 +1178,4 @@ You can load it using command
 
 It is strongly recommended that you save copies of your project (snapshots) during the analysis of real-world projects.
 
- [1]:    /documentation/tutorials/acm-bcb/ACM-BCB2014-tutorial-data.tgz/
- [2]:  
+ [1]:    /documentation/tutorials/acm-bcb/ACM-BCB2014-tutorial-data.tgz
