@@ -12,14 +12,14 @@ weight = 2
 
 ### 1. Introduction
 
-This implements the {$C(\alpha)$} test (Neale et al 2011) for disease traits, to test for the hypothesis of rare variants disease association under the particular assumption that rare variants observed in cases and controls is a mixture of phenotypically deleterious, protective and neutral variants. Instead of using a cumulative dosage (or "burden") based summary statistic over a gene region, it directly contrasts the observed and expected distribution of minor alleles in cases and controls at each locus as an evidence of "unusual distribution", and combine evidences from multiple loci (whether it be an evidence of protective or deleterious) to formulate the 
+This implements the $C(\alpha)$ test (Neale et al 2011) for disease traits, to test for the hypothesis of rare variants disease association under the particular assumption that rare variants observed in cases and controls is a mixture of phenotypically deleterious, protective and neutral variants. Instead of using a cumulative dosage (or "burden") based summary statistic over a gene region, it directly contrasts the observed and expected distribution of minor alleles in cases and controls at each locus as an evidence of "unusual distribution", and combine evidences from multiple loci (whether it be an evidence of protective or deleterious) to formulate the 
 \\(C(\alpha)\\) statistic:
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 $$T=\sum\_{i=1}^m[(y\_i-n\_ip\_0)^2-n\_ip\_0(1-p_0)]$$
 
 
-The original paper evaluates p-value of the test under large sample normal assumption, which usually would not hold for the real world data. Implementation in this program also allows permutation based {$C(\alpha)$} test, if parameter `-p/--permutations` is set greater than 0. 
+The original paper evaluates p-value of the test under large sample normal assumption, which usually would not hold for the real world data. Implementation in this program also allows permutation based $C(\alpha)$ test, if parameter `-p/--permutations` is set greater than 0. 
 
 
 

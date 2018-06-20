@@ -871,7 +871,7 @@ A new allele frequency field is added to the database. We can look at variants h
     1	878744	G	C	0.0057	0.0018656716417910447
     
 
-Note that all the 5 variants displayed above are singletons ({$MAF=\frac{1}{268\times2}$}). We can explore the variants distribution in the 268 samples using `select` commands 
+Note that all the 5 variants displayed above are singletons ($MAF=\frac{1}{268\times2}$). We can explore the variants distribution in the 268 samples using `select` commands 
 
 <details><summary> variant counts by type</summary> 
 
@@ -897,7 +897,7 @@ Exact Test of Hardy-Weinberg Equilibrium is implemented as in Wigginton et al (2
     vtools update variant --set "hwe=HWE_exact(num_ie, het_ie, hom_ie, other_ie)"
     
 
-An `hwe` field is created with *p-values* from the HWE test. We want to filter out variant sites with {$HWE<5\times10^{-8}$}, which is 1132 variants. It turns out most of these variants have MAF greater than 0.01. 
+An `hwe` field is created with *p-values* from the HWE test. We want to filter out variant sites with $HWE<5\times10^{-8}$, which is 1132 variants. It turns out most of these variants have MAF greater than 0.01. 
 
 
 

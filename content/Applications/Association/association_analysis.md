@@ -241,7 +241,7 @@ p values calculated by this command are based on Wald statistic of logistic regr
     	       -j8 > SNV_permute.txt
     
 
-we use a maximum of 100 million permutations per test, with an adaptive criteria {$p=5 \times 10^{-5}$}. It takes about 15 seconds to complete the analysis on 1711 groups analytically and about 15 minutes on the same data using permutation based p-value evaluations. 
+we use a maximum of 100 million permutations per test, with an adaptive criteria $p=5 \times 10^{-5}$. It takes about 15 seconds to complete the analysis on 1711 groups analytically and about 15 minutes on the same data using permutation based p-value evaluations. 
 
 
 {{%notice tip%}}
@@ -353,7 +353,7 @@ Two other runtime options `associate_num_of_readers` and `treat_missing_as_wildt
       --version             show program's version number and exit
     
 
-This program generates graphs for {$p$} values, allowing for 
+This program generates graphs for $p$ values, allowing for 
 
 
 
