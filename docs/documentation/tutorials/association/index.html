@@ -12,19 +12,19 @@
     <title>Quality control :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534443" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534443" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534443" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534443" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534443" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534443" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534443" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534443" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1529534681" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1529534681" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534443" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1529534681" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534443"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1529534681"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534443"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534443"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1529534681"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1529534681"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534443"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1529534681"></script>
 
     
   </div>
@@ -4475,7 +4475,7 @@ vtools update variant --set 'af_ie=num_ie/(total_ie * 2.0)'
 1   878744  G   C   0.0057  0.0018656716417910447
 </code></pre>
 
-<p>Note that all the 5 variants displayed above are singletons ({$MAF=\frac{1}{268\times2}$}). We can explore the variants distribution in the 268 samples using <code>select</code> commands</p>
+<p>Note that all the 5 variants displayed above are singletons ($MAF=\frac{1}{268\times2}$). We can explore the variants distribution in the 268 samples using <code>select</code> commands</p>
 
 <p><details><summary> variant counts by type</summary></p>
 
@@ -4498,7 +4498,7 @@ vtools update variant --set 'af_ie=num_ie/(total_ie * 2.0)'
 <pre><code>vtools update variant --set &quot;hwe=HWE_exact(num_ie, het_ie, hom_ie, other_ie)&quot;
 </code></pre>
 
-<p>An <code>hwe</code> field is created with <em>p-values</em> from the HWE test. We want to filter out variant sites with {$HWE&lt;5\times10^{-8}$}, which is 1132 variants. It turns out most of these variants have MAF greater than 0.01.</p>
+<p>An <code>hwe</code> field is created with <em>p-values</em> from the HWE test. We want to filter out variant sites with $HWE&lt;5\times10^{-8}$, which is 1132 variants. It turns out most of these variants have MAF greater than 0.01.</p>
 
 <pre><code>vtools select variant 'hwe&lt;5e-8' -c
 </code></pre>
@@ -7262,20 +7262,20 @@ vtools phenotype --set &quot;missing_ratio = mnum/(M * 1.0)&quot;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534443"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534443"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534443"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534443"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534443"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534443"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534443"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1529534681"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534443"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534443"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534443"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1529534681"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1529534681"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534443" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534443"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1529534681" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1529534681"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
