@@ -309,7 +309,7 @@ Bo Eskerod Madsen and Sharon R. Browning (2009) **A Groupwise Association Test f
 
 MichaelC. Wu, Seunggeun Lee, Tianxi Cai, Yun Li, Michael Boehnke and Xihong Lin (2011) **Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test**. *The American Journal of Human Genetics* doi:`10.1016/j.ajhg.2011.05.029`. <http://linkinghub.elsevier.com/retrieve/pii/S0002929711002229>
 
-[^Alkes L. Price, Gregory V. Kryukov, Paul I.W. de Bakker, Shaun M. Purcell, Jeff Staples, Lee-Jen Wei and Shamil R. Sunyaev (2010) **Pooled Association Tests for Rare Variants in Exon-Resequencing Studies**. *The American Journal of Human Genetics* doi:`10.1016/j.ajhg.2010.04.005`. <http://linkinghub.elsevier.com/retrieve/pii/S0002929710002077>^]
+Alkes L. Price, Gregory V. Kryukov, Paul I.W. de Bakker, Shaun M. Purcell, Jeff Staples, Lee-Jen Wei and Shamil R. Sunyaev (2010) **Pooled Association Tests for Rare Variants in Exon-Resequencing Studies**. *The American Journal of Human Genetics* doi:`10.1016/j.ajhg.2010.04.005`. <http://linkinghub.elsevier.com/retrieve/pii/S0002929710002077>
 
 
  [1]:   /applications/association/joint_conditional/aggre/

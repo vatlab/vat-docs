@@ -59,7 +59,7 @@ Customize import/export format:
 [6]: /documentation/customization/format/supportedformats/casava18snps/
 [7]: /documentation/customization/format/supportedformats/casava18indels/
 [8]:/documentation/customization/format/supportedformats/cga/
-[9]: /documentation/customization/format/supportedformats/cga/pileup/
+[9]: /documentation/customization/format/supportedformats/pileup/
 [10]: /documentation/customization/format/supportedformats/map/
 [11]:/documentation/customization/format/supportedformats/plink/
 [12]: http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml

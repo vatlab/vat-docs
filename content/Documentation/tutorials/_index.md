@@ -72,10 +72,10 @@ This is a 10-minute quick start guide using data from the 1000 genomes project. 
 *   Use **subprojects** to manage large projects. This strategy can be used to parallelize variant processing using multiple processors or a cluster [<img src="html.png" width = "25" height = "25" style = "display: inline" />][10]
 
  [1]:    /documentation/tutorials/quickstartguide/
- [2]: vtools.pdf
- [3]: VST.pdf
- [4]: VariantPipelineTools.pptx
- [5]: http://www.cse.buffalo.edu/ACM-BCB2014/
+ [2]:  vtools.pdf
+ [3]:  VST.pdf
+ [4]:  VariantPipelineTools.pptx
+ [5]:  http://www.cse.buffalo.edu/ACM-BCB2014/
  [6]:    /documentation/tutorials/acm-bcb/ 
  [7]:    /documentation/tutorials/case44ctrl20/
  [8]:    /documentation/tutorials/illumina5/

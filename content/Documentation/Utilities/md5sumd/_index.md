@@ -290,4 +290,4 @@ Note that `md5sumd -c -` does not accept gzipped stream directly so if you have 
 
  [1]: Md5sumd.txt
  [2]: md5sumd.exe
- [3]: md5sumdmacosx.zip
+ [3]: md5sumd_macosx.zip

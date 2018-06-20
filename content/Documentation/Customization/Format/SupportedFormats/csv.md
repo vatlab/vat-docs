@@ -7,7 +7,7 @@ weight = 2
 
 ### 1. Format description
 
-When this format is used to import data, it is similar to the [basic][1][?][1] format except that it assumes the use of commas, instead of tabs, as delimiters of the input format. 
+When this format is used to import data, it is similar to the [basic][1] format except that it assumes the use of commas, instead of tabs, as delimiters of the input format. 
 
 When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command `vtools output --delimiter ,` (output fields with a delimiter of comma), except that the `vtools export --format csv` command will properly quote field values when it contains comma, quotation mark etc. 
 
@@ -48,9 +48,7 @@ When this format is used to export variants, it can be used to export arbitrary 
 
 ### 3. Examples
 
-#### Import variants (similar to format `<a class='createlinktext' rel='nofollow'
-    href='http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit'>basic</a><a rel='nofollow' 
-    class='createlink' href='http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit'>?</a>`)
+#### Import variants (similar to format [basic][1])
 
     vtools import inputfile.txt --format csv --build hg18
     
@@ -109,4 +107,4 @@ If you also need to export genotype, you can use a command similar to
 
 Note here the use of `--samples 1` to select all samples by condition `1` (true),, and the use of `%(sample_names)s` in the header to list all sample names.
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Format.Basic?action=edit
+ [1]: /documentation/customization/format/supportedformats/txt/

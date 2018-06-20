@@ -219,4 +219,4 @@ The example here was very simplistic using only 2 samples and the VCFs did not h
 
 
  [2]:    /documentation/tutorials/
- [3]:  installation
+ [3]:  /installation/

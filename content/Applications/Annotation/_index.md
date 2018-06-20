@@ -118,7 +118,7 @@ if you find Variant Annotation Tools helpful and use it in your publication. Tha
  [4]:    /documentation/vtools_commands/select/
  [5]:    /documentation/vtools_commands/output/
  [6]:    /documentation/vtools_commands/export/
- [7]:    /documentation/customization/format/formats
+ [7]:    /documentation/customization/format/supportedformats/
  [8]:   /applications/annotation/tutorial/
  [9]:   /applications/annotation/variants/dbnsfp/
  [10]:   /applications/annotation/variants/esp/

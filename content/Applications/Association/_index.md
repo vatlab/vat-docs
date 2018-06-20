@@ -83,6 +83,6 @@ Results from association analysis are available as commandline standard output w
  [2]: mailto:bpeng@mdanderson.org
  [3]: http://www.bcm.edu/genetics/?pmid=10939
  [4]: mailto:varianttools-devel@lists.sourceforge.net
- [5]:  installation/
+ [5]:  /installation/
  [6]: http://dx.doi.org/10.1016/j.ajhg.2014.04.004
  [7]:   /applications/association/qc/

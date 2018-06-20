@@ -948,6 +948,6 @@ We can select variants that belong to a gene and output it
 
  [1]: http://www.1000genomes.org/node/101
  [2]: http://regulome.stanford.edu/
- [3]:    /documentation/customization/format/supportedformats/
- [4]: 1313   /documentation/customization/format/supportedformats/map/
+ [3]: /documentation/customization/format/supportedformats/
+ [4]: /documentation/customization/format/supportedformats/map/
  [5]: http://www.sqlite.org/lang_aggfunc.html

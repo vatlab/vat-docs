@@ -62,4 +62,4 @@ And calcualte p-value for the Fisher's exact test:
 
 </details>
 
- [1]: http://localhost/~iceli/wiki/pmwiki.php?n=Association.Multivariate?action=edit
+ [1]: /applications/association/joint_conditional/

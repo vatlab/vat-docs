@@ -629,7 +629,7 @@ The general process to create an annotation database is
 
 {{% notice tip %}}
 
-The [anno_utils]([1]) pipelines provide a few pipelines that can help you create annotation databases from various resources. For example, if you have a project with variants from unaffected individuals, you can export the variants as an annotation database. This database can be used by other projects to filter variants.
+The [anno_utils][1] pipelines provide a few pipelines that can help you create annotation databases from various resources. For example, if you have a project with variants from unaffected individuals, you can export the variants as an annotation database. This database can be used by other projects to filter variants.
 
 {{% /notice %}}
 

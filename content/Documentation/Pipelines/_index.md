@@ -9,7 +9,7 @@ hidden = "true"
 
 
 <figure>
-  <p><a href="VariantPipelineTools.pdf"><img src="documents.jpg"></a>
+  <p><a href="VariantPipelineTools.pptx"><img src="documents.jpg"></a>
   <figcaption> A presentation about Variant Pipeline Tools (Jan, 12th, 2015)  </figcaption>
 </figure>
 
@@ -59,19 +59,19 @@ Compared to other GUI or script based pipeline implementations, Variant Pipeline
 
 
 
-*   **uses pipeline specifiction files to describe pipelines**. Pipelines are hosted online so adding a pipeline to the server will make it instantly available to all users of *variant tools*. It is easy to check the availability of pipelines and details of each pipeline using commands such as `vtools show pipelines` and `vtools show pipeline bwa_gatk_hg19`. The `.ini`-style description file is easy to read and write so it is relatively easy to create your own pipeline by following the [pipeline specification][5][?][5] and examples under `~/.variant_tools/pipeline`. 
+*   **uses pipeline specifiction files to describe pipelines**. Pipelines are hosted online so adding a pipeline to the server will make it instantly available to all users of *variant tools*. It is easy to check the availability of pipelines and details of each pipeline using commands such as `vtools show pipelines` and `vtools show pipeline bwa_gatk_hg19`. The `.ini`-style description file is easy to read and write so it is relatively easy to create your own pipeline by following the [pipeline specification][5] and examples under `~/.variant_tools/pipeline`. 
 
 *   **can execute arbitrary commands, and variant tools, third-party, or user-defined functions**. The pipeline specification also allows you to pass parameters, skip certain steps, and run certain steps in parallel. This makes Variant Pipeline Tools a powerful tool for the implementation of complex pipelines. 
 
 *   **provides features to ensure proper execution of the pipelines**. *variant tools* automatically check the existence of external commands, download, manage required resources (e.g. reference genome, known variant sites), and record signatures of all executed steps. It is safe to resume a pipeline even with different parameter settings because *variant tools* skips steps only if their signatures match a previous run. 
 
-Variant Pipeline Tools has been used to implement all variant tools annotation and data processing pipelines, all simulations in [Variant Simulation Tools][6][?][6], and a number of variant calling and RNA Seq data analysis pipelines. This tool, however, does not provide features such as MapReduce to handle extremely large amount of data on the cloud. Please refer to other dedicated tools such as [SeqWare][7] if you are looking for a tool for these applications. 
+Variant Pipeline Tools has been used to implement all variant tools annotation and data processing pipelines, all simulations in [Variant Simulation Tools][6], and a number of variant calling and RNA Seq data analysis pipelines. This tool, however, does not provide features such as MapReduce to handle extremely large amount of data on the cloud. Please refer to other dedicated tools such as [SeqWare][7] if you are looking for a tool for these applications. 
 
 
 
 ### 3. Usage
 
-After [installing and configuring variant tools][8][?][8], using variant pipeline tools is as easy as 
+After [installing and configuring variant tools][8], using variant pipeline tools is as easy as 
 
 
 
@@ -112,5 +112,5 @@ Snakemake has somewhat similar design with VPT. It is based on Python, integrate
  [5]:    /documentation/pipelines/customizedpipeline/
  [6]:    /documentation/customization/simulation/
  [7]: http://seqware.github.io/docs/1-introduction/
- [8]:  installation/
+ [8]:  /installation/
  [9]: https://bitbucket.org/johanneskoester/snakemake/wiki/Home

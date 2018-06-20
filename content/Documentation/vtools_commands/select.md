@@ -287,6 +287,7 @@ In contrast to variant info fields that annotate all variants, **annotation data
 
 
     % vtools use dbSNP
+    
     INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
     INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
     INFO: Using annotation DB dbSNP as dbSNP in project select.
@@ -299,7 +300,7 @@ then find out all the variants that are in the dbSNP database:
 
     % vtools select variant 'dbSNP.chr IS NOT NULL' -t inDbSNP 'variants in dbSNP version 130'
     
-    Running: 6 97.9/s in 00:00:00                                                                                   
+    Running: 6 97.9/s in 00:00:00                                                                               
     INFO: 1429 variants selected.
     
 
@@ -358,7 +359,6 @@ you can select variants that are in this database using the memebership query
 
     % vtools select variant 'dbNSFP.chr IS NOT NULL' -t ns 'non-synonymous variants in dbNSFP database'
     
-
     Running: 3 63.7/s in 00:00:00
     INFO: 12 variants selected.
     
@@ -367,7 +367,6 @@ then select variants that are probably damaging according to SIFT scores
 
     % vtools select ns 'SIFT_score < 0.05' -t damaging 'probably damaging'
     
-
     Running: 0 0.0/s in 00:00:00
     INFO: 5 variants selected.
     
@@ -378,7 +377,6 @@ You can check if the SIFT score - selected damaging variants are also damaging a
 
     % vtools select ns 'SIFT_score < 0.05' --output chr pos ref alt SIFT_score \
          dbNSFP.MutationAssessor_pred PolyPhen2_HDIV_score PolyPhen2_HDIV_pred
-    
 
     1  879501  G  C  .     medium   .                  .
     1  908247  G  T  0.03  low      0.999;0.998;0.998  D;D;D
@@ -395,7 +393,6 @@ Because these scores do not agree with each other too well, we sometimes use the
 
     % vtools select ns 'SIFT_score < 0.05 or PolyPhen2_HDIV_pred like "%D%"' -t damaging 'Damaging predicted by either SIFT or polyphen2'
     
-
     WARNING: Existing table damaging is renamed to damaging_Jul14_214229.
     Running: 0 0.0/s in 00:00:00
     INFO: 6 variants selected.
@@ -408,7 +405,6 @@ Because a table `damage` has been created before, the existing table is renamed 
 
     % vtools remove tables '*Jul*'
     
-
     INFO: Removing table damaging_Jul14_214229
     
 
@@ -422,8 +418,7 @@ One of the common use of annotation databases is to identify variants that belon
 
 
 
-    % vtools use ccdsGene
-    
+    % vtools use ccdsGene  
 
     INFO: Choosing version ccdsGene-hg38_20171008 from 4 available databases.
     INFO: Downloading annotation database annoDB/ccdsGene-hg38_20171008.ann
@@ -435,7 +430,6 @@ One of the common use of annotation databases is to identify variants that belon
 
     % vtools use keggPathway --linked_by ccdsGene.name
     
-
     INFO: Choosing version keggPathway-20110823 from 1 available databases.
     INFO: Downloading annotation database annoDB/keggPathway-20110823.ann
     INFO: Using annotation DB keggPathway as keggPathway in project select.
@@ -450,46 +444,45 @@ Anyway, the following command lists all CCDS genes and refGenes that contain one
 
     % vtools output variant ccdsGene.name refGene.name2 | sort | uniq
     
-
-    .   .
-.   AGRN
-.   B3GALT6
-.   C1orf159
-.   FAM41C
-.   FAM87B
-.   ISG15
-.   KLHL17
-.   LINC00115
-.   LINC01128
-.   LINC01342
-.   LOC100130417
-.   LOC100288069
-.   LOC100288175
-.   LOC100288778
-.   MIR6723
-.   PERM1
-.   PLEKHN1
-.   RNF223
-.   SAMD11
-.   SDF4
-.   TTLL10
-.   UBE2J2
-.   WASH7P
-CCDS10.1    TNFRSF18
-CCDS11.1    TNFRSF4
-CCDS12.1    SDF4
-CCDS14.1    UBE2J2
-CCDS2.2 SAMD11
-CCDS3.1 NOC2L
-CCDS30547.1 OR4F5
-CCDS30550.1 KLHL17
-CCDS30551.1 AGRN
-CCDS4.1 PLEKHN1
-CCDS44036.1 TTLL10
-CCDS6.1 ISG15
-CCDS7.2 C1orf159
-CCDS76083.1 PERM1
-CCDS8.1 TTLL10
+       .   .
+    .   AGRN
+    .   B3GALT6
+    .   C1orf159
+    .   FAM41C
+    .   FAM87B
+    .   ISG15
+    .   KLHL17
+    .   LINC00115
+    .   LINC01128
+    .   LINC01342
+    .   LOC100130417
+    .   LOC100288069
+    .   LOC100288175
+    .   LOC100288778
+    .   MIR6723
+    .   PERM1
+    .   PLEKHN1
+    .   RNF223
+    .   SAMD11
+    .   SDF4
+    .   TTLL10
+    .   UBE2J2
+    .   WASH7P
+    CCDS10.1    TNFRSF18
+    CCDS11.1    TNFRSF4
+    CCDS12.1    SDF4
+    CCDS14.1    UBE2J2
+    CCDS2.2 SAMD11
+    CCDS3.1 NOC2L
+    CCDS30547.1 OR4F5
+    CCDS30550.1 KLHL17
+    CCDS30551.1 AGRN
+    CCDS4.1 PLEKHN1
+    CCDS44036.1 TTLL10
+    CCDS6.1 ISG15
+    CCDS7.2 C1orf159
+    CCDS76083.1 PERM1
+    CCDS8.1 TTLL10
 
     
 
@@ -497,9 +490,8 @@ As you can see, CCDS genes are more conservative and do not contain some of the 
 
     % vtools select variant 'refGene.name2 = "AGRN"' -t AGRN
     
-
-    Running: 21 1.0K/s in 00:00:00                                                                               
-    </I>NFO: 111 variants selected
+    Running: 21 1.0K/s in 00:00:00                                                                             
+    INFO: 111 variants selected
     
 
 You can also output the pathway that this gene belong as follows: 
@@ -507,7 +499,6 @@ You can also output the pathway that this gene belong as follows:
     % vtools select variant 'refGene.name2 = "AGRN"' --output \
          chr pos ref alt refGene.name2 keggpathway.kgID keggPathway.kgDesc -l 10 --all
     
-
     1   1021740 G   C   AGRN    hsa04512    ECM-receptor interaction
     1   1021740 G   C   AGRN    hsa04512    ECM-receptor interaction
     1   1022868 A   G   AGRN    hsa04512    ECM-receptor interaction
@@ -541,7 +532,6 @@ It is sometimes useful to select variants based on sample genotypes, to answer q
 
 
     % vtools show samples
-    
 
     sample_name  filename
     SAMP1       V1_hg38.vcf
@@ -555,9 +545,8 @@ We can rename samples using command `vtools admin --rename_samples` but we can a
 
     % vtools select variant --samples 'filename = "V1.vcf"' -t V1 'variants imported from V1.vcf'
     
-
     INFO: 1 samples are selected by condition: filename = "V1.vcf"
-    Running: 3 1.0K/s in 00:00:00                                                                                   
+    Running: 3 1.0K/s in 00:00:00                                                                           
     INFO: 1269 variants selected.
     
 
