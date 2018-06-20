@@ -21,12 +21,8 @@ weight = 2
 
 to get the most updated information about these formats. 
 
-
-
-
-
-| **Name** | **Import** | **Update** | **Export** | **Comment**  |            
-|---------------|---------------|-------------------|-----------------------|-----------------|    
+| **Name**        | **Import**           | **Update**  | **Export** | **Comment** |
+| ------------- | ------------- | ----- | ---- | ---- |
 | [basic][1] | Y  |  a  | Y | Import variants in tab-delimited format, export variants and optional variant info fields and genotypes| 
 | VCF   | Y   | Y  | Y | [Variant Call Format][2] (VCF version 4.0 and 4.1) |
 | [CSV][3]           | Y   |       | Y   | csv format    |                                
