@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/single_variant/fisher-exact-test/</guid>
-      <description>Fisher&amp;rsquo;s Exact Test for Single Variant Analysis 1. Introduction Genetic association studies of common variants in case control samples usually compare directly the differences in frequencies of an allele or genotype between case and control populations, with the assumption that a significant difference in frequencies is indication to association between the locus and increase risk of disease. Many statistical tests for binomial or multinomial proportions can be used for such analysis, including Fisher&amp;rsquo;s exact test, {$\chi^2$} test and Cochran-Armitage Trend Test.</description>
+      <description>Fisher&amp;rsquo;s Exact Test for Single Variant Analysis 1. Introduction Genetic association studies of common variants in case control samples usually compare directly the differences in frequencies of an allele or genotype between case and control populations, with the assumption that a significant difference in frequencies is indication to association between the locus and increase risk of disease. Many statistical tests for binomial or multinomial proportions can be used for such analysis, including Fisher&amp;rsquo;s exact test, \(\chi^2\) test and Cochran-Armitage Trend Test.</description>
     </item>
     
   </channel>

@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</guid>
-      <description>Importing and exporting variants in .csv (comma-separated value) format 1. Format description When this format is used to import data, it is similar to the basic? format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
+      <description>Importing and exporting variants in .csv (comma-separated value) format 1. Format description When this format is used to import data, it is similar to the basic format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
 When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command vtools output --delimiter , (output fields with a delimiter of comma), except that the vtools export --format csv command will properly quote field values when it contains comma, quotation mark etc.</description>
     </item>
     

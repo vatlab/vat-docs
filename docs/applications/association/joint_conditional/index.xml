@@ -10,15 +10,6 @@
     
     
     <item>
-      <title>weighted</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/weighted-methods/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/weighted-methods/weighted-methods/</guid>
-      <description>Weighted Burden Test for Disease and Quantitative Traits 1.1 Introduction This implements a collection of weighted aggregation tests. Different from plain aggregation methods which assumes equal contribution of each locus from the genetic region under investigation, the weighted methods assigns a &amp;ldquo;weight&amp;rdquo; to each variant site such that each site differs from another by the weight they are assigned, and these weights will contribute to the aggregated &amp;ldquo;burden&amp;rdquo;, e.g., {$$X=\sum_i^N\omega_iX_i$$} where  \(\omega_i\)&amp;rsquo;s are the weights.</description>
-    </item>
-    
-    <item>
       <title>variable thresholds</title>
       <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/variable-thresholds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -33,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</guid>
-      <description>SNP-set (Sequence) Kernel Association Test Method 1. Introduction 2. Details 2.1 Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011).</description>
+      <description>SNP-set (Sequence) Kernel Association Test Method 1. Details 1.1 Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011).</description>
     </item>
     
     <item>

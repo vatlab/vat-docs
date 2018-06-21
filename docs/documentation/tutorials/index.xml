@@ -21,27 +21,6 @@
     </item>
     
     <item>
-      <title>ACM-BCB</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/acm-bcb/</guid>
-      <description>Tutorial for ACM-BCB 2014 1. Integrated Analysis of Next-Generation-Sequencing Data using Variant Tools This part of the talk gives an overview of variant tools, its concepts, components, and tutorials on how to import, annotate, and select variants.
- Tutorial Sample data Slides  2. Association Analysis of Whole Exome Sequence Data using Variant Association Tools This part of the talk gives a minimal demonstration on data quality control and association analysis of rare variants.</description>
-    </item>
-    
-    <item>
-      <title>Performance</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/case44ctrl20/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/case44ctrl20/</guid>
-      <description>Processing 44 whole genome cases and 200 exome controls 1. Data source Whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls. This tutorial demonstrates the same set of commands used in the home page presentation but uses the complete dataset. The dataset used in this tutorial is not publicly available.
-2. Import data Create a project
-# Performance data is collected on a Mac Workstation with 2x2.</description>
-    </item>
-    
-    <item>
       <title>Illumina</title>
       <link>https://vatlab.github.io/vat-docs/documentation/tutorials/illumina5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

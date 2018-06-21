@@ -43,7 +43,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/illumina/</guid>
-      <description>Pipelines to assist the analysis of illumina data Usage $ vtools show pipeline illumina A pipeline to handle illumina data prepared by CASAVA 1.8+. It imports variants from SNPs.vcf and Indel.vcf of multiple samples, separate maxgt and poly into different projects, calculate a few standard statistics and apply a few filters. All results are saved as variant tools snapshots. This pipeline uses command vtools so multi-processing is not supported. Available pipelines: load_data Pipeline &amp;quot;load_data&amp;quot;: This pipeline accepts a list of directories under which SNPs and Indels are listed in files Variations/SNPs.</description>
+      <description>Pipelines to assist the analysis of illumina data Usage \\( vtools show pipeline illumina A pipeline to handle illumina data prepared by CASAVA 1.8+. It imports variants from SNPs.vcf and Indel.vcf of multiple samples, separate maxgt and poly into different projects, calculate a few standard statistics and apply a few filters. All results are saved as variant tools snapshots. This pipeline uses command vtools so multi-processing is not supported. Available pipelines: load_data Pipeline &amp;quot;load_data&amp;quot;: This pipeline accepts a list of directories under which SNPs and Indels are listed in files Variations/SNPs.</description>
     </item>
     
     <item>
