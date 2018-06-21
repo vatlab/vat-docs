@@ -12,7 +12,7 @@ weight = 1
 ### 1. Introduction
 
 This is implementation of the fixed threshold collapsing methods for both disease and quantitative traits. *Collapsing* method for rare variants treats a genetic region as a test unit; based on observed genotype it assigns a numeric coding to the region \\(X\\):
-$$X = I_{(0,N)}(\sum_i^N X_i)$$i.e., the observed genotype will be coded as {$1$} if there exists at least one mutation, and \\(0\\)  otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010). 
+$$X = I_{(0,N)}(\sum_i^N X_i)$$i.e., the observed genotype will be coded as \\(1\\) if there exists at least one mutation, and \\(0\\)  otherwise. This coding theme has been used in (Li and Leal, 2008) and (Bhatia et al, 2010). 
 
 Advantages in using collapsing methods instead of [aggregation methods][1] is in its robustness to LD of multiple rare variants in the region under investigation, which would potentially inflate type I error. However under additive assumptions of genetic effects, collapsing methods may be less powerful than aggregation methods. 
 
