@@ -589,10 +589,8 @@ Here we redirect all progress bar etc from stderr to /dev/null to check only the
 #### 2.4 Compare sites of variants (ignore multiple alternative alleles)
 
 
-
-| **site** |         | **tables** |
-|----|------|
 | **chr**  | **pos** | **ref**    | **alt** | T1 | T2 |
+| ---- | ------ | ---- | ---- | ---- | ---- |
 | 1        | 31705   | A          | G       | ✓  | ✓  |
 | 1        | 50195   | T          | C       | ✓  |    |
 | 1        | 50195   | T          | G       |    | ✓  |
