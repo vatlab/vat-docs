@@ -1,20 +1,36 @@
 #!/bin/sh
+# Usage: bash vtools_blc.sh 
 
-MYWEB="vatlab.github.io/vat-docs/"
+# Set a default if no comment is given
+COMMENT="Automatic commit from vtools_blc.sh"
+
+# variables
 HERE=$(pwd)
+MYWEB="vatlab.github.io/vat-docs/"
+URL="urls.txt"
+RESULT="blc_result.txt"
 
-# Download all the website
-wget -k -r "https://${MYWEB}" # -k converts links
+cd ~/vat-docs
 
-# Remove index.html from converted links
-for f in ${MYWEB}/index.html ${MYWEB}/*/index.html; do
-  sed -i -e "s/index.html//g" $f
-  rm -f $f-e
-done
+# get all paths
+wget --spider --force-html -r -l1 $MYWEB 2>&1 | grep 'Saving to:'
+find $MYWEB > $URL
 
-# Here is my repository
-REPDIR=${1-${HOME}/reps/myweb}
+# delete DS_Store, add prefix, //to/
+sed -i '' -e '/DS_Store/d' $URL 
+sed -i '' -e "s/\/\//\//" $URL  
+sed -i '' -e "s/^/http:\/\//" $URL  
+sed -i '' -e "s/$/\//" $URL  
+sed -i '' -e '1s/vat-docs\/\//vat-docs\//' $URL
 
-echo $REPDIR
+# blc
+k=1
+while read line;do blc $line; ((k++)); done < $URL > $RESULT
 
-cd $REPDIR
+git add $RESULT 
+git commit -m "$COMMENT"
+git push 
+
+# Go back
+cd $HERE
+
