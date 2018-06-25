@@ -118,9 +118,9 @@ You can use command `vtools show snapshots` to get a list of available snapshots
 </details>
 
 <details><summary>Examples: importing variant and genotype info fields</summary>
-If we have a look at the header of `CEU.vcf.gz`, we can see 
+If we have a look at the header of `CEU_hg38.vcf`, we can see 
 
-    % gzcat CEU_hg38.vcf | head -15
+    % head -15 CEU_hg38.vcf
 
     ##fileformat=VCFv4.0
     ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
