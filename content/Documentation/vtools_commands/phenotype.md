@@ -139,7 +139,7 @@ The `vtools phenotype --from_file` command identifies a sample by its name but i
 
 
     % vtools init test -f
-    % vtools admin --load_snapshot vt_testData
+    % vtools admin --load_snapshot vt_testData_v3
     % vtools import CEU_hg38.vcf --build hg38 --var_info DP --geno_info DP_geno
     
     INFO: Importing variants from CEU_hg38.vcf (1/1)

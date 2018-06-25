@@ -64,6 +64,7 @@ Because the UCSC liftover tools does not guarantee complete translation, variant
 
 
     % vtools init -f liftover
+    % vtools admin --load_snapshot vt_testData_v3
     % vtools import V1-3_hg19_combine.vcf --build hg19
     % vtools liftover hg38
     

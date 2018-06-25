@@ -151,7 +151,7 @@ Let us create a directory update and import an empty project with a few test vcf
     % mkdir update
     % cd update
     % vtools init update
-    % vtools admin --load_snapshot vt_testData
+    % vtools admin --load_snapshot vt_testData_v3
     
 
 The project does not have any variant so we import some from these VCF files: 

@@ -122,7 +122,7 @@ Newer databases usually contain more updated annotation information and usually 
 
 <details><summary> Examples: Use system-provided annotation databases</summary> Let us get a project 
 
-
+    % vtools admin --load_snapshot vt_testData_v3
     % vtools import V1-3_hg19_combine.vcf --build hg19
     
 
