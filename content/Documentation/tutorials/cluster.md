@@ -9,7 +9,7 @@ hidden = true
 
 Since vtools association analysis is quite time consuming, meanwhile this job could be easily distributed to run on multiple nodes. Here we show an example to demonstrate how to run vtools association job on a PBS cluster.
 
-The example PBS script is `vtools_association_cluster.pbs` in `/src/variant_tools folder`. 
+The example PBS script is `vtools_association_cluster.pbs` in `/src/variant_tools` folder. 
 
 ### 1. Header of PBS script
 
@@ -26,10 +26,10 @@ User needs to specify the folder path to the existing vtools project (The folder
 
 ### 3. Specify the vtools association command
 
-At this step, user should have already imported the data and added necessary annotations. Then the user could input the preferred vtools association command to `COMMAND` variable. The vtools association command line parameters are the same as running the command on local desktop except an additional flag `-mpi` to indicate the job will be ran on the cluster. 
+At this step, user should have already imported the data and added necessary annotations. Then the user is required to provide the preferred vtools association command to `COMMAND` variable. The vtools association command line parameters are the same as running this command on local desktop except an additional flag `-mpi` to indicate the job will be ran on the cluster. 
 
 ### 4. Submit job
 
-After PBS script submitted with qsub, the job will be launch to run on the cluster with mpiexec, the communication between main node and worker nodes are handeld through zeroMQ. 
+After PBS script submitted with qsub, the job will be launched to run on the cluster with mpiexec, the communication between main node and worker nodes is handeld through zeroMQ. 
 
 

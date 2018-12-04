@@ -35,7 +35,7 @@ The general interface of `vtools associate` is as follows
                             [--genotypes [COND [COND ...]]]
                             [--discard_samples [EXPR [EXPR ...]]]
                             [--discard_variants [EXPR [EXPR ...]]]
-                            [--to_db annoDB] [-f] [-j N] [-v {0,1,2}]
+                            [--to_db annoDB] [-f] [-j N] [-v {0,1,2}][-mpi]
                             variants phenotypes
     
     Call one or more statistical association tests and return test results as
@@ -44,6 +44,9 @@ The general interface of `vtools associate` is as follows
     optional arguments:
       -h, --help            show this help message and exit
       -j N, --jobs N        Number of processes to carry out association tests.
+      -mpi                  Submit vtools association job to cluster, please check
+                            sample pbs script
+                            src/variant_tools/vtools_association_cluster.pbs.
       -v {0,1,2}, --verbosity {0,1,2}
                             Output error and warning (0), info (1) and debug (2)
                             information to standard output (default to 1).
