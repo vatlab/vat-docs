@@ -499,6 +499,14 @@
   </url>
   
   <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/tutorials/lsfcluster/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatlab.github.io/vat-docs/documentation/tutorials/pbscluster/</loc>
+  </url>
+  
+  <url>
     <loc>https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/</loc>
   </url>
   

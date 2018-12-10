@@ -67,9 +67,10 @@ This is a 10-minute quick start guide using data from the 1000 genomes project. 
 *   **Quality control** using sequencing data [<img src="html.png" width = "25" height = "25" style = "display: inline" />][18] 
 *   **Association analysis** using sequencing data [<img src="html.png" width = "25" height = "25" style = "display: inline" />][19] 
 
-### 9. Run association analysis on PBS cluster
+### 9. Run association analysis on cluster
 
-*   Submit a pbs script to run vtools association command on your cluster to speed up the process [<img src="html.png" width = "25" height = "25" style = "display: inline" />][21] 
+*   Submit a pbs script to run vtools association command on cluster using PBS  [<img src="html.png" width = "25" height = "25" style = "display: inline" />][21] 
+*   Submit a pbs script to run vtools association command on cluster using LSF  [<img src="html.png" width = "25" height = "25" style = "display: inline" />][22] 
 
 ## Parallelization
 
@@ -95,4 +96,5 @@ This is a 10-minute quick start guide using data from the 1000 genomes project. 
  [18]:    /documentation/tutorials/association/
  [19]:    /documentation/tutorials/testing/
  [20]:    /documentation/tutorials/subprojects/
- [21]:    /documentation/tutorials/cluster/
+ [21]:    /documentation/tutorials/pbscluster/
+ [22]:    /documentation/tutorials/lsfcluster/

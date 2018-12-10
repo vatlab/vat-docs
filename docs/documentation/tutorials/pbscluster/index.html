@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="https://vatlab.github.io/vat-docs/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="https://vatlab.github.io/vat-docs/images/favicon.png" type="image/x-icon" />
-    <title>variant_stat :: Variant Tools</title>
+    <title>association analysis on cluster using PBS :: Variant Tools</title>
     
     
     <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1544461053" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/documentation/vtools_report/variant_stat/">
+  <body class="" data-url="/documentation/tutorials/pbscluster/">
     <nav id="sidebar" class="">
 
 
@@ -493,13 +493,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     
     
     <li data-nav-id="/documentation/tutorials/" title="Tutorials" class="dd-item 
-        
+        parent
         
         haschildren
         ">
      
       <div>
-      <a  href="https://vatlab.github.io/vat-docs/documentation/tutorials/">Tutorials</a><i  class="fa fa-angle-right fa-lg category-icon"></i>
+      <a  href="https://vatlab.github.io/vat-docs/documentation/tutorials/">Tutorials</a>
+            <i  class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
       
       
@@ -1092,14 +1093,13 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     
     
     <li data-nav-id="/documentation/vtools_report/" title="Vtools report" class="dd-item 
-        parent
+        
         
         haschildren
         ">
      
       <div>
-      <a  href="https://vatlab.github.io/vat-docs/documentation/vtools_report/">Vtools report</a>
-            <i  class="fa fa-angle-down fa-lg category-icon"></i>
+      <a  href="https://vatlab.github.io/vat-docs/documentation/vtools_report/">Vtools report</a><i  class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
       
       
@@ -1210,7 +1210,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
  
     
-      <li data-nav-id="/documentation/vtools_report/variant_stat/" title="variant_stat" class="dd-item active">
+      <li data-nav-id="/documentation/vtools_report/variant_stat/" title="variant_stat" class="dd-item ">
         <a href="https://vatlab.github.io/vat-docs/documentation/vtools_report/variant_stat/">
         variant_stat
         
@@ -3609,7 +3609,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
             
           
           
-            <a href='https://vatlab.github.io/vat-docs/'></a> > <a href='https://vatlab.github.io/vat-docs/documentation/'>Documentation</a> > <a href='https://vatlab.github.io/vat-docs/documentation/vtools_report/'>Vtools report</a> > variant_stat
+            <a href='https://vatlab.github.io/vat-docs/'></a> > <a href='https://vatlab.github.io/vat-docs/documentation/'>Documentation</a> > <a href='https://vatlab.github.io/vat-docs/documentation/tutorials/'>Tutorials</a> > association analysis on cluster using PBS
           
          
           
@@ -3627,10 +3627,12 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <ul>
 <li>
 <ul>
-<li><a href="#counting-variants-of-different-types-optionally-by-samples">Counting variants of different types, optionally by samples</a>
+<li><a href="#run-association-analysis-on-cluster-using-pbs">Run association analysis on cluster using PBS</a>
 <ul>
-<li><a href="#1-usage">1. Usage</a></li>
-<li><a href="#2-details">2. Details</a></li>
+<li><a href="#1-header-of-pbs-script">1. Header of PBS script</a></li>
+<li><a href="#2-specify-project-folder">2. Specify project folder</a></li>
+<li><a href="#3-specify-the-vtools-association-command">3. Specify the vtools association command</a></li>
+<li><a href="#4-submit-job">4. Submit job</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -3646,7 +3648,7 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
         
         <div id="body-inner">
           
-            <h1>variant_stat</h1>
+            <h1>association analysis on cluster using PBS</h1>
           
 
         
@@ -3654,86 +3656,34 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 
 
 
-<h2 id="counting-variants-of-different-types-optionally-by-samples">Counting variants of different types, optionally by samples</h2>
+<h2 id="run-association-analysis-on-cluster-using-pbs">Run association analysis on cluster using PBS</h2>
 
-<h3 id="1-usage">1. Usage</h3>
+<p>Since vtools association analysis is quite time consuming, meanwhile this job could be easily distributed to run on multiple nodes. Here we show an example to demonstrate how to run vtools association job on cluster using PBS.</p>
 
-<pre><code>% vtools_report variant_stat -h
+<p>The example PBS script is <code>vtools_association_cluster.pbs</code> in <code>/src/variant_tools</code> folder.
+Please make sure the <code>openmpi</code> module is loaded, so that <code>mpiexec</code> command could be executed.</p>
 
-usage: vtools_report variant_stat [-h] [-s [SAMPLES [SAMPLES ...]]]
-                                  [-g [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}]
-                                  table
+<h3 id="1-header-of-pbs-script">1. Header of PBS script</h3>
 
-Command 'vtools variant_stat' calculates the number of snps, insertions,
-deletions and substitutions for groups of samples with some size metrics to
-characterize the indels. The statistics can be calculated for all samples
-(effectively for the master variant table when parameters --samples and
---group_by are ignored), a subset of samples (e.g. --samples aff=1), grouped
-by samples (e.g. --group_by aff), or for each sample separately (e.g.
---group_by filename sample_name, because those two fields in the sample table
-uniquely identify each sample.
+<p>Like any other PBS scripts, user first specifies the number of nodes and cores assigned to run this job. In this example, we will use four nodes and eight cores from each node. The job will be submitted to a job queue named short.</p>
 
-positional arguments:
-  table                 Variant table for which variant metrics are
-                        calculated.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -s [SAMPLES [SAMPLES ...]], --samples [SAMPLES [SAMPLES ...]]
-                        Limiting variants from samples that match conditions
-                        that use columns shown in command 'vtools show sample'
-                        (e.g. 'aff=1', 'filename like &quot;MG%&quot;'). If this
-                        parameter is specified without a value, variants
-                        belonging to any of the samples will be counted. If
-                        this parameter is left unspecified, all variants,
-                        including those that do not belong to any samples will
-                        be counted.
-  -g [GROUP_BY [GROUP_BY ...]], --group_by [GROUP_BY [GROUP_BY ...]]
-                        Group samples by certain conditions such as 'aff=1'. A
-                        common usage is to group variants by 'filename' and
-                        'sample_name' so that variant statistics are outputted
-                        for each sample.
-  -v {0,1,2}, --verbosity {0,1,2}
-                        Output error and warning (0), info (1) and debug (2)
-                        information of vtools and vtools_report. Debug
-                        information are always recorded in project and
-                        vtools_report log files.
+<pre><code>#!/bin/bash
+#PBS -l nodes=4:lowmem:ppn=8,walltime=01:00:00
+#PBS -V
+#PBS -q short
 </code></pre>
 
-<h3 id="2-details">2. Details</h3>
+<h3 id="2-specify-project-folder">2. Specify project folder</h3>
 
-<p>This command calculates the number of snps, insertions, deletions and substitutions for groups of samples with some size metrics to characterize the indels. You can use parameters <code>--samples</code> to limit variants to specified samples, and <code>--group_by</code> to output statistics for each sample groups. For example, the statistics can be calculated</p>
+<p>User needs to specify the folder path to the existing vtools project (The folder created by <code>vtools init</code> command) by assigning the folder path to <code>PROJECTFOLDER</code>.</p>
 
-<ul>
-<li>all variants in the specified variant table (default if parameters <code>--samples</code> and <code>--group_by</code> are ignored),</li>
-<li>a subset of samples (e.g. <code>--samples aff=1</code>),</li>
-<li>grouped by samples (e.g. <code>--group_by aff</code>), or</li>
-<li>for each sample separately (e.g. <code>--group_by filename sample_name</code>, because those two fields in the sample table uniquely identify each sample.</li>
-</ul>
+<h3 id="3-specify-the-vtools-association-command">3. Specify the vtools association command</h3>
 
-<div class="notices warning" ><p>Note that</p>
+<p>At this step, user should have already imported the data and added necessary annotations. Then the user is required to provide the preferred vtools association command to <code>COMMAND</code> variable. The vtools association command line parameters are the same as running this command on local desktop with an additional flag <code>-mpi</code> to indicate the job will be ran on the cluster.</p>
 
-<pre><code>% vtools_report variant_stat VTABLE
-% vtools_report variant_stat VTABLE --samples 1
-% vtools_report variant_stat VTABLE --group_by aff   
-</code></pre>
+<h3 id="4-submit-job">4. Submit job</h3>
 
-<p>might give different total variant count because the first command counts all variants in the <code>VTABLE</code>, the second and third commands count all variants in specified samples (all samples for condition <code>1</code>). Because some variants might not appear in any of the samples, the number of reported variants of the first command might be larger than the others.</p>
-</div>
-
-
-<p>You would like to generate output for selected variants (e.g. variants on chromosome 1), you should use command <code>vtools select -t table</code> to generate a variant table and use this command to summarize them.</p>
-
-<pre><code>% vtools_report variant_stat variant --group_by filename
-
-filename    num_sample  num_snps    num_insertions  num_deletions   num_substitutions   min_insertion_size  avg_insertion_size  max_insertion_size  min_deletion_size   avg_deletion_size   max_deletion_size
-case1.vcf   1   21504   322 75  0   1   2.64906832298   23  1   1.28    11
-case10.vcf  1   21069   317 77  0   1   2.64353312303   21  1   1.25974025974   6
-case11.vcf  1   20995   315 70  0   1   2.65396825397   23  1   1.08571428571   3
-case12.vcf  1   22195   340 68  0   1   2.91176470588   26  1   1.23529411765   10
-
-... ...
-</code></pre>
+<p>After PBS script submitted with qsub, the job will be launched to run on the cluster with mpiexec, the communication between main node and worker nodes is handeld through zeroMQ.</p>
 
 
 <footer class=" footline" >
@@ -3842,6 +3792,7 @@ case12.vcf  1   22195   340 68  0   1   2.91176470588   26  1   1.23529411765   
             
                 
                     
+                    
                 
                 
 
@@ -3954,6 +3905,9 @@ case12.vcf  1   22195   340 68  0   1   2.91176470588   26  1   1.23529411765   
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -4371,7 +4325,6 @@ case12.vcf  1   22195   340 68  0   1   2.91176470588   26  1   1.23529411765   
             
                 
                     
-                    
                 
                 
 
@@ -4386,9 +4339,6 @@ case12.vcf  1   22195   340 68  0   1   2.91176470588   26  1   1.23529411765   
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -4469,7 +4419,6 @@ case12.vcf  1   22195   340 68  0   1   2.91176470588   26  1   1.23529411765   
             
             
                 
-                    
                     
                 
                 
@@ -4486,9 +4435,6 @@ case12.vcf  1   22195   340 68  0   1   2.91176470588   26  1   1.23529411765   
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -6408,10 +6354,10 @@ case12.vcf  1   22195   340 68  0   1   2.91176470588   26  1   1.23529411765   
 
 
         
-            <a class="nav nav-prev" href="https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/" title="trans_ratio"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/" title="Variants"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="https://vatlab.github.io/vat-docs/documentation/vtools_report/inbreeding_coefficient/" title="inbreeding_coefficient" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="https://vatlab.github.io/vat-docs/documentation/help/" title="Help" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

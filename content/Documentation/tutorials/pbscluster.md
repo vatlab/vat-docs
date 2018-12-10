@@ -1,15 +1,16 @@
 +++
-title = "association analysis on cluster"
+title = "association analysis on cluster using PBS"
 weight = 7
 hidden = true
 +++
 
 
-## Run association analysis on cluster
+## Run association analysis on cluster using PBS
 
-Since vtools association analysis is quite time consuming, meanwhile this job could be easily distributed to run on multiple nodes. Here we show an example to demonstrate how to run vtools association job on a PBS cluster.
+Since vtools association analysis is quite time consuming, meanwhile this job could be easily distributed to run on multiple nodes. Here we show an example to demonstrate how to run vtools association job on cluster using PBS.
 
 The example PBS script is `vtools_association_cluster.pbs` in `/src/variant_tools` folder. 
+Please make sure the `openmpi` module is loaded, so that `mpiexec` command could be executed.
 
 ### 1. Header of PBS script
 
@@ -26,7 +27,7 @@ User needs to specify the folder path to the existing vtools project (The folder
 
 ### 3. Specify the vtools association command
 
-At this step, user should have already imported the data and added necessary annotations. Then the user is required to provide the preferred vtools association command to `COMMAND` variable. The vtools association command line parameters are the same as running this command on local desktop except an additional flag `-mpi` to indicate the job will be ran on the cluster. 
+At this step, user should have already imported the data and added necessary annotations. Then the user is required to provide the preferred vtools association command to `COMMAND` variable. The vtools association command line parameters are the same as running this command on local desktop with an additional flag `-mpi` to indicate the job will be ran on the cluster. 
 
 ### 4. Submit job
 
