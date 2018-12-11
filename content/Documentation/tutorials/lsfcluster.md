@@ -27,12 +27,16 @@ Like any other LSF scripts, user first specifies the number of nodes and cores a
 
 ### 2. Specify project folder
 
-User needs to specify the folder path to the existing vtools project (The folder created by `vtools init` command) by assigning the folder path to `PROJECTFOLDER`. 
+User needs to specify the folder path to the existing vtools project (The folder created by `vtools init` command) by assigning the folder path to `PROJECTFOLDER`. PROJECTFOLDER could be set as an environmental variable or given a value in the script.
 
 ### 3. Specify the vtools association command
 
 At this step, user should have already imported the data and added necessary annotations. Then the user is required to provide the preferred vtools association command to `COMMAND` variable. The vtools association command line parameters are the same as running this command on local desktop with an additional flag `-mpi` to indicate the job will be ran on the cluster. 
 
-### 4. Submit job
+### 4. Specify the total number of processes
 
-After LSF script submitted with bsub, the job will be launched to run on the cluster with mpiexec, the communication between main node and worker nodes is handeld through zeroMQ. 
+If user claim to use four nodes, one of the nodes will be used to run main program, the other three nodes will be taken as worker nodes. If eight cores per node are claimed, then user could run maximum of 3x8=24 processes. The `NUMBER_OF_PROCESS` variable could be set to 24 in this case. 
+
+### 5. Submit job
+
+After LSF script submitted with bsub, the job will be launched to run on the cluster with mpiexec, the communication between main node and worker nodes is handeld through zeroMQ. The result could be viewd in output file or saved into database with `--to_db` parameter set in association command. 

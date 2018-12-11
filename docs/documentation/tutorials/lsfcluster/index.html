@@ -12,19 +12,19 @@
     <title>association analysis on cluster using LSF :: Variant Tools</title>
     
     
-    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1544461053" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1544461053" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1544461053" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1544461053" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1544461053" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1544461053" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1544461053" rel="stylesheet">
-    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1544461053" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/nucleus.css?1544543826" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/font-awesome.min.css?1544543826" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hybrid.css?1544543826" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/featherlight.min.css?1544543826" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/perfect-scrollbar.min.css?1544543826" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/auto-complete.css?1544543826" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/theme.css?1544543826" rel="stylesheet">
+    <link href="https://vatlab.github.io/vat-docs/css/hugo-theme.css?1544543826" rel="stylesheet">
     
-      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1544461053" rel="stylesheet">
+      <link href="https://vatlab.github.io/vat-docs/css/theme-mine.css?1544543826" rel="stylesheet">
     
 
-    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1544461053"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery-2.x.min.js?1544543826"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -362,14 +362,14 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1544461053"></script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1544461053"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/lunr.min.js?1544543826"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/auto-complete.js?1544543826"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1544461053"></script>
+<script type="text/javascript" src="https://vatlab.github.io/vat-docs/js/search.js?1544543826"></script>
 
     
   </div>
@@ -3632,7 +3632,8 @@ ZGF0ZTptb2RpZnkAMjAxOC0wNS0xMlQyMToxOTo0My0wNTowMNmtTIMAAAAASUVORK5CYII=" />
 <li><a href="#1-header-of-lsf-script">1. Header of LSF script</a></li>
 <li><a href="#2-specify-project-folder">2. Specify project folder</a></li>
 <li><a href="#3-specify-the-vtools-association-command">3. Specify the vtools association command</a></li>
-<li><a href="#4-submit-job">4. Submit job</a></li>
+<li><a href="#4-specify-the-total-number-of-processes">4. Specify the total number of processes</a></li>
+<li><a href="#5-submit-job">5. Submit job</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -3678,15 +3679,19 @@ Please make sure the <code>openmpi</code> module is loaded, so that <code>mpiexe
 
 <h3 id="2-specify-project-folder">2. Specify project folder</h3>
 
-<p>User needs to specify the folder path to the existing vtools project (The folder created by <code>vtools init</code> command) by assigning the folder path to <code>PROJECTFOLDER</code>.</p>
+<p>User needs to specify the folder path to the existing vtools project (The folder created by <code>vtools init</code> command) by assigning the folder path to <code>PROJECTFOLDER</code>. PROJECTFOLDER could be set as an environmental variable or given a value in the script.</p>
 
 <h3 id="3-specify-the-vtools-association-command">3. Specify the vtools association command</h3>
 
 <p>At this step, user should have already imported the data and added necessary annotations. Then the user is required to provide the preferred vtools association command to <code>COMMAND</code> variable. The vtools association command line parameters are the same as running this command on local desktop with an additional flag <code>-mpi</code> to indicate the job will be ran on the cluster.</p>
 
-<h3 id="4-submit-job">4. Submit job</h3>
+<h3 id="4-specify-the-total-number-of-processes">4. Specify the total number of processes</h3>
 
-<p>After LSF script submitted with bsub, the job will be launched to run on the cluster with mpiexec, the communication between main node and worker nodes is handeld through zeroMQ.</p>
+<p>If user claim to use four nodes, one of the nodes will be used to run main program, the other three nodes will be taken as worker nodes. If eight cores per node are claimed, then user could run maximum of 3x8=24 processes. The <code>NUMBER_OF_PROCESS</code> variable could be set to 24 in this case.</p>
+
+<h3 id="5-submit-job">5. Submit job</h3>
+
+<p>After LSF script submitted with bsub, the job will be launched to run on the cluster with mpiexec, the communication between main node and worker nodes is handeld through zeroMQ. The result could be viewd in output file or saved into database with <code>--to_db</code> parameter set in association command.</p>
 
 
 <footer class=" footline" >
@@ -6369,20 +6374,20 @@ Please make sure the <code>openmpi</code> module is loaded, so that <code>mpiexe
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1544461053"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1544461053"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1544461053"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1544461053"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1544461053"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1544461053"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1544461053"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/clipboard.min.js?1544543826"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.min.js?1544543826"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/perfect-scrollbar.jquery.min.js?1544543826"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/jquery.sticky.js?1544543826"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/featherlight.min.js?1544543826"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/html5shiv-printshiv.min.js?1544543826"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/highlight.pack.js?1544543826"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1544461053"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1544461053"></script>
-    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1544461053"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/modernizr.custom.71422.js?1544543826"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/learn.js?1544543826"></script>
+    <script src="https://vatlab.github.io/vat-docs/js/hugo-learn.js?1544543826"></script>
 
-    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1544461053" type="text/css" rel="stylesheet" />
-    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1544461053"></script>
+    <link href="https://vatlab.github.io/vat-docs/mermaid/mermaid.css?1544543826" type="text/css" rel="stylesheet" />
+    <script src="https://vatlab.github.io/vat-docs/mermaid/mermaid.js?1544543826"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
