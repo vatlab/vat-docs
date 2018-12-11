@@ -68,8 +68,7 @@ As always, we need to find an empty directory and create a new project:</descrip
       
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/lsfcluster/</guid>
       <description>Run association analysis on cluster using LSF Here we show an example to demonstrate how to run vtools association job on a cluster using LSF.
-The example LSF script is vtools_association_cluster.lsf in /src/variant_tools folder. Please make sure the openmpi module is loaded, so that mpiexec command could be executed.
-1. Header of LSF script Like any other LSF scripts, user first specifies the number of nodes and cores assigned to run this job.</description>
+The template LSF script is vtools_association_cluster.lsf in /src/variant_tools folder. You are supposed to modify the number of nodes, number of cores according to your needs and provide values for PROJECTFOLDER, COMMAND, and NUMBER OF PROCESSES. Please make sure the openmpi module is loaded, so that mpiexec command could be executed.</description>
     </item>
     
     <item>
@@ -79,8 +78,7 @@ The example LSF script is vtools_association_cluster.lsf in /src/variant_tools f
       
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/pbscluster/</guid>
       <description>Run association analysis on cluster using PBS Since vtools association analysis is quite time consuming, meanwhile this job could be easily distributed to run on multiple nodes. Here we show an example to demonstrate how to run vtools association job on cluster using PBS.
-The example PBS script is vtools_association_cluster.pbs in /src/variant_tools folder. Please make sure the openmpi module is loaded, so that mpiexec command could be executed.
-1. Header of PBS script Like any other PBS scripts, user first specifies the number of nodes and cores assigned to run this job.</description>
+The template PBS script is vtools_association_cluster.pbs in /src/variant_tools folder. You are supposed to modify the number of nodes, number of cores according to your needs and provide values for PROJECTFOLDER, COMMAND, and NUMBER_OF_PROCESSES_PER_NODE.</description>
     </item>
     
     <item>
