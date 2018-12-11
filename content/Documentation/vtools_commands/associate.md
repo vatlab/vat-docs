@@ -20,7 +20,7 @@ weight = 11
                             [--genotypes [COND [COND ...]]]
                             [--discard_samples [EXPR [EXPR ...]]]
                             [--discard_variants [EXPR [EXPR ...]]]
-                            [--to_db annoDB] [-f] [-j N] [-v {0,1,2}]
+                            [--to_db annoDB] [-f] [-j N] [-v {0,1,2}][-mpi]
                             variants phenotypes
     
     Call one or more statistical association tests and return test results as
@@ -32,6 +32,9 @@ weight = 11
       -v {0,1,2}, --verbosity {0,1,2}
                             Output error and warning (0), info (1) and debug (2)
                             information to standard output (default to 1).
+      -mpi                  Submit vtools association job to cluster, please check
+                            sample pbs script
+                            src/variant_tools/vtools_association_cluster.pbs.
     
     Genotype, phenotype, and covariates:
       variants              Table of variants to be tested.

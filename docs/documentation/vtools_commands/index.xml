@@ -105,7 +105,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/associate/</guid>
-      <description>Identify genotype - phenotype association 1. Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
+      <description>Identify genotype - phenotype association 1. Usage % vtools associate -h usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]] [--var_info [VAR_INFO [VAR_INFO ...]]] [--geno_info [GENO_INFO [GENO_INFO ...]]] [-m METHODS [METHODS ...]] [-g [GROUP_BY [GROUP_BY ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--discard_samples [EXPR [EXPR ...]]] [--discard_variants [EXPR [EXPR ...]]] [--to_db annoDB] [-f] [-j N] [-v {0,1,2}][-mpi] variants phenotypes Call one or more statistical association tests and return test results as fields to variants tested.</description>
     </item>
     
     <item>
