@@ -9,7 +9,8 @@ hidden = true
 
 Since vtools association analysis is quite time consuming, meanwhile this job could be easily distributed to run on multiple nodes. Here we show an example to demonstrate how to run vtools association job on cluster using PBS.
 
-The template PBS script is `vtools_association_cluster.pbs` in `/src/variant_tools` folder. You are supposed to modify the number of nodes, number of cores according to your needs and provide values for `PROJECTFOLDER`, `COMMAND`, and `NUMBER_OF_PROCESSES_PER_NODE`.
+The template PBS script is `vtools_association_cluster.pbs` in `/src/variant_tools` folder. You are supposed to modify the number of nodes, number of cores according to your needs and provide values for `PROJECTFOLDER`, `COMMAND`, and `NUMBER_OF_PROCESSES_PER_NODE`. The current setup is to run main program on one node, then submit calculation tasks to the rest of nodes. Please adjust the bash script to get the node names if needed. 
+
 Please make sure the `openmpi` module is loaded, so that `mpiexec` command could be executed.
 
 

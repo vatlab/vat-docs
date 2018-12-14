@@ -10,7 +10,7 @@ hidden = true
 Here we show an example to demonstrate how to run vtools association job on a cluster using LSF.
 
 The template LSF script is `vtools_association_cluster.lsf` in `/src/variant_tools` folder. You are supposed to modify the number of nodes, number of cores according to your needs and provide values for `PROJECTFOLDER`, `COMMAND`, and `NUMBER OF PROCESSES`.
-Please make sure the `openmpi` module is loaded, so that `mpiexec` command could be executed.
+Please make sure the `openmpi` module is loaded, so that `mpiexec` command could be executed. The current setup is to run main program on one node, then submit calculation tasks to the rest of nodes. Please adjust the bash script to get the node names if needed. 
 
 ### 1. Header of LSF script
 
