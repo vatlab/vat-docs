@@ -154,7 +154,7 @@ There are 60 samples without genotype
 
 
     % vtools show samples -l 10
-
+    
     sample_name filename
     NA06985     CEU_hg38.vcf
     NA06986     CEU_hg38.vcf
@@ -304,7 +304,7 @@ If your input file does not have any header, you can use option `--header` to sp
 
 
     % vtools show samples -l -1 
-
+    
     sample_name filename        sex race
     NA06985     CEU_hg38.vcf    F   1
     NA06986     CEU_hg38.vcf    M   1
@@ -409,7 +409,7 @@ For example, the following command outputs the wildtype genotype counts and BMI 
 
 
     % vtools phenotype --output "count(filename)"
-
+    
     60
     
 

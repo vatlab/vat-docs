@@ -25,7 +25,7 @@ def buildAndClean(func):
         returned_value = func(*args, **kwargs)
         print("after test.")
         os.chdir("../")
-        shutil.rmtree("test_doc")
+        # shutil.rmtree("test_doc")
         return returned_value
     return inner
 
@@ -44,8 +44,8 @@ class MarkDownFile:
             commandFlag = False
             lastCommand = ""
             for line in openFile:
-                if re.search("% vtools", line):
-                    lastCommand = line.replace("%", "").strip().split("#")[0]
+                if re.search(r"^\s*%", line):
+                    lastCommand = line.replace("%", "").strip()
                     self.commands.append(lastCommand)
                     commandFlag = True
                 elif re.match(r'[ \t]', line):
@@ -62,12 +62,20 @@ class MarkDownFile:
         if len(self.commands) > 0:
             exclude = ["-h", "--update_resource"]
             self.commands = filter(lambda s: not any(x in s for x in exclude), self.commands)
+            outputFilePath = "test_commands.sh"
+            outputFile = open(outputFilePath, "w")
             for command in self.commands:
-                print(command)
-                process = subprocess.Popen(map(lambda s: s.replace("\"", ""), command.split()), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-                output, error = process.communicate()
-                print(output.decode("utf-8"))
-                print(error)
+                outputFile.write("echo \"" + command.replace("\"","") + "\"\n")
+                outputFile.write(command + "\n")
+                outputFile.write("echo\n")
+            outputFile.close()
+            subprocess.call(['chmod', '777', outputFilePath])
+            process = subprocess.Popen(["/bin/sh",outputFilePath], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1)
+            for line in iter(process.stdout.readline, b''):
+                print(line.decode("utf-8").strip())
+            process.stdout.close()
+            process.wait()
+
 
 
 # markDownFiles = get_markdown_files("./content/Documentation/vtools_commands", ".md")
@@ -80,7 +88,7 @@ class MarkDownFile:
 #     #     print("".join(value))
 #     file.run_commands()
 
-markDownFile = "./content/Documentation/vtools_commands/admin.md"
+markDownFile = "./content/Documentation/vtools_commands/phenotype.md"
 file = MarkDownFile(markDownFile)
 file.run_commands()
 

@@ -113,7 +113,7 @@ The *condition* should be a SQL expression using one or more fields in the proje
 
 <details><summary> Examples: Load a sample project</summary> Let us load a sample project simple from online: 
 
-    % vtools init -f select
+    % vtools init import --parent vt_testData_v3
     % vtools import V*_hg38.vcf --build hg38
     
 

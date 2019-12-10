@@ -81,7 +81,7 @@ The basic usage of `vtools output` is to output variant info fields of selected 
 
 <details><summary> Examples: Load data and produce basic output</summary> Let us load a small project from online 
 
-    % vtools init output
+    % vtools init import --parent vt_testData_v3
     % vtools import CEU_hg19.vcf --var_info AA AC AN DP --geno_info DP --build hg19
     
     
@@ -215,8 +215,7 @@ If you have a longer header, or a header that is saved in a file, you can send t
 
 
 
-    % echo chr pos ref alt 'ancestral allele' 'ancestral count' | \
-       vtools output variant chr pos ref alt aa ac --header - -l 10   
+    % echo chr pos ref alt 'ancestral allele' 'ancestral count' | vtools output variant chr pos ref alt aa ac --header - -l 10   
 
     chr pos ref alt ancestral allele ancestral count
     1   10533   G   C   .   6

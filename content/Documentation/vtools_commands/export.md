@@ -145,7 +145,8 @@ The motivation of this export format is to prepare input files for annotating va
 
 <details><summary> Examples: Export in ANNOVAR format</summary> 
 
-    % vtools init test 
+
+    % vtools init import --parent vt_testData_v3
     % vtools import CEU_hg38.vcf --var_info AA AC AN DP --geno_info DP --build hg38
     % vtools export variant -o ANNOVAR.input --format ANNOVAR 
     % head ANNOVAR.input 
@@ -213,7 +214,7 @@ The basic command to export variants in vcf format is `vtools export TABLE --for
 
 
 
-    % vtools init test 
+    % vtools init test -f
     % vtools import CEU_hg38.vcf --var_info AA AC AN DP --geno_info DP --build hg38
     
     
@@ -449,8 +450,7 @@ You could export one or more genotype info fields using option `--geno_info` (Hi
 
 <details><summary> Examples: export genotype info fields</summary> 
 
-    % vtools export variant --samples 'sample_name like "NA128%"'\
-       --geno_info DP_geno --format_string 'GT:DP' -o my.vcf
+    % vtools export variant --samples 'sample_name like "NA128%"' --geno_info DP_geno --format_string 'GT:DP' -o my.vcf
     
     INFO: Genotypes of 8 samples are exported.
     INFO: Using 2 processes to handle 8 samples
@@ -516,8 +516,7 @@ Actually, because we are using columns such as `qual` from a VCF file, we can ex
 
 
 
-    % vtools export 'AA=T' --id id --qual 'track("CEU_hg38.vcf", "qual")' --var_info 'track("CEU_hg38.vcf", "info")' \
-        --filter 'track("CEU_hg38.vcf", "filter")' -o my.vcf
+    % vtools export 'AA=T' --id id --qual 'track("CEU_hg38.vcf", "qual")' --var_info 'track("CEU_hg38.vcf", "info")' --filter 'track("CEU_hg38.vcf", "filter")' -o my.vcf
     % head my.vcf
     
     1   54676   rs2462492   C   T   .   PASS    AA=T;AC=2;AN=120;DP=131  

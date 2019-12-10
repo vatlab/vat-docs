@@ -148,8 +148,7 @@ The variant or genotype fields that will be added or updated depends on the file
 
 Let us create a directory update and import an empty project with a few test vcf files `V1_hg38.vcf`, `V2_hg38.vcf` and `V3_hg38.vcf`, 
 
-    % mkdir update
-    % cd update
+
     % vtools init update
     % vtools admin --load_snapshot vt_testData_v3
     
@@ -285,7 +284,7 @@ Suppose that we would like to use ANNOVAR to annotate our variants. The basic st
 
 
 
-    % perl annotate_variation.pl ann.in humandb/ --buildver hg38
+    % perl -S annotate_variation.pl ann.in humandb/ --buildver hg38
     
     NOTICE: The --geneanno operation is set to ON by default
     NOTICE: Output files were written to ann.in.variant_function, ann.in.exonic_variant_function
@@ -359,9 +358,7 @@ By default, field `mut_type` is added.
 
 To update additional variant/genotype fields, use `--var_info` of the `ANNOVAR_exonic_variant_function` format: 
 
-    % vtools update variant --format ANNOVAR_exonic_variant_function \
-                           --from_file ann.in.exonic_variant_function \
-                           --var_info mut_type function 
+    % vtools update variant --format ANNOVAR_exonic_variant_function --from_file ann.in.exonic_variant_function --var_info mut_type function 
     
     INFO: Using primary reference genome hg38 of the project.
     Getting existing variants: 100% [======================] 2,051 288.2K/s in 00:00:00
