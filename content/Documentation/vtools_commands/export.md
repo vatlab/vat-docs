@@ -485,6 +485,7 @@ You can specify arbitrary fields (or constant values) to the `ID` (name), `QUAL`
 
 
 
+    % export STOREMODE="sqlite"
     % vtools init test -f
     % vtools admin --load_snapshot vt_testData
     % vtools import CEU_hg38.vcf --var_info id qual filter info AA  --build hg38
@@ -516,6 +517,7 @@ Actually, because we are using columns such as `qual` from a VCF file, we can ex
 
 
 
+    
     % vtools export 'AA=T' --id id --qual 'track("CEU_hg38.vcf", "qual")' --var_info 'track("CEU_hg38.vcf", "info")' --filter 'track("CEU_hg38.vcf", "filter")' -o my.vcf
     % head my.vcf
     
@@ -528,7 +530,9 @@ Actually, because we are using columns such as `qual` from a VCF file, we can ex
     22  50734032    rs5770824   T   C   .   PASS    AA=T;AC=3;AN=120;DP=274  
     22  50736511    .   C   T   .   PASS    AA=T;AC=4;AN=120;DP=317  
     22  50737736    .   T   C   .   PASS    AA=T;AC=3;AN=120;DP=380  
-    22  50747800    rs3865766   C   T   .   PASS    AA=T;AC=51;AN=120;DP=253;HM3 
+    22  50747800    rs3865766   C   T   .   PASS    AA=T;AC=51;AN=120;DP=253;HM3
+
+
     
 
 Optionally, you can use rsnames in the `dbSNP` database 
@@ -538,7 +542,7 @@ Optionally, you can use rsnames in the `dbSNP` database
     % vtools use dbSNP
     % vtools export 'AA=T' --id dbSNP.name --qual qual --var_info info --filter dbSNP.filter -o my.vcf
     % head my.vcf  
-
+    
     1   54676   rs2462492   C   T   .   .   AA=T;AC=2;AN=120;DP=131  
     22  50719683    rs73174428  T   C   .   .   AA=T;AC=1;AN=120;DP=298  
     22  50719873    rs117910162 T   C   .   .   AA=T;AC=7;AN=120;DP=169  
@@ -549,6 +553,8 @@ Optionally, you can use rsnames in the `dbSNP` database
     22  50736511    rs73174435  C   T   .   .   AA=T;AC=4;AN=120;DP=317  
     22  50737736    rs76593947  T   C   .   .   AA=T;AC=3;AN=120;DP=380  
     22  50747800    rs3865766   C   T   .   .   AA=T;AC=51;AN=120;DP=253;HM3
+
+    % export STOREMODE="hdf5" 
     
 
 </details>

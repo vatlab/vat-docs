@@ -90,9 +90,8 @@ After the liftOver operation, three more fields are added to the master variant 
     Number of variants:     1611
 
 
-    %  vtools output variant variant_id  bin chr pos ref alt alt_bin alt_chr alt_pos
+    %  vtools output variant variant_id  bin chr pos ref alt alt_bin alt_chr alt_pos -l 15
     
-
     variant_id, bin, chr, pos, ref, alt, alt_bin, alt_chr, alt_pos
     1   585 1   14677   G   A   585 1   14677
     2   585 1   15820   G   T   585 1   15820
@@ -151,7 +150,7 @@ Interruption of the flipping process will leave the project unusable because of 
     Annotation databases: 
     
 
-    % vtools output variant variant_id  bin chr pos ref alt alt_bin alt_chr alt_pos 
+    % vtools output variant variant_id  bin chr pos ref alt alt_bin alt_chr alt_pos -l 15
     
     variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
     1   585 1   14677   G   A   585 1   14677

@@ -303,7 +303,7 @@ If your input file does not have any header, you can use option `--header` to sp
     INFO: 60 values of 1 phenotypes (1 new, 0 existing) of 60 samples are updated.
 
 
-    % vtools show samples -l -1 
+    % vtools show samples -l 10
     
     sample_name filename        sex race
     NA06985     CEU_hg38.vcf    F   1
@@ -335,7 +335,7 @@ With `vtools show genotypes` we know the total number of genotypes and available
     % vtools phenotype --from_stat "sample_homo=#(hom)"
     % vtools phenotype --from_stat "sample_het=#(het)"
     % vtools phenotype --from_stat "sample_double_het=#(other)"
-    % vtools show samples
+    % vtools show samples -l 10
     
     sample_name	filename  	sex	race	sample_total	sample_alt	sample_homo	sample_het	sample_double_het
     NA06985     CEU_hg38.vcf    F   1       292             110         40          30          0
@@ -366,7 +366,7 @@ Another useful type of summary is the genotype information that usually summariz
 
 
 
-    % vtools show samples
+    % vtools show samples -l 10
     
     sample_name filename        sex race    sample_total    sample_alt  sample_homo sample_het  sample_double_het   meanDP              minDP   maxDP
     NA06985     CEU_hg38.vcf    F   1       292             110         40          30          0                   2.2705479452054793  0.0     12.0
@@ -388,7 +388,7 @@ The basic form of `vtools phenotype --output` is very similar to command `vtools
 <details><summary> Examples: Output specified phenotypes</summary> 
     
     % vtools phenotype --from_file phenotype.txt BMI
-    % vtools phenotype --output sample_name BMI 
+    % vtools phenotype --output sample_name BMI -l 10
     
     NA06985 19.64
     NA06986 NA

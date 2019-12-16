@@ -122,6 +122,7 @@ Newer databases usually contain more updated annotation information and usually 
 
 <details><summary> Examples: Use system-provided annotation databases</summary> Let us get a project 
 
+    % vtools init -f use
     % vtools admin --load_snapshot vt_testData_v3
     % vtools import V1-3_hg19_combine.vcf --build hg19
     
@@ -304,14 +305,6 @@ Some databases uses `hg19`, but most uses `hg38`. You can use most databases as 
     
 
 
-
-    % vtools use thousandGenomes  
-
-    INFO: Choosing version thousandGenomes-hg19_v5b_20130502 from 3 available databases.
-    INFO: Downloading annotation database annoDB/thousandGenomes-hg19_v5b_20130502.ann
-    INFO: Downloading annotation database from annoDB/thousandGenomes-hg19_v5b_20130502.DB.gz
-    INFO: Using annotation DB thousandGenomes in project test.
-    INFO: 1000 Genomes VCF file (available from: ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/VCF/v4.0/00-All.vcf.gz).
     
 
 The CancerGeneCensus database is a bit difficult to use because it is a field database that annotate gene names so you need to link it to `refGene.name2`, 
@@ -558,7 +551,7 @@ There is also nothing prevents you from using other annotation database as a fie
 <details><summary> Examples: Use a position-based database as a field database to annotate cytoBand</summary> The gwasCatalog database has a field `region` that records the cytoband of each GWAS hit. If we first use `cytoBand`, 
 
     % vtools use cytoBand
-
+    
     INFO: Downloading annotation database from annoDB/cytoBand.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/cytoBand-hg19_20111216.DB.gz
     INFO: Using annotation DB cytoBand in project test.
@@ -570,7 +563,7 @@ and link the `gwasCatalog` database (originally a position-based database) to it
 
 
     % vtools use gwasCatalog --anno_type field --linked_fields region --linked_by cytoBand.name   
-
+    
     INFO: Downloading annotation database from annoDB/gwasCatalog.ann
     INFO: Downloading annotation database from http://vtools.houstonbioinformatics.org/annoDB/gwasCatalog-hg19_20111220.DB.gz
     INFO: Using annotation DB gwasCatalog in project test.

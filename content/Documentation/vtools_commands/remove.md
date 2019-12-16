@@ -81,6 +81,10 @@ To remove a variant table,
 
 
 
+    % vtools init -f remove
+    % vtools admin --load_snapshot vt_quickStartGuide_v3
+    % vtools select variant --samples "sample_name=='CEU'" -t CEU
+    % vtools select variant --samples "sample_name=='JPT'" -t JPT
     % vtools remove tables CEU
     % vtools show tables
     
@@ -107,7 +111,7 @@ To remove a field,
 
 
 
-    % vtools remove field CEU_ctrls_freq CEU_ctrls_het
+    % vtools remove fields CEU_ctrls_freq CEU_ctrls_het
     % vtools show fields
     
 

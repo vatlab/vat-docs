@@ -121,7 +121,6 @@ You can use command `vtools show snapshots` to get a list of available snapshots
 If we have a look at the header of `CEU_hg38.vcf`, we can see 
 
     % head -15 CEU_hg38.vcf
-
     ##fileformat=VCFv4.0
     ##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
     ##INFO=<ID=HM2,Number=0,Type=Flag,Description="HapMap2 membership">
@@ -298,16 +297,13 @@ If you have a field that you would like to import, but does not exist in `vcf.fm
 <details><summary>Examples: Using a customized .fmt file to import additional fields</summary>
 For example, the `CB` genotype field is commonly used and is not defined in `vcf.fmt`, according to the meta information, this field is a string. You can then copy `~/.variant_tools/format/vcf.fmt` as `my_vcf.fmt` and add 
 
-    [CB_geno]
-    index=9, 10:
-    adj=FieldFromFormat('CB', ':')
-    type=VARCHAR(3)
-    comment=Called by S(Sanger), M(UMich), B(BI)
+    % cp ~/.variant_tools/format/vcf.fmt my_vcf.fmt
+    % echo "[CB_geno]\nindex=9, 10:\nadj=FieldFromFormat('CB', ':')\ntype=VARCHAR(3)\ncomment=Called by S(Sanger), M(UMich), B(BI)" >> my_vcf.fmt
 
 at the end of this file, and import this field using 
 
-    % vtools init import -f
     % export STOREMODE="sqlite"
+    % vtools init import -f
     % vtools import CEU_hg38.vcf --format my_vcf.fmt --build hg38 --var_info AA AC AN DP --geno_info DP CB_geno
 
     INFO: Importing variants from CEU_hg38.vcf (1/1)
@@ -316,9 +312,8 @@ at the end of this file, and import this field using
     Importing genotypes: 100% [===========================================] 18,300 9.1K/s in 00:00:02
     Copying samples: 100% [===================================================] 80 79.9/s in 00:00:01
 
+    % vtools show genotypes -l 5
 
-    % vtools show genotypes -l5
-    
     sample_name filename        num_genotypes   sample_genotype_fields
     NA06985     CEU_hg38.vcf    292             GT,DP,CB_geno
     NA06986     CEU_hg38.vcf    292             GT,DP,CB_geno
@@ -326,6 +321,8 @@ at the end of this file, and import this field using
     NA07000     CEU_hg38.vcf    292             GT,DP,CB_geno
     NA07037     CEU_hg38.vcf    292             GT,DP,CB_geno
     (55 records omitted)
+
+    % export STOREMODE="hdf5"
 
 </details>
 
@@ -469,7 +466,7 @@ If your input file matches the description of a format, you can use this format 
     File `variants.txt` has a list of variants as follows 
 
     % head variants_hg38.txt 
-
+    
     1   1014042 G   A
     1   1014143 C       T
     1   1014143 C       T
@@ -487,7 +484,7 @@ You can import variants using format `basic` as follows:
 
 
     % vtools import variants_hg38.txt --format basic --build hg38
-
+    
     INFO: Importing variants from variants_hg38.txt (1/1)
     variants_hg38.txt: 100% [=======================================================================================================================================================================] 14 1.4K/s in 00:00:00
     INFO: 12 new variants (9 SNVs, 4 insertions, 1 unsupported) from 13 lines are imported.
@@ -518,7 +515,7 @@ If the position used in `variants.txt` is zero-based (like all data downloaded f
 
     % vtools init import -f
     % vtools import variants.txt --format basic --pos_adj 1 --build hg38
-
+    
     INFO: Importing variants from variants.txt (1/1)
     variants.txt: 100% [================================================================] 20 2.0K/s in 00:00:00
     INFO: 20 new variants (17 SNVs, 1 insertions, 1 deletions, 1 complex variants) from 20 lines are imported.
@@ -526,7 +523,7 @@ If the position used in `variants.txt` is zero-based (like all data downloaded f
     Copying samples: 0 0.0/s in 00:00:00    
 
     % vtools output variant chr pos ref alt -l 10
-
+    
     1	203148113	T	-
     1	203148169	G	A
     1	203148203	G	C
@@ -567,7 +564,7 @@ If there is no genotype in the input file, no sample is created by default. This
 
 
     % vtools show samples
-
+    
     sample_name	filename
     
 
@@ -575,7 +572,7 @@ However, if you would like to trace what variants have been imported from each i
 
     % vtools init import -f
     % vtools import variants_hg38.txt --format basic --build hg38 --sample_name noGT
-    
+        
     INFO: Importing variants from variants_hg38.txt (1/1)
 variants_hg38.txt: 100% [===============================] 14 1.5K/s in 00:00:00
 INFO: 12 new variants (9 SNVs, 4 insertions, 1 unsupported) from 13 lines are imported.
@@ -600,7 +597,7 @@ There is a sample called `noGT`,
 although this sample does not have any genotype fields: 
 
     % vtools show genotypes
-    
+               
     sample_name	filename	num_genotypes	sample_genotype_fields
     noGT	variants.txt	12
     
@@ -745,7 +742,6 @@ Another optimization is to move the temporary directory to a large, separate phy
 
     % vtools admin --set_runtime_option 'temp_dir=/home/HD1/tmp_some_random_name'
     
-
 The folder's name is arbitrary. It will be created each time a command starts and deleted upon completion of the command. 
 {{% notice warning %}}
 It is very important to make sure that for import and associate commands there is sufficient disk space in the temporary directory, since potentially large temp files will be generated by these commands. 

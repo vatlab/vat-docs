@@ -216,7 +216,7 @@ If you have a longer header, or a header that is saved in a file, you can send t
 
 
     % echo chr pos ref alt 'ancestral allele' 'ancestral count' | vtools output variant chr pos ref alt aa ac --header - -l 10   
-
+    
     chr pos ref alt ancestral allele ancestral count
     1   10533   G   C   .   6
     1   51479   T   A   .   29
@@ -455,7 +455,7 @@ You can output annotation fields as follows:
 
 
     % vtools output 'aa=T' chr pos ref alt dbSNP.name refGene.name refGene.name2 -l 10  
-
+    
     1  1105366   T  C  rs111751804  NM_001130045  TTLL10
     1  1110240   T  A  rs116321663  NM_001130045  TTLL10
     1  6447088   T  C  rs11800462   NM_003790     TNFRSF25
@@ -571,7 +571,7 @@ You can also output average of depth, grouped by variants that belong to genes,
 
 
     % vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 -l 10    
-
+    
     .               161 281.1366459627329
     ACR             5   240.6
     FAM41C          19  294.7894736842105
@@ -598,7 +598,7 @@ Here `count(*)` is used to count the number of variants in each gene, and `NA` i
 Option `--all` should not be used in these commands because this option will lead to multiple entries for some variants, and biase the results. For example, the output of the following command differs from the previous one: 
 
     % vtools output variant refGene.name2 'count(*)' 'avg(DP)' --group_by refGene.name2 --all -l 10   
-
+    
     .               161 281.1366459627329
     ACR             5   240.6
     FAM41C          19  294.7894736842105

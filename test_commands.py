@@ -39,6 +39,7 @@ class MarkDownFile:
         self.get_commands()
 
     def get_commands(self):
+        print(self.filePath)
         with open(self.filePath) as openFile:
             output = []
             commandFlag = False
@@ -65,18 +66,63 @@ class MarkDownFile:
             outputFilePath = "test_commands.sh"
             outputFile = open(outputFilePath, "w")
             for command in self.commands:
-                outputFile.write("echo \"" + command.replace("\"","") + "\"\n")
+                outputFile.write("echo \"" + command.replace("\"", "") + "\"\n")
                 outputFile.write(command + "\n")
                 outputFile.write("echo\n")
             outputFile.close()
             subprocess.call(['chmod', '777', outputFilePath])
-            process = subprocess.Popen(["/bin/sh",outputFilePath], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1)
+            process = subprocess.Popen(["/bin/sh", outputFilePath], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1)
             for line in iter(process.stdout.readline, b''):
                 print(line.decode("utf-8").strip())
             process.stdout.close()
             process.wait()
 
+    @buildAndClean
+    def update_output(self):
+        updateMarkdown_path = "."+self.filePath.replace(".md", "_update.md")
+        print(updateMarkdown_path)
+        os.environ["STOREMODE"] = "hdf5"
+        excludeOutput = ["Calculating phenotype", "ERROR", "WARNING", "100%", "0.0%", "warnings", "UserWarning", "Running", "..........", "Saving to", "Importing genotypes", "Copying samples"]
+        excludeCommands = ["vtools init", "vtools admin --load_snapshot", "vtools import V*_hg38.vcf --build hg38", "my_vcf.fmt"]
 
+        updateMarkdown = open(updateMarkdown_path, "w")
+        with open("."+self.filePath) as openFile:
+            commandFlag = False
+            output = []
+            for line in openFile:
+                if re.search(r"^\s*%", line):
+                    print("Command line", line.rstrip())
+                    updateMarkdown.write(line)
+                    line=line.replace("%", "", 1).strip()
+                    if line == 'export STOREMODE="sqlite"' or line == 'export STOREMODE="hdf5"':
+                        print(line.split("=")[1].replace("\"", ""))
+                        os.environ["STOREMODE"] = line.split("=")[1].replace("\"", "")
+                    commandFlag = True
+                    outputFilePath = "test_commands.sh"
+                    outputFile = open(outputFilePath, "w")
+                    outputFile.write(line + "\n")
+                    outputFile.close()
+                    subprocess.call(['chmod', '777', outputFilePath])
+                    print("Update output")
+                    process = subprocess.Popen(["/bin/sh", outputFilePath], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1)
+                    for outputLine in iter(process.stdout.readline, b''):
+                        outputLine = outputLine.decode("utf-8")
+                        outputLine = "\t"+outputLine
+                        if not any(x in outputLine for x in excludeOutput) and not any(x in line for x in excludeCommands):
+                            if re.match(r'[ \t]', outputLine):
+                                print(outputLine.rstrip())
+                                updateMarkdown.write(outputLine)
+                elif re.match(r'[ \t]', line):
+                    if commandFlag:
+                        output.append("\t"+line.strip()+"\n")
+                else:
+                    updateMarkdown.write(line)
+                    if commandFlag:
+                        if not any(x in line for x in ["-h"]):
+                            print("Original output", "".join(output))
+                            output = []
+                            commandFlag = False
+        updateMarkdown.close()
 
 # markDownFiles = get_markdown_files("./content/Documentation/vtools_commands", ".md")
 # for markDownFile in markDownFiles:
@@ -88,9 +134,7 @@ class MarkDownFile:
 #     #     print("".join(value))
 #     file.run_commands()
 
-markDownFile = "./content/Documentation/vtools_commands/phenotype.md"
+
+markDownFile = "./content/Documentation/vtools_commands/compare.md"
 file = MarkDownFile(markDownFile)
-file.run_commands()
-
-
-
+file.update_output()

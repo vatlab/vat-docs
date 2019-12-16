@@ -90,8 +90,6 @@ Command `` `vtools init NAME `` creates a new project `NAME` under the current d
 
 If you attempt to create another project in the same directory, command `` `vtools init `` will fail with an error message: 
 
-    % vtools init myproj
-    
     ERROR: A project can only be created in a directory without another project.
 
 Using the `--force` option will remove the existing project and create a new one: 
@@ -145,6 +143,7 @@ Variants from the CEU and JPT samples could be selected to separate variant tabl
                                  
     INFO: 3470 variants selected.
     
+
     % vtools select variant --samples "sample_name=='JPT'" -t JPT
     
     INFO: 2878 variants selected.
@@ -175,10 +174,9 @@ The following filters could be applied to the parent project if the STOREMODE is
 You can create a subproject with variants from the CEU: 
 
 
-    % mkdir myproj
-    % cd myproj
-    % vtools admin --load_snapshot vt_quickStartGuide
     % export STOREMODE="sqlite"
+    % vtools init -f test
+    % vtools admin --load_snapshot vt_quickStartGuide
     % vtools select variant --samples 'sample_name == "CEU"' -t CEU 'Variants from CEU population'
     % vtools select variant --samples 'sample_name == "JPT"' -t JPT 'Variants from JPT population'
     % mkdir ../CEU
@@ -262,7 +260,7 @@ The parent project does not have to be a directory. It can also be a local or on
 
 
     % mkdir ../test
-    % cd ..test
+    % cd ../test
     % vtools init test --parent vt_simple
     
     INFO: variant tools 3.0.0dev : Copyright (c) 2011 - 2016 Bo Peng

@@ -308,7 +308,7 @@ We can see the rsname of these variants
 
 
 
-    % vtools output inDbSNP chr pos ref alt dbSNP.name --all
+    % vtools output inDbSNP chr pos ref alt dbSNP.name -l 10
     
     1   14677   G   A   rs201327123
     1   15820   G   T   rs2691315
@@ -496,8 +496,7 @@ As you can see, CCDS genes are more conservative and do not contain some of the 
 
 You can also output the pathway that this gene belong as follows: 
 
-    % vtools select variant 'refGene.name2 = "AGRN"' --output \
-         chr pos ref alt refGene.name2 keggpathway.kgID keggPathway.kgDesc -l 10 --all
+    % vtools select variant 'refGene.name2 = "AGRN"' --output chr pos ref alt refGene.name2 keggpathway.kgID keggPathway.kgDesc -l 10 --all
     
     1   1021740 G   C   AGRN    hsa04512    ECM-receptor interaction
     1   1021740 G   C   AGRN    hsa04512    ECM-receptor interaction
@@ -543,7 +542,7 @@ We can rename samples using command `vtools admin --rename_samples` but we can a
 
 
 
-    % vtools select variant --samples 'filename = "V1.vcf"' -t V1 'variants imported from V1.vcf'
+    % vtools select variant --samples 'filename = "V1_hg38.vcf"' -t V1 'variants imported from V1_hg38.vcf'
     
     INFO: 1 samples are selected by condition: filename = "V1.vcf"
     Running: 3 1.0K/s in 00:00:00                                                                           

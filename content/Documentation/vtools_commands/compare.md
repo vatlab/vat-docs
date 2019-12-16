@@ -105,7 +105,7 @@ The items being compare in this case are variants (namely `chr`, `pos`, `ref`, a
 
 <details><summary> Examples: Load a sample project and create a few variant tables</summary> 
 
-    % vtools init compare
+    % vtools init import --parent vt_testData_v3
     % vtools import V1-3_hg19_combine.vcf --build hg19
     % vtools use refGene_exon
     % vtools use dbSNP
@@ -135,7 +135,6 @@ The number of variants for each type of comparison would be
 
     % vtools compare T1 T2 
     
-
     INFO: Reading approximately 2 variants in T1...
     INFO: Reading approximately 3 variants in T2...
     INFO: Number of variants in A but not B, B but not A, A and B, and A or B

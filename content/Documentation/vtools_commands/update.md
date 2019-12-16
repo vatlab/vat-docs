@@ -158,7 +158,7 @@ The project does not have any variant so we import some from these VCF files:
 
 
     % vtools import V*_hg38.vcf --build hg38
-
+    
     INFO: Importing variants from V1_hg38.vcf (1/3)
     V1_hg38.vcf: 100% [==================================] 1,619 5.5K/s in 00:00:00
     INFO: 1,273 new variants (1,273 SNVs, 332 unsupported) from 1,619 lines are imported.
@@ -193,7 +193,7 @@ Because the input file has two variant info fields `DP` (depth of coverage) and 
 
 
     % vtools update variant --from_file V*_hg38.vcf --var_info DP NS  
-
+    
     INFO: Using primary reference genome hg38 of the project.
     Getting existing variants: 100% [======================] 2,051 220.8K/s in 00:00:00
     INFO: Updating variants from V1_hg38.vcf (1/3)
@@ -210,7 +210,7 @@ Because the input file has two variant info fields `DP` (depth of coverage) and 
 The project now has two variant info fields `DP` and `NS`, 
 
     % vtools show fields    
-
+    
     variant.chr (char)      Chromosome name (VARCHAR)
     variant.pos (int)       Position (INT, 1-based)
     variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
@@ -237,7 +237,7 @@ and we can output them with variants
 Variant tools is flexible enough to handle such a situation (check `vtools show format vcf` for details). By specifying field `DP` in parameter `--geno_info`, this field will be added as genotype info field and be processed for each sample: 
 
     % vtools update variant --from_file V*_hg38.vcf --geno_info DP   
-
+    
     INFO: Using primary reference genome hg38 of the project.
     Getting existing variants: 100% [======================] 2,051 364.8K/s in 00:00:00
     INFO: Updating variants from V1_hg38.vcf (1/3)
@@ -256,7 +256,7 @@ The project now has a genotype info field `DP`, with coverage depth for each gen
 
 
     % vtools show genotypes 
-
+    
     sample_name filename    num_genotypes   sample_genotype_fields
     SAMP1       V1_hg38.vcf 1273            GT,DP
     SAMP2       V2_hg38.vcf 1258            GT,DP
@@ -299,7 +299,7 @@ We then want to update our project with ANNOVAR annotations. Because gene annota
 
 
     % vtools show format ANNOVAR_exonic_variant_function  
-
+    
     Output from ANNOVAR for files of type *exonic_variant_function, generated from command
     "path/to/annovar/annotate_variation.pl annovar.txt path/to/annovar/humandb/". This format imports chr, pos,
     ref, alt and ANNOVAR annotations. For details please refer to
@@ -333,7 +333,7 @@ As you can see, this is a variant based format. It has a default variant info fi
 
 
     % vtools update variant --format ANNOVAR_exonic_variant_function --from_file ann.in.exonic_variant_function 
-
+    
     INFO: Using primary reference genome hg38 of the project.
     Getting existing variants: 100% [======================] 2,051 396.0K/s in 00:00:00
     INFO: Updating variants from ann.in.exonic_variant_function (1/1)
@@ -346,7 +346,7 @@ By default, field `mut_type` is added.
 
 
     % vtools show fields
-
+    
     variant.chr (char)      Chromosome name (VARCHAR)
     variant.pos (int)       Position (INT, 1-based)
     variant.ref (char)      Reference allele (VARCHAR, - for missing allele of an insertion)
@@ -393,7 +393,7 @@ During the analysis of variants, it is common to have annotations in different f
 <details><summary> Examples: Update annotation for variants presented by rsnames</summary> Let us first create some data with rsname.Because this sample project uses hg18, we cannot use the default dbSNP database and has to use
 
     % vtools use dbSNP-hg38_143
-
+        
     INFO: Choosing version dbSNP-hg38_143 from 10 available databases.
     INFO: Downloading annotation database annoDB/dbSNP-hg38_143.ann
     INFO: Using annotation DB dbSNP as dbSNP in project update.
@@ -413,9 +413,6 @@ The file looks like:
 
     % head -10 dbSNP.info
     
-
-
-
     rs3131969	intron
     rs3131968	intron
     rs3131967	intron
@@ -478,7 +475,6 @@ We can then use this format (named `rsname.fmt`) to import variant info `func` t
 
     % vtools update variant --format rsname --from_file dbSNP.info --db_file dbSNP-hg38_143.DB
     
-
     INFO: Using primary reference genome hg38 of the project.
     Getting existing variants: 100% [====================================] 1,611 229.7K/s in 00:00:00
     INFO: Updating variants from dbSNP.info (1/1)
@@ -492,7 +488,6 @@ The project now has another field `variant.func` (to differentiate from `dbSNP.f
 
     % select variant 'dbSNP.func = "intron"' --output chr pos ref alt dbSNP.name variant.func  -l 10
     
-
     1	744045	A	G	rs3131969	intron
     1	744055	A	G	rs3131968	intron
     1	744197	T	C	rs3131967	intron
@@ -520,7 +515,6 @@ This file looks like
 
     % head -10 moltype.txt
     
-
     1	4540	NA	NA
     1	5683	genomic	single
     1	5966	NA	NA
@@ -565,7 +559,6 @@ With `position.fmt` saved in the project directory, the following command can be
 
     % vtools update variant --format position --from_file moltype.txt
     
-
     INFO: Using primary reference genome hg18 of the project.
     Getting existing variants: 100% [====================================] 1,611 226.1K/s in 00:00:00
     INFO: Updating variants from moltype.txt (1/1)
@@ -577,7 +570,6 @@ With `position.fmt` saved in the project directory, the following command can be
 
     % vtools output variant chr pos ref alt variant.molType molClass -l 10
     
-
     1	4540	G	A	NA	NA
     1	5683	G	T	genomic	single
     1	5966	T	G	NA	NA
@@ -604,7 +596,6 @@ Option `--from_stat` adds fields to variant tables with summary statistics from 
 
     % vtools update variant --from_stat 'avg_DP=avg(DP)'
     
-
     Counting variants:   0.0% [=========================================]  in 00:00:00
     INFO: Adding variant info field avg_DP with type FLOAT
     Updating variant: 100% [===============================] 2,051 52.3K/s in 00:00:00
@@ -617,7 +608,6 @@ Depth of genotypes across three samples are averaged and save to a new variant i
 
     % vtools output variant chr pos ref alt DP avg_DP -l5
     
-
     1   14677   G   A   9   7.5
     1   15820   G   T   7   7.0
     1   16103   T   G   24  25.333333333333332
@@ -659,7 +649,6 @@ Note that genotype 1/1 an 2/2 are counted for different variants (0,1) and (0,2)
 
     % vtools update variant --from_stat 'total=#(GT)' 'num=#(alt)' 'hom=#(hom)' 'het=#(het)' 'other=#(other)'
     
-
     INFO: Adding variant info field num with type INT
     INFO: Adding variant info field hom with type INT
     INFO: Adding variant info field het with type INT
@@ -673,7 +662,6 @@ As you can see, genotypes are not available in all samples and the first five va
 
     % vtools output variant chr pos ref alt total num hom het other -l5
     
-
     1   14677   G   A   2   2   0   2   0
     1   15820   G   T   1   1   0   1   0
     1   16103   T   G   3   3   0   3   0
@@ -687,7 +675,6 @@ You can use the `maf` function to calculate minor allele frequency
 
     % vtools update variant --from_stat 'maf=maf()'
     
-
     Counting variants: 100% [====================================] 3 29.4/s in 00:00:00
     INFO: Resetting values at existing field maf
     Updating variant: 100% [================================] 2,051 23.0K/s in 00:00:00
@@ -698,7 +685,6 @@ This case is easy because all variants are on an autosome.
 
     % vtools output variant chr pos ref alt total num hom het maf -l5
     
-
     1   14677   G   A   2   2   0   2   0.5
     1   15820   G   T   1   1   0   1   0.5
     1   16103   T   G   3   3   0   3   0.5
@@ -712,15 +698,13 @@ However, because this dataset does not record wildtype alleles, the minior allel
 
     % vtools admin --set_runtime_option treat_missing_as_wildtype=true
     
-
     INFO: Option treat_missing_as_wildtype is set to True
     
 
 In this case, missing genotypes are counted, 
 
-    \\( vtools update variant --from_stat 'maf1=maf()'
+    % vtools update variant --from_stat 'maf1=maf()'
     
-
     Updating variant: 100% [================================] 2,051 24.1K/s in 00:00:00
     INFO: 2051 records are updated
     
@@ -731,7 +715,6 @@ and the results (in field `maf1`) are number of aleternative alleles devided by 
 
     % vtools output variant chr pos ref alt num "2*total" maf maf1 -l 5
     
-
     1   14677   G   A   2   4   0.5 0.3333333333333333
     1   15820   G   T   1   2   0.5 0.16666666666666666
     1   16103   T   G   3   6   0.5 0.5
@@ -764,7 +747,6 @@ All statistics are by default calculated for all samples in the project. But we 
 
     % vtools show samples
     
-
     sample_name filename
     SAMP1       V1_hg38.vcf
     SAMP2       V2_hg38.vcf
@@ -777,7 +759,6 @@ Suppose two samples from files `V1.vcf` and `V2.vcf` are affected and we would l
 
     % vtools update variant --from_stat "cases_het=#(het)" --samples "filename in ('V1_hg38.vcf', 'V2_hg38.vcf')"
     
-
     INFO: 2 samples are selected
     Counting variants: 100% [================================] 2 23.4/s in 00:00:00
     INFO: Adding variant info field cases_het with type INT
@@ -791,7 +772,6 @@ We can also limit the statistics to genotypes that satisfy certain conditions (e
 
     % vtools update variant --from_stat "cases_het_highDP=#(het)" --samples "filename in ('V1_hg38.vcf', 'V2_hg38.vcf')" --genotypes 'DP>15'
     
-
     INFO: 2 samples are selected
     Counting variants: 100% [====================================] 2 20.2/s in 00:00:00
     INFO: Adding variant info field cases_het_highDP with type INT
@@ -801,7 +781,6 @@ We can also limit the statistics to genotypes that satisfy certain conditions (e
 
     % vtools output variant chr pos ref alt cases_het cases_het_highDP -l5
     
-
     1   14677   G   A   1   0
     1   15820   G   T   1   0
     1   16103   T   G   2   1
@@ -815,7 +794,6 @@ We can also limit the statistics to genotypes that satisfy certain conditions (e
 
     % vtools select variant 'total=3' -t in_all
     
-
     Running: 1 519.4/s in 00:00:00
     INFO: 646 variants selected.
     
@@ -824,7 +802,6 @@ Then we can add a field `case_hom` to count the number of homozygotes for only t
 
     % vtools update in_all --from_stat 'case_hom=#(hom)' --samples  "filename in ('V1_hg38.vcf', 'V2_hg38.vcf')"
     
-
     INFO: 2 samples are selected
     Counting variants: 100% [====================================] 2 18.1/s in 00:00:00
     INFO: Adding variant info field case_hom with type INT
@@ -833,7 +810,6 @@ Then we can add a field `case_hom` to count the number of homozygotes for only t
     
 
     % vtools output in_all chr pos ref alt case_hom -l 5
-    
 
     1   16103   T   G   0
     1   20144   G   A   0
@@ -855,8 +831,6 @@ Option `--set` evaluates expressions from existing variant info fields and assig
 
 
     % vtools update variant --set "maf=num/(total*2.0)"
-    
-
     INFO: Adding field maf
     
 
@@ -865,8 +839,6 @@ However, because samples from this project is called individually and wildtype a
 
 
     % vtools update variant --from_stat 'missing=#(missing)'
-    
-
     Counting variants: 100% [===================================] 3 289.1/s in 00:00:00
     INFO: Resetting values at existing field missing
     Updating variant: 100% [================================] 2,051 41.5K/s in 00:00:00
@@ -878,8 +850,6 @@ And then calculate the real allele frequency
 
 
     % vtools update variant --set "real_maf=num/((total+missing)*2.0)"
-    
-
     INFO: Adding field real_maf
     
 
@@ -888,8 +858,6 @@ Two allele frequencies are different
 
 
     % vtools output variant chr pos ref alt num total missing maf real_maf -l5
-    
-
     1   14677   G   A   2   2   1   0.5 0.3333333333333333
     1   15820   G   T   1   1   2   0.5 0.16666666666666666
     1   16103   T   G   3   3   0   0.5 0.5
@@ -906,15 +874,12 @@ In addition to variant info fields, annotation fields could also be used in thes
 
 
     % vtools use refGene
-
     INFO: Choosing version refGene-hg38_20170201 from 5 available databases.
     INFO: Downloading annotation database annoDB/refGene-hg38_20170201.ann
     INFO: Using annotation DB refGene as refGene in project update.
     INFO: Known human protein-coding and non-protein-coding genes taken from the NCBI RNA reference sequences collection (RefSeq).
 
     % vtools update variant --set refgene=refGene.name
-    
-
     INFO: Adding variant info field refgene
     Updating variant: 100% [============================] 2,647 36.2K/s in 00:00:00
 
@@ -925,15 +890,11 @@ We can select variants that belong to a gene and output it
 
 
     % vtools select variant 'refGene is not NULL' -t in_gene
-    
-
     Running: 1 475.3/s in 00:00:00                                                                                         
     INFO: 469 variants selected.
     
 
     % vtools output in_gene chr pos ref alt refGene -l 5
-    
-
     1   14677   G   A   NR_024540
     1   15820   G   T   NR_024540
     1   16103   T   G   NR_024540
