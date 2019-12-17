@@ -282,7 +282,7 @@ which is a shortcut to commands
 
 
 
-    % vtools init test 
+    % vtools init test -f
     % vtools admin --load_snapshot my_snapshot.tar.gz
     
 
