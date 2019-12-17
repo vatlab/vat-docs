@@ -283,7 +283,7 @@ Suppose that we would like to use ANNOVAR to annotate our variants. The basic st
     
 
 
-
+    % perl -S annotate_variation.pl --downdb refGene humandb -build hg38
     % perl -S annotate_variation.pl ann.in humandb/ --buildver hg38
     
     NOTICE: The --geneanno operation is set to ON by default

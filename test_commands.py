@@ -82,46 +82,70 @@ class MarkDownFile:
         updateMarkdown_path = "."+self.filePath.replace(".md", "_update.md")
         print(updateMarkdown_path)
         os.environ["STOREMODE"] = "hdf5"
-        excludeOutput = ["Calculating phenotype", "ERROR", "WARNING", "100%", "0.0%", "warnings", "UserWarning", "Running", "..........", "Saving to", "Importing genotypes", "Copying samples"]
+        excludeOutput = ["Calculating phenotype", "WARNING", "100%", "0.0%", "warnings", "UserWarning", "Running", "..........", "/Users/", "Saving to", "Importing genotypes", "Copying samples"]
         excludeCommands = ["vtools init", "vtools admin --load_snapshot", "vtools import V*_hg38.vcf --build hg38", "my_vcf.fmt"]
-
+        outputUpdates = []
         updateMarkdown = open(updateMarkdown_path, "w")
         with open("."+self.filePath) as openFile:
             commandFlag = False
             output = []
+            lastCommand = ""
             for line in openFile:
                 if re.search(r"^\s*%", line):
                     print("Command line", line.rstrip())
                     updateMarkdown.write(line)
-                    line=line.replace("%", "", 1).strip()
-                    if line == 'export STOREMODE="sqlite"' or line == 'export STOREMODE="hdf5"':
-                        print(line.split("=")[1].replace("\"", ""))
-                        os.environ["STOREMODE"] = line.split("=")[1].replace("\"", "")
+                    lastCommand = line.replace("%", "", 1).strip()
+                    if lastCommand == 'export STOREMODE="sqlite"' or lastCommand == 'export STOREMODE="hdf5"':
+                        print(lastCommand.split("=")[1].replace("\"", ""))
+                        os.environ["STOREMODE"] = lastCommand.split("=")[1].replace("\"", "")
+                    if lastCommand == 'vtools admin --update_resource':
+                        continue
                     commandFlag = True
                     outputFilePath = "test_commands.sh"
                     outputFile = open(outputFilePath, "w")
-                    outputFile.write(line + "\n")
+                    outputFile.write(lastCommand + "\n")
                     outputFile.close()
                     subprocess.call(['chmod', '777', outputFilePath])
-                    print("Update output")
                     process = subprocess.Popen(["/bin/sh", outputFilePath], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1)
                     for outputLine in iter(process.stdout.readline, b''):
                         outputLine = outputLine.decode("utf-8")
                         outputLine = "\t"+outputLine
+                        if "ERROR" in outputLine:
+                            print(outputLine)
                         if not any(x in outputLine for x in excludeOutput) and not any(x in line for x in excludeCommands):
                             if re.match(r'[ \t]', outputLine):
-                                print(outputLine.rstrip())
-                                updateMarkdown.write(outputLine)
+                                pass
+                            else:
+                                outputLine = "\t"+outputLine
+                                # print(outputLine.rstrip())
+                            updateMarkdown.write(outputLine)
+                            outputUpdates.append("\t"+outputLine.strip()+"\n")
                 elif re.match(r'[ \t]', line):
                     if commandFlag:
                         output.append("\t"+line.strip()+"\n")
                 else:
-                    updateMarkdown.write(line)
                     if commandFlag:
-                        if not any(x in line for x in ["-h"]):
-                            print("Original output", "".join(output))
-                            output = []
-                            commandFlag = False
+                        updatedOutput = "".join(outputUpdates)
+                        originalOutput = "".join(output)
+                        if "-h" not in lastCommand:
+                            if (updatedOutput.strip() != originalOutput.strip()):
+                                print("Update output\n", updatedOutput)
+                                print("Original output", originalOutput)
+                            else:
+                                print("\tUpdated ouput is the same as the original output.")
+                        if len(updatedOutput) == 0:
+                            if len(originalOutput) == 0:
+                                print("\tNo output for this command.")
+                            else:
+                                print("\tNo output from current version, use original output in the doc.")
+                                updateMarkdown.write(originalOutput)
+                        else:
+                            updateMarkdown.write(line)
+                        outputUpdates = []
+                        output = []
+                        commandFlag = False
+                    else:
+                        updateMarkdown.write(line)
         updateMarkdown.close()
 
 # markDownFiles = get_markdown_files("./content/Documentation/vtools_commands", ".md")
@@ -135,6 +159,6 @@ class MarkDownFile:
 #     file.run_commands()
 
 
-markDownFile = "./content/Documentation/vtools_commands/compare.md"
+markDownFile = "./content/Documentation/vtools_commands/admin.md"
 file = MarkDownFile(markDownFile)
 file.update_output()

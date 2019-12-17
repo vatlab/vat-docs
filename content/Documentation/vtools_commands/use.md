@@ -382,7 +382,9 @@ Each database provide a number of fields and one or more default methods to link
 
 <details><summary> Examples: alternative ways to link range-based annotation databases</summary> There are 730 variants in the regular ref seq gene regions, 
 
+    % vtools init -f use
     % vtools import V*_hg38.vcf --build hg38
+    % vtools use refGene
     % vtools select variant 'refGene.chr is not NULL' -c
     
     Counting variants: 21 1.3K/s in 00:00:00
@@ -577,7 +579,7 @@ For each variant, we have cytoband information as `cytoBand.name` (as well as `g
 
 
     % vtools output variant chr pos cytoBand.name gwasCatalog.genes gwasCatalog.trait --all -l 10   
-
+    
     1	4540	1p36.33	PRKCZ	Reasoning
     1	5683	1p36.33	PRKCZ	Reasoning
     1	5966	1p36.33	PRKCZ	Reasoning
@@ -593,7 +595,7 @@ For each variant, we have cytoband information as `cytoBand.name` (as well as `g
 Although in this case we should use option `--all` to list all GAWS hits 
 
     % vtools output variant chr pos cytoBand.name gwasCatalog.genes gwasCatalog.trait --all -l 10 
-
+    
     1	4540	1p36.33	NR	Body mass index
     1	4540	1p36.33	PRKCZ	Height
     1	4540	1p36.33	PRKCZ	Reasoning

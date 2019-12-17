@@ -564,19 +564,19 @@ We can then find variants that with different genotypes in `SAMP1`:
     INFO: Reading genotypes of sample SAMP3 of approximately 509 geno in varNotMissing...
     INFO: Genotypes in sample SAMP1 only: 0 
     Writing to SAMP1_not_missing: 0 0.0/s in 00:00:00                        
-    0
+
 
 Only 7 variants that are not missing and have unique genotype in `SAMP1` exist: 
 
     % vtools export SAMP1_not_missing --samples 1 --format csv 2> /dev/null
     
-   <!--  1,73865,G,A,2,1,1
+    1,73865,G,A,2,1,1
     1,536560,A,G,1,2,2
     1,758116,A,C,2,1,1
     1,791956,G,A,2,1,1
     1,798494,G,A,2,1,1
     1,798791,C,T,2,1,1
-    1,892860,G,A,1,2,2 -->
+    1,892860,G,A,1,2,2
     
 
 Here we redirect all progress bar etc from stderr to /dev/null to check only the output sent to standard output. 
@@ -619,6 +619,7 @@ In a parent - offspring setting, we are often interested in locating variants of
 
 
 
+    % vtools init -f test
     % vtools select variant --samples "sample_name='offspring'" -t WGS3_1
     % vtools select variant --samples "sample_name='father'" -t WGS3_2
     % vtools select variant --samples "sample_name='mother'" -t WGS3_3

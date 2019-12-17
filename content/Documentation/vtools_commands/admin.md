@@ -196,7 +196,7 @@ In the first option, all selected samples are renamed to `name`. In the second o
 
 
     % vtools init admin -f
-    % vtools admin --load_snapshot vt_testData
+    % vtools admin --load_snapshot vt_testData_v3
     % vtools import V*_hg38.vcf --build hg38
    
     
@@ -274,7 +274,7 @@ Command `vtools admin --merge_samples` merges samples with the same names to a s
 <details><summary> Examples: Merge samples with same names</summary> All our samples have different names now so we have to rename one of them in order to merge it with another sample, 
 
     % vtools init admin -f
-    % vtools admin --load_snapshot vt_testData
+    % vtools admin --load_snapshot vt_testData_v3
     % vtools import V1.vcf --build hg18
     % vtools import V2.vcf 
     % vtools import V3.vcf 
@@ -345,10 +345,11 @@ A lot of variant tables can be generated during the analysis and it can be diffi
 
 <details><summary> Examples: Change name and comment of variant tables</summary> Let us get a sample project and create a few variant tables 
 
-    vtools init testProj
-    vtools import V*_hg38.vcf --build hg38
-    vtools select variant -t 'all variant'
-    vtools select variant --samples 'filename = "V1_hg38.vcf"' -t fromV1 'variants from v1'
+    % vtools init testProj -f
+    % vtools admin --load_snapshot vt_testData_v3
+    % vtools import V*_hg38.vcf --build hg38
+    % vtools select variant -t 'all variant'
+    % vtools select variant --samples 'filename = "V1_hg38.vcf"' -t fromV1 'variants from v1'
     
 
 The project has three tables, 
@@ -399,8 +400,8 @@ Sometimes when you get a bunch of data, look everywhere in the folder and emails
 
 <details><summary> Examples: Validate the reference genome used in a project</summary> Let us create a project and get some test data 
 
-    % vtools init test
-    % vtools admin --load_snapshot vt_testData
+    % vtools init test -f
+    % vtools admin --load_snapshot vt_testData_v3
     
     Downloading snapshot vt_testData.tar.gz from online
     INFO: Snapshot vt_testData has been loaded
@@ -531,7 +532,7 @@ If the disk that holds your project does not have enough free diskspace to hold 
 
 
     % vtools admin --save_snapshot stage1.tgz "after importing phenotypes"
-    
+        
     INFO: Snapshot stage1.tgz has been saved
     
 
@@ -574,8 +575,7 @@ A snapshot only contains the project, and the genotype database. It does not sav
 
 
 
-    % vtools admin --save_snapshot stage1.tgz 'a snapshot with extra files' \
-         --extra_files test.log cache/*
+    % vtools admin --save_snapshot stage1.tgz 'a snapshot with extra files' --extra_files test.log cache/*
     
 
 
