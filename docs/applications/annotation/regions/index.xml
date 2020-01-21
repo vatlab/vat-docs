@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Regions on Variant Tools</title>
@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</guid>
-      <description>Phast Cons The phastCons database annotates blocks of the genome with conservation scores using the phastCons algorithm (http://compgen.bscb.cornell.edu/phast/help-pages/phastCons.txt). The data that we are using was downloaded from the UCSC genome browser&amp;rsquo;s phastCons46way track that contains conservation data for vertebrates.
+      <description>Phast Cons The phastCons database annotates blocks of the genome with conservation scores using the phastCons algorithm (http://compgen.bscb.cornell.edu/phast/help-pages/phastCons.txt). The data that we are using was downloaded from the UCSC genome browser&#39;s phastCons46way track that contains conservation data for vertebrates.
 PhastConsElements represents the most conserved regions so it covers a significantly percent of genome than the PhastCons database.
  1. PhastConsElements vtools show annotation PhastConsElements Description: PhastCons Conservation Scores Database type: range Number of records: 5,163,775 Distinct ranges: 5,163,775 Reference genome hg19: chr, start, end Field: chr Type: string Missing entries: 0 Unique Entries: 88 Field: start Type: integer Comment: Start position in chromosome Missing entries: 0 Unique Entries: 5,093,542 Range: 1 - 249231389 Field: end Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 5,093,841 Range: 12 - 249231641 Field: name Type: string Comment: Name of conserved region Missing entries: 0 Unique Entries: 4,358 Field: score Type: integer Comment: Phast cons score from 0 to 1000 Missing entries: 0 Unique Entries: 580 Range: 177 - 1000  2.</description>
     </item>
@@ -36,9 +36,9 @@ vtools show annotation genomicSuperDups -v2 Annotation database genomicSuperDups
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</guid>
-      <description> Cyto Band cytoBand defines cytogenic bands. This annotation source gives the approximate location of these bands as seen on Giemsa-stained chromosomes. This data was downloaded from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables).
+      <description>Cyto Band cytoBand defines cytogenic bands. This annotation source gives the approximate location of these bands as seen on Giemsa-stained chromosomes. This data was downloaded from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables).
 The following fields are available for annotation.
-vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Loading annotation database cytoBand DEBUG: Loading annotation database gwasCatalog Annotation database cytoBand (version hg19_20111216) Description: Cyto Band Database type: range Number of records: 862 Number of distinct ranges: 862 Reference genome hg19: [&#39;chr&#39;, &#39;begin&#39;, &#39;end&#39;] Field: chr Type: chromosome Missing entries: 0 Unique Entries: 24 Field: begin Type: integer Comment: start position on chromosome Missing entries: 0 Unique Entries: 667 Range: 1 - 243700001 Field: end Type: integer Comment: end position on chromosome Missing entries: 0 Unique Entries: 690 Range: 2200000 - 249250621 Field: name Type: string Comment: name of cytogenic band Missing entries: 0 Unique Entries: 259 Field: gieStain Type: string Comment: giemsa stain results Missing entries: 0 Unique Entries: 8  </description>
+vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Loading annotation database cytoBand DEBUG: Loading annotation database gwasCatalog Annotation database cytoBand (version hg19_20111216) Description: Cyto Band Database type: range Number of records: 862 Number of distinct ranges: 862 Reference genome hg19: [&#39;chr&#39;, &#39;begin&#39;, &#39;end&#39;] Field: chr Type: chromosome Missing entries: 0 Unique Entries: 24 Field: begin Type: integer Comment: start position on chromosome Missing entries: 0 Unique Entries: 667 Range: 1 - 243700001 Field: end Type: integer Comment: end position on chromosome Missing entries: 0 Unique Entries: 690 Range: 2200000 - 249250621 Field: name Type: string Comment: name of cytogenic band Missing entries: 0 Unique Entries: 259 Field: gieStain Type: string Comment: giemsa stain results Missing entries: 0 Unique Entries: 8 </description>
     </item>
     
   </channel>

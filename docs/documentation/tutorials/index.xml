@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorials on Variant Tools</title>
@@ -52,16 +52,6 @@ As always, we need to find an empty directory and create a new project:</descrip
     </item>
     
     <item>
-      <title>Detailed analysis</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</guid>
-      <description>Analysis of one genetic variant 1. Data After some preliminary analysis, we find one particular variant (179248034 on chromosome 5) in gene SQSTM1 that is likely to be associated with a phenotype. Let us try to find more information about this variant, which is in a variant table named MyVar in our project.
-2. Gene and mRNA We first would like to download and use the ref gene database to our project.</description>
-    </item>
-    
-    <item>
       <title>association analysis on cluster using LSF</title>
       <link>https://vatlab.github.io/vat-docs/documentation/tutorials/lsfcluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -79,6 +69,16 @@ The template LSF script is vtools_association_cluster.lsf in /src/variant_tools 
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/pbscluster/</guid>
       <description>Run association analysis on cluster using PBS Since vtools association analysis is quite time consuming, meanwhile this job could be easily distributed to run on multiple nodes. Here we show an example to demonstrate how to run vtools association job on cluster using PBS.
 The template PBS script is vtools_association_cluster.pbs in /src/variant_tools folder. You are supposed to modify the number of nodes, number of cores according to your needs and provide values for PROJECTFOLDER, COMMAND, and NUMBER_OF_PROCESSES_PER_NODE.</description>
+    </item>
+    
+    <item>
+      <title>Detailed analysis</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</guid>
+      <description>Analysis of one genetic variant 1. Data After some preliminary analysis, we find one particular variant (179248034 on chromosome 5) in gene SQSTM1 that is likely to be associated with a phenotype. Let us try to find more information about this variant, which is in a variant table named MyVar in our project.
+2. Gene and mRNA We first would like to download and use the ref gene database to our project.</description>
     </item>
     
     <item>
@@ -136,7 +136,7 @@ head -20 myVars.csv ADARB2,chr10,1224091,-/C ADARB2,chr10,1224097,-/A ADARB2,chr
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/annotation/</guid>
-      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases.</description>
+      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases. If you do no want to wait for the downloads and if you have enough disk space, you can download all variant tools resources into your local resource directory using the following commands:</description>
     </item>
     
     <item>
@@ -166,7 +166,7 @@ head -20 myVars.csv ADARB2,chr10,1224091,-/C ADARB2,chr10,1224097,-/A ADARB2,chr
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/subprojects/</guid>
-      <description>Use of subprojects to manage large project &amp;ndash; a tutorial 1. Data This tutorial uses the same data (whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls) as this tutorial, but demonstrates the uses of subproject to import and analyze data. Performance data is collected on a Mac Workstation with 2x2.26G Quad-Core Xeon processor with 8G RAM, using variant tools v1.</description>
+      <description>Use of subprojects to manage large project &amp;ndash; a tutorial 1. Data This tutorial uses the same data (whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls) as this tutorial, but demonstrates the uses of subproject to import and analyze data. Performance data is collected on a Mac Workstation with 2x2.26G Quad-Core Xeon processor with 8G RAM, using variant tools v1.0rc2.</description>
     </item>
     
     <item>
@@ -176,7 +176,8 @@ head -20 myVars.csv ADARB2,chr10,1224091,-/C ADARB2,chr10,1224097,-/A ADARB2,chr
       
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/tutorialacm/</guid>
       <description>Tutorial (ACM-BCB2014): Integrated analysis of next-gen sequencing data using variant tools This tutorial explains the concepts of variant tools and demonstrates, through examples, how to use variant tools to import, select, and annotate genetic variants. You will need to have variant tools installed (Linux or Mac OSX) to follow this tutorial. Please also download sample data from here .
-1. Getting help (--help, `vtools show) Getting details of commands</description>
+1. Getting help (--help, `vtools show) Getting details of commands
+\\( vtools -h \\( vtools init -h  The variant tools website has detailed explanation and examples for all commands, utilities and pipelines.</description>
     </item>
     
   </channel>

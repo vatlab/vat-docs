@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Single gene on Variant Tools</title>
@@ -43,7 +43,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/vt-test/</guid>
-      <description>Variable Thresholds Test for Case Control Data Analysis 1. Introduction The variable thresholds method (VT, Price et al 2010) tests for association between phenotypic values (case control or quantitative traits) with individuals&amp;rsquo; genotype &amp;ldquo;score&amp;rdquo; subject to a variable MAF threshold. It assumes that there exists a fixed yet unknown MAF threshold on a given genetic region which is related to the cutoff for the causality of variants on that loci.</description>
+      <description>Variable Thresholds Test for Case Control Data Analysis 1. Introduction The variable thresholds method (VT, Price et al 2010) tests for association between phenotypic values (case control or quantitative traits) with individuals&amp;rsquo; genotype &amp;ldquo;score&amp;rdquo; subject to a variable MAF threshold. It assumes that there exists a fixed yet unknown MAF threshold on a given genetic region which is related to the cutoff for the causality of variants on that loci. In testing the association for the genetic region, for each possible MAF threshold a genotype score is computed based on given collapsing theme, and is tested for association between the phenotype of interest; the final MAF threshold is chosen such that the association signal is strongest.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/</guid>
-      <description>Weighted Sum Statistic via Rank Test 1. Introduction The method proposed by Madsen and Browning 2009 first introduced the idea of assigning &amp;ldquo;weights&amp;rdquo; to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen &amp;amp; Browning paper the &amp;ldquo;weights&amp;rdquo; are defined as  \(\sqrt{n_iq_i(1-q_i)}\) with the assumption that the &amp;ldquo;rarer&amp;rdquo; the variant, the larger the risk effect it is to a phenotype.</description>
+      <description>Weighted Sum Statistic via Rank Test 1. Introduction The method proposed by Madsen and Browning 2009 first introduced the idea of assigning &amp;ldquo;weights&amp;rdquo; to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen &amp;amp; Browning paper the &amp;ldquo;weights&amp;rdquo; are defined as \(\sqrt{n_iq_i(1-q_i)}\) with the assumption that the &amp;ldquo;rarer&amp;rdquo; the variant, the larger the risk effect it is to a phenotype.</description>
     </item>
     
   </channel>

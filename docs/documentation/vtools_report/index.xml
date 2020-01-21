@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vtools report on Variant Tools</title>
@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/</guid>
-      <description>Average depth of coverage Ratio 1. About vtools_report avg_depth This command report average depth of all variants, or variants divided by sample allele count.
+      <description>Average depth of coverage Ratio 1. About vtools_report avg_depth  This command report average depth of all variants, or variants divided by sample allele count.
 2. Usage % vtools_report avg_depth -h usage: vtools_report avg_depth [-h] -n NUM_FIELD -d DEPTH_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table Command &#39;vtools update table --from_stat &amp;quot;meanDP=avg(DP_geno)&amp;quot;&#39; calculates the average depth of variants across sample (e.g. average depth of three variants if the variant appears three times in the sample).</description>
     </item>
     
@@ -52,7 +52,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/</guid>
-      <description>Transition-transversion Ratio 1. About vtools_report trans_ratio This command counts the number of transition and transversion variants and calculates its ratio. The expected ratio is 2 in human pseudo-genes (after the exclusion of transitions at CpG sites).
+      <description>Transition-transversion Ratio 1. About vtools_report trans_ratio  This command counts the number of transition and transversion variants and calculates its ratio. The expected ratio is 2 in human pseudo-genes (after the exclusion of transitions at CpG sites).
 2. Usage % vtools_report trans_ratio -h usage: vtools_report trans_ratio [-h] -n NUM_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table This command counts the number of transition (A&amp;lt;-&amp;gt;G and C&amp;lt;-&amp;gt;T) and transversion variants (others) and calculate its ratio.</description>
     </item>
     
@@ -81,9 +81,7 @@ Variants included for calculation of \(F\) must be under HWE and be bi-allelic. 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/transmission/</guid>
-      <description>Locate de novo, recessive and other variants that are transmitted from parents to offspring The inconsistent option of this command is not completed yet.
-
-1. Usage % vtools_report transmission -h usage: vtools_report transmission [-h] [--parents PARENTS PARENTS] [--offspring OFFSPRING [OFFSPRING ...]] [--denovo [DENOVO [DENOVO ...]]] [--recessive [RECESSIVE [RECESSIVE ...]]] [--inconsistent [INCONSISTENT [INCONSISTENT ...]]] [-v {0,1,2}] optional arguments: -h, --help show this help message and exit --parents PARENTS PARENTS Names of parents, which should uniquely identify two samples.</description>
+      <description>Locate de novo, recessive and other variants that are transmitted from parents to offspring 1. Usage % vtools_report transmission -h usage: vtools_report transmission [-h] [--parents PARENTS PARENTS] [--offspring OFFSPRING [OFFSPRING ...]] [--denovo [DENOVO [DENOVO ...]]] [--recessive [RECESSIVE [RECESSIVE ...]]] [--inconsistent [INCONSISTENT [INCONSISTENT ...]]] [-v {0,1,2}] optional arguments: -h, --help show this help message and exit --parents PARENTS PARENTS Names of parents, which should uniquely identify two samples. --offspring OFFSPRING [OFFSPRING .</description>
     </item>
     
     <item>
@@ -111,7 +109,7 @@ Variants included for calculation of \(F\) must be under HWE and be bi-allelic. 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/</guid>
-      <description>Plot genotype and/or genotype information fields 1. Usage % vtools_report plot_geno_fields -h usage: vtools_report plot_geno_fields [-h] [--variants TABLE] [--samples [SAMPLES [SAMPLES ...]]] [--genotypes [GENOTYPES [GENOTYPES ...]]] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of genotype fields that will be outputted.</description>
+      <description>Plot genotype and/or genotype information fields 1. Usage % vtools_report plot_geno_fields -h usage: vtools_report plot_geno_fields [-h] [--variants TABLE] [--samples [SAMPLES [SAMPLES ...]]] [--genotypes [GENOTYPES [GENOTYPES ...]]] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of genotype fields that will be outputted. optional arguments: -h, --help show this help message and exit --variants TABLE Limit value of fields to variant in specified variant table.</description>
     </item>
     
   </channel>

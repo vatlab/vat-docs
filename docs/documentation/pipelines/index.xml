@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pipelines on Variant Tools</title>
@@ -15,8 +15,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</guid>
-      <description>Specification of a variant tools pipeline This page describes the new pipeline format (version 1.1 and later). Please refer to Format1_0 if you are editing a pipeline specification file for variant tools 2.7 and earlier.. 
-1. Introduction Variant Tools uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator).</description>
+      <description>Specification of a variant tools pipeline 1. Introduction Variant Tools uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator). You can use command
+% vtools show pipelines  to get a list of all publicly available pipelines, and
+% vtools show pipeline SPECFILE  to get the details of pipelines defined in SPECFILE.</description>
     </item>
     
     <item>

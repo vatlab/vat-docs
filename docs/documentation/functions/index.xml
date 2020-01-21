@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Functions on Variant Tools</title>
@@ -36,7 +36,8 @@ Simply put, function mut_sequence in
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/track/</guid>
       <description>Extract annotation from external files 1. Usage Function track(filename, field) returns annotation information at column col (optional) in file filename, at position (chr, pos at primary or alternative reference genome) of each variant. For example, function
-% vtools output variant chr pos ref alt &amp;quot;track(&#39;1000g.vcf.gz&#39;, &#39;info&#39;)&amp;quot;  single quote (&#39;) should be used for string literals in SQL functions. Double quote (&amp;quot;) should be avoided although it sometimes works.</description>
+% vtools output variant chr pos ref alt &amp;quot;track(&#39;1000g.vcf.gz&#39;, &#39;info&#39;)&amp;quot;  single quote (&#39;) should be used for string literals in SQL functions. Double quote (&amp;quot;) should be avoided although it sometimes works.
+ output the &amp;ldquo;info&amp;rdquo; column of file 1000g.</description>
     </item>
     
     <item>
@@ -64,9 +65,9 @@ samples()  returns a list of comma-separated names of samples that contain the v
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/in_table/</guid>
-      <description> Test membership of variants in variant tables 1. Usage The in_table function is a simple function used to test is a variant is in a specified variant table. It accepts the name of a variant table and returns 1 if the variant belong to this table, and 0 otherwise.
+      <description>Test membership of variants in variant tables 1. Usage The in_table function is a simple function used to test is a variant is in a specified variant table. It accepts the name of a variant table and returns 1 if the variant belong to this table, and 0 otherwise.
 in_table(&#39;table_name&#39;)  2. Details For example, command
-% vtools admin --load_snapshot vt_simple % vtools show tables  </description>
+% vtools admin --load_snapshot vt_simple % vtools show tables </description>
     </item>
     
     <item>
@@ -75,7 +76,7 @@ in_table(&#39;table_name&#39;)  2. Details For example, command
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/</guid>
-      <description>Other customized SQL functions 1. vcf_variant: Output variants in vcf format with padding alleles Function vcf_variant(chr, pos, ref, alt, name=&amp;quot;.&amp;quot;) returns a string that represent variants in vcf format. If the variant is a SNV, the output merely connects input by tab (&amp;rsquo;\t&amp;rsquo;). If the variant is an indel, it will pad reference (for insertion) or alternative (for deletion) allele with the allele before variant, adjust position, and generate an output that is acceptable by vcf.</description>
+      <description>Other customized SQL functions 1. vcf_variant: Output variants in vcf format with padding alleles Function vcf_variant(chr, pos, ref, alt, name=&amp;quot;.&amp;quot;) returns a string that represent variants in vcf format. If the variant is a SNV, the output merely connects input by tab (&#39;\t&amp;rsquo;). If the variant is an indel, it will pad reference (for insertion) or alternative (for deletion) allele with the allele before variant, adjust position, and generate an output that is acceptable by vcf.</description>
     </item>
     
   </channel>

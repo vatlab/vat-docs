@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vtools commands on Variant Tools</title>
@@ -42,7 +42,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/phenotype/</guid>
-      <description>Import and manipulate phenotypes 1. Usage % vtools phenotype -h usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]] [--set [EXPRESSION [EXPRESSION ...]]] [--from_stat [EXPRESSION [EXPRESSION ...]]] [--output [EXPRESSION [EXPRESSION ...]]] [-j N] [-g [COND [COND ...]]] [-s [COND [COND ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l LIMIT] [-v {0,1,2}] Import phenotypes from a file, or set phenotypes to constants, or to summary statistics of sample genotype fields.</description>
+      <description>Import and manipulate phenotypes 1. Usage % vtools phenotype -h usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]] [--set [EXPRESSION [EXPRESSION ...]]] [--from_stat [EXPRESSION [EXPRESSION ...]]] [--output [EXPRESSION [EXPRESSION ...]]] [-j N] [-g [COND [COND ...]]] [-s [COND [COND ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l LIMIT] [-v {0,1,2}] Import phenotypes from a file, or set phenotypes to constants, or to summary statistics of sample genotype fields. optional arguments: -h, --help show this help message and exit -f [INPUT_FILE [INPUT_FILE .</description>
     </item>
     
     <item>

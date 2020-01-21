@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Annotation on Variant Tools</title>
@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</guid>
-      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases.</description>
+      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases. If you do no want to wait for the downloads and if you have enough disk space, you can download all variant tools resources into your local resource directory using the following commands:</description>
     </item>
     
     <item>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Variant Tools</title>
@@ -10,112 +10,12 @@
     
     
     <item>
-      <title>COSMIC</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/</guid>
-      <description>Catalogue of Somatic Mutations in Cancer COSMIC (Catalogue of Somatic Mutations in Cancer) is a data resource that is designed to store and display somatic mutation information and related details and contains information relating to human cancers. Data in COSMIC is curated from known Cancer Genes Literature and Systematic Screens. COSMIC data is freely downloadable in many formats on the project&amp;rsquo;s FTP site: ftp://ftp.sanger.ac.uk/pub/CGP/cosmic.
-If you use COSMIC annotations, please credit the project with the following acknowledgement:</description>
-    </item>
-    
-    <item>
-      <title>ChangeLog</title>
-      <link>https://vatlab.github.io/vat-docs/development/changelog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/development/changelog/</guid>
-      <description>Change Log of variant tools 1. Version 2.7.0 (Released on Jan 20, 2016) MAJOR NEW FEATURES:
- Normalize variants using reference sequence information before importing variants. New file format for spec file of variant pipeline tools. Support arbitrary reference genome.  BUG FIXES:
- Fix importing wildtype genotypes in some cases.  2. Version 2.6.1 (Released on Jan 15, 2015)  Fix a few small bugs introduced in 2.6.0. Fix compatibility issues with Python 3.</description>
-    </item>
-    
-    <item>
-      <title>Customized</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</guid>
-      <description>Specification of a variant tools pipeline This page describes the new pipeline format (version 1.1 and later). Please refer to Format1_0 if you are editing a pipeline specification file for variant tools 2.7 and earlier.. 
-1. Introduction Variant Tools uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator).</description>
-    </item>
-    
-    <item>
-      <title>Fisher exact test</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/single_variant/fisher-exact-test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/single_variant/fisher-exact-test/</guid>
-      <description>Fisher&amp;rsquo;s Exact Test for Single Variant Analysis 1. Introduction Genetic association studies of common variants in case control samples usually compare directly the differences in frequencies of an allele or genotype between case and control populations, with the assumption that a significant difference in frequencies is indication to association between the locus and increase risk of disease. Many statistical tests for binomial or multinomial proportions can be used for such analysis, including Fisher&amp;rsquo;s exact test, \(\chi^2\) test and Cochran-Armitage Trend Test.</description>
-    </item>
-    
-    <item>
-      <title>GroupStat&amp;Write</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/basic_data_statistics/group_stat_write/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/basic_data_statistics/group_stat_write/</guid>
-      <description>Basic Statistics for Association Testing Units 1. Introduction GroupStat and GroupWrite are &amp;ldquo;ancillary&amp;rdquo; features for the collection of VAT association tests. Instead of carrying out association analysis, GroupStat reports summary statistics of an association test unit such as total allele counts, total variant counts, number of samples, etc., while GroupWrite output genotype and phenotype information (into zipped bundles) in the format compatible with the SCORE-Seq software such that the data can be closely examined or manipulated using other software tools.</description>
-    </item>
-    
-    <item>
-      <title>Illumina</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/</guid>
-      <description> Illumina Expanded exome regions of Nextera Rapid Capture Exome and Expanded Exome Enrichment Kits from Illumina.
-Usage % vtools show annotation Illumina_NRCE Annotation database Illumina_NRCE (version 20130307) Description: This annotation database contains expanded exome targeted regions covered by the Nextera Rapid Capture Expanded platform from illumina. Database type: range Reference genome hg19: Chromosome, Start, End Name Name of region Chromosome Start Transcription start position End Transcription end position  </description>
-    </item>
-    
-    <item>
-      <title>PhastCons</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</guid>
-      <description>Phast Cons The phastCons database annotates blocks of the genome with conservation scores using the phastCons algorithm (http://compgen.bscb.cornell.edu/phast/help-pages/phastCons.txt). The data that we are using was downloaded from the UCSC genome browser&amp;rsquo;s phastCons46way track that contains conservation data for vertebrates.
-PhastConsElements represents the most conserved regions so it covers a significantly percent of genome than the PhastCons database.
- 1. PhastConsElements vtools show annotation PhastConsElements Description: PhastCons Conservation Scores Database type: range Number of records: 5,163,775 Distinct ranges: 5,163,775 Reference genome hg19: chr, start, end Field: chr Type: string Missing entries: 0 Unique Entries: 88 Field: start Type: integer Comment: Start position in chromosome Missing entries: 0 Unique Entries: 5,093,542 Range: 1 - 249231389 Field: end Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 5,093,841 Range: 12 - 249231641 Field: name Type: string Comment: Name of conserved region Missing entries: 0 Unique Entries: 4,358 Field: score Type: integer Comment: Phast cons score from 0 to 1000 Missing entries: 0 Unique Entries: 580 Range: 177 - 1000  2.</description>
-    </item>
-    
-    <item>
-      <title>Quick start</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</guid>
-      <description>Quick Start Guide variant tools is a software toolset that facilitates the import, annotation and analysis of your variants. This 10-minute quick start guide steps you through a minimal real-world data set so that you can get a feel for the software and assess its helpfulness. For demonstrations on more real-world data analysis, please refer to the software tutorials
-1. Installation Required software:
- Python 2.7.2 or higher or Python 3.</description>
-    </item>
-    
-    <item>
-      <title>Tutorial</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</guid>
-      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases.</description>
-    </item>
-    
-    <item>
-      <title>Variants</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</guid>
-      <description>Supported types of variants How variants are imported and stored in variant tools Variant tools import different types of variants as follows:
-   Type Reference Alternative Imported Variant(s) Note     SNV A G A,G     TC TG C,G pos + 1   Deletion TC T C,- pos + 1    TCG TG C,- pos + 1    TCGC TC GC,- pos + 2, *    TC - or .</description>
-    </item>
-    
-    <item>
       <title>avg_depth</title>
       <link>https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/avg_depth/</guid>
-      <description>Average depth of coverage Ratio 1. About vtools_report avg_depth This command report average depth of all variants, or variants divided by sample allele count.
+      <description>Average depth of coverage Ratio 1. About vtools_report avg_depth  This command report average depth of all variants, or variants divided by sample allele count.
 2. Usage % vtools_report avg_depth -h usage: vtools_report avg_depth [-h] -n NUM_FIELD -d DEPTH_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table Command &#39;vtools update table --from_stat &amp;quot;meanDP=avg(DP_geno)&amp;quot;&#39; calculates the average depth of variants across sample (e.g. average depth of three variants if the variant appears three times in the sample).</description>
     </item>
     
@@ -143,7 +43,40 @@ PhastConsElements represents the most conserved regions so it covers a significa
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/</guid>
-      <description>CcdsGene This database contains high-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project. It was constructed from the UCSC Genome Browser ccdsGene track. If you would like to annotate your variants to these genes, you can use the simpler ccdsGene database. If you would like to determine the exons that your variants are in, use the ccdsGene_exon database. See the available annotation fields for each database below.</description>
+      <description>CcdsGene This database contains high-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project. It was constructed from the UCSC Genome Browser ccdsGene track. If you would like to annotate your variants to these genes, you can use the simpler ccdsGene database. If you would like to determine the exons that your variants are in, use the ccdsGene_exon database. See the available annotation fields for each database below.
+1. ccdsGene % vtools show annotation ccdsGene -v2 Annotation database ccdsGene (version hg19_20130904) Description: High-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project.</description>
+    </item>
+    
+    <item>
+      <title>ChangeLog</title>
+      <link>https://vatlab.github.io/vat-docs/development/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/development/changelog/</guid>
+      <description>Change Log of variant tools 1. Version 2.7.0 (Released on Jan 20, 2016) MAJOR NEW FEATURES:
+ Normalize variants using reference sequence information before importing variants. New file format for spec file of variant pipeline tools. Support arbitrary reference genome.  BUG FIXES:
+ Fix importing wildtype genotypes in some cases.  2. Version 2.6.1 (Released on Jan 15, 2015)  Fix a few small bugs introduced in 2.6.0. Fix compatibility issues with Python 3.</description>
+    </item>
+    
+    <item>
+      <title>COSMIC</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/cosmic/</guid>
+      <description>Catalogue of Somatic Mutations in Cancer COSMIC (Catalogue of Somatic Mutations in Cancer) is a data resource that is designed to store and display somatic mutation information and related details and contains information relating to human cancers. Data in COSMIC is curated from known Cancer Genes Literature and Systematic Screens. COSMIC data is freely downloadable in many formats on the project&#39;s FTP site: ftp://ftp.sanger.ac.uk/pub/CGP/cosmic.
+If you use COSMIC annotations, please credit the project with the following acknowledgement:</description>
+    </item>
+    
+    <item>
+      <title>Customized</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/customizedpipeline/</guid>
+      <description>Specification of a variant tools pipeline 1. Introduction Variant Tools uses pipeline specification files to define pipelines. A pipeline specification file can define multiple pipelines. It can be stored locally or online in the variant tools repository (or a local repository maintained by your system adminstrator). You can use command
+% vtools show pipelines  to get a list of all publicly available pipelines, and
+% vtools show pipeline SPECFILE  to get the details of pipelines defined in SPECFILE.</description>
     </item>
     
     <item>
@@ -157,12 +90,40 @@ PhastConsElements represents the most conserved regions so it covers a significa
     </item>
     
     <item>
+      <title>Fisher exact test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single_variant/fisher-exact-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single_variant/fisher-exact-test/</guid>
+      <description>Fisher&#39;s Exact Test for Single Variant Analysis 1. Introduction Genetic association studies of common variants in case control samples usually compare directly the differences in frequencies of an allele or genotype between case and control populations, with the assumption that a significant difference in frequencies is indication to association between the locus and increase risk of disease. Many statistical tests for binomial or multinomial proportions can be used for such analysis, including Fisher&#39;s exact test, \(\chi^2\) test and Cochran-Armitage Trend Test.</description>
+    </item>
+    
+    <item>
+      <title>GroupStat&amp;Write</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/basic_data_statistics/group_stat_write/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/basic_data_statistics/group_stat_write/</guid>
+      <description>Basic Statistics for Association Testing Units 1. Introduction GroupStat and GroupWrite are &amp;ldquo;ancillary&amp;rdquo; features for the collection of VAT association tests. Instead of carrying out association analysis, GroupStat reports summary statistics of an association test unit such as total allele counts, total variant counts, number of samples, etc., while GroupWrite output genotype and phenotype information (into zipped bundles) in the format compatible with the SCORE-Seq software such that the data can be closely examined or manipulated using other software tools.</description>
+    </item>
+    
+    <item>
+      <title>Illumina</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/misc/illumina/</guid>
+      <description>Illumina Expanded exome regions of Nextera Rapid Capture Exome and Expanded Exome Enrichment Kits from Illumina.
+Usage % vtools show annotation Illumina_NRCE Annotation database Illumina_NRCE (version 20130307) Description: This annotation database contains expanded exome targeted regions covered by the Nextera Rapid Capture Expanded platform from illumina. Database type: range Reference genome hg19: Chromosome, Start, End Name Name of region Chromosome Start Transcription start position End Transcription end position </description>
+    </item>
+    
+    <item>
       <title>import_vcf</title>
       <link>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/import_vcf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/import_vcf/</guid>
-      <description>Import all variant and genotype fields from vcf files 1. Usage % vtools show pipeline import_vcf This pipeline creates a customized .fmt file to import all variant and genotype info fields of input vcf files. Available pipelines: import_vcf Pipeline &amp;quot;import_vcf&amp;quot;: This pipeline creates a customized .fmt file by scanning the header of input vcf files and imports all variant and genotype info fields of the input files in VCF format.</description>
+      <description>Import all variant and genotype fields from vcf files 1. Usage % vtools show pipeline import_vcf This pipeline creates a customized .fmt file to import all variant and genotype info fields of input vcf files. Available pipelines: import_vcf Pipeline &amp;quot;import_vcf&amp;quot;: This pipeline creates a customized .fmt file by scanning the header of input vcf files and imports all variant and genotype info fields of the input files in VCF format. If an output file is specified (--output), it will be used to save the customized .</description>
     </item>
     
     <item>
@@ -172,6 +133,28 @@ PhastConsElements represents the most conserved regions so it covers a significa
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/init/</guid>
       <description>Create a new project 1. Usage % vtools init -h usage: vtools init [-h] [-f] [--parent DIR_or_SNAPSHOT] [--variants [TABLE]] [--samples [COND [COND ...]]] [--genotypes [COND [COND ...]]] [--children DIR_OR_SNAPSHOT [DIR_OR_SNAPSHOT ...]] [-v {0,1,2}] project Create a new project in the current directory. This command will fail if another project already exists in this directory, unless option &#39;--force&#39; is used to remove the existing project. positional arguments: project Name of a new project.</description>
+    </item>
+    
+    <item>
+      <title>PhastCons</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/phast_cons/</guid>
+      <description>Phast Cons The phastCons database annotates blocks of the genome with conservation scores using the phastCons algorithm (http://compgen.bscb.cornell.edu/phast/help-pages/phastCons.txt). The data that we are using was downloaded from the UCSC genome browser&#39;s phastCons46way track that contains conservation data for vertebrates.
+PhastConsElements represents the most conserved regions so it covers a significantly percent of genome than the PhastCons database.
+ 1. PhastConsElements vtools show annotation PhastConsElements Description: PhastCons Conservation Scores Database type: range Number of records: 5,163,775 Distinct ranges: 5,163,775 Reference genome hg19: chr, start, end Field: chr Type: string Missing entries: 0 Unique Entries: 88 Field: start Type: integer Comment: Start position in chromosome Missing entries: 0 Unique Entries: 5,093,542 Range: 1 - 249231389 Field: end Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 5,093,841 Range: 12 - 249231641 Field: name Type: string Comment: Name of conserved region Missing entries: 0 Unique Entries: 4,358 Field: score Type: integer Comment: Phast cons score from 0 to 1000 Missing entries: 0 Unique Entries: 580 Range: 177 - 1000  2.</description>
+    </item>
+    
+    <item>
+      <title>Quick start</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/quickstartguide/</guid>
+      <description>Quick Start Guide variant tools is a software toolset that facilitates the import, annotation and analysis of your variants. This 10-minute quick start guide steps you through a minimal real-world data set so that you can get a feel for the software and assess its helpfulness. For demonstrations on more real-world data analysis, please refer to the software tutorials
+1. Installation Required software:
+ Python 2.7.2 or higher or Python 3.</description>
     </item>
     
     <item>
@@ -208,6 +191,34 @@ Note: Python module matplotlib is required to execute this script.
     </item>
     
     <item>
+      <title>Tutorial</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/tutorial/</guid>
+      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases. If you do no want to wait for the downloads and if you have enough disk space, you can download all variant tools resources into your local resource directory using the following commands:</description>
+    </item>
+    
+    <item>
+      <title>Variants</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/keyconcepts/supportedtypes/</guid>
+      <description>Supported types of variants How variants are imported and stored in variant tools Variant tools import different types of variants as follows:
+   Type Reference Alternative Imported Variant(s) Note     SNV A G A,G     TC TG C,G pos + 1   Deletion TC T C,- pos + 1    TCG TG C,- pos + 1    TCGC TC GC,- pos + 2, *    TC - or .</description>
+    </item>
+    
+    <item>
+      <title>anno_utils</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/anno_utils/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/anno_utils/</guid>
+      <description>Annotation utility pipelines 1. Usage % vtools show pipeline anno_utils This file defines a number of pipelines to manipulate variant tools annotation databases. Available pipelines: annFileFromText, annFileFromVcf, annoDB2proj, proj2annoDB Pipeline &amp;quot;annFileFromText&amp;quot;: This pipeline reads a tab, comma or space delimited file, take its header as name of fields, guess the type of each column, and output an .ann file with these fields. The annotation database is assumed to be of type &amp;quot;field&amp;quot; and use the first column as the linked field.</description>
+    </item>
+    
+    <item>
       <title>Autolink</title>
       <link>https://vatlab.github.io/vat-docs/administration/autolink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -217,12 +228,31 @@ Note: Python module matplotlib is required to execute this script.
     </item>
     
     <item>
+      <title>bat_gatk33_b37</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk33_b37/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk33_b37/</guid>
+      <description>Variant calling using BWA and GATK best practice pipeline (b37) This is the same pipeline as bwa_gatk33_hg19 but uses build b37 of the human reference genome.</description>
+    </item>
+    
+    <item>
       <title>C-alpha test</title>
       <link>https://vatlab.github.io/vat-docs/applications/association/single_gene/c_alpha-test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/c_alpha-test/</guid>
       <description>C-alpha Test for Protective Variants 1. Introduction This implements the {$C(\alpha)$} test (Neale et al 2011) for disease traits, to test for the hypothesis of rare variants disease association under the particular assumption that rare variants observed in cases and controls is a mixture of phenotypically deleterious, protective and neutral variants. Instead of using a cumulative dosage (or &amp;ldquo;burden&amp;rdquo;) based summary statistic over a gene region, it directly contrasts the observed and expected distribution of minor alleles in cases and controls at each locus as an evidence of &amp;ldquo;unusual distribution&amp;rdquo;, and combine evidences from multiple loci (whether it be an evidence of protective or deleterious) to formulate the \(C(\alpha)\) statistic:</description>
+    </item>
+    
+    <item>
+      <title>csv</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</guid>
+      <description>Importing and exporting variants in .csv (comma-separated value) format 1. Format description When this format is used to import data, it is similar to the basic format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
+When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command vtools output --delimiter , (output fields with a delimiter of comma), except that the vtools export --format csv command will properly quote field values when it contains comma, quotation mark etc.</description>
     </item>
     
     <item>
@@ -256,62 +286,6 @@ Note: Python module matplotlib is required to execute this script.
     </item>
     
     <item>
-      <title>Get involved</title>
-      <link>https://vatlab.github.io/vat-docs/development/getinvolved/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/development/getinvolved/</guid>
-      <description>Report bugs and share ideas People variant tools is currently maintained by Dr. Bo Peng (references) from the Department of Bioinformatics and Computational Biology, MD Anderson Cancer Center, Anthony San Lucas from Dr. Paul Scheet&amp;rsquo;s lab at the University of Texas, MD Anderson Cancer Center, and Gao Wang from Dr. Suzanne Leal&amp;rsquo;s group at the Baylor College of Medicine. Other contributed developers are Min Qiao (UT School of Public Health), Dr.</description>
-    </item>
-    
-    <item>
-      <title>HugoGene</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/</guid>
-      <description>HUGO Gene Nomenclature Committee (HGNC) approved gene names The HUGO Gene Nomenclature Committee (HGNC) has assigned unique gene symbols and names to almost 38,000 human loci, of which around 19,000 are protein coding. genenames.org is a curated online repository of HGNC-approved gene nomenclature and associated resources including links to genomic, proteomic and phenotypic information, as well as dedicated gene family pages.
-HGNC The HGNC annotation database is a field database that, by default, annotates another gene name field such as refGene.</description>
-    </item>
-    
-    <item>
-      <title>Import</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/</guid>
-      <description>Import variants, genotypes and related information fields 1. Usage % vtools import -h usage: vtools import [-h] [--build BUILD] [--format FORMAT] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f] [-j N] [-v {0,1,2}] input_files [input_files ...] x Import variants and related sample genotype from one or more delimiter separated files (e.g. VCF and a number of indel formats). positional arguments: input_files A list of failes that will be imported. The file should be delimiter separated with format described by parameter --format.</description>
-    </item>
-    
-    <item>
-      <title>anno_utils</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/anno_utils/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/anno_utils/</guid>
-      <description>Annotation utility pipelines 1. Usage % vtools show pipeline anno_utils This file defines a number of pipelines to manipulate variant tools annotation databases. Available pipelines: annFileFromText, annFileFromVcf, annoDB2proj, proj2annoDB Pipeline &amp;quot;annFileFromText&amp;quot;: This pipeline reads a tab, comma or space delimited file, take its header as name of fields, guess the type of each column, and output an .ann file with these fields. The annotation database is assumed to be of type &amp;quot;field&amp;quot; and use the first column as the linked field.</description>
-    </item>
-    
-    <item>
-      <title>bat_gatk33_b37</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk33_b37/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk33_b37/</guid>
-      <description>Variant calling using BWA and GATK best practice pipeline (b37) This is the same pipeline as bwa_gatk33_hg19 but uses build b37 of the human reference genome.</description>
-    </item>
-    
-    <item>
-      <title>csv</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/csv/</guid>
-      <description>Importing and exporting variants in .csv (comma-separated value) format 1. Format description When this format is used to import data, it is similar to the basic format except that it assumes the use of commas, instead of tabs, as delimiters of the input format.
-When this format is used to export variants, it can be used to export arbitrary fields. The command and the resulting ouput are similar to that of the command vtools output --delimiter , (output fields with a delimiter of comma), except that the vtools export --format csv command will properly quote field values when it contains comma, quotation mark etc.</description>
-    </item>
-    
-    <item>
       <title>dbNSFP</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbnsfp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -338,6 +312,34 @@ When this format is used to export variants, it can be used to export arbitrary 
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/genomic_super_dups/</guid>
       <description>Genomic Super Dups See this blog Why You Should Care About Segmental Duplications for some nice explanation.
 vtools show annotation genomicSuperDups -v2 Annotation database genomicSuperDups (version hg19_20130626) Description: Duplications of &amp;gt;1000 Bases of Non-RepeatMasked Sequence (&amp;gt;90 percent similar). Database type: range Number of records: 51,599 Distinct ranges: 40,832 Reference genome hg19: chr, start, end Field: chr Type: string Comment: Reference sequence chromosome or scaffold Missing entries: 0 Unique Entries: 80 Field: start Type: integer Comment: Start position in chromosome Missing entries: 0 Unique Entries: 30,451 Range: 1 - 249235635 Field: end Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 30,690 Range: 1832 - 249240008 Field: name Type: string Comment: Other chromosome involved Missing entries: 0 Unique Entries: 30,525 Field: otherChr Type: string Comment: Other chromosome or scaffold Missing entries: 0 Unique Entries: 80 Field: otherStart Type: integer Comment: Start position of other region Missing entries: 0 Unique Entries: 30,451 Range: 0 - 249235634 Field: otherEnd Type: integer Comment: End position in chromosome Missing entries: 0 Unique Entries: 30,690 Range: 1832 - 249240008 Field: otherSize Type: integer Comment: Total size of other chromosome Missing entries: 0 Unique Entries: 80 Range: 19913 - 249250621 Field: alignL Type: integer Comment: spaces/positions in alignment Missing entries: 0 Unique Entries: 13,141 Range: 1001 - 777920 Field: indelN Type: integer Comment: number of indels Missing entries: 0 Unique Entries: 436 Range: 0 - 993 Field: indelS Type: integer Comment: indel spaces Missing entries: 0 Unique Entries: 4,617 Range: 0 - 92315 Field: matchB Type: integer Comment: aligned bases that match Missing entries: 0 Unique Entries: 12,497 Range: 1000 - 766171 Field: mismatchB Type: integer Comment: aligned bases that do not match Missing entries: 0 Unique Entries: 12,623 Range: 900 - 766171 Field: transitionsB Type: integer Comment: number of transitions Missing entries: 0 Unique Entries: 2,659 Range: 0 - 9703 Field: transversionsB Type: integer Comment: number of transversions Missing entries: 0 Unique Entries: 1,880 Range: 0 - 5953 Field: fracMatch Type: float Comment: fraction of matching bases Missing entries: 0 Unique Entries: 1,442 Range: 0 - 4002 Field: fracMatchIndel Type: float Comment: fraction of matching bases with indels Missing entries: 0 Unique Entries: 21,193 Range: 0.</description>
+    </item>
+    
+    <item>
+      <title>Get involved</title>
+      <link>https://vatlab.github.io/vat-docs/development/getinvolved/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/development/getinvolved/</guid>
+      <description>Report bugs and share ideas People variant tools is currently maintained by [Dr. Bo Peng][2] ([references][3]) from the Department of Bioinformatics and Computational Biology, MD Anderson Cancer Center, Anthony San Lucas from [Dr. Paul Scheet][4]&amp;lsquo;s lab at the University of Texas, MD Anderson Cancer Center, and [Gao Wang][5] from [Dr. Suzanne Leal][6]&amp;lsquo;s group at the Baylor College of Medicine. Other contributed developers are Min Qiao (UT School of Public Health), Dr.</description>
+    </item>
+    
+    <item>
+      <title>HugoGene</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/hugogene/</guid>
+      <description>HUGO Gene Nomenclature Committee (HGNC) approved gene names The HUGO Gene Nomenclature Committee (HGNC) has assigned unique gene symbols and names to almost 38,000 human loci, of which around 19,000 are protein coding. genenames.org is a curated online repository of HGNC-approved gene nomenclature and associated resources including links to genomic, proteomic and phenotypic information, as well as dedicated gene family pages.
+HGNC The HGNC annotation database is a field database that, by default, annotates another gene name field such as refGene.</description>
+    </item>
+    
+    <item>
+      <title>Import</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/import/</guid>
+      <description>Import variants, genotypes and related information fields 1. Usage % vtools import -h usage: vtools import [-h] [--build BUILD] [--format FORMAT] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [-f] [-j N] [-v {0,1,2}] input_files [input_files ...] x Import variants and related sample genotype from one or more delimiter separated files (e.g. VCF and a number of indel formats). positional arguments: input_files A list of failes that will be imported. The file should be delimiter separated with format described by parameter --format.</description>
     </item>
     
     <item>
@@ -382,6 +384,35 @@ Simply put, function mut_sequence in
     </item>
     
     <item>
+      <title>bwa_gatk28_hg19</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/</guid>
+      <description>Calling variants using BWA and GATK best practice pipeline 1. Usage % vtools show pipeline bwa_gatk28_hg19 A pipeline to align raw reads from fastq or BAW/SAM files using BWA and GATK best practice. It uses hg19 of human reference genome and assumes paired-end reads in plain text and compressed formats. Available pipelines: align, call Pipeline &amp;quot;align&amp;quot;: Align raw reads from input files using bwa, gatk, and picard. This pipeline accepts raw input files in plain text format, SAM/BAM format, and their compressed versions (.</description>
+    </item>
+    
+    <item>
+      <title>cytoBand</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</guid>
+      <description>Cyto Band cytoBand defines cytogenic bands. This annotation source gives the approximate location of these bands as seen on Giemsa-stained chromosomes. This data was downloaded from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables).
+The following fields are available for annotation.
+vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Loading annotation database cytoBand DEBUG: Loading annotation database gwasCatalog Annotation database cytoBand (version hg19_20111216) Description: Cyto Band Database type: range Number of records: 862 Number of distinct ranges: 862 Reference genome hg19: [&#39;chr&#39;, &#39;begin&#39;, &#39;end&#39;] Field: chr Type: chromosome Missing entries: 0 Unique Entries: 24 Field: begin Type: integer Comment: start position on chromosome Missing entries: 0 Unique Entries: 667 Range: 1 - 243700001 Field: end Type: integer Comment: end position on chromosome Missing entries: 0 Unique Entries: 690 Range: 2200000 - 249250621 Field: name Type: string Comment: name of cytogenic band Missing entries: 0 Unique Entries: 259 Field: gieStain Type: string Comment: giemsa stain results Missing entries: 0 Unique Entries: 8 </description>
+    </item>
+    
+    <item>
+      <title>dbSNP</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</guid>
+      <description>dbSNP annotation databases The default version of our dbSNP annotation is currently referring to dbSNP143 (using hg38 coordinates) as shown below. However, users can also retrieve older versions of dbSNP: dbSNP141, dbSNP138, dbSNP137, dbSNP135, dbSNP132, dbSNP131, dbSNP130, dbSNP129. The 129 and 130 versions use hg18 as a reference genome, 131, 132, 135, 137, 138 and 141 use hg19 and 143 uses hg38. The archived versions can be used by a variant tools project by referring to their specific names - for example: dbSNP-hg18_129.</description>
+    </item>
+    
+    <item>
       <title>ENCODE</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/misc/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -420,35 +451,6 @@ Simply put, function mut_sequence in
     </item>
     
     <item>
-      <title>bwa_gatk28_hg19</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/variant_calling/bwa_gatk28_hg19/</guid>
-      <description>Calling variants using BWA and GATK best practice pipeline 1. Usage % vtools show pipeline bwa_gatk28_hg19 A pipeline to align raw reads from fastq or BAW/SAM files using BWA and GATK best practice. It uses hg19 of human reference genome and assumes paired-end reads in plain text and compressed formats. Available pipelines: align, call Pipeline &amp;quot;align&amp;quot;: Align raw reads from input files using bwa, gatk, and picard. This pipeline accepts raw input files in plain text format, SAM/BAM format, and their compressed versions (.</description>
-    </item>
-    
-    <item>
-      <title>cytoBand</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/regions/cytoband/</guid>
-      <description> Cyto Band cytoBand defines cytogenic bands. This annotation source gives the approximate location of these bands as seen on Giemsa-stained chromosomes. This data was downloaded from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables).
-The following fields are available for annotation.
-vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Loading annotation database cytoBand DEBUG: Loading annotation database gwasCatalog Annotation database cytoBand (version hg19_20111216) Description: Cyto Band Database type: range Number of records: 862 Number of distinct ranges: 862 Reference genome hg19: [&#39;chr&#39;, &#39;begin&#39;, &#39;end&#39;] Field: chr Type: chromosome Missing entries: 0 Unique Entries: 24 Field: begin Type: integer Comment: start position on chromosome Missing entries: 0 Unique Entries: 667 Range: 1 - 243700001 Field: end Type: integer Comment: end position on chromosome Missing entries: 0 Unique Entries: 690 Range: 2200000 - 249250621 Field: name Type: string Comment: name of cytogenic band Missing entries: 0 Unique Entries: 259 Field: gieStain Type: string Comment: giemsa stain results Missing entries: 0 Unique Entries: 8  </description>
-    </item>
-    
-    <item>
-      <title>dbSNP</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/dbsnp/</guid>
-      <description>dbSNP annotation databases The default version of our dbSNP annotation is currently referring to dbSNP143 (using hg38 coordinates) as shown below. However, users can also retrieve older versions of dbSNP: dbSNP141, dbSNP138, dbSNP137, dbSNP135, dbSNP132, dbSNP131, dbSNP130, dbSNP129. The 129 and 130 versions use hg18 as a reference genome, 131, 132, 135, 137, 138 and 141 use hg19 and 143 uses hg38. The archived versions can be used by a variant tools project by referring to their specific names - for example: dbSNP-hg18_129.</description>
-    </item>
-    
-    <item>
       <title>plink</title>
       <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/plink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -483,7 +485,8 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/track/</guid>
       <description>Extract annotation from external files 1. Usage Function track(filename, field) returns annotation information at column col (optional) in file filename, at position (chr, pos at primary or alternative reference genome) of each variant. For example, function
-% vtools output variant chr pos ref alt &amp;quot;track(&#39;1000g.vcf.gz&#39;, &#39;info&#39;)&amp;quot;  single quote (&#39;) should be used for string literals in SQL functions. Double quote (&amp;quot;) should be avoided although it sometimes works.</description>
+% vtools output variant chr pos ref alt &amp;quot;track(&#39;1000g.vcf.gz&#39;, &#39;info&#39;)&amp;quot;  single quote (&#39;) should be used for string literals in SQL functions. Double quote (&amp;quot;) should be avoided although it sometimes works.
+ output the &amp;ldquo;info&amp;rdquo; column of file 1000g.</description>
     </item>
     
     <item>
@@ -493,7 +496,7 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
       
       <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/transmission/</guid>
       <description>Identification of recessive and de novo variants for family-based design This pipeline is an extension to command vtools_report transmission, the differences are
- vtools_report transmission find recessive and de novo mutations and create variant tables for each offspring. This pipeline assumes the first offspring is the affected one and remove de novo and recessive variants of the second offspring from the list. It creates a single variant table for the results.</description>
+  vtools_report transmission find recessive and de novo mutations and create variant tables for each offspring. This pipeline assumes the first offspring is the affected one and remove de novo and recessive variants of the second offspring from the list. It creates a single variant table for the results.</description>
     </item>
     
     <item>
@@ -503,46 +506,6 @@ vtools show annotation cytoBand -v2 DEBUG: Opening project temp.proj DEBUG: Load
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/update/</guid>
       <description>Add new or update existing variant and genotype info fields 1. Usage % vtools update -h usage: vtools update [-h] [--from_file FROM_FILE [FROM_FILE ...]] [--build BUILD] [--format FORMAT] [-j N] [--sample_name [SAMPLE_NAME [SAMPLE_NAME ...]]] [--set [EXPR [EXPR ...]]] [--from_stat [EXPR [EXPR ...]]] [-s [COND [COND ...]]] [--genotypes [COND [COND ...]]] [-v {0,1,2}] table Add or update fields of existing variants and genotype from other fields, statistics of genotypes and genotype info, or files that annotate variants or their locations (e.</description>
-    </item>
-    
-    <item>
-      <title>Illumina</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/illumina5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/illumina5/</guid>
-      <description>Analyze five samples from Illumina, a tutorial 1. Data source Whole genome-sequencing data for 4 cases and 1 control. Raw data and called variants are provided by Illumina. The SNV and Indel variants are called using CASAVA v18 and are stored separately for each chromosome.
-2. Import data Create a project
-# Performance data is collected on a Mac Workstation with 2x2.26G Quad-Core Xeon processor with 8G RAM. % vtools init ILLUMINA --force  Import data that are outputted from CASAVA v18.</description>
-    </item>
-    
-    <item>
-      <title>Post-assoc analysis</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/post_assoc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/post_assoc/</guid>
-      <description> Representing and Interpreting Association Results </description>
-    </item>
-    
-    <item>
-      <title>RBT test</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/single_gene/rbt-test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/rbt-test/</guid>
-      <description>Replication Based Test for Protective Variants 1. Introduction This is implementation for the replication base test in (Ionita-Laza et al 2011). The key of this method is replication, i.e., in the two-sided test of RBT it computes evidences to reject each of the two hypothesis
- Deleterious rare variants are enriched in cases Protective rare variants are enriched in controls  The final statistic is based on the stronger of the two evidences, adjusted for multiple testing.</description>
-    </item>
-    
-    <item>
-      <title>Rutgers map</title>
-      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</guid>
-      <description>Rutgers map The rutgersMap database was created from Rutgers Combined Linkage-Phsycal Map (T. C. Matise et al, 2007). The current version contains interpolated genetic positions for variants from dbSNP build 134. It is also possible to provide a list of variants with physical positions to the Rutgers Map Interpolator and create your own annotation database using the rutgersMap format with --file option for vtools use command.
-Description of the data from Rutgers Computational Genetics Lab:</description>
     </item>
     
     <item>
@@ -561,6 +524,17 @@ Description of the data from Rutgers Computational Genetics Lab:</description>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/genotype/</guid>
       <description>genotypes of one or more samples 1. Usage This function is only supported when STOREMODE is set to sqlite. Genotype information for a variant is not directly available in variant tools commands such as vtools output because these commands only output variant info or annotation fields. Function genotype can be used to retrieve genotypes of one or more samples from the genotype tables. In its single-sample mode, this function accepts a sample name and an optional field to display,</description>
+    </item>
+    
+    <item>
+      <title>Illumina</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/illumina5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/illumina5/</guid>
+      <description>Analyze five samples from Illumina, a tutorial 1. Data source Whole genome-sequencing data for 4 cases and 1 control. Raw data and called variants are provided by Illumina. The SNV and Indel variants are called using CASAVA v18 and are stored separately for each chromosome.
+2. Import data Create a project
+# Performance data is collected on a Mac Workstation with 2x2.26G Quad-Core Xeon processor with 8G RAM. % vtools init ILLUMINA --force  Import data that are outputted from CASAVA v18.</description>
     </item>
     
     <item>
@@ -587,7 +561,26 @@ Description of the data from Rutgers Computational Genetics Lab:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/phenotype/</guid>
-      <description>Import and manipulate phenotypes 1. Usage % vtools phenotype -h usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]] [--set [EXPRESSION [EXPRESSION ...]]] [--from_stat [EXPRESSION [EXPRESSION ...]]] [--output [EXPRESSION [EXPRESSION ...]]] [-j N] [-g [COND [COND ...]]] [-s [COND [COND ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l LIMIT] [-v {0,1,2}] Import phenotypes from a file, or set phenotypes to constants, or to summary statistics of sample genotype fields.</description>
+      <description>Import and manipulate phenotypes 1. Usage % vtools phenotype -h usage: vtools phenotype [-h] [-f [INPUT_FILE [INPUT_FILE ...]]] [--set [EXPRESSION [EXPRESSION ...]]] [--from_stat [EXPRESSION [EXPRESSION ...]]] [--output [EXPRESSION [EXPRESSION ...]]] [-j N] [-g [COND [COND ...]]] [-s [COND [COND ...]]] [--header [HEADER [HEADER ...]]] [-d DELIMITER] [--na NA] [-l LIMIT] [-v {0,1,2}] Import phenotypes from a file, or set phenotypes to constants, or to summary statistics of sample genotype fields. optional arguments: -h, --help show this help message and exit -f [INPUT_FILE [INPUT_FILE .</description>
+    </item>
+    
+    <item>
+      <title>Post-assoc analysis</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/post_assoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/post_assoc/</guid>
+      <description>Representing and Interpreting Association Results </description>
+    </item>
+    
+    <item>
+      <title>RBT test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single_gene/rbt-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/rbt-test/</guid>
+      <description>Replication Based Test for Protective Variants 1. Introduction This is implementation for the replication base test in (Ionita-Laza et al 2011). The key of this method is replication, i.e., in the two-sided test of RBT it computes evidences to reject each of the two hypothesis
+ Deleterious rare variants are enriched in cases Protective rare variants are enriched in controls  The final statistic is based on the stronger of the two evidences, adjusted for multiple testing.</description>
     </item>
     
     <item>
@@ -597,6 +590,16 @@ Description of the data from Rutgers Computational Genetics Lab:</description>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/rsname/</guid>
       <description>Importing variants from a list of dbSNP iDs (rsnames) 1. Format description % vtools show format rsname Import variants (chr, pos, ref, alt) that are queried from dbSNP database using provided rsnames Columns: None defined, cannot export to this format variant: chr Obtain chromosome from dbSNP by rsname pos Obtain position from dbSNP by rsname ref Obtain reference allele from dbSNP by rsname alt Obtain alternative allele from dbSNP by rsname Format parameters: sep delimiter used to separate input fields (default: &#39;,&#39;) rsname_col Index for the column with rsname (default: 1) dbfile Name of an attached dbSNP database or path to the dbSNP database in sqlite format (default: dbSNP- hg19_138.</description>
+    </item>
+    
+    <item>
+      <title>Rutgers map</title>
+      <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/linkagephysicalmap/</guid>
+      <description>Rutgers map The rutgersMap database was created from Rutgers Combined Linkage-Phsycal Map (T. C. Matise et al, 2007). The current version contains interpolated genetic positions for variants from dbSNP build 134. It is also possible to provide a list of variants with physical positions to the Rutgers Map Interpolator and create your own annotation database using the rutgersMap format with --file option for vtools use command.
+Description of the data from Rutgers Computational Genetics Lab:</description>
     </item>
     
     <item>
@@ -637,15 +640,6 @@ As always, we need to find an empty directory and create a new project:</descrip
     </item>
     
     <item>
-      <title>SKAT test</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</guid>
-      <description>SNP-set (Sequence) Kernel Association Test Method 1. Details 1.1 Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011).</description>
-    </item>
-    
-    <item>
       <title>cumtomized</title>
       <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/new/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -660,8 +654,8 @@ As always, we need to find an empty directory and create a new project:</descrip
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/databaseof/</guid>
-      <description> Database of Genomic Variants Database of genomic variants is a curated catalogue of human genomic structural variation. It is a range-based database that shows the range of such variants.
-% vtools show annotation DGV -v2 Annotation database DGV (version hg19_20130723) Description: Database of Genomic Variants, a curated catalogue of human genomic structural variation. Database type: range Number of records: 202,430 Distinct ranges: 199,827 Reference genome hg19: chr, start, end Field: variantaccession Type: string Missing entries: 0 Unique Entries: 202,430 Field: chr Type: string Missing entries: 0 Unique Entries: 24 Field: start Type: integer Missing entries: 0 Unique Entries: 189,925 Range: 1 - 249205967 Field: end Type: integer Missing entries: 0 Unique Entries: 189,604 Range: 16629 - 249206446 Field: varianttype Type: string Missing entries: 0 Unique Entries: 2 Field: variantsubtype Type: string Missing entries: 0 Unique Entries: 9 Field: reference Type: string Missing entries: 0 Unique Entries: 55 Field: pubmedid Type: integer Missing entries: 0 Unique Entries: 55 Range: 12058347 - 23290073 Field: method Type: string Missing entries: 0 Unique Entries: 31 Field: platform Type: string Missing entries: 0 Unique Entries: 49 Field: mergedvariants Type: string Missing entries: 0 Unique Entries: 1 Field: supportingvariants Type: string Missing entries: 0 Unique Entries: 198,642 Field: mergedorsample Type: string Missing entries: 0 Unique Entries: 2 Field: frequency Type: string Missing entries: 0 Unique Entries: 65 Field: samplesize Type: integer Missing entries: 0 Unique Entries: 37 Range: 0 - 6533 Field: observedgains Type: integer Missing entries: 0 Unique Entries: 188 Range: 0 - Field: observedlosses Type: integer Missing entries: 0 Unique Entries: 825 Range: 0 - Field: cohortdescription Type: string Missing entries: 0 Unique Entries: 6 Field: genes Type: string Missing entries: 0 Unique Entries: 25,687 Field: samples Type: string Missing entries: 0 Unique Entries: 67,200  </description>
+      <description>Database of Genomic Variants Database of genomic variants is a curated catalogue of human genomic structural variation. It is a range-based database that shows the range of such variants.
+% vtools show annotation DGV -v2 Annotation database DGV (version hg19_20130723) Description: Database of Genomic Variants, a curated catalogue of human genomic structural variation. Database type: range Number of records: 202,430 Distinct ranges: 199,827 Reference genome hg19: chr, start, end Field: variantaccession Type: string Missing entries: 0 Unique Entries: 202,430 Field: chr Type: string Missing entries: 0 Unique Entries: 24 Field: start Type: integer Missing entries: 0 Unique Entries: 189,925 Range: 1 - 249205967 Field: end Type: integer Missing entries: 0 Unique Entries: 189,604 Range: 16629 - 249206446 Field: varianttype Type: string Missing entries: 0 Unique Entries: 2 Field: variantsubtype Type: string Missing entries: 0 Unique Entries: 9 Field: reference Type: string Missing entries: 0 Unique Entries: 55 Field: pubmedid Type: integer Missing entries: 0 Unique Entries: 55 Range: 12058347 - 23290073 Field: method Type: string Missing entries: 0 Unique Entries: 31 Field: platform Type: string Missing entries: 0 Unique Entries: 49 Field: mergedvariants Type: string Missing entries: 0 Unique Entries: 1 Field: supportingvariants Type: string Missing entries: 0 Unique Entries: 198,642 Field: mergedorsample Type: string Missing entries: 0 Unique Entries: 2 Field: frequency Type: string Missing entries: 0 Unique Entries: 65 Field: samplesize Type: integer Missing entries: 0 Unique Entries: 37 Range: 0 - 6533 Field: observedgains Type: integer Missing entries: 0 Unique Entries: 188 Range: 0 - Field: observedlosses Type: integer Missing entries: 0 Unique Entries: 825 Range: 0 - Field: cohortdescription Type: string Missing entries: 0 Unique Entries: 6 Field: genes Type: string Missing entries: 0 Unique Entries: 25,687 Field: samples Type: string Missing entries: 0 Unique Entries: 67,200 </description>
     </item>
     
     <item>
@@ -693,12 +687,21 @@ samples()  returns a list of comma-separated names of samples that contain the v
     </item>
     
     <item>
+      <title>SKAT test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</guid>
+      <description>SNP-set (Sequence) Kernel Association Test Method 1. Details 1.1 Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011). This is a wrapper for the R package &amp;quot;SKAT&amp;quot; implemented &amp;amp; maintained by Dr.</description>
+    </item>
+    
+    <item>
       <title>trans_ratio</title>
       <link>https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/trans_ratio/</guid>
-      <description>Transition-transversion Ratio 1. About vtools_report trans_ratio This command counts the number of transition and transversion variants and calculates its ratio. The expected ratio is 2 in human pseudo-genes (after the exclusion of transitions at CpG sites).
+      <description>Transition-transversion Ratio 1. About vtools_report trans_ratio  This command counts the number of transition and transversion variants and calculates its ratio. The expected ratio is 2 in human pseudo-genes (after the exclusion of transitions at CpG sites).
 2. Usage % vtools_report trans_ratio -h usage: vtools_report trans_ratio [-h] -n NUM_FIELD [--group_by [GROUP_BY [GROUP_BY ...]]] [-v {0,1,2}] table This command counts the number of transition (A&amp;lt;-&amp;gt;G and C&amp;lt;-&amp;gt;T) and transversion variants (others) and calculate its ratio.</description>
     </item>
     
@@ -721,6 +724,17 @@ samples()  returns a list of comma-separated names of samples that contain the v
     </item>
     
     <item>
+      <title>in_table</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/functions/in_table/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/functions/in_table/</guid>
+      <description>Test membership of variants in variant tables 1. Usage The in_table function is a simple function used to test is a variant is in a specified variant table. It accepts the name of a variant table and returns 1 if the variant belong to this table, and 0 otherwise.
+in_table(&#39;table_name&#39;)  2. Details For example, command
+% vtools admin --load_snapshot vt_simple % vtools show tables </description>
+    </item>
+    
+    <item>
       <title>MetaSKAT</title>
       <link>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/metaskat-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -738,26 +752,6 @@ samples()  returns a list of comma-separated names of samples that contain the v
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/select/</guid>
       <description>Selecting variants belong to specified genes 1. Data We have whole genome sequencing data for more than 18M variants. After some initial analysis, three genes geneA, geneB, and geneC caught our eyes and we would like to further investigate these genes. We assume that we already have a project with all the variants imported
 2. Find variants that belong to the genes We first need to get a list of genes</description>
-    </item>
-    
-    <item>
-      <title>VT test</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/single_gene/vt-test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/vt-test/</guid>
-      <description>Variable Thresholds Test for Case Control Data Analysis 1. Introduction The variable thresholds method (VT, Price et al 2010) tests for association between phenotypic values (case control or quantitative traits) with individuals&amp;rsquo; genotype &amp;ldquo;score&amp;rdquo; subject to a variable MAF threshold. It assumes that there exists a fixed yet unknown MAF threshold on a given genetic region which is related to the cutoff for the causality of variants on that loci.</description>
-    </item>
-    
-    <item>
-      <title>in_table</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/functions/in_table/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/functions/in_table/</guid>
-      <description> Test membership of variants in variant tables 1. Usage The in_table function is a simple function used to test is a variant is in a specified variant table. It accepts the name of a variant table and returns 1 if the variant belong to this table, and 0 otherwise.
-in_table(&#39;table_name&#39;)  2. Details For example, command
-% vtools admin --load_snapshot vt_simple % vtools show tables  </description>
     </item>
     
     <item>
@@ -799,31 +793,12 @@ Fortunately, PLINK accepts a transposed PED format (TPED) that is variant orient
     </item>
     
     <item>
-      <title>Detailed analysis</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</link>
+      <title>VT test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single_gene/vt-test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</guid>
-      <description>Analysis of one genetic variant 1. Data After some preliminary analysis, we find one particular variant (179248034 on chromosome 5) in gene SQSTM1 that is likely to be associated with a phenotype. Let us try to find more information about this variant, which is in a variant table named MyVar in our project.
-2. Gene and mRNA We first would like to download and use the ref gene database to our project.</description>
-    </item>
-    
-    <item>
-      <title>KING</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/king/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/king/</guid>
-      <description>Global ancestry and kinship inference 1. Usage % vtools show pipeline KING Pipeline to call KING to perform global ancestry and kinship inference, and import ancestry analysis results as phenotypes into sample table. Available pipelines: king Pipeline &amp;quot;king&amp;quot;: This pipeline exports genotypes in specified variant table (parameter --var_table, default to variant) for specified samples (parameter --samples, default to all samples), executes PLINK&#39;s LD pruning, (R^2&amp;lt;0.5) and analysis selected variants using KING&#39;s population ancestry and kingship analysis.</description>
-    </item>
-    
-    <item>
-      <title>WSS test</title>
-      <link>https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/</guid>
-      <description>Weighted Sum Statistic via Rank Test 1. Introduction The method proposed by Madsen and Browning 2009 first introduced the idea of assigning &amp;ldquo;weights&amp;rdquo; to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen &amp;amp; Browning paper the &amp;ldquo;weights&amp;rdquo; are defined as  \(\sqrt{n_iq_i(1-q_i)}\) with the assumption that the &amp;ldquo;rarer&amp;rdquo; the variant, the larger the risk effect it is to a phenotype.</description>
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/vt-test/</guid>
+      <description>Variable Thresholds Test for Case Control Data Analysis 1. Introduction The variable thresholds method (VT, Price et al 2010) tests for association between phenotypic values (case control or quantitative traits) with individuals&amp;rsquo; genotype &amp;ldquo;score&amp;rdquo; subject to a variable MAF threshold. It assumes that there exists a fixed yet unknown MAF threshold on a given genetic region which is related to the cutoff for the causality of variants on that loci. In testing the association for the genetic region, for each possible MAF threshold a genotype score is computed based on given collapsing theme, and is tested for association between the phenotype of interest; the final MAF threshold is chosen such that the association signal is strongest.</description>
     </item>
     
     <item>
@@ -847,12 +822,22 @@ The template PBS script is vtools_association_cluster.pbs in /src/variant_tools 
     </item>
     
     <item>
+      <title>Detailed analysis</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/analysis/</guid>
+      <description>Analysis of one genetic variant 1. Data After some preliminary analysis, we find one particular variant (179248034 on chromosome 5) in gene SQSTM1 that is likely to be associated with a phenotype. Let us try to find more information about this variant, which is in a variant table named MyVar in our project.
+2. Gene and mRNA We first would like to download and use the ref gene database to our project.</description>
+    </item>
+    
+    <item>
       <title>gwasCatalog</title>
       <link>https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/variants/gwas/</guid>
-      <description>Gwas Catalog The gwasCatalog is NHGRI&amp;rsquo;s collection of Genome-Wide Association (GWA) Studies SNPs. We downloaded the data for this annotation source from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables?command=start). You can use this annotation source as a position, range or field-based annotation source. Examples for usage as a range-based and field-based annotation source are given on this page. (By default the usage for this annotation source is a position-based annotation source).</description>
+      <description>Gwas Catalog The gwasCatalog is NHGRI&#39;s collection of Genome-Wide Association (GWA) Studies SNPs. We downloaded the data for this annotation source from the UCSC Genome Browser database (http://genome.ucsc.edu/cgi-bin/hgTables?command=start). You can use this annotation source as a position, range or field-based annotation source. Examples for usage as a range-based and field-based annotation source are given on this page. (By default the usage for this annotation source is a position-based annotation source).</description>
     </item>
     
     <item>
@@ -863,6 +848,15 @@ The template PBS script is vtools_association_cluster.pbs in /src/variant_tools 
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/inbreeding_coefficient/</guid>
       <description>Calculation inbreeding coefficient for individual samples vtools_report inbreeding_coefficient calculates the \(F\) statistic at single individual sample level from genotype data. It measures the reduction in heterozygosity for given genomic region of samples, compare to expected heterozygosity level under Hardy-Weinberg Equilibrium. For a two allelic locus, $$P(AA)=p^2(1-F)+pF$$$$P(aa)=q^2(1-F)+qF$$$$P(Aa)=2pq(1-F)$$We compute estimate for \(F\) as \(\hat{F}=1-\frac{#observed(Aa)}{#expected(Aa)}\)
 Variants included for calculation of \(F\) must be under HWE and be bi-allelic. Tri-allelic loci are automatically excluded from calculation.</description>
+    </item>
+    
+    <item>
+      <title>KING</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/king/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/pipelines/other_pipelines/king/</guid>
+      <description>Global ancestry and kinship inference 1. Usage % vtools show pipeline KING Pipeline to call KING to perform global ancestry and kinship inference, and import ancestry analysis results as phenotypes into sample table. Available pipelines: king Pipeline &amp;quot;king&amp;quot;: This pipeline exports genotypes in specified variant table (parameter --var_table, default to variant) for specified samples (parameter --samples, default to all samples), executes PLINK&#39;s LD pruning, (R^2&amp;lt;0.5) and analysis selected variants using KING&#39;s population ancestry and kingship analysis.</description>
     </item>
     
     <item>
@@ -880,7 +874,7 @@ Variants included for calculation of \(F\) must be under HWE and be bi-allelic. 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/functions/otherfunctions/</guid>
-      <description>Other customized SQL functions 1. vcf_variant: Output variants in vcf format with padding alleles Function vcf_variant(chr, pos, ref, alt, name=&amp;quot;.&amp;quot;) returns a string that represent variants in vcf format. If the variant is a SNV, the output merely connects input by tab (&amp;rsquo;\t&amp;rsquo;). If the variant is an indel, it will pad reference (for insertion) or alternative (for deletion) allele with the allele before variant, adjust position, and generate an output that is acceptable by vcf.</description>
+      <description>Other customized SQL functions 1. vcf_variant: Output variants in vcf format with padding alleles Function vcf_variant(chr, pos, ref, alt, name=&amp;quot;.&amp;quot;) returns a string that represent variants in vcf format. If the variant is a SNV, the output merely connects input by tab (&#39;\t&amp;rsquo;). If the variant is an indel, it will pad reference (for insertion) or alternative (for deletion) allele with the allele before variant, adjust position, and generate an output that is acceptable by vcf.</description>
     </item>
     
     <item>
@@ -890,6 +884,15 @@ Variants included for calculation of \(F\) must be under HWE and be bi-allelic. 
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/use/</guid>
       <description>Use an annotation database 1. Usage % vtools use -h usage: vtools use [-h] [--as NAME] [-l [LINKED_BY [LINKED_BY ...]]] [--anno_type {variant,position,range,field}] [--linked_fields [LINKED_FIELDS [LINKED_FIELDS ...]]] [-f [FILES [FILES ...]]] [--rebuild] [-j N] [-v {0,1,2}] source Link an annotation database to the project, download it from the variant tools website or build it from source if needed. positional arguments: source Use an annotation database ($source.DB or \\(source.DB.gz) if it is available, download or build the database if a description file ($source.</description>
+    </item>
+    
+    <item>
+      <title>WSS test</title>
+      <link>https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/applications/association/single_gene/wss-test/</guid>
+      <description>Weighted Sum Statistic via Rank Test 1. Introduction The method proposed by Madsen and Browning 2009 first introduced the idea of assigning &amp;ldquo;weights&amp;rdquo; to rare variants within a genetic region before they are collapsed. In this case the variants having higher weights will have more substantial contribution to the collapsed variant score. In the Madsen &amp;amp; Browning paper the &amp;ldquo;weights&amp;rdquo; are defined as \(\sqrt{n_iq_i(1-q_i)}\) with the assumption that the &amp;ldquo;rarer&amp;rdquo; the variant, the larger the risk effect it is to a phenotype.</description>
     </item>
     
     <item>
@@ -947,9 +950,7 @@ mkdir p1000g_all cd p1000g_all vtools init p1000g_all vtools admin --set_runtime
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/transmission/</guid>
-      <description>Locate de novo, recessive and other variants that are transmitted from parents to offspring The inconsistent option of this command is not completed yet.
-
-1. Usage % vtools_report transmission -h usage: vtools_report transmission [-h] [--parents PARENTS PARENTS] [--offspring OFFSPRING [OFFSPRING ...]] [--denovo [DENOVO [DENOVO ...]]] [--recessive [RECESSIVE [RECESSIVE ...]]] [--inconsistent [INCONSISTENT [INCONSISTENT ...]]] [-v {0,1,2}] optional arguments: -h, --help show this help message and exit --parents PARENTS PARENTS Names of parents, which should uniquely identify two samples.</description>
+      <description>Locate de novo, recessive and other variants that are transmitted from parents to offspring 1. Usage % vtools_report transmission -h usage: vtools_report transmission [-h] [--parents PARENTS PARENTS] [--offspring OFFSPRING [OFFSPRING ...]] [--denovo [DENOVO [DENOVO ...]]] [--recessive [RECESSIVE [RECESSIVE ...]]] [--inconsistent [INCONSISTENT [INCONSISTENT ...]]] [-v {0,1,2}] optional arguments: -h, --help show this help message and exit --parents PARENTS PARENTS Names of parents, which should uniquely identify two samples. --offspring OFFSPRING [OFFSPRING .</description>
     </item>
     
     <item>
@@ -1005,7 +1006,16 @@ mkdir p1000g_all cd p1000g_all vtools init p1000g_all vtools admin --set_runtime
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/casava18snps/</guid>
-      <description>CASAVA18Snps Sample data # ** CASAVA depth-filtered snp calls ** #$ CMDLINE /CASAVA-1.8.0a19/filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 142.345267150165 # #$ COLUMNS seq_name pos bcalls_used bcalls_filt ref Q(snp) max_gt Q(max_gt) max_gt|poly_site Q(max_gt|poly_site) A_used C_used G_used T_used chr1 10231 5 9 C 28 AC 28 AC 59 3 2 0 0 chr1 10255 14 29 A 1 AA 9 AT 25 12 0 0 2 chr1 10264 15 19 C 18 AC 18 AC 51 4 11 0 0 chr1 10291 2 16 C 1 CC 10 CT 21 0 1 0 1 chr1 10330 3 14 C 2 CC 5 AC 28 2 1 0 0 chr1 13273 9 0 G 58 CG 54 CG 57 0 6 3 0 chr1 14464 18 0 A 60 AT 60 AT 93 12 0 0 6 chr1 14673 19 0 G 63 CG 63 CG 96 0 8 11 0 chr1 14699 23 0 C 72 CG 72 CG 105 0 14 9 0 chr1 14907 13 0 A 118 AG 65 AG 65 4 0 9 0 chr1 14930 14 2 A 119 AG 68 AG 68 5 0 9 0 chr1 14933 14 2 G 78 AG 78 AG 110 6 0 8 0 chr1 14976 4 0 G 18 AG 18 AG 47 2 0 2 0 chr1 15211 2 0 T 37 GG 5 GG 5 0 0 2 0 chr1 15817 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 15820 1 0 G 11 GT 3 GT 3 0 0 0 1 chr1 16487 12 0 T 62 CT 62 CT 94 0 6 0 6 chr1 17538 64 0 C 88 AC 88 AC 121 18 46 0 0 chr1 17746 53 1 A 22 AG 22 AG 55 39 0 14 0 chr1 17765 47 1 G 26 AG 26 AG 59 13 0 34 0 chr1 20131 1 0 G 8 CG 2 CG 3 0 1 0 0 chr1 20144 1 0 G 9 AG 2 AG 3 1 0 0 0 chr1 20206 2 0 C 4 CT 4 CT 30 0 1 0 1 chr1 20245 3 0 G 4 AG 4 AG 34 1 0 2 0 chr1 20304 2 0 G 2 GG 5 CG 27 0 1 1 0  Example vtools import --format Illumina_SNP Illumina_SNP.</description>
+      <description>CASAVA18Snps Sample data #	**	CASAVA	depth-filtered	snp	calls	** #$	CMDLINE	/CASAVA-1.8.0a19/filterSmallVariants.pl	--chrom=chr1 #$	SEQ_MAX_DEPTH	chr1	142.345267150165 # #$	COLUMNS	seq_name	pos	bcalls_used	bcalls_filt	ref	Q(snp)	max_gt	Q(max_gt)	max_gt|poly_site	Q(max_gt|poly_site)	A_used	C_used	G_used	T_used chr1	10231	5	9	C	28	AC	28	AC	59	3	2	0	0 chr1	10255	14	29	A	1	AA	9	AT	25	12	0	0	2 chr1	10264	15	19	C	18	AC	18	AC	51	4	11	0	0 chr1	10291	2	16	C	1	CC	10	CT	21	0	1	0	1 chr1	10330	3	14	C	2	CC	5	AC	28	2	1	0	0 chr1	13273	9	0	G	58	CG	54	CG	57	0	6	3	0 chr1	14464	18	0	A	60	AT	60	AT	93	12	0	0	6 chr1	14673	19	0	G	63	CG	63	CG	96	0	8	11	0 chr1	14699	23	0	C	72	CG	72	CG	105	0	14	9	0 chr1	14907	13	0	A	118	AG	65	AG	65	4	0	9	0 chr1	14930	14	2	A	119	AG	68	AG	68	5	0	9	0 chr1	14933	14	2	G	78	AG	78	AG	110	6	0	8	0 chr1	14976	4	0	G	18	AG	18	AG	47	2	0	2	0 chr1	15211	2	0	T	37	GG	5	GG	5	0	0	2	0 chr1	15817	1	0	G	11	GT	3	GT	3	0	0	0	1 chr1	15820	1	0	G	11	GT	3	GT	3	0	0	0	1 chr1	16487	12	0	T	62	CT	62	CT	94	0	6	0	6 chr1	17538	64	0	C	88	AC	88	AC	121	18	46	0	0 chr1	17746	53	1	A	22	AG	22	AG	55	39	0	14	0 chr1	17765	47	1	G	26	AG	26	AG	59	13	0	34	0 chr1	20131	1	0	G	8	CG	2	CG	3	0	1	0	0 chr1	20144	1	0	G	9	AG	2	AG	3	1	0	0	0 chr1	20206	2	0	C	4	CT	4	CT	30	0	1	0	1 chr1	20245	3	0	G	4	AG	4	AG	34	1	0	2	0 chr1	20304	2	0	G	2	GG	5	CG	27	0	1	1	0  Example vtools import --format Illumina_SNP Illumina_SNP.</description>
+    </item>
+    
+    <item>
+      <title>compare</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/vtools_commands/compare/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/compare/</guid>
+      <description>Compare two or more variant tables 1. Usage % vtools compare -h usage: vtools compare [-h] [--union [TABLE [DESC ...]]] [--intersection [TABLE [DESC ...]]] [--difference [TABLE [DESC ...]]] [--expression EXPR [DESC ...]] [--mode {variant,site,genotype}] [--samples [SAMPLES [SAMPLES ...]]] [-v {0,1,2}] [tables [tables ...]] Get the difference, intersection and union of two or more variant tables, according to sites, variants, or genotypes of associated samples of these variants. Resulting variants can be counted or write to other variant tables.</description>
     </item>
     
     <item>
@@ -1030,39 +1040,12 @@ head -20 myVars.csv ADARB2,chr10,1224091,-/C ADARB2,chr10,1224097,-/A ADARB2,chr
     </item>
     
     <item>
-      <title>compare</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/vtools_commands/compare/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/vtools_commands/compare/</guid>
-      <description>Compare two or more variant tables 1. Usage % vtools compare -h usage: vtools compare [-h] [--union [TABLE [DESC ...]]] [--intersection [TABLE [DESC ...]]] [--difference [TABLE [DESC ...]]] [--expression EXPR [DESC ...]] [--mode {variant,site,genotype}] [--samples [SAMPLES [SAMPLES ...]]] [-v {0,1,2}] [tables [tables ...]] Get the difference, intersection and union of two or more variant tables, according to sites, variants, or genotypes of associated samples of these variants. Resulting variants can be counted or write to other variant tables.</description>
-    </item>
-    
-    <item>
       <title>plot_fields</title>
       <link>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_fields/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_fields/</guid>
       <description>Plot fields from variant tables 1. Usage % vtools_report plot_fields -h usage: vtools_report plot_fields [-h] [--variants TABLE] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of fields that will be outputted. optional arguments: -h, --help show this help message and exit --variants TABLE Limit value of fields to variant in specified variant table.</description>
-    </item>
-    
-    <item>
-      <title>CASAVA18Indels</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/casava18indels/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/casava18indels/</guid>
-      <description>CASAVA18IndelsCASAVA18Indels Sample data # ** CASAVA depth-filtered indel calls ** #$ CMDLINE /filterSmallVariants.pl --chrom=chr1 #$ SEQ_MAX_DEPTH chr1 143.988337798483 # #$ COLUMNS seq_name pos type ref_upstream ref/indel ref_downstream Q(indel) max_gtype Q(max_gtype) depth alt_reads indel_reads other_reads repeat_unit ref_repeat_count indel_repeat_count chr1 10147 1D CTAACCCTAA C/- CCCTAACCCT 70 het 70 6 2 3 1 C 4 3 chr1 10231 1D CTAACCCTAA C/- CCCTAACCCT 1203 het 284 53 7 30 17 C 4 3 chr1 10353 1I CCCTAACCCT -/A ACCCTAACCC 434 het 118 17 3 8 9 A 1 2 chr1 10390 1D CTAACCCTAA C/- CCCTAACCCC 765 het 399 39 9 19 12 C 4 3 chr1 10397 1D TAACCCCTAA C/- CCCTAACCCT 730 het 496 38 11 20 9 C 4 3 chr1 10440 1D CTAACCCTAA C/- CCCTAACCCT 774 het 302 31 7 21 3 C 4 3 chr1 28327 1D AAGCCTGTAG T/- TGCTCATCTG 3 het 3 2 1 1 0 T 2 1 chr1 54711 1I AAACCTTGTA -/T TTTTTCTTTC 37 het 37 21 8 2 12 T 5 6 chr1 62240 2D AGACACACAT AC/-- ACACACACAC 100 het 100 22 16 4 2 AC 8 7 chr1 83830 8D AGAAAGAAAG AGAAAGAA/-------- AGAAAGAAAG 273 het 161 13 3 6 4 AGAA 11 9 chr1 108546 BP_RIGHT N/A ------/CTATCA AAAAAAAAAA 28 het 28 13 9 2 2 N/A 0 0 chr1 123089 2D TGTGGACATG TA/-- TATATATATA 142 het 142 13 9 4 0 TA 6 5 chr1 128590 1D CTTCAAGTTC A/- CCCCCTTTTT 220 het 220 13 4 5 8 A 1 0 chr1 129011 3D GGGATGTAGA ATG/--- ATAAGGCTCT 258 het 258 12 5 6 1 ATG 1 0 chr1 136743 1I GGTGAGGCAA -/C GGGCTCACAC 76 het 76 80 66 6 12 C 0 1 chr1 136889 1D TGTGAGGCAA G/- GGGCTCGGGC 205 het 205 41 29 8 8 G 4 3 chr1 237577 1I AAAGGGGGTT -/C ATTATCTAGG 60 het 60 51 45 4 2 C 0 1 chr1 247917 3D ACCCAACCTC AGG/--- AGTTCAGGGC 69 hom 5 2 0 2 0 AGG 1 0 chr1 255910 2I TGTGTGTGTA --/TG TGTGTGTGTG 257 het 28 7 1 5 1 TG 10 11 chr1 531809 2D CACACTTATG CA/-- CACATTCACA 327 het 327 25 17 8 1 CA 3 2 chr1 532239 2D TGTTCACATT CA/-- CACTCATACA 325 het 325 64 53 10 2 CA 2 1 chr1 532259 3D CACAGCCCAA AAT/--- AATATACACA 303 het 303 61 43 9 10 AAT 2 1 chr1 537252 2D AGCCACATGT GG/-- GACAGGGCAG 6 hom 2 1 0 1 0 G 3 1 chr1 537494 5I CAGCGTCCAT -----/GCCCA GCCGGCCTCC 23 het 3 2 0 1 1 GCCCA 0 1 chr1 537641 50D ATCCCCCTCT CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC/-------------------------------------------------- TTTCTCCTCT 66 het 66 22 18 3 10 CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC 1 0  Example vtools import --format Illumina_INDEL Illumina_INDEL.</description>
-    </item>
-    
-    <item>
-      <title>Sample</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/sample/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/sample/</guid>
-      <description>Handling sample genotypes that imported from multiple files When vtools import imports a file, it creates one or more samples associated with this file. This works well if all genotypes belong to a sample are contained in one file, but not so if the genotypes are scattered in multiple files (e.g. chromosome by chromosome). This tutorial demonstrates how to use vtools admin command to handle sample genotypes that are imported from multiple files.</description>
     </item>
     
     <item>
@@ -1075,21 +1058,30 @@ head -20 myVars.csv ADARB2,chr10,1224091,-/C ADARB2,chr10,1224097,-/A ADARB2,chr
     </item>
     
     <item>
+      <title>CASAVA18Indels</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/casava18indels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/casava18indels/</guid>
+      <description>CASAVA18IndelsCASAVA18Indels Sample data #	**	CASAVA	depth-filtered	indel	calls	** #$	CMDLINE	/filterSmallVariants.pl	--chrom=chr1 #$	SEQ_MAX_DEPTH	chr1	143.988337798483 # #$	COLUMNS	seq_name	pos	type	ref_upstream	ref/indel	ref_downstream	Q(indel)	max_gtype	Q(max_gtype)	depth	alt_reads	indel_reads	other_reads	repeat_unit	ref_repeat_count	indel_repeat_count chr1	10147	1D	CTAACCCTAA	C/-	CCCTAACCCT	70	het	70	6	2	3	1	C	4	3 chr1	10231	1D	CTAACCCTAA	C/-	CCCTAACCCT	1203	het	284	53	7	30	17	C	4	3 chr1	10353	1I	CCCTAACCCT	-/A	ACCCTAACCC	434	het	118	17	3	8	9	A	1	2 chr1	10390	1D	CTAACCCTAA	C/-	CCCTAACCCC	765	het	399	39	9	19	12	C	4	3 chr1	10397	1D	TAACCCCTAA	C/-	CCCTAACCCT	730	het	496	38	11	20	9	C	4	3 chr1	10440	1D	CTAACCCTAA	C/-	CCCTAACCCT	774	het	302	31	7	21	3	C	4	3 chr1	28327	1D	AAGCCTGTAG	T/-	TGCTCATCTG	3	het	3	2	1	1	0	T	2	1 chr1	54711	1I	AAACCTTGTA	-/T	TTTTTCTTTC	37	het	37	21	8	2	12	T	5	6 chr1	62240	2D	AGACACACAT	AC/--	ACACACACAC	100	het	100	22	16	4	2	AC	8	7 chr1	83830	8D	AGAAAGAAAG	AGAAAGAA/--------	AGAAAGAAAG	273	het	161	13	3	6	4	AGAA	11	9 chr1	108546	BP_RIGHT	N/A	------/CTATCA	AAAAAAAAAA	28	het	28	13	9	2	2	N/A	0	0 chr1	123089	2D	TGTGGACATG	TA/--	TATATATATA	142	het	142	13	9	4	0	TA	6	5 chr1	128590	1D	CTTCAAGTTC	A/-	CCCCCTTTTT	220	het	220	13	4	5	8	A	1	0 chr1	129011	3D	GGGATGTAGA	ATG/---	ATAAGGCTCT	258	het	258	12	5	6	1	ATG	1	0 chr1	136743	1I	GGTGAGGCAA	-/C	GGGCTCACAC	76	het	76	80	66	6	12	C	0	1 chr1	136889	1D	TGTGAGGCAA	G/-	GGGCTCGGGC	205	het	205	41	29	8	8	G	4	3 chr1	237577	1I	AAAGGGGGTT	-/C	ATTATCTAGG	60	het	60	51	45	4	2	C	0	1 chr1	247917	3D	ACCCAACCTC	AGG/---	AGTTCAGGGC	69	hom	5	2	0	2	0	AGG	1	0 chr1	255910	2I	TGTGTGTGTA	--/TG	TGTGTGTGTG	257	het	28	7	1	5	1	TG	10	11 chr1	531809	2D	CACACTTATG	CA/--	CACATTCACA	327	het	327	25	17	8	1	CA	3	2 chr1	532239	2D	TGTTCACATT	CA/--	CACTCATACA	325	het	325	64	53	10	2	CA	2	1 chr1	532259	3D	CACAGCCCAA	AAT/---	AATATACACA	303	het	303	61	43	9	10	AAT	2	1 chr1	537252	2D	AGCCACATGT	GG/--	GACAGGGCAG	6	hom	2	1	0	1	0	G	3	1 chr1	537494	5I	CAGCGTCCAT	-----/GCCCA	GCCGGCCTCC	23	het	3	2	0	1	1	GCCCA	0	1 chr1	537641	50D	ATCCCCCTCT	CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC/--------------------------------------------------	TTTCTCCTCT	66	het	66	22	18	3	10	CCATCCCCCTCTCCATCTCCCTCTCCTTTCTCCTCTCTAGCCCCCTCTCC	1	0  Example vtools import --format Illumina_INDEL Illumina_INDEL.</description>
+    </item>
+    
+    <item>
       <title>plot_geno_fields</title>
       <link>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/vtools_report/plot_geno_fields/</guid>
-      <description>Plot genotype and/or genotype information fields 1. Usage % vtools_report plot_geno_fields -h usage: vtools_report plot_geno_fields [-h] [--variants TABLE] [--samples [SAMPLES [SAMPLES ...]]] [--genotypes [GENOTYPES [GENOTYPES ...]]] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of genotype fields that will be outputted.</description>
+      <description>Plot genotype and/or genotype information fields 1. Usage % vtools_report plot_geno_fields -h usage: vtools_report plot_geno_fields [-h] [--variants TABLE] [--samples [SAMPLES [SAMPLES ...]]] [--genotypes [GENOTYPES [GENOTYPES ...]]] [--save_data FILENAME] [--save_script FILENAME] [--width px] [--height px] [--hist name] [--norm_curve] [--dot name] [--dot_size pt] [--discrete_color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [--box name] [--stratify C [C ...]] [--outlier_size pt] [--color {Dark2,grayscale,default,BrBG,PiYG,PRGn,PuOr,RdBu,RdGy,RdYlBu,RdYlGn,Spectral,Accent,Paired,Pastel1,Pastel2,Set1,Set2,Set3,Blues,BuGn,BuPu,GnBu,Greens,Greys,Oranges,OrRd,PuBu,PuBuGn,PuRd,Purples,RdPu,Reds,YlGn,YlGnBu,YlOrBr,YlOrRd}] [-v {0,1,2}] fields [fields ...] positional arguments: fields A list of genotype fields that will be outputted. optional arguments: -h, --help show this help message and exit --variants TABLE Limit value of fields to variant in specified variant table.</description>
     </item>
     
     <item>
-      <title>Non-human genomes</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/mouthgenome/</link>
+      <title>Sample</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/sample/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/mouthgenome/</guid>
-      <description>Working with mouse and other non-human reference genomes Variant Tools supports build hg18 and hg19 of the human reference genome natively. If your data uses a different reference genome, you will need to provide your own fasta files, which can usually be downloaded from resources such as Illumina iGenomes. The reference genome needs to be converted to a binary format (crr) before it can be used, and need to be stored under the project directory, or under $local_resource/reference (usually ~/.</description>
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/sample/</guid>
+      <description>Handling sample genotypes that imported from multiple files When vtools import imports a file, it creates one or more samples associated with this file. This works well if all genotypes belong to a sample are contained in one file, but not so if the genotypes are scattered in multiple files (e.g. chromosome by chromosome). This tutorial demonstrates how to use vtools admin command to handle sample genotypes that are imported from multiple files.</description>
     </item>
     
     <item>
@@ -1100,6 +1092,15 @@ head -20 myVars.csv ADARB2,chr10,1224091,-/C ADARB2,chr10,1224097,-/A ADARB2,chr
       <guid>https://vatlab.github.io/vat-docs/documentation/customization/format/supportedformats/functor/</guid>
       <description>HomePage Import/Export adjustment functors The following are all the adjustment functions that are provided by variant tools. The export functors are of course only used for exporting variants using .fmt files, and are not used in .ann files.
 Adjust input  IncreaseBy(inc=1), converting 5 -&amp;gt; 6  Increase input integer value by inc. This is usually used to adjust 0-based position to 1-based position that is used by variant tools.</description>
+    </item>
+    
+    <item>
+      <title>Non-human genomes</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/mouthgenome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/mouthgenome/</guid>
+      <description>Working with mouse and other non-human reference genomes Variant Tools supports build hg18 and hg19 of the human reference genome natively. If your data uses a different reference genome, you will need to provide your own fasta files, which can usually be downloaded from resources such as Illumina iGenomes. The reference genome needs to be converted to a binary format (crr) before it can be used, and need to be stored under the project directory, or under $local_resource/reference (usually ~/.</description>
     </item>
     
     <item>
@@ -1127,7 +1128,7 @@ Adjust input  IncreaseBy(inc=1), converting 5 -&amp;gt; 6  Increase input intege
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/annotation/</guid>
-      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases.</description>
+      <description>Annotating variants using multiple annotation databases, a tutorial 1. Getting annotation databases This tutorial demonstrates how to use various databases to annotate variants in a variant tools project. These databases will be automatically downloaded and saved in directory ~/.variant_tools when they are used in a project. The amount of time required to download these databases depends on the speed of your internet connection, server load, and size of the databases. If you do no want to wait for the downloads and if you have enough disk space, you can download all variant tools resources into your local resource directory using the following commands:</description>
     </item>
     
     <item>
@@ -1188,15 +1189,6 @@ Adjust input  IncreaseBy(inc=1), converting 5 -&amp;gt; 6  Increase input intege
     </item>
     
     <item>
-      <title>Subprojects</title>
-      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/subprojects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/subprojects/</guid>
-      <description>Use of subprojects to manage large project &amp;ndash; a tutorial 1. Data This tutorial uses the same data (whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls) as this tutorial, but demonstrates the uses of subproject to import and analyze data. Performance data is collected on a Mac Workstation with 2x2.26G Quad-Core Xeon processor with 8G RAM, using variant tools v1.</description>
-    </item>
-    
-    <item>
       <title>admin</title>
       <link>https://vatlab.github.io/vat-docs/documentation/vtools_commands/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1206,13 +1198,23 @@ Adjust input  IncreaseBy(inc=1), converting 5 -&amp;gt; 6  Increase input intege
     </item>
     
     <item>
+      <title>Subprojects</title>
+      <link>https://vatlab.github.io/vat-docs/documentation/tutorials/subprojects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/subprojects/</guid>
+      <description>Use of subprojects to manage large project &amp;ndash; a tutorial 1. Data This tutorial uses the same data (whole genome-sequencing data for 44 cases, with SNV and indel data in separate files, and 200 exome controls) as this tutorial, but demonstrates the uses of subproject to import and analyze data. Performance data is collected on a Mac Workstation with 2x2.26G Quad-Core Xeon processor with 8G RAM, using variant tools v1.0rc2.</description>
+    </item>
+    
+    <item>
       <title>ACM-BCB tutorial</title>
       <link>https://vatlab.github.io/vat-docs/documentation/tutorials/tutorialacm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/documentation/tutorials/tutorialacm/</guid>
       <description>Tutorial (ACM-BCB2014): Integrated analysis of next-gen sequencing data using variant tools This tutorial explains the concepts of variant tools and demonstrates, through examples, how to use variant tools to import, select, and annotate genetic variants. You will need to have variant tools installed (Linux or Mac OSX) to follow this tutorial. Please also download sample data from here .
-1. Getting help (--help, `vtools show) Getting details of commands</description>
+1. Getting help (--help, `vtools show) Getting details of commands
+\\( vtools -h \\( vtools init -h  The variant tools website has detailed explanation and examples for all commands, utilities and pipelines.</description>
     </item>
     
     <item>
@@ -1221,7 +1223,7 @@ Adjust input  IncreaseBy(inc=1), converting 5 -&amp;gt; 6  Increase input intege
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/_footer/</guid>
-      <description>copyright = &amp;copy; Bo Peng, Ph.D. / MD AndersonCancer Center All rights reserved</description>
+      <description>copyright = © Bo Peng, Ph.D. / MD AndersonCancer CenterAll rights reserved</description>
     </item>
     
     <item>

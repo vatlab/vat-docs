@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Genes on Variant Tools</title>
@@ -15,7 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/annotation/genes/ccdsgene/</guid>
-      <description>CcdsGene This database contains high-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project. It was constructed from the UCSC Genome Browser ccdsGene track. If you would like to annotate your variants to these genes, you can use the simpler ccdsGene database. If you would like to determine the exons that your variants are in, use the ccdsGene_exon database. See the available annotation fields for each database below.</description>
+      <description>CcdsGene This database contains high-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project. It was constructed from the UCSC Genome Browser ccdsGene track. If you would like to annotate your variants to these genes, you can use the simpler ccdsGene database. If you would like to determine the exons that your variants are in, use the ccdsGene_exon database. See the available annotation fields for each database below.
+1. ccdsGene % vtools show annotation ccdsGene -v2 Annotation database ccdsGene (version hg19_20130904) Description: High-confidence human gene annotations from the Consensus Coding Sequence (CCDS) project.</description>
     </item>
     
     <item>

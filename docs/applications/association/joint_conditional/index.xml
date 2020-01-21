@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Multivariate on Variant Tools</title>
@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/applications/association/joint_conditional/skat-test/</guid>
-      <description>SNP-set (Sequence) Kernel Association Test Method 1. Details 1.1 Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011).</description>
+      <description>SNP-set (Sequence) Kernel Association Test Method 1. Details 1.1 Command interface vtools show test SKAT Name: SKAT Description: SKAT (Wu et al 2011) wrapper of its original R implementation usage: vtools associate --method SKAT [-h] [--name NAME] [-k {linear,linear.weighted,IBS,IBS.weighted,quadratic,2wayIX}] [--beta_param BETA_PARAM BETA_PARAM] [-m {davies,liu,liu.mod,optimal}] [-i {fixed,random}] [--logistic_weights PARAM PARAM] [-r [CORR [CORR ...]]] [--missing_cutoff MISSING_CUTOFF] [--resampling N] [--small_sample] [--resampling_kurtosis N] {quantitative,disease} SNP-set (Sequence) Kernel Association Test (Wu et al 2011). This is a wrapper for the R package &amp;quot;SKAT&amp;quot; implemented &amp;amp; maintained by Dr.</description>
     </item>
     
     <item>

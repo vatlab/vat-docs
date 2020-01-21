@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Variant Tools</title>
@@ -26,7 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vatlab.github.io/vat-docs/development/getinvolved/</guid>
-      <description>Report bugs and share ideas People variant tools is currently maintained by Dr. Bo Peng (references) from the Department of Bioinformatics and Computational Biology, MD Anderson Cancer Center, Anthony San Lucas from Dr. Paul Scheet&amp;rsquo;s lab at the University of Texas, MD Anderson Cancer Center, and Gao Wang from Dr. Suzanne Leal&amp;rsquo;s group at the Baylor College of Medicine. Other contributed developers are Min Qiao (UT School of Public Health), Dr.</description>
+      <description>Report bugs and share ideas People variant tools is currently maintained by [Dr. Bo Peng][2] ([references][3]) from the Department of Bioinformatics and Computational Biology, MD Anderson Cancer Center, Anthony San Lucas from [Dr. Paul Scheet][4]&amp;lsquo;s lab at the University of Texas, MD Anderson Cancer Center, and [Gao Wang][5] from [Dr. Suzanne Leal][6]&amp;lsquo;s group at the Baylor College of Medicine. Other contributed developers are Min Qiao (UT School of Public Health), Dr.</description>
     </item>
     
   </channel>
