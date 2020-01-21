@@ -13,18 +13,18 @@ weight = 15
 ### 1. Usage
 
     % vtools execute -h
-    
+
     usage: vtools execute [-h] [-i [INPUT_FILE [INPUT_FILE ...]]]
                           [-o [OUTPUT_FILE [OUTPUT_FILE ...]]] [-j JOBS]
                           [-d DELIMITER] [-v {0,1,2}]
                           PIPELINE/QUERY [PIPELINE/QUERY ...]
-    
+
     Execute a pipeline that uses external commands to process input files, usually
     to align raw reads to a reference genome and call variants from aligned reads.
     The pipelines are controlled by pipeline description files. This command can
     also be used to execute arbitrary SQL query against the project database.
     Additional parameters will be passed to pipelines as pipeline parameters.
-    
+
     positional arguments:
       PIPELINE/QUERY        Name of a pipeline configuration file with optional
                             names of pipelines to be executed if the configuration
@@ -38,7 +38,7 @@ weight = 15
                             against the project database, with project genotype
                             database attached as "genotype" and annotation
                             databases attached by their names.
-    
+
     optional arguments:
       -h, --help            show this help message and exit
       -i [INPUT_FILE [INPUT_FILE ...]], --input [INPUT_FILE [INPUT_FILE ...]]
@@ -53,7 +53,7 @@ weight = 15
       -v {0,1,2}, --verbosity {0,1,2}
                             Output error and warning (0), info (1) and debug (2)
                             information to standard output (default to 1).
-    
+
 
 
 
@@ -61,47 +61,47 @@ weight = 15
 
 #### 2.1 Execute variant tools pipelines
 
-This command executes a pipeline that calls external commands to perform various operations. The general command line is 
+This command executes a pipeline that calls external commands to perform various operations. The general command line is
 
 
 
     % vtools execute pipeline_file [pipeline_name] [--input input_files] [--output output_files] [--options]
-    
 
-Here only the `pipeline_file` is required, which is a local or online pipeline file that defines one or more pipelines. `pipeline_name` can be ignored if only one pipeline is defined in this file. To get a list of available pipelines, you should run 
+
+Here only the `pipeline_file` is required, which is a local or online pipeline file that defines one or more pipelines. `pipeline_name` can be ignored if only one pipeline is defined in this file. To get a list of available pipelines, you should run
 
 
 
     % vtools show pipelines
-    
 
-You can then use command 
+
+You can then use command
 
 
 
     % vtools show pipeline pipeline_file
-    
 
-to get details of the pipelines defined in this file. 
 
-Each pipeline accepts different `--input`, `--output` and optional parameters so please refer to the documentation for details of each pipeline. 
+to get details of the pipelines defined in this file.
+
+Each pipeline accepts different `--input`, `--output` and optional parameters so please refer to the documentation for details of each pipeline.
 
 
 
 #### 2.2 Execute SQL query
 
-This command executes arbitrary SQL query and displays output to standard output or a file. 
+This command executes arbitrary SQL query and displays output to standard output or a file.
 
 {{% notice warning %}}
-Successful use of this command requires clear understanding of the structure of tables, which can be changed without notice from version to version. 
+Successful use of this command requires clear understanding of the structure of tables, which can be changed without notice from version to version.
 {{% /notice%}}
 
-Display name of samples 
+Display name of samples
 
 
 
     % vtools execute select sample_name from sample -v2
-    
+
     DEBUG: Loading annotation database testNSFP
     DEBUG: Executing SQL statement: "select sample_name from sample"
     NA06985
@@ -109,14 +109,14 @@ Display name of samples
     NA06994
     NA07000
     ... ...
-    
 
-The following query needs to be quoted because of the existence of * 
+
+The following query needs to be quoted because of the existence of *
 
 
 
     % vtools execute 'SELECT * FROM sample' -v2
-    
+
     DEBUG: Opening project esp.proj
     DEBUG: Loading annotation database refGene_exon
     DEBUG: Loading annotation database ../annoDB/dbSNP-hg19_132
@@ -130,5 +130,5 @@ The following query needs to be quoted because of the existence of *
     6	1	NA07051
     7	1	NA07346
     8	1	NA07347
-    
+
     ... ...

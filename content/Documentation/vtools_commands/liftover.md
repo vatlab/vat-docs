@@ -7,21 +7,21 @@ weight = 5
 
 
 
-## Adding coordinates from an alternative reference genome 
+## Adding coordinates from an alternative reference genome
 
 ### 1. Usage
 
     % vtools liftover -h
-    
+
     usage: vtools liftover [-h] [--flip] [-v STD[LOG]] build
-    
+
     Convert coordinates of existing variants to alternative coordinates in an
     alternative reference genome. The UCSC liftover tool will be automatically
     downloaded if it is not available.
-    
+
     positional arguments:
       build                 Name of the alternative reference genome
-    
+
     optional arguments:
       -h, --help            show this help message and exit
       --flip                Flip primary and alternative reference genomes so that
@@ -31,52 +31,52 @@ weight = 5
                             Output error and warning (0), info (1) and debug (2)
                             information to standard output (default to 1), and to
                             a logfile (default to 2).
-    
+
 
 
 
 ### 2. Details
 
-Vtools provides a command which is based on the tool of USCS liftOver to map the variants from existing reference genome to an alternative build. After executing of this command, The fields of chromosome, position reference and alternative of the variant in current and previous reference genomes are all in the master variant table. 
+Vtools provides a command which is based on the tool of USCS liftOver to map the variants from existing reference genome to an alternative build. After executing of this command, The fields of chromosome, position reference and alternative of the variant in current and previous reference genomes are all in the master variant table.
 
 
 
-An illustration of the liftover process 
+An illustration of the liftover process
 
 <details><summary> An illustration of the liftover process </summary>
 ![](/images/liftover.png)
 </details>
 
 
-*   This command adds `alt_chr` and `alt_pos` columns to the master variants table. 
-*   Annotation databases that use the alternative reference genome can now be used. 
-*   `vtools output` and `vtools export` can output alternative coordinates using parameter `--build`. 
+*   This command adds `alt_chr` and `alt_pos` columns to the master variants table.
+*   Annotation databases that use the alternative reference genome can now be used.
+*   `vtools output` and `vtools export` can output alternative coordinates using parameter `--build`.
 
 {{% notice tip %}}
-This feature is unavailable under windows because UCSC liftOver tool does not support windows. 
+This feature is unavailable under windows because UCSC liftOver tool does not support windows.
 {{% /notice %}}
 
 {{% notice tip%}}
-Because the UCSC liftover tools does not guarantee complete translation, variants that failed to map will have missing alternative coordinates. 
+Because the UCSC liftover tools does not guarantee complete translation, variants that failed to map will have missing alternative coordinates.
 {{% /notice %}}
 
-<details><summary> Liftover from hg19 to hg38</summary> The following example demonstrates how to liftOver a project from hg18 to hg19. Note that the UCSC liftOver tool and needed chain files are automatically downloaded if they are not available. 
+<details><summary> Liftover from hg19 to hg38</summary> The following example demonstrates how to liftOver a project from hg18 to hg19. Note that the UCSC liftOver tool and needed chain files are automatically downloaded if they are not available.
 
 
     % vtools init -f liftover
     % vtools admin --load_snapshot vt_testData_v3
     % vtools import V1-3_hg19_combine.vcf --build hg19
     % vtools liftover hg38
-    
+
     INFO: Downloading liftOver chain file from UCSC
     INFO: Exporting variants in BED format
     Exporting variants: 100% [===============================] 288 110.5K/s in 00:00:00
     INFO: Running UCSC liftOver tool
     Updating table variant: 100% [============================] 288 780.0/s in 00:00:00
 
-    
 
-After the liftOver operation, three more fields are added to the master variant table (alt\_bin, alt\_chr, alt_pos) 
+
+After the liftOver operation, three more fields are added to the master variant table (alt\_bin, alt\_chr, alt_pos)
 
 
 
@@ -91,7 +91,7 @@ After the liftOver operation, three more fields are added to the master variant 
 
 
     %  vtools output variant variant_id  bin chr pos ref alt alt_bin alt_chr alt_pos -l 15
-    
+
     variant_id, bin, chr, pos, ref, alt, alt_bin, alt_chr, alt_pos
     1   585 1   14677   G   A   585 1   14677
     2   585 1   15820   G   T   585 1   15820
@@ -105,15 +105,15 @@ After the liftOver operation, three more fields are added to the master variant 
     58  586 1   234301  T   C   587 1   264550
     59  586 1   234308  A   G   587 1   264557
     ... ...
-    
+
 
 </details>
 
-<details><summary> Flipping primary and alternative reference genome</summary> 
+<details><summary> Flipping primary and alternative reference genome</summary>
 
 
 
-    % vtools show   
+    % vtools show
 
     Project name:                test
     Primary reference genome:    hg19
@@ -121,9 +121,9 @@ After the liftOver operation, three more fields are added to the master variant 
     Storage method:              hdf5
     Variant tables:              variant
     Annotation databases:
-    
 
-    % vtools liftover hg38 --flip 
+
+    % vtools liftover hg38 --flip
 
     INFO: Downloading liftOver chain file from UCSC
     INFO: Exporting variants in BED format
@@ -132,26 +132,26 @@ After the liftOver operation, three more fields are added to the master variant 
     INFO: Flipping primary and alternative reference genome
     Updating table variant: 100% [============================] 288 612.1/s in 00:00:00
 
-    
 
 
 
-Interruption of the flipping process will leave the project unusable because of mixed coordinates. 
+
+Interruption of the flipping process will leave the project unusable because of mixed coordinates.
 
 
 
-    % vtools show   
+    % vtools show
 
     Project name:                test
     Primary reference genome:    hg38
     Secondary reference genome:  hg19
     Storage method:              hdf5
     Variant tables:              variant
-    Annotation databases: 
-    
+    Annotation databases:
+
 
     % vtools output variant variant_id  bin chr pos ref alt alt_bin alt_chr alt_pos -l 15
-    
+
     variant_id, bin, chr, pos, ref, alt, DP, alt_bin, alt_chr, alt_pos
     1   585 1   14677   G   A   585 1   14677
     2   585 1   15820   G   T   585 1   15820
@@ -165,6 +165,6 @@ Interruption of the flipping process will leave the project unusable because of 
     58  587 1   264550  T   C   586 1   234301
     59  587 1   264557  A   G   586 1   234308
     ... ...
-    
+
 
 </details>

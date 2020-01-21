@@ -5,13 +5,13 @@ weight = 11
 +++
 
 
-## Identify genotype - phenotype association 
+## Identify genotype - phenotype association
 
 
 ### 1. Usage
 
     % vtools associate -h
-    
+
      usage: vtools associate [-h] [--covariates [COVARIATES [COVARIATES ...]]]
                             [--var_info [VAR_INFO [VAR_INFO ...]]]
                             [--geno_info [GENO_INFO [GENO_INFO ...]]]
@@ -22,10 +22,10 @@ weight = 11
                             [--discard_variants [EXPR [EXPR ...]]]
                             [--to_db annoDB] [-f] [-j N] [-v {0,1,2}][-mpi]
                             variants phenotypes
-    
+
     Call one or more statistical association tests and return test results as
     fields to variants tested.
-    
+
     optional arguments:
       -h, --help            show this help message and exit
       -j N, --jobs N        Number of processes to carry out association tests.
@@ -35,7 +35,7 @@ weight = 11
       -mpi                  Submit vtools association job to cluster, please check
                             sample pbs script
                             src/variant_tools/vtools_association_cluster.pbs.
-    
+
     Genotype, phenotype, and covariates:
       variants              Table of variants to be tested.
       phenotypes            A list of phenotypes that will be passed to the
@@ -57,7 +57,7 @@ weight = 11
                             genotype calls, cf. "vtools show genotypes") that will
                             be passed to statistical tests. Note that the fields
                             should exist for all samples that are tested.
-    
+
     Association tests:
       -m METHODS [METHODS ...], --methods METHODS [METHODS ...]
                             Method of one or more association tests. Parameters
@@ -77,7 +77,7 @@ weight = 11
       -g [GROUP_BY [GROUP_BY ...]], --group_by [GROUP_BY [GROUP_BY ...]]
                             Group variants by fields. If specified, variants will
                             be separated into groups and are tested one by one.
-    
+
     Select and filter samples and genotypes:
       -s [COND [COND ...]], --samples [COND [COND ...]]
                             Limiting variants from samples that match conditions
@@ -107,7 +107,7 @@ weight = 11
                             genotypes. Note that this filter will be applied after
                             "--discard_samples" is applied, if the latter also is
                             specified.
-    
+
     Output of test statistics:
       --to_db annoDB        Name of a database to which results from association
                             tests will be written. Groups with existing results in
@@ -115,7 +115,7 @@ weight = 11
                             is used.
       -f, --force           Analyze all groups including those that have recorded
                             results in the result database.
-    
+
 
 
 
@@ -123,4 +123,4 @@ weight = 11
 
 Please check [the VAT homepage][1] for details.
 
- [1]:  
+ [1]:
